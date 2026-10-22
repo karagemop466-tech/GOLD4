@@ -117,19 +117,6 @@
       "outcome": "22 rows, 6 retailers, 21 verified prices, 7 published weights, 2 new rows and 3 new flags, 0 hard failures. The integrity audit was re-run after this pass and its output is reproduced below. Recommended for every future review of this repo: re-open every source link, ask 'where is the official source, and what date was it read?', and re-run scripts/audit.py — anything that cannot answer that question is unverified and belongs on the Flagged page, not in a price cell."
     },
     {
-<<<<<<< HEAD
-      "pass": "Pass 6 — Grand unified integration, 404 link remediation & 10K–24K expansion (arena/a0be79d4-gold4)",
-      "when_utc": "2026-10-22T23:36Z",
-      "scope": "Full line-by-line repo & live web verification across 9 retailers (35 rows), 11 Assay Lab standalone pages, and 4 automated CI security/hallucination gates",
-      "checked": [
-        "Caught and fixed TWO live HTTP 404 government URLs in merged docs/sources.html (`ftc.gov/business-center/advertising-and-marketing` & `nist.gov/publications/nist-special-publication-811`) using live-verified 200 OK replacements (`consumer.ftc.gov/...`, `ecfr.gov/.../part-23`, `nist.gov/pml/special-publication-811`)",
-        "Caught and blocklisted dead 404 GIA URL (`summer-2025-lab-notes-gold-plated-gold0`) found in sibling branch `81b71aa5`, linking verified 200 OK GIA XRF & Carlsbad electroforming fraud lab studies",
-        "Spot-verified `gold.org` ($4,028.53/oz), `Allurez AL-01` ($585, 3.58g), `Anjolee AN-01`, & `VRAI VR-01` live on 2026-10-22 alongside same-day `Kitco` ($4,024.60/oz = $129.39/g) & `JM Bullion` ($4,039.76/oz = $129.88/g) quotes",
-        "Expanded canonical dataset from 22 -> 35 rows across 9 retailers (`10K`, `14K`, `18K`, `24K`), adding plain solid band melt benchmarks (1.33x–1.50x raw melt), the 10K-vs-18K 5mm density pair (`SR-01` vs `SR-03`), two live Sarraf karat contradictions (`F1625` $20,671 & `121987-.72P` $2,858), and Mejuri's $188 vermeil copy trap (`G4-RED-01`)"
-      ],
-      "outcome": "All 4 automated audit suites (`audit.py`, `check_site.py`, `verify.py`, `verify_a0be79d4.py`) pass with 0 hard failures and 0 broken links.",
-      "result": "PASS (0 failures)"
-=======
       "pass": "Pass 6 — post-merge re-verification of the published main branch",
       "when_utc": "2026-10-22T23:37Z",
       "scope": "The tree as merged into main (commit e7f4d36) — all 22 rows re-opened on their own source pages, plus the World Gold Council spot panel, 16 CFR 23.3 and every seller returns page. Run after the PR #7 / PR #10 merge so the published site, not a working copy, is what got checked",
@@ -151,7 +138,19 @@
       ],
       "outcome": "PASS with no changes to the dataset. Every published number reproduced from its own official page; the three remaining unknowns stay blank and flagged. Audit re-run after this pass: 59 passed, 0 warnings, 0 failures.",
       "result": "PASS"
->>>>>>> origin/main
+    },
+    {
+      "pass": "Pass 6 — Grand unified integration, 404 link remediation & 10K–24K expansion (arena/a0be79d4-gold4)",
+      "when_utc": "2026-10-22T23:36Z",
+      "scope": "Full line-by-line repo & live web verification across 9 retailers (35 rows), 11 Assay Lab standalone pages, and 4 automated CI security/hallucination gates",
+      "checked": [
+        "Caught and fixed TWO live HTTP 404 government URLs in merged docs/sources.html (`ftc.gov/business-center/advertising-and-marketing` & `nist.gov/publications/nist-special-publication-811`) using live-verified 200 OK replacements (`consumer.ftc.gov/...`, `ecfr.gov/.../part-23`, `nist.gov/pml/special-publication-811`)",
+        "Caught and blocklisted dead 404 GIA URL (`summer-2025-lab-notes-gold-plated-gold0`) found in sibling branch `81b71aa5`, linking verified 200 OK GIA XRF & Carlsbad electroforming fraud lab studies",
+        "Spot-verified `gold.org` ($4,028.53/oz), `Allurez AL-01` ($585, 3.58g), `Anjolee AN-01`, & `VRAI VR-01` live on 2026-10-22 alongside same-day `Kitco` ($4,024.60/oz = $129.39/g) & `JM Bullion` ($4,039.76/oz = $129.88/g) quotes",
+        "Expanded canonical dataset from 22 -> 35 rows across 9 retailers (`10K`, `14K`, `18K`, `24K`), adding plain solid band melt benchmarks (1.33x–1.50x raw melt), the 10K-vs-18K 5mm density pair (`SR-01` vs `SR-03`), two live Sarraf karat contradictions (`F1625` $20,671 & `121987-.72P` $2,858), and Mejuri's $188 vermeil copy trap (`G4-RED-01`)"
+      ],
+      "outcome": "All 4 automated audit suites (`audit.py`, `check_site.py`, `verify.py`, `verify_a0be79d4.py`) pass with 0 hard failures and 0 broken links.",
+      "result": "PASS (0 failures)"
     }
   ],
   "not_reverified_this_pass": [

@@ -1,10 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-<<<<<<< HEAD
-Generated 2026-10-22 23:43 UTC from `data/*.json` by `scripts/gen_verification.py`.
-=======
-Generated 2026-10-22 23:39 UTC from `data/*.json` by `scripts/gen_verification.py`.
->>>>>>> origin/main
+Generated 2026-10-22 23:44 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
@@ -181,13 +177,8 @@ Generated 2026-10-22 23:39 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-<<<<<<< HEAD
-run_utc: 2026-10-22T23:42:31+00:00
+run_utc: 2026-10-22T23:44:35+00:00
 dataset rows: 35 | sellers: 9 | sources: 24
-=======
-run_utc: 2026-10-22T23:37:55+00:00
-dataset rows: 22 | sellers: 6 | sources: 14
->>>>>>> origin/main
 spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
 
 RESULT: PASS  (91 passed, 0 warnings, 0 failures)
@@ -206,3 +197,4 @@ Re-run after every review pass:
 ```bash
 python3 scripts/compute.py && python3 scripts/build_site.py && python3 scripts/audit.py
 ```
+
