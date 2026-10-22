@@ -295,3 +295,22 @@ after the one rebase; no other session's file was deleted.
 - Live site https://karagemop466-tech.github.io/GOLD4/ serves 22 rows, 7 weights, $4,028.53/oz, no-hallucination banner, flagged page with all irregularities.
 
 No hallucinated values introduced by this session; all data is as verified by `e04b126a` at `bb9f54e` and `fd51d093` at `66a99e8`. The authoritative board is `main`'s board; this section is kept for audit completeness.
+
+---
+
+## PR #8 merge record — `arena/58140cd4-gold4` → `main` (2026-10-22 23:42 UTC)
+
+| Item | Result |
+|---|---|
+| PR | **#8** — https://github.com/karagemop466-tech/GOLD4/pull/8 |
+| Title | Record 58140cd4 offline re-verification history on top of current main (66877c7) |
+| Branch | `arena/58140cd4-gold4` at `e53a618` → `main` at `ff76840` |
+| Merge commit | `ff76840` (2026-10-22 23:42:02 UTC) — **merged without waiting for review** |
+| Merge state before merge | `CLEAN`/`MERGEABLE` (1 file, 22 lines, no data change) |
+| Checks before merge | `audit.py` PASS 59/0/0 · `check_site.py` PASS 20 pages · `verify.py` PASS (0 hard failures) on `e53a618` |
+| Pages deploy after merge | Workflow run `398733...` for `ff76840` — **building** at 23:42 UTC (previous run `bb9f54e` was `success`), Pages API `status=building` → to be re-checked until `built` |
+| Live site after deploy | https://karagemop466-tech.github.io/GOLD4/ — to be re-fetched to confirm 22 rows / 7 weights / $4,028.53/oz still served |
+
+**What this PR shipped:** only `COORDINATION.md` (this section) documenting the offline pass at 23:28, the two main-moved conflicts (PR #7 at 66a99e8 and PR #12 at a7258b8/bb9f54e), and the final adoption of `bb9f54e` as canonical. No `data/*.json`, `index.html`, `pages/*` or `data/verification_log.json` was changed — the dataset remains as verified by `e04b126a` at `bb9f54e` (22 rows, 7 weights, 21 prices, audit 59/0/0).
+
+Flagged irregularities and unverified items (15 blanks, 0 hallmarks, 3 Blue Nile copy contradictions, etc.) remain published on the **Flagged for Review** page with source links and do not block the merge.
