@@ -273,3 +273,25 @@ Every PR was merged **without waiting for review**, as the brief requires, and e
 after the one rebase; no other session's file was deleted.
 
 **Live site:** https://karagemop466-tech.github.io/GOLD4/ — dashboard, 10 category pages and the Flagged page are current as of `66877c7`.
+---
+
+## Session `arena/58140cd4-gold4` — final record on current main `bb9f54e` (2026-10-22 23:59 UTC)
+
+**Status:** this session's offline re-verification at 23:28 UTC (20 rows, 6 weights, spot $4,024.36, PR #8 `e6033a8`) was superseded by live re-verifications at `66a99e8` (PR #7, 7 weights, spot $4,028.53) and `a7258b8`/`bb9f54e` (PR #12/14/15, 22 rows, Brilliant Earth, Pass 6, audit 59/0/0). This commit adds only this section to `COORDINATION.md` — no data is changed.
+
+**History preserved in git:**
+- `e6033a8` — offline pass 23:28 UTC, board update, site rebuild 23:28
+- `85a5b0d` — merge of `origin/main` (PR #7) into this branch, keeping PR #7 data
+- `b937d40` — timestamp sync to `66a99e8` (23:30 UTC)
+- `e2264f2`/`49af5a6` — board update on `a7258b8`, audit reports
+- `080a6ad` — board update on `66877c7`
+- This commit (`HEAD`) — board update on `bb9f54e` (current `main`)
+
+**Verification on current `main` (`bb9f54e`, PR #15 merged):**
+- `compute` — 22 rows, 7 weights, 21 prices, spot $129.5202/g
+- `audit.py` — **PASS 59/0/0**
+- `check_site.py` — PASS 20 pages (4 legacy warnings)
+- `verify.py` — 0 hard failures; 16 blanks flagged
+- Live site https://karagemop466-tech.github.io/GOLD4/ serves 22 rows, 7 weights, $4,028.53/oz, no-hallucination banner, flagged page with all irregularities.
+
+No hallucinated values introduced by this session; all data is as verified by `e04b126a` at `bb9f54e` and `fd51d093` at `66a99e8`. The authoritative board is `main`'s board; this section is kept for audit completeness.
