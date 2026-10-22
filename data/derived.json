@@ -1,8 +1,8 @@
 {
-  "generated_utc": "2026-10-22T23:20:19Z",
+  "generated_utc": "2026-10-22T23:30:35Z",
   "spot": {
-    "value_usd_per_oz": 4024.36,
-    "usd_per_gram": 129.386178,
+    "value_usd_per_oz": 4028.53,
+    "usd_per_gram": 129.520247,
     "price_date": "21 October, 2026",
     "captured_utc": "2026-10-22",
     "source_url": "https://www.gold.org/goldhub/data/gold-prices"
@@ -56,13 +56,17 @@
         "HALLMARK_NOT_PUBLISHED"
       ],
       "pair_id": "PAIR-BN-PETITE",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: page re-fetched; $1,000 'Setting Price', 14K Yellow Gold, stock 501130y14 and 1.80mm width re-read and match this record.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "BN-02",
@@ -96,13 +100,17 @@
       ],
       "pair_id": "PAIR-BN-PETITE",
       "pair_note": "Same design and width as BN-01; the only published difference is the karat of the metal.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: page re-fetched; $1,155 'Setting Price', 18K Yellow Gold, stock 501130y and 1.80mm width re-read and match this record.",
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "BN-03",
@@ -134,13 +142,17 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED"
       ],
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: page re-fetched; $1,000 'Setting Price', 14K Yellow Gold, stock 501140y14 and 1.90mm width re-read and match this record.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "BN-04",
@@ -176,13 +188,17 @@
       "flag_detail": "COPY_INCONSISTENT_METAL: the product description on this 14K yellow gold page says the ring is 'crafted in 18k yellow gold'. The specification block says 14K Yellow Gold. Reported, not resolved.",
       "pair_id": "PAIR-BN-COMFORT",
       "pair_note": "Same design and width as BN-05; the only published difference is the karat of the metal.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: page re-fetched; $935 'Setting Price', 14K Yellow Gold, stock 501310y14 and 2.50mm width re-read and match. The description copy again reads 'crafted in 18k yellow gold' on this 14K page, so COPY_INCONSISTENT_METAL is re-confirmed.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "BN-05",
@@ -216,13 +232,17 @@
       ],
       "pair_id": "PAIR-BN-COMFORT",
       "pair_note": "Same design and width as BN-04.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: page re-fetched; $1,310 'Setting Price', 18K Yellow Gold, stock 501310y and 2.50mm width re-read and match this record.",
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "BN-06",
@@ -254,13 +274,17 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED"
       ],
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: page re-fetched; $1,295 'Setting Price', 18K Yellow Gold, stock 501760y and 2.00mm width re-read and match this record.",
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "BN-07",
@@ -294,13 +318,17 @@
         "MIXED_METAL_UNCLEAR"
       ],
       "flag_detail": "MIXED_METAL_UNCLEAR: the description says the ring has 'platinum prongs' while the title and specification list only 14K Yellow Gold. Ask the seller whether the article is two-tone, because that changes how much gold you are buying.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: page re-fetched; $870 'Setting Price', 14K Yellow Gold, stock 500000y14 and 1.90mm width re-read and match. The description again says the ring has 'platinum prongs', so MIXED_METAL_UNCLEAR is re-confirmed.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "BN-08",
@@ -334,13 +362,17 @@
         "COPY_INCONSISTENT_METAL"
       ],
       "flag_detail": "COPY_INCONSISTENT_METAL: the description says the pavé diamonds are 'set in 14k white gold' while the title and specification say 14K Yellow Gold.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: page re-fetched; $1,500 'Setting Price', 14K Yellow Gold, stock 501590y14 and 2.00mm width re-read and match. The description again says the diamonds are 'set in 14k white gold' on this yellow-gold page, so COPY_INCONSISTENT_METAL is re-confirmed.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "AL-01",
@@ -372,13 +404,17 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED"
       ],
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: page re-fetched; $585 and 'Approximate Metal Weight 3.58 grams' re-read and match this record.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 2.0883,
-      "gold_value_usd": 270.2,
-      "legal_min_gold_value_usd": 266.96,
-      "price_to_gold_multiple": 2.165,
-      "price_per_gold_gram_usd": 280.13
+      "gold_value_usd": 270.48,
+      "legal_min_gold_value_usd": 267.24,
+      "price_to_gold_multiple": 2.163,
+      "price_per_gold_gram_usd": 280.13,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "AL-02",
@@ -410,13 +446,17 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED"
       ],
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: page re-fetched; $724 and 'Approximate Metal Weight 3.4 grams' re-read and match this record.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 1.9833,
-      "gold_value_usd": 256.62,
-      "legal_min_gold_value_usd": 253.54,
-      "price_to_gold_multiple": 2.821,
-      "price_per_gold_gram_usd": 365.04
+      "gold_value_usd": 256.88,
+      "legal_min_gold_value_usd": 253.8,
+      "price_to_gold_multiple": 2.818,
+      "price_per_gold_gram_usd": 365.04,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "AL-03",
@@ -450,13 +490,17 @@
       ],
       "pair_id": "PAIR-AL-SPLIT",
       "pair_note": "Same design as AL-04; the metal karat and the published weight both change.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: page re-fetched; $848 and 'Approximate Metal Weight 4.4 grams' re-read and match this record.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 2.5667,
-      "gold_value_usd": 332.09,
-      "legal_min_gold_value_usd": 328.11,
-      "price_to_gold_multiple": 2.554,
-      "price_per_gold_gram_usd": 330.39
+      "gold_value_usd": 332.44,
+      "legal_min_gold_value_usd": 328.45,
+      "price_to_gold_multiple": 2.551,
+      "price_per_gold_gram_usd": 330.39,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "AL-04",
@@ -490,13 +534,17 @@
       ],
       "pair_id": "PAIR-AL-SPLIT",
       "pair_note": "Same design as AL-03.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: page re-fetched; $1,425 and 'Approximate Metal Weight 5.3 grams' re-read and match this record.",
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 3.975,
-      "gold_value_usd": 514.31,
-      "legal_min_gold_value_usd": 509.51,
-      "price_to_gold_multiple": 2.771,
-      "price_per_gold_gram_usd": 358.49
+      "gold_value_usd": 514.84,
+      "legal_min_gold_value_usd": 510.04,
+      "price_to_gold_multiple": 2.768,
+      "price_per_gold_gram_usd": 358.49,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "VR-01",
@@ -527,16 +575,21 @@
         "PRICE_IS_FROM_PRICE",
         "PRICE_AND_WEIGHT_DIFFERENT_URLS",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "SPEC_LISTED_PAVE_ON_PLAIN_BAND"
       ],
-      "flag_detail": "The 'From $1,035' figure comes from the VRAI engagement-rings listing page for this design; the 2.86 g metal weight comes from the design's own configuration page. Both are VRAI pages for the same design, but they are not the same URL, so confirm the exact price for your ring size and carat in the cart before relying on it.",
+      "flag_detail": "The 'From $1,035' figure comes from the VRAI engagement-rings listing page for this design; the 2.86 g metal weight comes from the design's own configuration page. Both are VRAI pages for the same design, but they are not the same URL, so confirm the exact price for your ring size and carat in the cart before relying on it. SPEC_LISTED_PAVE_ON_PLAIN_BAND: on the re-fetched design page the selected band is a PLAIN band ('Band: Plain band'), yet the Setting Details block still lists 'Pave carat weight:0.18ctw'. The weight figure quoted in this row is the 'Metal weight' line, which is unambiguous, but the pavé line suggests the spec block is shared across band variants. Confirm which band you are buying before relying on any diamond-weight figure.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: 'Metal weight:2.86g (Ring size 6)' re-read on the design page, and 'From $1,035' re-read on the VRAI engagement-rings listing card; both match this record.",
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 2.145,
-      "gold_value_usd": 277.53,
-      "legal_min_gold_value_usd": 274.94,
-      "price_to_gold_multiple": 3.729,
-      "price_per_gold_gram_usd": 482.52
+      "gold_value_usd": 277.82,
+      "legal_min_gold_value_usd": 275.23,
+      "price_to_gold_multiple": 3.725,
+      "price_per_gold_gram_usd": 482.52,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "VR-02",
@@ -566,16 +619,21 @@
       "flags": [
         "PRICE_UNVERIFIED",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "SPEC_LISTED_PAVE_ON_PLAIN_BAND"
       ],
-      "flag_detail": "No price for this exact design was visible on the configuration page or on the captured listing page, so the price cell is deliberately blank. Ask VRAI for the current setting price in writing.",
+      "flag_detail": "No price for this exact design was visible on the configuration page or on the captured listing page, so the price cell is deliberately blank. Ask VRAI for the current setting price in writing. SPEC_LISTED_PAVE_ON_PLAIN_BAND: on the re-fetched design page the selected band is a PLAIN band ('Band: Plain band'), yet the Setting Details block still lists 'Pave carat weight:0.18ctw'. The weight figure quoted in this row is the 'Metal weight' line, which is unambiguous, but the pavé line suggests the spec block is shared across band variants. Confirm which band you are buying before relying on any diamond-weight figure.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: 'Metal weight:2.84g (Ring size 6)' re-read and matches. The design page again published no setting price (it offers 'Continue to diamond'), so the price stays blank.",
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 2.13,
-      "gold_value_usd": 275.59,
-      "legal_min_gold_value_usd": 273.02,
+      "gold_value_usd": 275.88,
+      "legal_min_gold_value_usd": 273.3,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "MJ-01",
@@ -593,7 +651,7 @@
       "solid_gold_status": "stated",
       "hallmark_published": false,
       "price_usd": 548.0,
-      "price_basis": "Ring as sold (Natural Diamond, 14k yellow gold)",
+      "price_basis": "Ring as sold (Natural Diamond, 14k yellow gold) Price read from Mejuri's 14k Yellow Gold Rings collection card for that exact product; a Mejuri product page can open on a different metal variant, so confirm the variant and price in the cart.",
       "price_captured_utc": "2026-10-22",
       "price_source_url": "https://mejuri.com/collections/14k-yellow-gold-rings",
       "price_verification": "V1_direct_page_fetch",
@@ -608,13 +666,17 @@
         "NOT_MARKETED_AS_BRIDAL"
       ],
       "flag_detail": "Mejuri lists this as a fine-jewellery ring rather than a bridal/engagement ring. It is included because it is 14k solid gold with a stated material, but it is not sold as an engagement setting.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: $548 re-read from the 14k Yellow Gold Rings collection card ('Solid Yellow Gold (14k), Natural Diamond') and matches. The product page itself opens on the white-gold variant, also $548.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "MJ-02",
@@ -632,7 +694,7 @@
       "solid_gold_status": "stated",
       "hallmark_published": false,
       "price_usd": 648.0,
-      "price_basis": "Ring as sold (Natural Diamond, 14k yellow gold)",
+      "price_basis": "Ring as sold (Natural Diamond, 14k yellow gold) Price read from Mejuri's 14k Yellow Gold Rings collection card for that exact product; a Mejuri product page can open on a different metal variant, so confirm the variant and price in the cart.",
       "price_captured_utc": "2026-10-22",
       "price_source_url": "https://mejuri.com/collections/14k-yellow-gold-rings",
       "price_verification": "V1_direct_page_fetch",
@@ -646,13 +708,17 @@
         "HALLMARK_NOT_PUBLISHED",
         "NOT_MARKETED_AS_BRIDAL"
       ],
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: $648 re-read from the 14k Yellow Gold Rings collection card and matches.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "MJ-03",
@@ -670,7 +736,7 @@
       "solid_gold_status": "stated",
       "hallmark_published": false,
       "price_usd": 548.0,
-      "price_basis": "Ring as sold (Natural Diamond, 14k yellow gold)",
+      "price_basis": "Ring as sold (Natural Diamond, 14k yellow gold) Price read from Mejuri's 14k Yellow Gold Rings collection card for that exact product; a Mejuri product page can open on a different metal variant, so confirm the variant and price in the cart.",
       "price_captured_utc": "2026-10-22",
       "price_source_url": "https://mejuri.com/collections/14k-yellow-gold-rings",
       "price_verification": "V1_direct_page_fetch",
@@ -686,13 +752,17 @@
         "ENGRAVING_NON_RETURNABLE"
       ],
       "flag_detail": "The Mejuri listing is engravable, and Mejuri's returns terms state engraved or monogrammed products are not returnable at any time. Do not engrave before your independent inspection.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: $548 re-read from the 14k Yellow Gold Rings collection card and matches.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "MJ-04",
@@ -710,7 +780,7 @@
       "solid_gold_status": "stated",
       "hallmark_published": false,
       "price_usd": 798.0,
-      "price_basis": "Ring as sold (Natural Diamond, 14k yellow gold)",
+      "price_basis": "Ring as sold (Natural Diamond, 14k yellow gold) Price read from Mejuri's 14k Yellow Gold Rings collection card for that exact product; a Mejuri product page can open on a different metal variant, so confirm the variant and price in the cart.",
       "price_captured_utc": "2026-10-22",
       "price_source_url": "https://mejuri.com/collections/14k-yellow-gold-rings",
       "price_verification": "V1_direct_page_fetch",
@@ -724,13 +794,17 @@
         "HALLMARK_NOT_PUBLISHED",
         "NOT_MARKETED_AS_BRIDAL"
       ],
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: $798 re-read from the 14k Yellow Gold Rings collection card and matches.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "MJ-05",
@@ -748,7 +822,7 @@
       "solid_gold_status": "stated",
       "hallmark_published": false,
       "price_usd": 598.0,
-      "price_basis": "Ring as sold (Lab Grown Diamond, 14k yellow gold)",
+      "price_basis": "Ring as sold (Lab Grown Diamond, 14k yellow gold) Price read from Mejuri's 14k Yellow Gold Rings collection card for that exact product; a Mejuri product page can open on a different metal variant, so confirm the variant and price in the cart.",
       "price_captured_utc": "2026-10-22",
       "price_source_url": "https://mejuri.com/collections/14k-yellow-gold-rings",
       "price_verification": "V1_direct_page_fetch",
@@ -764,13 +838,17 @@
         "SCS_CERT_REQUIRED_FOR_RETURN"
       ],
       "flag_detail": "Mejuri's returns terms require the SCS certificate for lab-grown diamond items, or the return is sent back.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: $598 re-read from the 14k Yellow Gold Rings collection card ('Lab Grown Diamond, Solid Yellow Gold (14k)') and matches.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
       "gold_value_usd": null,
       "legal_min_gold_value_usd": null,
       "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "price_per_gold_gram_usd": null,
+      "multiple_basis": "setting_metal_only"
     },
     {
       "id": "AN-01",
@@ -788,30 +866,34 @@
       "solid_gold_status": "not_stated",
       "hallmark_published": false,
       "price_usd": 870.76,
-      "price_basis": "Configured ring INCLUDING a 0.50 ct FG/VS centre diamond (14K white gold, not yellow gold). Not comparable with setting-only rows.",
+      "price_basis": "Configured ring INCLUDING a 0.50 ct centre diamond that the page describes as 'Lab Created FG' colour and 'Lab Created VS' clarity (14K white gold, not yellow gold). Not comparable with setting-only rows or with rings priced with a natural centre stone.",
       "price_captured_utc": "2026-10-22",
       "price_source_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
       "price_verification": "V1_direct_page_fetch",
-      "weight_g": null,
-      "weight_scope": "Page showed no gram weight in the captured content",
-      "weight_source_url": null,
-      "weight_verification": "U_unverified",
+      "weight_g": 2.9,
+      "weight_scope": "'Approx. Metal Weight: 2.90 Gr.' for the 0.50 ct model, ring size 6.5, as published in the page's Product Details table (the linked spec sheet lists 2.9 Gr for the 0.50 ct size).",
+      "weight_source_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
+      "weight_verification": "V1_direct_page_fetch",
       "returns_source_id": "anjolee-ms354a",
       "flags": [
         "PRICE_INCLUDES_CENTRE_STONE",
-        "WEIGHT_UNVERIFIED",
+        "CENTRE_STONE_LAB_CREATED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "WHITE_GOLD"
       ],
-      "flag_detail": "A search snapshot of the Anjolee page displayed 'Approx. Metal Weight: 2.90 Gr.' but that figure could not be re-read from the live page, so it is not recorded. The price includes a centre diamond, so it must not be compared with setting-only prices.",
+      "flag_detail": "The published configuration is 14K white gold with a 0.50 ct LAB-CREATED centre diamond, so this price must not be compared with setting-only prices, nor with natural-diamond prices: a large part of the total is the stone, not the gold. The metal weight (2.90 g, ring size 6.5) is the seller's own 'approx.' figure and includes only the mounting.",
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+      "reverification": "Pass 2: $870.76 and 'Approx. Metal Weight: 2.90 Gr.' both re-read from the page's own Product Details table, so the weight is now recorded. The same table states the centre diamond colour and clarity as 'Lab Created FG' / 'Lab Created VS'.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
-      "pure_gold_g": null,
-      "gold_value_usd": null,
-      "legal_min_gold_value_usd": null,
-      "price_to_gold_multiple": null,
-      "price_per_gold_gram_usd": null
+      "pure_gold_g": 1.6917,
+      "gold_value_usd": 219.11,
+      "legal_min_gold_value_usd": 216.48,
+      "price_to_gold_multiple": 3.974,
+      "price_per_gold_gram_usd": 514.74,
+      "multiple_basis": "includes_centre_stone"
     }
   ],
   "pairs": [
@@ -869,8 +951,8 @@
       "price_gap_pct": 68.04,
       "gold_gap_pct": 54.87,
       "gold_value_gap_pct": 54.87,
-      "low_multiple": 2.554,
-      "high_multiple": 2.771,
+      "low_multiple": 2.551,
+      "high_multiple": 2.768,
       "low_pure_gold_g": 2.567,
       "high_pure_gold_g": 3.975
     }
@@ -878,7 +960,7 @@
   "stats": {
     "total_rows": 20,
     "rows_with_verified_price": 19,
-    "rows_with_published_weight": 6,
+    "rows_with_published_weight": 7,
     "rows_with_solid_gold_statement": 5,
     "rows_with_hallmark_published": 0,
     "rows_with_any_flag": 20,
@@ -886,10 +968,10 @@
       "14": {
         "rows": 14,
         "prices_verified": 14,
-        "weights_published": 3,
-        "multiple_min": 2.17,
-        "multiple_max": 2.82,
-        "multiple_avg": 2.51
+        "weights_published": 4,
+        "multiple_min": 2.16,
+        "multiple_max": 3.97,
+        "multiple_avg": 2.88
       },
       "18": {
         "rows": 6,
@@ -920,10 +1002,10 @@
       "solitaire": {
         "rows": 14,
         "prices_verified": 13,
-        "weights_published": 6,
-        "multiple_min": 2.17,
-        "multiple_max": 3.73,
-        "multiple_avg": 2.81
+        "weights_published": 7,
+        "multiple_min": 2.16,
+        "multiple_max": 3.97,
+        "multiple_avg": 3.0
       }
     },
     "by_retailer": {
@@ -931,17 +1013,17 @@
         "rows": 4,
         "prices_verified": 4,
         "weights_published": 4,
-        "multiple_min": 2.17,
+        "multiple_min": 2.16,
         "multiple_max": 2.82,
         "multiple_avg": 2.58
       },
       "anjolee": {
         "rows": 1,
         "prices_verified": 1,
-        "weights_published": 0,
-        "multiple_min": null,
-        "multiple_max": null,
-        "multiple_avg": null
+        "weights_published": 1,
+        "multiple_min": 3.97,
+        "multiple_max": 3.97,
+        "multiple_avg": 3.97
       },
       "blue-nile": {
         "rows": 8,

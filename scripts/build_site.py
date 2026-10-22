@@ -225,7 +225,7 @@ def table(rows, root: str, show_category: bool = False) -> str:
         <span class="sub">{'published' if r['weight_g'] else 'not published'}</span></td>
     <td class="num">{num(r['pure_gold_g'], 3) if r['pure_gold_g'] else '—'}<span class="sub">derived</span></td>
     <td class="num">{money(r['gold_value_usd']) if r['gold_value_usd'] else '—'}<span class="sub">derived</span></td>
-    <td class="num">{num(r['price_to_gold_multiple']) if r['price_to_gold_multiple'] else '—'}</td>
+    <td class="num">{num(r['price_to_gold_multiple']) if r['price_to_gold_multiple'] else '—'}{'<span class="sub">price includes a centre stone</span>' if r.get('multiple_basis') == 'includes_centre_stone' and r['price_to_gold_multiple'] else ''}</td>
     <td>{ret_cell}</td>
     <td>{solid_cell}</td>
     <td class="src"><a href="{esc(r['url'])}" target="_blank" rel="noopener">{esc(short_url(r['url']))}</a>
@@ -338,10 +338,11 @@ def main() -> None:
   <h2>What the data actually shows</h2>
   <div class="grid two">
     <div class="card">
-      <h3>Only 6 of 20 rows can be priced against their gold at all</h3>
-      <p>Four Allurez settings and two VRAI settings publish a gram weight, so only those rows have a computable gold content.
+      <h3>Only {st['rows_with_published_weight']} of {st['total_rows']} rows can be priced against their gold at all</h3>
+      <p>Four Allurez settings, two VRAI settings and one Anjolee setting publish a gram weight, so only those rows have a computable gold content.
       Blue Nile and Mejuri publish a price but no weight, so their gold content is <em>blank</em> — not guessed.</p>
-      <p class="small">Price ÷ gold-value multiple across the six computable rows: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.</p>
+      <p class="small">Price ÷ gold-value multiple across the six rows that have both a weight and a price: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.
+      One of those six (AN-01) is priced with a lab-created centre stone included, so its multiple is labelled on the table and is not a setting markup.</p>
     </div>
     <div class="card">
       <h3>18K costs more than its extra gold — and by an inconsistent amount</h3>
