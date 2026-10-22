@@ -243,3 +243,18 @@ The published dataset was treated as **untrusted input** and re-fetched page by 
 2. **Blue Nile BN-04 / BN-07 / BN-08** — three pages whose own copy contradicts their own specification block. Nothing has been inferred about which side is right; that is a question for Blue Nile in writing.
 3. **VRAI VR-02** — weight published, price not. The blank is correct, not a gap to fill.
 4. **Every seller's reputation** — still unverified for all six. The FTC's own advice is to search the seller's name with "complaint" or "review"; this dataset does not do that for you and does not pretend to.
+
+---
+
+## Pass 6 — post-merge review of `main` (session `arena/e04b126a-gold4`)
+
+Task claimed: re-verify the **merged** tree (the published site), not a working copy, and record the result.
+
+- Scope: all 22 rows on their own source pages, 4 returns pages, 2 policy-level Brilliant Earth pages, the World Gold Council
+  spot panel, 16 CFR 23.3, the FTC gold article and 15 U.S.C. § 295.
+- Result: **no price, weight, karat, stock number or policy clause changed.** Nothing was corrected because nothing was wrong.
+- Re-confirmed limits: Brilliant Earth's `/returns/` page again served only nav/footer text (30-day window cannot be
+  re-displayed, stays flagged); no VRAI configuration page exposes a setting price in page text (VR-02 stays `PRICE_UNVERIFIED`).
+- Benchmark left at **$4,028.53/oz, data as of 21 October 2026** after a third read of the panel returned the same figure.
+- Pass recorded in `data/verification_log.json` (now Passes 0–6), rendered on the site's Log page, and summarised in `README.md`.
+- Checks after the pass: `audit.py` PASS 59/0/0 · `check_site.py` PASS 20 pages · `verify.py` 0 hard failures.
