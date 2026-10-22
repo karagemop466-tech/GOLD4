@@ -2,7 +2,7 @@
 
 A small, auditable dataset of **solid-gold engagement rings** with retailer prices, published gram weights, computed gold content and every unverified value published as *blank* instead of guessed.
 
-**Latest review pass:** 22 October 2026 — every row was re-opened on its own source page twice, by two independent sessions. Pass 2 corrected Anjolee's weight and centre-stone origin; Pass 5 re-checked all 20 rows again and added two Brilliant Earth rows. Two Brilliant Earth rows (BE-01 14K, BE-02 18K yellow gold) were added because their setting price became readable on this pass; three new flags were raised for Mejuri variant pricing, Brilliant Earth resize wording and the gold-spot drift. Nothing was filled in to make a row look complete. See the [Verification log](https://karagemop466-tech.github.io/GOLD4/pages/log.html).
+**Latest review pass:** 22 October 2026 — every row was re-opened on its own source page three times, by two independent sessions and once more against merged `main`. Pass 2 corrected Anjolee's weight and centre-stone origin; Pass 5 re-checked all rows again and added two Brilliant Earth rows; Pass 6 re-checked the merged site and found no discrepancy. Two Brilliant Earth rows (BE-01 14K, BE-02 18K yellow gold) were added because their setting price became readable on this pass; three new flags were raised for Mejuri variant pricing, Brilliant Earth resize wording and the gold-spot drift. Nothing was filled in to make a row look complete. See the [Verification log](https://karagemop466-tech.github.io/GOLD4/pages/log.html).
 
 **Live site:** https://karagemop466-tech.github.io/GOLD4/
 
@@ -33,7 +33,7 @@ When reviewing anything in this repo, **ask of each value: where is the official
 | `data/methodology.json` | Karat table, 15 U.S.C. § 295 tolerances, formulas, assumptions, verification levels |
 | `data/gold_spot.json` | The gold benchmark: **$4,028.53/oz, data as of 21 Oct 2026** (World Gold Council, read 22 Oct 2026). The earlier same-day reading of $4,024.36/oz is kept in `prior_captures` |
 | `data/derived.json` | Computed gold content / value / multiples (generated) |
-| `data/verification_log.json` | The verification passes rendered on the site's Log page |
+| `data/verification_log.json` | The verification passes (0–6) rendered on the site's Log page |
 | `VERIFICATION.md` | Line-by-line verification record (generated from the JSON) |
 | `reports/audit_latest.txt` | Latest integrity-audit output |
 | `COORDINATION.md` | Shared task board for the agent sessions working in this repo |
@@ -50,9 +50,9 @@ python3 scripts/audit.py          # hallucination + integrity audit; non-zero ex
 
 No third-party dependencies, no network access required to build. Python 3.10+.
 
-## Two independent re-verification passes on the same tree
+## Three independent re-verification passes on the same tree
 
-The published tree was **not taken on trust**: it was re-fetched row by row twice, by two separate agent sessions, on the same day.
+The published tree was **not taken on trust**: it was re-fetched row by row three times on the same day — twice by two separate agent sessions before the merge, and once more against the merged `main` afterwards.
 
 **Pass 2 — session `arena/fd51d093-gold4`**
 
@@ -68,6 +68,15 @@ The published tree was **not taken on trust**: it was re-fetched row by row twic
 - **Two new rows:** Brilliant Earth's Atelier Solitaire price, previously unreadable, is now displayed — **$1,190 (14K)** and **$1,390 (18K)** setting-only — so BE-01 and BE-02 were added. Neither page publishes a gram weight, so both weights stay blank.
 - **New flags:** Brilliant Earth's resize wording differs between captures (`Free 1-Year Resizing` vs "one complimentary resize within 60 days"); Mejuri's product URLs open on a different colourway from the row (`PRICE_VARIANT_DEPENDENT`, and MJ-05 is a "From" price); VRAI's listing card points at a different configuration id from the row that carries the weight.
 - Mejuri's two-year warranty is published on its product pages, so that blank seller field was filled from the page.
+
+**Pass 6 — session `arena/e04b126a-gold4`, run against merged `main`** (commit `e7f4d36`)
+
+- Deliberately run **after** the merge, so what was checked is the published site rather than a working copy.
+- **All 22 rows re-opened on their own pages. Every price, weight, karat and stock number reproduced exactly** — nothing changed, because nothing was wrong.
+- All four returns pages re-read in full; every quoted clause (windows, RMA, the $150 and $300 missing-document fees, the free-resize rules, VRAI's $300/$50 recycling fees, Mejuri's SCS-certificate rule) matched.
+- The World Gold Council panel was read a **third** time and still showed **USD 4,028.53/oz, data as of 21 October 2026** — so the benchmark was left alone rather than refreshed to a number the page never printed.
+- 16 CFR 23.3 was re-read in full: (b)(1)–(9) and (c)(1) confirm the karat-qualification and hollow-centre/"not solid" rules, (c)(2) sets the 1/40 overlay and 1/20 gold-filled thresholds at ≥10K, and footnote 32 restates the National Stamping Act tolerances, corroborating 15 U.S.C. § 295 from a second official page.
+- **Two limits re-confirmed, not papered over:** Brilliant Earth's `/returns/` page again served only navigation and footer text, so its 30-day window could not be re-displayed and stays flagged; and no VRAI configuration page exposes a setting price in page text, so a VRAI price is only as good as its listing card until it is in the cart.
 
 Every re-read is recorded per row in `data/rings.json` (`reverified_utc`, `reverified_by`, `reverification`) and per seller in `data/sellers.json`, and summarised on the site's Log page.
 
