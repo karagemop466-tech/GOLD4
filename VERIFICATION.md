@@ -1,6 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-22 23:48 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-22 23:49 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
@@ -211,7 +211,7 @@ Generated 2026-10-22 23:48 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-22T23:48:48+00:00
+run_utc: 2026-10-22T23:49:53+00:00
 dataset rows: 47 | sellers: 10 | sources: 28
 spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
 

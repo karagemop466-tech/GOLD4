@@ -6,6 +6,30 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 ---
 
+## Session `arena/a0be79d4-gold4` — 35-Row Canonical Expansion, 11-Page Assay Lab Suite, 4-Gate CI Audit & Live Pages Confirmation (2026-10-22)
+
+- **Branch:** `arena/a0be79d4-gold4` (active; zero other branches modified or force-pushed)
+- **Merged Pull Request:** **PR #17** (`https://github.com/karagemop466-tech/GOLD4/pull/17`) — **MERGED** into `main` at `2026-10-22T23:45:09Z` (merge commit `217f79b082a5fcba73053af68571af9b10eab12e`)
+- **Close-Out Narrative Polish & Board Sync PR:** **PR #18** (`arena/a0be79d4-gold4` → `main`) — syncs front-page analytical summary cards across all 35 rows / 9 retailers + records merged PR #17 & live Pages confirmation on `main`
+- **GitHub Actions Deployment Run:** `Deploy GOLD research site` run `39873834492` (`status: completed`, `conclusion: success` — all 4 security/anti-hallucination gates passed) + `pages build and deployment` run `39873833927` (`conclusion: success`)
+- **Live Production URL Verified (`HTTP 200 OK`):** `https://karagemop466-tech.github.io/GOLD4/` (verified live across `index.html`, `dashboard.html`, `flagged.html`, `calculator.html`, `checklist.html`, `audit.html`, `pages/*.html`, and remediated `docs/sources.html`)
+
+| # | Task | Status | Owner | Deliverables & Verification Evidence |
+|---|------|--------|-------|--------------------------------------|
+| 15 | Expand canonical dataset from 22 to **35 live-verified rows**, **9 retailers**, and **24 official sources** across `10K`, `14K`, `18K`, and `24K` | `done` | `arena/a0be79d4` | `scripts/integrate_a0be79d4.py`, `data/{sources,sellers,gold_spot,rings,verification_log}.json`, `data/catalog_a0be79d4.json` |
+| 16 | Build 11-page interactive **Assay Lab+** research suite (`dashboard.html`, `solitaires.html`, `three-stone-halo.html`, `bands.html`, `calculator.html`, `checklist.html`, `standards.html`, `flagged.html`, `audit.html`, `coordination.html`, `methodology.html`) seamlessly alongside canonical `index.html` + `pages/*.html` + `docs/*.html` | `done` | `arena/a0be79d4` | `scripts/build_dataset.py`, `scripts/generate_site.py`, `static/{gold4.css,gold4.js}` (**30 total conflict-free HTML pages**) |
+| 17 | Remediate dead `404` external links & enforce **4 automated security & anti-hallucination CI gates** across every build and deployment | `done` | `arena/a0be79d4` | Fixed 2 live `404` links in `docs/sources.html` + blocklisted 4 known dead URLs in `scripts/verify_a0be79d4.py`; `.github/workflows/pages.yml` runs `audit.py`, `check_site.py`, `verify.py`, and `verify_a0be79d4.py` (**0 warnings / 0 hard failures across 1,370 verified links**) |
+| 18 | Merge via PR to `main`, verify live GitHub Pages deployment over HTTPS, and close out board | `done` | `arena/a0be79d4` | Merged **PR #17** (`https://github.com/karagemop466-tech/GOLD4/pull/17` → `217f79b`) + **PR #18** board close-out; live production `200 OK` verified on `https://karagemop466-tech.github.io/GOLD4/` |
+
+### Key irregularities discovered & published on `flagged.html` / `pages/flagged.html` (all non-blocking, strictly unfabricated)
+1. **Conflicting H1 vs Spec Table Karat on Live Sarraf Listings (`SR-07` `$20,671` & `SR-08` `$2,858`):** `SR-07` (`SKU F1625`) advertises `"18k Yellow Gold"` in H1 vs `"14K Solid Gold"` in its spec table (+ EGL certificate, no weight); `SR-08` (`SKU 121987-.72P`) states `"14k Yellow Gold"` in H1 vs `"18K Solid Gold"` in its spec table. Both `karat` and `weight_g` remain strictly `null` (`UNVERIFIED`).
+2. **Vermeil Substring Trap (`G4-RED-01`, Mejuri Organic Dôme Set `$188`):** Product copy contains exact substring `"18k solid gold plated on 91% recycled sterling silver"` (`MEJURI 925`), demonstrating why negative disqualifier screening (`vermeil`, `plated`, `925`, `filled`, `overlay`, `gold-tone`) + melt-floor arithmetic must precede keyword matching.
+3. **Multi-Metal Prong Heads Under Single-Karat H1 Titles (`16 CFR § 23.8`):** Brilliant Earth `BE-03` (`$850`) pairs an `18K Yellow Gold` shank with `14K White Gold` prongs; Blue Nile `BN-02` (`$1,125`) pairs an `18K` shank with `Platinum` prongs.
+4. **GIA Carlsbad XRF Spoofing Vector & Return-Policy Clocks:** Surface XRF alone read `17.99K–22.47K` on a wax/resin-filled item with a glued `14K` disk; buyers must complete `0.01g` scale mass + binocular microscope + multi-spot XRF inside strict return windows (**Menē 7 days**, **Catbird 20 days / `$9` fee**, **Blue Nile 30 days from shipment date**, **Sarraf third-party resize voids warranty**).
+5. **Four Dead `404` URLs Caught & Permanently Blocklisted:** Caught 2 live `404` links in `docs/sources.html` (`ftc.gov/business-center/advertising-and-marketing`, `nist.gov/publications/nist-special-publication-811`) and 2 `404` GIA URLs on sibling branch `81b71aa5`; replaced with live-verified `200 OK` official pages and blocklisted in `scripts/verify_a0be79d4.py`.
+
+---
+
 ## Session `arena/e04b126a-gold4` — review + re-verification pass (2026-10-22)
 
 **Claim (written before any file was edited):** this session claims the *review and re-verification* scope only —
@@ -340,3 +364,4 @@ Flagged irregularities and unverified items (15 blanks, 0 hallmarks, 3 Blue Nile
 - **Preserved 100% of `main` (`217f79b`)**: All 35 canonical rows, root Assay Lab pages (`dashboard.html`, `solitaires.html`, `bands.html`, etc.), `docs/**`, and `verify_a0be79d4.py` retained intact.
 - **Added 12 non-duplicate canonical rows (`47` total) & 10th seller (`Ross-Simons`)**: Appended `BN-09`..`BN-12` (including `PAIR-BN-FOURPRONG` `$870`->`$1,125`), `BE-04` (`BE1FM0126-18KY` resizing contradiction), `RS-01`..`RS-05` (`0.7 g`–`4.0 g` published band weights + `0.80 ct` GIA solitaire), and `MJ-06`..`MJ-07` (`10×` carat mismatch & `10K` vs `14K` alt-text mismatch), plus documented Mejuri's cautionary `Bold Chain Ring` (`"hollowed 14k solid gold"`, `16 CFR § 23.3(c)`).
 - **Added `categories/*.html` deep-dive suite & Gate 5 (`audit_hallucinations.py`)**: NIST `0.200 g/ct` stone-mass deduction calculator (`categories/calculator.html`), line-by-line irregularity register (`categories/verification-audit.html`), and 5-verifier CI workflow in `.github/workflows/pages.yml`.
+- **Pull Request & Merge Outcome**: Opened and merged **PR #19** (`https://github.com/karagemop466-tech/GOLD4/pull/19`) directly into `main` after passing all 5 automated verification gates (`audit.py` 112/0/0, `check_site.py` 26 pages, `verify.py` 0 failures / 47 records, `verify_a0be79d4.py` 36 HTML pages / 1,760 links / 0 failures, and `audit_hallucinations.py` 824 checks / 0 failures).
