@@ -231,9 +231,10 @@
       });
     }
 
-    // Support URL hash / query deep-linking from any table row (`calculator.html?id=G4-BND-04`)
+    // Support URL hash / query deep-linking from any table row (`calculator.html#ring-G4-BND-04` or `?id=G4-BND-04`)
     var params = new URLSearchParams(window.location.search);
-    var requestedId = params.get("id");
+    var hashId = window.location.hash && window.location.hash.indexOf("#ring-") === 0 ? window.location.hash.slice(6) : "";
+    var requestedId = params.get("id") || hashId;
     if (requestedId && presetSel) {
       for (var i = 0; i < presetSel.options.length; i++) {
         if (presetSel.options[i].value === requestedId) {

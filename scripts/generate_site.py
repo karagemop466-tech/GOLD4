@@ -163,7 +163,7 @@ def render_ring_table(rings: list[dict], include_filters: bool = True, show_cate
         karat_attr = str(r["karat"]) if r["karat"] is not None else "none"
         rows_html.append(
             f"""
-            <tr class="{row_cls}" data-ring-row="1" data-category="{esc(r['category'])}" data-karat="{esc(karat_attr)}" data-status="{esc(st)}">
+            <tr class="{row_cls}" data-row-id="{esc(r['id'])}" data-ring-row="1" data-category="{esc(r['category'])}" data-karat="{esc(karat_attr)}" data-status="{esc(st)}">
               <td>
                 <div class="cell-title">{esc(r['name'])}</div>
                 <div class="cell-sub"><strong>{esc(r['retailer'])}</strong> · <span class="mono">{esc(r['sku'])}</span></div>
@@ -183,10 +183,10 @@ def render_ring_table(rings: list[dict], include_filters: bool = True, show_cate
                   <a href="{esc(r['return_url'])}" target="_blank" rel="noopener noreferrer" style="font-size:0.76rem;">Official Return Policy ↗</a>
                 </div>
               </td>
-              <td>
+              <td class="src">
                 <div style="display:grid;gap:0.35rem;">
-                  <a class="btn btn-sm btn-primary" href="{esc(r['source_url'])}" target="_blank" rel="noopener noreferrer">Official Listing ↗</a>
-                  <a class="btn btn-sm" href="calculator.html?id={esc(r['id'])}">Analyze in Calculator →</a>
+                  <a class="btn btn-sm btn-primary src" href="{esc(r['source_url'])}" target="_blank" rel="noopener noreferrer">Official Listing ↗</a>
+                  <a class="btn btn-sm" href="calculator.html#ring-{esc(r['id'])}">Analyze in Calculator →</a>
                 </div>
               </td>
               <td>{status_badge_html(r)}</td>
@@ -331,7 +331,8 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
     counts = catalog["counts"] if "counts" in catalog else catalog["meta"]["counts"]
     flag_total = counts["flagged_register_entries"]
     nav_items = [
-        ("index.html", "Overview", None, False),
+        ("index.html", "Main Desk (35)", "35", False),
+        ("dashboard.html", "Assay Lab", "22", False),
         ("solitaires.html", "Solitaires", "8", False),
         ("three-stone-halo.html", "3-Stone & Halo", "4", False),
         ("bands.html", "Solid Bands & 24K", "9", False),
@@ -339,7 +340,7 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
         ("checklist.html", "12-Point Checklist", "12", False),
         ("sellers.html", "Sellers", "6", False),
         ("standards.html", "FTC & XRF Law", "5", False),
-        ("flagged.html", "Flagged for Review", str(flag_total), True),
+        ("flagged.html", "Flagged Register", str(flag_total), True),
         ("audit.html", "Security Audit", "PASS", False),
         ("coordination.html", "Git Coordination", None, False),
     ]
@@ -353,14 +354,14 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
         nav_links.append(f'<a href="{esc(href)}"{cls}>{esc(label)}{b_html}</a>')
 
     banner_html = ""
-    if active_href != "index.html":
+    if active_href not in ("index.html", "dashboard.html"):
         banner_html = """
         <div class="audit-banner" role="note">
           <div>
             <strong>ZERO-HALLUCINATION POLICY ENFORCED:</strong> Every populated value links to an official primary page retrieved <code>2026-10-22</code>; unconfirmable or conflicting specs remain blank (<code>—</code>) and flagged. <strong>Always check for hallucinations</strong> on every review pass.
           </div>
           <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-            <a class="btn btn-sm" href="index.html#zero-hallucination-policy">Read Policy ↑</a>
+            <a class="btn btn-sm" href="dashboard.html#zero-hallucination-policy">Read Policy ↑</a>
             <a class="btn btn-sm" href="flagged.html">Flagged Register →</a>
             <a class="btn btn-sm" href="audit.html">Security Audit Log →</a>
           </div>
@@ -995,15 +996,15 @@ Thank you!</pre>
         f"""
         <tr>
           <td class="mono">{esc(c['id'])}</td>
-          <td><a href="{esc(c['source_url'])}" target="_blank" rel="noopener noreferrer">{esc(c['retailer'])} ↗</a></td>
-          <td>{esc(c.get('name') or c.get('category', ''))}</td>
-          <td class="mono">{esc(c['karat']) if c.get('karat') else '— UNVERIFIED'}</td>
+          <td><a href="{esc(c.get('price_source_url') or c.get('url') or c.get('source_url'))}" target="_blank" rel="noopener noreferrer">{esc(c['retailer'])} ↗</a></td>
+          <td>{esc(c.get('product_name') or c.get('name') or c.get('category', ''))}</td>
+          <td class="mono">{f"{c['karat']}K" if c.get('karat') else '— UNVERIFIED'}</td>
           <td class="mono">{f"{c['weight_g']:.2f} g" if c.get('weight_g') is not None else '— UNVERIFIED'}</td>
-          <td class="mono">{f"${c['price']:,.2f} ({c['price_date']})" if c.get('price') is not None else '— UNVERIFIED'}</td>
-          <td><span class="badge {'badge-ok' if c.get('weight_g') is not None and c.get('karat') else 'badge-warn'}">{esc(c['status'])}</span></td>
+          <td class="mono">{f"${c.get('price_usd', c.get('price')):,.2f} ({c.get('price_captured_utc', c.get('price_date'))})" if c.get('price_usd', c.get('price')) is not None else '— UNVERIFIED'}</td>
+          <td><span class="badge {'badge-ok' if c.get('weight_g') is not None and c.get('karat') else 'badge-warn'}">{esc(', '.join(c.get('flags', [])) or c.get('status', 'VERIFIED'))}</span></td>
         </tr>
         """
-        for c in rings_legacy["candidates"]
+        for c in rings_legacy.get("rows", rings_legacy.get("candidates", []))
     )
 
     flagged_body = f"""
@@ -1163,7 +1164,7 @@ python3 scripts/verify.py</pre>
     """
 
     pages = [
-        ("index.html", "GOLD4 — Verified Solid Gold Engagement Ring Research & Melt Audit", "Line-by-line verified guide to buying a genuine solid gold engagement ring online, with 2026-10-22 live prices, melt calculator, and zero hallucinations.", index_body),
+        ("dashboard.html", "GOLD4 Assay Lab — Extended Solid Gold Research, 5-Karat Melt Analyzer & Conflict Audit", "Line-by-line verified guide to buying a genuine solid gold engagement ring online, with 2026-10-22 live prices, melt calculator, and zero hallucinations.", index_body),
         ("solitaires.html", "Solitaire Solid Gold Engagement Rings — GOLD4", "Verified comparison of 14K and 18K solitaire diamond engagement rings and settings with official links.", sol_body),
         ("three-stone-halo.html", "Three-Stone, Halo & Pavé Gold Engagement Rings — GOLD4", "Verified comparison of three-stone, halo, and accent-diamond gold engagement rings and live spec conflict case studies.", thh_body),
         ("bands.html", "Solid Gold Engagement Bands, Eternity Rings & 24K Bullion Rings — GOLD4", "Verified comparison of 10K, 14K, 18K, and 24K solid gold bands and raw gold melt benchmarks.", bands_body),

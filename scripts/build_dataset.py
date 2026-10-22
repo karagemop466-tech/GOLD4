@@ -1256,43 +1256,6 @@ catalog = {
     json.dumps(catalog, indent=2, ensure_ascii=False) + "\n",
     encoding="utf-8",
 )
-
-# Non-destructively preserve R01-R08 in data/rings.json AND append our 22 verified G4-* candidates
-# in the exact schema expected by scripts/verify.py so ALL audit tools verify ALL 30 records!
-existing_rings_path = ROOT / "data" / "rings.json"
-existing_rings = json.loads(existing_rings_path.read_text(encoding="utf-8"))
-preserved_r = [c for c in existing_rings["candidates"] if c["id"].startswith("R")]
-mapped_g4 = [
-    {
-        "id": r["id"],
-        "name": r["name"],
-        "retailer": r["retailer"],
-        "category": r["category_label"],
-        "official_url": r["source_url"],
-        "search_instructions": r["price_note"],
-        "karat": f"{r['karat']}K" if r["karat"] is not None else None,
-        "solid_gold_stated": r["solid_gold_verified"],
-        "hallmark_makers_mark": r["hallmark_disclosed"],
-        "weight_g": r["weight_g"],
-        "pure_gold_g": r["pure_gold_g"],
-        "melt_usd_kitco_2026_10_22": r["melt_usd_kitco"],
-        "price": r["price_usd"],
-        "price_currency": "USD",
-        "price_date": r["retrieved_date"],
-        "return_policy_checked": r["return_summary"],
-        "status": r["status_badge"],
-        "source_url": r["source_url"],
-    }
-    for r in RAW_RINGS
-]
-existing_rings["meta"]["updated_by"] = "arena/a0be79d4-gold4 (preserved R01-R08 + added 22 live-verified 2026-10-22 listings)"
-existing_rings["spot_benchmarks_2026_10_22"] = SPOT_QUOTES
-existing_rings["candidates"] = preserved_r + mapped_g4
-existing_rings_path.write_text(
-    json.dumps(existing_rings, indent=2, ensure_ascii=False) + "\n",
-    encoding="utf-8",
-)
 print(
-    f"Built data/catalog_a0be79d4.json ({len(RAW_RINGS)} live listings, {len(FLAGGED_ITEMS)} flags) "
-    f"and merged data/rings.json ({len(existing_rings['candidates'])} combined records)."
+    f"Built data/catalog_a0be79d4.json ({len(RAW_RINGS)} live listings, {len(FLAGGED_ITEMS)} flags)."
 )

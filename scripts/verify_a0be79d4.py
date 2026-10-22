@@ -50,7 +50,21 @@ ALLOWED_OFFICIAL_HOSTS = {
     "www.bullionvault.com",
     "uscode.house.gov",
     "www.nist.gov",
+    "nist.gov",
     "www.lbma.org.uk",
+    "lbma.org.uk",
+    "www.allurez.com",
+    "allurez.com",
+    "www.vrai.com",
+    "vrai.com",
+    "www.anjolee.com",
+    "anjolee.com",
+    "www.gold.org",
+    "gold.org",
+    "www.law.cornell.edu",
+    "law.cornell.edu",
+    "www.govinfo.gov",
+    "govinfo.gov",
     "github.com",
     "karagemop466-tech.github.io",
 }
@@ -64,6 +78,7 @@ KNOWN_DEAD_URLS = {
 
 EXPECTED_ROOT_PAGES = [
     "index.html",
+    "dashboard.html",
     "solitaires.html",
     "three-stone-halo.html",
     "bands.html",
@@ -188,7 +203,11 @@ def main() -> int:
                 errors.append(f"Math error on {rid} price_to_melt_ratio: {r['price_to_melt_ratio']} != {expected_ratio}")
 
     # -------- Pass C: Full HTML Security, Policy Reference & Link Resolution --------
-    all_html_files = [ROOT / p for p in EXPECTED_ROOT_PAGES] + sorted((ROOT / "docs").glob("*.html"))
+    all_html_files = (
+        [ROOT / p for p in EXPECTED_ROOT_PAGES]
+        + sorted((ROOT / "pages").glob("*.html"))
+        + sorted((ROOT / "docs").glob("*.html"))
+    )
     total_links_checked = 0
     total_rows_checked = 0
 
@@ -213,7 +232,7 @@ def main() -> int:
                 if ref in inspector.assets:
                     errors.append(f"External runtime asset prohibited in {rel_name}: {ref}")
                 continue
-            if ref.startswith(("mailto:", "#")):
+            if ref.startswith(("mailto:", "tel:", "#")):
                 continue
             clean_target = ref.split("?", 1)[0].split("#", 1)[0]
             if clean_target:
