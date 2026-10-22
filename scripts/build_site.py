@@ -49,6 +49,8 @@ FLAG_HELP = {
     "ENGRAVING_NON_RETURNABLE": ("warn", "engraving kills the return right"),
     "SCS_CERT_REQUIRED_FOR_RETURN": ("warn", "return needs the SCS certificate"),
     "WHITE_GOLD": ("info", "white gold, not yellow"),
+    "CENTRE_STONE_LAB_CREATED": ("bad", "price includes a lab-created diamond"),
+    "SPEC_LISTED_PAVE_ON_PLAIN_BAND": ("warn", "spec lists pavé on a plain-band page"),
 }
 
 
