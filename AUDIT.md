@@ -3,30 +3,23 @@ Date: 2026-10-22
 
 HARD FAILURES: 0
 
-FLAGGED (blank/unverified, by design): 24
-- R01.price: blank/UNVERIFIED (correct per policy)
-- R01.weight_g: blank/UNVERIFIED (correct per policy)
-- R01.karat: blank/UNVERIFIED (correct per policy)
-- R02.price: blank/UNVERIFIED (correct per policy)
-- R02.weight_g: blank/UNVERIFIED (correct per policy)
-- R02.karat: blank/UNVERIFIED (correct per policy)
-- R03.price: blank/UNVERIFIED (correct per policy)
-- R03.weight_g: blank/UNVERIFIED (correct per policy)
-- R03.karat: blank/UNVERIFIED (correct per policy)
-- R04.price: blank/UNVERIFIED (correct per policy)
-- R04.weight_g: blank/UNVERIFIED (correct per policy)
-- R04.karat: blank/UNVERIFIED (correct per policy)
-- R05.price: blank/UNVERIFIED (correct per policy)
-- R05.weight_g: blank/UNVERIFIED (correct per policy)
-- R05.karat: blank/UNVERIFIED (correct per policy)
-- R06.price: blank/UNVERIFIED (correct per policy)
-- R06.weight_g: blank/UNVERIFIED (correct per policy)
-- R06.karat: blank/UNVERIFIED (correct per policy)
-- R07.price: blank/UNVERIFIED (correct per policy)
-- R07.weight_g: blank/UNVERIFIED (correct per policy)
-- R07.karat: blank/UNVERIFIED (correct per policy)
-- R08.price: blank/UNVERIFIED (correct per policy)
-- R08.weight_g: blank/UNVERIFIED (correct per policy)
-- R08.karat: blank/UNVERIFIED (correct per policy)
+FLAGGED (blank/unverified, by design): 15
+- BN-01.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-02.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-03.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-04.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-05.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-06.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-07.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-08.weight_g: blank/UNVERIFIED (correct per policy)
+- VR-02.price: blank/UNVERIFIED (correct per policy)
+- MJ-01.weight_g: blank/UNVERIFIED (correct per policy)
+- MJ-02.weight_g: blank/UNVERIFIED (correct per policy)
+- MJ-03.weight_g: blank/UNVERIFIED (correct per policy)
+- MJ-04.weight_g: blank/UNVERIFIED (correct per policy)
+- MJ-05.weight_g: blank/UNVERIFIED (correct per policy)
+- AN-01.weight_g: blank/UNVERIFIED (correct per policy)
 
+Records audited: 20
 Rule: a value with no official source link + retrieval date must stay blank. Re-run after every review.
+Deeper checks (domain allow-list, recomputation of every derived number, speculation scan) run in scripts/audit.py.
