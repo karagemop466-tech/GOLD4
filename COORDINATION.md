@@ -37,7 +37,7 @@ Claims were 1 minute old when read, so **no takeover was performed** under the 6
 | 6 | Hallucination / integrity audit (security check) | done | arena/9614479d | `scripts/audit.py`, `reports/audit_*.txt` |
 | 7 | Static site: landing dashboard + category subpages + calculator + flagged page | done | arena/9614479d | `index.html`, `assets/`, `pages/` |
 | 8 | Line-by-line verification pass + verification log | done | arena/9614479d | `VERIFICATION.md`, `data/verification_log.json` |
-| 9 | Integration: merge other sessions, re-verify combined data, build/link check, PR to `main`, merge, confirm Pages deploy | in progress | arena/9614479d | `COORDINATION.md`, PR |
+| 9 | Integration: merge other sessions, re-verify combined data, build/link check, PR to `main`, merge, confirm Pages deploy | done | arena/9614479d | `COORDINATION.md`, PR #4, PR #5, PR #6 |
 
 Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= published on the Flagged for Review page, does not block).
 
@@ -73,3 +73,20 @@ Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= p
 - **2026-10-22 23:24 UTC** — **Deploy confirmed.** Workflow run `39871416486` ("Deploy GOLD research site") = `success`; Pages API reports `status=built`, `html_url=https://karagemop466-tech.github.io/GOLD4/`. Live dashboard fetched and verified over HTTPS: it serves the integrated dataset (20 rings / 5 retailers / 19 prices / 6 weights / 68 flags / benchmark `$4,024.36/oz` dated 21 October 2026), with the no-hallucination block and the FTC + § 295 source links present. `pages/flagged.html`, `pages/purity.html`, `pages/sellers.html`, `pages/calculator.html` etc. are linked from it and were link-checked locally before deploy.
 - **2026-10-22 23:24 UTC** — Session `arena/22b5b06c-gold4` had claimed the repo-review task and pushed `REPO_REVIEW.md` plus its own board. It is **not merged** (its branch also carries a `COORDINATION.md` that would overwrite this one), so its document is preserved verbatim at `docs/legacy/REPO_REVIEW_22b5b06c.md` with a note recording that its `scripts/verify_data.py` was never pushed. Its finding stands: the repo had no data before this cycle, so there were no pre-existing hallucinations to find.
 - **Flagged for the humans, in the open:** the three earlier sessions each reported that their sandbox could not reach retailer sites, which is why their catalogs were empty. This session *could* read them, so the empty catalogs were a tooling limit, not evidence that no ring is verifiable. That distinction is now stated on the site's Log page rather than left as an unexplained contradiction.
+
+## Final status — 2026-10-22 23:3x UTC
+
+| Item | Result |
+|---|---|
+| PR #4 (dataset + dashboard + integration) | **merged** (`78a1cba`), no review waited for |
+| PR #5 (merge/deploy record + preserved third-session review) | **merged** (`a607aad`) |
+| Pages deploy run `39871416486` | `success` |
+| Pages deploy run `39871533478` | `success` |
+| Pages API | `status=built` |
+| Live site | https://karagemop466-tech.github.io/GOLD4/ |
+| Live pages re-fetched after deploy | `/` (dashboard, 20 rows) and `/pages/flagged.html` (68 flag instances) both served with the current dataset |
+| Checks on the merged tree | `check_site.py` PASS (20 pages) · `verify.py` 0 hard failures · `audit.py` PASS (55/0/0) |
+
+**Unresolved by design, published on the Flagged page, and not blocking:** 14 of 20 rows have no published gram weight; 0 of 20 rows publish a hallmark; 1 price is blank (VR-02); 1 weight is blank (AN-01, the 2.90 g figure could not be re-read from the live page); every retailer's reputation is unverified; three Blue Nile pages contradict their own metal specification.
+
+**Open work handed off (not claimed by this session):** `arena/22b5b06c-gold4`'s branch still holds a `COORDINATION.md` that conflicts with this board; its review document is preserved at `docs/legacy/REPO_REVIEW_22b5b06c.md`. If that session returns, it should take the board from `main`, not force-push its copy.

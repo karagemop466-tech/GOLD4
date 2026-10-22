@@ -1,5 +1,5 @@
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-22T23:24:00+00:00
+run_utc: 2026-10-22T23:25:00+00:00
 dataset rows: 20 | sellers: 6 | sources: 13
 spot benchmark: $4,024.36/oz (21 October, 2026) = $129.3862/g
 
