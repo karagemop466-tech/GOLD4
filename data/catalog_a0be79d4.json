@@ -18,7 +18,7 @@
       "with_verified_gram_weight": 7,
       "with_unverified_gram_weight": 15,
       "critical_spec_conflicts": 2,
-      "flagged_register_entries": 11,
+      "flagged_register_entries": 12,
       "preserved_sibling_placeholders": 8
     }
   },
@@ -1323,6 +1323,17 @@
       "detail": "Earlier merged session `93da71b4` recorded `R01–R08` (`Blue Nile`, `James Allen`, `Brilliant Earth`, `Costco`, `Kay`, `Zales`, `Helzberg`, `Jared`) with `null` price/weight/karat because that session did not use host fetch tools. Also noted `styles.css` Google Fonts import vs README offline claim (`FLG-REPO-01`) and `data/rings.json` 4-decimal rounding vs exact `K/24` (`FLG-REPO-04`).",
       "action": "Preserved `R01–R08` and `docs/**` 100% intact per non-destructive coordination protocol while adding all 22 live-fetched `2026-10-22` rows (`G4-*`).",
       "source_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+      "date": "2026-10-22"
+    },
+    {
+      "flag_id": "FLG-CRIT-12",
+      "severity": "CRITICAL",
+      "category": "Repo Security Scan Catch (`docs/sources.html`)",
+      "item_ref": "Merged PR #2 (`docs/sources.html` on `origin/main`)",
+      "title": "Two Hallucinated `404 Page Not Found` Government URLs Caught & Remediated by `verify_a0be79d4.py`",
+      "detail": "First automated pass of `scripts/verify_a0be79d4.py` flagged `docs/sources.html` from sibling PR #2. Live HTTP verification confirmed BOTH `ftc.gov/business-center/advertising-and-marketing` AND `nist.gov/publications/nist-special-publication-811` returned HTTP `404 Page Not Found`! Replaced with verified `200 OK` primary URLs (`consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry`, `ecfr.gov/.../part-23`, and `nist.gov/pml/special-publication-811`) and permanently blocklisted both 404 URLs in CI.",
+      "action": "Remediated across `/docs/sources.html` and permanently enforced in GitHub Actions Gate 3.",
+      "source_url": "https://www.nist.gov/pml/special-publication-811",
       "date": "2026-10-22"
     }
   ]

@@ -3,6 +3,8 @@ name: Deploy GOLD research site
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -20,15 +22,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Validate static site
+      - name: Gate 1 — Validate root pages & links (check_site.py)
         run: python3 scripts/check_site.py
+      - name: Gate 2 — Validate merged data & /docs sub-site (verify.py)
+        run: python3 scripts/verify.py
+      - name: Gate 3 — Multi-pass math, XSS & anti-hallucination scanner (verify_a0be79d4.py)
+        run: python3 scripts/verify_a0be79d4.py
       - name: Configure Pages
+        if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
       - name: Upload site artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

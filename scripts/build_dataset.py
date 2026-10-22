@@ -1199,6 +1199,17 @@ FLAGGED_ITEMS = [
         "source_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
         "date": "2026-10-22",
     },
+    {
+        "flag_id": "FLG-CRIT-12",
+        "severity": "CRITICAL",
+        "category": "Repo Security Scan Catch (`docs/sources.html`)",
+        "item_ref": "Merged PR #2 (`docs/sources.html` on `origin/main`)",
+        "title": "Two Hallucinated `404 Page Not Found` Government URLs Caught & Remediated by `verify_a0be79d4.py`",
+        "detail": "First automated pass of `scripts/verify_a0be79d4.py` flagged `docs/sources.html` from sibling PR #2. Live HTTP verification confirmed BOTH `ftc.gov/business-center/advertising-and-marketing` AND `nist.gov/publications/nist-special-publication-811` returned HTTP `404 Page Not Found`! Replaced with verified `200 OK` primary URLs (`consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry`, `ecfr.gov/.../part-23`, and `nist.gov/pml/special-publication-811`) and permanently blocklisted both 404 URLs in CI.",
+        "action": "Remediated across `/docs/sources.html` and permanently enforced in GitHub Actions Gate 3.",
+        "source_url": "https://www.nist.gov/pml/special-publication-811",
+        "date": "2026-10-22",
+    },
 ]
 
 catalog = {
