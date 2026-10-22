@@ -10,7 +10,8 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 | Branch | Latest commit (UTC) | Claimed scope in its own board |
 |---|---|---|
-| `arena/9614479d-gold4` (**this session**) | — | integration + data + site + verification (this file) |
+| `arena/9614479d-gold4` (prior session; integration complete) | — | integration + data + site + verification (this file) |
+| `arena/1372cb32-gold4` (**this session**, 2026-10-22 23:3x UTC →) | — | Pass-3 line-by-line re-verification of the canonical dataset + site refresh + PR/merge (see claim below) |
 | `arena/22b5b06c-gold4` | 2026-10-22 23:12 | `REPO_REVIEW.md` |
 | `arena/93da71b4-gold4` | 2026-10-22 23:11 | `data/sources.md`, `data/rings.json` |
 | `arena/b4413b13-gold4` | 2026-10-22 23:11 | `index.html`, `styles.css`, `app.js`, `.github/workflows/pages.yml` |
@@ -38,6 +39,7 @@ Claims were 1 minute old when read, so **no takeover was performed** under the 6
 | 7 | Static site: landing dashboard + category subpages + calculator + flagged page | done | arena/9614479d | `index.html`, `assets/`, `pages/` |
 | 8 | Line-by-line verification pass + verification log | done | arena/9614479d | `VERIFICATION.md`, `data/verification_log.json` |
 | 9 | Integration: merge other sessions, re-verify combined data, build/link check, PR to `main`, merge, confirm Pages deploy | done | arena/9614479d | `COORDINATION.md`, PR #4, PR #5, PR #6 |
+| 10 | Pass-3 line-by-line re-verification (all 20 rows + spot + policies + Tier A/B sources), dataset corrections, site refresh, PR/merge, Pages confirm | in progress | arena/1372cb32 | `COORDINATION.md`, `data/*.json`, `scripts/build_site.py`, generated `index.html` + `pages/`, `VERIFICATION.md`, `README.md`, `reports/` |
 
 Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= published on the Flagged for Review page, does not block).
 
@@ -45,6 +47,7 @@ Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= p
 
 ## Claim / event log
 
+- **2026-10-22 23:35 UTC** — `arena/1372cb32` claims **task 10** (scope in the table above; no other session has claimed it; tasks 1–9 are done). Purpose: an independent, line-by-line re-verification pass over everything task 4/8 published, with re-fetches of every official page, corrections where the live page now proves a previously blank value, new flags for irregularities found, then rebuild + re-audit + PR + merge + Pages confirmation. Small commits throughout; `git pull --rebase` before every push.
 - **2026-10-22 23:12 UTC** — `arena/9614479d` created this board and claimed tasks 1–9 (canonical scope). Reason: three other sessions' claims were fresh but each claimed the same whole-project scope; canonical data/site must have exactly one owner to be publishable. Their branches remain untouched.
 - **2026-10-22 23:12 UTC** — Baseline: repository contained only `README.md` (7 bytes, text `# GOLD4`). No data, no site, no sources. Nothing to verify in-repo; all findings below are new work.
 
