@@ -19,4 +19,7 @@ Session identifier: `arena/b4413b13-gold4` (Arena did not expose a separate sess
 
 - No official product listings, current gold-price source, or product data were present in the repository. Accordingly the verified-product table is empty. No current market price is asserted.
 - This session's branch is fixed by Arena policy; separate per-task branches/worktrees and other-session coordination cannot be performed here. Changes are scoped to this branch.
-- GitHub Pages publishing and PR/merge require repository permissions and a deploy configuration check; do not represent the site as published until confirmed.
+- Workflow run `39870374009` completed successfully; build validation and Pages deploy jobs passed. GitHub Pages API reports `status: built`, URL https://karagemop466-tech.github.io/GOLD4/.
+- PR #1 https://github.com/karagemop466-tech/GOLD4/pull/1 was merged 2026-10-22; merge commit `834b0ec22887055757253948e85858acd5f187c1`.
+- GitHub Actions emitted a non-blocking Node.js 20 deprecation annotation for the standard Actions dependencies. Deployment itself succeeded.
+- Offline validation plus Actions Pages build/deploy completed; the page source is published at the recorded Pages URL. Remote runtime behavior is confirmed by successful Pages status, not by independent browser-based auditing.
