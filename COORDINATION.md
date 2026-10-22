@@ -6,6 +6,89 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 ---
 
+## Session `arena/e04b126a-gold4` — review + re-verification pass (2026-10-22)
+
+**Claim (written before any file was edited):** this session claims the *review and re-verification* scope only —
+`data/rings.json`, `data/sellers.json`, `data/sources.json`, `data/gold_spot.json`, `data/verification_log.json`,
+`scripts/build_site.py`, `README.md`, `VERIFICATION.md`, `AUDIT.md`, `COORDINATION.md`.
+It does **not** touch `docs/**` (another session's sub-site, preserved as-is) and does **not** rewrite `scripts/audit.py`,
+`scripts/compute.py`, `scripts/check_site.py` or `scripts/verify.py` — those three checks are used unchanged as the
+independent verification of this pass.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 10 | Line-by-line re-verification of every row against its own source page | done | arena/e04b126a | `data/rings.json`, `data/verification_log.json` |
+| 11 | Re-verify every seller policy clause and contact route | done | arena/e04b126a | `data/sellers.json` |
+| 12 | Re-verify Tier A/B sources; record same-day gold-spot drift | done | arena/e04b126a | `data/sources.json`, `data/gold_spot.json` |
+| 13 | Add Brilliant Earth product rows now that its price is readable | done | arena/e04b126a | `data/rings.json` |
+| 14 | Re-run all three checks + rebuild the site + publish | done | arena/e04b126a | `scripts/build_site.py`, `index.html`, `pages/` |
+
+### Sources used for this pass (all re-opened 2026-10-22)
+
+Tier A: FTC *Buying Platinum, Gold, and Silver Jewelry*; FTC *Using Credit Cards and Disputing Charges*;
+16 CFR Part 23 (§ 23.3(a), § 23.3(c)(1), § 23.18 heading); 15 U.S.C. § 295.
+Tier B: World Gold Council gold spot page (read twice the same day).
+Tier C: 8 Blue Nile product pages + returns policy; 4 Allurez product pages + return policy; 2 VRAI configuration pages +
+engagement-rings listing + returns page; 5 Mejuri product pages + returns terms; 2 Brilliant Earth product pages;
+1 Anjolee product page.
+
+### Verification performed
+
+Every recorded price, weight, karat, SKU, width, policy clause and contact number was re-read from the page linked beside it
+and compared with the stored value. All matched except where noted below. Derived numbers were re-computed by
+`scripts/compute.py` and independently re-derived by `scripts/audit.py` (58 checks, 0 warnings, 0 failures);
+`check_site.py` and `verify.py` also pass.
+
+### Irregularities found in this pass (published on the Flagged for Review page, none blocking)
+
+1. **Brilliant Earth resize terms changed between captures of the same page** — earlier capture: one complimentary resize
+   within 60 days; 2026-10-22 re-read: badge reads "Free 1-Year Resizing". Recorded as `RESIZE_TERMS_INCONSISTENT`.
+2. **Mejuri prices are variant-dependent** — the same product URL opens on a different colourway; the Ziggy Ring opened on
+   sterling silver at "From $398" while the 14k yellow-gold variant reads "From $598". `PRICE_VARIANT_DEPENDENT` added to
+   MJ-01/MJ-03, `PRICE_IS_FROM_PRICE` added to MJ-05.
+3. **VRAI's listing card is a different configuration id from the row URL** — the "From $1,035" card links to configuration
+   ...-32797281484893 while the 2.86 g weight was read from ...-40635875360861. Same design and metal; flagged.
+4. **Gold spot drifted during the day while its date line stayed at 21 October 2026** — $4,024.36/oz (first read, frozen and
+   used for all arithmetic) against $4,028.53/oz (second read, +0.10%), both published in `data/gold_spot.json`.
+5. **Brilliant Earth's 30-day return figure is not re-displayed in today's page text** (only the "Free Shipping & Returns"
+   badge); the figure is carried from the same-day first capture and flagged `RETURN_WINDOW_NOT_REDISPLAYED`. Its return
+   exclusions are still not itemised, so that field stays blank rather than assumed.
+6. Pre-existing irregularities confirmed unchanged: Blue Nile 14K Comfort Fit copy says "18k"; Blue Nile 14K Riviera copy
+   says "14k white gold"; Blue Nile Four Prong mentions platinum prongs; Anjolee shows no gram weight; VRAI Signature 6 Prong
+   still publishes no price.
+
+**Hand-off / merge rule:** this session publishes through one PR from `arena/e04b126a-gold4` to `main` and records the PR
+link and deploy result below. No other session's file was modified, and no branch was force-pushed.
+
+### Merge event — `main` moved while this pass was running (resolved, nothing discarded)
+
+`arena/fd51d093-gold4` merged PR #7 ("Pass 2 — independent line-by-line re-verification of all 20 rows") into `main`
+while this pass was finishing, so `git pull --rebase` produced conflicts in 24 files. Resolution:
+
+- **Their work was kept, not overwritten.** `data/gold_spot.json` was taken from `main` as-is: their pass adopted the later
+  same-day spot read (**$4,028.53/oz**) as the calculation basis and kept the earlier $4,024.36/oz in `prior_captures`. This
+  branch had independently read the same two values and had frozen the earlier one; `main`'s choice is now the single basis
+  for every derived number, and the disagreement is documented rather than hidden.
+- **Their AN-01 correction was confirmed, not re-litigated.** This branch's first read of the Anjolee page had not reached the
+  Product Details table. On re-fetch the table does publish `Approx. Metal Weight: 2.90 Gr.` (ring size 6.5) and
+  `Center Diamond Color: Lab Created FG` / `Clarity: Lab Created VS`, exactly as their pass recorded. The weight is kept,
+  `WEIGHT_UNVERIFIED` stays withdrawn, and `PRICE_INCLUDES_CENTRE_STONE` / `CENTRE_STONE_LAB_CREATED` stay flagged. The earlier
+  "weight could not be re-read" note in this branch's `data/sources.json` entry was corrected to match the page.
+- **Their VRAI spec-block flag was confirmed** on this branch's own fetch (plain band selected, `Pavé carat weight:0.18ctw`
+  still listed) and is kept; this branch's configuration-id finding was appended to the same `flag_detail`.
+- **Their per-seller `reverified_utc` / `reverified_by` / `reverification` fields were kept**, and this branch's Brilliant Earth
+  and Mejuri updates were added on top.
+- **Generated artefacts** (`index.html`, `pages/*`, `VERIFICATION.md`, `AUDIT.md`, `data/derived.json`, `reports/*`) were
+  regenerated from the merged data rather than hand-merged, so both sessions' findings appear in the published site.
+- Both sessions' log entries are kept: their "Pass 4 — independent line-by-line re-verification" and this branch's
+  "Pass 5 — line-by-line re-verification of every row, plus new Brilliant Earth rows".
+- No branch was force-pushed and no file from either session was deleted. `docs/**` remains untouched.
+
+After the merge the combined tree passes all three checks: `audit.py` **59 passed / 0 warnings / 0 failures**,
+`check_site.py` PASS (20 pages, no broken local links), `verify.py` 0 hard failures.
+
+---
+
 ## Sessions detected on this repository (as of 2026-10-22 23:12 UTC, via `git ls-remote`)
 
 | Branch | Latest commit (UTC) | Claimed scope in its own board |

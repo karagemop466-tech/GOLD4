@@ -3,7 +3,9 @@ Date: 2026-10-22
 
 HARD FAILURES: 0
 
-FLAGGED (blank/unverified, by design): 14
+FLAGGED (blank/unverified, by design): 16
+- BE-01.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-02.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-01.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-02.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-03.weight_g: blank/UNVERIFIED (correct per policy)
@@ -12,13 +14,13 @@ FLAGGED (blank/unverified, by design): 14
 - BN-06.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-07.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-08.weight_g: blank/UNVERIFIED (correct per policy)
-- VR-02.price: blank/UNVERIFIED (correct per policy)
 - MJ-01.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-02.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-03.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-04.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-05.weight_g: blank/UNVERIFIED (correct per policy)
+- VR-02.price: blank/UNVERIFIED (correct per policy)
 
-Records audited: 20
+Records audited: 22
 Rule: a value with no official source link + retrieval date must stay blank. Re-run after every review.
 Deeper checks (domain allow-list, recomputation of every derived number, speculation scan) run in scripts/audit.py.
