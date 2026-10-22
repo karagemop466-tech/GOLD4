@@ -365,3 +365,47 @@ Flagged irregularities and unverified items (15 blanks, 0 hallmarks, 3 Blue Nile
 - **Added 12 non-duplicate canonical rows (`47` total) & 10th seller (`Ross-Simons`)**: Appended `BN-09`..`BN-12` (including `PAIR-BN-FOURPRONG` `$870`->`$1,125`), `BE-04` (`BE1FM0126-18KY` resizing contradiction), `RS-01`..`RS-05` (`0.7 g`–`4.0 g` published band weights + `0.80 ct` GIA solitaire), and `MJ-06`..`MJ-07` (`10×` carat mismatch & `10K` vs `14K` alt-text mismatch), plus documented Mejuri's cautionary `Bold Chain Ring` (`"hollowed 14k solid gold"`, `16 CFR § 23.3(c)`).
 - **Added `categories/*.html` deep-dive suite & Gate 5 (`audit_hallucinations.py`)**: NIST `0.200 g/ct` stone-mass deduction calculator (`categories/calculator.html`), line-by-line irregularity register (`categories/verification-audit.html`), and 5-verifier CI workflow in `.github/workflows/pages.yml`.
 - **Pull Request & Merge Outcome**: Opened and merged **PR #19** (`https://github.com/karagemop466-tech/GOLD4/pull/19`) directly into `main` after passing all 5 automated verification gates (`audit.py` 112/0/0, `check_site.py` 26 pages, `verify.py` 0 failures / 47 records, `verify_a0be79d4.py` 36 HTML pages / 1,760 links / 0 failures, and `audit_hallucinations.py` 824 checks / 0 failures).
+
+---
+
+## Pass 7 — independent concurrent re-verification + two clean merges (session `arena/1372cb32-gold4`)
+
+Claimed as task 15 on this board (renumbered after `arena/e04b126a-gold4`'s board arrived with its own task 10).
+This pass ran **concurrently** with `arena/fd51d093-gold4`, `arena/e04b126a-gold4`, `arena/58140cd4-gold4`,
+`arena/a0be79d4-gold4` and `arena/81b71aa5-gold4`, before this session could see their work.
+
+### Verification performed (all sources re-opened 2026-10-22 by this session's own fetches)
+
+- Every row that existed when the pass started (BN-01..BN-08, AL-01..AL-04, VR-01, VR-02, MJ-01..MJ-05, AN-01) was
+  re-fetched from its own official page: **all prices, karats, SKUs, widths and weights matched exactly.**
+- **Independent corroboration** of two behaviours other sessions also found: the Anjolee Product Details table publishes
+  `Approx. Metal Weight: 2.90 Gr.`, and both VRAI plain-band pages list `Pavé carat weight: 0.18ctw`.
+- Gold spot live panel read **4,028.53/oz** — the same second reading the other sessions recorded.
+- Seller policies and all Tier A/B registry sources re-read field-for-field: all matched.
+- After the first merge, the two Brilliant Earth Atelier rows were re-checked: **BE-02 re-confirmed exactly**
+  ($1,390, `BE1D2444-18KY`); **BE-01's page served a EUR rendering** ("1,350.00 EUR (Setting Only)", Global-e
+  checkout) so its USD figure could not be reproduced in this pass — kept from the earlier same-day USD capture and
+  flagged `PRICE_CURRENCY_LOCALIZED` on both BE rows for manual USD re-check.
+
+### Irregularities found in this pass (published on the Flagged page, none blocking)
+
+1. **Brilliant Earth currency localization** (above).
+2. **Mejuri bare product links open a different default metal variant** (also found by `arena/e04b126a` as
+   `PRICE_VARIANT_DEPENDENT`). Unique fix: every Mejuri `price_source_url` now points at the exact product-variant URL
+   where the price is displayed.
+3. **The § 295 "legal minimum" floor has two defensible readings** (57.63% on the karat÷24 basis vs 57.8% on the 585‰
+   millesimal convention). The derivation basis is now stated in `data/methodology.json` and on the Flagged page.
+
+### Merge events — `main` advanced twice while this pass ran (resolved both times, nothing discarded)
+
+1. First merge (`815bb97` → `bb9f54e`, PRs #7–#15 by `arena/fd51d093-gold4` and `arena/e04b126a-gold4`): 20 conflicted
+   files resolved **in favour of the merged `main` work** (their AN-01 weight recovery, flag names, gold-spot basis
+   choice and widened dataset), then this session's unique deltas re-applied on top.
+2. Second merge (`bb9f54e` → `6b0c458`, PRs #17–#19 by `arena/a0be79d4-gold4` and `arena/81b71aa5-gold4`, growing the
+   dataset to 47 rows / 10 sellers and adding the 5-gate CI): 19 conflicted files resolved **in favour of `main`**
+   again, unique deltas re-applied again (derivation-basis note, Mejuri variant URLs, `PRICE_CURRENCY_LOCALIZED`,
+   Pass 7 log entry, three Flagged-page cards).
+
+**No file of any other session was rewritten or deleted; no branch was force-pushed.** A `git pull --rebase` that tried
+to linearize this branch's merge commits was aborted intact (it would have replayed other sessions' commits as ours);
+the merges were kept as merges. This session's own pre-merge edits to shared files were superseded twice — by design.

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-22T23:49:53Z",
+  "generated_utc": "2026-10-22T23:56:23Z",
   "spot": {
     "value_usd_per_oz": 4028.53,
     "usd_per_gram": 129.520247,
@@ -265,7 +265,8 @@
       "flags": [
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_CURRENCY_LOCALIZED"
       ],
       "pair_id": "PAIR-BE-ATELIER",
       "id": "BE-01",
@@ -275,7 +276,7 @@
       "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
       "price_usd": 1190.0,
       "price_source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
-      "flag_detail": "Price \"$1,190 (Setting Only)\" read from the 14K yellow gold page on 2026-10-22. The page publishes no gram weight, no hallmark and no \"solid gold\" wording. Its badge reads \"Free 1-Year Resizing\", while the earlier capture of the same page described one complimentary resize within 60 days — recorded as inconsistent rather than silently overwritten.",
+      "flag_detail": "Price \"$1,190 (Setting Only)\" read from the 14K yellow gold page on 2026-10-22. The page publishes no gram weight, no hallmark and no \"solid gold\" wording. Its badge reads \"Free 1-Year Resizing\", while the earlier capture of the same page described one complimentary resize within 60 days — recorded as inconsistent rather than silently overwritten. Pass 7 (arena/1372cb32-gold4, 2026-10-22): this page is currency-localized - the re-check fetches served a EUR rendering ('1,350.00 EUR (Setting Only)') with a Global-e checkout, so the recorded USD figure could not be reproduced in this pass and is retained only from the earlier same-day USD capture. Metal (14K Yellow Gold), style (BE1D2444-14KY) and 2mm width did re-confirm. Open the page with United States / USD selected to see the recorded figure.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -308,7 +309,8 @@
       "flags": [
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_CURRENCY_LOCALIZED"
       ],
       "pair_id": "PAIR-BE-ATELIER",
       "id": "BE-02",
@@ -319,7 +321,7 @@
       "price_usd": 1390.0,
       "price_source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
       "pair_note": "Same design, width and prong style as BE-01; the only published difference is the karat.",
-      "flag_detail": "Price \"$1,390 (Setting Only)\" read from the 18K yellow gold page on 2026-10-22. No gram weight, hallmark or \"solid gold\" wording is published on the page.",
+      "flag_detail": "Price \"$1,390 (Setting Only)\" read from the 18K yellow gold page on 2026-10-22. No gram weight, hallmark or \"solid gold\" wording is published on the page. Pass 7 (arena/1372cb32-gold4, 2026-10-22): the USD 1,390 price, 18K metal and BE1D2444-18KY style re-confirmed on the live page. The same currency-localization behaviour seen on the 14K sibling page (BE-01) can serve a non-USD rendering depending on the visitor, so confirm the page is showing USD before relying on the figure.",
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -697,7 +699,7 @@
       "price_usd": 548.0,
       "price_basis": "Ring as sold (14k yellow gold, natural diamond) — price re-read on the product page on 2026-10-22 with the yellow-gold variant selected; a Mejuri product page can open on a different metal variant, so confirm the variant and price in the cart.",
       "price_captured_utc": "2026-10-22",
-      "price_source_url": "https://mejuri.com/collections/14k-yellow-gold-rings",
+      "price_source_url": "https://mejuri.com/products/diamonds-team-ring?Material=Solid+Yellow+Gold+%2814k%29&Stone=Natural+Diamond",
       "price_verification": "V1_direct_page_fetch",
       "weight_g": null,
       "weight_scope": null,
@@ -742,7 +744,7 @@
       "price_usd": 648.0,
       "price_basis": "Ring as sold (Natural Diamond, 14k yellow gold) Price read from Mejuri's 14k Yellow Gold Rings collection card for that exact product; a Mejuri product page can open on a different metal variant, so confirm the variant and price in the cart.",
       "price_captured_utc": "2026-10-22",
-      "price_source_url": "https://mejuri.com/collections/14k-yellow-gold-rings",
+      "price_source_url": "https://mejuri.com/products/diamonds-band?Material=Solid+Yellow+Gold+%2814k%29&Stone=Natural+Diamond",
       "price_verification": "V1_direct_page_fetch",
       "weight_g": null,
       "weight_scope": null,
@@ -784,7 +786,7 @@
       "price_usd": 548.0,
       "price_basis": "Ring as sold (14k yellow gold, natural diamond) — price re-read on the product page on 2026-10-22 with the yellow-gold variant selected; a Mejuri product page can open on a different metal variant, so confirm the variant and price in the cart.",
       "price_captured_utc": "2026-10-22",
-      "price_source_url": "https://mejuri.com/collections/14k-yellow-gold-rings",
+      "price_source_url": "https://mejuri.com/products/pave-diamond-slim-signet-ring?Material=Solid+Yellow+Gold+%2814k%29&Stone=Natural+Diamond",
       "price_verification": "V1_direct_page_fetch",
       "weight_g": null,
       "weight_scope": null,
@@ -830,7 +832,7 @@
       "price_usd": 798.0,
       "price_basis": "Ring as sold (Natural Diamond, 14k yellow gold) Price read from Mejuri's 14k Yellow Gold Rings collection card for that exact product; a Mejuri product page can open on a different metal variant, so confirm the variant and price in the cart.",
       "price_captured_utc": "2026-10-22",
-      "price_source_url": "https://mejuri.com/collections/14k-yellow-gold-rings",
+      "price_source_url": "https://mejuri.com/products/pave-diamond-thin-dome-ring?Material=Solid+Yellow+Gold+%2814k%29&Stone=Natural+Diamond",
       "price_verification": "V1_direct_page_fetch",
       "weight_g": null,
       "weight_scope": null,
@@ -872,7 +874,7 @@
       "price_usd": 598.0,
       "price_basis": "Ring as sold (14k yellow gold, lab-grown diamond) — price re-read on the product page on 2026-10-22 with the yellow-gold variant selected; a Mejuri product page can open on a different metal variant, so confirm the variant and price in the cart.",
       "price_captured_utc": "2026-10-22",
-      "price_source_url": "https://mejuri.com/collections/14k-yellow-gold-rings",
+      "price_source_url": "https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring?Material=Solid+Yellow+Gold+%2814k%29&Stone=Lab+Grown+Diamond",
       "price_verification": "V1_direct_page_fetch",
       "weight_g": null,
       "weight_scope": null,

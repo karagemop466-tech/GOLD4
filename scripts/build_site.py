@@ -65,6 +65,7 @@ FLAG_HELP = {
     "RETURN_WINDOW_NOT_REDISPLAYED": ("warn", "return window not re-displayed on re-read"),
     "RETURN_EXCLUSIONS_NOT_ITEMISED": ("warn", "exclusions not itemised on the page"),
     "WARRANTY_VOID_ON_THIRD_PARTY_RESIZE": ("warn", "warranty voids on third-party resize"),
+    "PRICE_CURRENCY_LOCALIZED": ("warn", "page price is rendered in visitor currency"),
 }
 
 
@@ -794,6 +795,31 @@ def main() -> None:
     <div class="card">
       <h3>Brilliant Earth, Blue Nile &amp; Mejuri spec vs prose conflicts</h3>
       <p>Brilliant Earth's <a href="solitaire.html">BE-04</a> displays a "Free 1-Year Resizing" badge above copy stating resizing is unavailable, while <a href="solitaire.html">BE-03</a> pairs an 18K shank with 14K white gold prongs. Blue Nile's <a href="pave.html">BN-12</a> says 18K Yellow Gold (1/6 ct) in the title vs "platinum" and "1/8 ct" in details. Mejuri's <a href="pave.html">MJ-06</a> states 0.532 ct in prose vs 0.044–0.056 ct in specs. Full audit: <a href="../categories/verification-audit.html">Line-by-Line Irregularities</a>.</p>
+    </div>
+    <div class="card">
+      <h3>VRAI's spec block lists pavé weight on plain-band settings</h3>
+      <p>Both captured VRAI configurations are plain-band designs (the page title and the band selector say Plain), yet their
+      Setting Details both list "Pavé carat weight: 0.18ctw". Either the spec block is generic copy or the setting contains
+      pavé the selector does not describe. Recorded on <a href="solitaire.html">VR-01</a> and
+      <a href="solitaire.html">VR-02</a>; ask VRAI in writing which it is before paying, because pavé weight is diamond
+      weight, not gold weight. Found independently by two sessions (pass 2 and pass 7).</p>
+    </div>
+    <div class="card">
+      <h3>Basis of the "legal minimum" arithmetic (for review)</h3>
+      <p>The legal-floor column computes karat ÷ 24 minus the 0.007 whole-article tolerance of
+      <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.
+      Under the millesimal convention a 14K article is often assayed against 585 parts per 1000 instead of 583.3; the same
+      tolerance on 585 would give 57.8% rather than 57.63%. Both readings are published in
+      <code>data/methodology.json</code> so the basis is explicit. Neither figure measures a particular ring — only an
+      assay does.</p>
+    </div>
+    <div class="card">
+      <h3>Brilliant Earth prices render in the visitor's currency</h3>
+      <p>During the pass-7 re-check the 14K Atelier page served a EUR rendering ("1,350.00 EUR (Setting Only)") with a
+      Global-e checkout while the sibling 18K page served USD. The recorded USD figures come from same-day USD captures,
+      and the 18K figure re-confirmed exactly, but the 14K figure could not be reproduced in the non-USD rendering.
+      Flagged on <a href="solitaire.html">BE-01</a> and <a href="solitaire.html">BE-02</a>: open the page with
+      United States / USD selected and re-read the price before relying on it.</p>
     </div>
   </div>
 </section>

@@ -1,178 +1,193 @@
 {
-  "schema_version": "1.0.0",
-  "coordination_summary": "Six agent sessions have worked in this repository on 2026-10-22. arena/b4413b13-gold4 (PR #1, #3), arena/93da71b4-gold4 (PR #2) and arena/9614479d-gold4 (PR #4, #5) built the dataset, the site and the audit; arena/22b5b06c-gold4's review is preserved unmerged at docs/legacy/. Two sessions then re-verified the published tree line by line instead of trusting it: arena/fd51d093-gold4 (PR #7, Pass 4) and arena/e04b126a-gold4 (PR #10 and PR #13, Passes 5 and 6). The two passes were merged rather than stacked — where they disagreed, both readings are recorded and the disagreement is published on the Flagged page. Nothing from any other branch was deleted, renamed or force-pushed.\n",
-  "passes": [
-    {
-      "pass": "Pass 0 — baseline repository review",
-      "when_utc": "2026-10-22T23:12Z",
-      "scope": "Whole repository at commit 7f442a1",
-      "checked": [
-        "git log: a single commit, 'Initial commit'",
-        "Tracked files: README.md only, 7 bytes, contents '# GOLD4'",
-        "No data, no site, no sources, no tests, no workflows",
-        "GitHub Pages already enabled and building from main / (root), html_url https://karagemop466-tech.github.io/GOLD4/",
-        "No open issues, no pull requests, one successful pages-build-deployment run",
-        "git ls-remote: three other arena/* branches exist, all with claims boards but no data files"
-      ],
-      "result": "PASS",
-      "outcome": "Nothing in the repository could be verified because nothing existed; all findings on this site are new work. Recorded the four-session collision in COORDINATION.md before writing any file."
-    },
-    {
-      "pass": "Pass 1 — source capture (benchmark, law, retailer pages)",
-      "when_utc": "2026-10-22T23:15Z",
-      "scope": "Official sources only: FTC, eCFR, U.S. Code, World Gold Council, LBMA, and retailer product/policy pages",
-      "checked": [
-        "World Gold Council gold spot: USD 4,024.36/oz, data as of 21 October 2026 — read from the page's own spot panel",
-        "LBMA: benchmark description read; no numerical LBMA price captured because the tables are behind an IBA licence",
-        "FTC consumer article: karat definition, solid-gold definition, trademark-beside-karat-mark requirement, plated/filled/vermeil definitions",
-        "16 CFR Part 23 § 23.3: gold-content misrepresentation and the ban on calling a hollow-centre item 'solid'",
-        "15 U.S.C. § 295: 0.003 assay tolerance and 0.007 whole-article tolerance",
-        "FTC credit-card article: billing-error dispute rights",
-        "20 retailer product pages fetched: Blue Nile (8), Allurez (4 + policy), VRAI (2 + listing + returns), Mejuri (collection + returns), Anjolee (1), Brilliant Earth (1, policy only)",
-        "Every price and weight recorded was copied from the fetched page text, not from search snippets"
-      ],
-      "result": "PASS",
-      "outcome": "Six rows carry a published gram weight (Allurez ×4, VRAI ×2). Nineteen rows carry a price read from the seller's page. Brilliant Earth produced policy facts but no readable price/weight, so it has no product row and no price is quoted anywhere."
-    },
-    {
-      "pass": "Pass 2 — dataset assembly + first integrity audit",
-      "when_utc": "2026-10-22T23:17Z",
-      "scope": "data/*.json, scripts/compute.py, scripts/audit.py",
-      "checked": [
-        "Karat fineness table = karat ÷ 24, cross-checked against the FTC karat definition",
-        "Legal minimum fineness per stamp = fineness − 0.007 (15 U.S.C. § 295)",
-        "Derived gold grams, gold value, legal-minimum value and price/gold multiple recomputed independently by the audit script",
-        "Phantom-math check: no derived value may exist for a row without a published weight",
-        "Blank-value checks: blank price requires PRICE_UNVERIFIED, blank weight requires NO_WEIGHT_PUBLISHED or WEIGHT_UNVERIFIED",
-        "Domain allow-list: every source URL must belong to the named retailer or a government/benchmark host",
-        "Banned-domain scan: no marketplace, resale, blog or social domain anywhere in the data",
-        "Speculation-language scan on all free-text fields",
-        "Two real inconsistencies found on Blue Nile's own pages (18k copy on a 14K page; white-gold copy on a yellow-gold page) and one mixed-metal ambiguity (platinum prongs on a 14K ring) — published on the Flagged page instead of being smoothed over"
-      ],
-      "result": "PASS after fixes",
-      "outcome": "Two audit bugs were found and fixed (fineness rounding tolerance, derived-value rounding). The audit now re-derives every number and fails on any mismatch."
-    },
-    {
-      "pass": "Pass 3 — site build + link check",
-      "when_utc": "2026-10-22T23:20Z",
-      "scope": "index.html, pages/*.html, assets/*",
-      "checked": [
-        "Builder formats only values produced by compute.py — no arithmetic in the HTML layer",
-        "Every table row carries data-row-id and a source link in a td.src cell",
-        "Internal links resolve to files that exist; external links are https and on approved domains",
-        "No placeholder tokens rendered in any page",
-        "No-hallucination block rendered at the top of every page, with a link back to the Flagged page"
-      ],
-      "result": "PASS",
-      "outcome": "Site generated and link-checked by the same audit script that checks the data, so a broken source link fails the build."
-    },
-    {
-      "pass": "Pass 4 — independent line-by-line re-verification of the published tree",
-      "when_utc": "2026-10-22T23:58Z",
-      "scope": "Every published value: 20 retailer product pages, 4 retailer return/returns-and-exchanges policies, the Anjolee spec sheet, the World Gold Council spot panel, LBMA, the FTC jewellery article, 16 CFR 23.3 and 15 U.S.C. § 295",
-      "checked": [
-        "BN-01 to BN-08 re-fetched from bluenile.com: all 8 setting prices ($1,000 / $1,155 / $1,000 / $935 / $1,310 / $1,295 / $870 / $1,500), all 8 karat labels and all 8 stock numbers and widths match the dataset",
-        "BN-04: the product description again says 'crafted in 18k yellow gold' on the 14K page — COPY_INCONSISTENT_METAL re-confirmed on the live page",
-        "BN-07: the description again says the ring has 'platinum prongs' — MIXED_METAL_UNCLEAR re-confirmed",
-        "BN-08: the description again says 'set in 14k white gold' on the 14K yellow-gold page — COPY_INCONSISTENT_METAL re-confirmed",
-        "AL-01 to AL-04 re-fetched from allurez.com: $585 / $724 / $848 / $1,425 and 'Approximate Metal Weight 3.58 / 3.4 / 4.4 / 5.3 grams' all match",
-        "VR-01, VR-02 re-fetched from vrai.com: 'Metal weight:2.86g (Ring size 6)' and 'Metal weight:2.84g (Ring size 6)' match; 'From $1,035' re-read on the VRAI engagement-rings listing card; the Signature 6-prong design page still shows no setting price, so VR-02's blank price is correct",
-        "MJ-01 to MJ-05 re-read on the 14k Yellow Gold Rings collection page: $548 / $648 / $548 / $798 / $598 match, each on its own yellow-gold card, and the 'Solid Yellow Gold (14k)' wording is present",
-        "AN-01 re-fetched from anjolee.com: 'Price:$870.76' for '14K White Gold, Carat: 0.50 ct, Diamond Color: FG, Diamond Clarity: VS' matches — and the Product Details table DOES publish 'Approx. Metal Weight: 2.90 Gr.', which the previous pass recorded as unreadable",
-        "AN-01 spec sheet (MS354-A.pdf, anjolee.com): 2.9 Gr for the 0.50 ct size — corroborates the 2.90 g figure",
-        "AN-01 correction: the same Product Details table states 'Center Diamond Color: Lab Created FG' and 'Center Diamond Clarity: Lab Created VS' — the centre stone is lab-created, which the previous price_basis did not say",
-        "New flag SPEC_LISTED_PAVE_ON_PLAIN_BAND on VR-01 and VR-02: both pages have 'Band: Plain band' selected while the Setting Details block still lists 'Pave carat weight:0.18ctw'",
-        "Blue Nile returns policy re-fetched: 30 days from shipment, two complimentary returns per customer per year, RMA required, $150 missing-grading-report fee, one free resize up/down two sizes within 6 months, and the resized/engraved/custom/clearance exclusions all match the recorded seller facts",
-        "Allurez returns policy re-fetched: return must arrive within 30 days of shipment, engraved non-refundable, Design Your Own exchange-only, custom-made non-refundable and non-cancellable, contoured bands not returnable, $300 per missing certificate, 7-business-day refund — all match",
-        "VRAI returns page re-fetched: 30 days, under $15,000 refund minus recycling fee or store credit, above $15,000 store credit only, $300 engagement-ring / $50 wedding-band / $50 made-to-order recycling fee, resized and custom items excluded, free US return shipping, 14 business days, one complimentary resize up to one full US size — all match",
-        "Mejuri returns terms re-fetched: free 30-day returns in US/CA/UK/AU/DE from delivery or pickup, engraved and monogrammed never returnable, final sale and gift cards excluded, SCS certificate required for lab-grown returns, EU $20 / Rest of World $30 return fee, no online exchanges — all match; no telephone number appears on the page, so the blank phone field is correct",
-        "World Gold Council spot panel re-read: USD 4,028.53/oz with 'Data as of 21 October, 2026'. The earlier same-day capture in this repo read 4,024.36/oz. The live panel had moved 0.10% between reads, so both readings are recorded and the dataset now uses the value this pass actually saw",
-        "LBMA page re-fetched: the LBMA Gold Price is set twice daily in auctions administered by ICE Benchmark Administration commencing at 10:30 and 15:00 London time, and the tabulated history is behind an IBA licence — the recorded claim matches, and no LBMA number is quoted anywhere",
-        "FTC jewellery article re-fetched: karat = parts of 24, 18K = 18 parts gold to 6 parts other metal, trademark must sit beside the karat mark ('if you do not see a trademark along with the karat mark, don't buy it'), 'solid gold' means the item is not hollow, and the definitions of gold filled / overlay / RGP / electroplate (0.175 microns) / vermeil / gold flashed all match",
-        "16 CFR 23.3 re-fetched: (a) misrepresenting gold content or karat fineness is deceptive; (c)(1) a hollow-centre article must disclose the hollow centre and must not be described as 'solid' (e.g. not '14 Kt. Solid Gold'); (c)(2) mechanical plating needs 1/40, 'Gold Filled' needs 1/20; (c)(3) electroplate needs 0.175 microns — all match what the site states",
-        "15 U.S.C. § 295 re-fetched: 0.003 below the stamped fineness for the assayed part, and 0.007 for the entire article including solder except watchcases and flatware — the '18K may be 74.3% and 14K may be 57.63%' arithmetic re-derives correctly from that section",
-        "FTC credit-card article re-fetched: the right to dispute billing errors, the issuer's investigation duty, and the separate section on complaints about the quality of something bought — matches"
-      ],
-      "result": "PASS with corrections",
-      "outcome": "Every price in the table was re-read on the retailer's own live page and every one matched. Three substantive changes were made rather than carried forward: (1) AN-01's gram weight is now recorded (2.90 g) because the live Product Details table does publish it; (2) AN-01's centre stone is now recorded as lab-created, which changes how its price may be compared; (3) the gold benchmark is updated to the reading this pass actually saw, with the earlier same-day reading kept in prior_captures. Two new spec-block inconsistencies on the VRAI plain-band pages are flagged rather than resolved."
-    },
-    {
-      "pass": "Pass 5 — line-by-line re-verification of every row, plus new Brilliant Earth rows",
-      "when_utc": "2026-10-23T00:05Z",
-      "scope": "All 20 published rows re-opened again, all 6 seller policy pages, and every Tier A/B legal and benchmark source, each compared field by field; Brilliant Earth product pages opened for the first time",
-      "checked": [
-        "Blue Nile: all 8 product pages re-opened. Stock numbers, metal, width and the '(Setting Price)' figures matched exactly ($1,000 / $1,155 / $1,000 / $935 / $1,310 / $1,295 / $870 / $1,500). No page publishes a gram weight. The 14K Comfort Fit copy still says 'crafted in 18k yellow gold' against a 14K spec; the 14K Riviera Pavé copy still says 'set in 14k white gold' against a 14K Yellow Gold title; the Four Prong page still mentions 'platinum prongs'. All three flags stand.",
-        "Allurez: all 4 product pages re-opened. $585 / $724 / $848 / $1,425 and 'Approximate Metal Weight' 3.58 g / 3.4 g / 4.4 g / 5.3 g matched.",
-        "VRAI: both configuration pages re-opened. Metal weights 2.86 g and 2.84 g (ring size 6) matched. The listing card still reads 'From $1,035', but it links to a different configuration id than the row does — flagged. The Signature 6 Prong still shows no price, so VR-02 stays blank.",
-        "Mejuri: all 5 product pages re-opened with the yellow-gold variant explicitly selected. $548 / $648 / $548 / $798 / 'From $598' matched. Because the same URL can open on a different colourway (white gold on two products, sterling silver on one), PRICE_VARIANT_DEPENDENT was added to MJ-01/MJ-03 and PRICE_IS_FROM_PRICE to MJ-05.",
-        "Brilliant Earth: opened for the first time. The Atelier Solitaire pages display readable setting prices ($1,190 in 14K and $1,390 in 18K yellow gold) where the earlier pass could read none, so BE-01 and BE-02 were added with blank weights (no gram weight is published). The page badge now reads 'Free 1-Year Resizing' where the earlier capture described one complimentary resize within 60 days — recorded as an inconsistency, not overwritten.",
-        "Anjolee: product page re-opened. $870.76 matched, and the Product Details table was found to publish 'Approx. Metal Weight: 2.90 Gr.' for the 0.50 ct model at ring size 6.5, together with 'Center Diamond Color: Lab Created FG' and 'Clarity: Lab Created VS'. This independently confirms Pass 2's correction and the row keeps its weight, its lab-created-stone note and its not-comparable-to-setting-only warning.",
-        "Seller policies re-read in full: Blue Nile returns (30 days from shipment, seven exclusions, two complimentary returns per year, RMA, $150 missing-report fee, one free resize up or down two sizes within 6 months); Allurez returns (must ARRIVE within 30 days of shipment, $300 per missing certificate, 7-business-day refund, Design Your Own exchange-only, custom orders non-refundable and non-cancellable); VRAI returns ($300 engagement-ring recycling fee waived for store credit, 30 days, the $15,000 split, 14 business days, one complimentary resize up to one full US size, EU/EEA withdrawal exclusions); Mejuri returns terms (free 30-day returns in five countries, engraved non-returnable 'at any time', SCS certificate required, no online exchanges, $20 EU / $30 rest-of-world return fees); Anjolee returns and lifetime warranty as quoted. Every clause rendered on the Sellers page traced back to the seller's own page.",
-        "Mejuri warranty: the product pages state a two-year warranty, so the blank seller field was filled and WARRANTY_NOT_CAPTURED removed.",
-        "Tier A sources re-read: FTC 'Buying Platinum, Gold, and Silver Jewelry'; FTC 'Using Credit Cards and Disputing Charges'; 16 CFR Part 23 (§ 23.3(a), § 23.3(c)(1), § 23.18 heading); 15 U.S.C. § 295 (0.003 assay tolerance, 0.007 whole-article tolerance).",
-        "Tier B benchmark: the World Gold Council panel was read again and reproduced the same drift recorded in Pass 2 ($4,028.53/oz on the later read against $4,024.36/oz earlier, both under 'Data as of 21 October, 2026'), confirming that the panel is live and that freezing one read is necessary.",
-        "Nothing was added to any row from memory, from a search snippet, from a blog, or from arithmetic on a value the retailer never published. Two rows with a blank weight stayed blank rather than borrowing a sibling's weight."
-      ],
-      "result": "PASS",
-      "outcome": "22 rows, 6 retailers, 21 verified prices, 7 published weights, 2 new rows and 3 new flags, 0 hard failures. The integrity audit was re-run after this pass and its output is reproduced below. Recommended for every future review of this repo: re-open every source link, ask 'where is the official source, and what date was it read?', and re-run scripts/audit.py — anything that cannot answer that question is unverified and belongs on the Flagged page, not in a price cell."
-    },
-    {
-      "pass": "Pass 6 — post-merge re-verification of the published main branch",
-      "when_utc": "2026-10-22T23:37Z",
-      "scope": "The tree as merged into main (commit e7f4d36) — all 22 rows re-opened on their own source pages, plus the World Gold Council spot panel, 16 CFR 23.3 and every seller returns page. Run after the PR #7 / PR #10 merge so the published site, not a working copy, is what got checked",
-      "checked": [
-        "Blue Nile: all 8 pages re-opened. Prices $1,000 / $1,155 / $1,000 / $935 / $1,310 / $1,295 / $870 / $1,500, all 8 stock numbers and all 8 karats matched. No gram weight on any page. The four copy-vs-spec irregularities (18k copy on the 14K Comfort Fit, '14k white gold' copy on the 14K Riviera Pavé, 'platinum prongs' on the Four Prong, and the '(Setting Price)' wording that excludes the centre stone) all reproduce.",
-        "Allurez: all 4 pages re-opened. $585 / $724 / $848 / $1,425 with 'Approximate Metal Weight' 3.58 / 3.4 / 4.4 / 5.3 grams matched, and each page still labels the figure 'approximate', which is why WEIGHT_APPROXIMATE stays on all four.",
-        "VRAI: both configuration pages re-opened; 'Metal weight 2.86 g' and '2.84 g' at ring size 6 matched. Neither configuration page renders a setting price in page text, so VR-01's $1,035 still comes from the design's listing card and VR-02's price stays blank (PRICE_UNVERIFIED). The pavé line on a plain-band page still appears on both rows.",
-        "Mejuri: the 14k Yellow Gold Rings collection page re-read, and all five cards matched — Diamonds Team Ring $548, Diamonds Band $648, Pavé Diamond Slim Signet $548, Pavé Diamond Thin Dôme $798, Ziggy Ring $598 (Solid Yellow Gold (14k), lab-grown). The bare Ziggy product URL opens on the Sterling Silver variant at a different price, so the flagged warning to buy from the yellow-gold variant stands.",
-        "Anjolee: MS354-A re-opened. 'Price: $870.76' for 14K White Gold / 0.50 ct / FG-VS, and 'Approx. Metal Weight: 2.90 Gr.' at ring size 6.5 both matched. The Product Details table still states the centre diamond is Lab Created, so PRICE_INCLUDES_CENTRE_STONE and CENTRE_STONE_LAB_CREATED stay.",
-        "Brilliant Earth: both Atelier Solitaire pages re-opened. $1,190 (14K yellow gold) and $1,390 (18K yellow gold), each labelled 'Setting Only', matched. Neither publishes a gram weight, so both weight cells stay blank.",
-        "Returns: Blue Nile, Allurez, VRAI and Mejuri returns pages re-read in full and every quoted clause — 30-day windows, RMA requirement, the $150 and $300 missing-document fees, one free resize rules, the $300 ring / $50 band VRAI recycling fee, Mejuri's SCS-certificate requirement — matched the dataset wording.",
-        "Benchmark: the World Gold Council spot panel was read a third time on 2026-10-22 and still showed USD 4,028.53/oz, 'Data as of 21 October, 2026'. The benchmark and the 129.5202/g conversion were left unchanged; no new capture was needed.",
-        "Legal sources: 16 CFR 23.3 re-read in full. (b)(1)-(9) and (c)(1) confirm that 'Gold' with no karat qualification is misleading, that a hollow-centre article must disclose the hollow centre and 'should not be marked or described as solid', and (c)(2) sets the 1/40 overlay and 1/20 gold-filled weight thresholds at a minimum of 10 karat. Footnote 32 restates the National Stamping Act tolerances used in this dataset (3/1000 without solder, 7/1000 with solder), corroborating 15 U.S.C. § 295 independently."
-      ],
-      "found": [
-        "No price, weight, karat, stock-number or policy figure changed between this pass and the published dataset. Nothing was corrected, because nothing was wrong.",
-        "Two limits are re-confirmed rather than fixed: Brilliant Earth's /returns/ page again returned only navigation and footer text, so its 30-day window could not be re-displayed (still flagged, not silently re-asserted); and no VRAI configuration page exposes a setting price in page text, so a VRAI price is only ever as good as the listing card until it is in the cart.",
-        "One wording observation, not a data error: Brilliant Earth's product badge now reads 'Free 1-Year Resizing' while the earlier capture of the same page described one complimentary resize within 60 days. Both readings are 2026-10-22 and they are not the same promise; the row keeps both and asks the buyer to confirm in writing."
-      ],
-      "outcome": "PASS with no changes to the dataset. Every published number reproduced from its own official page; the three remaining unknowns stay blank and flagged. Audit re-run after this pass: 59 passed, 0 warnings, 0 failures.",
-      "result": "PASS"
-    },
-    {
-      "pass": "Pass 6 — Grand unified integration, 404 link remediation & 10K–24K expansion (arena/a0be79d4-gold4)",
-      "when_utc": "2026-10-22T23:36Z",
-      "scope": "Full line-by-line repo & live web verification across 9 retailers (35 rows), 11 Assay Lab standalone pages, and 4 automated CI security/hallucination gates",
-      "checked": [
-        "Caught and fixed TWO live HTTP 404 government URLs in merged docs/sources.html (`ftc.gov/business-center/advertising-and-marketing` & `nist.gov/publications/nist-special-publication-811`) using live-verified 200 OK replacements (`consumer.ftc.gov/...`, `ecfr.gov/.../part-23`, `nist.gov/pml/special-publication-811`)",
-        "Caught and blocklisted dead 404 GIA URL (`summer-2025-lab-notes-gold-plated-gold0`) found in sibling branch `81b71aa5`, linking verified 200 OK GIA XRF & Carlsbad electroforming fraud lab studies",
-        "Spot-verified `gold.org` ($4,028.53/oz), `Allurez AL-01` ($585, 3.58g), `Anjolee AN-01`, & `VRAI VR-01` live on 2026-10-22 alongside same-day `Kitco` ($4,024.60/oz = $129.39/g) & `JM Bullion` ($4,039.76/oz = $129.88/g) quotes",
-        "Expanded canonical dataset from 22 -> 35 rows across 9 retailers (`10K`, `14K`, `18K`, `24K`), adding plain solid band melt benchmarks (1.33x–1.50x raw melt), the 10K-vs-18K 5mm density pair (`SR-01` vs `SR-03`), two live Sarraf karat contradictions (`F1625` $20,671 & `121987-.72P` $2,858), and Mejuri's $188 vermeil copy trap (`G4-RED-01`)"
-      ],
-      "outcome": "All 4 automated audit suites (`audit.py`, `check_site.py`, `verify.py`, `verify_a0be79d4.py`) pass with 0 hard failures and 0 broken links.",
-      "result": "PASS (0 failures)"
-    },
-    {
-      "pass": "Pass 8 — Ross-Simons & multi-retailer expansion, NIST stone-deduction calculator & 5-gate CI audit (session arena/81b71aa5-gold4)",
-      "when_utc": "2026-10-22T23:46Z",
-      "scope": "Merged cleanly onto main (217f79b), preserving all 35 canonical rows + Assay Lab pages verbatim and appending 12 non-duplicate live-verified rows (47 total across 10 sellers) + 6 deep-dive category subpages + 5th CI security gate",
-      "checked": [
-        "Ross-Simons (10th audited seller): 5 solid-gold product pages (#571221, #985230, #820263, #823796, #990022) and /pages/returns-exchanges fetched; 4 bands publish explicit gram weights (0.7 g to 4.0 g).",
-        "Brilliant Earth, Blue Nile & Mejuri: fetched /30-Day-Returns/ body text (chunk 4), BE-04 Fairmined Hollis ($1,090, resizing banner vs details exclusion), BN-09..BN-12 (adding PAIR-BN-FOURPRONG +29.3% and BN-12 double contradiction), MJ-06..MJ-07, and Mejuri's cautionary Bold Chain Ring ('hollowed 14k solid gold' FTC 16 CFR § 23.3(c) conflict).",
-        "Regulatory & spot cross-checks: NIST Handbook 44 (0.200 g/ct gemstone deduction), GIA Lab Notes (XRF 10–30 µm depth & electroformed resin cores), and BullionVault ($4,026.25/oz)."
-      ],
-      "found": [
-        "Canonical dataset now spans 47 rows across 10 sellers with 19 published gram weights and 5 matched 14K/18K pairs, with zero duplicate SKUs and zero overwritten work from prior sessions.",
-        "Removed external runtime Google Fonts @import from legacy styles.css (IRR-REPO-01)."
-      ],
-      "outcome": "PASS across all 5 automated audit gates (audit.py, check_site.py, verify.py, verify_a0be79d4.py, audit_hallucinations.py).",
-      "result": "PASS"
-    }
-  ],
-  "not_reverified_this_pass": [
-    "Seller reputation and independent complaint history for all six sellers — no independent review corpus was consulted, so no row is marked reputation-verified.",
-    "Physical hallmark, XRF assay and actual as-delivered gram weight — these can only be established on the ring in hand, which is why the checklist requires an independent jeweller and XRF check on arrival.",
-    "Brilliant Earth's full return window and exclusions text, which the site would not serve to this fetcher (navigation and footer only, twice).",
-    "Anjolee's resize terms, which were not published on the captured product page."
-  ]
+ "schema_version": "1.0.0",
+ "coordination_summary": "Six agent sessions have worked in this repository on 2026-10-22. arena/b4413b13-gold4 (PR #1, #3), arena/93da71b4-gold4 (PR #2) and arena/9614479d-gold4 (PR #4, #5) built the dataset, the site and the audit; arena/22b5b06c-gold4's review is preserved unmerged at docs/legacy/. Two sessions then re-verified the published tree line by line instead of trusting it: arena/fd51d093-gold4 (PR #7, Pass 4) and arena/e04b126a-gold4 (PR #10 and PR #13, Passes 5 and 6). The two passes were merged rather than stacked — where they disagreed, both readings are recorded and the disagreement is published on the Flagged page. Nothing from any other branch was deleted, renamed or force-pushed.\n Session arena/1372cb32-gold4 ran a concurrent independent pass (Pass 7 below): it re-read every official page behind the then-published rows, independently found the Anjolee 2.90 g weight and the VRAI pavé-spec behaviour, flagged Brilliant Earth currency localization after its 14K page served EUR on re-check, stated the derivation basis of the 15 U.S.C. 295 floors, and tightened every Mejuri price link to the exact variant URL where the price is displayed. When main advanced under it (PRs 7-15, then 17-19) it merged without discarding anything and kept only those unique deltas.",
+ "passes": [
+  {
+   "pass": "Pass 0 — baseline repository review",
+   "when_utc": "2026-10-22T23:12Z",
+   "scope": "Whole repository at commit 7f442a1",
+   "checked": [
+    "git log: a single commit, 'Initial commit'",
+    "Tracked files: README.md only, 7 bytes, contents '# GOLD4'",
+    "No data, no site, no sources, no tests, no workflows",
+    "GitHub Pages already enabled and building from main / (root), html_url https://karagemop466-tech.github.io/GOLD4/",
+    "No open issues, no pull requests, one successful pages-build-deployment run",
+    "git ls-remote: three other arena/* branches exist, all with claims boards but no data files"
+   ],
+   "result": "PASS",
+   "outcome": "Nothing in the repository could be verified because nothing existed; all findings on this site are new work. Recorded the four-session collision in COORDINATION.md before writing any file."
+  },
+  {
+   "pass": "Pass 1 — source capture (benchmark, law, retailer pages)",
+   "when_utc": "2026-10-22T23:15Z",
+   "scope": "Official sources only: FTC, eCFR, U.S. Code, World Gold Council, LBMA, and retailer product/policy pages",
+   "checked": [
+    "World Gold Council gold spot: USD 4,024.36/oz, data as of 21 October 2026 — read from the page's own spot panel",
+    "LBMA: benchmark description read; no numerical LBMA price captured because the tables are behind an IBA licence",
+    "FTC consumer article: karat definition, solid-gold definition, trademark-beside-karat-mark requirement, plated/filled/vermeil definitions",
+    "16 CFR Part 23 § 23.3: gold-content misrepresentation and the ban on calling a hollow-centre item 'solid'",
+    "15 U.S.C. § 295: 0.003 assay tolerance and 0.007 whole-article tolerance",
+    "FTC credit-card article: billing-error dispute rights",
+    "20 retailer product pages fetched: Blue Nile (8), Allurez (4 + policy), VRAI (2 + listing + returns), Mejuri (collection + returns), Anjolee (1), Brilliant Earth (1, policy only)",
+    "Every price and weight recorded was copied from the fetched page text, not from search snippets"
+   ],
+   "result": "PASS",
+   "outcome": "Six rows carry a published gram weight (Allurez ×4, VRAI ×2). Nineteen rows carry a price read from the seller's page. Brilliant Earth produced policy facts but no readable price/weight, so it has no product row and no price is quoted anywhere."
+  },
+  {
+   "pass": "Pass 2 — dataset assembly + first integrity audit",
+   "when_utc": "2026-10-22T23:17Z",
+   "scope": "data/*.json, scripts/compute.py, scripts/audit.py",
+   "checked": [
+    "Karat fineness table = karat ÷ 24, cross-checked against the FTC karat definition",
+    "Legal minimum fineness per stamp = fineness − 0.007 (15 U.S.C. § 295)",
+    "Derived gold grams, gold value, legal-minimum value and price/gold multiple recomputed independently by the audit script",
+    "Phantom-math check: no derived value may exist for a row without a published weight",
+    "Blank-value checks: blank price requires PRICE_UNVERIFIED, blank weight requires NO_WEIGHT_PUBLISHED or WEIGHT_UNVERIFIED",
+    "Domain allow-list: every source URL must belong to the named retailer or a government/benchmark host",
+    "Banned-domain scan: no marketplace, resale, blog or social domain anywhere in the data",
+    "Speculation-language scan on all free-text fields",
+    "Two real inconsistencies found on Blue Nile's own pages (18k copy on a 14K page; white-gold copy on a yellow-gold page) and one mixed-metal ambiguity (platinum prongs on a 14K ring) — published on the Flagged page instead of being smoothed over"
+   ],
+   "result": "PASS after fixes",
+   "outcome": "Two audit bugs were found and fixed (fineness rounding tolerance, derived-value rounding). The audit now re-derives every number and fails on any mismatch."
+  },
+  {
+   "pass": "Pass 3 — site build + link check",
+   "when_utc": "2026-10-22T23:20Z",
+   "scope": "index.html, pages/*.html, assets/*",
+   "checked": [
+    "Builder formats only values produced by compute.py — no arithmetic in the HTML layer",
+    "Every table row carries data-row-id and a source link in a td.src cell",
+    "Internal links resolve to files that exist; external links are https and on approved domains",
+    "No placeholder tokens rendered in any page",
+    "No-hallucination block rendered at the top of every page, with a link back to the Flagged page"
+   ],
+   "result": "PASS",
+   "outcome": "Site generated and link-checked by the same audit script that checks the data, so a broken source link fails the build."
+  },
+  {
+   "pass": "Pass 4 — independent line-by-line re-verification of the published tree",
+   "when_utc": "2026-10-22T23:58Z",
+   "scope": "Every published value: 20 retailer product pages, 4 retailer return/returns-and-exchanges policies, the Anjolee spec sheet, the World Gold Council spot panel, LBMA, the FTC jewellery article, 16 CFR 23.3 and 15 U.S.C. § 295",
+   "checked": [
+    "BN-01 to BN-08 re-fetched from bluenile.com: all 8 setting prices ($1,000 / $1,155 / $1,000 / $935 / $1,310 / $1,295 / $870 / $1,500), all 8 karat labels and all 8 stock numbers and widths match the dataset",
+    "BN-04: the product description again says 'crafted in 18k yellow gold' on the 14K page — COPY_INCONSISTENT_METAL re-confirmed on the live page",
+    "BN-07: the description again says the ring has 'platinum prongs' — MIXED_METAL_UNCLEAR re-confirmed",
+    "BN-08: the description again says 'set in 14k white gold' on the 14K yellow-gold page — COPY_INCONSISTENT_METAL re-confirmed",
+    "AL-01 to AL-04 re-fetched from allurez.com: $585 / $724 / $848 / $1,425 and 'Approximate Metal Weight 3.58 / 3.4 / 4.4 / 5.3 grams' all match",
+    "VR-01, VR-02 re-fetched from vrai.com: 'Metal weight:2.86g (Ring size 6)' and 'Metal weight:2.84g (Ring size 6)' match; 'From $1,035' re-read on the VRAI engagement-rings listing card; the Signature 6-prong design page still shows no setting price, so VR-02's blank price is correct",
+    "MJ-01 to MJ-05 re-read on the 14k Yellow Gold Rings collection page: $548 / $648 / $548 / $798 / $598 match, each on its own yellow-gold card, and the 'Solid Yellow Gold (14k)' wording is present",
+    "AN-01 re-fetched from anjolee.com: 'Price:$870.76' for '14K White Gold, Carat: 0.50 ct, Diamond Color: FG, Diamond Clarity: VS' matches — and the Product Details table DOES publish 'Approx. Metal Weight: 2.90 Gr.', which the previous pass recorded as unreadable",
+    "AN-01 spec sheet (MS354-A.pdf, anjolee.com): 2.9 Gr for the 0.50 ct size — corroborates the 2.90 g figure",
+    "AN-01 correction: the same Product Details table states 'Center Diamond Color: Lab Created FG' and 'Center Diamond Clarity: Lab Created VS' — the centre stone is lab-created, which the previous price_basis did not say",
+    "New flag SPEC_LISTED_PAVE_ON_PLAIN_BAND on VR-01 and VR-02: both pages have 'Band: Plain band' selected while the Setting Details block still lists 'Pave carat weight:0.18ctw'",
+    "Blue Nile returns policy re-fetched: 30 days from shipment, two complimentary returns per customer per year, RMA required, $150 missing-grading-report fee, one free resize up/down two sizes within 6 months, and the resized/engraved/custom/clearance exclusions all match the recorded seller facts",
+    "Allurez returns policy re-fetched: return must arrive within 30 days of shipment, engraved non-refundable, Design Your Own exchange-only, custom-made non-refundable and non-cancellable, contoured bands not returnable, $300 per missing certificate, 7-business-day refund — all match",
+    "VRAI returns page re-fetched: 30 days, under $15,000 refund minus recycling fee or store credit, above $15,000 store credit only, $300 engagement-ring / $50 wedding-band / $50 made-to-order recycling fee, resized and custom items excluded, free US return shipping, 14 business days, one complimentary resize up to one full US size — all match",
+    "Mejuri returns terms re-fetched: free 30-day returns in US/CA/UK/AU/DE from delivery or pickup, engraved and monogrammed never returnable, final sale and gift cards excluded, SCS certificate required for lab-grown returns, EU $20 / Rest of World $30 return fee, no online exchanges — all match; no telephone number appears on the page, so the blank phone field is correct",
+    "World Gold Council spot panel re-read: USD 4,028.53/oz with 'Data as of 21 October, 2026'. The earlier same-day capture in this repo read 4,024.36/oz. The live panel had moved 0.10% between reads, so both readings are recorded and the dataset now uses the value this pass actually saw",
+    "LBMA page re-fetched: the LBMA Gold Price is set twice daily in auctions administered by ICE Benchmark Administration commencing at 10:30 and 15:00 London time, and the tabulated history is behind an IBA licence — the recorded claim matches, and no LBMA number is quoted anywhere",
+    "FTC jewellery article re-fetched: karat = parts of 24, 18K = 18 parts gold to 6 parts other metal, trademark must sit beside the karat mark ('if you do not see a trademark along with the karat mark, don't buy it'), 'solid gold' means the item is not hollow, and the definitions of gold filled / overlay / RGP / electroplate (0.175 microns) / vermeil / gold flashed all match",
+    "16 CFR 23.3 re-fetched: (a) misrepresenting gold content or karat fineness is deceptive; (c)(1) a hollow-centre article must disclose the hollow centre and must not be described as 'solid' (e.g. not '14 Kt. Solid Gold'); (c)(2) mechanical plating needs 1/40, 'Gold Filled' needs 1/20; (c)(3) electroplate needs 0.175 microns — all match what the site states",
+    "15 U.S.C. § 295 re-fetched: 0.003 below the stamped fineness for the assayed part, and 0.007 for the entire article including solder except watchcases and flatware — the '18K may be 74.3% and 14K may be 57.63%' arithmetic re-derives correctly from that section",
+    "FTC credit-card article re-fetched: the right to dispute billing errors, the issuer's investigation duty, and the separate section on complaints about the quality of something bought — matches"
+   ],
+   "result": "PASS with corrections",
+   "outcome": "Every price in the table was re-read on the retailer's own live page and every one matched. Three substantive changes were made rather than carried forward: (1) AN-01's gram weight is now recorded (2.90 g) because the live Product Details table does publish it; (2) AN-01's centre stone is now recorded as lab-created, which changes how its price may be compared; (3) the gold benchmark is updated to the reading this pass actually saw, with the earlier same-day reading kept in prior_captures. Two new spec-block inconsistencies on the VRAI plain-band pages are flagged rather than resolved."
+  },
+  {
+   "pass": "Pass 5 — line-by-line re-verification of every row, plus new Brilliant Earth rows",
+   "when_utc": "2026-10-23T00:05Z",
+   "scope": "All 20 published rows re-opened again, all 6 seller policy pages, and every Tier A/B legal and benchmark source, each compared field by field; Brilliant Earth product pages opened for the first time",
+   "checked": [
+    "Blue Nile: all 8 product pages re-opened. Stock numbers, metal, width and the '(Setting Price)' figures matched exactly ($1,000 / $1,155 / $1,000 / $935 / $1,310 / $1,295 / $870 / $1,500). No page publishes a gram weight. The 14K Comfort Fit copy still says 'crafted in 18k yellow gold' against a 14K spec; the 14K Riviera Pavé copy still says 'set in 14k white gold' against a 14K Yellow Gold title; the Four Prong page still mentions 'platinum prongs'. All three flags stand.",
+    "Allurez: all 4 product pages re-opened. $585 / $724 / $848 / $1,425 and 'Approximate Metal Weight' 3.58 g / 3.4 g / 4.4 g / 5.3 g matched.",
+    "VRAI: both configuration pages re-opened. Metal weights 2.86 g and 2.84 g (ring size 6) matched. The listing card still reads 'From $1,035', but it links to a different configuration id than the row does — flagged. The Signature 6 Prong still shows no price, so VR-02 stays blank.",
+    "Mejuri: all 5 product pages re-opened with the yellow-gold variant explicitly selected. $548 / $648 / $548 / $798 / 'From $598' matched. Because the same URL can open on a different colourway (white gold on two products, sterling silver on one), PRICE_VARIANT_DEPENDENT was added to MJ-01/MJ-03 and PRICE_IS_FROM_PRICE to MJ-05.",
+    "Brilliant Earth: opened for the first time. The Atelier Solitaire pages display readable setting prices ($1,190 in 14K and $1,390 in 18K yellow gold) where the earlier pass could read none, so BE-01 and BE-02 were added with blank weights (no gram weight is published). The page badge now reads 'Free 1-Year Resizing' where the earlier capture described one complimentary resize within 60 days — recorded as an inconsistency, not overwritten.",
+    "Anjolee: product page re-opened. $870.76 matched, and the Product Details table was found to publish 'Approx. Metal Weight: 2.90 Gr.' for the 0.50 ct model at ring size 6.5, together with 'Center Diamond Color: Lab Created FG' and 'Clarity: Lab Created VS'. This independently confirms Pass 2's correction and the row keeps its weight, its lab-created-stone note and its not-comparable-to-setting-only warning.",
+    "Seller policies re-read in full: Blue Nile returns (30 days from shipment, seven exclusions, two complimentary returns per year, RMA, $150 missing-report fee, one free resize up or down two sizes within 6 months); Allurez returns (must ARRIVE within 30 days of shipment, $300 per missing certificate, 7-business-day refund, Design Your Own exchange-only, custom orders non-refundable and non-cancellable); VRAI returns ($300 engagement-ring recycling fee waived for store credit, 30 days, the $15,000 split, 14 business days, one complimentary resize up to one full US size, EU/EEA withdrawal exclusions); Mejuri returns terms (free 30-day returns in five countries, engraved non-returnable 'at any time', SCS certificate required, no online exchanges, $20 EU / $30 rest-of-world return fees); Anjolee returns and lifetime warranty as quoted. Every clause rendered on the Sellers page traced back to the seller's own page.",
+    "Mejuri warranty: the product pages state a two-year warranty, so the blank seller field was filled and WARRANTY_NOT_CAPTURED removed.",
+    "Tier A sources re-read: FTC 'Buying Platinum, Gold, and Silver Jewelry'; FTC 'Using Credit Cards and Disputing Charges'; 16 CFR Part 23 (§ 23.3(a), § 23.3(c)(1), § 23.18 heading); 15 U.S.C. § 295 (0.003 assay tolerance, 0.007 whole-article tolerance).",
+    "Tier B benchmark: the World Gold Council panel was read again and reproduced the same drift recorded in Pass 2 ($4,028.53/oz on the later read against $4,024.36/oz earlier, both under 'Data as of 21 October, 2026'), confirming that the panel is live and that freezing one read is necessary.",
+    "Nothing was added to any row from memory, from a search snippet, from a blog, or from arithmetic on a value the retailer never published. Two rows with a blank weight stayed blank rather than borrowing a sibling's weight."
+   ],
+   "result": "PASS",
+   "outcome": "22 rows, 6 retailers, 21 verified prices, 7 published weights, 2 new rows and 3 new flags, 0 hard failures. The integrity audit was re-run after this pass and its output is reproduced below. Recommended for every future review of this repo: re-open every source link, ask 'where is the official source, and what date was it read?', and re-run scripts/audit.py — anything that cannot answer that question is unverified and belongs on the Flagged page, not in a price cell."
+  },
+  {
+   "pass": "Pass 6 — post-merge re-verification of the published main branch",
+   "when_utc": "2026-10-22T23:37Z",
+   "scope": "The tree as merged into main (commit e7f4d36) — all 22 rows re-opened on their own source pages, plus the World Gold Council spot panel, 16 CFR 23.3 and every seller returns page. Run after the PR #7 / PR #10 merge so the published site, not a working copy, is what got checked",
+   "checked": [
+    "Blue Nile: all 8 pages re-opened. Prices $1,000 / $1,155 / $1,000 / $935 / $1,310 / $1,295 / $870 / $1,500, all 8 stock numbers and all 8 karats matched. No gram weight on any page. The four copy-vs-spec irregularities (18k copy on the 14K Comfort Fit, '14k white gold' copy on the 14K Riviera Pavé, 'platinum prongs' on the Four Prong, and the '(Setting Price)' wording that excludes the centre stone) all reproduce.",
+    "Allurez: all 4 pages re-opened. $585 / $724 / $848 / $1,425 with 'Approximate Metal Weight' 3.58 / 3.4 / 4.4 / 5.3 grams matched, and each page still labels the figure 'approximate', which is why WEIGHT_APPROXIMATE stays on all four.",
+    "VRAI: both configuration pages re-opened; 'Metal weight 2.86 g' and '2.84 g' at ring size 6 matched. Neither configuration page renders a setting price in page text, so VR-01's $1,035 still comes from the design's listing card and VR-02's price stays blank (PRICE_UNVERIFIED). The pavé line on a plain-band page still appears on both rows.",
+    "Mejuri: the 14k Yellow Gold Rings collection page re-read, and all five cards matched — Diamonds Team Ring $548, Diamonds Band $648, Pavé Diamond Slim Signet $548, Pavé Diamond Thin Dôme $798, Ziggy Ring $598 (Solid Yellow Gold (14k), lab-grown). The bare Ziggy product URL opens on the Sterling Silver variant at a different price, so the flagged warning to buy from the yellow-gold variant stands.",
+    "Anjolee: MS354-A re-opened. 'Price: $870.76' for 14K White Gold / 0.50 ct / FG-VS, and 'Approx. Metal Weight: 2.90 Gr.' at ring size 6.5 both matched. The Product Details table still states the centre diamond is Lab Created, so PRICE_INCLUDES_CENTRE_STONE and CENTRE_STONE_LAB_CREATED stay.",
+    "Brilliant Earth: both Atelier Solitaire pages re-opened. $1,190 (14K yellow gold) and $1,390 (18K yellow gold), each labelled 'Setting Only', matched. Neither publishes a gram weight, so both weight cells stay blank.",
+    "Returns: Blue Nile, Allurez, VRAI and Mejuri returns pages re-read in full and every quoted clause — 30-day windows, RMA requirement, the $150 and $300 missing-document fees, one free resize rules, the $300 ring / $50 band VRAI recycling fee, Mejuri's SCS-certificate requirement — matched the dataset wording.",
+    "Benchmark: the World Gold Council spot panel was read a third time on 2026-10-22 and still showed USD 4,028.53/oz, 'Data as of 21 October, 2026'. The benchmark and the 129.5202/g conversion were left unchanged; no new capture was needed.",
+    "Legal sources: 16 CFR 23.3 re-read in full. (b)(1)-(9) and (c)(1) confirm that 'Gold' with no karat qualification is misleading, that a hollow-centre article must disclose the hollow centre and 'should not be marked or described as solid', and (c)(2) sets the 1/40 overlay and 1/20 gold-filled weight thresholds at a minimum of 10 karat. Footnote 32 restates the National Stamping Act tolerances used in this dataset (3/1000 without solder, 7/1000 with solder), corroborating 15 U.S.C. § 295 independently."
+   ],
+   "found": [
+    "No price, weight, karat, stock-number or policy figure changed between this pass and the published dataset. Nothing was corrected, because nothing was wrong.",
+    "Two limits are re-confirmed rather than fixed: Brilliant Earth's /returns/ page again returned only navigation and footer text, so its 30-day window could not be re-displayed (still flagged, not silently re-asserted); and no VRAI configuration page exposes a setting price in page text, so a VRAI price is only ever as good as the listing card until it is in the cart.",
+    "One wording observation, not a data error: Brilliant Earth's product badge now reads 'Free 1-Year Resizing' while the earlier capture of the same page described one complimentary resize within 60 days. Both readings are 2026-10-22 and they are not the same promise; the row keeps both and asks the buyer to confirm in writing."
+   ],
+   "outcome": "PASS with no changes to the dataset. Every published number reproduced from its own official page; the three remaining unknowns stay blank and flagged. Audit re-run after this pass: 59 passed, 0 warnings, 0 failures.",
+   "result": "PASS"
+  },
+  {
+   "pass": "Pass 6 — Grand unified integration, 404 link remediation & 10K–24K expansion (arena/a0be79d4-gold4)",
+   "when_utc": "2026-10-22T23:36Z",
+   "scope": "Full line-by-line repo & live web verification across 9 retailers (35 rows), 11 Assay Lab standalone pages, and 4 automated CI security/hallucination gates",
+   "checked": [
+    "Caught and fixed TWO live HTTP 404 government URLs in merged docs/sources.html (`ftc.gov/business-center/advertising-and-marketing` & `nist.gov/publications/nist-special-publication-811`) using live-verified 200 OK replacements (`consumer.ftc.gov/...`, `ecfr.gov/.../part-23`, `nist.gov/pml/special-publication-811`)",
+    "Caught and blocklisted dead 404 GIA URL (`summer-2025-lab-notes-gold-plated-gold0`) found in sibling branch `81b71aa5`, linking verified 200 OK GIA XRF & Carlsbad electroforming fraud lab studies",
+    "Spot-verified `gold.org` ($4,028.53/oz), `Allurez AL-01` ($585, 3.58g), `Anjolee AN-01`, & `VRAI VR-01` live on 2026-10-22 alongside same-day `Kitco` ($4,024.60/oz = $129.39/g) & `JM Bullion` ($4,039.76/oz = $129.88/g) quotes",
+    "Expanded canonical dataset from 22 -> 35 rows across 9 retailers (`10K`, `14K`, `18K`, `24K`), adding plain solid band melt benchmarks (1.33x–1.50x raw melt), the 10K-vs-18K 5mm density pair (`SR-01` vs `SR-03`), two live Sarraf karat contradictions (`F1625` $20,671 & `121987-.72P` $2,858), and Mejuri's $188 vermeil copy trap (`G4-RED-01`)"
+   ],
+   "outcome": "All 4 automated audit suites (`audit.py`, `check_site.py`, `verify.py`, `verify_a0be79d4.py`) pass with 0 hard failures and 0 broken links.",
+   "result": "PASS (0 failures)"
+  },
+  {
+   "pass": "Pass 8 — Ross-Simons & multi-retailer expansion, NIST stone-deduction calculator & 5-gate CI audit (session arena/81b71aa5-gold4)",
+   "when_utc": "2026-10-22T23:46Z",
+   "scope": "Merged cleanly onto main (217f79b), preserving all 35 canonical rows + Assay Lab pages verbatim and appending 12 non-duplicate live-verified rows (47 total across 10 sellers) + 6 deep-dive category subpages + 5th CI security gate",
+   "checked": [
+    "Ross-Simons (10th audited seller): 5 solid-gold product pages (#571221, #985230, #820263, #823796, #990022) and /pages/returns-exchanges fetched; 4 bands publish explicit gram weights (0.7 g to 4.0 g).",
+    "Brilliant Earth, Blue Nile & Mejuri: fetched /30-Day-Returns/ body text (chunk 4), BE-04 Fairmined Hollis ($1,090, resizing banner vs details exclusion), BN-09..BN-12 (adding PAIR-BN-FOURPRONG +29.3% and BN-12 double contradiction), MJ-06..MJ-07, and Mejuri's cautionary Bold Chain Ring ('hollowed 14k solid gold' FTC 16 CFR § 23.3(c) conflict).",
+    "Regulatory & spot cross-checks: NIST Handbook 44 (0.200 g/ct gemstone deduction), GIA Lab Notes (XRF 10–30 µm depth & electroformed resin cores), and BullionVault ($4,026.25/oz)."
+   ],
+   "found": [
+    "Canonical dataset now spans 47 rows across 10 sellers with 19 published gram weights and 5 matched 14K/18K pairs, with zero duplicate SKUs and zero overwritten work from prior sessions.",
+    "Removed external runtime Google Fonts @import from legacy styles.css (IRR-REPO-01)."
+   ],
+   "outcome": "PASS across all 5 automated audit gates (audit.py, check_site.py, verify.py, verify_a0be79d4.py, audit_hallucinations.py).",
+   "result": "PASS"
+  },
+  {
+   "pass": "Pass 7 — independent concurrent re-verification and merge of unique findings (session arena/1372cb32-gold4)",
+   "when_utc": "2026-10-22T23:55Z",
+   "scope": "Every official page behind the dataset, fetched independently before this session saw the other sessions' passes; then two merges of the concurrently advancing main (through PRs #7-#15, then #17-#19) keeping every merged value and adding only this session's unique deltas",
+   "checked": [
+    "All rows that existed when this pass started were re-fetched from their own official pages and every price, karat, SKU, width and gram weight matched exactly (BN-01..BN-08, AL-01..AL-04, VR-01, VR-02, MJ-01..MJ-05, AN-01)",
+    "Independent corroboration of findings other sessions also made: the Anjolee Product Details table publishes 'Approx. Metal Weight: 2.90 Gr.' (weight recoverable), and both VRAI plain-band pages list 'Pavé carat weight: 0.18ctw' in their Setting Details",
+    "Gold benchmark page re-read: live panel 4,028.53 USD/oz - the same second reading sessions fd51d093 and e04b126a recorded - with the dated chart line still at 21 October 2026",
+    "All seller policy pages re-read field-for-field against sellers.json and all matched; all Tier A/B sources re-read and matched their registry descriptions",
+    "After the first merge, the two Brilliant Earth Atelier rows were re-checked: BE-02 re-confirmed exactly ($1,390 USD, 18K, BE1D2444-18KY); BE-01's page served a EUR rendering ('1,350.00 EUR (Setting Only)', Global-e checkout) so its USD figure could not be reproduced in this pass and is kept only from the earlier same-day USD capture - flagged PRICE_CURRENCY_LOCALIZED on both BE rows",
+    "Unique deltas kept after both merges (nothing of any other session overwritten): derivation-basis note for the 15 U.S.C. 295 floors in data/methodology.json and its Flagged-page card; every Mejuri price_source_url tightened to the exact product-variant URL where the price is displayed; PRICE_CURRENCY_LOCALIZED details on BE-01/BE-02; VRAI spec-block and Brilliant Earth currency cards on the Flagged page"
+   ],
+   "result": "PASS with findings",
+   "outcome": "Zero disagreements with any recorded value. Two sessions independently finding the same two page behaviours corroborates that they are real. One new irregularity in this pass (Brilliant Earth currency localization) and one precision improvement (Mejuri price links now match where the price is read). Merge resolution both times: every merged file from the concurrent PRs kept as-is, this session's overlapping pre-merge edits superseded. Run all five CI gates again after any edit."
+  }
+ ],
+ "not_reverified_this_pass": [
+  "Seller reputation and independent complaint history for all six sellers — no independent review corpus was consulted, so no row is marked reputation-verified.",
+  "Physical hallmark, XRF assay and actual as-delivered gram weight — these can only be established on the ring in hand, which is why the checklist requires an independent jeweller and XRF check on arrival.",
+  "Brilliant Earth's full return window and exclusions text, which the site would not serve to this fetcher (navigation and footer only, twice).",
+  "Anjolee's resize terms, which were not published on the captured product page."
+ ]
 }
