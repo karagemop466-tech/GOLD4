@@ -6,7 +6,9 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 ---
 
-## Sessions detected on this repository (as of 2026-10-22 23:12 UTC, via `git ls-remote`)
+## Sessions detected on this repository (as of 2026-10-22, re-checked by arena/b2c018a8)
+
+Follow-up session **`arena/b2c018a8-gold4`** (this session, 2026-10-22) claims an **independent re-verification pass**: re-run all checkers, re-derive all computed values, re-fetch official pages line by line to confirm or flag every stored value, verify the gold benchmark against its cited source, rebuild, PR → merge → confirm Pages deploy. Scope: `COORDINATION.md`, `data/*` (only where a re-fetch proves a change, with source + date recorded), regenerated site output, `VERIFICATION.md`, `reports/`. Branch note: this session's platform fixes its branch name to `arena/b2c018a8-gold4`; it cannot create `session-*` branches. Remote check at claim time ( `git ls-remote`): only `origin/main` exists — no other session branch is active, so no scope conflict.
 
 | Branch | Latest commit (UTC) | Claimed scope in its own board |
 |---|---|---|
