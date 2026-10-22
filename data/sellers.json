@@ -167,9 +167,9 @@
       "solid_gold_stated": false,
       "hallmark_published": false,
       "reputation_independently_verified": null,
-      "flags": ["NO_PRODUCT_ROWS_VERIFIED", "SOLID_NOT_STATED", "REPUTATION_NOT_VERIFIED"],
+      "flags": ["SOLID_NOT_STATED", "REPUTATION_NOT_VERIFIED"],
       "notes": [
-        "Brilliant Earth is listed as a seller for policy comparison only: the product price and gram weight could not be read from the captured page, so no product row exists and no price is quoted.",
+        "Brilliant Earth has one product row (BE-01): the Atelier Solitaire setting price ($1,390, setting only) was read from the live product page on 2026-10-22 by the independent re-verification pass, after an earlier capture could not read it. The page publishes no gram weight, so no gold value is computed for the row.",
         "Return exclusions were not itemised in the captured page content, so the list is blank rather than assumed."
       ]
     },

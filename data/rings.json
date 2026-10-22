@@ -3,6 +3,8 @@
   "dataset_name": "Solid-gold engagement-ring candidate list",
   "captured_utc": "2026-10-22",
   "inclusion_rule": "Only items whose retailer page was fetched during this project and which are sold as gold (14K or 18K) ring settings or rings. Nothing in this file is inferred: null means 'not published on the official page, therefore not recorded'.",
+  "last_reverified_utc": "2026-10-22",
+  "reverification_note": "Independent re-verification pass (session arena/b2c018a8, 2026-10-22) re-read every stored value line by line from its official page. Three changes, all V1-sourced: AN-01 weight upgraded from blank to 2.90 g (read from the live page's details table); new row BE-01 added (Brilliant Earth setting price $1,390 now readable on the live page); VR-01/VR-02 band widths blanked (the pages publish 'Band width: Standard' and a 1.6 mm band depth, not a numeric band width). All other prices, weights and flags were confirmed unchanged. See data/verification_log.json Pass 4.",
   "rows": [
     {
       "id": "BN-01",
@@ -403,7 +405,7 @@
       "metal_label": "18k Yellow Gold",
       "karat": 18,
       "sku": null,
-      "width_mm": 1.7,
+      "width_mm": null,
       "url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
       "solid_gold_statement": null,
       "solid_gold_status": "not_stated",
@@ -421,10 +423,11 @@
       "flags": [
         "PRICE_IS_FROM_PRICE",
         "PRICE_AND_WEIGHT_DIFFERENT_URLS",
+        "WIDTH_UNVERIFIED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED"
       ],
-      "flag_detail": "The 'From $1,035' figure comes from the VRAI engagement-rings listing page for this design; the 2.86 g metal weight comes from the design's own configuration page. Both are VRAI pages for the same design, but they are not the same URL, so confirm the exact price for your ring size and carat in the cart before relying on it."
+      "flag_detail": "The 'From $1,035' figure comes from the VRAI engagement-rings listing page for this design; the 2.86 g metal weight comes from the design's own configuration page. Both are VRAI pages for the same design, but they are not the same URL, so confirm the exact price for your ring size and carat in the cart before relying on it. WIDTH_UNVERIFIED: a 1.7 mm band width recorded in the first capture was removed by the independent re-verification pass (2026-10-22): the live configuration page publishes 'Band width: Standard' and 'Band depth: 1.6mm', but no numeric band width, so the cell is blank."
     },
     {
       "id": "VR-02",
@@ -436,7 +439,7 @@
       "metal_label": "18k Yellow Gold",
       "karat": 18,
       "sku": null,
-      "width_mm": 1.6,
+      "width_mm": null,
       "url": "https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301",
       "solid_gold_statement": null,
       "solid_gold_status": "not_stated",
@@ -453,10 +456,11 @@
       "returns_source_id": "vrai-returns",
       "flags": [
         "PRICE_UNVERIFIED",
+        "WIDTH_UNVERIFIED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED"
       ],
-      "flag_detail": "No price for this exact design was visible on the configuration page or on the captured listing page, so the price cell is deliberately blank. Ask VRAI for the current setting price in writing."
+      "flag_detail": "No price for this exact design was visible on the configuration page or on the captured listing page, so the price cell is deliberately blank. Ask VRAI for the current setting price in writing. WIDTH_UNVERIFIED: a 1.6 mm band width recorded in the first capture was removed by the independent re-verification pass (2026-10-22): the live page's only millimetre figure is 'Band depth: 1.6mm' and its band width is given as 'Standard', so no width is recorded."
     },
     {
       "id": "MJ-01",
@@ -634,23 +638,55 @@
       "solid_gold_status": "not_stated",
       "hallmark_published": false,
       "price_usd": 870.76,
-      "price_basis": "Configured ring INCLUDING a 0.50 ct FG/VS centre diamond (14K white gold, not yellow gold). Not comparable with setting-only rows.",
+      "price_basis": "Configured ring INCLUDING a 0.50 ct lab-created FG/VS centre diamond (14K white gold, not yellow gold). Not comparable with setting-only rows.",
       "price_captured_utc": "2026-10-22",
       "price_source_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
       "price_verification": "V1_direct_page_fetch",
-      "weight_g": null,
-      "weight_scope": "Page showed no gram weight in the captured content",
-      "weight_source_url": null,
-      "weight_verification": "U_unverified",
+      "weight_g": 2.9,
+      "weight_scope": "Approximate metal weight published as 'Approx. Metal Weight: 2.90 Gr.' in the page's product-details table (14K white gold, ring size 6.5, 0.50 ct configuration) - approximate per seller",
+      "weight_source_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
+      "weight_verification": "V1_direct_page_fetch",
       "returns_source_id": "anjolee-ms354a",
       "flags": [
         "PRICE_INCLUDES_CENTRE_STONE",
-        "WEIGHT_UNVERIFIED",
+        "WEIGHT_APPROXIMATE",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "WHITE_GOLD"
       ],
-      "flag_detail": "A search snapshot of the Anjolee page displayed 'Approx. Metal Weight: 2.90 Gr.' but that figure could not be re-read from the live page, so it is not recorded. The price includes a centre diamond, so it must not be compared with setting-only prices."
+      "flag_detail": "The $870.76 price includes a 0.50 ct lab-created FG/VS centre diamond, so it must not be compared with setting-only prices, and no price-to-gold multiple is published for this row (the gold content and gold value columns describe the metal only). The 2.90 g metal weight was read from the live product page's details table on 2026-10-22; an earlier pass had left it blank because at that time the figure appeared only in a search snapshot of the page (V2 evidence)."
+    },
+    {
+      "id": "BE-01",
+      "retailer": "Brilliant Earth",
+      "retailer_id": "brilliant-earth",
+      "product_name": "Atelier Solitaire Ring",
+      "style": "Solitaire, compass claw prong, sculptural bypass",
+      "category": "solitaire",
+      "metal_label": "18K Yellow Gold",
+      "karat": 18,
+      "sku": "BE1D2444-18KY",
+      "width_mm": 2.0,
+      "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
+      "solid_gold_statement": null,
+      "solid_gold_status": "not_stated",
+      "hallmark_published": false,
+      "price_usd": 1390.0,
+      "price_basis": "Setting only - page shows '$1,390 (Setting Only)' (centre diamond sold separately)",
+      "price_captured_utc": "2026-10-22",
+      "price_source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
+      "price_verification": "V1_direct_page_fetch",
+      "weight_g": null,
+      "weight_scope": null,
+      "weight_source_url": null,
+      "weight_verification": "U_unverified",
+      "returns_source_id": "brilliantearth-atelier",
+      "flags": [
+        "NO_WEIGHT_PUBLISHED",
+        "SOLID_NOT_STATED",
+        "HALLMARK_NOT_PUBLISHED"
+      ],
+      "flag_detail": "Added on 2026-10-22 by the independent re-verification pass: the setting price is readable on the live product page ('$1,390 (Setting Only)') after an earlier capture of this project could not read it. The page's ring-information block publishes style BE1D2444-18KY, metal 18K Yellow Gold and a 2 mm band width, but no gram weight, so no gold value is computed for this row."
     }
   ]
 }

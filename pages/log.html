@@ -61,16 +61,21 @@
       <p class="small">2026-10-22T23:20Z · index.html, pages/*.html, assets/*</p>
       <ul class="small"><li>Builder formats only values produced by compute.py — no arithmetic in the HTML layer</li><li>Every table row carries data-row-id and a source link in a td.src cell</li><li>Internal links resolve to files that exist; external links are https and on approved domains</li><li>No placeholder tokens rendered in any page</li><li>No-hallucination block rendered at the top of every page, with a link back to the Flagged page</li></ul>
       <p class="small"><strong>Outcome:</strong> Site generated and link-checked by the same audit script that checks the data, so a broken source link fails the build.</p>
+    </div><div class="card">
+      <h3>Pass 4 — independent re-verification (session arena/b2c018a8) <span class="badge b-ok">PASS after corrections</span></h3>
+      <p class="small">2026-10-22T23:43Z · Every stored value re-read line by line from its official page: 20 product pages, 4 return-policy pages, the VRAI listing page and the Mejuri collection page, FTC (2 articles), 16 CFR 23.3 and 23.18, 15 U.S.C. 295 and ch. 8, LBMA, World Gold Council</p>
+      <ul class="small"><li>All 8 Blue Nile prices, stock numbers, metals and widths re-read and unchanged; the three copy-contradiction flags re-confirmed word for word (&#x27;crafted in 18k yellow gold&#x27; on the 14K BN-04 page; &#x27;set in 14k white gold&#x27; on the 14K yellow-gold BN-08 page; &#x27;platinum prongs&#x27; on BN-07)</li><li>All 4 Allurez prices and gram weights (3.58 / 3.4 / 4.4 / 5.3 g) and style numbers re-read and unchanged</li><li>VRAI: &#x27;From $1,035&#x27; listing price and both metal weights (2.86 g, 2.84 g, ring size 6) re-read and unchanged; VR-02 price still not published, so it stays blank</li><li>All 5 Mejuri prices and the &#x27;Solid Yellow Gold (14k)&#x27; wording re-read on the collection page and unchanged</li><li>Anjolee: $870.76, style MS354-A, the customized-orders refund sentence and the warranty text re-read and unchanged; the details table also shows the centre stone is lab-created FG/VS, so the price basis was corrected to say so</li><li>Return windows, exclusions, fees ($150 Blue Nile grading report; $300 VRAI recycling fee; $300 Allurez missing certificate), resize terms and contact details re-read on all four policy pages and unchanged</li><li>Law: 15 U.S.C. 295 tolerances 0.003 / 0.007 re-read verbatim; 16 CFR 23.3(a) and the hollow-centre note in 23.3(c)(1) re-read; 16 CFR 23.18 title confirmed; FTC karat / solid-gold / trademark wording re-read</li><li>Gold benchmark: the World Gold Council page was re-read; the live spot panel showed USD 4,028.53/oz (the frozen capture is 4,024.36) and the &#x27;Data as of 21 October, 2026&#x27; line is unchanged. The frozen benchmark is retained per methodology and the re-check is recorded in data/gold_spot.json</li><li>Derived arithmetic re-derived by hand for AL-01 and VR-01 (spot per gram, pure gold grams, gold value, legal-minimum value, multiple) and matched data/derived.json to the cent; compute.py output is unchanged apart from its timestamp</li></ul>
+      <p class="small"><strong>Outcome:</strong> Three changes, all read from the official page: (1) AN-01 weight upgraded from blank to 2.90 g (&#x27;Approx. Metal Weight: 2.90 Gr.&#x27; read from the live details table) and weighted rows rise from 6 to 7; because its price includes a lab-created diamond, no price-to-gold multiple is published for it (rule enforced in compute.py and audit.py). (2) New row BE-01: the Brilliant Earth Atelier setting price ($1,390, setting only) is readable on the live page; its weight stays blank. (3) VR-01/VR-02 band widths blanked: the live pages publish &#x27;Band width: Standard&#x27; and a 1.6 mm band depth, not a numeric band width. Every other stored value was confirmed unchanged on 2026-10-22.</p>
     </div></div></section>
 <section class="section">
   <h2>Latest integrity audit output</h2>
   <p class="sub">Produced by <span class="mono">scripts/audit.py</span>. Any FAIL fails the build; warnings must be published on the Flagged page.</p>
   <pre class="mono" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;white-space:pre-wrap">GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-22T23:24:00+00:00
-dataset rows: 20 | sellers: 6 | sources: 13
+run_utc: 2026-10-22T23:53:45+00:00
+dataset rows: 21 | sellers: 6 | sources: 13
 spot benchmark: $4,024.36/oz (21 October, 2026) = $129.3862/g
 
-RESULT: PASS  (55 passed, 0 warnings, 0 failures)
+RESULT: PASS  (57 passed, 0 warnings, 0 failures)
 
 No warnings, no failures.
 
@@ -84,7 +89,7 @@ per-row source-link requirement, and render-text sanity.
 <section class="section">
   <h2>Repository coordination</h2>
   <p class="sub">This repository is shared with other agent sessions. The task board, claims and hand-offs live in <span class="mono">COORDINATION.md</span> in the repository root; the public summary is below.</p>
-  <div class="card"><p>Four agent sessions worked in this repository on 2026-10-22: arena/9614479d-gold4 (this one), arena/22b5b06c-gold4, arena/93da71b4-gold4 and arena/b4413b13-gold4. The other three had their work merged to main first (PR #1, #2, #3); this session integrated them instead of replacing them — see the preserved-artifacts table in README.md and docs/legacy/. Two of those sessions recorded that their sandbox could not reach retailer pages, which is why their catalogs are empty. That was a tooling limit, not evidence that no ring can be verified: this session could read the retailer pages, so the dataset is populated and every populated value carries the page it came from. Nothing in any other branch was deleted, renamed or force-pushed.</p></div>
+  <div class="card"><p>Four agent sessions worked in this repository on 2026-10-22: arena/9614479d-gold4, arena/22b5b06c-gold4, arena/93da71b4-gold4 and arena/b4413b13-gold4. The other three had their work merged to main first (PR #1, #2, #3); arena/9614479d integrated them instead of replacing them — see the preserved-artifacts table in README.md and docs/legacy/. Two of those sessions recorded that their sandbox could not reach retailer pages, which is why their catalogs are empty. That was a tooling limit, not evidence that no ring can be verified: the integration session could read the retailer pages, so the dataset is populated and every populated value carries the page it came from. Nothing in any other branch was deleted, renamed or force-pushed. A fifth session (arena/b2c018a8-gold4), later the same day, ran an independent re-verification pass against the live official pages (Pass 4 below): it confirmed every stored price, weight and policy line by line, made three sourced corrections, and republished through its own pull request.</p></div>
 </section>
 
 </main>
@@ -93,7 +98,7 @@ per-row source-link requirement, and render-text sanity.
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
   <p>Gold benchmark: $4,024.36/oz as of 21 October, 2026 (World Gold Council) = $129.3862/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:25 UTC · dataset 20 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:53 UTC · dataset 21 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

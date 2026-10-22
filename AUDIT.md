@@ -18,8 +18,8 @@ FLAGGED (blank/unverified, by design): 15
 - MJ-03.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-04.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-05.weight_g: blank/UNVERIFIED (correct per policy)
-- AN-01.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-01.weight_g: blank/UNVERIFIED (correct per policy)
 
-Records audited: 20
+Records audited: 21
 Rule: a value with no official source link + retrieval date must stay blank. Re-run after every review.
 Deeper checks (domain allow-list, recomputation of every derived number, speculation scan) run in scripts/audit.py.

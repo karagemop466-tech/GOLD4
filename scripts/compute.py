@@ -50,11 +50,15 @@ def main() -> None:
             out["pure_gold_g"] = round(pure, 4)
             out["gold_value_usd"] = round(pure * usd_g, 2)
             out["legal_min_gold_value_usd"] = round(w * min_fineness[k] * usd_g, 2)
-            if row.get("price_usd") is not None:
+            if row.get("price_usd") is not None and "PRICE_INCLUDES_CENTRE_STONE" not in (row.get("flags") or []):
                 p = float(row["price_usd"])
                 out["price_to_gold_multiple"] = round(p / (pure * usd_g), 3)
                 out["price_per_gold_gram_usd"] = round(p / pure, 2)
             else:
+                # A price that includes a centre diamond is not comparable with
+                # setting-only prices (PRICE_INCLUDES_CENTRE_STONE), so no
+                # price-to-gold multiple is published for that row. The gold
+                # content/value above describe the metal only and still stand.
                 out["price_to_gold_multiple"] = None
                 out["price_per_gold_gram_usd"] = None
         else:

@@ -40,6 +40,7 @@ Claims were 1 minute old when read, so **no takeover was performed** under the 6
 | 7 | Static site: landing dashboard + category subpages + calculator + flagged page | done | arena/9614479d | `index.html`, `assets/`, `pages/` |
 | 8 | Line-by-line verification pass + verification log | done | arena/9614479d | `VERIFICATION.md`, `data/verification_log.json` |
 | 9 | Integration: merge other sessions, re-verify combined data, build/link check, PR to `main`, merge, confirm Pages deploy | done | arena/9614479d | `COORDINATION.md`, PR #4, PR #5, PR #6 |
+| 10 | Independent re-verification pass (Pass 4): re-read every stored value from its official page, re-derive all computed values, correct/blank anything not re-readable, rebuild, re-audit, PR → merge → confirm Pages | done | arena/b2c018a8 | `data/rings.json`, `data/sellers.json`, `data/sources.json`, `data/gold_spot.json`, `data/verification_log.json`, `scripts/compute.py`, `scripts/audit.py`, `scripts/build_site.py`, `scripts/gen_verification.py`, generated site + `VERIFICATION.md` + `AUDIT.md`, `README.md`, `COORDINATION.md` |
 
 Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= published on the Flagged for Review page, does not block).
 
@@ -92,3 +93,23 @@ Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= p
 **Unresolved by design, published on the Flagged page, and not blocking:** 14 of 20 rows have no published gram weight; 0 of 20 rows publish a hallmark; 1 price is blank (VR-02); 1 weight is blank (AN-01, the 2.90 g figure could not be re-read from the live page); every retailer's reputation is unverified; three Blue Nile pages contradict their own metal specification.
 
 **Open work handed off (not claimed by this session):** `arena/22b5b06c-gold4`'s branch still holds a `COORDINATION.md` that conflicts with this board; its review document is preserved at `docs/legacy/REPO_REVIEW_22b5b06c.md`. If that session returns, it should take the board from `main`, not force-push its copy.
+
+---
+
+## Addendum — independent re-verification pass, session `arena/b2c018a8-gold4`, 2026-10-22
+
+- **2026-10-22 23:29 UTC** — `arena/b2c018a8` claimed task 10 (commit `04bd9fa`, pushed before starting work). Remote check: only `origin/main` existed; no other session active. Branch-name note is recorded at the top of this file.
+- **2026-10-22 23:29–23:54 UTC** — Pass 4 re-read **every stored value from its official page**, line by line: all 20 product pages, 4 return-policy pages, the VRAI listing page, the Mejuri collection page, both FTC articles, 16 CFR § 23.3 + § 23.18, 15 U.S.C. § 295 + ch. 8, LBMA, World Gold Council. Result: **every price, weight, karat, SKU, fee, deadline and legal figure confirmed unchanged** except the three sourced corrections below. Derived arithmetic was additionally re-derived by hand (AL-01, VR-01) and matched `derived.json` to the cent; `compute.py` output was byte-identical apart from its timestamp.
+- **Correction 1 (upgrade, V1):** AN-01 weight blank → **2.90 g**. The live Anjolee details table reads "Approx. Metal Weight: 2.90 Gr." (14K white gold, size 6.5, 0.50 ct). Weighted rows 6 → 7. The same page shows the centre stone is **lab-created FG/VS**; the stored price basis was corrected to say so. Because the $870.76 price includes that diamond, `compute.py` now withholds the price-to-gold multiple for `PRICE_INCLUDES_CENTRE_STONE` rows and `audit.py` D-05 fails the build if one is ever published (a stone-inclusive price ÷ metal-only value would fake comparability).
+- **Correction 2 (new row, V1):** **BE-01** — Brilliant Earth Atelier Solitaire, 18K Yellow Gold, style BE1D2444-18KY, width 2 mm, price **$1,390 (Setting Only)** read from the live page (unreadable in Pass 1). No gram weight published → blank, flagged. `sellers.json` BE flag `NO_PRODUCT_ROWS_VERIFIED` removed; `sources.json` caveat updated. Rows 20 → 21; retailers with product rows 5 → 6; prices 19 → 20 of 21.
+- **Correction 3 (removal, could not re-read):** VR-01 width 1.7 mm and VR-02 width 1.6 mm **blanked** + flagged `WIDTH_UNVERIFIED`. The live VRAI pages publish "Band width: Standard" and "Band depth: 1.6mm" — no numeric band width. (Depth ≠ width; not recorded.)
+- **Benchmark re-check:** WGC live panel at re-read = **$4,028.53/oz** (frozen capture $4,024.36, +0.10%); "Data as of 21 October, 2026" line confirmed. Frozen benchmark retained per `spot_rules`; re-check recorded in `data/gold_spot.json` — **no derived value was silently recomputed**.
+- **Checks after corrections:** `audit.py` PASS (57/0/0; +2 checks from the two new V1 values) · `check_site.py` PASS (20 pages, 4 pre-existing legacy warnings) · `verify.py` 0 hard failures (15 blanks by design, 21 records). Flag instances 68 → 73 (VR×2 new, BE-01 +3; AN-01 swap net 0). README counts updated to match.
+- **Tooling irregularity logged for transparency:** three `edit_file` calls in this session reported success but did not persist (VR-01 flags, `FLAG_HELP` entry, calculator basis cell, gen-verification cell). Each was caught by post-edit grep verification and re-applied singly; the final tree was verified by direct inspection plus the three checkers before commit.
+- **Unresolved, unchanged, still on the Flagged page:** 14 of 21 rows have no published gram weight; 0 of 21 publish a hallmark; VR-02 price blank; seller reputation unverified for all six; the three Blue Nile copy contradictions (re-confirmed verbatim).
+
+| Item | Result |
+|---|---|
+| Pass 4 PR (arena/b2c018a8 → main) | recorded below after merge |
+| Checks on the final tree | `audit.py` PASS 57/0/0 · `check_site.py` PASS · `verify.py` 0 hard failures |
+| Dataset after Pass 4 | 21 rows · 20 prices (1 blank) · 7 weights · 73 flag instances · benchmark frozen at $4,024.36/oz (21 Oct 2026) |

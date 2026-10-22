@@ -37,6 +37,7 @@ FLAG_HELP = {
     "NO_WEIGHT_PUBLISHED": ("warn", "seller publishes no gram weight"),
     "WEIGHT_UNVERIFIED": ("bad", "weight not verified"),
     "WEIGHT_APPROXIMATE": ("warn", "weight is the seller's approximation"),
+    "WIDTH_UNVERIFIED": ("warn", "numeric band width not published"),
     "PRICE_UNVERIFIED": ("bad", "price deliberately blank"),
     "PRICE_IS_FROM_PRICE": ("info", "'from' price, not a fixed quote"),
     "PRICE_INCLUDES_CENTRE_STONE": ("info", "price includes a diamond"),
@@ -338,10 +339,11 @@ def main() -> None:
   <h2>What the data actually shows</h2>
   <div class="grid two">
     <div class="card">
-      <h3>Only 6 of 20 rows can be priced against their gold at all</h3>
-      <p>Four Allurez settings and two VRAI settings publish a gram weight, so only those rows have a computable gold content.
-      Blue Nile and Mejuri publish a price but no weight, so their gold content is <em>blank</em> — not guessed.</p>
-      <p class="small">Price ÷ gold-value multiple across the six computable rows: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.</p>
+      <h3>Only {st['rows_with_published_weight']} of {st['total_rows']} rows publish a gram weight at all</h3>
+      <p>Four Allurez settings, two VRAI settings and one Anjolee ring publish a gram weight, so only those rows have a computable gold content.
+      Blue Nile, Mejuri and Brilliant Earth publish a price but no weight, so their gold content is <em>blank</em> — not guessed.</p>
+      <p class="small">Price ÷ gold-value multiple across the {sum(1 for r in rows if r['price_to_gold_multiple'])} rows with a comparable price: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.
+      AN-01's price includes a diamond, so its multiple is deliberately not published; VR-02 has a weight but no published price.</p>
     </div>
     <div class="card">
       <h3>18K costs more than its extra gold — and by an inconsistent amount</h3>
@@ -625,7 +627,7 @@ def main() -> None:
     <tbody>{''.join(f'''<tr data-row-id="{esc(r['id'])}" data-search="{esc((r['id']+' '+r['product_name']+' '+r['retailer']).lower())}">
       <td class="id">{esc(r['id'])}</td><td>{esc(r['product_name'])}<span class="sub">{esc(r['retailer'])}</span></td>
       <td class="num">{r['karat']}K</td><td class="num">{num(r['weight_g'])} g</td><td class="num">{num(r['pure_gold_g'],3)} g</td>
-      <td class="num">{money(r['gold_value_usd'])}</td><td class="num">{money(r['price_usd'])}</td><td class="num">{num(r['price_to_gold_multiple'])}</td>
+      <td class="num">{money(r['gold_value_usd'])}</td><td class="num">{money(r['price_usd'])}<span class="sub">{esc(short_basis(r))}</span></td><td class="num">{num(r['price_to_gold_multiple'])}</td>
       <td class="src"><a href="{esc(r['weight_source_url'] or r['url'])}" target="_blank" rel="noopener">source</a></td></tr>'''
       for r in rows if r['weight_g'])}</tbody>
   </table></div>
@@ -704,13 +706,25 @@ def main() -> None:
     </div>
     <div class="card">
       <h3>Weights labelled "approximate"</h3>
-      <p>Allurez publishes "Approximate Metal Weight" and VRAI publishes a metal weight for ring size 6. Neither is a measurement of the ring you will receive;
+      <p>Allurez publishes "Approximate Metal Weight", Anjolee publishes "Approx. Metal Weight", and VRAI publishes a metal weight for ring size 6. None is a measurement of the ring you will receive;
       a size change moves the weight. Every derived gold value inherits that uncertainty.</p>
     </div>
     <div class="card">
       <h3>No seller publishes a hallmark</h3>
       <p>Zero of {len(rows)} rows show the physical stamp or the maker's mark, which is the one item on the checklist that can only be verified in your hand.
       The FTC guidance is blunt: if the karat mark has no trademark beside it, don't buy it.</p>
+    </div>
+    <div class="card">
+      <h3>A price that includes the diamond (AN-01)</h3>
+      <p>Anjolee's $870.76 is the price of a configured ring <em>with</em> a 0.50 ct lab-created centre diamond, and its page publishes an approximate metal weight of 2.90 g.
+      The gold content and gold value of the metal are shown, but no price ÷ gold multiple is published for this row: dividing a diamond-inclusive price by a metal-only value would produce a number that looks comparable and is not.</p>
+      <p class="small">Recorded on <a href="solitaire.html">AN-01</a>. Compare like with like: setting-only prices against setting-only prices.</p>
+    </div>
+    <div class="card">
+      <h3>VRAI band widths removed on re-verification</h3>
+      <p>The first capture recorded numeric band widths for VR-01 and VR-02. Re-reading the live configuration pages on 2026-10-22 showed only "Band width: Standard"
+      and a 1.6 mm band <em>depth</em> — no numeric band width. Both cells are now blank and flagged <span class="mono">WIDTH_UNVERIFIED</span>.</p>
+      <p class="small">A value that cannot be re-read from the official page does not stay in the dataset.</p>
     </div>
   </div>
 </section>

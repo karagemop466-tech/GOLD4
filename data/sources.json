@@ -176,12 +176,13 @@
       "retrieved_utc": "2026-10-22",
       "verification": "V1_direct_page_fetch",
       "supports": [
+        "Setting price $1,390 for the 18K yellow gold version, shown as '$1,390 (Setting Only)'; style BE1D2444-18KY; band width 2 mm in the ring-information block",
         "Offered in 14K/18K white gold, 14K/18K yellow gold, 14K rose gold and platinum",
         "One complimentary resizing within 60 days of purchase (up to 1 year if within the recommended range), free shipping both ways",
         "Order includes a professional appraisal, free lifetime warranty and an FSC-certified wood box",
         "Free 30-day returns, free shipping both ways"
       ],
-      "caveat": "The item price and metal weight were not readable from the captured page content, so no price or weight is recorded for this product anywhere in the dataset."
+      "caveat": "The item price could not be read in this project's first capture; it was read from the live page on 2026-10-22 by the independent re-verification pass and is recorded as row BE-01. The page publishes no gram weight, so no weight is recorded for this product anywhere in the dataset."
     },
     {
       "id": "anjolee-ms354a",
@@ -192,12 +193,13 @@
       "retrieved_utc": "2026-10-22",
       "verification": "V1_direct_page_fetch",
       "supports": [
-        "Price $870.76 for the configured 14K white gold, 0.50 ct, FG/VS version (price includes the centre diamond)",
+        "Price $870.76 for the configured 14K white gold, 0.50 ct, lab-created FG/VS version (price includes the centre diamond)",
+        "'Approx. Metal Weight: 2.90 Gr.' in the product-details table (14K white gold, ring size 6.5, 0.50 ct configuration)",
         "30-day returns, and the page states 'All customized orders can be returned for full refund within 30 days of receipt'",
         "Lifetime warranty (prong tightening, re-polishing, rhodium plating, cleaning) plus one-year manufacturing-defect warranty",
         "Phone 877-265-6533"
       ],
-      "caveat": "The page did not display a gram weight in the captured content; a search snapshot showed '2.90 Gr.' but that is V2 evidence only, so the weight is recorded as unverified."
+      "caveat": "The 2.90 g weight was first seen only in a search snapshot (V2) and left blank; it was read from the live page's details table on 2026-10-22 by the independent re-verification pass and is now recorded as V1. The centre diamond in the captured configuration is lab-created, and the price includes it, so no price-to-gold multiple is published for this row."
     }
   ]
 }

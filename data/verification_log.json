@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "coordination_summary": "Four agent sessions worked in this repository on 2026-10-22: arena/9614479d-gold4 (this one), arena/22b5b06c-gold4, arena/93da71b4-gold4 and arena/b4413b13-gold4. The other three had their work merged to main first (PR #1, #2, #3); this session integrated them instead of replacing them — see the preserved-artifacts table in README.md and docs/legacy/. Two of those sessions recorded that their sandbox could not reach retailer pages, which is why their catalogs are empty. That was a tooling limit, not evidence that no ring can be verified: this session could read the retailer pages, so the dataset is populated and every populated value carries the page it came from. Nothing in any other branch was deleted, renamed or force-pushed.",
+  "coordination_summary": "Four agent sessions worked in this repository on 2026-10-22: arena/9614479d-gold4, arena/22b5b06c-gold4, arena/93da71b4-gold4 and arena/b4413b13-gold4. The other three had their work merged to main first (PR #1, #2, #3); arena/9614479d integrated them instead of replacing them — see the preserved-artifacts table in README.md and docs/legacy/. Two of those sessions recorded that their sandbox could not reach retailer pages, which is why their catalogs are empty. That was a tooling limit, not evidence that no ring can be verified: the integration session could read the retailer pages, so the dataset is populated and every populated value carries the page it came from. Nothing in any other branch was deleted, renamed or force-pushed. A fifth session (arena/b2c018a8-gold4), later the same day, ran an independent re-verification pass against the live official pages (Pass 4 below): it confirmed every stored price, weight and policy line by line, made three sourced corrections, and republished through its own pull request.",
   "passes": [
     {
       "pass": "Pass 0 — baseline repository review",
@@ -65,6 +65,24 @@
       ],
       "result": "PASS",
       "outcome": "Site generated and link-checked by the same audit script that checks the data, so a broken source link fails the build."
+    },
+    {
+      "pass": "Pass 4 — independent re-verification (session arena/b2c018a8)",
+      "when_utc": "2026-10-22T23:43Z",
+      "scope": "Every stored value re-read line by line from its official page: 20 product pages, 4 return-policy pages, the VRAI listing page and the Mejuri collection page, FTC (2 articles), 16 CFR 23.3 and 23.18, 15 U.S.C. 295 and ch. 8, LBMA, World Gold Council",
+      "checked": [
+        "All 8 Blue Nile prices, stock numbers, metals and widths re-read and unchanged; the three copy-contradiction flags re-confirmed word for word ('crafted in 18k yellow gold' on the 14K BN-04 page; 'set in 14k white gold' on the 14K yellow-gold BN-08 page; 'platinum prongs' on BN-07)",
+        "All 4 Allurez prices and gram weights (3.58 / 3.4 / 4.4 / 5.3 g) and style numbers re-read and unchanged",
+        "VRAI: 'From $1,035' listing price and both metal weights (2.86 g, 2.84 g, ring size 6) re-read and unchanged; VR-02 price still not published, so it stays blank",
+        "All 5 Mejuri prices and the 'Solid Yellow Gold (14k)' wording re-read on the collection page and unchanged",
+        "Anjolee: $870.76, style MS354-A, the customized-orders refund sentence and the warranty text re-read and unchanged; the details table also shows the centre stone is lab-created FG/VS, so the price basis was corrected to say so",
+        "Return windows, exclusions, fees ($150 Blue Nile grading report; $300 VRAI recycling fee; $300 Allurez missing certificate), resize terms and contact details re-read on all four policy pages and unchanged",
+        "Law: 15 U.S.C. 295 tolerances 0.003 / 0.007 re-read verbatim; 16 CFR 23.3(a) and the hollow-centre note in 23.3(c)(1) re-read; 16 CFR 23.18 title confirmed; FTC karat / solid-gold / trademark wording re-read",
+        "Gold benchmark: the World Gold Council page was re-read; the live spot panel showed USD 4,028.53/oz (the frozen capture is 4,024.36) and the 'Data as of 21 October, 2026' line is unchanged. The frozen benchmark is retained per methodology and the re-check is recorded in data/gold_spot.json",
+        "Derived arithmetic re-derived by hand for AL-01 and VR-01 (spot per gram, pure gold grams, gold value, legal-minimum value, multiple) and matched data/derived.json to the cent; compute.py output is unchanged apart from its timestamp"
+      ],
+      "result": "PASS after corrections",
+      "outcome": "Three changes, all read from the official page: (1) AN-01 weight upgraded from blank to 2.90 g ('Approx. Metal Weight: 2.90 Gr.' read from the live details table) and weighted rows rise from 6 to 7; because its price includes a lab-created diamond, no price-to-gold multiple is published for it (rule enforced in compute.py and audit.py). (2) New row BE-01: the Brilliant Earth Atelier setting price ($1,390, setting only) is readable on the live page; its weight stays blank. (3) VR-01/VR-02 band widths blanked: the live pages publish 'Band width: Standard' and a 1.6 mm band depth, not a numeric band width. Every other stored value was confirmed unchanged on 2026-10-22."
     }
   ]
 }

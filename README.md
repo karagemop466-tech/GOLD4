@@ -25,7 +25,7 @@ When reviewing anything in this repo, **ask of each value: where is the official
 |---|---|
 | `index.html`, `pages/*.html` | The published dashboard and its subpages (generated — do not hand-edit) |
 | `assets/style.css`, `assets/app.js` | Styling and the client-side gold calculator / table filter |
-| `data/rings.json` | The dataset: 20 rings, each with price, weight, sources, verification level and flags |
+| `data/rings.json` | The dataset: 21 rings, each with price, weight, sources, verification level and flags |
 | `data/sellers.json` | Seller-level facts: return window, exclusions, resize terms, warranty, contact |
 | `data/sources.json` | The 13 registered sources with tier, retrieval date and what each one supports |
 | `data/methodology.json` | Karat table, 15 U.S.C. § 295 tolerances, formulas, assumptions, verification levels |
@@ -52,28 +52,29 @@ No third-party dependencies, no network access required to build. Python 3.10+.
 
 | Metric | Value |
 |---|---|
-| Rings tracked | 20 |
-| Retailers with product rows | 5 (Blue Nile, Allurez, VRAI, Mejuri, Anjolee) |
-| Prices read from the retailer's own page | 19 of 20 (1 deliberately blank) |
-| Gram weights published by the retailer | 6 of 20 — only these rows have a computable gold value |
-| Rows with explicit *solid gold* wording | 5 of 20 (all Mejuri) |
-| Rows publishing a hallmark / maker's mark | **0 of 20** — it can only be checked in your hand |
+| Rings tracked | 21 |
+| Retailers with product rows | 6 (Blue Nile, Allurez, VRAI, Mejuri, Anjolee, Brilliant Earth) |
+| Prices read from the retailer's own page | 20 of 21 (1 deliberately blank) |
+| Gram weights published by the retailer | 7 of 21 — only these rows have a computable gold value |
+| Rows with explicit *solid gold* wording | 5 of 21 (all Mejuri) |
+| Rows publishing a hallmark / maker's mark | **0 of 21** — it can only be checked in your hand |
 | Gold benchmark used | $4,024.36/oz = $129.3862/g, 21 Oct 2026 |
 | Flags raised for review | published on the Flagged page, with sources |
 
 **Headline findings**
 
 1. A stamp is a claim with a legal tolerance, not a measurement: under 15 U.S.C. § 295 an "18K" ring may be as low as 74.3% gold and a "14K" ring as low as 57.63%.
-2. Most major retailers do not publish a gram weight, so their rings cannot be priced against their own gold. Only Allurez and VRAI did in this pass.
+2. Most major retailers do not publish a gram weight, so their rings cannot be priced against their own gold. Allurez, VRAI and Anjolee did.
 3. The 18K premium is inconsistent: +15.5% (Blue Nile Petite Solitaire), +40.1% (Blue Nile Comfort Fit), +68.0% (Allurez Split Shank) — and for the one pair with both weights published, 54.9% of that premium is simply more gold.
 4. Return windows all look like "30 days", but exclusions differ sharply (resized, engraved, custom). One seller (Anjolee) explicitly accepts returns on customised orders; another (Allurez) makes custom orders non-refundable.
 5. Several retailer pages contradict their own specification blocks; each case is listed on the Flagged page.
+6. An independent re-verification pass on 2026-10-22 re-read every value from its official page: every price and policy was confirmed unchanged, three stored values were corrected (Anjolee's 2.90 g weight upgraded to directly-read; a new Brilliant Earth row added because its $1,390 setting price is now readable; two VRAI band widths blanked because the pages publish no numeric width), and one price (Anjolee's) is deliberately shown without a price÷gold multiple because it includes a diamond. Details: `data/verification_log.json` Pass 4 and the site's Log page.
 
 ## Sources
 
 - **Tier A — government/regulator:** FTC consumer guidance on jewellery; 16 CFR Part 23 (§ 23.3); 15 U.S.C. § 295 and ch. 8; FTC credit-card dispute guidance.
 - **Tier B — market benchmark:** World Gold Council gold spot; LBMA benchmark description.
-- **Tier C — retailer's own site:** 20 product pages plus return-policy pages from Blue Nile, Allurez, VRAI, Mejuri, Brilliant Earth and Anjolee.
+- **Tier C — retailer's own site:** 21 product pages plus return-policy pages from Blue Nile, Allurez, VRAI, Mejuri, Brilliant Earth and Anjolee.
 
 The full registry, with what each source supports, is in `data/sources.json` and on the site's Sources page.
 
@@ -109,7 +110,7 @@ The earlier sessions' own records (including the note that their sandboxes had n
 - Gold value is melt-value arithmetic, not an appraisal and not a resale offer.
 - Reputation was **not** verified for any seller; no review or complaint data was collected.
 - No XRF or assay result exists for any item — that is the point of the on-arrival step in the checklist.
-- Brilliant Earth appears only at seller-policy level: its product price and weight could not be read, so no product row or price is published.
+- Brilliant Earth has one product row (BE-01) with a verified setting price but no published gram weight, so no gold value is computed for it.
 
 ## Coordination
 
