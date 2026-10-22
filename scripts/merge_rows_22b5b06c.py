@@ -17,7 +17,7 @@ at data/preserved/rings_candidates_22b5b06c.json.
 Also records (informational, not used in any derived arithmetic):
   - this session's live gold-api.com spot reading and same-day Kitco/APMEX
     snapshot readings in data/gold_spot.json under a clearly labelled key;
-  - a Pass 6 entry in data/verification_log.json.
+  - a Pass 7 entry in data/verification_log.json.
 
 Idempotent: rows already present (by id) are skipped.
 Run: python3 scripts/merge_rows_22b5b06c.py
@@ -73,8 +73,8 @@ SETTING = "Setting only — page shows '(Setting Price)'; centre diamond sold se
 P = "https://www.bluenile.com/engagement-rings/design-your-own-ring/"
 
 NEW_ROWS = [
-    # ---- Brilliant Earth (insert after BE-02) ----
-    be("BE-03", "Freesia Hidden Halo Diamond Ring", "Hidden halo — concealed pavé accents beneath the centre stone, claw prong",
+    # ---- Brilliant Earth (insert after main's BE-03) ----
+    be("BE-04", "Freesia Hidden Halo Diamond Ring", "Hidden halo — concealed pavé accents beneath the centre stone, claw prong",
        "pave", "14K Yellow Gold", 14, "BE1D3939-14KY", None, 1190.0,
        "Setting only — page shows '$1,190 (Setting Only)'",
        "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
@@ -82,7 +82,7 @@ NEW_ROWS = [
        "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session.",
        "2026-10-22T23:35Z: three dated snapshots of official Brilliant Earth pages agree on $1,190 (product page + two category JSON-LD records). Live re-fetch pending (fetch-service outage 23:20-23:47Z).",
        pair="PAIR-BE-FREESIA"),
-    be("BE-04", "Freesia Hidden Halo Diamond Ring", "Hidden halo — concealed pavé accents beneath the centre stone",
+    be("BE-05", "Freesia Hidden Halo Diamond Ring", "Hidden halo — concealed pavé accents beneath the centre stone",
        "pave", "18K Yellow Gold", 18, None, None, 1390.0,
        "Setting only — page shows '$1,390 (Setting Only)'",
        "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/",
@@ -90,7 +90,7 @@ NEW_ROWS = [
        "Snapshot of the official product page (dated 2026-09-28) showed: $1,390 (Setting Only), Metal 18K Yellow Gold. The 18K style code was not visible in the captured text, so sku stays blank rather than inferred from the 14K variant.",
        "2026-10-22T23:35Z: value re-read from the dated official-page snapshot; live re-fetch pending (outage).",
        pair="PAIR-BE-FREESIA"),
-    be("BE-05", "Fleur Solitaire Ring", "Solitaire, four-prong tulip head, low profile",
+    be("BE-06", "Fleur Solitaire Ring", "Solitaire, four-prong tulip head, low profile",
        "solitaire", "14K Yellow Gold", 14, "BE1574-14KY", 1.8, 1350.0,
        "Setting only — page shows '$1,350 (Setting Only)'",
        "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
@@ -222,7 +222,7 @@ NEW_ROWS = [
        "Live fetch 2026-10-22T23:19Z: sold-out status and merger notice read directly from the page."),
 ]
 
-INSERT_AFTER = {"BE": "BE-02", "BN": "BN-08"}
+INSERT_AFTER = {"BE": "BE-03", "BN": "BN-08"}
 
 
 def insert_rows(doc):
@@ -293,14 +293,14 @@ def main():
     # ---- verification_log.json: Pass 6 ----
     vp = DATA / "verification_log.json"
     vlog = json.loads(vp.read_text(encoding="utf-8"))
-    if not any("Pass 6" in p.get("pass", "") for p in vlog["passes"]):
+    if not any("Pass 7" in p.get("pass", "") for p in vlog["passes"]):
         vlog["coordination_summary"] += (
             " Session arena/22b5b06c-gold4 later returned with its own independently collected dataset (15 Blue Nile / James Allen-line rows and "
             "4 Brilliant Earth rows, 9 of them from live page fetches) plus a live gold-api.com spot reading; its integration merged main's published "
-            "tree unchanged and added its rows to the same schema (PR #11), preserving its working files under data/preserved/, docs/legacy/ and "
+            "35-row tree unchanged and added its rows to the same schema (PR #11), preserving its working files under data/preserved/, docs/legacy/ and "
             "scripts/session_22b5b06c/.")
         vlog["passes"].append({
-            "pass": "Pass 6 — second independent collection (session arena/22b5b06c-gold4) + integration into the published dataset",
+            "pass": "Pass 7 — second independent collection (session arena/22b5b06c-gold4) + integration into the published dataset",
             "when_utc": "2026-10-22T23:55Z",
             "scope": ("19 candidate rows collected independently from official Blue Nile and Brilliant Earth pages (9 by live fetch 23:13-23:19Z, "
                       "10 from dated snapshots of the same official pages during a fetch-service outage 23:20-23:47Z, each corroborated against at "
@@ -308,7 +308,7 @@ def main():
                       "same-day Kitco/APMEX snapshot readings; integration merge of main's tree with this session's branch."),
             "checked": [
                 "Every added row carries its official source URL, capture date, and either V1 (live fetch) or V2 (dated official-page snapshot, always flagged PRICE_V2_ONLY) provenance. No value was carried over from memory or secondary sources.",
-                "Duplicate scan vs the published 22 rows: one overlap found — Brilliant Earth Atelier Solitaire 14K (this session's candidate BE-BE1D2444-14KY = published BE-01, same URL, same $1,190). The published row was kept and this session's independent snapshot corroboration was APPENDED to its flag_detail; no duplicate row was added.",
+                "Duplicate scan vs the published 35 rows: one overlap found — Brilliant Earth Atelier Solitaire 14K (this session's candidate BE-BE1D2444-14KY = published BE-01, same URL, same $1,190). The published row was kept and this session's independent snapshot corroboration was APPENDED to its flag_detail; no duplicate row was added.",
                 "Two new irregularities found on Blue Nile's own pages: BN-19 Wide Band Solitaire description says 'platinum solitaire setting' against a 14K Yellow Gold spec (COPY_INCONSISTENT_METAL — the third such Blue Nile copy contradiction after BN-04 '18k' and BN-08 '14k white gold'); BN-17 Woven Solitaire shows four different sale prices ($772/$724/$730/$728) across four official category pages for the same SKU (SALE_PRICE_VARIES_ACROSS_PAGES).",
                 "James Allen status confirmed from a live-fetched page: jamesallen.com item URLs redirect to bluenile.com, which displays 'James Allen is Now Part of Blue Nile' (recorded on BN-23). BN-23 itself was sold out at the live check, so its price cell stays blank (an older $660 snapshot was deliberately not used).",
                 "Gold spot cross-check: benchmark $4,028.53/oz (WGC) vs this session's independent live reading $4,028.10/oz (gold-api.com, 23:01:42Z) — 0.01% apart; Kitco ($4,062.30 @10:54 ET; $4,032.80 @14:46 ET) and APMEX ($4,042.90 @19:13 ET) snapshots sit inside the same intraday range. Recorded informationally in data/gold_spot.json; derived arithmetic still uses only the WGC benchmark.",
@@ -316,19 +316,19 @@ def main():
                 "Ring weights: none of the 18 added rows has a retailer-published gram weight (Blue Nile and Brilliant Earth product pages do not publish one), so every added weight cell is blank with NO_WEIGHT_PUBLISHED — consistent with the published Blue Nile rows.",
             ],
             "result": "PASS (pending re-run of audit.py/check_site.py/verify.py after integration, recorded in reports/)",
-            "outcome": ("Dataset grows from 22 to 40 rows and from 6 to 6 retailers (Blue Nile +15 including the James Allen line and one sold-out "
-                        "row with a deliberately blank price; Brilliant Earth +3). 18 rows added: 8 at V1 and 10 at V2-with-flag. Two new flag types "
+            "outcome": ("Dataset grows from 35 to 53 rows; retailer count unchanged at 9 (Blue Nile +15 including the James Allen line and one sold-out "
+                        "row with a deliberately blank price; Brilliant Earth +3: BE-04/BE-05/BE-06). 18 rows added: 9 at V1 (one of them the sold-out row, price blank) and 9 at V2-with-flag. Two new flag types "
                         "introduced (SALE_PRICE_VARIES_ACROSS_PAGES, SOLD_OUT_AT_CHECK) plus first use of PRICE_FROM_CATEGORY_PAGE for rows whose "
                         "price was read from a live category-page fetch. No existing row's verified content was altered. Recommendation unchanged: "
                         "re-run scripts/audit.py after every change, re-fetch the V2 rows when possible, and never fill a blank cell without an "
                         "official source."),
         })
         vlog["not_reverified_this_pass"].append(
-            "Pass 6 did not re-fetch the 22 rows already published (they stand as Pass 5 verified them), and could not live-refetch its own 10 V2 rows "
+            "Pass 7 did not re-fetch the 35 rows already published (they stand as the latest published passes verified them), and could not live-refetch its own 9 V2 rows "
             "or the Brilliant Earth generic returns-policy page because of the fetch-service outage (23:20-23:47Z); those rows carry PRICE_V2_ONLY and "
             "appear on the Flagged page until a live re-fetch confirms them.")
         vp.write_text(json.dumps(vlog, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-        print("verification_log.json: Pass 6 appended")
+        print("verification_log.json: Pass 7 appended")
 
 
 if __name__ == "__main__":

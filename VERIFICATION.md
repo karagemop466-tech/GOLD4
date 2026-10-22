@@ -1,6 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-22 23:47 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-22 23:56 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
@@ -11,12 +11,12 @@ Generated 2026-10-22 23:47 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ## Coverage summary
 
-- Rows: **35**
-- Prices read from the seller's page: **34**
+- Rows: **53**
+- Prices read from the seller's page: **51**
 - Gram weights published by the seller: **13** (therefore only these rows have a computable gold value)
 - Rows with explicit *solid gold* wording: **17**
 - Rows publishing a hallmark or maker's mark: **0** (the legal requirement is quoted in `data/methodology.json`)
-- Rows carrying at least one flag: **35**
+- Rows carrying at least one flag: **53**
 
 ## Line-by-line verification — every row
 
@@ -29,9 +29,6 @@ Generated 2026-10-22 23:47 UTC from `data/*.json` by `scripts/gen_verification.p
 | AN-01 | Anjolee | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) | 14K | $870.76 | V1 · 2026-10-22 | 2.90 g | V1 | $219.11 | not stated | not published | PRICE_INCLUDES_CENTRE_STONE, CENTRE_STONE_LAB_CREATED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
 | BE-01 | Brilliant Earth | [Atelier Solitaire Ring (2 mm, claw-prong bypass)](https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/) | 14K | $1,190 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | BE-02 | Brilliant Earth | [Atelier Solitaire Ring (2 mm, claw-prong bypass)](https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/) | 18K | $1,390 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| BE-03 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/) | 14K | $1,190 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY |
-| BE-04 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/) | 18K | $1,390 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY |
-| BE-05 | Brilliant Earth | [Fleur Solitaire Ring](https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/) | 14K | $1,350 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY |
 | BN-01 | Blue Nile | [Petite Solitaire Engagement Ring](https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639) | 14K | $1,000 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | BN-02 | Blue Nile | [Petite Solitaire Engagement Ring](https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269) | 18K | $1,155 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | BN-03 | Blue Nile | [Classic Six-Prong Solitaire Engagement Ring](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272) | 14K | $1,000 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
@@ -63,6 +60,9 @@ Generated 2026-10-22 23:47 UTC from `data/*.json` by `scripts/gen_verification.p
 | VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.82 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND |
 | VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.88 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND |
 | BE-03 | Brilliant Earth | [Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K Shank + 14K White Gold Prongs)](https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/) | 18K | $850 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, MIXED_METAL_UNCLEAR |
+| BE-04 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/) | 14K | $1,190 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY |
+| BE-05 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/) | 18K | $1,390 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY |
+| BE-06 | Brilliant Earth | [Fleur Solitaire Ring](https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/) | 14K | $1,350 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY |
 | SR-01 | Sarraf | [10k White Gold 5mm High Polished Traditional Domed Wedding Band](https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 10K | $352 | V1 · 2026-10-22 | 4.80 g | V1 | $259.04 | stated: “Material: 10K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
 | SR-02 | Sarraf | [14k Yellow Gold 6mm High Polished Comfort Fit Heavy Wedding Band](https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html) | 14K | $1,063 | V1 · 2026-10-22 | 9.40 g | V1 | $710.20 | stated: “Material: 14K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
 | SR-03 | Sarraf | [18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band](https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 18K | $871 | V1 · 2026-10-22 | 6.70 g | V1 | $650.84 | stated: “Material: 18K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
@@ -100,7 +100,7 @@ Generated 2026-10-22 23:47 UTC from `data/*.json` by `scripts/gen_verification.p
 |---|---|---|---|---|---|---|
 | PAIR-AL-SPLIT | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold) ([AL-03](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold), [AL-04](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold)) | $848 → $1,425 | +68.0% | +54.9% | 2.55× → 2.77× |
 | PAIR-BE-ATELIER | Brilliant Earth | [Atelier Solitaire Ring (2 mm, claw-prong bypass)](https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/) ([BE-01](https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/), [BE-02](https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/)) | $1,190 → $1,390 | +16.8% | **not computable** (no published weights) | **blank**× → **blank**× |
-| PAIR-BE-FREESIA | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/) ([BE-03](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/), [BE-04](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/)) | $1,190 → $1,390 | +16.8% | **not computable** (no published weights) | **blank**× → **blank**× |
+| PAIR-BE-FREESIA | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/) ([BE-04](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/), [BE-05](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/)) | $1,190 → $1,390 | +16.8% | **not computable** (no published weights) | **blank**× → **blank**× |
 | PAIR-BN-COMFORT | Blue Nile | [Classic Comfort Fit Solitaire Engagement Ring (2.5mm)](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284) ([BN-04](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284), [BN-05](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941)) | $935 → $1,310 | +40.1% | **not computable** (no published weights) | **blank**× → **blank**× |
 | PAIR-BN-PETITE | Blue Nile | [Petite Solitaire Engagement Ring](https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639) ([BN-01](https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639), [BN-02](https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269)) | $1,000 → $1,155 | +15.5% | **not computable** (no published weights) | **blank**× → **blank**× |
 | sarraf-domed-5mm | Sarraf | [10k White Gold 5mm High Polished Traditional Domed Wedding Band](https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) ([SR-01](https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html), [SR-03](https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html)) | $352 → $871 | +147.4% | +151.2% | 1.36× → 1.34× |
@@ -169,9 +169,6 @@ Generated 2026-10-22 23:47 UTC from `data/*.json` by `scripts/gen_verification.p
 - **AN-01** (Anjolee · Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)): solid-gold wording not published on the captured page → https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx
 - **BE-01** (Brilliant Earth · Atelier Solitaire Ring (2 mm, claw-prong bypass)): weight, solid-gold wording not published on the captured page → https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/
 - **BE-02** (Brilliant Earth · Atelier Solitaire Ring (2 mm, claw-prong bypass)): weight, solid-gold wording not published on the captured page → https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/
-- **BE-03** (Brilliant Earth · Freesia Hidden Halo Diamond Ring): weight, solid-gold wording not published on the captured page → https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/
-- **BE-04** (Brilliant Earth · Freesia Hidden Halo Diamond Ring): weight, solid-gold wording not published on the captured page → https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/
-- **BE-05** (Brilliant Earth · Fleur Solitaire Ring): weight, solid-gold wording not published on the captured page → https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/
 - **BN-01** (Blue Nile · Petite Solitaire Engagement Ring): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639
 - **BN-02** (Blue Nile · Petite Solitaire Engagement Ring): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269
 - **BN-03** (Blue Nile · Classic Six-Prong Solitaire Engagement Ring): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272
@@ -203,6 +200,9 @@ Generated 2026-10-22 23:47 UTC from `data/*.json` by `scripts/gen_verification.p
 - **VR-01** (VRAI · The Classic Engagement Ring (4-prong dome, plain band)): solid-gold wording not published on the captured page → https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861
 - **VR-02** (VRAI · Signature 6 Prong Engagement Ring (plain band)): price, solid-gold wording not published on the captured page → https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301
 - **BE-03** (Brilliant Earth · Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K Shank + 14K White Gold Prongs)): weight, solid-gold wording not published on the captured page → https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/
+- **BE-04** (Brilliant Earth · Freesia Hidden Halo Diamond Ring): weight, solid-gold wording not published on the captured page → https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/
+- **BE-05** (Brilliant Earth · Freesia Hidden Halo Diamond Ring): weight, solid-gold wording not published on the captured page → https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/
+- **BE-06** (Brilliant Earth · Fleur Solitaire Ring): weight, solid-gold wording not published on the captured page → https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/
 - **SR-07** (Sarraf · 14k Gold 1/2 Ctw Natural Diamond Solitaire Engagement Ring (G/SI1)): weight not published on the captured page → https://www.sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-engagement-diamond-ring.html
 - **SR-08** (Sarraf · 18k Yellow Gold 1/2 Carat Round Diamond Solitaire Engagement Ring): weight not published on the captured page → https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html
 - **CB-01** (Catbird NYC · The Swan Solitaire Diamond Engagement Ring (1.0mm Recycled 14K Band)): weight not published on the captured page → https://www.catbirdnyc.com/the-swan-solitaire-2475.html
@@ -214,13 +214,21 @@ Generated 2026-10-22 23:47 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-22T23:47:46+00:00
-dataset rows: 35 | sellers: 9 | sources: 24
+run_utc: 2026-10-22T23:54:28+00:00
+dataset rows: 53 | sellers: 9 | sources: 24
 spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
 
-RESULT: PASS  (91 passed, 0 warnings, 0 failures)
+RESULT: PASS  (108 passed, 9 warnings, 0 failures)
 
-No warnings, no failures.
+[WARN] B-08 price verification: BN-17: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-18: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-19: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-20: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-21: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-22: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BE-04: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BE-05: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BE-06: price is only V2 evidence and must be flagged
 
 Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
 price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,

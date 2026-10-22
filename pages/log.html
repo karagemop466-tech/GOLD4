@@ -82,18 +82,31 @@
       <p class="small">2026-10-22T23:36Z · Full line-by-line repo &amp; live web verification across 9 retailers (35 rows), 11 Assay Lab standalone pages, and 4 automated CI security/hallucination gates</p>
       <ul class="small"><li>Caught and fixed TWO live HTTP 404 government URLs in merged docs/sources.html (`ftc.gov/business-center/advertising-and-marketing` &amp; `nist.gov/publications/nist-special-publication-811`) using live-verified 200 OK replacements (`consumer.ftc.gov/...`, `ecfr.gov/.../part-23`, `nist.gov/pml/special-publication-811`)</li><li>Caught and blocklisted dead 404 GIA URL (`summer-2025-lab-notes-gold-plated-gold0`) found in sibling branch `81b71aa5`, linking verified 200 OK GIA XRF &amp; Carlsbad electroforming fraud lab studies</li><li>Spot-verified `gold.org` ($4,028.53/oz), `Allurez AL-01` ($585, 3.58g), `Anjolee AN-01`, &amp; `VRAI VR-01` live on 2026-10-22 alongside same-day `Kitco` ($4,024.60/oz = $129.39/g) &amp; `JM Bullion` ($4,039.76/oz = $129.88/g) quotes</li><li>Expanded canonical dataset from 22 -&gt; 35 rows across 9 retailers (`10K`, `14K`, `18K`, `24K`), adding plain solid band melt benchmarks (1.33x–1.50x raw melt), the 10K-vs-18K 5mm density pair (`SR-01` vs `SR-03`), two live Sarraf karat contradictions (`F1625` $20,671 &amp; `121987-.72P` $2,858), and Mejuri&#x27;s $188 vermeil copy trap (`G4-RED-01`)</li></ul>
       <p class="small"><strong>Outcome:</strong> All 4 automated audit suites (`audit.py`, `check_site.py`, `verify.py`, `verify_a0be79d4.py`) pass with 0 hard failures and 0 broken links.</p>
+    </div><div class="card">
+      <h3>Pass 7 — second independent collection (session arena/22b5b06c-gold4) + integration into the published dataset <span class="badge b-ok">PASS (pending re-run of audit.py/check_site.py/verify.py after integration, recorded in reports/)</span></h3>
+      <p class="small">2026-10-22T23:55Z · 19 candidate rows collected independently from official Blue Nile and Brilliant Earth pages (9 by live fetch 23:13-23:19Z, 10 from dated snapshots of the same official pages during a fetch-service outage 23:20-23:47Z, each corroborated against at least one additional official-page read including schema.org JSON-LD where published); one live gold-spot API reading plus same-day Kitco/APMEX snapshot readings; integration merge of main&#x27;s tree with this session&#x27;s branch.</p>
+      <ul class="small"><li>Every added row carries its official source URL, capture date, and either V1 (live fetch) or V2 (dated official-page snapshot, always flagged PRICE_V2_ONLY) provenance. No value was carried over from memory or secondary sources.</li><li>Duplicate scan vs the published 35 rows: one overlap found — Brilliant Earth Atelier Solitaire 14K (this session&#x27;s candidate BE-BE1D2444-14KY = published BE-01, same URL, same $1,190). The published row was kept and this session&#x27;s independent snapshot corroboration was APPENDED to its flag_detail; no duplicate row was added.</li><li>Two new irregularities found on Blue Nile&#x27;s own pages: BN-19 Wide Band Solitaire description says &#x27;platinum solitaire setting&#x27; against a 14K Yellow Gold spec (COPY_INCONSISTENT_METAL — the third such Blue Nile copy contradiction after BN-04 &#x27;18k&#x27; and BN-08 &#x27;14k white gold&#x27;); BN-17 Woven Solitaire shows four different sale prices ($772/$724/$730/$728) across four official category pages for the same SKU (SALE_PRICE_VARIES_ACROSS_PAGES).</li><li>James Allen status confirmed from a live-fetched page: jamesallen.com item URLs redirect to bluenile.com, which displays &#x27;James Allen is Now Part of Blue Nile&#x27; (recorded on BN-23). BN-23 itself was sold out at the live check, so its price cell stays blank (an older $660 snapshot was deliberately not used).</li><li>Gold spot cross-check: benchmark $4,028.53/oz (WGC) vs this session&#x27;s independent live reading $4,028.10/oz (gold-api.com, 23:01:42Z) — 0.01% apart; Kitco ($4,062.30 @10:54 ET; $4,032.80 @14:46 ET) and APMEX ($4,042.90 @19:13 ET) snapshots sit inside the same intraday range. Recorded informationally in data/gold_spot.json; derived arithmetic still uses only the WGC benchmark.</li><li>Timestamp anomaly noted, not corrected: Pass 5 in this log is stamped 2026-10-23T00:05Z, which is ahead of the wall-clock time when it was merged (main&#x27;s PR #10 merged 23:33Z on 22 Oct). Left as that session wrote it; flagged here for the record.</li><li>Ring weights: none of the 18 added rows has a retailer-published gram weight (Blue Nile and Brilliant Earth product pages do not publish one), so every added weight cell is blank with NO_WEIGHT_PUBLISHED — consistent with the published Blue Nile rows.</li></ul>
+      <p class="small"><strong>Outcome:</strong> Dataset grows from 35 to 53 rows; retailer count unchanged at 9 (Blue Nile +15 including the James Allen line and one sold-out row with a deliberately blank price; Brilliant Earth +3: BE-04/BE-05/BE-06). 18 rows added: 9 at V1 (one of them the sold-out row, price blank) and 9 at V2-with-flag. Two new flag types introduced (SALE_PRICE_VARIES_ACROSS_PAGES, SOLD_OUT_AT_CHECK) plus first use of PRICE_FROM_CATEGORY_PAGE for rows whose price was read from a live category-page fetch. No existing row&#x27;s verified content was altered. Recommendation unchanged: re-run scripts/audit.py after every change, re-fetch the V2 rows when possible, and never fill a blank cell without an official source.</p>
     </div></div></section>
 <section class="section">
   <h2>Latest integrity audit output</h2>
   <p class="sub">Produced by <span class="mono">scripts/audit.py</span>. Any FAIL fails the build; warnings must be published on the Flagged page.</p>
   <pre class="mono" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;white-space:pre-wrap">GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-22T23:47:46+00:00
-dataset rows: 35 | sellers: 9 | sources: 24
+run_utc: 2026-10-22T23:54:28+00:00
+dataset rows: 53 | sellers: 9 | sources: 24
 spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
 
-RESULT: PASS  (91 passed, 0 warnings, 0 failures)
+RESULT: PASS  (108 passed, 9 warnings, 0 failures)
 
-No warnings, no failures.
+[WARN] B-08 price verification: BN-17: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-18: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-19: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-20: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-21: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-22: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BE-04: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BE-05: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BE-06: price is only V2 evidence and must be flagged
 
 Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
 price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,
@@ -106,7 +119,7 @@ per-row source-link requirement, and render-text sanity.
   <h2>Repository coordination</h2>
   <p class="sub">This repository is shared with other agent sessions. The task board, claims and hand-offs live in <span class="mono">COORDINATION.md</span> in the repository root; the public summary is below.</p>
   <div class="card"><p>Six agent sessions have worked in this repository on 2026-10-22. arena/b4413b13-gold4 (PR #1, #3), arena/93da71b4-gold4 (PR #2) and arena/9614479d-gold4 (PR #4, #5) built the dataset, the site and the audit; arena/22b5b06c-gold4&#x27;s review is preserved unmerged at docs/legacy/. Two sessions then re-verified the published tree line by line instead of trusting it: arena/fd51d093-gold4 (PR #7, Pass 4) and arena/e04b126a-gold4 (PR #10 and PR #13, Passes 5 and 6). The two passes were merged rather than stacked — where they disagreed, both readings are recorded and the disagreement is published on the Flagged page. Nothing from any other branch was deleted, renamed or force-pushed.
-</p></div>
+ Session arena/22b5b06c-gold4 later returned with its own independently collected dataset (15 Blue Nile / James Allen-line rows and 4 Brilliant Earth rows, 9 of them from live page fetches) plus a live gold-api.com spot reading; its integration merged main&#x27;s published 35-row tree unchanged and added its rows to the same schema (PR #11), preserving its working files under data/preserved/, docs/legacy/ and scripts/session_22b5b06c/.</p></div>
 </section>
 
 </main>
@@ -115,7 +128,7 @@ per-row source-link requirement, and render-text sanity.
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
   <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:47 UTC · dataset 35 rows · 24 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:56 UTC · dataset 53 rows · 24 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>
