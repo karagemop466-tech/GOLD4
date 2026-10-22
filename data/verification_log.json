@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "coordination_summary": "Four agent sessions were found working in this repository at 23:12 UTC on 2026-10-22 (branches arena/9614479d-gold4, arena/22b5b06c-gold4, arena/93da71b4-gold4, arena/b4413b13-gold4). Every board claimed overlapping whole-project scope within one minute of each other and none had produced verified data. This session claimed the canonical deliverables and logged the decision in COORDINATION.md; no other branch was deleted, renamed or force-pushed. See the repository's COORDINATION.md for the full board and claim log.",
+  "passes": [
+    {
+      "pass": "Pass 0 — baseline repository review",
+      "when_utc": "2026-10-22T23:12Z",
+      "scope": "Whole repository at commit 7f442a1",
+      "checked": [
+        "git log: a single commit, 'Initial commit'",
+        "Tracked files: README.md only, 7 bytes, contents '# GOLD4'",
+        "No data, no site, no sources, no tests, no workflows",
+        "GitHub Pages already enabled and building from main / (root), html_url https://karagemop466-tech.github.io/GOLD4/",
+        "No open issues, no pull requests, one successful pages-build-deployment run",
+        "git ls-remote: three other arena/* branches exist, all with claims boards but no data files"
+      ],
+      "result": "PASS",
+      "outcome": "Nothing in the repository could be verified because nothing existed; all findings on this site are new work. Recorded the four-session collision in COORDINATION.md before writing any file."
+    },
+    {
+      "pass": "Pass 1 — source capture (benchmark, law, retailer pages)",
+      "when_utc": "2026-10-22T23:15Z",
+      "scope": "Official sources only: FTC, eCFR, U.S. Code, World Gold Council, LBMA, and retailer product/policy pages",
+      "checked": [
+        "World Gold Council gold spot: USD 4,024.36/oz, data as of 21 October 2026 — read from the page's own spot panel",
+        "LBMA: benchmark description read; no numerical LBMA price captured because the tables are behind an IBA licence",
+        "FTC consumer article: karat definition, solid-gold definition, trademark-beside-karat-mark requirement, plated/filled/vermeil definitions",
+        "16 CFR Part 23 § 23.3: gold-content misrepresentation and the ban on calling a hollow-centre item 'solid'",
+        "15 U.S.C. § 295: 0.003 assay tolerance and 0.007 whole-article tolerance",
+        "FTC credit-card article: billing-error dispute rights",
+        "20 retailer product pages fetched: Blue Nile (8), Allurez (4 + policy), VRAI (2 + listing + returns), Mejuri (collection + returns), Anjolee (1), Brilliant Earth (1, policy only)",
+        "Every price and weight recorded was copied from the fetched page text, not from search snippets"
+      ],
+      "result": "PASS",
+      "outcome": "Six rows carry a published gram weight (Allurez ×4, VRAI ×2). Nineteen rows carry a price read from the seller's page. Brilliant Earth produced policy facts but no readable price/weight, so it has no product row and no price is quoted anywhere."
+    },
+    {
+      "pass": "Pass 2 — dataset assembly + first integrity audit",
+      "when_utc": "2026-10-22T23:17Z",
+      "scope": "data/*.json, scripts/compute.py, scripts/audit.py",
+      "checked": [
+        "Karat fineness table = karat ÷ 24, cross-checked against the FTC karat definition",
+        "Legal minimum fineness per stamp = fineness − 0.007 (15 U.S.C. § 295)",
+        "Derived gold grams, gold value, legal-minimum value and price/gold multiple recomputed independently by the audit script",
+        "Phantom-math check: no derived value may exist for a row without a published weight",
+        "Blank-value checks: blank price requires PRICE_UNVERIFIED, blank weight requires NO_WEIGHT_PUBLISHED or WEIGHT_UNVERIFIED",
+        "Domain allow-list: every source URL must belong to the named retailer or a government/benchmark host",
+        "Banned-domain scan: no marketplace, resale, blog or social domain anywhere in the data",
+        "Speculation-language scan on all free-text fields",
+        "Two real inconsistencies found on Blue Nile's own pages (18k copy on a 14K page; white-gold copy on a yellow-gold page) and one mixed-metal ambiguity (platinum prongs on a 14K ring) — published on the Flagged page instead of being smoothed over"
+      ],
+      "result": "PASS after fixes",
+      "outcome": "Two audit bugs were found and fixed (fineness rounding tolerance, derived-value rounding). The audit now re-derives every number and fails on any mismatch."
+    },
+    {
+      "pass": "Pass 3 — site build + link check",
+      "when_utc": "2026-10-22T23:20Z",
+      "scope": "index.html, pages/*.html, assets/*",
+      "checked": [
+        "Builder formats only values produced by compute.py — no arithmetic in the HTML layer",
+        "Every table row carries data-row-id and a source link in a td.src cell",
+        "Internal links resolve to files that exist; external links are https and on approved domains",
+        "No placeholder tokens rendered in any page",
+        "No-hallucination block rendered at the top of every page, with a link back to the Flagged page"
+      ],
+      "result": "PASS",
+      "outcome": "Site generated and link-checked by the same audit script that checks the data, so a broken source link fails the build."
+    }
+  ]
+}
