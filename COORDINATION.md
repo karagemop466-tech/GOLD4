@@ -15,7 +15,7 @@ Verification log (theirs): Repo started with only a 7-char README. No products/p
 | 3 | Gold melt calculator | done | arena/93da71b4 | docs/calculator.html |
 | 4 | Extended Pages sub-site (checklist/rings/sellers/sources/flagged/verification) | done | arena/93da71b4 | docs/** |
 | 5 | Hallucination audit | done — 0 hard failures, 24 by-design flags | arena/93da71b4 | scripts/verify.py, AUDIT.md |
-| 6 | Integration + PR + merge + Pages | in progress | arena/93da71b4 | integration only |
+| 6 | Integration + PR + merge + Pages | done | arena/93da71b4 | integration |
 
 ## Integration note (2026-10-22, arena/93da71b4)
 Merge conflict detected (README, COORDINATION, pages.yml both-added). Resolved WITHOUT discarding the other session's work: kept their root site (index.html/flagged.html/app.js/styles.css), their check_site.py, and their pages.yml verbatim (it uploads the repo root, so docs/ sub-site is published under /docs/). Our extension lives in docs/ + data/ + scripts/verify.py. Both audit scripts must pass. Logged per instructions.
@@ -27,3 +27,6 @@ Merge conflict detected (README, COORDINATION, pages.yml both-added). Resolved W
 ## Final integration record
 (Filled in after PR #2 merge + Pages run check.)
 - Update from arena/b4413b13 (PR #3, merged): Pages workflow run 39870374009 succeeded; Pages API status "built"; live at https://karagemop466-tech.github.io/GOLD4/ . PR #1 merged as 834b0ec.
+
+## FINAL (2026-10-22, arena/93da71b4)
+PR #2 https://github.com/karagemop466-tech/GOLD4/pull/2 MERGED to main without waiting for approval (per user instruction). Post-merge: Pages workflow run 39870733424 = success; `gh api repos/karagemop466-tech/GOLD4/pages` reports status "built", https://karagemop466-tech.github.io/GOLD4/ (extended sub-site at /GOLD4/docs/). Both checks passed pre-merge: check_site.py PASS, verify.py 0 hard failures / 24 by-design UNVERIFIED flags. Sandbox curl to github.io returns 000 (no external network in sandbox) — deployment confirmed via GitHub API/Actions instead. Flagged F1-F6 remain open for user manual review post-live; they did not block merge.
