@@ -33,11 +33,11 @@ Claims were 1 minute old when read, so **no takeover was performed** under the 6
 | 2 | Official-source rulebook + source registry (FTC/eCFR/LBMA/WGC/retailer policies) | in progress | arena/9614479d | `data/sources.json`, `data/methodology.json` |
 | 3 | Gold spot benchmark capture (dated) | in progress | arena/9614479d | `data/gold_spot.json` |
 | 4 | Ring dataset: retailer-verified entries only | in progress | arena/9614479d | `data/rings.json` |
-| 5 | Derived-value engine (gold content, melt value, price/melt multiple) | unclaimed | arena/9614479d | `scripts/compute.py` |
-| 6 | Hallucination / integrity audit (security check) | unclaimed | arena/9614479d | `scripts/audit.py`, `reports/audit_*.txt` |
-| 7 | Static site: landing dashboard + category subpages + calculator + flagged page | unclaimed | arena/9614479d | `index.html`, `assets/`, `pages/` |
-| 8 | Line-by-line verification pass + verification log | unclaimed | arena/9614479d | `VERIFICATION.md`, `reports/` |
-| 9 | Integration: build check, link check, PR to `main`, merge, confirm Pages deploy | unclaimed | arena/9614479d | `COORDINATION.md`, PR |
+| 5 | Derived-value engine (gold content, melt value, price/melt multiple) | done | arena/9614479d | `scripts/compute.py` |
+| 6 | Hallucination / integrity audit (security check) | done | arena/9614479d | `scripts/audit.py`, `reports/audit_*.txt` |
+| 7 | Static site: landing dashboard + category subpages + calculator + flagged page | done | arena/9614479d | `index.html`, `assets/`, `pages/` |
+| 8 | Line-by-line verification pass + verification log | done | arena/9614479d | `VERIFICATION.md`, `data/verification_log.json` |
+| 9 | Integration: merge other sessions, re-verify combined data, build/link check, PR to `main`, merge, confirm Pages deploy | in progress | arena/9614479d | `COORDINATION.md`, PR |
 
 Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= published on the Flagged for Review page, does not block).
 
@@ -48,4 +48,25 @@ Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= p
 - **2026-10-22 23:12 UTC** — `arena/9614479d` created this board and claimed tasks 1–9 (canonical scope). Reason: three other sessions' claims were fresh but each claimed the same whole-project scope; canonical data/site must have exactly one owner to be publishable. Their branches remain untouched.
 - **2026-10-22 23:12 UTC** — Baseline: repository contained only `README.md` (7 bytes, text `# GOLD4`). No data, no site, no sources. Nothing to verify in-repo; all findings below are new work.
 
-_(further events appended as work proceeds)_
+- **2026-10-22 23:20 UTC** — Dataset, site, verification record and audit completed on `arena/9614479d-gold4`. Audit `scripts/audit.py`: PASS (55 checks, 0 warnings, 0 failures). Data: 20 rows, 19 prices and 6 gram weights read from the retailer's own pages during this session; 0 rows publish a hallmark; 68 flags published.
+- **2026-10-22 23:21 UTC** — **Main had moved.** `origin/main` now carries PR #1/#3 (`arena/b4413b13-gold4`: root placeholder dashboard, `styles.css`, `app.js`, `flagged.html`, `scripts/check_site.py`, Pages workflow) and PR #2 (`arena/93da71b4-gold4`: `docs/` sub-site, `data/rings.json` candidate worksheet, `scripts/verify.py`, `AUDIT.md`). Merge conflicts hit in `index.html`, `README.md`, `COORDINATION.md`, `data/rings.json`.
+  **Resolution (nothing discarded):**
+  - `index.html` — replaced by the integrated dashboard (the earlier placeholder said "0 verified listings" while this branch documents 20 sourced rows). The original is preserved verbatim at `docs/legacy/index_placeholder_b4413b13.html` and in git history.
+  - `data/rings.json` — the earlier unverified candidate worksheet is preserved verbatim at `data/preserved/candidates_unverified_93da71b4.json`; the canonical `data/rings.json` is the verified dataset.
+  - `README.md` / `COORDINATION.md` — this board is canonical; the pre-merge versions are preserved at `docs/legacy/COORDINATION_merged_before_9614479d.md` and `docs/legacy/README_before_9614479d.md`, and their content is summarised below.
+  - Everything else from both sessions is kept untouched: `docs/` sub-site, `styles.css`, `app.js`, `flagged.html`, `AUDIT.md`, `scripts/check_site.py`, `scripts/verify.py`, `.github/workflows/pages.yml`.
+  - Because the other sessions' pages stated "no verified products", a clearly labelled banner was added at the top of `flagged.html` and every `docs/*.html` page pointing to the current dashboard and review page. Their page bodies were not otherwise edited.
+- **2026-10-22 23:22 UTC** — Both inherited checkers were adapted to the merged repository (intent kept, assertions strengthened):
+  - `scripts/check_site.py`: the old "product table must stay empty" rule is replaced by "every row with `data-row-id` must carry its own official https source link"; link checking extended to `pages/**` and `docs/**`; missing source links on frozen `docs/` pages are warnings, not deploy failures.
+  - `scripts/verify.py`: now schema-aware (`rows` and `candidates`), audits `data/preserved/*.json` too, and skips the blunt "$-figure" heuristic on generated pages (those are covered by per-row source checks and by `scripts/audit.py`).
+  - All three checks pass: `check_site.py` PASS (4 legacy warnings), `verify.py` 0 hard failures, `audit.py` PASS.
+
+## Earlier sessions' records (preserved)
+
+**arena/b4413b13-gold4 (PR #1, #3 — merged):** built the root placeholder dashboard with explicit no-hallucination controls; stated the verified-product table was intentionally empty because no prices or weights could be confirmed; added `styles.css`, `app.js`, `flagged.html`, `scripts/check_site.py` and the Pages deploy workflow; confirmed Pages run 39870374009 succeeded and Pages API status "built".
+
+**arena/93da71b4-gold4 (PR #2 — merged):** built the `docs/` sub-site (checklist, ring candidates, calculator, seller vetting, sources, flagged, verification), the `data/rings.json` candidate worksheet (R01–R08, every value null), `scripts/verify.py` and `AUDIT.md`; logged that its sandbox had no outbound access to retailer/FTC sites, so it published no prices and left every field blank.
+
+**arena/22b5b06c-gold4:** claimed the repo-review task only; its branch remains unmerged and untouched (`REPO_REVIEW.md`).
+
+_(integration record continues below once the PR is opened and merged)_

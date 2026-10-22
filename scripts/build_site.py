@@ -180,9 +180,11 @@ def render(title: str, body: str, active: str, root: str = "", script: bool = Fa
 def no_hallucination_block(prefix: str = "") -> str:
     return f"""
 <div class="nohall">
-  <h2>⚠ No hallucination rule — read before using any number</h2>
-  <p>This project manufactures <strong>no values</strong>. A price, weight, karat, deadline or contact detail is only shown if it was read from the
-  official page linked in the same row.</p>
+  <h2>⚠ NO HALLUCINATIONS — read before using any number</h2>
+  <p><strong>No hallucinations.</strong> This project manufactures no values. A price, weight, karat, deadline or contact detail is only shown if it was read from the
+  official page linked in the same row. The consumer rules being applied come from the
+  <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC's guidance on buying gold jewelry</a>
+  and <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.</p>
   <ul>
     <li><strong>Blank means blank.</strong> If a retailer did not publish a gram weight, the weight cell stays empty — it is never estimated from photos, blogs or "typical" rings.</li>
     <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>

@@ -1,0 +1,20 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gold Melt-Value Calculator — GOLD4</title><link rel="stylesheet" href="style.css"></head><body>
+<div style="background:#fff5f2;border-bottom:2px solid #c4553f;padding:10px 16px;font:14px/1.5 -apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#6d1d1d"><strong>Legacy sub-site, preserved unmodified.</strong> Written before any retailer page could be read, so its catalog is empty by design. Current dataset (20 sourced rows): <a href="../index.html">integrated dashboard</a> · <a href="../pages/flagged.html">review page</a>.</div>
+<header><h1>Gold Melt-Value Calculator</h1><p>Solid-gold engagement ring research — organized, sourced, dated.</p></header><nav><a href="index.html">🏠 Home</a><a href="checklist.html">✅ Checklist</a><a href="rings.html">💍 Ring Candidates</a><a href="calculator.html">🧮 Gold Calculator</a><a href="sellers.html">🏪 Seller Vetting</a><a href="sources.html">📚 Official Sources</a><a href="flagged.html">🚩 Flagged for Review</a><a href="verification.html">🔍 Verification Log</a></nav><main>
+<div class="card"><p>Formula (definitions, not price claims): <strong>Pure gold (g) = weight (g) × karat/24</strong> · <strong>Melt value = pure gold (g) ÷ 31.1034768 g per troy oz × spot price</strong>. The troy-ounce constant is the NIST definition (NIST SP 811). You enter today's spot yourself from an official source (LBMA / Kitco — links on <a href="sources.html">Sources</a>) so no stale or invented price is baked into this site.</p>
+<label>Ring weight (grams)</label><input id="w" type="number" step="0.01" placeholder="e.g. 4.5">
+<label>Karat</label><select id="k"><option value="10">10K (41.7% gold)</option><option value="14" selected>14K (58.3% gold)</option><option value="18">18K (75.0% gold)</option><option value="22">22K (91.7% gold)</option><option value="24">24K (100% gold)</option></select>
+<label>Gold spot price per troy ounce (enter today's, with date →)</label><input id="s" type="number" step="0.01" placeholder="from LBMA/Kitco today">
+<label>Date of that spot price</label><input id="d" type="date">
+<label>Asking price of ring (optional, for price-vs-melt check)</label><input id="p" type="number" step="0.01" placeholder="listing price">
+<button onclick="calc()">Calculate</button><div id="out"></div>
+<p><small>Worked example (hypothetical inputs, clearly labelled — NOT a market price): 4.00 g at 14K contains 2.33 g pure gold. Melt depends entirely on the spot you enter.</small></p></div>
+<table><tr><th>Karat</th><th>Gold fraction</th><th>Pure gold per 1 g of ring</th></tr>
+<tr><td>10K</td><td>41.7%</td><td>0.417 g</td></tr><tr><td>14K</td><td>58.3%</td><td>0.583 g</td></tr><tr><td>18K</td><td>75.0%</td><td>0.750 g</td></tr><tr><td>22K</td><td>91.7%</td><td>0.917 g</td></tr><tr><td>24K</td><td>100%</td><td>1.000 g</td></tr></table>
+<script>
+function calc(){const w=+document.getElementById('w').value,k=+document.getElementById('k').value,s=+document.getElementById('s').value,p=+document.getElementById('p').value,d=document.getElementById('d').value;
+if(!w||!s){document.getElementById('out').innerHTML='<div class="result">Please enter weight and today\u2019s spot price.</div>';return}
+const pure=w*k/24,melt=pure/31.1034768*s;let h=`<div class="result"><strong>Pure gold content:</strong> ${pure.toFixed(3)} g<br><strong>Raw gold (melt) value:</strong> $${melt.toFixed(2)} <small>(spot $${s}/ozt as of ${d||'date not entered'})</small>`;
+if(p)h+=`<br><strong>Asking price:</strong> $${p.toFixed(2)} = ${(p/melt).toFixed(2)}× melt value. ${p<melt?'<span class="unv">⚠️ Below melt — red flag, verify authenticity.</span>':'Craftsmanship/stones normally price above melt; judge how far above.'}`;document.getElementById('out').innerHTML=h+"</div>"}
+</script>
+</main><footer>GOLD4 · No-hallucination policy: unverified values are blank &amp; flagged, never guessed. Last updated 2026-10-22.</footer></body></html>

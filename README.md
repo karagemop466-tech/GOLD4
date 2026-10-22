@@ -77,6 +77,31 @@ No third-party dependencies, no network access required to build. Python 3.10+.
 
 The full registry, with what each source supports, is in `data/sources.json` and on the site's Sources page.
 
+---
+
+## Parallel sessions and preserved artifacts
+
+Several agent sessions worked in this repository. `main` already contained two of their merges when this session integrated. **Nothing was deleted**: their work is either kept in place or preserved verbatim under `docs/legacy/` and `data/preserved/`.
+
+| Artifact | Origin | Status |
+|---|---|---|
+| `docs/**` sub-site (checklist, candidates, calculator, sellers, sources, flagged, verification) | session `arena/93da71b4-gold4` (PR #2) | Kept unmodified except for a banner marking it as a pre-data snapshot; still published under `/docs/` |
+| `data/preserved/candidates_unverified_93da71b4.json` | same session | Preserved worksheet (R01–R08, all values null by design); **not** the canonical dataset |
+| `styles.css`, `app.js`, `flagged.html`, `scripts/check_site.py`, `.github/workflows/pages.yml` | session `arena/b4413b13-gold4` (PR #1, #3) | Kept; `flagged.html` carries a "superseded" banner, the checker was extended for the populated catalog |
+| `scripts/verify.py`, `AUDIT.md` | session `arena/93da71b4-gold4` | Kept and made schema-aware; still runs and still fails on an unsourced value |
+| `docs/legacy/index_placeholder_b4413b13.html` | session `arena/b4413b13-gold4` | Original root dashboard, preserved after the integrated dashboard replaced it |
+| `docs/legacy/COORDINATION_merged_before_9614479d.md`, `docs/legacy/README_before_9614479d.md` | pre-merge state of `main` | Preserved for audit |
+
+Three checkers now run against the combined repository, and all three must pass before a merge:
+
+```bash
+python3 scripts/check_site.py   # links + per-row source links + FTC/no-hallucination presence
+python3 scripts/verify.py       # schema-aware data audit, rewrites AUDIT.md
+python3 scripts/audit.py        # deep audit: allow-list, recomputation, speculation scan
+```
+
+The earlier sessions' own records (including the note that their sandboxes had no outbound access, which is why their catalogs were empty) are preserved in `COORDINATION.md` and in the site's Log page.
+
 ## Limitations (stated, not hidden)
 
 - Prices are a snapshot: 22 October 2026. Retail prices move; re-check the source link before buying.
