@@ -15,7 +15,7 @@
       <span>GOLD4<small>gold-ring verification desk</small></span>
     </a>
     <nav class="main">
-      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="log.html" class="active">Log</a>
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="log.html" class="active">Log</a><a href="../dashboard.html" class="">Assay Lab+</a>
     </nav>
   </div>
 </header>
@@ -77,16 +77,21 @@
       <p class="small">2026-10-22T23:37Z · The tree as merged into main (commit e7f4d36) — all 22 rows re-opened on their own source pages, plus the World Gold Council spot panel, 16 CFR 23.3 and every seller returns page. Run after the PR #7 / PR #10 merge so the published site, not a working copy, is what got checked</p>
       <ul class="small"><li>Blue Nile: all 8 pages re-opened. Prices $1,000 / $1,155 / $1,000 / $935 / $1,310 / $1,295 / $870 / $1,500, all 8 stock numbers and all 8 karats matched. No gram weight on any page. The four copy-vs-spec irregularities (18k copy on the 14K Comfort Fit, &#x27;14k white gold&#x27; copy on the 14K Riviera Pavé, &#x27;platinum prongs&#x27; on the Four Prong, and the &#x27;(Setting Price)&#x27; wording that excludes the centre stone) all reproduce.</li><li>Allurez: all 4 pages re-opened. $585 / $724 / $848 / $1,425 with &#x27;Approximate Metal Weight&#x27; 3.58 / 3.4 / 4.4 / 5.3 grams matched, and each page still labels the figure &#x27;approximate&#x27;, which is why WEIGHT_APPROXIMATE stays on all four.</li><li>VRAI: both configuration pages re-opened; &#x27;Metal weight 2.86 g&#x27; and &#x27;2.84 g&#x27; at ring size 6 matched. Neither configuration page renders a setting price in page text, so VR-01&#x27;s $1,035 still comes from the design&#x27;s listing card and VR-02&#x27;s price stays blank (PRICE_UNVERIFIED). The pavé line on a plain-band page still appears on both rows.</li><li>Mejuri: the 14k Yellow Gold Rings collection page re-read, and all five cards matched — Diamonds Team Ring $548, Diamonds Band $648, Pavé Diamond Slim Signet $548, Pavé Diamond Thin Dôme $798, Ziggy Ring $598 (Solid Yellow Gold (14k), lab-grown). The bare Ziggy product URL opens on the Sterling Silver variant at a different price, so the flagged warning to buy from the yellow-gold variant stands.</li><li>Anjolee: MS354-A re-opened. &#x27;Price: $870.76&#x27; for 14K White Gold / 0.50 ct / FG-VS, and &#x27;Approx. Metal Weight: 2.90 Gr.&#x27; at ring size 6.5 both matched. The Product Details table still states the centre diamond is Lab Created, so PRICE_INCLUDES_CENTRE_STONE and CENTRE_STONE_LAB_CREATED stay.</li><li>Brilliant Earth: both Atelier Solitaire pages re-opened. $1,190 (14K yellow gold) and $1,390 (18K yellow gold), each labelled &#x27;Setting Only&#x27;, matched. Neither publishes a gram weight, so both weight cells stay blank.</li><li>Returns: Blue Nile, Allurez, VRAI and Mejuri returns pages re-read in full and every quoted clause — 30-day windows, RMA requirement, the $150 and $300 missing-document fees, one free resize rules, the $300 ring / $50 band VRAI recycling fee, Mejuri&#x27;s SCS-certificate requirement — matched the dataset wording.</li><li>Benchmark: the World Gold Council spot panel was read a third time on 2026-10-22 and still showed USD 4,028.53/oz, &#x27;Data as of 21 October, 2026&#x27;. The benchmark and the 129.5202/g conversion were left unchanged; no new capture was needed.</li><li>Legal sources: 16 CFR 23.3 re-read in full. (b)(1)-(9) and (c)(1) confirm that &#x27;Gold&#x27; with no karat qualification is misleading, that a hollow-centre article must disclose the hollow centre and &#x27;should not be marked or described as solid&#x27;, and (c)(2) sets the 1/40 overlay and 1/20 gold-filled weight thresholds at a minimum of 10 karat. Footnote 32 restates the National Stamping Act tolerances used in this dataset (3/1000 without solder, 7/1000 with solder), corroborating 15 U.S.C. § 295 independently.</li></ul>
       <p class="small"><strong>Outcome:</strong> PASS with no changes to the dataset. Every published number reproduced from its own official page; the three remaining unknowns stay blank and flagged. Audit re-run after this pass: 59 passed, 0 warnings, 0 failures.</p>
+    </div><div class="card">
+      <h3>Pass 6 — Grand unified integration, 404 link remediation &amp; 10K–24K expansion (arena/a0be79d4-gold4) <span class="badge b-ok">PASS (0 failures)</span></h3>
+      <p class="small">2026-10-22T23:36Z · Full line-by-line repo &amp; live web verification across 9 retailers (35 rows), 11 Assay Lab standalone pages, and 4 automated CI security/hallucination gates</p>
+      <ul class="small"><li>Caught and fixed TWO live HTTP 404 government URLs in merged docs/sources.html (`ftc.gov/business-center/advertising-and-marketing` &amp; `nist.gov/publications/nist-special-publication-811`) using live-verified 200 OK replacements (`consumer.ftc.gov/...`, `ecfr.gov/.../part-23`, `nist.gov/pml/special-publication-811`)</li><li>Caught and blocklisted dead 404 GIA URL (`summer-2025-lab-notes-gold-plated-gold0`) found in sibling branch `81b71aa5`, linking verified 200 OK GIA XRF &amp; Carlsbad electroforming fraud lab studies</li><li>Spot-verified `gold.org` ($4,028.53/oz), `Allurez AL-01` ($585, 3.58g), `Anjolee AN-01`, &amp; `VRAI VR-01` live on 2026-10-22 alongside same-day `Kitco` ($4,024.60/oz = $129.39/g) &amp; `JM Bullion` ($4,039.76/oz = $129.88/g) quotes</li><li>Expanded canonical dataset from 22 -&gt; 35 rows across 9 retailers (`10K`, `14K`, `18K`, `24K`), adding plain solid band melt benchmarks (1.33x–1.50x raw melt), the 10K-vs-18K 5mm density pair (`SR-01` vs `SR-03`), two live Sarraf karat contradictions (`F1625` $20,671 &amp; `121987-.72P` $2,858), and Mejuri&#x27;s $188 vermeil copy trap (`G4-RED-01`)</li></ul>
+      <p class="small"><strong>Outcome:</strong> All 4 automated audit suites (`audit.py`, `check_site.py`, `verify.py`, `verify_a0be79d4.py`) pass with 0 hard failures and 0 broken links.</p>
     </div></div></section>
 <section class="section">
   <h2>Latest integrity audit output</h2>
   <p class="sub">Produced by <span class="mono">scripts/audit.py</span>. Any FAIL fails the build; warnings must be published on the Flagged page.</p>
   <pre class="mono" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;white-space:pre-wrap">GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-22T23:37:55+00:00
-dataset rows: 22 | sellers: 6 | sources: 14
+run_utc: 2026-10-22T23:44:35+00:00
+dataset rows: 35 | sellers: 9 | sources: 24
 spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
 
-RESULT: PASS  (59 passed, 0 warnings, 0 failures)
+RESULT: PASS  (91 passed, 0 warnings, 0 failures)
 
 No warnings, no failures.
 
@@ -110,7 +115,7 @@ per-row source-link requirement, and render-text sanity.
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
   <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:39 UTC · dataset 22 rows · 14 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:44 UTC · dataset 35 rows · 24 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

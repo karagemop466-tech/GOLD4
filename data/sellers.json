@@ -250,6 +250,113 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5)",
       "reverification": "Pass 2: the product page's Warranty & Return Policy block and the site's 30-Day Returns page were re-read. Return of any item in original condition within 30 days of receipt, including the statement that 'All customized orders can be returned for full refund within 30 days of receipt'; lifetime warranty for prong tightening, re-polishing, rhodium plating and cleaning plus a one-year manufacturing-defect warranty; phone 877-265-6533. All match this record. Anjolee DOES publish a gram weight ('Approx. Metal Weight: 2.90 Gr.'), so the seller-level WEIGHT_NOT_PUBLISHED flag was wrong and has been removed. Pass 5 independently re-read the product page and confirmed the same 'Approx. Metal Weight: 2.90 Gr.', ring size 6.5, 14K white gold, and 'Center Diamond Color: Lab Created FG' / 'Clarity: Lab Created VS' in the Product Details table."
+    },
+    {
+      "id": "sarraf",
+      "name": "Sarraf",
+      "official_url": "https://www.sarraf.com/",
+      "contact": {
+        "phone": "+1-888-472-7723",
+        "email": "info@sarraf.com",
+        "contact_page": "https://www.sarraf.com/",
+        "verified_from": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+        "verification": "V1_direct_page_fetch"
+      },
+      "return_window_days": 30,
+      "return_window_basis": "30 days from receipt (unworn, original packaging & invoice; buyer pays insured shipping to 650 S Hill St #728, Los Angeles, CA 90014)",
+      "return_exclusions": [
+        "Used, worn, or altered items",
+        "Third-party resizing or repair immediately voids Lifetime Warranty",
+        "Special/custom orders non-refundable"
+      ],
+      "free_returns_limit": "Buyer pays insured signature return shipping",
+      "missing_document_fee_usd": null,
+      "resize_policy": "Third-party resizing immediately voids warranty; Lifetime Warranty replacement charges max($100, 10% of purchase price)",
+      "warranty": "Lifetime Warranty subject to seller inspection and max($100, 10% of purchase price) replacement fee",
+      "returns_source_id": "sarraf-returns",
+      "solid_gold_stated": true,
+      "hallmark_published": false,
+      "reputation_independently_verified": null,
+      "flags": [
+        "REPUTATION_NOT_VERIFIED",
+        "WARRANTY_VOID_ON_THIRD_PARTY_RESIZE"
+      ],
+      "notes": [
+        "Publishes explicit Approximate Metal Weight on plain bands and men's diamond rings (establishing our 1.33x–1.50x raw melt benchmark across 10K, 14K, and 18K), while omitting gram weights on women's solitaire diamond rings.",
+        "Line-by-line audit caught two live diamond ring pages (`SKU F1625` $20,671 & `SKU 121987-.72P` $2,858) contradicting themselves between 14K and 18K!"
+      ],
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/a0be79d4-gold4 (Pass 6)"
+    },
+    {
+      "id": "catbird",
+      "name": "Catbird NYC",
+      "official_url": "https://www.catbirdnyc.com/",
+      "contact": {
+        "phone": null,
+        "email": null,
+        "contact_page": "https://www.catbirdnyc.com/returns",
+        "verified_from": "https://www.catbirdnyc.com/returns",
+        "verification": "V1_direct_page_fetch"
+      },
+      "return_window_days": 20,
+      "return_window_basis": "Short 20-day return window from delivery ($9 return shipping fee deducted)",
+      "return_exclusions": [
+        "Engraved items (final sale)",
+        "Special orders and custom rings (final sale)",
+        "All international sales (final sale)"
+      ],
+      "free_returns_limit": "$9 return shipping deduction on domestic returns",
+      "missing_document_fee_usd": null,
+      "resize_policy": "Must inspect unengraved before return window closes (20 days)",
+      "warranty": "Standard studio craftsmanship support",
+      "returns_source_id": "catbird-returns",
+      "solid_gold_stated": true,
+      "hallmark_published": false,
+      "reputation_independently_verified": null,
+      "flags": [
+        "REPUTATION_NOT_VERIFIED",
+        "ENGRAVING_NON_RETURNABLE"
+      ],
+      "notes": [
+        "Explicitly states 'recycled solid 14k gold' / 'Solid gold always, never plated', with a shorter 20-day return window and ultra-delicate 1.0mm solitaire shanks."
+      ],
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/a0be79d4-gold4 (Pass 6)"
+    },
+    {
+      "id": "mene",
+      "name": "Menē",
+      "official_url": "https://mene.com/",
+      "contact": {
+        "phone": null,
+        "email": null,
+        "contact_page": "https://mene.com/customer-care/en-US/articles/returns-319505",
+        "verified_from": "https://mene.com/customer-care/en-US/articles/returns-319505",
+        "verification": "V1_direct_page_fetch"
+      },
+      "return_window_days": 7,
+      "return_window_basis": "Strict 7-day return window from receipt with Certificate of Authenticity",
+      "return_exclusions": [
+        "Items missing original Certificate of Authenticity or packaging",
+        "Worn, altered, or damaged items"
+      ],
+      "free_returns_limit": "7-day return window; lifetime buyback offered at daily bullion value minus Menē fee",
+      "missing_document_fee_usd": null,
+      "resize_policy": "Pure 24K bands cannot be traditionally torch-resized without specialized 24K goldsmithing",
+      "warranty": "Signed Certificate of Authenticity assaying pure 24K gold weight (+/-0.5g to +/-1.0g tolerance)",
+      "returns_source_id": "mene-returns",
+      "solid_gold_stated": true,
+      "hallmark_published": false,
+      "reputation_independently_verified": null,
+      "flags": [
+        "REPUTATION_NOT_VERIFIED"
+      ],
+      "notes": [
+        "Pure 24K (99.99% Au) bullion jewelry; static HTML omits per-size gram weight (loaded via JS modal), so static `weight_g` stays strictly null per policy."
+      ],
+      "reverified_utc": "2026-10-22",
+      "reverified_by": "arena/a0be79d4-gold4 (Pass 6)"
     }
   ],
   "reverified_utc": "2026-10-22"

@@ -314,3 +314,16 @@ No hallucinated values introduced by this session; all data is as verified by `e
 **What this PR shipped:** only `COORDINATION.md` (this section) documenting the offline pass at 23:28, the two main-moved conflicts (PR #7 at 66a99e8 and PR #12 at a7258b8/bb9f54e), and the final adoption of `bb9f54e` as canonical. No `data/*.json`, `index.html`, `pages/*` or `data/verification_log.json` was changed — the dataset remains as verified by `e04b126a` at `bb9f54e` (22 rows, 7 weights, 21 prices, audit 59/0/0).
 
 Flagged irregularities and unverified items (15 blanks, 0 hallmarks, 3 Blue Nile copy contradictions, etc.) remain published on the **Flagged for Review** page with source links and do not block the merge.
+
+---
+
+## Session `arena/a0be79d4-gold4` — Pass 6 Grand Unified Integration, `404` Remediation & 10K–24K Expansion
+
+### Tasks Claimed & Completed (`2026-10-22`)
+
+| Task ID | Task Description | Status | Owner | Files Preserved / Added |
+|---|---|---|---|---|
+| `A0-1` | Forensic line-by-line repo & cross-branch audit (`main` + active `arena/*` branches); catch dead `404` links and stale search-cache drift | **done** | `arena/a0be79d4-gold4` | `AUDIT_AND_REPO_REVIEW.md`, `docs/sources.html` (`404` fixes), `COORDINATION.md` |
+| `A0-2` | Expand canonical dataset from **22 → 35 live-verified rows across 9 retailers** (`10K`, `14K`, `18K`, `24K`), adding **Sarraf** plain-band melt floor (`1.33×–1.50×`), **10K vs 18K 5mm density pair** (`SR-01` vs `SR-03`), **Brilliant Earth** mixed-karat prong setting (`BE-03`), **Catbird NYC** (`CB-01..02`), **Menē** pure 24K (`MN-01..02`), **Kitco / JM Bullion** `2026-10-22` spot quotes, **CFPB FCBA**, & **GIA Carlsbad XRF fraud lab studies** | **done** | `arena/a0be79d4-gold4` | `data/rings.json`, `data/sellers.json`, `data/sources.json`, `data/gold_spot.json`, `data/derived.json`, `data/verification_log.json`, `data/catalog_a0be79d4.json` |
+| `A0-3` | Build 11-page standalone Assay Lab suite (`dashboard.html`, `solitaires.html`, `three-stone-halo.html`, `bands.html`, `calculator.html`, `checklist.html`, `sellers.html`, `standards.html`, `flagged.html`, `audit.html`, `coordination.html`) cross-linked non-destructively with `index.html`, `pages/*.html`, & `docs/*.html` (**30 verified HTML pages total**) | **done** | `arena/a0be79d4-gold4` | `static/gold4.css`, `static/gold4.js`, `scripts/generate_site.py`, root HTML pages |
+| `A0-4` | 4-Gate automated anti-hallucination & security verification pipeline (`audit.py` + `check_site.py` + `verify.py` + `verify_a0be79d4.py`) wired into `.github/workflows/pages.yml` + PR merge to `main` + live GitHub Pages check | **done / merging** | `arena/a0be79d4-gold4` | `scripts/verify_a0be79d4.py`, `scripts/audit.py`, `.github/workflows/pages.yml` |

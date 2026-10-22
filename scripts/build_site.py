@@ -31,6 +31,7 @@ NAV = [
     ("pages/methodology.html", "Method", "method"),
     ("pages/sources.html", "Sources", "sources"),
     ("pages/log.html", "Log", "log"),
+    ("dashboard.html", "Assay Lab+", "assay"),
 ]
 
 FLAG_HELP = {
@@ -55,6 +56,7 @@ FLAG_HELP = {
     "RESIZE_TERMS_INCONSISTENT": ("bad", "resize terms differ between captures"),
     "RETURN_WINDOW_NOT_REDISPLAYED": ("warn", "return window not re-displayed on re-read"),
     "RETURN_EXCLUSIONS_NOT_ITEMISED": ("warn", "exclusions not itemised on the page"),
+    "WARRANTY_VOID_ON_THIRD_PARTY_RESIZE": ("warn", "warranty voids on third-party resize"),
 }
 
 
