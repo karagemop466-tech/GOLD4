@@ -81,6 +81,8 @@ for r in records:
 # ---------------------------------------------------------------- pages
 page_paths = [root / "index.html", root / "flagged.html"]
 page_paths += sorted((root / "pages").glob("*.html"))
+if (root / "categories").exists():
+    page_paths += sorted((root / "categories").glob("*.html"))
 page_paths += sorted((root / "docs").glob("*.html"))
 
 for page in page_paths:
@@ -99,7 +101,7 @@ for page in page_paths:
         if "https://" not in body:
             fails.append(f"{page.name}:{row_id}: row without an official source link")
 
-    generated = (page.parent == root or page.parent.name == "pages") and page.parent.name != "docs"
+    generated = (page.parent == root or page.parent.name in ("pages", "categories")) and page.parent.name != "docs"
     if not generated and page.name != "calculator.html":
         # A "$" figure is acceptable only inside a row that also carries a source link,
         # or in the site footer where the benchmark and its dated source are named.

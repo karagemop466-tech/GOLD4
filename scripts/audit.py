@@ -33,12 +33,17 @@ OFFICIAL_HOSTS = {
     "mejuri": ["mejuri.com"],
     "brilliant-earth": ["brilliantearth.com"],
     "anjolee": ["anjolee.com"],
+    "sarraf": ["sarraf.com"],
+    "catbird": ["catbirdnyc.com"],
+    "mene": ["mene.com", "support.mene.com"],
+    "ross-simons": ["ross-simons.com"],
 }
 
 # Tier A/B reference hosts (government, regulators, benchmark bodies).
 REFERENCE_HOSTS = [
     "consumer.ftc.gov", "ftc.gov", "ecfr.gov", "law.cornell.edu",
     "uscode.house.gov", "govinfo.gov", "gold.org", "lbma.org.uk",
+    "consumerfinance.gov", "gia.edu", "kitco.com", "jmbullion.com", "nist.gov", "bullionvault.com",
 ]
 
 # Domains that must never be used as a source of fact for this project.
@@ -299,7 +304,11 @@ def main() -> int:
     ok("E-06 sellers", f"{len(sellers)} sellers checked")
 
     # ---------------------------------------------------------------- site
-    site_files = ["index.html"] + [f"pages/{p.name}" for p in (ROOT / "pages").glob("*.html")] if (ROOT / "pages").exists() else ["index.html"]
+    site_files = ["index.html"]
+    if (ROOT / "pages").exists():
+        site_files += [f"pages/{p.name}" for p in sorted((ROOT / "pages").glob("*.html"))]
+    if (ROOT / "categories").exists():
+        site_files += [f"categories/{p.name}" for p in sorted((ROOT / "categories").glob("*.html"))]
     missing_rows = 0
     broken_links = []
     bad_text = []

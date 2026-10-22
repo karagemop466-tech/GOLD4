@@ -31,6 +31,9 @@ NAV = [
     ("pages/methodology.html", "Method", "method"),
     ("pages/sources.html", "Sources", "sources"),
     ("pages/log.html", "Log", "log"),
+    ("dashboard.html", "Assay Lab+", "assay"),
+    ("categories/calculator.html", "Stone-Deduction Calc", "stonecalc"),
+    ("categories/verification-audit.html", "Deep Audit", "deepaudit"),
 ]
 
 FLAG_HELP = {
@@ -44,7 +47,13 @@ FLAG_HELP = {
     "SOLID_NOT_STATED": ("warn", "no 'solid gold' wording on page"),
     "HALLMARK_NOT_PUBLISHED": ("warn", "hallmark not published"),
     "COPY_INCONSISTENT_METAL": ("bad", "page copy contradicts the metal spec"),
-    "MIXED_METAL_UNCLEAR": ("bad", "mixed-metal wording unclear"),
+    "COPY_CARAT_MISMATCH": ("bad", "prose vs spec diamond carat mismatch"),
+    "MIXED_METAL_UNCLEAR": ("bad", "mixed-metal / lower-karat prongs"),
+    "RESIZE_EXCLUDED_ON_PAGE": ("bad", "resizing excluded despite banner"),
+    "SHORT_RETURN_WINDOW_7D": ("bad", "7-day return window"),
+    "SHORT_RETURN_WINDOW_20D": ("warn", "20-day return window"),
+    "RESTOCKING_FEE_10PCT": ("bad", "10% cash-refund restocking fee"),
+    "SPECIAL_ORDERS_FINAL_SALE": ("bad", "special orders final sale"),
     "NOT_MARKETED_AS_BRIDAL": ("info", "not sold as a bridal ring"),
     "ENGRAVING_NON_RETURNABLE": ("warn", "engraving kills the return right"),
     "SCS_CERT_REQUIRED_FOR_RETURN": ("warn", "return needs the SCS certificate"),
@@ -54,8 +63,9 @@ FLAG_HELP = {
     "PRICE_VARIANT_DEPENDENT": ("info", "price depends on the metal variant selected"),
     "RESIZE_TERMS_INCONSISTENT": ("bad", "resize terms differ between captures"),
     "RETURN_WINDOW_NOT_REDISPLAYED": ("warn", "return window not re-displayed on re-read"),
-    "PRICE_CURRENCY_LOCALIZED": ("warn", "page price is rendered in visitor currency"),
     "RETURN_EXCLUSIONS_NOT_ITEMISED": ("warn", "exclusions not itemised on the page"),
+    "WARRANTY_VOID_ON_THIRD_PARTY_RESIZE": ("warn", "warranty voids on third-party resize"),
+    "PRICE_CURRENCY_LOCALIZED": ("warn", "page price is rendered in visitor currency"),
 }
 
 
@@ -365,29 +375,40 @@ def main() -> None:
   <div class="grid two">
     <div class="card">
       <h3>Only {n_weight} of {n_rows} rows can be priced against their gold at all</h3>
-      <p>Four Allurez settings, two VRAI settings and one Anjolee setting publish a gram weight, so only those rows have a computable gold content.
-      Blue Nile, Brilliant Earth and Mejuri publish a price but no weight, so their gold content is <em>blank</em> — not guessed. Anjolee's price
-      includes a lab-created centre stone, so its multiple is marked and is not a setting markup either.</p>
-      <p class="small">Price ÷ gold-value multiple across the {n_weight} rows that have both a price and a published weight: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.
-      One of them (AN-01) is priced with a lab-created centre stone included, so its multiple is labelled in the table and is not a setting markup.</p>
+      <p>Four Allurez settings, six Sarraf bands/solitaires, four Ross-Simons bands, two VRAI settings and one Anjolee ring publish a gram weight ({n_weight} rows total; Sarraf plain bands set a 1.33×–1.50× melt floor, while AN-01/SR-05/SR-06 include centre diamonds).
+      Blue Nile, Brilliant Earth, Catbird and Mejuri publish prices without gram weights, so their gold content stays <em>blank</em> — not guessed.</p>
+      <p class="small">Price ÷ gold-value multiple across rows with both a price and a published weight: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.
+      Compare Ross-Simons 18K 0.7 g band (RS-02, 0.525 g pure Au) vs 14K 1.7 g band (RS-01, 0.992 g pure Au): higher karat with lower gram weight yields 47% less fine gold. Also see <a href="dashboard.html"><strong>Assay Lab+ →</strong></a> and <a href="categories/calculator.html"><strong>Stone-Deduction Calculator →</strong></a></p>
     </div>
     <div class="card">
       <h3>18K costs more than its extra gold — and by an inconsistent amount</h3>
-      <p>Same design, same retailer, only the karat changed: Petite Solitaire is {pct(pair_gap('PAIR-BN-PETITE'))} going 14K→18K, the Comfort Fit is {pct(pair_gap('PAIR-BN-COMFORT'))}, the Brilliant Earth Atelier is {pct(pair_gap('PAIR-BE-ATELIER'))}, and the Allurez Split Shank is {pct(pair_gap('PAIR-AL-SPLIT'))}.</p>
+      <p>Same design, same retailer, only the karat changed: Petite Solitaire is {pct(pair_gap('PAIR-BN-PETITE'))} going 14K→18K, Brilliant Earth Atelier is {pct(pair_gap('PAIR-BE-ATELIER'))}, Classic Four-Prong is {pct(pair_gap('PAIR-BN-FOURPRONG'))}, Comfort Fit is {pct(pair_gap('PAIR-BN-COMFORT'))}, and Allurez Split Shank is {pct(pair_gap('PAIR-AL-SPLIT'))}.</p>
       <p>For the Allurez pair both prices and weights are published, so the 18K premium can be split: {pct(pairs_by_id.get('PAIR-AL-SPLIT', {}).get('gold_gap_pct'))} of it is simply more gold, and the rest is labour and margin.</p>
       <p class="small"><a href="pages/purity.html">See the full karat analysis →</a></p>
     </div>
     <div class="card">
-      <h3>Zero retailers publish the hallmark</h3>
-      <p>Not one product page in this dataset shows the physical stamp or the maker's mark, which is exactly why the checklist says to verify on arrival.
-      The legal requirement (karat mark <em>plus</em> a registered trademark) is quoted on the Method page.</p>
+      <h3>Zero retailers publish the physical hallmark</h3>
+      <p>Not one product page in this dataset shows the inner-shank stamp or registered maker's mark, which is why the checklist requires post-delivery inspection.
+      Under 15 U.S.C. § 297(b) a karat mark must be accompanied by a registered trademark or legal company name, and GIA Lab Notes advise pairing XRF with gram-weight checks.</p>
     </div>
     <div class="card">
-      <h3>Return windows all say 30 days — the exclusions differ</h3>
-      <p>Every seller here offers ~30 days, but Blue Nile, VRAI and Allurez exclude resized or altered rings, Mejuri excludes engraving outright,
-      and Allurez excludes custom orders while Anjolee explicitly allows returns on customised orders. Read the clause, not the badge.</p>
-      <p class="small"><a href="pages/sellers.html">Compare the clauses →</a></p>
+      <h3>Return windows range from 7 to 30 days — and resizing kills returns</h3>
+      <p>Menē allows <strong>7 days</strong> (10% cash-refund restocking fee), Catbird allows <strong>14–20 days</strong> ($9 fee; special orders final sale), and Blue Nile's 30-day clock starts at <strong>shipment</strong>. Brilliant Earth, Blue Nile, Ross-Simons, VRAI and Allurez exclude resized rings — verify purity <em>before</em> resizing.</p>
+      <p class="small"><a href="pages/sellers.html">Compare all 10 sellers' clauses →</a></p>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Deep-Dive Category Subpages &amp; Gemstone-Carat Deduction Suite</h2>
+  <p class="sub">Specialized category audits, NIST 0.200 g/ct stone-mass deduction math, GIA XRF surface-depth limits, and our line-by-line irregularity register.</p>
+  <div class="grid three">
+    <div class="card"><h3><a href="categories/solitaires.html">Solitaire Audit</a></h3><p>Mixed-karat prong alerts (18K band + 14K or Platinum head) and Brilliant Earth resizing contradictions.</p></div>
+    <div class="card"><h3><a href="categories/accent-rings.html">Pavé &amp; Accent Audit</a></h3><p>Live-caught copy contradictions on Blue Nile (18K vs platinum; 1/6 vs 1/8 ct) and Mejuri (0.532 ct vs 0.044 ct).</p></div>
+    <div class="card"><h3><a href="categories/gold-bands.html">Solid &amp; 24K Bands + Hollow Alert</a></h3><p>Ross-Simons 0.7 g–4.0 g melt benchmarks, Menē 24K, plus Mejuri's cautionary FTC 16 CFR § 23.3(c) "hollowed 14k solid gold" listing.</p></div>
+    <div class="card"><h3><a href="categories/calculator.html">Stone-Deduction Calculator</a></h3><p>Subtracts 0.200 g per diamond carat (NIST HB 44), checks 15 U.S.C. § 295 tolerances, and compares 3 dated spot feeds.</p></div>
+    <div class="card"><h3><a href="categories/checklist-standards.html">12-Point Statutory Checklist</a></h3><p>Complete FTC 16 CFR 23, 15 U.S.C. §§ 295/297, GIA XRF Lab Notes, FCBA 15 U.S.C. § 1666, and seller return trap matrix.</p></div>
+    <div class="card"><h3><a href="categories/verification-audit.html">Line-by-Line Irregularities</a></h3><p>Every retailer discrepancy (IRR-CAT-01..11) and repository audit finding (IRR-REPO-01..08) with direct review links.</p></div>
   </div>
 </section>
 
@@ -476,7 +497,7 @@ def main() -> None:
     <thead><tr><th>Karat</th><th class="num">Gold %</th><th class="num">Fineness</th><th class="num">Gold value / g</th><th class="num">Legal min fineness</th><th class="num">Legal min value / g</th><th>Typical stamps</th></tr></thead>
     <tbody>{kt_rows}</tbody>
   </table></div>
-  <p class="small" style="margin-top:10px">24K is listed for completeness; a 24K ring is too soft for daily wear and none of the rings in this dataset is 24K. Sources: <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC consumer guidance on gold karats</a> ·
+  <p class="small" style="margin-top:10px">Dataset spans 10K, 14K, 18K, and 24K (Menē 24K bands; note 24K is malleable and requires thick shanks rather than delicate prongs). Sources: <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC consumer guidance on gold karats</a> ·
   <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a> ·
   <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">World Gold Council spot</a>.</p>
 </section>
@@ -766,6 +787,14 @@ def main() -> None:
       <h3>No seller publishes a hallmark</h3>
       <p>Zero of {len(rows)} rows show the physical stamp or the maker's mark, which is the one item on the checklist that can only be verified in your hand.
       The FTC guidance is blunt: if the karat mark has no trademark beside it, don't buy it.</p>
+    </div>
+    <div class="card">
+      <h3>FTC 16 CFR § 23.3(c) cautionary case: "hollowed 14k solid gold"</h3>
+      <p>Mejuri's <a href="https://mejuri.com/us/en/products/bold-chain-ring?Material=10k+Yellow+Gold" target="_blank" rel="noopener">Bold Chain Ring</a> gallery alt-text states <em>"handcrafted in hollowed 14k solid gold"</em> while the variant selector says 10k Yellow Gold ($348) and Specifications lists <em>"Hollowed 14K gold"</em>. Under 16 CFR § 23.3(c), hollow items must not be described as "solid". Excluded from canonical solid rows and documented in <a href="../categories/verification-audit.html#IRR-CAT-10">IRR-CAT-10</a>.</p>
+    </div>
+    <div class="card">
+      <h3>Brilliant Earth, Blue Nile &amp; Mejuri spec vs prose conflicts</h3>
+      <p>Brilliant Earth's <a href="solitaire.html">BE-04</a> displays a "Free 1-Year Resizing" badge above copy stating resizing is unavailable, while <a href="solitaire.html">BE-03</a> pairs an 18K shank with 14K white gold prongs. Blue Nile's <a href="pave.html">BN-12</a> says 18K Yellow Gold (1/6 ct) in the title vs "platinum" and "1/8 ct" in details. Mejuri's <a href="pave.html">MJ-06</a> states 0.532 ct in prose vs 0.044–0.056 ct in specs. Full audit: <a href="../categories/verification-audit.html">Line-by-Line Irregularities</a>.</p>
     </div>
     <div class="card">
       <h3>VRAI's spec block lists pavé weight on plain-band settings</h3>

@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "dataset_id": "gold4-standards-and-spot-v1",
+    "verified_by_session": "arena/81b71aa5-gold4",
+    "verified_date_utc": "2026-10-22",
+    "no_hallucinations_policy": "Every rate, statutory rule, and conversion factor in this file was retrieved directly from an official or primary market source on 2026-10-22. No prices or constants are estimated from memory."
+  },
+  "mass_constants": {
+    "troy_ounce_to_grams": 31.1034768,
+    "metric_carat_to_grams": 0.2,
+    "pennyweight_to_grams": 1.55517384,
+    "avoirdupois_ounce_to_grams": 28.349523125,
+    "source_title": "NIST Handbook 44 (2026 Edition), Appendix C — General Tables of Units of Measurement",
+    "source_url": "https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf",
+    "verified_date": "2026-10-22",
+    "source_evidence": "1 troy ounce (oz t) = 480 grains (exact) = 31.103 476 8 grams; 1 metric carat (c) = 200 milligrams (exact) = 0.200 grams."
+  },
+  "karat_table": [
+    {
+      "karat": 24,
+      "label": "24K Fine Gold",
+      "parts_of_24": "24/24",
+      "fineness_fraction": 1.0,
+      "millesimal_stamp": "999 / 999.9",
+      "notes": "Pure gold; softest alloy — malleable under daily ring wear unless thick band."
+    },
+    {
+      "karat": 22,
+      "label": "22K Solid Gold Alloy",
+      "parts_of_24": "22/24",
+      "fineness_fraction": 0.9166666667,
+      "millesimal_stamp": "916 / 917",
+      "notes": "High-purity heirloom gold (91.67% pure gold); rich yellow hue, softer for delicate prongs."
+    },
+    {
+      "karat": 18,
+      "label": "18K Solid Gold Alloy",
+      "parts_of_24": "18/24",
+      "fineness_fraction": 0.75,
+      "millesimal_stamp": "750",
+      "notes": "18 parts pure gold + 6 parts alloy metals (75.00% pure gold); luxury engagement ring standard."
+    },
+    {
+      "karat": 14,
+      "label": "14K Solid Gold Alloy",
+      "parts_of_24": "14/24",
+      "fineness_fraction": 0.5833333333,
+      "millesimal_stamp": "585 (or 583)",
+      "notes": "14 parts pure gold + 10 parts alloy metals (58.33% pure gold); highest scratch durability among classic US engagement alloys."
+    },
+    {
+      "karat": 10,
+      "label": "10K Solid Gold Alloy",
+      "parts_of_24": "10/24",
+      "fineness_fraction": 0.4166666667,
+      "millesimal_stamp": "417",
+      "notes": "10 parts pure gold + 14 parts alloy metals (41.67% pure gold); lowest traditional US karat standard."
+    }
+  ],
+  "spot_quotes_2026_10_22": [
+    {
+      "id": "spot-bullionvault-20261022",
+      "provider": "BullionVault (Wholesale Physical Bullion Market Midpoint)",
+      "source_url": "https://www.bullionvault.com/gold-price-chart.do",
+      "quote_timestamp_verbatim": "22 October 2026, 19:12:56 (GMT-04:00)",
+      "verified_date": "2026-10-22",
+      "usd_per_troy_oz": 4026.25,
+      "usd_per_gram_published": 129.45,
+      "usd_per_gram_exact_computed": 129.4469433912,
+      "usd_per_kg_published": 129447.27,
+      "karat_melt_usd_per_gram": {
+        "24K": 129.45,
+        "22K": 118.66,
+        "18K": 97.09,
+        "14K": 75.51,
+        "10K": 53.94
+      },
+      "source_evidence": "Current Gold Price - $4,026.25 per Ounce | Gold Price per Gram $129.45 | Gold Price per Kilo $129,447 | 22 October 2026, 19:12:56 (GMT-04:00)"
+    },
+    {
+      "id": "spot-jmbullion-20261022",
+      "provider": "JM Bullion (Live Gold Spot Ask / Bid Reference)",
+      "source_url": "https://www.jmbullion.com/charts/gold-price/",
+      "quote_timestamp_verbatim": "10/22/2026 7:09 PM EDT (Bid: $4,025.26 / Ask: $4,039.76)",
+      "verified_date": "2026-10-22",
+      "usd_per_troy_oz": 4039.76,
+      "usd_per_troy_oz_bid": 4025.26,
+      "usd_per_gram_published": 129.88,
+      "usd_per_gram_exact_computed": 129.881300603,
+      "usd_per_kg_published": 129881.14,
+      "karat_melt_usd_per_gram": {
+        "24K": 129.88,
+        "22K": 119.06,
+        "18K": 97.41,
+        "14K": 75.76,
+        "10K": 54.12
+      },
+      "source_evidence": "As of Oct 22, 2026 at 7:09 PM EDT, the live Gold spot price for 1 ounce of Gold in U.S. dollars (USD) is $4,039.76, 1 gram of Gold is $129.88 and 1 kilogram of Gold is $129,881.14. Bid: $4,025.26 Ask: $4,039.76."
+    }
+  ],
+  "regulatory_and_assay_sources": [
+    {
+      "id": "reg-ftc-consumer",
+      "authority": "U.S. Federal Trade Commission (FTC) Consumer Advice",
+      "title": "Buying Platinum, Gold, and Silver Jewelry",
+      "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+      "verified_date": "2026-10-22",
+      "checklist_items_covered": ["Gold purity", "Solid gold", "Hallmark", "Seller reputation", "Return policy"],
+      "verbatim_summary": "Pure gold is 24K; 18K is 18/24 parts gold, 14K is 14/24 parts gold. Near the karat quality mark, look for the company name or U.S. registered trademark — if you don't see a trademark along with the karat mark, don't buy it. 'Solid gold' means the gold item isn't hollow; 'gold filled', 'gold overlay', 'rolled gold plate (RGP)', 'gold electroplate' (>=0.175 microns of >=10K), 'vermeil' (gold over sterling silver), and 'gold flashed/washed' are surface coatings."
+    },
+    {
+      "id": "reg-ecfr-16cfr23",
+      "authority": "Code of Federal Regulations — Federal Trade Commission",
+      "title": "16 CFR Part 23 — Guides for the Jewelry, Precious Metals, and Pewter Industries (§ 23.3 Gold Content)",
+      "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
+      "verified_date": "2026-10-22",
+      "checklist_items_covered": ["Gold purity", "Solid gold"],
+      "verbatim_summary": "16 CFR § 23.3 prohibits misrepresenting karat fineness, thickness, weight ratio, or plating method. Any alloy <24K described as 'Gold' must be immediately preceded by karat fineness of equal conspicuousness (e.g., '14K Gold'). Hollow-center items must disclose 'Hollow Center' or 'Gold Tubing' and should not be described as 'solid'."
+    },
+    {
+      "id": "reg-usc-stamping-act",
+      "authority": "United States Code (Office of the Law Revision Counsel)",
+      "title": "National Gold and Silver Stamping Act — 15 U.S.C. Chapter 8 (§§ 294–300)",
+      "url": "https://uscode.house.gov/view.xhtml?path=%2Fprelim%40title15%2Fchapter8&edition=prelim",
+      "verified_date": "2026-10-22",
+      "checklist_items_covered": ["Hallmark", "Gold purity"],
+      "verbatim_summary": "15 U.S.C. § 297(b) mandates that anyone applying a gold quality mark to consumer merchandise must also apply their registered U.S. trademark (or legal name) in lettering at least as large as and as close as possible to the quality mark. 15 U.S.C. § 295 sets gold fineness tolerance at 3 parts per thousand (without solder)."
+    },
+    {
+      "id": "reg-gia-xrf-2025",
+      "authority": "Gemological Institute of America (GIA) — Gems & Gemology",
+      "title": "Summer 2025 Lab Notes: Gold-Plated Gold & Spring 2024 Lab Notes: Electroformed Gold Bracelet",
+      "url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis",
+      "secondary_url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
+      "verified_date": "2026-10-22",
+      "checklist_items_covered": ["Upon arrival", "Best verification", "Weight"],
+      "verbatim_summary": "XRF metal testing is one of the most reliable non-destructive ways to analyze jewelry metal composition, but GIA Carlsbad warns that heavy gold plating applied over lower-karat gold (e.g., 18K plated over 10K) or thick electroforming over resin/wax can yield misleadingly high surface XRF readings. Pair XRF with independent gram-weight check and microscopic examination before resizing."
+    },
+    {
+      "id": "reg-ftc-fcba",
+      "authority": "U.S. Federal Trade Commission (FTC) Consumer Advice",
+      "title": "Using Credit Cards and Disputing Charges (Fair Credit Billing Act, 15 U.S.C. § 1666)",
+      "url": "https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges",
+      "verified_date": "2026-10-22",
+      "checklist_items_covered": ["Payment", "Documentation"],
+      "verbatim_summary": "Under the Fair Credit Billing Act (FCBA), credit card buyers can dispute billing errors (undelivered goods or goods not delivered as agreed) in writing within 60 days and cap unauthorized-charge liability at $50 — protections absent from wire transfers, peer-to-peer cash apps, or cryptocurrency."
+    }
+  ]
+}

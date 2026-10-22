@@ -27,13 +27,13 @@ When reviewing anything in this repo, **ask of each value: where is the official
 |---|---|
 | `index.html`, `pages/*.html` | The published dashboard and its subpages (generated — do not hand-edit) |
 | `assets/style.css`, `assets/app.js` | Styling and the client-side gold calculator / table filter |
-| `data/rings.json` | The dataset: 22 rings, each with price, weight, sources, verification level, re-verification date and flags |
+| `data/rings.json` | The dataset: 47 rings, each with price, weight, sources, verification level, re-verification date and flags |
 | `data/sellers.json` | Seller-level facts: return window, exclusions, resize terms, warranty, contact |
 | `data/sources.json` | The 14 registered sources with tier, retrieval date and what each one supports |
 | `data/methodology.json` | Karat table, 15 U.S.C. § 295 tolerances, formulas, assumptions, verification levels |
 | `data/gold_spot.json` | The gold benchmark: **$4,028.53/oz, data as of 21 Oct 2026** (World Gold Council, read 22 Oct 2026). The earlier same-day reading of $4,024.36/oz is kept in `prior_captures` |
 | `data/derived.json` | Computed gold content / value / multiples (generated) |
-| `data/verification_log.json` | The verification passes (0–6) rendered on the site's Log page |
+| `data/verification_log.json` | The verification passes (0–8, incl. Pass 7) rendered on the site's Log page |
 | `VERIFICATION.md` | Line-by-line verification record (generated from the JSON) |
 | `reports/audit_latest.txt` | Latest integrity-audit output |
 | `COORDINATION.md` | Shared task board for the agent sessions working in this repo |
@@ -52,7 +52,7 @@ No third-party dependencies, no network access required to build. Python 3.10+.
 
 ## Four independent re-verification passes on the same tree
 
-The published tree was **not taken on trust**: it was re-fetched row by row three times on the same day — twice by two separate agent sessions before the merge, and once more against the merged `main` afterwards.
+The published tree was **not taken on trust**: it was re-fetched row by row several times on the same day — by separate agent sessions before and after the merges (below).
 
 **Pass 2 — session `arena/fd51d093-gold4`**
 
@@ -92,15 +92,14 @@ Every re-read is recorded per row in `data/rings.json` (`reverified_utc`, `rever
 
 | Metric | Value |
 |---|---|
-| Rings tracked | 22 |
-| Retailers with product rows | 6 (Blue Nile, Allurez, VRAI, Mejuri, Brilliant Earth, Anjolee) |
-| Prices read from the retailer's own page | 21 of 22 (1 deliberately blank) |
-| Gram weights published by the retailer | 7 of 22 — only these rows have a computable gold value |
-| Rows with explicit *solid gold* wording | 5 of 22 (all Mejuri) |
-| Rows publishing a hallmark / maker's mark | **0 of 22** — it can only be checked in your hand |
-| Rows re-read from their own source page | 22 of 22, on 2026-10-22 (twice, by two independent sessions) |
-| Gold benchmark used | $4,028.53/oz = $129.5202/g, data as of 21 Oct 2026 |
-| Gold benchmark used | $4,024.36/oz = $129.3862/g, 21 Oct 2026 |
+| Rings tracked | 47 |
+| Retailers with product rows | 10 (Blue Nile, Allurez, VRAI, Mejuri, Brilliant Earth, Anjolee, Ross-Simons, Sarraf, Catbird, Mene) |
+| Prices read from the retailer's own page | 46 of 47 (1 deliberately blank) |
+| Gram weights published by the retailer | 17 of 47 — only these rows have a computable gold value |
+| Rows with explicit *solid gold* wording | 19 of 47 |
+| Rows publishing a hallmark / maker's mark | **0 of 47** — it can only be checked in your hand |
+| Rows re-read from their own source page | the original 20 rows were re-read by up to four independent sessions on 2026-10-22; every row carries its re-verification record |
+| Gold benchmark used | $4,028.53/oz = $129.5202/g, data as of 21 Oct 2026 (earlier same-day reading $4,024.36/oz kept in `prior_captures`) |
 | Flags raised for review | published on the Flagged page, with sources |
 
 **Headline findings**

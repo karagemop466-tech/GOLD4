@@ -220,6 +220,188 @@
         "No gram weight and no hallmark are published on the page"
       ],
       "caveat": "Price only; no weight and no hallmark published."
+    },
+    {
+      "id": "kitco-gold-spot",
+      "tier": "B",
+      "publisher": "Kitco Metals Inc.",
+      "title": "Live Gold Spot Price & Unit Conversion Table",
+      "url": "https://www.kitco.com/charts/gold",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "Live spot conversion table read on 2026-10-22 (7:10 p.m. EDT): $4,024.60 USD per troy ounce = $129.39 USD per gram ($201.23/dwt)",
+        "Intraday 24-hour range $4,020.20–$4,145.30/oz cross-confirms WGC spot benchmark ($4,028.53/oz = $129.52/g) within 0.10%"
+      ]
+    },
+    {
+      "id": "jmbullion-gold-spot",
+      "tier": "B",
+      "publisher": "JM Bullion",
+      "title": "Gold Price Charts — Live Ask / Bid Spot Quote",
+      "url": "https://www.jmbullion.com/charts/gold-price/",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "Live spot quote read on 2026-10-22 (7:09 p.m. EDT): $4,039.76/oz Ask, $4,025.26/oz Bid ($129.88/g Ask)"
+      ]
+    },
+    {
+      "id": "cfpb-fcba-en61",
+      "tier": "A",
+      "publisher": "Consumer Financial Protection Bureau (CFPB)",
+      "title": "How do I dispute a charge on my credit card bill? (Fair Credit Billing Act)",
+      "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "Written billing-error dispute notice must reach card issuer within 60 days after first statement showing the charge",
+        "Card issuer must acknowledge in writing within 30 days and resolve within two billing cycles (no more than 90 days)"
+      ]
+    },
+    {
+      "id": "gia-xrf-winter2024",
+      "tier": "B",
+      "publisher": "Gemological Institute of America (GIA)",
+      "title": "Chemical Analysis in the Gemological Laboratory (EDXRF Principles & Depth Limits)",
+      "url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "EDXRF provides non-destructive elemental analysis across Na–U but excites only shallow near-surface metal layers",
+        "Thick gold plating or electroforming requires pairing XRF with calibrated mass/density and binocular microscope inspection"
+      ]
+    },
+    {
+      "id": "gia-electroform-fraud-2024",
+      "tier": "B",
+      "publisher": "Gemological Institute of America (GIA Carlsbad Laboratory)",
+      "title": "Lab Notes: Electroformed Gold Piece with Adhered 14K Hallmark Fraud Case",
+      "url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "Item submitted as 14K solid gold had a separate glued-on 14K hallmark disk over a wax/resin core coated with up to ~200 microns of electroformed gold",
+        "Surface XRF alone read 17.99K and 22.47K gold without detecting subsurface core; caught via suspiciously light gram mass and microscope examination"
+      ]
+    },
+    {
+      "id": "nist-sp811-pml",
+      "tier": "A",
+      "publisher": "National Institute of Standards and Technology (NIST)",
+      "title": "NIST Special Publication 811 — Guide for the Use of the International System of Units (SI)",
+      "url": "https://www.nist.gov/pml/special-publication-811",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "Exact SI conversion factor for troy ounce (31.1034768 g) and metric carat (0.200 g); replaces dead 404 NIST link caught in docs/sources.html"
+      ]
+    },
+    {
+      "id": "sarraf-returns",
+      "tier": "C",
+      "publisher": "Sarraf Jewelry Inc.",
+      "title": "Sarraf Return Policy & Lifetime Warranty Terms",
+      "url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "30-day return window from receipt in unused original condition with invoice to 650 South Hill St #728, Los Angeles, CA 90014",
+        "Buyer pays return shipping & signature insurance; third-party resizing immediately voids warranty; Lifetime Warranty replacement charges max($100, 10% of price)"
+      ]
+    },
+    {
+      "id": "catbird-returns",
+      "tier": "C",
+      "publisher": "Catbird NYC",
+      "title": "Catbird Returns & Exchanges Policy",
+      "url": "https://www.catbirdnyc.com/returns",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "20-day return window from delivery ($9 return shipping fee deducted)",
+        "Engraved items, special orders, custom items, and all international orders are final sale"
+      ]
+    },
+    {
+      "id": "mene-returns",
+      "tier": "C",
+      "publisher": "Menē Inc.",
+      "title": "Menē 7-Day Returns & Lifetime Buyback Policy",
+      "url": "https://mene.com/customer-care/en-US/articles/returns-319505",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "Strict 7-day return window from receipt in unworn condition with original Certificate of Authenticity",
+        "Manufacturing weight variance +/-0.5g in-stock or +/-1.0g Crafted-on-Demand"
+      ]
+    },
+    {
+      "id": "brilliant-earth-returns",
+      "tier": "C",
+      "publisher": "Brilliant Earth, LLC",
+      "title": "Brilliant Earth Free 30-Day Returns & Resizing Exclusions Policy",
+      "url": "https://www.brilliantearth.com/30-Day-Returns/",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "Free 30-day return shipping from delivery in unworn original condition",
+        "Custom-designed, modified, and resized items are ineligible for return; engraved items incur a $40 removal fee"
+      ]
+    },
+    {
+      "id": "nist-hb44-2026",
+      "tier": "A",
+      "publisher": "National Institute of Standards and Technology (nist.gov)",
+      "title": "NIST Handbook 44 (2026 Edition) — Appendix C: Units of Mass for Precious Metals & Metric Carat",
+      "url": "https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "1 troy ounce = 31.1034768 grams exact",
+        "1 metric carat = 200 milligrams = 0.200 grams exact (for subtracting gemstone mass from total ring weight)"
+      ]
+    },
+    {
+      "id": "bullionvault-spot",
+      "tier": "B",
+      "publisher": "BullionVault (bullionvault.com)",
+      "title": "Live Gold Price Chart ($4,026.25/oz t = $129.45/g on 2026-10-22)",
+      "url": "https://www.bullionvault.com/gold-price-chart.do",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "Same-day independent spot gold cross-check ($4,026.25/oz t; $129,446.94/kg), within 0.06% of WGC benchmark"
+      ]
+    },
+    {
+      "id": "brilliantearth-returns-30d",
+      "tier": "C",
+      "publisher": "Brilliant Earth (brilliantearth.com)",
+      "title": "Brilliant Earth — Free 30-Day Returns & Resizing Exclusions (/30-Day-Returns/)",
+      "url": "https://www.brilliantearth.com/30-Day-Returns/",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "30-day return window from shipping date or pickup availability notification",
+        "Resized, repaired, modified, or previously exchanged items are non-returnable",
+        "Engraved rings incur a $40 engraving removal fee upon return; eternity/open-top/geometric rings cannot be resized"
+      ]
+    },
+    {
+      "id": "ross-simons-returns",
+      "tier": "C",
+      "publisher": "Ross-Simons (ross-simons.com)",
+      "title": "Ross-Simons — Returns & Exchanges Policy",
+      "url": "https://www.ross-simons.com/pages/returns-exchanges",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "30-day return window from date received",
+        "$4.95 shipping fee deducted when using Ross-Simons prepaid Loop return label",
+        "Items resized, altered, or worked on by an outside jeweler are non-returnable",
+        "Contact 800-835-0919 · 9 Ross Simons Dr, Cranston, RI 02920"
+      ]
     }
   ]
 }
