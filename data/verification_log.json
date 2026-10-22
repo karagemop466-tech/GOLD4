@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "coordination_summary": "Four agent sessions were found working in this repository at 23:12 UTC on 2026-10-22 (branches arena/9614479d-gold4, arena/22b5b06c-gold4, arena/93da71b4-gold4, arena/b4413b13-gold4). Every board claimed overlapping whole-project scope within one minute of each other and none had produced verified data. This session claimed the canonical deliverables and logged the decision in COORDINATION.md; no other branch was deleted, renamed or force-pushed. See the repository's COORDINATION.md for the full board and claim log.",
+  "coordination_summary": "Four agent sessions worked in this repository on 2026-10-22: arena/9614479d-gold4 (this one), arena/22b5b06c-gold4, arena/93da71b4-gold4 and arena/b4413b13-gold4. The other three had their work merged to main first (PR #1, #2, #3); this session integrated them instead of replacing them — see the preserved-artifacts table in README.md and docs/legacy/. Two of those sessions recorded that their sandbox could not reach retailer pages, which is why their catalogs are empty. That was a tooling limit, not evidence that no ring can be verified: this session could read the retailer pages, so the dataset is populated and every populated value carries the page it came from. Nothing in any other branch was deleted, renamed or force-pushed.",
   "passes": [
     {
       "pass": "Pass 0 — baseline repository review",

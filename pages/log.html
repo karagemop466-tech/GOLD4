@@ -66,7 +66,7 @@
   <h2>Latest integrity audit output</h2>
   <p class="sub">Produced by <span class="mono">scripts/audit.py</span>. Any FAIL fails the build; warnings must be published on the Flagged page.</p>
   <pre class="mono" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;white-space:pre-wrap">GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-22T23:22:09+00:00
+run_utc: 2026-10-22T23:23:51+00:00
 dataset rows: 20 | sellers: 6 | sources: 13
 spot benchmark: $4,024.36/oz (21 October, 2026) = $129.3862/g
 
@@ -84,7 +84,7 @@ per-row source-link requirement, and render-text sanity.
 <section class="section">
   <h2>Repository coordination</h2>
   <p class="sub">This repository is shared with other agent sessions. The task board, claims and hand-offs live in <span class="mono">COORDINATION.md</span> in the repository root; the public summary is below.</p>
-  <div class="card"><p>Four agent sessions were found working in this repository at 23:12 UTC on 2026-10-22 (branches arena/9614479d-gold4, arena/22b5b06c-gold4, arena/93da71b4-gold4, arena/b4413b13-gold4). Every board claimed overlapping whole-project scope within one minute of each other and none had produced verified data. This session claimed the canonical deliverables and logged the decision in COORDINATION.md; no other branch was deleted, renamed or force-pushed. See the repository&#x27;s COORDINATION.md for the full board and claim log.</p></div>
+  <div class="card"><p>Four agent sessions worked in this repository on 2026-10-22: arena/9614479d-gold4 (this one), arena/22b5b06c-gold4, arena/93da71b4-gold4 and arena/b4413b13-gold4. The other three had their work merged to main first (PR #1, #2, #3); this session integrated them instead of replacing them — see the preserved-artifacts table in README.md and docs/legacy/. Two of those sessions recorded that their sandbox could not reach retailer pages, which is why their catalogs are empty. That was a tooling limit, not evidence that no ring can be verified: this session could read the retailer pages, so the dataset is populated and every populated value carries the page it came from. Nothing in any other branch was deleted, renamed or force-pushed.</p></div>
 </section>
 
 </main>
@@ -93,7 +93,7 @@ per-row source-link requirement, and render-text sanity.
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
   <p>Gold benchmark: $4,024.36/oz as of 21 October, 2026 (World Gold Council) = $129.3862/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:22 UTC · dataset 20 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:23 UTC · dataset 20 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>
