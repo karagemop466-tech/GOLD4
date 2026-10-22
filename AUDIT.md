@@ -3,7 +3,7 @@ Date: 2026-10-22
 
 HARD FAILURES: 0
 
-FLAGGED (blank/unverified, by design): 24
+FLAGGED (blank/unverified, by design): 42
 - R01.price: blank/UNVERIFIED (correct per policy)
 - R01.weight_g: blank/UNVERIFIED (correct per policy)
 - R01.karat: blank/UNVERIFIED (correct per policy)
@@ -28,5 +28,23 @@ FLAGGED (blank/unverified, by design): 24
 - R08.price: blank/UNVERIFIED (correct per policy)
 - R08.weight_g: blank/UNVERIFIED (correct per policy)
 - R08.karat: blank/UNVERIFIED (correct per policy)
+- G4-SOL-01.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-SOL-02.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-SOL-05.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-SOL-06.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-SOL-07.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-SOL-08.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-THH-01.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-THH-03.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-THH-03.karat: blank/UNVERIFIED (correct per policy)
+- G4-THH-04.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-THH-04.karat: blank/UNVERIFIED (correct per policy)
+- G4-BND-05.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-BND-06.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-BND-07.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-BND-08.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-BND-09.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-RED-01.weight_g: blank/UNVERIFIED (correct per policy)
+- G4-RED-01.karat: blank/UNVERIFIED (correct per policy)
 
 Rule: a value with no official source link + retrieval date must stay blank. Re-run after every review.
