@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>14K vs 18K · GOLD4 gold-ring verification desk</title>
+<meta name="description" content="Verified solid-gold engagement-ring data: retailer prices, published gram weights, computed gold content and flagged irregularities. No hallucinated values.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" style="text-decoration:none;color:inherit">
+      <span class="mark">Au</span>
+      <span>GOLD4<small>gold-ring verification desk</small></span>
+    </a>
+    <nav class="main">
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="active">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="log.html" class="">Log</a><a href="../dashboard.html" class="">Assay Lab+</a><a href="../categories/calculator.html" class="">Stone-Deduction Calc</a><a href="../categories/verification-audit.html" class="">Deep Audit</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <span class="eyebrow">Purity</span>
+  <h1>14K, 18K, and what a stamp legally allows.</h1>
+  <p class="lede">A karat mark is a claim with a statutory tolerance, not a measurement. Understanding the difference is the whole point of this project.</p>
+</section>
+
+<div class="nohall">
+  <h2>⚠ NO HALLUCINATIONS — read before using any number</h2>
+  <p><strong>No hallucinations.</strong> This project manufactures no values. A price, weight, karat, deadline or contact detail is only shown if it was read from the
+  official page linked in the same row. The consumer rules being applied come from the
+  <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC's guidance on buying gold jewelry</a>
+  and <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.</p>
+  <ul>
+    <li><strong>Blank means blank.</strong> If a retailer did not publish a gram weight, the weight cell stays empty — it is never estimated from photos, blogs or "typical" rings.</li>
+    <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
+    <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
+    <li><strong>Anything uncertain is published on <a href="../pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
+  </ul>
+</div>
+
+
+<div class="callout bad">
+  <h4>The key finding</h4>
+  <p>A 14K or 18K stamp by itself does not prove the ring is that purity. Under 15 U.S.C. § 295 the actual fineness of the whole article may be up to
+  <strong>0.007 below</strong> the stamped fineness, so an "18K" ring can legally test as low as <strong>74.3%</strong> gold and a "14K" ring as low as
+  <strong>57.63%</strong>. Only an assay or XRF measurement tells you what you actually own.</p>
+</div>
+
+<section class="section">
+  <h2>Karat reference</h2>
+  <p class="sub">Fineness is karat ÷ 24. Gold value per gram uses the captured benchmark of $4,028.53/oz ($129.52/g). The "legal minimum" column applies the § 295 whole-article tolerance.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Karat</th><th class="num">Gold %</th><th class="num">Fineness</th><th class="num">Gold value / g</th><th class="num">Legal min fineness</th><th class="num">Legal min value / g</th><th>Typical stamps</th></tr></thead>
+    <tbody><tr><td><strong>24K</strong></td><td class="num">100.00%</td>
+        <td class="num">1.0000</td>
+        <td class="num">$129.52</td>
+        <td class="num">0.9930</td>
+        <td class="num">$128.61</td>
+        <td class="mono">24K, 999</td></tr><tr><td><strong>22K</strong></td><td class="num">91.67%</td>
+        <td class="num">0.9167</td>
+        <td class="num">$118.73</td>
+        <td class="num">0.9097</td>
+        <td class="num">$117.82</td>
+        <td class="mono">22K, 916</td></tr><tr><td><strong>18K</strong></td><td class="num">75.00%</td>
+        <td class="num">0.7500</td>
+        <td class="num">$97.14</td>
+        <td class="num">0.7430</td>
+        <td class="num">$96.23</td>
+        <td class="mono">18K, 18KT, 750</td></tr><tr><td><strong>14K</strong></td><td class="num">58.33%</td>
+        <td class="num">0.5833</td>
+        <td class="num">$75.55</td>
+        <td class="num">0.5763</td>
+        <td class="num">$74.65</td>
+        <td class="mono">14K, 14KT, 585</td></tr><tr><td><strong>10K</strong></td><td class="num">41.67%</td>
+        <td class="num">0.4167</td>
+        <td class="num">$53.97</td>
+        <td class="num">0.4097</td>
+        <td class="num">$53.06</td>
+        <td class="mono">10K, 10KT, 417</td></tr></tbody>
+  </table></div>
+  <p class="small" style="margin-top:10px">Dataset spans 10K, 14K, 18K, and 24K (Menē 24K bands; note 24K is malleable and requires thick shanks rather than delicate prongs). Sources: <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC consumer guidance on gold karats</a> ·
+  <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a> ·
+  <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">World Gold Council spot</a>.</p>
+</section>
+
+<section class="section">
+  <h2>What the karat jump actually costs in this dataset</h2>
+  <p class="sub">Same design, same retailer, only the karat differs. Price gap is measured; gold-content gap is only measured where both weights are published.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Retailer</th><th>Design</th><th class="num">Price 14K → 18K</th><th class="num">Price gap</th><th class="num">Gold gap</th><th class="num">Multiple 14K → 18K</th></tr></thead>
+    <tbody><tr><td>Allurez</td><td>Split Shank Solitaire Engagement Ring<span class="sub">AL-03 → AL-04</span></td>
+        <td class="num">$848 → $1,425</td>
+        <td class="num">+68.0%</td>
+        <td class="num">+54.9%</td>
+        <td class="num">2.55 → 2.77</td></tr><tr><td>Brilliant Earth</td><td>Atelier Solitaire Ring (2 mm, claw-prong bypass)<span class="sub">BE-01 → BE-02</span></td>
+        <td class="num">$1,190 → $1,390</td>
+        <td class="num">+16.8%</td>
+        <td class="num"><span class="badge b-warn">no weight</span></td>
+        <td class="num">— → —</td></tr><tr><td>Blue Nile</td><td>Classic Comfort Fit Solitaire Engagement Ring (2.5mm)<span class="sub">BN-04 → BN-05</span></td>
+        <td class="num">$935 → $1,310</td>
+        <td class="num">+40.1%</td>
+        <td class="num"><span class="badge b-warn">no weight</span></td>
+        <td class="num">— → —</td></tr><tr><td>Blue Nile</td><td>Classic Four Prong Solitaire Engagement Ring<span class="sub">BN-07 → BN-09</span></td>
+        <td class="num">$870 → $1,125</td>
+        <td class="num">+29.3%</td>
+        <td class="num"><span class="badge b-warn">no weight</span></td>
+        <td class="num">— → —</td></tr><tr><td>Blue Nile</td><td>Petite Solitaire Engagement Ring<span class="sub">BN-01 → BN-02</span></td>
+        <td class="num">$1,000 → $1,155</td>
+        <td class="num">+15.5%</td>
+        <td class="num"><span class="badge b-warn">no weight</span></td>
+        <td class="num">— → —</td></tr><tr><td>Sarraf</td><td>10k White Gold 5mm High Polished Traditional Domed Wedding Band<span class="sub">SR-01 → SR-03</span></td>
+        <td class="num">$352 → $871</td>
+        <td class="num">+147.4%</td>
+        <td class="num">+151.2%</td>
+        <td class="num">1.36 → 1.34</td></tr></tbody>
+  </table></div>
+  <div class="grid two" style="margin-top:16px">
+    <div class="card"><h3>Blue Nile Petite Solitaire — +15.5%</h3><p>14K is $1,000 and 18K is $1,155 for the identical 1.80 mm design. Blue Nile publishes no gram weight for either, so the gold-cost share of that gap cannot be measured.</p></div>
+    <div class="card"><h3>Blue Nile Comfort Fit 2.5 mm — +40.1%</h3><p>14K is $935 and 18K is $1,310. Without published weights there is no way to prove how much of that gap is gold, which is exactly why the weight column matters.</p></div>
+    <div class="card"><h3>Brilliant Earth Atelier Solitaire — +16.8%</h3><p>14K is $1,190 and 18K is $1,390 setting-only, same 2 mm design. Brilliant Earth publishes no gram weight for either row, so again the metal share of the gap is unmeasurable.</p></div>
+    <div class="card"><h3>Allurez Split Shank — +68.0%</h3><p>Here both weights are published: 4.40 g in 14K becomes 5.30 g in 18K. Gold content rises +54.9%, so much of the premium is more metal rather than a purer alloy — and the price-to-gold multiple still moves, from 2.55× to 2.77×.</p></div>
+    <div class="card"><h3>What this means for shopping</h3><p>Ask for the weight <em>and</em> the karat. A karat upgrade with no weight disclosure is a price increase you cannot audit.</p></div>
+  </div>
+</section>
+
+</main>
+<footer class="wrap foot">
+  <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
+  22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
+  <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
+  <p class="small">Built 2026-10-22 23:48 UTC · dataset 47 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+</footer>
+
+</body>
+</html>

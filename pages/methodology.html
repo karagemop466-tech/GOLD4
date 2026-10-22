@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method · GOLD4 gold-ring verification desk</title>
+<meta name="description" content="Verified solid-gold engagement-ring data: retailer prices, published gram weights, computed gold content and flagged irregularities. No hallucinated values.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" style="text-decoration:none;color:inherit">
+      <span class="mark">Au</span>
+      <span>GOLD4<small>gold-ring verification desk</small></span>
+    </a>
+    <nav class="main">
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="active">Method</a><a href="sources.html" class="">Sources</a><a href="log.html" class="">Log</a><a href="../dashboard.html" class="">Assay Lab+</a><a href="../categories/calculator.html" class="">Stone-Deduction Calc</a><a href="../categories/verification-audit.html" class="">Deep Audit</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <span class="eyebrow">Method</span>
+  <h1>How every number on this site is produced, and what would make it wrong.</h1>
+  <p class="lede">The dataset is small because the rule is strict: no value without an official page. This page is the rulebook the audit script enforces.</p>
+</section>
+
+<div class="nohall">
+  <h2>⚠ NO HALLUCINATIONS — read before using any number</h2>
+  <p><strong>No hallucinations.</strong> This project manufactures no values. A price, weight, karat, deadline or contact detail is only shown if it was read from the
+  official page linked in the same row. The consumer rules being applied come from the
+  <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC's guidance on buying gold jewelry</a>
+  and <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.</p>
+  <ul>
+    <li><strong>Blank means blank.</strong> If a retailer did not publish a gram weight, the weight cell stays empty — it is never estimated from photos, blogs or "typical" rings.</li>
+    <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
+    <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
+    <li><strong>Anything uncertain is published on <a href="../pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
+  </ul>
+</div>
+
+
+<section class="section">
+  <h2>The rule</h2>
+  <div class="callout bad"><h4>No hallucination</h4><p>A value is published only if it was read from the official page named in its source_url. If it could not be read, the field stays null and the row is flagged UNVERIFIED. No value is ever estimated, inferred, averaged or copied from a blog, reseller, or marketplace listing.</p>
+  <p>Only computed from published inputs by scripts/compute.py, using the formulas below. Derived values are labelled as derived and never presented as seller claims.</p></div>
+  <div class="table-wrap"><table><thead><tr><th>Verification level</th><th>Meaning</th></tr></thead><tbody><tr><td>V1 direct page fetch</td><td>The official page was fetched during this project and the stated value was read from the returned page content.</td></tr><tr><td>V2 official page snapshot only</td><td>The value appeared only in a search-engine snapshot of the official page and was NOT re-read from the live page. Treated as UNVERIFIED for table purposes and listed on the Flagged for Review page.</td></tr><tr><td>U unverified</td><td>No official page value could be read. Field is null.</td></tr></tbody></table></div>
+</section>
+
+<section class="section">
+  <h2>Formulas</h2>
+  <div class="table-wrap"><table><thead><tr><th>Value</th><th>Definition</th></tr></thead><tbody><tr><td class='mono'>pure_gold_grams</td><td>weight_g_gross * fineness</td></tr><tr><td class='mono'>gold_melt_value_usd</td><td>pure_gold_grams * spot_usd_per_gram</td></tr><tr><td class='mono'>price_to_melt_multiple</td><td>price_usd / gold_melt_value_usd</td></tr><tr><td class='mono'>minimum_legal_gold_value_usd</td><td>weight_g_gross * minimum_fineness_if_stamped * spot_usd_per_gram</td></tr><tr><td class='mono'>assumptions</td><td>Gold weight is taken exactly as the retailer publishes it. Where the retailer publishes &#x27;approximate metal weight&#x27;, the word approximate is carried into the row notes.; No deduction is made for diamonds, settings, solder, rhodium plating or alloy density. The melt value is therefore an upper-bound gold-content estimate of the metal as published, not an appraisal and not a resale offer.; Price is the retailer&#x27;s listed price at capture time and excludes tax, shipping, engraving, appraisal and financing charges unless the row says otherwise.; The multiple is a comparison tool only. Retail jewellery prices legitimately include labour, stone-setting, brand, warranty and returns cost.</td></tr></tbody></table></div>
+  <h3 style="margin-top:18px">Assumptions that limit the result</h3>
+  <ul><li>Gold weight is taken exactly as the retailer publishes it. Where the retailer publishes &#x27;approximate metal weight&#x27;, the word approximate is carried into the row notes.</li><li>No deduction is made for diamonds, settings, solder, rhodium plating or alloy density. The melt value is therefore an upper-bound gold-content estimate of the metal as published, not an appraisal and not a resale offer.</li><li>Price is the retailer&#x27;s listed price at capture time and excludes tax, shipping, engraving, appraisal and financing charges unless the row says otherwise.</li><li>The multiple is a comparison tool only. Retail jewellery prices legitimately include labour, stone-setting, brand, warranty and returns cost.</li></ul>
+</section>
+
+<section class="section">
+  <h2>Legal framework</h2>
+  <div class="grid two">
+    <div class="card"><h3>Solid gold</h3><p>&#x27;Solid gold&#x27; means the item is not hollow; it also carries a karat mark showing gold content.</p>
+      <p class="small">Source: <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC, Buying Platinum, Gold, and Silver Jewelry</a>.</p>
+      <p class="small">Terms that disqualify an item from this project's shortlist: gold plated, gold plate, gold filled, gold overlay, rolled gold plate, RGP, gold electroplate, vermeil, gold flashed, gold washed, gold tone, bonded.</p></div>
+    <div class="card"><h3>Hallmark</h3><p>A karat quality mark must be accompanied by the name or U.S. registered trademark of the company that stands behind the mark. FTC consumer guidance states: if you do not see a trademark with the karat mark, do not buy it.</p>
+      <p class="small">Sources: <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC guidance</a> ·
+      <a href="https://www.law.cornell.edu/uscode/text/15/chapter-8" target="_blank" rel="noopener">15 U.S.C. ch. 8</a>.</p>
+      <p class="small"><strong>Project finding:</strong> None of the retailer product pages captured for this project published the physical hallmark or maker&#x27;s mark. Hallmark status is therefore recorded as &#x27;not published&#x27; for every row and must be checked on the physical item.</p></div>
+    <div class="card"><h3>Karat and tolerance</h3><p>Karat is parts of fine gold out of 24 by weight. 18K = 18/24 = 0.750; 14K = 14/24 = 0.583333; 10K = 10/24 = 0.416667.</p>
+      <p>For articles other than watchcases and flatware, the actual fineness of the whole article (including solder) may be no more than 0.007 below the fineness stamped on it. So an &#x27;18K&#x27; stamp legally permits actual fineness as low as 0.743 (74.3%), and a &#x27;14K&#x27; stamp as low as 0.5763 (57.63%).</p>
+      <p class="small">Source: <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.</p></div>
+    <div class="card"><h3>Payment</h3><p>Credit cards carry federal billing-error dispute rights; the FTC explains the issuer's obligations and how to dispute a charge.
+      Irreversible payment methods do not carry those rights, which is why the checklist prefers a card.</p>
+      <p class="small">Source: <a href="https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges" target="_blank" rel="noopener">FTC, Using Credit Cards and Disputing Charges</a>.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>What this project deliberately does not do</h2>
+  <div class="grid three">
+    <div class="card"><h3>No reputation score</h3><p>No independent review data was collected, so no seller is described as reputable or otherwise. The field is empty on purpose.</p></div>
+    <div class="card"><h3>No estimate of missing weights</h3><p>"Typical" weights from blogs are excluded. A blank weight stays blank even when a plausible number exists elsewhere.</p></div>
+    <div class="card"><h3>No price prediction</h3><p>Spot gold moves. The captured benchmark is frozen with its date, and the site never silently refreshes it.</p></div>
+  </div>
+</section>
+
+</main>
+<footer class="wrap foot">
+  <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
+  22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
+  <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
+  <p class="small">Built 2026-10-22 23:48 UTC · dataset 47 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+</footer>
+
+</body>
+</html>

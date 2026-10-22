@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Calculate pure 24K fine gold grams, raw melt value in USD, gemstone weight deductions, and retail markup multiples.">
+  <title>Interactive Gold Karat, Weight &amp; Raw Melt Value Calculator — GOLD4</title>
+  <link rel="stylesheet" href="static/gold4.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="spot-ribbon">
+    <div class="spot-ribbon-inner">
+      <div>
+        <span class="spot-pill">LIVE SPOT GOLD · 2026-10-22</span>
+        <span class="mono" style="margin-left:0.45rem;">
+          Kitco: <strong>$4,024.60/oz</strong> (<strong>$129.39/g</strong>) <a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener noreferrer">[Source ↗]</a>
+          · JM Bullion: <strong>$4,039.76/oz</strong> (<strong>$129.88/g</strong>) <a href="https://www.jmbullion.com/charts/gold-price/" target="_blank" rel="noopener noreferrer">[Source ↗]</a>
+        </span>
+      </div>
+      <div>
+        <strong>NO HALLUCINATIONS:</strong> Unconfirmed specs stay blank (<span class="mono">—</span>) · <a href="audit.html">3 Automated Audit Gates Passing ✓</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-top">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">Au</span>
+        <span>
+          <span class="brand-title">GOLD4 · Solid Gold Engagement Ring Desk</span>
+          <span class="brand-sub">Line-by-Line Official Source Verification · Assay &amp; Melt Audit · 2026-10-22</span>
+        </span>
+      </a>
+      <div class="header-badges">
+        <span class="badge badge-ok">18K: $97.05/g · 14K: $75.48/g · 10K: $53.91/g</span>
+        <a class="badge badge-crit" href="flagged.html" style="text-decoration:none;">12 Flagged Irregularities ↗</a>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="Primary site navigation">
+      <a href="index.html">Main Desk (35) <span class="nav-badge">35</span></a><a href="dashboard.html">Assay Lab <span class="nav-badge">22</span></a><a href="solitaires.html">Solitaires <span class="nav-badge">8</span></a><a href="three-stone-halo.html">3-Stone &amp; Halo <span class="nav-badge">4</span></a><a href="bands.html">Solid Bands &amp; 24K <span class="nav-badge">9</span></a><a href="calculator.html" class="active" aria-current="page">Melt Calculator</a><a href="checklist.html">12-Point Checklist <span class="nav-badge">12</span></a><a href="sellers.html">Sellers <span class="nav-badge">6</span></a><a href="standards.html">FTC &amp; XRF Law <span class="nav-badge">5</span></a><a href="flagged.html">Flagged Register <span class="nav-badge nav-badge-alert">12</span></a><a href="audit.html">Security Audit <span class="nav-badge">PASS</span></a><a href="coordination.html">Git Coordination</a>
+    </nav>
+  </header>
+
+  <main id="main-content" class="container">
+    
+        <div class="audit-banner" role="note">
+          <div>
+            <strong>ZERO-HALLUCINATION POLICY ENFORCED:</strong> Every populated value links to an official primary page retrieved <code>2026-10-22</code>; unconfirmable or conflicting specs remain blank (<code>—</code>) and flagged. <strong>Always check for hallucinations</strong> on every review pass.
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+            <a class="btn btn-sm" href="dashboard.html#zero-hallucination-policy">Read Policy ↑</a>
+            <a class="btn btn-sm" href="flagged.html">Flagged Register →</a>
+            <a class="btn btn-sm" href="audit.html">Security Audit Log →</a>
+          </div>
+        </div>
+        
+    
+    <section class="section">
+      <div class="eyebrow">INTERACTIVE ASSAY &amp; MELT VALUATION TOOL</div>
+      <h1>Gold Karat, Net Metal Weight, Pure Au Mass &amp; Retail Markup Calculator</h1>
+      <p class="lead">
+        Exact NIST troy-ounce conversion (<span class="mono">1 oz t = 31.1034768 g</span>), metric carat gemstone deduction (<span class="mono">1.00 ct = 0.200 g</span>),
+        dual live-verified <span class="mono">2026-10-22</span> spot benchmarks (<a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener noreferrer">Kitco $129.39/g ↗</a> &amp;
+        <a href="https://www.jmbullion.com/charts/gold-price/" target="_blank" rel="noopener noreferrer">JM Bullion $129.88/g ↗</a>), plus custom spot &amp; millesimal stamp support.
+      </p>
+      
+    <div class="card" id="full-calc-widget">
+      <div style="margin-bottom:0.9rem;">
+        <label style="display:grid;gap:0.3rem;font-size:0.83rem;font-weight:700;">
+          1-Click Preset: Load Any Live-Verified Catalog Ring (2026-10-22)
+          <select id="calc-ring-preset" style="padding:0.5rem;border-radius:7px;border:1px solid var(--border-strong);font-size:0.86rem;">
+            <option value="">— Select any live-audited catalog ring (or enter custom values below) —</option><option value="G4-SOL-01" data-weight="" data-karat="14" data-price="2183.00" data-stone="0.50" data-name="Sarraf — 14k Gold 1/2 Ctw Diamond Solitaire Engagement Diamond Ring">[G4-SOL-01] Sarraf: 14k Gold 1/2 Ctw Diamond Solitaire Engagement Diamond Ring ($2,183.00 · WEIGHT UNVERIFIED)</option><option value="G4-SOL-02" data-weight="" data-karat="18" data-price="2461.00" data-stone="0.50" data-name="Sarraf — 18k Yellow Gold 1/2 Carat Round Diamond Solitaire Engagement Ring">[G4-SOL-02] Sarraf: 18k Yellow Gold 1/2 Carat Round Diamond Solitaire Engageme ($2,461.00 · WEIGHT UNVERIFIED)</option><option value="G4-SOL-03" data-weight="8.00" data-karat="14" data-price="2858.00" data-stone="0.50" data-name="Sarraf — 14k Yellow Gold Men&#x27;s Solitaire Diamond Ring (0.50 ct H/SI1)">[G4-SOL-03] Sarraf: 14k Yellow Gold Men&#x27;s Solitaire Diamond Ring (0.50 ct H/SI ($2,858.00 · 8.00g)</option><option value="G4-SOL-04" data-weight="6.30" data-karat="18" data-price="4068.00" data-stone="0.74" data-name="Sarraf — 18k Yellow Gold Men&#x27;s Solitaire Diamond Ring (0.74 ct J/SI1)">[G4-SOL-04] Sarraf: 18k Yellow Gold Men&#x27;s Solitaire Diamond Ring (0.74 ct J/SI ($4,068.00 · 6.30g)</option><option value="G4-SOL-05" data-weight="" data-karat="18" data-price="850.00" data-stone="0" data-name="Brilliant Earth — Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K Shank + 14K Prongs)">[G4-SOL-05] Brilliant Earth: Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K  ($850.00 · WEIGHT UNVERIFIED)</option><option value="G4-SOL-06" data-weight="" data-karat="18" data-price="1390.00" data-stone="0" data-name="Brilliant Earth — Atelier Compass-Prong Solitaire Ring Setting in 18K Yellow Gold (2.0mm)">[G4-SOL-06] Brilliant Earth: Atelier Compass-Prong Solitaire Ring Setting in 18K Yellow ($1,390.00 · WEIGHT UNVERIFIED)</option><option value="G4-SOL-07" data-weight="" data-karat="18" data-price="1125.00" data-stone="0" data-name="Blue Nile — Classic Four-Prong Solitaire Setting in 18K Yellow Gold w/ Platinum Prongs">[G4-SOL-07] Blue Nile: Classic Four-Prong Solitaire Setting in 18K Yellow Gold w/ ($1,125.00 · WEIGHT UNVERIFIED)</option><option value="G4-SOL-08" data-weight="" data-karat="14" data-price="3900.00" data-stone="0" data-name="Catbird NYC — The Swan Solitaire GIA Diamond Engagement Ring (1.0mm Recycled 14K Band)">[G4-SOL-08] Catbird NYC: The Swan Solitaire GIA Diamond Engagement Ring (1.0mm Recy ($3,900.00 · WEIGHT UNVERIFIED)</option><option value="G4-THH-01" data-weight="" data-karat="18" data-price="2480.00" data-stone="0.10" data-name="Blue Nile — Wide Band Solitaire Plus Pavé Diamond Engagement Setting (3.30mm, 18K)">[G4-THH-01] Blue Nile: Wide Band Solitaire Plus Pavé Diamond Engagement Setting ( ($2,480.00 · WEIGHT UNVERIFIED)</option><option value="G4-THH-02" data-weight="3.05" data-karat="14" data-price="691.00" data-stone="0" data-name="Sarraf — 14k Yellow Gold Three Round Cut CZ Engagement Ring (3.05g Verified)">[G4-THH-02] Sarraf: 14k Yellow Gold Three Round Cut CZ Engagement Ring (3.05g  ($691.00 · 3.05g)</option><option value="G4-THH-03" data-weight="" data-karat="" data-price="20671.00" data-stone="1.50" data-name="Sarraf — CONFLICTED LISTING: &#x27;18k Yellow Gold&#x27; H1 vs &#x27;14K Solid Gold&#x27; Spec 1.50 Ctw Heart Diamond Ring">[G4-THH-03] Sarraf: CONFLICTED LISTING: &#x27;18k Yellow Gold&#x27; H1 vs &#x27;14K Solid Gol ($20,671.00 · WEIGHT UNVERIFIED)</option><option value="G4-THH-04" data-weight="" data-karat="" data-price="2858.00" data-stone="1.25" data-name="Sarraf — CONFLICTED LISTING: &#x27;14k Yellow Gold&#x27; H1 vs &#x27;18K Solid Gold&#x27; Spec Pear Halo Diamond Ring">[G4-THH-04] Sarraf: CONFLICTED LISTING: &#x27;14k Yellow Gold&#x27; H1 vs &#x27;18K Solid Gol ($2,858.00 · WEIGHT UNVERIFIED)</option><option value="G4-BND-01" data-weight="4.80" data-karat="10" data-price="352.00" data-stone="0" data-name="Sarraf — 10k White Gold 5mm High Polished Traditional Domed Band (4.80g Benchmark)">[G4-BND-01] Sarraf: 10k White Gold 5mm High Polished Traditional Domed Band (4 ($352.00 · 4.80g)</option><option value="G4-BND-02" data-weight="9.40" data-karat="14" data-price="1063.00" data-stone="0" data-name="Sarraf — 14k Yellow Gold 6mm High Polished Comfort Fit Heavy Band (9.40g Benchmark)">[G4-BND-02] Sarraf: 14k Yellow Gold 6mm High Polished Comfort Fit Heavy Band ( ($1,063.00 · 9.40g)</option><option value="G4-BND-03" data-weight="6.70" data-karat="18" data-price="871.00" data-stone="0" data-name="Sarraf — 18k Yellow Gold 5mm High Polished Traditional Domed Band (6.70g Benchmark)">[G4-BND-03] Sarraf: 18k Yellow Gold 5mm High Polished Traditional Domed Band ( ($871.00 · 6.70g)</option><option value="G4-BND-04" data-weight="11.10" data-karat="18" data-price="1436.00" data-stone="0" data-name="Sarraf — 18K Yellow Gold 6mm High Polished Flat Comfort Fit Band (11.10g Heavy Benchmark)">[G4-BND-04] Sarraf: 18K Yellow Gold 6mm High Polished Flat Comfort Fit Band (1 ($1,436.00 · 11.10g)</option><option value="G4-BND-05" data-weight="" data-karat="24" data-price="1465.00" data-stone="0" data-name="Menē — Menē 24k Pure Solid Gold Knot Ring (LBMA 99.99% Au)">[G4-BND-05] Menē: Menē 24k Pure Solid Gold Knot Ring (LBMA 99.99% Au) ($1,465.00 · WEIGHT UNVERIFIED)</option><option value="G4-BND-06" data-weight="" data-karat="24" data-price="1730.00" data-stone="0" data-name="Menē — Menē 24k Pure Solid Gold Etruscan Sun Band (4.5mm x 2.0mm)">[G4-BND-06] Menē: Menē 24k Pure Solid Gold Etruscan Sun Band (4.5mm x 2.0mm) ($1,730.00 · WEIGHT UNVERIFIED)</option><option value="G4-BND-07" data-weight="" data-karat="14" data-price="1100.00" data-stone="0" data-name="Mejuri — Mejuri 14k Solid Yellow Gold Diamond Eternity Band (1.5mm)">[G4-BND-07] Mejuri: Mejuri 14k Solid Yellow Gold Diamond Eternity Band (1.5mm) ($1,100.00 · WEIGHT UNVERIFIED)</option><option value="G4-BND-08" data-weight="" data-karat="14" data-price="798.00" data-stone="0.43" data-name="Mejuri — Mejuri 14k Solid Yellow Gold Pavé Diamond Thin Dôme Ring (0.43 ct)">[G4-BND-08] Mejuri: Mejuri 14k Solid Yellow Gold Pavé Diamond Thin Dôme Ring ( ($798.00 · WEIGHT UNVERIFIED)</option><option value="G4-BND-09" data-weight="" data-karat="14" data-price="313.50" data-stone="0" data-name="Catbird NYC — Catbird Grand Painter&#x27;s Solid 14k Yellow Gold Band">[G4-BND-09] Catbird NYC: Catbird Grand Painter&#x27;s Solid 14k Yellow Gold Band ($313.50 · WEIGHT UNVERIFIED)</option><option value="G4-RED-01" data-weight="" data-karat="" data-price="188.00" data-stone="0" data-name="Mejuri — DISQUALIFIED CONTROL: Mejuri Organic Dôme Nesting Ring Set (18k Gold Vermeil over 925 Silver)">[G4-RED-01] Mejuri: DISQUALIFIED CONTROL: Mejuri Organic Dôme Nesting Ring Set ($188.00 · WEIGHT UNVERIFIED)</option>
+          </select>
+        </label>
+        <div id="calc-preset-banner" style="margin-top:0.45rem;font-size:0.82rem;color:var(--gold-deep);font-weight:600;"></div>
+      </div>
+
+      <div class="calc-layout">
+        <form id="gold4-calc-form" class="calc-form" onsubmit="return false;">
+          <div class="form-row">
+            <label>
+              Documented Ring Weight (grams)
+              <input id="calc-weight" type="number" min="0" step="0.01" value="6.70" placeholder="Leave blank if unverified">
+              <small>Example preloaded: Sarraf 18K 5mm band (6.70 g documented).</small>
+            </label>
+            <label>
+              Diamond / Gemstone Carats to Deduct (ct)
+              <input id="calc-stone-ct" type="number" min="0" step="0.01" value="0.00" placeholder="0.00">
+              <small>NIST exact conversion: 1.00 metric carat = 0.200 grams.</small>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Gold Purity (Karat / Fineness)
+              <select id="calc-karat">
+                <option value="">— Unverified / Blank —</option>
+                <option value="10">10K Solid Gold (10/24 = 41.67% · 417)</option>
+                <option value="14">14K Solid Gold (14/24 = 58.33% · 585)</option>
+                <option value="18" selected>18K Solid Gold (18/24 = 75.00% · 750)</option>
+                <option value="22">22K Solid Gold (22/24 = 91.67% · 916)</option>
+                <option value="24">24K Pure Gold (24/24 = 100.0% · 999.9)</option>
+                <option value="custom">Custom Millesimal Stamp (e.g. 375, 585, 950‰)</option>
+              </select>
+            </label>
+            <label>
+              Custom Fineness (parts per 1,000 ‰)
+              <input id="calc-custom-fineness" type="number" min="1" max="1000" step="1" placeholder="e.g. 585" disabled>
+              <small>Enabled when "Custom Millesimal Stamp" is selected.</small>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Fine-Gold Spot Source (Verified 2026-10-22)
+              <select id="calc-spot-source">
+                <option value="kitco" selected>Kitco Live Spot — $4,024.60/oz ($129.39/g · 2026-10-22)</option>
+                <option value="jmbullion">JM Bullion Ask — $4,039.76/oz ($129.88/g · 2026-10-22)</option>
+                <option value="custom">Manual / Custom Dated Spot Quote ($/gram)</option>
+              </select>
+            </label>
+            <label>
+              Active 24K Spot Rate (USD / gram)
+              <input id="calc-spot-gram" type="number" min="0" step="0.01" value="129.39" readonly>
+              <small>1 troy oz = 31.1034768 g exact (<a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener noreferrer">Kitco ↗</a>).</small>
+            </label>
+          </div>
+
+          <label>
+            Retail Asking Price (USD — Optional Markup &amp; Fraud Check)
+            <input id="calc-retail-price" type="number" min="0" step="0.01" value="871.00" placeholder="Enter retail price in USD">
+            <small>Compares asking price directly against intrinsic fine-gold melt value.</small>
+          </label>
+        </form>
+
+        <div class="calc-results" aria-live="polite">
+          <div class="result-box primary">
+            <div class="kpi-label">RAW FINE-GOLD MELT VALUE (INTRINSIC METAL ONLY)</div>
+            <div class="kpi-value" id="out-melt-usd">$650.20</div>
+            <div class="kpi-sub" id="out-spot-note">Kitco Live Spot (2026-10-22: $4,024.60/oz = $129.39/g)</div>
+          </div>
+
+          <div class="result-box">
+            <div class="kpi-label">PURE 24K ELEMENTAL GOLD EQUIVALENT</div>
+            <div class="kpi-value" id="out-pure-grams" style="font-size:1.28rem;">5.025 g pure 24K Au</div>
+            <div class="kpi-sub" id="out-net-metal">Net alloy mass: 6.700 g × 75.00% fineness</div>
+          </div>
+
+          <div class="result-box">
+            <div class="kpi-label">RETAIL PRICE VS. RAW GOLD MELT DIAGNOSTIC</div>
+            <div class="kpi-value" id="out-markup-ratio" style="font-size:1.22rem;">1.34× melt (+$220.80 over raw gold)</div>
+            <div class="kpi-sub" id="out-markup-signal">BULLION / PLAIN BAND BENCHMARK ZONE (1.02×–1.65× melt).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+      <div class="card" style="margin-top:1.35rem;">
+        <h3>Live Multi-Karat Comparison Matrix (Updates Dynamically With Your Weight &amp; Spot Inputs)</h3>
+        <p class="section-sub" style="margin-bottom:0.8rem;">Shows exact pure 24K gold content and raw melt value across all five standard jewelry karats for your entered net ring mass.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Alloy Grade</th>
+                <th>Exact Mass Fineness</th>
+                <th>Net Alloy Mass</th>
+                <th>Pure 24K Gold Mass</th>
+                <th>Raw Gold Melt Value</th>
+                <th>Asking Price / Melt Multiple</th>
+              </tr>
+            </thead>
+            <tbody id="calc-karat-matrix-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>GOLD4 — Solid Gold Engagement Ring Verification &amp; Melt-Value Research</strong><br>
+        All prices, policies, and regulatory citations verified directly against official primary URLs on <span class="mono">2026-10-22</span>.
+        Unconfirmed fields are never estimated or inferred — always check for hallucinations after every review.
+      </div>
+      <div style="display:flex;gap:0.9rem;flex-wrap:wrap;">
+        <a href="index.html">Overview</a>
+        <a href="calculator.html">Melt Calculator</a>
+        <a href="checklist.html">12-Point Checklist</a>
+        <a href="flagged.html">Flagged for Review</a>
+        <a href="audit.html">Security Audit</a>
+        <a href="coordination.html">Git Coordination</a>
+        <a href="docs/index.html">Preserved /docs/ Sub-Site</a>
+        <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener noreferrer">FTC Jewelry Guide ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/gold4.js"></script>
+</body>
+</html>

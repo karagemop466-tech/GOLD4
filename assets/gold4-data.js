@@ -144,7 +144,7 @@ window.GOLD4_DATA = {
         "id": "reg-gia-xrf-2025",
         "authority": "Gemological Institute of America (GIA) \u2014 Gems & Gemology",
         "title": "Summer 2025 Lab Notes: Gold-Plated Gold & Spring 2024 Lab Notes: Electroformed Gold Bracelet",
-        "url": "https://www.gia.edu/gems-gemology/summer-2025-lab-notes-gold-plated-gold0",
+        "url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis",
         "secondary_url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
         "verified_date": "2026-10-22",
         "checklist_items_covered": [

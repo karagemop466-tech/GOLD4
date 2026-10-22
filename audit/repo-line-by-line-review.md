@@ -49,3 +49,18 @@
 - **Hallucinations detected in this report:** `0`
 - **Irregularities flagged for "Flagged for Review" page:** `IRR-REPO-01`, `IRR-REPO-02`, `IRR-REPO-03`, `IRR-REPO-04`, `IRR-REPO-05`.
 - **Recommendation:** Re-run automated hallucination and link verification after populating `data/standards_and_spot.json` and `data/verified_rings.json`, ensuring every unconfirmed seller field remains strictly blank.
+
+---
+
+## 4. Pass 2 Line-by-Line Audit of Multi-Session `origin/main` (`ba6859a`..`92a9a24`)
+
+During Task 6 integration, `origin/main` had advanced to `92a9a24` via PR #2 (`arena/93da71b4-gold4`), PR #4/#5/#6 (`arena/9614479d-gold4`), and PR #7/#9 (`arena/fd51d093-gold4`). We audited the merged files line-by-line before integrating `arena/81b71aa5-gold4`:
+
+| File | Commit / Lines | Line-by-Line Findings | Action / Irregularity ID | Reference Link |
+|---|---|---|---|---|
+| `data/gold_spot.json` | `92a9a24` L1–L44 | Records World Gold Council Goldhub quote `$4,028.53/oz` (`Data as of 21 October, 2026`, `prior_captures`: `$4,024.36/oz`), dividing by `31.1034768` = `$129.520248/g`. Cross-checked against our two live `2026-10-22` quotes (`BullionVault $4,026.25/oz` and `JM Bullion $4,039.76/oz Ask / $4,025.26/oz Bid`): all three independent benchmarks agree within `< 0.35%`. | Verified; added `cross_check_captures_2026_10_22` | `https://www.gold.org/goldhub/data/gold-prices` |
+| `data/sellers.json` | `92a9a24` L184–L219 | Brilliant Earth (`id: "brilliant-earth"`) was explicitly marked `"NOT re-fetched in Pass 2... no product row, no price, and an empty return-exclusion list"`. | Remediated via live `2026-10-22` fetch of `/30-Day-Returns/` + `BE-01`/`BE-02` (`IRR-REPO-08`) | `https://www.brilliantearth.com/30-Day-Returns/` |
+| `data/methodology.json` & `pages/calculator.html` | `92a9a24` L103–L106 | Explicitly notes `"No deduction is made for diamonds, settings, solder..."`. On complete diamond rings (e.g., `RS-05` `0.80 ct` = `0.160 g` diamond mass), omitting stone mass overstates gold weight. | Linked `categories/calculator.html` (which deducts `0.200 g/ct` per NIST HB 44) (`IRR-REPO-07`) | `https://www.nist.gov/system/files/documents/2025/12/30/appc-26-HB44-20251222.pdf` |
+| `scripts/build_site.py` | `92a9a24` L456 | Hardcoded prose on `pages/purity.html` stated `"none of the rings in this dataset is 24K"` and `"zero of 20 rows"`. Once Menē 24K (`MN-01`) and 10K (`MJ-07`) are integrated, static prose would become inaccurate if left hardcoded. | Updated `scripts/build_site.py` prose to reflect 24K (`MN-01`), 10K (`MJ-07`), Ross-Simons gram weights, and all 34 canonical rows (`IRR-REPO-06`) | `https://mene.com/products/etruscan-sun-band-gold` |
+| `scripts/audit.py`, `scripts/check_site.py`, `scripts/verify.py` | `92a9a24` | Audited `index.html`, `flagged.html`, `pages/*.html`, and `docs/*.html`, and enforced `https://` official hosts and zero phantom math. Extended all three scripts plus `scripts/audit_hallucinations.py` to also audit `categories/*.html` and newly added official hosts (`ross-simons.com`, `catbirdnyc.com`, `mene.com`, `support.mene.com`, `nist.gov`, `gia.edu`, `bullionvault.com`, `jmbullion.com`). | Verified & extended across all 27 HTML pages | `https://github.com/karagemop466-tech/GOLD4` |
+
