@@ -33,12 +33,16 @@ OFFICIAL_HOSTS = {
     "mejuri": ["mejuri.com"],
     "brilliant-earth": ["brilliantearth.com"],
     "anjolee": ["anjolee.com"],
+    "sarraf": ["sarraf.com"],
+    "catbird": ["catbirdnyc.com"],
+    "mene": ["mene.com"],
 }
 
 # Tier A/B reference hosts (government, regulators, benchmark bodies).
 REFERENCE_HOSTS = [
     "consumer.ftc.gov", "ftc.gov", "ecfr.gov", "law.cornell.edu",
     "uscode.house.gov", "govinfo.gov", "gold.org", "lbma.org.uk",
+    "consumerfinance.gov", "gia.edu", "kitco.com", "jmbullion.com", "nist.gov",
 ]
 
 # Domains that must never be used as a source of fact for this project.

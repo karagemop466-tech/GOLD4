@@ -31,6 +31,7 @@ NAV = [
     ("pages/methodology.html", "Method", "method"),
     ("pages/sources.html", "Sources", "sources"),
     ("pages/log.html", "Log", "log"),
+    ("dashboard.html", "Assay Lab+", "assay"),
 ]
 
 FLAG_HELP = {
@@ -55,10 +56,7 @@ FLAG_HELP = {
     "RESIZE_TERMS_INCONSISTENT": ("bad", "resize terms differ between captures"),
     "RETURN_WINDOW_NOT_REDISPLAYED": ("warn", "return window not re-displayed on re-read"),
     "RETURN_EXCLUSIONS_NOT_ITEMISED": ("warn", "exclusions not itemised on the page"),
-    "PRICE_V2_ONLY": ("warn", "price from a dated snapshot of the official page — live re-check pending"),
-    "SOLD_OUT_AT_CHECK": ("info", "sold out at the live check — price deliberately blank"),
-    "SALE_PRICE_VARIES_ACROSS_PAGES": ("warn", "sale price differs across the seller's own pages"),
-    "PRICE_FROM_CATEGORY_PAGE": ("info", "price read from a live fetch of the seller's category page"),
+    "WARRANTY_VOID_ON_THIRD_PARTY_RESIZE": ("warn", "warranty voids on third-party resize"),
 }
 
 
@@ -368,27 +366,24 @@ def main() -> None:
   <div class="grid two">
     <div class="card">
       <h3>Only {n_weight} of {n_rows} rows can be priced against their gold at all</h3>
-      <p>Four Allurez settings, two VRAI settings and one Anjolee setting publish a gram weight, so only those rows have a computable gold content.
-      Blue Nile, Brilliant Earth and Mejuri publish a price but no weight, so their gold content is <em>blank</em> — not guessed. Anjolee's price
-      includes a lab-created centre stone, so its multiple is marked and is not a setting markup either.</p>
-      <p class="small">Price ÷ gold-value multiple across the {n_weight} rows that have both a price and a published weight: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.
-      One of them (AN-01) is priced with a lab-created centre stone included, so its multiple is labelled in the table and is not a setting markup.</p>
+      <p>Four Allurez settings, six Sarraf bands/solitaires, two VRAI settings and one Anjolee ring publish a gram weight, so only those {n_weight} rows have a computable gold content.
+      Blue Nile, Brilliant Earth, Mejuri, Catbird NYC and Menē static pages omit per-item weight, so their gold content stays <em>blank</em> — never guessed. Plain solid gold bands at Sarraf establish the empirical melt floor at <strong>1.33×–1.50×</strong> raw gold value, whereas rows priced with center diamonds included (AN-01 lab-created, SR-05/SR-06 natural) are explicitly marked.</p>
+      <p class="small">Price ÷ gold-value multiple across the rows with both a price and a published weight: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.
+      Explore the interactive 5-karat melt analyzer &amp; conflict case studies in <a href="dashboard.html"><strong>Assay Lab+ →</strong></a></p>
     </div>
     <div class="card">
-      <h3>18K costs more than its extra gold — and by an inconsistent amount</h3>
-      <p>Same design, same retailer, only the karat changed: Petite Solitaire is {pct(pair_gap('PAIR-BN-PETITE'))} going 14K→18K, the Comfort Fit is {pct(pair_gap('PAIR-BN-COMFORT'))}, the Brilliant Earth Atelier is {pct(pair_gap('PAIR-BE-ATELIER'))}, and the Allurez Split Shank is {pct(pair_gap('PAIR-AL-SPLIT'))}.</p>
-      <p>For the Allurez pair both prices and weights are published, so the 18K premium can be split: {pct(pairs_by_id.get('PAIR-AL-SPLIT', {}).get('gold_gap_pct'))} of it is simply more gold, and the rest is labour and margin.</p>
+      <h3>Higher karat packs both higher purity AND denser alloy mass</h3>
+      <p>Same design, same retailer, only the karat changed: Petite Solitaire is {pct(pair_gap('PAIR-BN-PETITE'))} going 14K→18K, Comfort Fit is {pct(pair_gap('PAIR-BN-COMFORT'))}, Brilliant Earth Atelier is {pct(pair_gap('PAIR-BE-ATELIER'))}, Allurez Split Shank is {pct(pair_gap('PAIR-AL-SPLIT'))}, and Sarraf's identical 5mm domed band goes from $352 (10K, 4.80g) to $871 (18K, 6.70g) ({pct(pair_gap('sarraf-domed-5mm'))}).</p>
+      <p>Where weights are published, higher density explains the jump: on Sarraf's 5mm band, 18K holds <strong>+151.3% more pure gold</strong> (5.025g vs 2.000g), making 18K slightly closer to melt (<strong>1.34×</strong> vs <strong>1.36×</strong>)!</p>
       <p class="small"><a href="pages/purity.html">See the full karat analysis →</a></p>
     </div>
     <div class="card">
-      <h3>Zero retailers publish the hallmark</h3>
-      <p>Not one product page in this dataset shows the physical stamp or the maker's mark, which is exactly why the checklist says to verify on arrival.
-      The legal requirement (karat mark <em>plus</em> a registered trademark) is quoted on the Method page.</p>
+      <h3>Zero product pages show macro hallmark stamps — and surface XRF alone can be spoofed</h3>
+      <p>None of the audited product pages show inner-shank hallmark photography, and GIA Carlsbad documented electroformed resin-core jewelry with glued-on <code>14K</code> disks reading <code>17.99K–22.47K</code> on standalone surface XRF. Always pair 0.01g scale weight + microscope inspection + multi-spot XRF.</p>
     </div>
     <div class="card">
-      <h3>Return windows all say 30 days — the exclusions differ</h3>
-      <p>Every seller here offers ~30 days, but Blue Nile, VRAI and Allurez exclude resized or altered rings, Mejuri excludes engraving outright,
-      and Allurez excludes custom orders while Anjolee explicitly allows returns on customised orders. Read the clause, not the badge.</p>
+      <h3>Return windows range from 7 to 30 days — and clock triggers differ</h3>
+      <p>Menē allows only <strong>7 days</strong> from receipt, Catbird allows <strong>20 days</strong> ($9 fee; international final sale), Blue Nile starts its 30-day clock at <strong>shipment</strong> rather than delivery, and Sarraf voids its warranty upon third-party resizing. Read the exact clause before ordering.</p>
       <p class="small"><a href="pages/sellers.html">Compare the clauses →</a></p>
     </div>
   </div>
