@@ -202,6 +202,16 @@ result = REPORT["result"] if REPORT else "UNKNOWN"
 
 spot_price = SPOT["price_usd_per_troy_oz"]
 spot_per_g = SPOT["price_usd_per_gram"]
+cc = SPOT.get("cross_check", {})
+cc_status = str(cc.get("status", ""))
+if cc_status.startswith("DONE"):
+    cc_srcs = ", ".join(
+        f'<a href="{e(s["url"])}" target="_blank" rel="noopener">{e(s["name"].split(" - ")[0])}</a> ${s["value_usd_oz"]:,.2f}'
+        for s in cc.get("sources", [])
+    )
+    crosscheck_label = f'cross-checked vs {cc_srcs} (Oct 22 snapshots) — within intraday range ({e(cc_status)})'
+else:
+    crosscheck_label = "cross-check pending (flagged)"
 
 # ---------- index ----------
 pill = "ok" if result == "PASS" else ("warn" if result == "PASS_WITH_WARNINGS" else "bad")
@@ -220,7 +230,7 @@ cards = f"""
     <a class="navlink" href="pages/all-rings.html">Open master table →</a></div>
   <div class="card"><h3>Gold spot (XAU/USD)</h3><div class="big">${spot_price:,.2f}/oz</div>
     <div class="meta">≈ ${spot_per_g:,.2f}/g · source time {e(SPOT['source_reported_updated_at'])} · fetched {e(SPOT['fetched_at_utc_approx'])}<br>
-    Source: <a href="{e(SPOT['source_url'])}" target="_blank" rel="noopener">api.gold-api.com/price/XAU</a> · cross-check pending (flagged)</div>
+    Source: <a href="{e(SPOT['source_url'])}" target="_blank" rel="noopener">api.gold-api.com/price/XAU</a> · {crosscheck_label}</div>
     <a class="navlink" href="pages/calculator.html">Open calculator →</a></div>
   <div class="card"><h3>Observed setting prices</h3><div class="big">${min(r['price_usd'] for r in priced):,.0f} – ${max(r['price_usd'] for r in priced):,.0f}</div>
     <div class="meta">range across {len(priced)} priced entries at verification time (settings only unless stated)</div>
@@ -242,7 +252,7 @@ findings = """
   <li><b>No-hallucination rule in action:</b> the James Allen "Comfort Fit Solitaire 1.5mm 14K YG" (item 41515) was <b>sold out</b> at live check, so its price cell is
       deliberately <span class="badge unverified">BLANK</span> — an older $660 snapshot price was NOT used because it could not be confirmed live.</li>
   <li><b>Ring weight in grams is not published</b> on any fetched product page → every Weight cell is blank + flagged. Per the checklist, ask the seller directly before buying.</li>
-  <li><b>Gold spot at collection:</b> ${:,.2f}/oz (source time {}), single source — second-source cross-check is pending and flagged.</li>
+  <li><b>Gold spot at collection:</b> ${:,.2f}/oz (source time {}) — cross-checked against Kitco and APMEX snapshots for the same day (within the intraday range; details in <code>data/gold_spot.json</code> and on <a href="pages/flagged.html">Flagged</a>). Spot moves constantly; re-check live before any melt-value decision.</li>
   <li><b>Blue Nile limited lifetime warranty</b> covers gold jewelry items with purchase price ≥ $1,000 (read on fetched product pages; <a href="https://www.bluenile.com/services/warranty" target="_blank" rel="noopener">terms</a>).</li>
   <li><b>Promotions seen live on 2026-10-22:</b> Blue Nile "Fall Edit up to 30% off select styles" and "up to 50% off the James Allen Collection";
       Brilliant Earth "$250 gift card with purchase over $1,000, code GIFT" (time-sensitive; re-verify before relying on them).</li>
@@ -443,6 +453,7 @@ methodology_content = f"""
 <li>~23:17 — Fetched gold spot API: XAU $4,028.10/oz (source-reported update time 2026-10-22T23:01:42Z). Cross-check pending → flagged.</li>
 <li>~23:19 — Fetched James Allen item URL → redirected to Blue Nile; style sold out; "James Allen is Now Part of Blue Nile" notice read. Price left blank.</li>
 <li>~23:20–23:24 — Fetch service outage began (proxy signature errors). Remaining candidate rows recorded at Level B from dated official-page snapshots; each flagged for live re-confirmation.</li>
+<li>~23:33–23:40 — Corroboration pass via dated snapshots of the same official pages (incl. embedded schema.org JSON-LD): SKUs, widths and diamond details added for 6 Blue Nile rows and 3 Brilliant Earth rows; spot price cross-checked vs Kitco ($4,062.30 @ 10:54 ET; $4,032.80 @ 14:46 ET) and APMEX ($4,042.90 @ 19:13 ET) — primary value within intraday range. Two irregularities found and flagged: BN-203321 spec/description mismatch ("platinum" wording on a 14K YG listing) and BN-310896 varying sale prices across official category pages ($772/$724/$730/$728). Patch recorded in <code>scripts/patch_20261022_corroboration.py</code>.</li>
 </ul>
 <h2>Known limitations (honest disclosure)</h2>
 <ul>
@@ -464,8 +475,11 @@ flag_rows = []
 for r in RINGS:
     for f in r.get("flags", []):
         flag_rows.append((r["id"], r["product"], r["url"], f, r["verification_level"]))
-if SPOT.get("cross_check", {}).get("status") != "DONE":
+if not str(SPOT.get("cross_check", {}).get("status", "")).startswith("DONE"):
     flag_rows.append(("GOLD-SPOT", "Gold spot price cross-check", SPOT["source_url"], SPOT["cross_check"]["note"], "A-LIVE"))
+else:
+    flag_rows.append(("GOLD-SPOT", "Gold spot price cross-check", SPOT["source_url"],
+                      "Cross-check completed at snapshot level (Kitco/APMEX, 2026-10-22): " + SPOT["cross_check"].get("assessment", ""), "A-LIVE"))
 flag_rows.append(("REPO", "Repo baseline", "https://github.com/karagemop466-tech/GOLD4", "Repo had no data/site before this cycle; README lacked description (see REPO_REVIEW.md)", "—"))
 flag_rows.append(("BE-RETURN", "Brilliant Earth return policy URL", "https://www.brilliantearth.com/returns/", "Return-policy page not confirmed by live fetch at build time", "UNVERIFIED"))
 

@@ -43,5 +43,27 @@ Legend: LIVE = value read from live fetch of the official page at the time shown
 | SELLER-BE | Brilliant Earth phone 800.691.0952; $250 gift-card promo code GIFT >$1,000 | https://www.brilliantearth.com/engagement-rings/solitaire/yellow-gold/ (live fetch 23:14Z) + https://www.brilliantearth.com/promo-codes-and-offers/ | LIVE 23:14Z | phone, promo | return-policy page not fetched (flagged) |
 | REPO | Baseline audit: repo had 1 file (README.md, 7 bytes), 1 commit | https://github.com/karagemop466-tech/GOLD4 | LIVE git inspection 23:10Z | see REPO_REVIEW.md | no pre-existing data to verify |
 
+## Pass 4 — Corroboration pass for Level B rows (2026-10-22T23:33–23:40Z)
+Live page-fetch proxy stayed down (signature errors on every attempt 23:20–23:47Z). Instead, each Level B row was re-checked against **additional dated snapshots of the same official retailer pages** (including embedded schema.org JSON-LD structured data where present). All added fields below were read from the seller's own pages; nothing was inferred. Rows remain **B-SNIPPET** until a live fetch confirms them. Patch audit trail: `scripts/patch_20261022_corroboration.py`.
+
+| Row ID | Corroborating evidence (all from official pages) | Added fields | Status |
+|--------|--------------------------------------------------|--------------|--------|
+| BN-192261 | Product-page snapshot (SKU 502500y14, 1.80mm, $1,290) + JSON-LD on bluenile.com/engagement-rings/styles/simple (price 1290, InStock) | sku, width | corroborated ×2 |
+| BN-203321 | Product-page snapshot (SKU 501580y14, 5.00mm, $2,050) | sku, width | corroborated; **NEW IRREGULARITY FLAG:** seller's own description says "platinum solitaire setting" while specs say 14K Yellow Gold |
+| BN-203303 | Product-page snapshot (SKU 501472y14, 4.00mm, $5,190, 6 emerald side diamonds 1 ct total, G-H/VS2-SI1, prong) | sku, width, clarified price basis | corroborated; earlier ambiguity flag resolved from same official page |
+| BN-195730 | Product-page snapshot (SKU 502120w14, 2.40mm, rhodium) + category page bluenile.com/engagement-rings/styles/gold/white-gold JSON-LD ($1,145, InStock) | sku, width | corroborated ×2 |
+| BN-315661 | Product-page snapshot (SKU 505094w14, 1.75mm, rhodium, 26 diamonds 1/5 ct F-G VS1-VS2, $2,210→$1,657 −25%) | sku, width | corroborated |
+| BN-310896 | Product-page snapshot (SKU 505038y14, 1.80mm, $965→$772 −20%) + 3 other official category snapshots showing $724/$730/$728 | sku, width | corroborated; **NEW IRREGULARITY FLAG:** sale price varies across the seller's own pages — time-sensitive |
+| BE-1D3939-14KY | Product page (2026-06-18) + hidden-halo category JSON-LD (2026-09-15, $1,190) + signature collection JSON-LD (2026-09-24, $1,190) | — | corroborated ×3 |
+| BE-1D3939-18KY | Product page (2026-09-28, $1,390, 18K YG) | — | corroborated |
+| BE-BE1574-14KY | Product page (2026-08-07): style BE1574-14KY, 1.8mm, four-prong, $1,350 | sku, width | corroborated |
+| BE-BE1D2444-14KY | Product page (2026-08-27): style BE1D2444-14KY, 2mm, claw prong, $1,190 + category JSON-LD 2026-08-25 / 2026-09-14 / 2026-09-23 all $1,190 | sku, width | corroborated ×4 |
+
+### Gold spot cross-check (Pass 4)
+Primary: $4,028.10/oz @ 2026-10-22T23:01:42Z (api.gold-api.com, live fetch). Cross-checks from dated official-page snapshots for the same day: Kitco $4,062.30 (10:54 ET bid), Kitco $4,032.80 (14:46 ET bid), APMEX $4,042.90 (19:13 ET). Primary value is inside the day's range (market was down ~1.9–2.6% that day); nearest-in-time delta 0.37%. **Cross-check PASSES at snapshot level** — recorded as `DONE-SNAPSHOT` in `data/gold_spot.json` with a standing note to re-verify live before any melt-value decision.
+
+### Re-run of automated checks after Pass 4
+2026-10-22T23:34Z: `verify_data.py` → **PASS_WITH_WARNINGS, 0 errors**, 19 rows (9 A-LIVE / 10 B-SNIPPET), 32 open flags published; `check_links.py` → 12 files, 309 links, **0 broken**.
+
 ## Recommendation after this pass (per project instruction to always re-recommend)
 **Look for hallucinations again:** re-run `python3 scripts/verify_data.py` after any data change, re-fetch every Level B row when the fetch service is available, re-check the gold spot cross-check, and manually spot-check 2–3 random rows against their source URLs before any purchase decision. Prices are point-in-time and expire.

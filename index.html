@@ -48,7 +48,7 @@
     <a class="navlink" href="pages/all-rings.html">Open master table →</a></div>
   <div class="card"><h3>Gold spot (XAU/USD)</h3><div class="big">$4,028.10/oz</div>
     <div class="meta">≈ $129.51/g · source time 2026-10-22T23:01:42Z · fetched 2026-10-22T23:17Z<br>
-    Source: <a href="https://api.gold-api.com/price/XAU" target="_blank" rel="noopener">api.gold-api.com/price/XAU</a> · cross-check pending (flagged)</div>
+    Source: <a href="https://api.gold-api.com/price/XAU" target="_blank" rel="noopener">api.gold-api.com/price/XAU</a> · cross-checked vs <a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener">Kitco</a> $4,062.30, <a href="https://www.kitco.com/price/precious-metals" target="_blank" rel="noopener">Kitco</a> $4,032.80, <a href="https://www.apmex.com/gold-price" target="_blank" rel="noopener">APMEX</a> $4,042.90 (Oct 22 snapshots) — within intraday range (DONE-SNAPSHOT)</div>
     <a class="navlink" href="pages/calculator.html">Open calculator →</a></div>
   <div class="card"><h3>Observed setting prices</h3><div class="big">$772 – $5,190</div>
     <div class="meta">range across 18 priced entries at verification time (settings only unless stated)</div>
@@ -68,7 +68,7 @@
   <li><b>No-hallucination rule in action:</b> the James Allen "Comfort Fit Solitaire 1.5mm 14K YG" (item 41515) was <b>sold out</b> at live check, so its price cell is
       deliberately <span class="badge unverified">BLANK</span> — an older $660 snapshot price was NOT used because it could not be confirmed live.</li>
   <li><b>Ring weight in grams is not published</b> on any fetched product page → every Weight cell is blank + flagged. Per the checklist, ask the seller directly before buying.</li>
-  <li><b>Gold spot at collection:</b> $4,028.10/oz (source time 2026-10-22T23:01:42Z), single source — second-source cross-check is pending and flagged.</li>
+  <li><b>Gold spot at collection:</b> $4,028.10/oz (source time 2026-10-22T23:01:42Z) — cross-checked against Kitco and APMEX snapshots for the same day (within the intraday range; details in <code>data/gold_spot.json</code> and on <a href="pages/flagged.html">Flagged</a>). Spot moves constantly; re-check live before any melt-value decision.</li>
   <li><b>Blue Nile limited lifetime warranty</b> covers gold jewelry items with purchase price ≥ $1,000 (read on fetched product pages; <a href="https://www.bluenile.com/services/warranty" target="_blank" rel="noopener">terms</a>).</li>
   <li><b>Promotions seen live on 2026-10-22:</b> Blue Nile "Fall Edit up to 30% off select styles" and "up to 50% off the James Allen Collection";
       Brilliant Earth "$250 gift card with purchase over $1,000, code GIFT" (time-sensitive; re-verify before relying on them).</li>
@@ -98,7 +98,7 @@ Blank cells were left blank on purpose — the value was not published by the se
 </main>
 
 <footer class="site">
-  <b>GOLD4</b> — gold engagement-ring research dashboard · site generated 2026-10-22 23:29 UTC by session <code>arena-22b5b06c-gold4</code><br>
+  <b>GOLD4</b> — gold engagement-ring research dashboard · site generated 2026-10-22 23:34 UTC by session <code>arena-22b5b06c-gold4</code><br>
   Data files: <code>data/rings.json</code>, <code>data/gold_spot.json</code> · Verification: <code>VERIFICATION.md</code>, <code>reports/verification_report.json</code> ·
   Repo: <a href="https://github.com/karagemop466-tech/GOLD4">github.com/karagemop466-tech/GOLD4</a><br>
   Prices are point-in-time (see each row's timestamp) and can change; always re-check the seller's page before buying. This site is research, not financial advice.

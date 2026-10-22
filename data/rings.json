@@ -4,7 +4,9 @@
     "generated_at_utc": "2026-10-22T23:24:11Z",
     "policy": "NO HALLUCINATIONS: every non-null value below was read directly from the referenced official source URL at the recorded time. Values that could not be confirmed are null and the row is flagged. verification_level A-LIVE = read from a live fetch of the official page on 2026-10-22; B-SNIPPET = read from a dated search-engine snapshot of the official retailer page, pending live re-confirmation (flagged for review); UNVERIFIED = could not be confirmed from an official source.",
     "prices_currency": "USD",
-    "note_setting_prices": "Blue Nile and Brilliant Earth list engagement-ring SETTINGS separately from center diamonds unless stated. 'price_basis' records exactly what the price covers as stated on the source page."
+    "note_setting_prices": "Blue Nile and Brilliant Earth list engagement-ring SETTINGS separately from center diamonds unless stated. 'price_basis' records exactly what the price covers as stated on the source page.",
+    "corroboration_pass_utc": "2026-10-22T23:40Z",
+    "corroboration_note": "All Level B rows re-checked against additional dated snapshots of the SAME official retailer pages (including embedded schema.org JSON-LD where present). Rows stay B-SNIPPET until a live fetch confirms them. Two irregularities found and flagged: BN-203321 description/spec mismatch, BN-310896 varying sale prices."
   },
   "rings": [
     {
@@ -30,7 +32,10 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com (shown on source page)",
       "return_policy": "Free Returns advertised on product page; Limited Lifetime Warranty on gold jewelry $1,000+ (source page links)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["weight_g not published on page - UNVERIFIED", "hallmark details not published on page - UNVERIFIED"],
+      "flags": [
+        "weight_g not published on page - UNVERIFIED",
+        "hallmark details not published on page - UNVERIFIED"
+      ],
       "notes": "Product page fetched live 2026-10-22. Stock Number 502120y14, Metal 14K Yellow Gold, Width 2.40mm shown on page."
     },
     {
@@ -56,7 +61,9 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["sku/width/weight not confirmed from product page yet - UNVERIFIED"],
+      "flags": [
+        "sku/width/weight not confirmed from product page yet - UNVERIFIED"
+      ],
       "notes": "Name and price read from live fetch of https://www.bluenile.com/engagement-rings/styles/gold/yellow-gold on 2026-10-22."
     },
     {
@@ -82,7 +89,9 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["sku/width/weight not confirmed from product page yet - UNVERIFIED"],
+      "flags": [
+        "sku/width/weight not confirmed from product page yet - UNVERIFIED"
+      ],
       "notes": "Name and price read from live fetch of official Blue Nile yellow-gold category page on 2026-10-22."
     },
     {
@@ -108,7 +117,9 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["sku/width/weight not confirmed from product page yet - UNVERIFIED"],
+      "flags": [
+        "sku/width/weight not confirmed from product page yet - UNVERIFIED"
+      ],
       "notes": "Name and price read from live fetch of official Blue Nile yellow-gold category page on 2026-10-22."
     },
     {
@@ -134,7 +145,9 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["sku/width/weight not confirmed from product page yet - UNVERIFIED"],
+      "flags": [
+        "sku/width/weight not confirmed from product page yet - UNVERIFIED"
+      ],
       "notes": "Name and price read from live fetch of official Blue Nile yellow-gold category page on 2026-10-22."
     },
     {
@@ -160,7 +173,9 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["sku/width/weight not confirmed from product page yet - UNVERIFIED"],
+      "flags": [
+        "sku/width/weight not confirmed from product page yet - UNVERIFIED"
+      ],
       "notes": "Name and price read from live fetch of official Blue Nile yellow-gold category page on 2026-10-22."
     },
     {
@@ -186,7 +201,9 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["sku/width/weight not confirmed from product page yet - UNVERIFIED"],
+      "flags": [
+        "sku/width/weight not confirmed from product page yet - UNVERIFIED"
+      ],
       "notes": "Name and price read from live fetch of official Blue Nile yellow-gold category page on 2026-10-22."
     },
     {
@@ -212,7 +229,9 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["sku/width/weight not confirmed from product page yet - UNVERIFIED"],
+      "flags": [
+        "sku/width/weight not confirmed from product page yet - UNVERIFIED"
+      ],
       "notes": "Name and price read from live fetch of official Blue Nile yellow-gold category page on 2026-10-22."
     },
     {
@@ -238,7 +257,10 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["SOLD OUT at live check - price intentionally left blank (a $660 setting price appeared in an older search snapshot; NOT used because it could not be confirmed live)", "jamesallen.com URL redirected to bluenile.com - James Allen is now part of Blue Nile (stated on page)"],
+      "flags": [
+        "SOLD OUT at live check - price intentionally left blank (a $660 setting price appeared in an older search snapshot; NOT used because it could not be confirmed live)",
+        "jamesallen.com URL redirected to bluenile.com - James Allen is now part of Blue Nile (stated on page)"
+      ],
       "notes": "Product page fetched live 2026-10-22: 'This popular style is sold out'. Original jamesallen.com item URL redirected to Blue Nile with notice 'James Allen is Now Part of Blue Nile'."
     },
     {
@@ -253,8 +275,8 @@
       "price_usd": 1290,
       "price_basis": "Setting Price per dated search snapshot of official product page",
       "list_price_usd": null,
-      "sku": null,
-      "width_mm": null,
+      "sku": "502500y14",
+      "width_mm": "1.80",
       "weight_g": null,
       "hallmark": null,
       "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261",
@@ -264,8 +286,10 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["Price from search snapshot of official page - live re-confirmation PENDING (fetch service outage at collection time)"],
-      "notes": "Snapshot showed: '$1,290 (Setting Price)... Metal Type: 14K Yellow Gold'."
+      "flags": [
+        "Price from search snapshot of official page - live re-confirmation PENDING (fetch service outage at collection time)"
+      ],
+      "notes": "Snapshot of official product page showed: Stock Number 502500y14, Metal 14K Yellow Gold, Width 1.80mm, '$1,290 (Setting Price)'. Corroborated by JSON-LD on official category page bluenile.com/engagement-rings/styles/simple (sku 502500y14, InStock, price 1290). Corroboration gathered 2026-10-22T23:35Z."
     },
     {
       "id": "BN-203321",
@@ -279,8 +303,8 @@
       "price_usd": 2050,
       "price_basis": "Setting Price per dated search snapshot of official product page",
       "list_price_usd": null,
-      "sku": null,
-      "width_mm": "5 (from product name on official page)",
+      "sku": "501580y14",
+      "width_mm": "5.00",
       "weight_g": null,
       "hallmark": null,
       "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321",
@@ -290,8 +314,11 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["Price from search snapshot of official page - live re-confirmation PENDING"],
-      "notes": "Snapshot showed: '$2,050 (Setting Price)... Metal Type: 14K Yellow Gold'."
+      "flags": [
+        "Price from search snapshot of official page - live re-confirmation PENDING",
+        "IRREGULARITY on seller page: specs say Metal=14K Yellow Gold but the seller's own Product Details text says 'this platinum solitaire setting' - confirm metal with seller before buying"
+      ],
+      "notes": "Snapshot of official product page showed: Stock Number 501580y14, Metal 14K Yellow Gold, Width 5.00mm, '$2,050 (Setting Price)'. Product Details text on the same page erroneously mentions 'platinum solitaire setting' (copy/paste inconsistency by the seller) - flagged, not silently corrected. Corroboration gathered 2026-10-22T23:36Z."
     },
     {
       "id": "BN-203303",
@@ -303,10 +330,10 @@
       "metal_color": "Yellow Gold",
       "solid_gold_claim": "Yes - listed as 14K Yellow Gold",
       "price_usd": 5190,
-      "price_basis": "Setting Price label on page for a preset 1 ct. tw. ring per dated search snapshot",
+      "price_basis": "Setting Price; setting includes 6 prong-set emerald-cut side diamonds, total 1 ct (based on 1 ct center stone per seller disclaimer); center diamond sold separately",
       "list_price_usd": null,
-      "sku": null,
-      "width_mm": null,
+      "sku": "501472y14",
+      "width_mm": "4.00",
       "weight_g": null,
       "hallmark": null,
       "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303",
@@ -316,8 +343,10 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["Price from search snapshot of official page - live re-confirmation PENDING", "Price basis ambiguous in snapshot (labeled 'Setting Price' but title states 1 ct. tw.) - confirm on live page"],
-      "notes": "Snapshot showed: '$5,190 (Setting Price)... Metal Type: 14K Yellow Gold'."
+      "flags": [
+        "Price from search snapshot of official page - live re-confirmation PENDING"
+      ],
+      "notes": "Snapshot of official product page showed: Stock Number 501472y14, Metal 14K Yellow Gold, Width 4.00mm, '$5,190 (Setting Price)', Natural Diamond Information: Shape Emerald, Quantity 6, Total Carat 1, Color G-H, Clarity VS2-SI1, Setting Prong; disclaimer: diamond counts based on a 1 ct center stone. Earlier 'price basis ambiguous' flag resolved from the same official page. Corroboration gathered 2026-10-22T23:36Z."
     },
     {
       "id": "BN-195730",
@@ -331,8 +360,8 @@
       "price_usd": 1145,
       "price_basis": "Setting Price per dated search snapshot of official product page",
       "list_price_usd": null,
-      "sku": null,
-      "width_mm": null,
+      "sku": "502120w14",
+      "width_mm": "2.40",
       "weight_g": null,
       "hallmark": null,
       "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730",
@@ -342,8 +371,10 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["Price from search snapshot of official page - live re-confirmation PENDING"],
-      "notes": "Snapshot showed: '$1,145 (Setting Price)... Metal Type: 14K White Gold'."
+      "flags": [
+        "Price from search snapshot of official page - live re-confirmation PENDING"
+      ],
+      "notes": "Snapshot of official product page showed: Stock Number 502120w14, 14K White Gold, 2.40mm, Rhodium Finish: Yes. Price $1,145 (Setting Price) corroborated by official category page bluenile.com/engagement-rings/styles/gold/white-gold with JSON-LD (sku 502120w14, InStock). Same style family as live-verified BN-203348 (502120y14). Corroboration gathered 2026-10-22T23:37Z."
     },
     {
       "id": "BN-315661",
@@ -357,8 +388,8 @@
       "price_usd": 1657,
       "price_basis": "Sale Setting Price per dated search snapshot of official product page",
       "list_price_usd": 2210,
-      "sku": null,
-      "width_mm": null,
+      "sku": "505094w14",
+      "width_mm": "1.75",
       "weight_g": null,
       "hallmark": null,
       "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661",
@@ -368,8 +399,11 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["Price from search snapshot of official page - live re-confirmation PENDING", "Shown as -25% sale in snapshot; sale prices are time-sensitive"],
-      "notes": "Snapshot showed: '$2,210 $1,657 (Setting Price) -25%'."
+      "flags": [
+        "Price from search snapshot of official page - live re-confirmation PENDING",
+        "Shown as -25% sale in snapshot; sale prices are time-sensitive"
+      ],
+      "notes": "Snapshot of official product page showed: Stock Number 505094w14, Metal 14K White Gold, Width 1.75mm, Rhodium Finish: Yes, 26 round diamonds, total 1/5 ct, F-G color, VS1-VS2 clarity, '$2,210 $1,657 (Setting Price) -25%'. Corroboration gathered 2026-10-22T23:37Z."
     },
     {
       "id": "BN-310896",
@@ -383,8 +417,8 @@
       "price_usd": 772,
       "price_basis": "Sale Setting Price per dated search snapshot of official product page",
       "list_price_usd": 965,
-      "sku": null,
-      "width_mm": null,
+      "sku": "505038y14",
+      "width_mm": "1.80",
       "weight_g": null,
       "hallmark": null,
       "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896",
@@ -394,8 +428,11 @@
       "seller_contact": "Blue Nile: +1-800-242-2728 / service@bluenile.com",
       "return_policy": "Blue Nile free returns policy (see Sellers page)",
       "return_policy_url": "https://www.bluenile.com/services/warranty",
-      "flags": ["Price from search snapshot of official page - live re-confirmation PENDING", "Shown as -20% sale in snapshot; sale prices are time-sensitive"],
-      "notes": "Snapshot showed: '$965 $772 (Setting Price) -20%'."
+      "flags": [
+        "Price from search snapshot of official page - live re-confirmation PENDING",
+        "SALE PRICE VARIES across official Blue Nile category snapshots: $772 (-20%) on product page & gold category, $724 (-25%) on affordable category, $730 on engravable category, $728 on designer category - sale is time-sensitive; confirm the live price before buying"
+      ],
+      "notes": "Snapshot of official product page showed: Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm, '$965 $772 (Setting Price) -20%'. Other official category-page snapshots show different sale prices ($724/$730/$728) - recorded as an irregularity flag, base price_usd kept at the product-page value $772. Corroboration gathered 2026-10-22T23:38Z."
     },
     {
       "id": "BE-1D3939-14KY",
@@ -420,8 +457,11 @@
       "seller_contact": "Brilliant Earth: 800.691.0952 (shown on official site, live-fetched 2026-10-22)",
       "return_policy": "See Sellers page - Brilliant Earth return policy link pending live fetch",
       "return_policy_url": null,
-      "flags": ["Price from search snapshot of official page - live re-confirmation PENDING", "return_policy_url not yet confirmed - UNVERIFIED"],
-      "notes": "Snapshot showed: '$1,190 (Setting Only)', Style BE1D3939-14KY, Metal 14K Yellow Gold, Width 2-1.3 mm, Setting Claw Prong. Snapshot date 2026-06-18."
+      "flags": [
+        "Price from search snapshot of official page - live re-confirmation PENDING",
+        "return_policy_url not yet confirmed - UNVERIFIED"
+      ],
+      "notes": "Snapshot of official product page showed: '$1,190 (Setting Only)', Style BE1D3939-14KY, Metal 14K Yellow Gold, Width 2-1.3 mm, Setting Claw Prong (snapshot dated 2026-06-18). Price $1,190 independently corroborated by JSON-LD on official category pages: brilliantearth.com/engagement-rings/hidden-halo/ (2026-09-15) and brilliantearth.com/jewelry/collections/signature/ (2026-09-24, '14K Yellow Gold Freesia Hidden Halo Diamond Ring', price 1190). Corroboration gathered 2026-10-22T23:35Z."
     },
     {
       "id": "BE-1D3939-18KY",
@@ -446,8 +486,10 @@
       "seller_contact": "Brilliant Earth: 800.691.0952",
       "return_policy": "See Sellers page - pending live fetch",
       "return_policy_url": null,
-      "flags": ["Price from search snapshot of official page - live re-confirmation PENDING"],
-      "notes": "Snapshot showed: '$1,390 (Setting Only)', Metal: 18K Yellow Gold. Snapshot date 2026-09-28."
+      "flags": [
+        "Price from search snapshot of official page - live re-confirmation PENDING"
+      ],
+      "notes": "Snapshot of official product page (dated 2026-09-28) showed: '$1,390 (Setting Only)', Metal: 18K Yellow Gold. Corroboration gathered 2026-10-22T23:35Z."
     },
     {
       "id": "BE-BE1574-14KY",
@@ -461,8 +503,8 @@
       "price_usd": 1350,
       "price_basis": "Setting Only price per dated search snapshot of official product page",
       "list_price_usd": null,
-      "sku": "BE1574 (14K Yellow Gold variant)",
-      "width_mm": null,
+      "sku": "BE1574-14KY",
+      "width_mm": "1.8",
       "weight_g": null,
       "hallmark": null,
       "url": "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
@@ -472,8 +514,10 @@
       "seller_contact": "Brilliant Earth: 800.691.0952",
       "return_policy": "See Sellers page - pending live fetch",
       "return_policy_url": null,
-      "flags": ["Price from search snapshot of official page - live re-confirmation PENDING"],
-      "notes": "Snapshot showed: '$1,350 (Setting Only)', Metal: 14K Yellow Gold. Snapshot date 2026-08-07."
+      "flags": [
+        "Price from search snapshot of official page - live re-confirmation PENDING"
+      ],
+      "notes": "Snapshot of official product page (dated 2026-08-07) showed: '$1,350 (Setting Only)', Style BE1574-14KY, Metal 14K Yellow Gold, Width 1.8 mm, Setting Four-Prong. Corroboration gathered 2026-10-22T23:39Z."
     },
     {
       "id": "BE-BE1D2444-14KY",
@@ -487,8 +531,8 @@
       "price_usd": 1190,
       "price_basis": "Setting Only price per dated search snapshot of official product page",
       "list_price_usd": null,
-      "sku": "BE1D2444 (14K Yellow Gold variant)",
-      "width_mm": null,
+      "sku": "BE1D2444-14KY",
+      "width_mm": "2",
       "weight_g": null,
       "hallmark": null,
       "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
@@ -498,8 +542,10 @@
       "seller_contact": "Brilliant Earth: 800.691.0952",
       "return_policy": "See Sellers page - pending live fetch",
       "return_policy_url": null,
-      "flags": ["Price from search snapshot of official page - live re-confirmation PENDING"],
-      "notes": "Snapshot showed: '$1,190 (Setting Only)', Metal: 14K Yellow Gold. Snapshot date 2026-08-27."
+      "flags": [
+        "Price from search snapshot of official page - live re-confirmation PENDING"
+      ],
+      "notes": "Snapshot of official product page (dated 2026-08-27) showed: '$1,190 (Setting Only)', Style BE1D2444-14KY, Metal 14K Yellow Gold, Width 2 mm, Setting Claw Prong. Price $1,190 corroborated by JSON-LD on official category pages (solitaire 2026-08-25; yellow-gold solitaire 2026-09-23; princess-cut 2026-09-14). Corroboration gathered 2026-10-22T23:39Z."
     }
   ]
 }

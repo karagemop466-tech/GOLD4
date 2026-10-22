@@ -49,6 +49,7 @@
 <li>~23:17 — Fetched gold spot API: XAU $4,028.10/oz (source-reported update time 2026-10-22T23:01:42Z). Cross-check pending → flagged.</li>
 <li>~23:19 — Fetched James Allen item URL → redirected to Blue Nile; style sold out; "James Allen is Now Part of Blue Nile" notice read. Price left blank.</li>
 <li>~23:20–23:24 — Fetch service outage began (proxy signature errors). Remaining candidate rows recorded at Level B from dated official-page snapshots; each flagged for live re-confirmation.</li>
+<li>~23:33–23:40 — Corroboration pass via dated snapshots of the same official pages (incl. embedded schema.org JSON-LD): SKUs, widths and diamond details added for 6 Blue Nile rows and 3 Brilliant Earth rows; spot price cross-checked vs Kitco ($4,062.30 @ 10:54 ET; $4,032.80 @ 14:46 ET) and APMEX ($4,042.90 @ 19:13 ET) — primary value within intraday range. Two irregularities found and flagged: BN-203321 spec/description mismatch ("platinum" wording on a 14K YG listing) and BN-310896 varying sale prices across official category pages ($772/$724/$730/$728). Patch recorded in <code>scripts/patch_20261022_corroboration.py</code>.</li>
 </ul>
 <h2>Known limitations (honest disclosure)</h2>
 <ul>
@@ -61,12 +62,12 @@
 <pre><code>python3 scripts/verify_data.py   # anti-hallucination + schema checks → reports/verification_report.json
 python3 scripts/build_site.py    # regenerate all pages from data/
 python3 scripts/check_links.py   # local link integrity</code></pre>
-<p class="muted">Site generated 2026-10-22 23:29 UTC · session arena-22b5b06c-gold4 · coordination log in <a href="https://github.com/karagemop466-tech/GOLD4/blob/main/COORDINATION.md" target="_blank" rel="noopener">COORDINATION.md</a></p>
+<p class="muted">Site generated 2026-10-22 23:34 UTC · session arena-22b5b06c-gold4 · coordination log in <a href="https://github.com/karagemop466-tech/GOLD4/blob/main/COORDINATION.md" target="_blank" rel="noopener">COORDINATION.md</a></p>
 
 </main>
 
 <footer class="site">
-  <b>GOLD4</b> — gold engagement-ring research dashboard · site generated 2026-10-22 23:29 UTC by session <code>arena-22b5b06c-gold4</code><br>
+  <b>GOLD4</b> — gold engagement-ring research dashboard · site generated 2026-10-22 23:34 UTC by session <code>arena-22b5b06c-gold4</code><br>
   Data files: <code>data/rings.json</code>, <code>data/gold_spot.json</code> · Verification: <code>VERIFICATION.md</code>, <code>reports/verification_report.json</code> ·
   Repo: <a href="https://github.com/karagemop466-tech/GOLD4">github.com/karagemop466-tech/GOLD4</a><br>
   Prices are point-in-time (see each row's timestamp) and can change; always re-check the seller's page before buying. This site is research, not financial advice.

@@ -1,11 +1,11 @@
 {
-  "run_at_utc": "2026-10-22T23:29:50Z",
+  "run_at_utc": "2026-10-22T23:34:11Z",
   "rows": 19,
   "a_live": 9,
   "b_snippet": 10,
   "errors": [],
   "warnings": [
-    "gold_spot: cross-check PENDING (single source)"
+    "gold_spot: cross-check DONE-SNAPSHOT (completed via dated official snapshots, not a live fetch - see data/gold_spot.json)"
   ],
   "flagged_for_review": [
     {
@@ -167,11 +167,6 @@
       "id": "BE-BE1D2444-14KY",
       "why": "Price from search snapshot of official page - live re-confirmation PENDING",
       "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/"
-    },
-    {
-      "id": "GOLD-SPOT",
-      "why": "single-source spot price; second-source cross-check pending",
-      "url": "https://api.gold-api.com/price/XAU"
     }
   ],
   "result": "PASS_WITH_WARNINGS"

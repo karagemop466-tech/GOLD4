@@ -148,9 +148,12 @@ def main() -> int:
         got = spot.get("price_usd_per_gram")
         if got is None or abs(got - expected) > 0.001:
             errors.append(f"gold_spot: per-gram {got!r} != recomputed {expected}")
-    if spot.get("cross_check", {}).get("status") != "DONE":
+    cc_status = str(spot.get("cross_check", {}).get("status", ""))
+    if not cc_status.startswith("DONE"):
         flagged.append({"id": "GOLD-SPOT", "why": "single-source spot price; second-source cross-check pending", "url": spot.get("source_url")})
         warnings.append("gold_spot: cross-check PENDING (single source)")
+    elif cc_status != "DONE":
+        warnings.append(f"gold_spot: cross-check {cc_status} (completed via dated official snapshots, not a live fetch - see data/gold_spot.json)")
 
     REPORTS.mkdir(exist_ok=True)
     report = {

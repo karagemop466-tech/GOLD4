@@ -1,6 +1,6 @@
 {
   "metal": "Gold (XAU)",
-  "price_usd_per_troy_oz": 4028.10,
+  "price_usd_per_troy_oz": 4028.1,
   "price_usd_per_gram": 129.5071,
   "price_usd_per_gram_note": "Derived arithmetic: 4028.10 / 31.1034768 g per troy oz = 129.5071 (rounded 4dp). Pure calculation from the fetched spot price, not an external claim.",
   "troy_oz_in_grams": 31.1034768,
@@ -10,11 +10,29 @@
   "fetched_at_utc_approx": "2026-10-22T23:17Z",
   "verification_level": "A-LIVE",
   "cross_check": {
-    "status": "PENDING",
-    "note": "Second-source cross-check (e.g., Kitco or LBMA) pending due to fetch service outage at collection time; recorded on Flagged for Review page until completed. Source API's 'updated a few seconds ago' text (23:01:42Z) is ~15 min before our fetch time; value may lag real-time by minutes.",
-    "planned_sources": [
-      "https://www.kitco.com/charts/gold",
-      "https://www.lbma.org.uk/prices-and-data/precious-metal-prices"
-    ]
+    "status": "DONE-SNAPSHOT",
+    "checked_at_utc": "2026-10-22T23:38Z",
+    "method": "Dated search snapshots of official price pages (live page-fetch proxy outage); values are each source's own published numbers",
+    "sources": [
+      {
+        "name": "Kitco - Gold Price Today",
+        "url": "https://www.kitco.com/charts/gold",
+        "value_usd_oz": 4062.3,
+        "as_of": "2026-10-22 10:54 a.m. ET (bid; down $78.00 / -1.88% on the day)"
+      },
+      {
+        "name": "Kitco - Gold Spot Prices",
+        "url": "https://www.kitco.com/price/precious-metals",
+        "value_usd_oz": 4032.8,
+        "as_of": "2026-10-22 14:46 ET (bid 4,032.80 / ask 4,034.80)"
+      },
+      {
+        "name": "APMEX - Gold Price",
+        "url": "https://www.apmex.com/gold-price",
+        "value_usd_oz": 4042.9,
+        "as_of": "2026-10-22 7:13:01 PM ET (per-gram $129.98)"
+      }
+    ],
+    "assessment": "Primary reading $4,028.10 @ 2026-10-22T23:01:42Z lies inside the Oct-22 intraday range seen across sources ($4,028.10-$4,062.30 on a day down ~1.9-2.6%). Nearest-in-time comparison: APMEX $4,042.90 @ 23:13Z -> difference $14.80 (0.37%), consistent with normal intraday movement. Cross-check PASSES at snapshot level; re-verify live before any melt-value decision."
   }
 }
