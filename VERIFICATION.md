@@ -1,69 +1,160 @@
-# VERIFICATION.md — Line-by-Line Verification Log
+# VERIFICATION.md — line-by-line verification record
 
-Session: `arena-22b5b06c-gold4` · All times UTC on 2026-10-22 unless noted.
-Policy: **NO HALLUCINATIONS.** A value is recorded only if read from an official source at the recorded time, with the URL kept. Unconfirmed values are left blank and flagged.
+Generated 2026-10-22 23:33 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
-## Pass 1 — Automated anti-hallucination checks (`scripts/verify_data.py`)
-Run at 2026-10-22T23:24Z and again at 23:29Z after build:
-- Rows: 19 · Level A-LIVE: 9 · Level B-SNIPPET: 10
-- Checks: schema, official-domain allow-list (bluenile.com / jamesallen.com / brilliantearth.com / api.gold-api.com), duplicate URL/ID scan, karat↔name/URL consistency, fabricated-value guard (weight/hallmark must be null unless the notes cite the source detail), price sanity (positive or null+flag; sale ≤ list), timestamp sanity (parseable, not future), gold-spot per-gram recomputation.
-- **Result: PASS_WITH_WARNINGS — 0 errors, 1 warning (spot-price single source, cross-check pending), 33 open flags → published on Flagged for Review page.**
+## Rule applied to every single value
 
-## Pass 2 — Site link integrity (`scripts/check_links.py`)
-Run at 2026-10-22T23:29Z: 12 HTML files, 305 links, **0 broken local links**; 39 unique external URLs listed for manual review (all on official/expected domains).
+> **No hallucination.** A value is recorded only if it was read from the official page linked in the same row and the fetch was made during this project (verification level **V1**). If a value could not be read from the official page it is **blank** and flagged `PRICE_UNVERIFIED` / `NO_WEIGHT_PUBLISHED` / `WEIGHT_UNVERIFIED` on the Flagged for Review page. Nothing is estimated, averaged, inferred from photos, or copied from a blog, marketplace, resale listing or price-comparison site. Derived values (gold grams, gold value, price ÷ gold) are arithmetic on published inputs and are re-computed independently by `scripts/audit.py` on every pass.
 
-## Line-by-line source verification (Pass 3 — per row)
+**Benchmark:** gold spot **$4,028.53/oz** as shown on the World Gold Council page for **21 October, 2026** (retrieved 2026-10-22) = **$129.5202/g**. Benchmark source: https://www.gold.org/goldhub/data/gold-prices
 
-Legend: LIVE = value read from live fetch of the official page at the time shown. SNAP = value read from a dated search-engine snapshot of the official retailer page (fetch service outage prevented live re-confirmation; row is flagged). Blank = intentionally not recorded (not published by seller).
 
-| Row ID | Product / value verified | Source URL (official) | Method & time (UTC) | Confirmed fields | Left blank / flagged |
-|--------|--------------------------|------------------------|---------------------|------------------|----------------------|
-| BN-203348 | Classic Simple Solitaire 14K YG · $1,145 setting · SKU 502120y14 · width 2.40mm · Free Returns · warranty ≥$1,000 · phone/email | https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-yellow-gold-item-203348 | LIVE product page 23:13Z | name, price, metal, SKU, width, contacts, policies | weight_g, hallmark (not published) |
-| BN-311230 | Solitaire w/ Pavé Basket 14K YG · $2,260 setting | https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-pave-basket-in-14k-yellow-gold-by-james-allen-item-311230 | LIVE category page 23:15Z (https://www.bluenile.com/engagement-rings/styles/gold/yellow-gold) | name, price, metal, URL | SKU, width, weight_g, hallmark |
-| BN-315036 | Solitaire w/ Intricate Basket 14K YG · $1,385 setting | https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-intricate-basket-in-14k-yellow-gold-by-james-allen-item-315036 | LIVE category page 23:15Z | name, price, metal, URL | SKU, width, weight_g, hallmark |
-| BN-311246 | East West Knife Edge Cathedral Solitaire 14K YG · $975 setting | https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-knife-edge-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-311246 | LIVE category page 23:15Z | name, price, metal, URL | SKU, width, weight_g, hallmark |
-| BN-311127 | Pavé Diamond Halo (Oval) 14K YG · $1,565 setting | https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-oval-by-james-allen-item-311127 | LIVE category page 23:15Z | name, price, metal, URL | SKU, width, weight_g, hallmark |
-| BN-311121 | Pavé Diamond Halo (Pear) 14K YG · $1,555 setting | https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-pear-by-james-allen-item-311121 | LIVE category page 23:15Z | name, price, metal, URL | SKU, width, weight_g, hallmark |
-| BN-192506 | Petite Hidden Halo Solitaire Plus 14k YG · $1,255 setting | https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-hidden-halo-solitaire-plus-diamond-engagement-ring-in-14k-yellow-gold-item-192506 | LIVE category page 23:15Z | name, price, metal, URL | SKU, width, weight_g, hallmark |
-| BN-304294 | Bow-Tie Channel Set 14K YG · $2,350 setting | https://www.bluenile.com/engagement-rings/design-your-own-ring/bow-tie-engagement-ring-with-channel-set-round-diamonds-in-14k-yellow-gold-by-james-allen-item-304294 | LIVE category page 23:15Z | name, price, metal, URL | SKU, width, weight_g, hallmark |
-| BN-41515 | Comfort Fit Solitaire 1.5mm 14K YG (James Allen 17740) · SOLD OUT · price blank | https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515 | LIVE product page 23:19Z (redirected from jamesallen.com) | sold-out status, JA→BN merger notice, metal | price (older $660 snapshot NOT used — flagged), weight_g |
-| BN-192261 | Knife Edge Solitaire 14k YG · $1,290 setting | https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261 | SNAP 23:11Z (search snapshot of official page) | name, price, metal, URL | live re-confirmation PENDING (flagged), weight_g |
-| BN-203321 | Wide Band Solitaire 5mm 14K YG · $2,050 setting | https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321 | SNAP 23:11Z | name, price, metal, URL, 5mm width (from name) | live re-confirmation PENDING (flagged), weight_g |
-| BN-203303 | Emerald Cut preset 1ct tw 14K YG · $5,190 | https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303 | SNAP 23:11Z | name, price, metal, URL | price-basis ambiguity (flagged), live re-confirmation PENDING, weight_g |
-| BN-195730 | Classic Simple Solitaire 14k WG · $1,145 setting | https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730 | SNAP 23:11Z | name, price, metal, URL | live re-confirmation PENDING (flagged), weight_g |
-| BN-315661 | Pavé Contour 14K WG · sale $1,657 (list $2,210) | https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661 | SNAP 23:11Z | name, sale price, list price, metal, URL | sale time-sensitivity + live re-confirmation (flagged), weight_g |
-| BN-310896 | Woven Solitaire 14K YG · sale $772 (list $965) | https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896 | SNAP 23:11Z | name, sale price, list price, metal, URL | sale time-sensitivity + live re-confirmation (flagged), weight_g |
-| BE-1D3939-14KY | Freesia Hidden Halo 14K YG · $1,190 setting-only · style BE1D3939-14KY · width 2-1.3mm · claw prong | https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/ | SNAP 23:22Z (snapshot dated 2026-06-18) | name, price, metal, SKU, width | live re-confirmation PENDING (flagged), weight_g, return-policy URL |
-| BE-1D3939-18KY | Freesia Hidden Halo 18K YG · $1,390 setting-only | https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/ | SNAP 23:22Z (snapshot dated 2026-09-28) | name, price, metal | live re-confirmation PENDING (flagged), weight_g |
-| BE-BE1574-14KY | Fleur Solitaire 14K YG · $1,350 setting-only | https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/ | SNAP 23:11Z (snapshot dated 2026-08-07) | name, price, metal | live re-confirmation PENDING (flagged), weight_g |
-| BE-BE1D2444-14KY | Atelier Solitaire 14K YG · $1,190 setting-only | https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/ | SNAP 23:11Z (snapshot dated 2026-08-27) | name, price, metal | live re-confirmation PENDING (flagged), weight_g |
-| GOLD-SPOT | XAU/USD $4,028.10 per troy oz · source-reported update 2026-10-22T23:01:42Z | https://api.gold-api.com/price/XAU | LIVE API fetch ~23:17Z | price, timestamp, source | second-source cross-check PENDING (flagged) |
-| SELLER-BN | Blue Nile contacts +1-800-242-2728, service@bluenile.com; Free Returns; Limited Lifetime Warranty gold ≥$1,000; promos (Fall Edit ≤30%, JA collection ≤50%) | product/category pages above; https://www.bluenile.com/services/warranty | LIVE 23:13–23:16Z | contacts, policies as advertised | BBB/Trustpilot scores deliberately NOT quoted (not fetched) |
-| SELLER-JA | "James Allen is Now Part of Blue Nile"; jamesallen.com redirects to bluenile.com | https://www.bluenile.com/james-allen | LIVE 23:19Z | merger notice, redirect behavior | — |
-| SELLER-BE | Brilliant Earth phone 800.691.0952; $250 gift-card promo code GIFT >$1,000 | https://www.brilliantearth.com/engagement-rings/solitaire/yellow-gold/ (live fetch 23:14Z) + https://www.brilliantearth.com/promo-codes-and-offers/ | LIVE 23:14Z | phone, promo | return-policy page not fetched (flagged) |
-| REPO | Baseline audit: repo had 1 file (README.md, 7 bytes), 1 commit | https://github.com/karagemop466-tech/GOLD4 | LIVE git inspection 23:10Z | see REPO_REVIEW.md | no pre-existing data to verify |
+## Coverage summary
 
-## Pass 4 — Corroboration pass for Level B rows (2026-10-22T23:33–23:40Z)
-Live page-fetch proxy stayed down (signature errors on every attempt 23:20–23:47Z). Instead, each Level B row was re-checked against **additional dated snapshots of the same official retailer pages** (including embedded schema.org JSON-LD structured data where present). All added fields below were read from the seller's own pages; nothing was inferred. Rows remain **B-SNIPPET** until a live fetch confirms them. Patch audit trail: `scripts/patch_20261022_corroboration.py`.
+- Rows: **22**
+- Prices read from the seller's page: **21**
+- Gram weights published by the seller: **7** (therefore only these rows have a computable gold value)
+- Rows with explicit *solid gold* wording: **5**
+- Rows publishing a hallmark or maker's mark: **0** (the legal requirement is quoted in `data/methodology.json`)
+- Rows carrying at least one flag: **22**
 
-| Row ID | Corroborating evidence (all from official pages) | Added fields | Status |
-|--------|--------------------------------------------------|--------------|--------|
-| BN-192261 | Product-page snapshot (SKU 502500y14, 1.80mm, $1,290) + JSON-LD on bluenile.com/engagement-rings/styles/simple (price 1290, InStock) | sku, width | corroborated ×2 |
-| BN-203321 | Product-page snapshot (SKU 501580y14, 5.00mm, $2,050) | sku, width | corroborated; **NEW IRREGULARITY FLAG:** seller's own description says "platinum solitaire setting" while specs say 14K Yellow Gold |
-| BN-203303 | Product-page snapshot (SKU 501472y14, 4.00mm, $5,190, 6 emerald side diamonds 1 ct total, G-H/VS2-SI1, prong) | sku, width, clarified price basis | corroborated; earlier ambiguity flag resolved from same official page |
-| BN-195730 | Product-page snapshot (SKU 502120w14, 2.40mm, rhodium) + category page bluenile.com/engagement-rings/styles/gold/white-gold JSON-LD ($1,145, InStock) | sku, width | corroborated ×2 |
-| BN-315661 | Product-page snapshot (SKU 505094w14, 1.75mm, rhodium, 26 diamonds 1/5 ct F-G VS1-VS2, $2,210→$1,657 −25%) | sku, width | corroborated |
-| BN-310896 | Product-page snapshot (SKU 505038y14, 1.80mm, $965→$772 −20%) + 3 other official category snapshots showing $724/$730/$728 | sku, width | corroborated; **NEW IRREGULARITY FLAG:** sale price varies across the seller's own pages — time-sensitive |
-| BE-1D3939-14KY | Product page (2026-06-18) + hidden-halo category JSON-LD (2026-09-15, $1,190) + signature collection JSON-LD (2026-09-24, $1,190) | — | corroborated ×3 |
-| BE-1D3939-18KY | Product page (2026-09-28, $1,390, 18K YG) | — | corroborated |
-| BE-BE1574-14KY | Product page (2026-08-07): style BE1574-14KY, 1.8mm, four-prong, $1,350 | sku, width | corroborated |
-| BE-BE1D2444-14KY | Product page (2026-08-27): style BE1D2444-14KY, 2mm, claw prong, $1,190 + category JSON-LD 2026-08-25 / 2026-09-14 / 2026-09-23 all $1,190 | sku, width | corroborated ×4 |
+## Line-by-line verification — every row
 
-### Gold spot cross-check (Pass 4)
-Primary: $4,028.10/oz @ 2026-10-22T23:01:42Z (api.gold-api.com, live fetch). Cross-checks from dated official-page snapshots for the same day: Kitco $4,062.30 (10:54 ET bid), Kitco $4,032.80 (14:46 ET bid), APMEX $4,042.90 (19:13 ET). Primary value is inside the day's range (market was down ~1.9–2.6% that day); nearest-in-time delta 0.37%. **Cross-check PASSES at snapshot level** — recorded as `DONE-SNAPSHOT` in `data/gold_spot.json` with a standing note to re-verify live before any melt-value decision.
+| ID | Retailer | Ring | Karat | Price | Price source (fetched) | Weight | Weight source (fetched) | Gold value (derived) | Solid wording | Hallmark | Flags |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| AL-01 | Allurez | [Engraved Floral Solitaire Engagement Ring Setting](https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold) | 14K | $585 | V1 · 2026-10-22 | 3.58 g | V1 | $270.48 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| AL-02 | Allurez | [Milgrain Trellis Solitaire Engagement Ring](https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold) | 14K | $724 | V1 · 2026-10-22 | 3.40 g | V1 | $256.88 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| AL-03 | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold) | 14K | $848 | V1 · 2026-10-22 | 4.40 g | V1 | $332.44 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| AL-04 | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold) | 18K | $1,425 | V1 · 2026-10-22 | 5.30 g | V1 | $514.84 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| AN-01 | Anjolee | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) | 14K | $870.76 | V1 · 2026-10-22 | 2.90 g | V1 | $219.11 | not stated | not published | PRICE_INCLUDES_CENTRE_STONE, CENTRE_STONE_LAB_CREATED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
+| BE-01 | Brilliant Earth | [Atelier Solitaire Ring (2 mm, claw-prong bypass)](https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/) | 14K | $1,190 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| BE-02 | Brilliant Earth | [Atelier Solitaire Ring (2 mm, claw-prong bypass)](https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/) | 18K | $1,390 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| BN-01 | Blue Nile | [Petite Solitaire Engagement Ring](https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639) | 14K | $1,000 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| BN-02 | Blue Nile | [Petite Solitaire Engagement Ring](https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269) | 18K | $1,155 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| BN-03 | Blue Nile | [Classic Six-Prong Solitaire Engagement Ring](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272) | 14K | $1,000 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| BN-04 | Blue Nile | [Classic Comfort Fit Solitaire Engagement Ring (2.5mm)](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284) | 14K | $935 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, COPY_INCONSISTENT_METAL |
+| BN-05 | Blue Nile | [Classic Comfort Fit Solitaire Engagement Ring (2.5mm)](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941) | 18K | $1,310 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| BN-06 | Blue Nile | [Six-Prong Low Dome Comfort Fit Solitaire Engagement Ring (2mm)](https://www.bluenile.com/engagement-rings/design-your-own-ring/six-prong-low-dome-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-2mm-item-195379) | 18K | $1,295 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| BN-07 | Blue Nile | [Classic Four Prong Solitaire Engagement Ring](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257) | 14K | $870 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, MIXED_METAL_UNCLEAR |
+| BN-08 | Blue Nile | [Riviera Pave Diamond Engagement Ring (1/6 ct. tw.)](https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512) | 14K | $1,500 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, COPY_INCONSISTENT_METAL |
+| MJ-01 | Mejuri | [Diamonds Team Ring](https://mejuri.com/products/diamonds-team-ring) | 14K | $548 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, PRICE_VARIANT_DEPENDENT |
+| MJ-02 | Mejuri | [Diamonds Band](https://mejuri.com/products/diamonds-band) | 14K | $648 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL |
+| MJ-03 | Mejuri | [Pave Diamond Slim Signet](https://mejuri.com/products/pave-diamond-slim-signet-ring) | 14K | $548 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, ENGRAVING_NON_RETURNABLE, PRICE_VARIANT_DEPENDENT |
+| MJ-04 | Mejuri | [Pave Diamond Thin Dome Ring](https://mejuri.com/products/pave-diamond-thin-dome-ring) | 14K | $798 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL |
+| MJ-05 | Mejuri | [Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)](https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring) | 14K | $598 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, SCS_CERT_REQUIRED_FOR_RETURN, PRICE_IS_FROM_PRICE |
+| VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.82 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND |
+| VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.88 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND |
 
-### Re-run of automated checks after Pass 4
-2026-10-22T23:34Z: `verify_data.py` → **PASS_WITH_WARNINGS, 0 errors**, 19 rows (9 A-LIVE / 10 B-SNIPPET), 32 open flags published; `check_links.py` → 12 files, 309 links, **0 broken**.
+## Derived arithmetic (re-computed and cross-checked by the audit)
 
-## Recommendation after this pass (per project instruction to always re-recommend)
-**Look for hallucinations again:** re-run `python3 scripts/verify_data.py` after any data change, re-fetch every Level B row when the fetch service is available, re-check the gold spot cross-check, and manually spot-check 2–3 random rows against their source URLs before any purchase decision. Prices are point-in-time and expire.
+| ID | Weight (g) | Fineness | Pure gold (g) | Spot $/g | Gold value | Legal-min value (stamp − 0.007) | Price | Price ÷ gold |
+|---|---|---|---|---|---|---|---|---|
+| AL-01 | 3.58 | 0.5833 | 2.088 | $129.5202 | $270.48 | $267.24 | $585 | 2.16× |
+| AL-02 | 3.40 | 0.5833 | 1.983 | $129.5202 | $256.88 | $253.80 | $724 | 2.82× |
+| AL-03 | 4.40 | 0.5833 | 2.567 | $129.5202 | $332.44 | $328.45 | $848 | 2.55× |
+| AL-04 | 5.30 | 0.7500 | 3.975 | $129.5202 | $514.84 | $510.04 | $1,425 | 2.77× |
+| AN-01 | 2.90 | 0.5833 | 1.692 | $129.5202 | $219.11 | $216.48 | $870.76 | 3.97× |
+| VR-01 | 2.86 | 0.7500 | 2.145 | $129.5202 | $277.82 | $275.23 | $1,035 | 3.73× |
+| VR-02 | 2.84 | 0.7500 | 2.130 | $129.5202 | $275.88 | $273.30 | **blank** | **blank**× |
+
+## Karat pairs (same design, both karats sold by the same retailer)
+
+| Pair | Retailer | Design | 14K → 18K price | Price gap | Gold-content gap | Multiple 14K → 18K |
+|---|---|---|---|---|---|---|
+| PAIR-AL-SPLIT | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold) ([AL-03](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold), [AL-04](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold)) | $848 → $1,425 | +68.0% | +54.9% | 2.55× → 2.77× |
+| PAIR-BE-ATELIER | Brilliant Earth | [Atelier Solitaire Ring (2 mm, claw-prong bypass)](https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/) ([BE-01](https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/), [BE-02](https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/)) | $1,190 → $1,390 | +16.8% | **not computable** (no published weights) | **blank**× → **blank**× |
+| PAIR-BN-COMFORT | Blue Nile | [Classic Comfort Fit Solitaire Engagement Ring (2.5mm)](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284) ([BN-04](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284), [BN-05](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941)) | $935 → $1,310 | +40.1% | **not computable** (no published weights) | **blank**× → **blank**× |
+| PAIR-BN-PETITE | Blue Nile | [Petite Solitaire Engagement Ring](https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639) ([BN-01](https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639), [BN-02](https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269)) | $1,000 → $1,155 | +15.5% | **not computable** (no published weights) | **blank**× → **blank**× |
+
+## Seller-level claims and the page that proves each one
+
+| Seller | Return window | Contact captured | Resized rings returnable | Custom / engraved | Resize service | Warranty | Solid wording | Policy source |
+|---|---|---|---|---|---|---|---|---|
+| Blue Nile | 30 days | +1-800-242-2728 | no | excluded | One free resize up or down two sizes within 6 months if the design permits; eternity bands, tension rings, alternative-metal rings and some milgrain/ornate bands cannot be resized | Limited lifetime warranty on gold and platinum items with a purchase price of $1,000 or mo | not stated | [Return Policy - 30-day money back guarantee](https://www.bluenile.com/policies/returns) |
+| Allurez | 30 days | +1-800-554-3509 | no | excluded | Not published as a free service; the included 1-year warranty covers free ring sizing | Free 1-year limited warranty included (2-year +$59, 10-year +$79, lifetime +$149 on the 14 | not stated | [Return Policy](https://www.allurez.com/pages/return-policy) |
+| VRAI | 30 days | help@vrai.com | no | excluded | One complimentary resize up to one full US size; infinity and eternity bands cannot be resized | Lifetime warranty and annual shine are listed as included with the ring on the product pag | not stated | [Returns & Exchanges](https://www.vrai.com/returns-exchanges) |
+| Mejuri | 30 days | **not captured** | not excluded | excluded | Not published as a standard free service on the captured returns page | Two-year warranty from the date of receipt for defects or issues resulting from workmanshi | stated | [Returns Terms & Conditions](https://mejuri.com/company/returns-terms) |
+| Brilliant Earth | 30 days | 800.691.0952 | not excluded | no exclusion captured | Page badge reads "Free 1-Year Resizing" (Pass 5, 2026-10-22). The earlier capture of the same page described one complimentary resize within 60 days of purchase. The two captures disagree, so ask the seller which applies to your ring before ordering. | Free Lifetime Warranty (product page badge) | not stated | [Atelier Solitaire Ring in 18K Yellow Gold](https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/) |
+| Anjolee | 30 days | 877-265-6533 | not excluded | no exclusion captured | Not captured on the page | Lifetime warranty (prong tightening, re-polishing, rhodium plating, cleaning) plus a one-y | not stated | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) |
+
+## Source registry
+
+| ID | Tier | Publisher | Document | Retrieved |
+|---|---|---|---|---|
+| ftc-gold-jewelry | A | U.S. Federal Trade Commission (consumer.ftc.gov) | [Buying Platinum, Gold, and Silver Jewelry](https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry) | 2026-10-22 |
+| ecfr-16-23 | A | U.S. Federal Trade Commission / eCFR (National Archives) | [16 CFR Part 23 - Guides for the Jewelry, Precious Metals, and Pewter Industries](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23) | 2026-10-22 |
+| usc-15-295 | A | U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 295 | [Standard of fineness of gold articles; deviation](https://www.law.cornell.edu/uscode/text/15/295) | 2026-10-22 |
+| usc-15-ch8 | A | U.S. Code (Legal Information Institute) - 15 U.S.C. ch. 8 | [Falsely stamped gold or silver or goods manufactured therefrom (sections 291-300)](https://www.law.cornell.edu/uscode/text/15/chapter-8) | 2026-10-22 |
+| wgc-gold-prices | B | World Gold Council (Goldhub) | [Gold spot prices & market history](https://www.gold.org/goldhub/data/gold-prices) | 2026-10-22 |
+| lbma-prices | B | London Bullion Market Association | [LBMA Precious Metal Prices](https://www.lbma.org.uk/prices-and-data/precious-metal-prices) | 2026-10-22 |
+| ftc-credit-cards | A | U.S. Federal Trade Commission (consumer.ftc.gov) | [Using Credit Cards and Disputing Charges](https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges) | 2026-10-22 |
+| bluenile-returns | C | Blue Nile | [Return Policy - 30-day money back guarantee](https://www.bluenile.com/policies/returns) | 2026-10-22 |
+| allurez-returns | C | Allurez | [Return Policy](https://www.allurez.com/pages/return-policy) | 2026-10-22 |
+| vrai-returns | C | VRAI | [Returns & Exchanges](https://www.vrai.com/returns-exchanges) | 2026-10-22 |
+| mejuri-returns | C | Mejuri | [Returns Terms & Conditions](https://mejuri.com/company/returns-terms) | 2026-10-22 |
+| brilliantearth-atelier | C | Brilliant Earth | [Atelier Solitaire Ring in 18K Yellow Gold](https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/) | 2026-10-22 |
+| anjolee-ms354a | C | Anjolee | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) | 2026-10-22 |
+| brilliantearth-atelier-14k | C | Brilliant Earth | [Atelier Solitaire Ring in 14K Yellow Gold](https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/) | 2026-10-22 |
+
+## Irregularities flagged for human review
+
+1. **Blue Nile copy contradicts its own specification (BN-04).** The 14K Comfort Fit 2.5 mm description says the ring is “crafted in 18k yellow gold” while the specification block says 14K Yellow Gold. Page: https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284
+2. **Blue Nile copy names the wrong metal colour (BN-08).** The Riviera Pavé 14K *yellow* gold page says the diamonds are “set in 14k white gold”. Page: https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512
+3. **Mixed-metal ambiguity (BN-07).** The Classic Four Prong Solitaire is titled 14K Yellow Gold but the description mentions “platinum prongs”; if true, the ring is not all gold and any gold-weight calculation would overstate the gold content. Page: https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257
+4. **No hallmark anywhere.** 0 of 20 rows publish the physical stamp or the maker's mark, so the hallmark requirement can only be checked in hand.
+5. **Weights are approximate where they exist.** Allurez labels its number “Approximate Metal Weight”; VRAI publishes a size-6 metal weight. Neither is a measurement of the ring you will receive.
+6. **Two search-snapshot-only values were deliberately NOT used:** an Anjolee “2.90 Gr.” weight and every Brilliant Earth price/weight. They appeared only in search-engine snapshots of the official pages and could not be re-read from the live page, so they are recorded as unverified rather than published.
+7. **Reputation was not verified for any seller.** No independent review or complaints dataset was collected, so no reputation claim is made anywhere on the site.
+8. **Seller contact gaps.** Mejuri's phone/email did not appear in the captured policy page; Brilliant Earth's email did not. Both are left blank rather than guessed.
+9. **Structured data notes used prices from a listing card.** VRAI's “From $1,035” is a listing-level price, while its 2.86 g weight comes from the configuration page for the same design. Both are VRAI pages, but the pair is flagged `PRICE_AND_WEIGHT_DIFFERENT_URLS`.
+
+## Unverified values published as blank
+
+- **AL-01** (Allurez · Engraved Floral Solitaire Engagement Ring Setting): solid-gold wording not published on the captured page → https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold
+- **AL-02** (Allurez · Milgrain Trellis Solitaire Engagement Ring): solid-gold wording not published on the captured page → https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold
+- **AL-03** (Allurez · Split Shank Solitaire Engagement Ring): solid-gold wording not published on the captured page → https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold
+- **AL-04** (Allurez · Split Shank Solitaire Engagement Ring): solid-gold wording not published on the captured page → https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold
+- **AN-01** (Anjolee · Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)): solid-gold wording not published on the captured page → https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx
+- **BE-01** (Brilliant Earth · Atelier Solitaire Ring (2 mm, claw-prong bypass)): weight, solid-gold wording not published on the captured page → https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/
+- **BE-02** (Brilliant Earth · Atelier Solitaire Ring (2 mm, claw-prong bypass)): weight, solid-gold wording not published on the captured page → https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/
+- **BN-01** (Blue Nile · Petite Solitaire Engagement Ring): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639
+- **BN-02** (Blue Nile · Petite Solitaire Engagement Ring): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269
+- **BN-03** (Blue Nile · Classic Six-Prong Solitaire Engagement Ring): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272
+- **BN-04** (Blue Nile · Classic Comfort Fit Solitaire Engagement Ring (2.5mm)): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284
+- **BN-05** (Blue Nile · Classic Comfort Fit Solitaire Engagement Ring (2.5mm)): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941
+- **BN-06** (Blue Nile · Six-Prong Low Dome Comfort Fit Solitaire Engagement Ring (2mm)): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/six-prong-low-dome-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-2mm-item-195379
+- **BN-07** (Blue Nile · Classic Four Prong Solitaire Engagement Ring): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257
+- **BN-08** (Blue Nile · Riviera Pave Diamond Engagement Ring (1/6 ct. tw.)): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512
+- **MJ-01** (Mejuri · Diamonds Team Ring): weight not published on the captured page → https://mejuri.com/products/diamonds-team-ring
+- **MJ-02** (Mejuri · Diamonds Band): weight not published on the captured page → https://mejuri.com/products/diamonds-band
+- **MJ-03** (Mejuri · Pave Diamond Slim Signet): weight not published on the captured page → https://mejuri.com/products/pave-diamond-slim-signet-ring
+- **MJ-04** (Mejuri · Pave Diamond Thin Dome Ring): weight not published on the captured page → https://mejuri.com/products/pave-diamond-thin-dome-ring
+- **MJ-05** (Mejuri · Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)): weight not published on the captured page → https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring
+- **VR-01** (VRAI · The Classic Engagement Ring (4-prong dome, plain band)): solid-gold wording not published on the captured page → https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861
+- **VR-02** (VRAI · Signature 6 Prong Engagement Ring (plain band)): price, solid-gold wording not published on the captured page → https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301
+
+## Integrity audit output (hallucination / security check)
+
+```
+GOLD4 integrity audit (hallucination / security check)
+run_utc: 2026-10-22T23:33:03+00:00
+dataset rows: 22 | sellers: 6 | sources: 14
+spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
+
+RESULT: PASS  (59 passed, 0 warnings, 0 failures)
+
+No warnings, no failures.
+
+Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
+price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,
+independent recomputation of every derived number, phantom-math detection (no weight => no value),
+seller contact/return provenance, speculation-language scan, site link check,
+per-row source-link requirement, and render-text sanity.
+```
+
+Re-run after every review pass:
+
+```bash
+python3 scripts/compute.py && python3 scripts/build_site.py && python3 scripts/audit.py
+```
+

@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Defines every rule, constant and formula used by this project. The audit script (scripts/audit.py) re-checks the data against this file on every pass.",
+  "no_hallucination_policy": {
+    "rule": "A value is published only if it was read from the official page named in its source_url. If it could not be read, the field stays null and the row is flagged UNVERIFIED. No value is ever estimated, inferred, averaged or copied from a blog, reseller, or marketplace listing.",
+    "derived_values": "Only computed from published inputs by scripts/compute.py, using the formulas below. Derived values are labelled as derived and never presented as seller claims.",
+    "verification_levels": {
+      "V1_direct_page_fetch": "The official page was fetched during this project and the stated value was read from the returned page content.",
+      "V2_official_page_snapshot_only": "The value appeared only in a search-engine snapshot of the official page and was NOT re-read from the live page. Treated as UNVERIFIED for table purposes and listed on the Flagged for Review page.",
+      "U_unverified": "No official page value could be read. Field is null."
+    }
+  },
+  "karat_fineness": {
+    "basis": "Karat is parts of fine gold out of 24 by weight. 18K = 18/24 = 0.750; 14K = 14/24 = 0.583333; 10K = 10/24 = 0.416667.",
+    "legal_basis": [
+      {
+        "claim": "A karat mark tells the consumer how much pure gold the piece contains; 18K is 18 parts gold to 6 parts other metal, 14K is 14 parts gold to 10 parts other metal.",
+        "source_id": "ftc-gold-jewelry"
+      },
+      {
+        "claim": "Gold content must not be misrepresented, and 'solid' must not be used for hollow or plated articles.",
+        "source_id": "ecfr-16-23"
+      }
+    ],
+    "table": [
+      {
+        "karat": 24,
+        "fineness": 1.0,
+        "gold_pct": 100.0,
+        "stamp_examples": "24K, 999"
+      },
+      {
+        "karat": 22,
+        "fineness": 0.9166667,
+        "gold_pct": 91.67,
+        "stamp_examples": "22K, 916"
+      },
+      {
+        "karat": 18,
+        "fineness": 0.75,
+        "gold_pct": 75.0,
+        "stamp_examples": "18K, 18KT, 750"
+      },
+      {
+        "karat": 14,
+        "fineness": 0.5833333,
+        "gold_pct": 58.33,
+        "stamp_examples": "14K, 14KT, 585"
+      },
+      {
+        "karat": 10,
+        "fineness": 0.4166667,
+        "gold_pct": 41.67,
+        "stamp_examples": "10K, 10KT, 417"
+      }
+    ],
+    "stamp_examples_note": "The three-digit millesimal equivalents (750/585/417) are shown because they are used internationally; this project has not verified any specific item's stamp, so the column is informational only."
+  },
+  "legal_allowable_deviation": {
+    "law": "15 U.S.C. § 295 (National Gold and Silver Stamping Act) as amended by Pub. L. 94-450 (1976)",
+    "source_id": "usc-15-295",
+    "part_assayed_tolerance": 0.003,
+    "whole_article_tolerance": 0.007,
+    "what_it_means": "For articles other than watchcases and flatware, the actual fineness of the whole article (including solder) may be no more than 0.007 below the fineness stamped on it. So an '18K' stamp legally permits actual fineness as low as 0.743 (74.3%), and a '14K' stamp as low as 0.5763 (57.63%).",
+    "minimum_fineness_if_stamped": {
+      "24": 0.993,
+      "22": 0.9096667,
+      "18": 0.743,
+      "14": 0.5763333,
+      "10": 0.4096667
+    },
+    "implication_for_buyers": "A stamp alone is a claim with a legal tolerance, not a measurement. Only an assay or XRF measurement tells you what the metal in your hand actually is."
+  },
+  "hallmark": {
+    "requirement": "A karat quality mark must be accompanied by the name or U.S. registered trademark of the company that stands behind the mark. FTC consumer guidance states: if you do not see a trademark with the karat mark, do not buy it.",
+    "source_id": "ftc-gold-jewelry",
+    "additional_law": "15 U.S.C. ch. 8 (Falsely stamped gold or silver) governs quality marking and tolerances.",
+    "project_finding": "None of the retailer product pages captured for this project published the physical hallmark or maker's mark. Hallmark status is therefore recorded as 'not published' for every row and must be checked on the physical item."
+  },
+  "solid_gold": {
+    "definition": "'Solid gold' means the item is not hollow; it also carries a karat mark showing gold content.",
+    "source_id": "ftc-gold-jewelry",
+    "prohibited_terms_for_candidate_items": [
+      "gold plated",
+      "gold plate",
+      "gold filled",
+      "gold overlay",
+      "rolled gold plate",
+      "RGP",
+      "gold electroplate",
+      "vermeil",
+      "gold flashed",
+      "gold washed",
+      "gold tone",
+      "bonded"
+    ],
+    "source_id_terms": "ftc-gold-jewelry",
+    "project_rule": "A row is only marked 'solid gold stated' when the retailer's own page uses solid/solid gold wording for that specific item. Karat wording alone ('14k Yellow Gold') is recorded as 'not stated', not as proof."
+  },
+  "formulas": {
+    "pure_gold_grams": "weight_g_gross * fineness",
+    "gold_melt_value_usd": "pure_gold_grams * spot_usd_per_gram",
+    "price_to_melt_multiple": "price_usd / gold_melt_value_usd",
+    "minimum_legal_gold_value_usd": "weight_g_gross * minimum_fineness_if_stamped * spot_usd_per_gram",
+    "assumptions": [
+      "Gold weight is taken exactly as the retailer publishes it. Where the retailer publishes 'approximate metal weight', the word approximate is carried into the row notes.",
+      "No deduction is made for diamonds, settings, solder, rhodium plating or alloy density. The melt value is therefore an upper-bound gold-content estimate of the metal as published, not an appraisal and not a resale offer.",
+      "Price is the retailer's listed price at capture time and excludes tax, shipping, engraving, appraisal and financing charges unless the row says otherwise.",
+      "The multiple is a comparison tool only. Retail jewellery prices legitimately include labour, stone-setting, brand, warranty and returns cost."
+    ]
+  },
+  "weight_rules": {
+    "publishable_only_if": "The retailer publishes a gram weight on the item page (or the item's official specification sheet).",
+    "excluded_sources": "Marketplace listings (eBay, Poshmark, Amazon third-party), resale sites, blogs and 'typical weight' tables are NOT acceptable sources for an individual item's weight.",
+    "why": "Weight drives the entire gold-value calculation, so an estimated weight would poison every derived number."
+  },
+  "price_rules": {
+    "publishable_only_if": "The price was read from the retailer's own item page (or the retailer's own listing card where the row records price_basis = 'from' price).",
+    "never": "Never carry a price from a review site, price-comparison site, news article, or archived snapshot.",
+    "volatility": "Retail prices change frequently. Every price row carries its capture date and is re-checked by hand on each review pass."
+  },
+  "spot_rules": {
+    "benchmark": "World Gold Council gold spot, USD per troy ounce, with the date shown on the source.",
+    "no_refresh_without_record": "The captured quote is frozen with its date; derived values are never silently recomputed against a later quote."
+  },
+  "source_tiers": {
+    "A": "Government / regulator (FTC, eCFR, U.S. Code)",
+    "B": "Market benchmark body (World Gold Council, LBMA)",
+    "C": "Retailer's own official website (price, weight, policy)",
+    "D": "Industry body / standards organisation",
+    "X": "Not acceptable for a fact claim (blogs, marketplaces, resale, aggregators) - used only for leads, never for values"
+  }
+}
