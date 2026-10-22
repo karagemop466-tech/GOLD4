@@ -38,6 +38,7 @@
     <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
     <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
     <li><strong>Anything uncertain is published on <a href="../pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
   </ul>
 </div>
 
@@ -79,13 +80,13 @@
       <td class="small">not captured</td>
       <td><span class="badge b-ok">yes</span></td></tr><tr><td><a href="#brilliant-earth">Brilliant Earth</a></td>
       <td>30 days</td>
-      <td><span class="badge b-ok">not excluded</span></td>
+      <td><span class="badge b-mute">not itemised</span></td>
       <td><span class="badge b-mute">no exclusion captured</span></td>
-      <td class="small">One complimentary resizing within 60 days of purchase, or up to 1 year if the si</td>
+      <td class="small">Page badge reads &quot;Free 1-Year Resizing&quot; (Pass 5, 2026-10-22). The earlier captur</td>
       <td class="small">800.691.0952</td>
       <td><span class="badge b-warn">no</span></td></tr><tr><td><a href="#anjolee">Anjolee</a></td>
       <td>30 days</td>
-      <td><span class="badge b-ok">not excluded</span></td>
+      <td><span class="badge b-mute">not itemised</span></td>
       <td><span class="badge b-mute">no exclusion captured</span></td>
       <td class="small">Not captured on the page</td>
       <td class="small">877-265-6533</td>
@@ -141,22 +142,22 @@
   <p class="small"><strong>Exclusions:</strong></p>
   <ul class="small"><li>Engraved and monogrammed products (not eligible at any time)</li><li>Final sale items</li><li>Gift cards</li><li>Earrings used during a piercing appointment</li><li>Lab-grown diamond items returned without their SCS certificate</li></ul>
   <p class="small"><strong>Resize:</strong> Not published as a standard free service on the captured returns page</p>
-  <p class="small"><strong>Warranty:</strong> not captured on the fetched page</p>
+  <p class="small"><strong>Warranty:</strong> Two-year warranty from the date of receipt for defects or issues resulting from workmanship (stated on each Mejuri product page read on 2026-10-22)</p>
   <p class="small"><strong>Solid-gold wording:</strong> explicit "solid" wording found</p>
   <p class="small">Policy source: <a href="https://mejuri.com/company/returns-terms" target="_blank" rel="noopener">open the seller's own policy page</a></p>
-  <div class="flaglist"><span class="flag" title="CONTACT_NOT_CAPTURED">contact not captured</span><span class="flag" title="WARRANTY_NOT_CAPTURED">warranty not captured</span><span class="flag" title="ENGRAVING_NON_RETURNABLE">engraving kills the return right</span><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span></div>
+  <div class="flaglist"><span class="flag" title="CONTACT_NOT_CAPTURED">contact not captured</span><span class="flag" title="ENGRAVING_NON_RETURNABLE">engraving kills the return right</span><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span></div>
 </article>
 <article class="card" id="brilliant-earth">
-  <h3>Brilliant Earth <span class="badge b-gold">0 rows</span></h3>
+  <h3>Brilliant Earth <span class="badge b-gold">2 rows</span></h3>
   <p class="small">Contact: <a href="tel:800.691.0952">800.691.0952</a> · <a href="https://www.brilliantearth.com/contact/" target="_blank" rel="noopener">contact page</a></p>
-  <p><strong>30-day return window.</strong> Free 30-day returns; free shipping both ways (site footer and product page).</p>
+  <p><strong>30-day return window.</strong> 30 days — read on the first capture of this seller&#x27;s product page on 2026-10-22; the Pass 5 re-read of the same page displays the &quot;Free Shipping &amp; Returns&quot; badge but not a day count, so the 30-day figure is carried from that same-day capture instead of being re-displayed.</p>
   <p class="small"><strong>Exclusions:</strong></p>
   <ul class="small"><li class="small">No exclusions itemised on the captured page — not the same as none existing.</li></ul>
-  <p class="small"><strong>Resize:</strong> One complimentary resizing within 60 days of purchase, or up to 1 year if the size is within the recommended range, with free shipping both ways</p>
-  <p class="small"><strong>Warranty:</strong> Free lifetime warranty; each order includes a professional appraisal</p>
+  <p class="small"><strong>Resize:</strong> Page badge reads &quot;Free 1-Year Resizing&quot; (Pass 5, 2026-10-22). The earlier capture of the same page described one complimentary resize within 60 days of purchase. The two captures disagree, so ask the seller which applies to your ring before ordering.</p>
+  <p class="small"><strong>Warranty:</strong> Free Lifetime Warranty (product page badge)</p>
   <p class="small"><strong>Solid-gold wording:</strong> no explicit "solid" wording found on the captured pages</p>
   <p class="small">Policy source: <a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">open the seller's own policy page</a></p>
-  <div class="flaglist"><span class="flag" title="NO_PRODUCT_ROWS_VERIFIED">no product rows verified</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span></div>
+  <div class="flaglist"><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span><span class="flag" title="RESIZE_TERMS_INCONSISTENT">resize terms differ between captures</span><span class="flag" title="RETURN_WINDOW_NOT_REDISPLAYED">return window not re-displayed on re-read</span><span class="flag" title="RETURN_EXCLUSIONS_NOT_ITEMISED">exclusions not itemised on the page</span></div>
 </article>
 <article class="card" id="anjolee">
   <h3>Anjolee <span class="badge b-gold">1 rows</span></h3>
@@ -188,7 +189,7 @@
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
   <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:32 UTC · dataset 20 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:33 UTC · dataset 22 rows · 14 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>
