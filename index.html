@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A source-first gold engagement ring research dashboard. No unverified prices or product claims.">
+  <title>GOLD — Gold Ring Research</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">G</span> GOLD<span class="brand-sub">RING RESEARCH</span></a>
+    <nav aria-label="Main navigation"><a class="active" href="index.html">Dashboard</a><a href="#catalog">Product list</a><a href="flagged.html">Flagged for Review <span class="nav-count">0</span></a></nav>
+    <span class="updated">SOURCE-FIRST RESEARCH</span>
+  </header>
+  <main>
+    <section class="hero">
+      <div><div class="eyebrow">ENGAGEMENT RING BUYING DESK <span class="live-dot"></span></div><h1>Find the right ring.<br><em>Verify every claim.</em></h1><p>One organized place for product evidence, gold content, pricing, and buyer checks.</p></div>
+      <div class="hero-stamp"><span>RESEARCH STANDARD</span><strong>NO HALLUCINATIONS</strong><small>Unconfirmed values stay blank.<br>Every product claim needs a source.</small></div>
+    </section>
+    <section class="notice" role="note"><span class="notice-icon">!</span><div><strong>No hallucinations: prices and product facts are never estimated or invented.</strong><p>There are currently no product listings in the repository to verify. This is not a recommendation or a price quote. New entries require a direct official product source; uncertain fields remain blank and are flagged.</p></div><a href="flagged.html">Review limitations ↗</a></section>
+    <div class="section-heading"><div><div class="eyebrow">01 / VERIFIED CANDIDATES</div><h2>Ring shortlist</h2></div><span class="count-pill">0 VERIFIED LISTINGS</span></div>
+    <section id="catalog" class="panel table-panel">
+      <div class="table-scroll"><table><thead><tr><th>PRODUCT / SELLER</th><th>KARAT &amp; GOLD TYPE</th><th>PRICE</th><th>WEIGHT</th><th>RETURN TERMS</th><th>OFFICIAL SOURCE</th><th>STATUS</th></tr></thead><tbody><tr><td colspan="7" class="empty"><span class="empty-icon">◇</span><strong>No verified products yet</strong><span>No products or current prices were supplied or confirmed from official listings. Values intentionally left blank.</span></td></tr></tbody></table></div>
+      <div class="table-foot"><span>Only documented facts belong in this table.</span><span>Required: official listing link · checked date · evidence for each populated value</span></div>
+    </section>
+    <div class="grid-two">
+      <section class="section-block"><div class="section-heading compact"><div><div class="eyebrow">02 / BUYER SAFETY</div><h2>Verification checklist</h2></div><span class="source-badge">FTC GUIDANCE</span></div>
+        <div class="panel checklist">
+          <label><input type="checkbox"><span><b>Confirm karat purity</b><small>Find the karat quality mark (for example, 14K or 18K); a mark alone is not an assay.</small></span></label>
+          <label><input type="checkbox"><span><b>Confirm solid construction</b><small>Distinguish solid from hollow and from plated, filled, overlay, vermeil, or gold-tone descriptions.</small></span></label>
+          <label><input type="checkbox"><span><b>Record hallmarks and maker's mark</b><small>Request close-up evidence. Marks are claims to verify, not proof of composition.</small></span></label>
+          <label><input type="checkbox"><span><b>Get the ring weight in grams</b><small>Ask the seller for a documented weight; do not infer it from photographs or dimensions.</small></span></label>
+          <label><input type="checkbox"><span><b>Check seller and return terms</b><small>Review independent complaints, real contact details, return window, and resized/custom exclusions.</small></span></label>
+          <label><input type="checkbox"><span><b>Preserve listing and receipt</b><small>Save the dated listing, description, seller's claims, and payment record.</small></span></label>
+          <label><input type="checkbox"><span><b>Arrange independent testing</b><small>Before wearing or resizing, ask an independent jeweler about XRF or another professional purity test and weight.</small></span></label>
+          <div class="check-warning">If independent inspection and a return after inspection aren't allowed, don't buy.</div>
+        </div>
+      </section>
+      <section class="section-block"><div class="section-heading compact"><div><div class="eyebrow">03 / ESTIMATE TOOL</div><h2>Gold-content calculator</h2></div><span class="source-badge neutral">MATH ONLY</span></div>
+        <div class="panel calculator"><p class="calc-intro">Estimate the <b>theoretical pure-gold equivalent</b> from a known ring weight and karat. This is not a valuation, assay, or product verification.</p>
+          <div class="input-grid"><label>Ring weight (grams)<input id="weight" type="number" min="0" step="any" placeholder="e.g. 4.2"></label><label>Gold purity (karat)<select id="karat"><option value="">Select</option><option>10</option><option>14</option><option>18</option><option>22</option><option>24</option></select></label></div>
+          <div class="result"><span>THEORETICAL PURE GOLD EQUIVALENT</span><strong id="pure-result">— <small>g</small></strong><small id="formula">Enter documented weight and karat. Formula: weight × karat ÷ 24.</small></div>
+          <details><summary>Raw gold value (optional)</summary><p>Only calculate if you have a dated, source-linked price per gram for fine gold. This does not estimate a ring's retail value and excludes alloy, workmanship, stones, fees, and resale spread.</p><label>Fine-gold price per gram (USD)<input id="price" type="number" min="0" step="any" placeholder="Leave blank unless verified"></label><div class="result value-result"><span>INDICATIVE FINE-GOLD CONTENT VALUE</span><strong id="value-result">— <small>USD</small></strong><small id="price-date">Price source and timestamp: not provided. No price is assumed.</small></div></details>
+        </div>
+      </section>
+    </div>
+    <section class="section-block sources"><div class="section-heading compact"><div><div class="eyebrow">04 / PRIMARY REFERENCE</div><h2>Research sources</h2></div><span class="count-pill">CHECKED 2026-10-22</span></div>
+      <div class="panel source-row"><div><strong>Buying Platinum, Gold, and Silver Jewelry</strong><p>U.S. Federal Trade Commission consumer guidance on karat quality marks and terminology for solid, plated, filled, overlay, and vermeil jewelry.</p></div><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener noreferrer">Open FTC source ↗</a></div>
+    </section>
+    <footer><span>GOLD · SOURCE-FIRST RING RESEARCH</span><span>Review for hallucinations on every pass. Unknown is better than invented.</span><a href="flagged.html">Flagged for Review ↗</a></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
