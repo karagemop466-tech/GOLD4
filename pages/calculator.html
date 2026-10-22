@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculator · GOLD4 gold-ring verification desk</title>
+<meta name="description" content="Verified solid-gold engagement-ring data: retailer prices, published gram weights, computed gold content and flagged irregularities. No hallucinated values.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" style="text-decoration:none;color:inherit">
+      <span class="mark">Au</span>
+      <span>GOLD4<small>gold-ring verification desk</small></span>
+    </a>
+    <nav class="main">
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="active">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="log.html" class="">Log</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <span class="eyebrow">Calculator</span>
+  <h1>Gold content and gold value, from a weight you can actually weigh.</h1>
+  <p class="lede">This tool does arithmetic, not verification. It cannot tell you whether the metal is gold — only an assay or XRF can. It tells you what a given weight
+  and karat would be worth as raw gold at the captured spot price.</p>
+</section>
+
+<div class="nohall">
+  <h2>⚠ No hallucination rule — read before using any number</h2>
+  <p>This project manufactures <strong>no values</strong>. A price, weight, karat, deadline or contact detail is only shown if it was read from the
+  official page linked in the same row.</p>
+  <ul>
+    <li><strong>Blank means blank.</strong> If a retailer did not publish a gram weight, the weight cell stays empty — it is never estimated from photos, blogs or "typical" rings.</li>
+    <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
+    <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
+    <li><strong>Anything uncertain is published on <a href="../pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+  </ul>
+</div>
+
+
+<section class="section">
+  <div class="calc">
+    <div class="card">
+      <h3>Inputs</h3>
+      <div class="field">
+        <label for="c-weight">Measured weight (grams)</label>
+        <input id="c-weight" type="number" min="0" step="0.01" value="4.00" inputmode="decimal">
+        <div class="hint">Weigh the ring without the box. Diamonds add carat weight, not gold.</div>
+      </div>
+      <div class="field">
+        <label for="c-karat">Stamped karat</label>
+        <select id="c-karat">
+          <option value="10">10K — 41.67% gold</option>
+          <option value="14" selected>14K — 58.33% gold</option>
+          <option value="18">18K — 75.00% gold</option>
+          <option value="22">22K — 91.67% gold</option>
+          <option value="24">24K — 100% gold</option>
+        </select>
+        <div class="hint">Use the stamp, then treat the result as an upper bound (see the tolerance note below).</div>
+      </div>
+      <div class="field">
+        <label for="c-spot">Gold spot (USD per troy ounce)</label>
+        <input id="c-spot" type="number" min="0" step="0.01" value="4024.36" inputmode="decimal">
+        <div class="hint">Pre-filled with the captured benchmark: $4,024.36/oz on 21 October, 2026. Change it to test another price — the page will not do it for you.</div>
+      </div>
+      <div class="field">
+        <label for="c-price">Asking price (optional)</label>
+        <input id="c-price" type="number" min="0" step="1" placeholder="e.g. 1200" inputmode="decimal">
+        <div class="hint">Used only to compute the price ÷ gold-value multiple.</div>
+      </div>
+    </div>
+    <div>
+      <div class="result">
+        <div class="row"><span>Pure gold in the ring</span><b id="c-pure">—</b></div>
+        <div class="row"><span>Gold value at spot</span><b id="c-value">—</b></div>
+        <div class="row"><span>Legal-minimum value if the stamp is only just met</span><b id="c-min">—</b></div>
+        <div class="row"><span>Spot per gram</span><b id="c-pergram">—</b></div>
+        <div class="row"><span>Price ÷ gold value</span><b id="c-mult">—</b></div>
+        <p class="small" id="c-multnote" style="margin:10px 0 0">Add the asking price to see the multiple.</p>
+      </div>
+      <div class="callout warn" style="margin-top:16px">
+        <h4>Read the tolerance</h4>
+        <p>15 U.S.C. § 295 lets the whole-article fineness sit up to 0.007 below the stamp. The "legal-minimum value" row applies that floor, so the true gold value of a
+        stamped ring lies between the two middle numbers — before any wear, solder or rhodium plating.</p>
+      </div>
+      <div class="callout info">
+        <h4>What this is not</h4>
+        <p>Not an appraisal, not a resale offer, and not proof of purity. A jeweller buying gold will apply a discount to melt value; a retailer adds labour, stone and brand cost on top of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Benchmark values per gram</h2>
+  <p class="sub">Pure-gold value of one gram of metal, by karat, at the captured spot. Multiply by your ring's gold content.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Karat</th><th class="num">Gold %</th><th class="num">Value of 1 g</th><th class="num">Value of 3 g</th><th class="num">Value of 5 g</th><th class="num">Value of 8 g</th></tr></thead>
+    <tbody><tr><td>24K</td><td class="num">100.00%</td>
+      <td class="num">$129.39</td><td class="num">$388.16</td>
+      <td class="num">$646.93</td><td class="num">$1,035.09</td></tr><tr><td>22K</td><td class="num">91.67%</td>
+      <td class="num">$118.60</td><td class="num">$355.81</td>
+      <td class="num">$593.02</td><td class="num">$948.83</td></tr><tr><td>18K</td><td class="num">75.00%</td>
+      <td class="num">$97.04</td><td class="num">$291.12</td>
+      <td class="num">$485.20</td><td class="num">$776.32</td></tr><tr><td>14K</td><td class="num">58.33%</td>
+      <td class="num">$75.48</td><td class="num">$226.43</td>
+      <td class="num">$377.38</td><td class="num">$603.80</td></tr><tr><td>10K</td><td class="num">41.67%</td>
+      <td class="num">$53.91</td><td class="num">$161.73</td>
+      <td class="num">$269.55</td><td class="num">$431.29</td></tr></tbody>
+  </table></div>
+</section>
+
+<section class="section">
+  <h2>Rows in this dataset that can be checked against their gold</h2>
+  <p class="sub">Only rows with a published weight. Everything else is blank on purpose.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>ID</th><th>Ring</th><th class="num">Karat</th><th class="num">Weight</th><th class="num">Gold content</th><th class="num">Gold value</th><th class="num">Price</th><th class="num">Price ÷ gold</th><th>Source</th></tr></thead>
+    <tbody><tr data-row-id="AL-01" data-search="al-01 engraved floral solitaire engagement ring setting allurez">
+      <td class="id">AL-01</td><td>Engraved Floral Solitaire Engagement Ring Setting<span class="sub">Allurez</span></td>
+      <td class="num">14K</td><td class="num">3.58 g</td><td class="num">2.088 g</td>
+      <td class="num">$270.20</td><td class="num">$585</td><td class="num">2.17</td>
+      <td class="src"><a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="AL-02" data-search="al-02 milgrain trellis solitaire engagement ring allurez">
+      <td class="id">AL-02</td><td>Milgrain Trellis Solitaire Engagement Ring<span class="sub">Allurez</span></td>
+      <td class="num">14K</td><td class="num">3.40 g</td><td class="num">1.983 g</td>
+      <td class="num">$256.62</td><td class="num">$724</td><td class="num">2.82</td>
+      <td class="src"><a href="https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="AL-03" data-search="al-03 split shank solitaire engagement ring allurez">
+      <td class="id">AL-03</td><td>Split Shank Solitaire Engagement Ring<span class="sub">Allurez</span></td>
+      <td class="num">14K</td><td class="num">4.40 g</td><td class="num">2.567 g</td>
+      <td class="num">$332.09</td><td class="num">$848</td><td class="num">2.55</td>
+      <td class="src"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="AL-04" data-search="al-04 split shank solitaire engagement ring allurez">
+      <td class="id">AL-04</td><td>Split Shank Solitaire Engagement Ring<span class="sub">Allurez</span></td>
+      <td class="num">18K</td><td class="num">5.30 g</td><td class="num">3.975 g</td>
+      <td class="num">$514.31</td><td class="num">$1,425</td><td class="num">2.77</td>
+      <td class="src"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="VR-01" data-search="vr-01 the classic engagement ring (4-prong dome, plain band) vrai">
+      <td class="id">VR-01</td><td>The Classic Engagement Ring (4-prong dome, plain band)<span class="sub">VRAI</span></td>
+      <td class="num">18K</td><td class="num">2.86 g</td><td class="num">2.145 g</td>
+      <td class="num">$277.53</td><td class="num">$1,035</td><td class="num">3.73</td>
+      <td class="src"><a href="https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="VR-02" data-search="vr-02 signature 6 prong engagement ring (plain band) vrai">
+      <td class="id">VR-02</td><td>Signature 6 Prong Engagement Ring (plain band)<span class="sub">VRAI</span></td>
+      <td class="num">18K</td><td class="num">2.84 g</td><td class="num">2.130 g</td>
+      <td class="num">$275.59</td><td class="num"><span class="blank" title="not published by the retailer">—</span></td><td class="num"><span class="blank">—</span></td>
+      <td class="src"><a href="https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301" target="_blank" rel="noopener">source</a></td></tr></tbody>
+  </table></div>
+  <p class="small" style="margin-top:10px">Multiple = asking price ÷ the gold value of the published weight. It is a sanity check on pricing, not a verdict: a $1,035 setting with 2.86 g of
+  18K gold carries about $277.53 of gold at spot, so roughly 3.73× the metal value — normal for a brand setting, alarming if it were 1.1× with a "solid gold" promise and a suspiciously low price.</p>
+</section>
+
+</main>
+<footer class="wrap foot">
+  <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
+  22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
+  <p>Gold benchmark: $4,024.36/oz as of 21 October, 2026 (World Gold Council) = $129.3862/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
+  <p class="small">Built 2026-10-22 23:20 UTC · dataset 20 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+</footer>
+<script src="../assets/app.js"></script>
+</body>
+</html>

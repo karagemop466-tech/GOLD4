@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verification log · GOLD4 gold-ring verification desk</title>
+<meta name="description" content="Verified solid-gold engagement-ring data: retailer prices, published gram weights, computed gold content and flagged irregularities. No hallucinated values.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" style="text-decoration:none;color:inherit">
+      <span class="mark">Au</span>
+      <span>GOLD4<small>gold-ring verification desk</small></span>
+    </a>
+    <nav class="main">
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="log.html" class="active">Log</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <span class="eyebrow">Log</span>
+  <h1>Verification passes and their results.</h1>
+  <p class="lede">Every review pass is recorded here with what was checked and what changed. The integrity audit is re-run after each pass, and its raw output is reproduced below.</p>
+</section>
+
+<div class="nohall">
+  <h2>⚠ No hallucination rule — read before using any number</h2>
+  <p>This project manufactures <strong>no values</strong>. A price, weight, karat, deadline or contact detail is only shown if it was read from the
+  official page linked in the same row.</p>
+  <ul>
+    <li><strong>Blank means blank.</strong> If a retailer did not publish a gram weight, the weight cell stays empty — it is never estimated from photos, blogs or "typical" rings.</li>
+    <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
+    <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
+    <li><strong>Anything uncertain is published on <a href="../pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+  </ul>
+</div>
+
+<section class="section"><h2>Passes</h2><div class="grid two"><div class="card">
+      <h3>Pass 0 — baseline repository review <span class="badge b-ok">PASS</span></h3>
+      <p class="small">2026-10-22T23:12Z · Whole repository at commit 7f442a1</p>
+      <ul class="small"><li>git log: a single commit, &#x27;Initial commit&#x27;</li><li>Tracked files: README.md only, 7 bytes, contents &#x27;# GOLD4&#x27;</li><li>No data, no site, no sources, no tests, no workflows</li><li>GitHub Pages already enabled and building from main / (root), html_url https://karagemop466-tech.github.io/GOLD4/</li><li>No open issues, no pull requests, one successful pages-build-deployment run</li><li>git ls-remote: three other arena/* branches exist, all with claims boards but no data files</li></ul>
+      <p class="small"><strong>Outcome:</strong> Nothing in the repository could be verified because nothing existed; all findings on this site are new work. Recorded the four-session collision in COORDINATION.md before writing any file.</p>
+    </div><div class="card">
+      <h3>Pass 1 — source capture (benchmark, law, retailer pages) <span class="badge b-ok">PASS</span></h3>
+      <p class="small">2026-10-22T23:15Z · Official sources only: FTC, eCFR, U.S. Code, World Gold Council, LBMA, and retailer product/policy pages</p>
+      <ul class="small"><li>World Gold Council gold spot: USD 4,024.36/oz, data as of 21 October 2026 — read from the page&#x27;s own spot panel</li><li>LBMA: benchmark description read; no numerical LBMA price captured because the tables are behind an IBA licence</li><li>FTC consumer article: karat definition, solid-gold definition, trademark-beside-karat-mark requirement, plated/filled/vermeil definitions</li><li>16 CFR Part 23 § 23.3: gold-content misrepresentation and the ban on calling a hollow-centre item &#x27;solid&#x27;</li><li>15 U.S.C. § 295: 0.003 assay tolerance and 0.007 whole-article tolerance</li><li>FTC credit-card article: billing-error dispute rights</li><li>20 retailer product pages fetched: Blue Nile (8), Allurez (4 + policy), VRAI (2 + listing + returns), Mejuri (collection + returns), Anjolee (1), Brilliant Earth (1, policy only)</li><li>Every price and weight recorded was copied from the fetched page text, not from search snippets</li></ul>
+      <p class="small"><strong>Outcome:</strong> Six rows carry a published gram weight (Allurez ×4, VRAI ×2). Nineteen rows carry a price read from the seller&#x27;s page. Brilliant Earth produced policy facts but no readable price/weight, so it has no product row and no price is quoted anywhere.</p>
+    </div><div class="card">
+      <h3>Pass 2 — dataset assembly + first integrity audit <span class="badge b-ok">PASS after fixes</span></h3>
+      <p class="small">2026-10-22T23:17Z · data/*.json, scripts/compute.py, scripts/audit.py</p>
+      <ul class="small"><li>Karat fineness table = karat ÷ 24, cross-checked against the FTC karat definition</li><li>Legal minimum fineness per stamp = fineness − 0.007 (15 U.S.C. § 295)</li><li>Derived gold grams, gold value, legal-minimum value and price/gold multiple recomputed independently by the audit script</li><li>Phantom-math check: no derived value may exist for a row without a published weight</li><li>Blank-value checks: blank price requires PRICE_UNVERIFIED, blank weight requires NO_WEIGHT_PUBLISHED or WEIGHT_UNVERIFIED</li><li>Domain allow-list: every source URL must belong to the named retailer or a government/benchmark host</li><li>Banned-domain scan: no marketplace, resale, blog or social domain anywhere in the data</li><li>Speculation-language scan on all free-text fields</li><li>Two real inconsistencies found on Blue Nile&#x27;s own pages (18k copy on a 14K page; white-gold copy on a yellow-gold page) and one mixed-metal ambiguity (platinum prongs on a 14K ring) — published on the Flagged page instead of being smoothed over</li></ul>
+      <p class="small"><strong>Outcome:</strong> Two audit bugs were found and fixed (fineness rounding tolerance, derived-value rounding). The audit now re-derives every number and fails on any mismatch.</p>
+    </div><div class="card">
+      <h3>Pass 3 — site build + link check <span class="badge b-ok">PASS</span></h3>
+      <p class="small">2026-10-22T23:20Z · index.html, pages/*.html, assets/*</p>
+      <ul class="small"><li>Builder formats only values produced by compute.py — no arithmetic in the HTML layer</li><li>Every table row carries data-row-id and a source link in a td.src cell</li><li>Internal links resolve to files that exist; external links are https and on approved domains</li><li>No placeholder tokens rendered in any page</li><li>No-hallucination block rendered at the top of every page, with a link back to the Flagged page</li></ul>
+      <p class="small"><strong>Outcome:</strong> Site generated and link-checked by the same audit script that checks the data, so a broken source link fails the build.</p>
+    </div></div></section>
+<section class="section">
+  <h2>Latest integrity audit output</h2>
+  <p class="sub">Produced by <span class="mono">scripts/audit.py</span>. Any FAIL fails the build; warnings must be published on the Flagged page.</p>
+  <pre class="mono" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;white-space:pre-wrap">GOLD4 integrity audit (hallucination / security check)
+run_utc: 2026-10-22T23:20:19+00:00
+dataset rows: 20 | sellers: 6 | sources: 13
+spot benchmark: $4,024.36/oz (21 October, 2026) = $129.3862/g
+
+RESULT: PASS  (55 passed, 0 warnings, 0 failures)
+
+No warnings, no failures.
+
+Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
+price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,
+independent recomputation of every derived number, phantom-math detection (no weight =&gt; no value),
+seller contact/return provenance, speculation-language scan, site link check,
+per-row source-link requirement, and render-text sanity.
+</pre>
+</section>
+<section class="section">
+  <h2>Repository coordination</h2>
+  <p class="sub">This repository is shared with other agent sessions. The task board, claims and hand-offs live in <span class="mono">COORDINATION.md</span> in the repository root; the public summary is below.</p>
+  <div class="card"><p>Four agent sessions were found working in this repository at 23:12 UTC on 2026-10-22 (branches arena/9614479d-gold4, arena/22b5b06c-gold4, arena/93da71b4-gold4, arena/b4413b13-gold4). Every board claimed overlapping whole-project scope within one minute of each other and none had produced verified data. This session claimed the canonical deliverables and logged the decision in COORDINATION.md; no other branch was deleted, renamed or force-pushed. See the repository&#x27;s COORDINATION.md for the full board and claim log.</p></div>
+</section>
+
+</main>
+<footer class="wrap foot">
+  <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
+  22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
+  <p>Gold benchmark: $4,024.36/oz as of 21 October, 2026 (World Gold Council) = $129.3862/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
+  <p class="small">Built 2026-10-22 23:20 UTC · dataset 20 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+</footer>
+
+</body>
+</html>
