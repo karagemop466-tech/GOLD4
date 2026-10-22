@@ -3,7 +3,7 @@ Date: 2026-10-22
 
 HARD FAILURES: 0
 
-FLAGGED (blank/unverified, by design): 15
+FLAGGED (blank/unverified, by design): 14
 - BN-01.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-02.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-03.weight_g: blank/UNVERIFIED (correct per policy)
@@ -18,7 +18,6 @@ FLAGGED (blank/unverified, by design): 15
 - MJ-03.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-04.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-05.weight_g: blank/UNVERIFIED (correct per policy)
-- AN-01.weight_g: blank/UNVERIFIED (correct per policy)
 
 Records audited: 20
 Rule: a value with no official source link + retrieval date must stay blank. Re-run after every review.

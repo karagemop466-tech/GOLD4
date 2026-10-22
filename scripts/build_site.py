@@ -49,6 +49,8 @@ FLAG_HELP = {
     "ENGRAVING_NON_RETURNABLE": ("warn", "engraving kills the return right"),
     "SCS_CERT_REQUIRED_FOR_RETURN": ("warn", "return needs the SCS certificate"),
     "WHITE_GOLD": ("info", "white gold, not yellow"),
+    "VARIANT_URL_REQUIRED": ("warn", "bare link opens a different metal variant"),
+    "PAVE_SPEC_ON_PLAIN_BAND": ("bad", "spec block lists pavé weight on a plain band"),
 }
 
 
@@ -704,8 +706,43 @@ def main() -> None:
     </div>
     <div class="card">
       <h3>Weights labelled "approximate"</h3>
-      <p>Allurez publishes "Approximate Metal Weight" and VRAI publishes a metal weight for ring size 6. Neither is a measurement of the ring you will receive;
+      <p>Allurez publishes "Approximate Metal Weight", VRAI publishes a metal weight for ring size 6, and Anjolee publishes
+      "Approx. Metal Weight" for one configuration. None is a measurement of the ring you will receive;
       a size change moves the weight. Every derived gold value inherits that uncertainty.</p>
+      <p class="small">Pass 3 note: the Anjolee weight (2.90 g) was blank in the first dataset because it had not been re-read from the live
+      page at the time. Pass 3 re-read it from the <a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">official Product Details table</a>
+      and it is now recorded on <a href="solitaire.html">AN-01</a> with its scope.</p>
+    </div>
+    <div class="card">
+      <h3>Mejuri's bare product links open a different metal variant</h3>
+      <p>On pass 3, the bare product URLs for the Diamonds Team Ring, Pavé Diamond Slim Signet and Ziggy Ring redirected to a
+      different default variant (white gold, white gold, and sterling silver showing "From $398"). The 14k yellow-gold prices
+      recorded in this dataset were re-read from the retailer's own variant URLs, which are the price links on
+      <a href="band.html">MJ-01</a>, <a href="pave.html">MJ-03</a> and <a href="band.html">MJ-05</a>.
+      Always open the variant link, not the bare product link, and confirm the metal line reads "Solid Yellow Gold (14k)".</p>
+    </div>
+    <div class="card">
+      <h3>VRAI spec block lists pavé weight on a plain band</h3>
+      <p>Both captured VRAI configurations are plain-band designs ("Plain band" in the band selector and in the page title),
+      yet their Setting Details both list "Pavé carat weight: 0.18ctw". Either the spec block is generic copy or the setting
+      contains pavé the selector does not describe. Recorded on <a href="solitaire.html">VR-01</a> and
+      <a href="solitaire.html">VR-02</a>; ask VRAI in writing which it is before paying, because pavé weight is diamond weight,
+      not gold weight.</p>
+    </div>
+    <div class="card">
+      <h3>Basis of the "legal minimum" arithmetic (for review)</h3>
+      <p>The legal-floor column computes karat ÷ 24 minus the 0.007 whole-article tolerance of
+      <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.
+      Under the millesimal convention a 14K article is often assayed against 585‰ instead of 583.3‰; the same tolerance on
+      585‰ gives 57.8% rather than 57.63%. The project publishes both readings in
+      <code>data/methodology.json</code> so the basis is explicit. Neither figure measures a particular ring — only an assay does.</p>
+    </div>
+    <div class="card">
+      <h3>The live gold quote has moved since capture</h3>
+      <p>The frozen benchmark is $4,024.36/oz dated 21 October 2026. On pass 3 the same
+      <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">World Gold Council page</a>
+      showed a live panel reading of $4,028.53/oz. Nothing was silently recomputed: every derived value stays tied to the
+      dated quote. Re-check the quote on the day you buy.</p>
     </div>
     <div class="card">
       <h3>No seller publishes a hallmark</h3>

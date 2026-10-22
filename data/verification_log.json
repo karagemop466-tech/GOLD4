@@ -1,70 +1,106 @@
 {
-  "schema_version": "1.0.0",
-  "coordination_summary": "Four agent sessions worked in this repository on 2026-10-22: arena/9614479d-gold4 (this one), arena/22b5b06c-gold4, arena/93da71b4-gold4 and arena/b4413b13-gold4. The other three had their work merged to main first (PR #1, #2, #3); this session integrated them instead of replacing them — see the preserved-artifacts table in README.md and docs/legacy/. Two of those sessions recorded that their sandbox could not reach retailer pages, which is why their catalogs are empty. That was a tooling limit, not evidence that no ring can be verified: this session could read the retailer pages, so the dataset is populated and every populated value carries the page it came from. Nothing in any other branch was deleted, renamed or force-pushed.",
-  "passes": [
-    {
-      "pass": "Pass 0 — baseline repository review",
-      "when_utc": "2026-10-22T23:12Z",
-      "scope": "Whole repository at commit 7f442a1",
-      "checked": [
-        "git log: a single commit, 'Initial commit'",
-        "Tracked files: README.md only, 7 bytes, contents '# GOLD4'",
-        "No data, no site, no sources, no tests, no workflows",
-        "GitHub Pages already enabled and building from main / (root), html_url https://karagemop466-tech.github.io/GOLD4/",
-        "No open issues, no pull requests, one successful pages-build-deployment run",
-        "git ls-remote: three other arena/* branches exist, all with claims boards but no data files"
-      ],
-      "result": "PASS",
-      "outcome": "Nothing in the repository could be verified because nothing existed; all findings on this site are new work. Recorded the four-session collision in COORDINATION.md before writing any file."
-    },
-    {
-      "pass": "Pass 1 — source capture (benchmark, law, retailer pages)",
-      "when_utc": "2026-10-22T23:15Z",
-      "scope": "Official sources only: FTC, eCFR, U.S. Code, World Gold Council, LBMA, and retailer product/policy pages",
-      "checked": [
-        "World Gold Council gold spot: USD 4,024.36/oz, data as of 21 October 2026 — read from the page's own spot panel",
-        "LBMA: benchmark description read; no numerical LBMA price captured because the tables are behind an IBA licence",
-        "FTC consumer article: karat definition, solid-gold definition, trademark-beside-karat-mark requirement, plated/filled/vermeil definitions",
-        "16 CFR Part 23 § 23.3: gold-content misrepresentation and the ban on calling a hollow-centre item 'solid'",
-        "15 U.S.C. § 295: 0.003 assay tolerance and 0.007 whole-article tolerance",
-        "FTC credit-card article: billing-error dispute rights",
-        "20 retailer product pages fetched: Blue Nile (8), Allurez (4 + policy), VRAI (2 + listing + returns), Mejuri (collection + returns), Anjolee (1), Brilliant Earth (1, policy only)",
-        "Every price and weight recorded was copied from the fetched page text, not from search snippets"
-      ],
-      "result": "PASS",
-      "outcome": "Six rows carry a published gram weight (Allurez ×4, VRAI ×2). Nineteen rows carry a price read from the seller's page. Brilliant Earth produced policy facts but no readable price/weight, so it has no product row and no price is quoted anywhere."
-    },
-    {
-      "pass": "Pass 2 — dataset assembly + first integrity audit",
-      "when_utc": "2026-10-22T23:17Z",
-      "scope": "data/*.json, scripts/compute.py, scripts/audit.py",
-      "checked": [
-        "Karat fineness table = karat ÷ 24, cross-checked against the FTC karat definition",
-        "Legal minimum fineness per stamp = fineness − 0.007 (15 U.S.C. § 295)",
-        "Derived gold grams, gold value, legal-minimum value and price/gold multiple recomputed independently by the audit script",
-        "Phantom-math check: no derived value may exist for a row without a published weight",
-        "Blank-value checks: blank price requires PRICE_UNVERIFIED, blank weight requires NO_WEIGHT_PUBLISHED or WEIGHT_UNVERIFIED",
-        "Domain allow-list: every source URL must belong to the named retailer or a government/benchmark host",
-        "Banned-domain scan: no marketplace, resale, blog or social domain anywhere in the data",
-        "Speculation-language scan on all free-text fields",
-        "Two real inconsistencies found on Blue Nile's own pages (18k copy on a 14K page; white-gold copy on a yellow-gold page) and one mixed-metal ambiguity (platinum prongs on a 14K ring) — published on the Flagged page instead of being smoothed over"
-      ],
-      "result": "PASS after fixes",
-      "outcome": "Two audit bugs were found and fixed (fineness rounding tolerance, derived-value rounding). The audit now re-derives every number and fails on any mismatch."
-    },
-    {
-      "pass": "Pass 3 — site build + link check",
-      "when_utc": "2026-10-22T23:20Z",
-      "scope": "index.html, pages/*.html, assets/*",
-      "checked": [
-        "Builder formats only values produced by compute.py — no arithmetic in the HTML layer",
-        "Every table row carries data-row-id and a source link in a td.src cell",
-        "Internal links resolve to files that exist; external links are https and on approved domains",
-        "No placeholder tokens rendered in any page",
-        "No-hallucination block rendered at the top of every page, with a link back to the Flagged page"
-      ],
-      "result": "PASS",
-      "outcome": "Site generated and link-checked by the same audit script that checks the data, so a broken source link fails the build."
-    }
-  ]
+ "schema_version": "1.0.0",
+ "coordination_summary": "Four agent sessions worked in this repository on 2026-10-22: arena/9614479d-gold4 (this one), arena/22b5b06c-gold4, arena/93da71b4-gold4 and arena/b4413b13-gold4. The other three had their work merged to main first (PR #1, #2, #3); this session integrated them instead of replacing them — see the preserved-artifacts table in README.md and docs/legacy/. Two of those sessions recorded that their sandbox could not reach retailer pages, which is why their catalogs are empty. That was a tooling limit, not evidence that no ring can be verified: this session could read the retailer pages, so the dataset is populated and every populated value carries the page it came from. Nothing in any other branch was deleted, renamed or force-pushed. A fifth session, arena/1372cb32-gold4, ran an independent pass-3 re-verification of every official page behind the dataset (task 10 on the board): all 19 published prices and all 6 published gram weights were re-read and matched exactly, one previously blank weight (AN-01) was recovered from the retailer's own Product Details table, and new page inconsistencies were flagged (Mejuri variant-redirect links, VRAI pavé spec on plain-band settings). See passes 4 and 5 below.",
+ "passes": [
+  {
+   "pass": "Pass 0 — baseline repository review",
+   "when_utc": "2026-10-22T23:12Z",
+   "scope": "Whole repository at commit 7f442a1",
+   "checked": [
+    "git log: a single commit, 'Initial commit'",
+    "Tracked files: README.md only, 7 bytes, contents '# GOLD4'",
+    "No data, no site, no sources, no tests, no workflows",
+    "GitHub Pages already enabled and building from main / (root), html_url https://karagemop466-tech.github.io/GOLD4/",
+    "No open issues, no pull requests, one successful pages-build-deployment run",
+    "git ls-remote: three other arena/* branches exist, all with claims boards but no data files"
+   ],
+   "result": "PASS",
+   "outcome": "Nothing in the repository could be verified because nothing existed; all findings on this site are new work. Recorded the four-session collision in COORDINATION.md before writing any file."
+  },
+  {
+   "pass": "Pass 1 — source capture (benchmark, law, retailer pages)",
+   "when_utc": "2026-10-22T23:15Z",
+   "scope": "Official sources only: FTC, eCFR, U.S. Code, World Gold Council, LBMA, and retailer product/policy pages",
+   "checked": [
+    "World Gold Council gold spot: USD 4,024.36/oz, data as of 21 October 2026 — read from the page's own spot panel",
+    "LBMA: benchmark description read; no numerical LBMA price captured because the tables are behind an IBA licence",
+    "FTC consumer article: karat definition, solid-gold definition, trademark-beside-karat-mark requirement, plated/filled/vermeil definitions",
+    "16 CFR Part 23 § 23.3: gold-content misrepresentation and the ban on calling a hollow-centre item 'solid'",
+    "15 U.S.C. § 295: 0.003 assay tolerance and 0.007 whole-article tolerance",
+    "FTC credit-card article: billing-error dispute rights",
+    "20 retailer product pages fetched: Blue Nile (8), Allurez (4 + policy), VRAI (2 + listing + returns), Mejuri (collection + returns), Anjolee (1), Brilliant Earth (1, policy only)",
+    "Every price and weight recorded was copied from the fetched page text, not from search snippets"
+   ],
+   "result": "PASS",
+   "outcome": "Six rows carry a published gram weight (Allurez ×4, VRAI ×2). Nineteen rows carry a price read from the seller's page. Brilliant Earth produced policy facts but no readable price/weight, so it has no product row and no price is quoted anywhere."
+  },
+  {
+   "pass": "Pass 2 — dataset assembly + first integrity audit",
+   "when_utc": "2026-10-22T23:17Z",
+   "scope": "data/*.json, scripts/compute.py, scripts/audit.py",
+   "checked": [
+    "Karat fineness table = karat ÷ 24, cross-checked against the FTC karat definition",
+    "Legal minimum fineness per stamp = fineness − 0.007 (15 U.S.C. § 295)",
+    "Derived gold grams, gold value, legal-minimum value and price/gold multiple recomputed independently by the audit script",
+    "Phantom-math check: no derived value may exist for a row without a published weight",
+    "Blank-value checks: blank price requires PRICE_UNVERIFIED, blank weight requires NO_WEIGHT_PUBLISHED or WEIGHT_UNVERIFIED",
+    "Domain allow-list: every source URL must belong to the named retailer or a government/benchmark host",
+    "Banned-domain scan: no marketplace, resale, blog or social domain anywhere in the data",
+    "Speculation-language scan on all free-text fields",
+    "Two real inconsistencies found on Blue Nile's own pages (18k copy on a 14K page; white-gold copy on a yellow-gold page) and one mixed-metal ambiguity (platinum prongs on a 14K ring) — published on the Flagged page instead of being smoothed over"
+   ],
+   "result": "PASS after fixes",
+   "outcome": "Two audit bugs were found and fixed (fineness rounding tolerance, derived-value rounding). The audit now re-derives every number and fails on any mismatch."
+  },
+  {
+   "pass": "Pass 3 — site build + link check",
+   "when_utc": "2026-10-22T23:20Z",
+   "scope": "index.html, pages/*.html, assets/*",
+   "checked": [
+    "Builder formats only values produced by compute.py — no arithmetic in the HTML layer",
+    "Every table row carries data-row-id and a source link in a td.src cell",
+    "Internal links resolve to files that exist; external links are https and on approved domains",
+    "No placeholder tokens rendered in any page",
+    "No-hallucination block rendered at the top of every page, with a link back to the Flagged page"
+   ],
+   "result": "PASS",
+   "outcome": "Site generated and link-checked by the same audit script that checks the data, so a broken source link fails the build."
+  },
+  {
+   "pass": "Pass 4 — line-by-line re-verification of every official page (session arena/1372cb32-gold4)",
+   "when_utc": "2026-10-22T23:35Z",
+   "scope": "All 20 product rows, the gold benchmark page, 5 seller policy pages, and all 7 Tier A/B legal and benchmark sources — every one re-fetched from its official URL",
+   "checked": [
+    "BN-01..BN-08 (Blue Nile): all 8 setting prices re-read from the product pages and matched exactly ($1,000 / $1,155 / $1,000 / $935 / $1,310 / $1,295 / $870 / $1,500); stock numbers, metal lines and widths matched; the BN-04 '18k' description contradiction, the BN-08 'white gold' description contradiction and the BN-07 platinum-prong wording are still live on the pages and remain flagged",
+    "AL-01..AL-04 (Allurez): prices and 'Approximate Metal Weight' re-read and matched ($585/3.58 g, $724/3.4 g, $848/4.4 g, $1,425/5.3 g); 'Setting only. Center stone sold separately.' confirmed on each page",
+    "VR-01 (VRAI): 'From $1,035' listing card re-read on the official engagement-rings page; weight 2.86 g (ring size 6) re-read on the configuration page; new inconsistency found — Setting Details list 'Pavé carat weight: 0.18ctw' while the page's own band selection says Plain band",
+    "VR-02 (VRAI): weight 2.84 g (ring size 6) re-read; no price card rendered for this design on the listing page or the configurator, so the price cell correctly remains blank; the same pavé-spec inconsistency found",
+    "MJ-01..MJ-05 (Mejuri): all 5 prices re-read on the gold-variant product pages and matched ($548 / $648 / $548 / $798 / From $598); 'Solid Yellow Gold (14k)' wording confirmed; irregularity found — the bare product URLs redirect to a different default variant (white gold, white gold, sterling silver 'From $398'), so price provenance was tightened to the variant URLs",
+    "AN-01 (Anjolee): price $870.76 re-read and matched; Product Details re-read in full this pass — 'Approx. Metal Weight: 2.90 Gr.', 'Metal Type: 14K White Gold', 'Ring Size: 6.5', 'Center Diamond Color: Lab Created FG' — so the weight, previously left blank because it had not been readable at collection time, is now recorded with its scope",
+    "Gold benchmark: World Gold Council page re-fetched; the dated chart line still reads 'Data as of 21 October, 2026' and the frozen quote 4,024.36/oz is unchanged; the live panel read 4,028.53/oz at re-check time and is recorded as evidence the source is live, not substituted",
+    "Seller policies re-read and matched sellers.json field-for-field: Blue Nile returns (30 days from shipment, exclusions incl. resized/engraved/custom, two free returns/yr, $150 missing-report fee, one free resize ±2 sizes/6 months), Allurez returns (arrive within 30 days, $300 missing certificate, custom non-refundable, DYO exchange-only), VRAI returns (30 days, $300 engagement-ring recycling fee, resized rings non-returnable, complimentary one-size resize), Mejuri returns (30 days from delivery, engraving non-returnable, SCS certificate required for lab-grown), Anjolee (30-day returns incl. customized orders, lifetime warranty)",
+    "Tier A/B re-read: FTC gold-jewelry guidance (karat mark, maker's mark, solid = not hollow, plated/filled/vermeil definitions), 16 CFR § 23.3 (gold-content misrepresentation; hollow articles must not be called 'solid'), 15 U.S.C. § 295 (0.003 part / 0.007 whole-article tolerances), 15 U.S.C. ch. 8 section list, FTC credit-card dispute guidance, LBMA benchmark page (twice-daily IBA auctions; tables behind licence)"
+   ],
+   "result": "PASS with findings",
+   "outcome": "No price or weight in the dataset disagreed with its official page. One blank value (AN-01 weight) was upgraded to V1 because the live page now published it. Two new page inconsistencies were found and flagged (Mejuri variant redirects; VRAI pavé spec on plain band). The § 295 floor arithmetic was given an explicit derivation note (583.3‰ vs 585‰ convention) for review. Every finding is published on the Flagged for Review page with source links."
+  },
+  {
+   "pass": "Pass 5 — corrections, rebuild and full audit suite (session arena/1372cb32-gold4)",
+   "when_utc": "2026-10-22T23:45Z",
+   "scope": "data/rings.json, data/gold_spot.json, data/methodology.json, scripts/build_site.py, generated site, all four checkers",
+   "checked": [
+    "rings.json: AN-01 weight_g 2.90 added with scope + V1 provenance and WEIGHT_APPROXIMATE flag; MJ-01..MJ-05 price_source_url tightened to the retailer's own variant URLs; MJ-05 relabelled as a 'From' price; VR-01/VR-02 flagged PAVE_SPEC_ON_PLAIN_BAND",
+    "gold_spot.json: live re-check recorded (4,028.53/oz panel reading); frozen benchmark and every derived value untouched",
+    "methodology.json: derivation_basis_note added to the § 295 tolerance block (karat÷24 basis vs 585‰ millesimal convention)",
+    "build_site.py: new flags VARIANT_URL_REQUIRED and PAVE_SPEC_ON_PLAIN_BAND added; Flagged page gained four review cards (Mejuri variant links, VRAI pavé spec, § 295 derivation basis, spot movement) and the approximate-weights card updated for the recovered Anjolee weight",
+    "scripts/compute.py re-ran: 20 rows, 7 with published weight, 19 with verified price",
+    "scripts/audit.py: PASS (0 failures) — re-derives every derived number, re-checks every source URL against the allow-list, scans for speculation language and placeholder text",
+    "scripts/check_site.py: PASS — every rendered row carries its own official https source link; internal links resolve",
+    "scripts/verify.py: 0 hard failures — schema-aware audit of data/rings.json and data/preserved/*.json",
+    "VERIFICATION.md regenerated from the same JSON the site renders"
+   ],
+   "result": "PASS",
+   "outcome": "Corrections applied without overwriting any verified value: one blank became a sourced value, provenance links were made more precise, and every new finding is published rather than silently fixed. Run the four scripts again after any future edit."
+  }
+ ]
 }

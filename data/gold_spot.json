@@ -1,39 +1,47 @@
 {
-  "schema_version": "1.0.0",
-  "captured_utc": "2026-10-22T23:30:00Z",
-  "benchmark": {
-    "id": "wgc-gold-spot-usd",
-    "name": "Gold spot price, USD per troy ounce",
-    "value_usd_per_oz": 4024.36,
-    "quote_currency": "USD",
-    "quote_unit": "troy ounce",
-    "price_date_as_shown_on_source": "21 October, 2026",
-    "data_as_of_shown_on_source": "Data as of 21 October, 2026",
-    "retrieved_utc": "2026-10-22",
-    "publisher": "World Gold Council (Goldhub)",
-    "publisher_type": "industry benchmark body (market data supplied by ICE Data Services)",
-    "source_url": "https://www.gold.org/goldhub/data/gold-prices",
-    "what_the_source_page_shows": "Gold spot price panel: 'USD /oz 4,024.36', 'Last Updated', and the date line 'Data as of 21 October, 2026'.",
-    "verification": "V1_direct_page_fetch",
-    "notes": [
-      "Spot is a live market quote and will move after capture. Every derived value in this project is tied to this single captured quote and its date; nothing is refreshed silently.",
-      "The World Gold Council page states that the LBMA Gold Price is the key benchmark used throughout the gold market and that historical LBMA auction data was removed from the WGC site at the request of ICE Benchmark Administration (licensing)."
-    ]
-  },
-  "secondary_reference": {
-    "id": "lbma-benchmark",
-    "name": "LBMA Gold Price benchmark description",
-    "source_url": "https://www.lbma.org.uk/prices-and-data/precious-metal-prices",
-    "retrieved_utc": "2026-10-22",
-    "verification": "V1_direct_page_fetch",
-    "what_the_source_page_shows": "The LBMA Gold Price is set twice daily in auctions administered by ICE Benchmark Administration Limited (IBA), commencing at 10:30 and 15:00 London time. Tabulated historical prices have moved to a licensed portal.",
-    "notes": [
-      "No LBMA numerical price was captured from this page (tables are behind an IBA licence), so no LBMA number is quoted anywhere in this project."
-    ]
-  },
-  "constants": {
-    "troy_ounce_grams": 31.1034768,
-    "troy_ounce_grams_note": "Defined exact conversion (troy ounce = 480 grains = 31.1034768 g). This is a definition, not a sourced market claim.",
-    "spot_usd_per_gram": 129.386178
+ "schema_version": "1.0.0",
+ "captured_utc": "2026-10-22T23:30:00Z",
+ "benchmark": {
+  "id": "wgc-gold-spot-usd",
+  "name": "Gold spot price, USD per troy ounce",
+  "value_usd_per_oz": 4024.36,
+  "quote_currency": "USD",
+  "quote_unit": "troy ounce",
+  "price_date_as_shown_on_source": "21 October, 2026",
+  "data_as_of_shown_on_source": "Data as of 21 October, 2026",
+  "retrieved_utc": "2026-10-22",
+  "publisher": "World Gold Council (Goldhub)",
+  "publisher_type": "industry benchmark body (market data supplied by ICE Data Services)",
+  "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+  "what_the_source_page_shows": "Gold spot price panel: 'USD /oz 4,024.36', 'Last Updated', and the date line 'Data as of 21 October, 2026'.",
+  "verification": "V1_direct_page_fetch",
+  "notes": [
+   "Spot is a live market quote and will move after capture. Every derived value in this project is tied to this single captured quote and its date; nothing is refreshed silently.",
+   "The World Gold Council page states that the LBMA Gold Price is the key benchmark used throughout the gold market and that historical LBMA auction data was removed from the WGC site at the request of ICE Benchmark Administration (licensing).",
+   "Pass 3 (2026-10-22, arena/1372cb32): the live panel read 4,028.53 USD/oz at re-check time. Not substituted for the frozen quote."
+  ],
+  "live_recheck": {
+   "rechecked_utc": "2026-10-22",
+   "rechecked_by_session": "arena/1372cb32-gold4 (pass 3)",
+   "panel_reading_usd_per_oz": 4028.53,
+   "what_was_seen": "On re-fetch of the same World Gold Council page the spot panel showed 'USD /oz 4,028.53' with 'Last Updated', while the dated chart line still read 'Data as of 21 October, 2026'.",
+   "effect_on_this_project": "None. The frozen benchmark of 4,024.36 (21 October, 2026) is kept unchanged and all derived values remain tied to it, per the no-silent-refresh rule. The live quote moves continuously; this reading is evidence the source is live, not a replacement value."
   }
+ },
+ "secondary_reference": {
+  "id": "lbma-benchmark",
+  "name": "LBMA Gold Price benchmark description",
+  "source_url": "https://www.lbma.org.uk/prices-and-data/precious-metal-prices",
+  "retrieved_utc": "2026-10-22",
+  "verification": "V1_direct_page_fetch",
+  "what_the_source_page_shows": "The LBMA Gold Price is set twice daily in auctions administered by ICE Benchmark Administration Limited (IBA), commencing at 10:30 and 15:00 London time. Tabulated historical prices have moved to a licensed portal.",
+  "notes": [
+   "No LBMA numerical price was captured from this page (tables are behind an IBA licence), so no LBMA number is quoted anywhere in this project."
+  ]
+ },
+ "constants": {
+  "troy_ounce_grams": 31.1034768,
+  "troy_ounce_grams_note": "Defined exact conversion (troy ounce = 480 grains = 31.1034768 g). This is a definition, not a sourced market claim.",
+  "spot_usd_per_gram": 129.386178
+ }
 }

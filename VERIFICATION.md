@@ -1,6 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-22 23:25 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-22 23:40 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
@@ -13,7 +13,7 @@ Generated 2026-10-22 23:25 UTC from `data/*.json` by `scripts/gen_verification.p
 
 - Rows: **20**
 - Prices read from the seller's page: **19**
-- Gram weights published by the seller: **6** (therefore only these rows have a computable gold value)
+- Gram weights published by the seller: **7** (therefore only these rows have a computable gold value)
 - Rows with explicit *solid gold* wording: **5**
 - Rows publishing a hallmark or maker's mark: **0** (the legal requirement is quoted in `data/methodology.json`)
 - Rows carrying at least one flag: **20**
@@ -34,14 +34,14 @@ Generated 2026-10-22 23:25 UTC from `data/*.json` by `scripts/gen_verification.p
 | AL-02 | Allurez | [Milgrain Trellis Solitaire Engagement Ring](https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold) | 14K | $724 | V1 · 2026-10-22 | 3.40 g | V1 | $256.62 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | AL-03 | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold) | 14K | $848 | V1 · 2026-10-22 | 4.40 g | V1 | $332.09 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | AL-04 | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold) | 18K | $1,425 | V1 · 2026-10-22 | 5.30 g | V1 | $514.31 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.53 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.59 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| MJ-01 | Mejuri | [Diamonds Team Ring](https://mejuri.com/products/diamonds-team-ring) | 14K | $548 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL |
+| VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.53 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PAVE_SPEC_ON_PLAIN_BAND |
+| VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.59 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PAVE_SPEC_ON_PLAIN_BAND |
+| MJ-01 | Mejuri | [Diamonds Team Ring](https://mejuri.com/products/diamonds-team-ring) | 14K | $548 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, VARIANT_URL_REQUIRED |
 | MJ-02 | Mejuri | [Diamonds Band](https://mejuri.com/products/diamonds-band) | 14K | $648 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL |
-| MJ-03 | Mejuri | [Pave Diamond Slim Signet](https://mejuri.com/products/pave-diamond-slim-signet-ring) | 14K | $548 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, ENGRAVING_NON_RETURNABLE |
+| MJ-03 | Mejuri | [Pave Diamond Slim Signet](https://mejuri.com/products/pave-diamond-slim-signet-ring) | 14K | $548 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, ENGRAVING_NON_RETURNABLE, VARIANT_URL_REQUIRED |
 | MJ-04 | Mejuri | [Pave Diamond Thin Dome Ring](https://mejuri.com/products/pave-diamond-thin-dome-ring) | 14K | $798 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL |
-| MJ-05 | Mejuri | [Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)](https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring) | 14K | $598 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, SCS_CERT_REQUIRED_FOR_RETURN |
-| AN-01 | Anjolee | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) | 14K | $870.76 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | PRICE_INCLUDES_CENTRE_STONE, WEIGHT_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
+| MJ-05 | Mejuri | [Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)](https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring) | 14K | $598 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, SCS_CERT_REQUIRED_FOR_RETURN, VARIANT_URL_REQUIRED, PRICE_IS_FROM_PRICE |
+| AN-01 | Anjolee | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) | 14K | $870.76 | V1 · 2026-10-22 | 2.90 g | V1 | $218.88 | not stated | not published | PRICE_INCLUDES_CENTRE_STONE, WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
 
 ## Derived arithmetic (re-computed and cross-checked by the audit)
 
@@ -53,6 +53,7 @@ Generated 2026-10-22 23:25 UTC from `data/*.json` by `scripts/gen_verification.p
 | AL-04 | 5.30 | 0.7500 | 3.975 | $129.3862 | $514.31 | $509.51 | $1,425 | 2.77× |
 | VR-01 | 2.86 | 0.7500 | 2.145 | $129.3862 | $277.53 | $274.94 | $1,035 | 3.73× |
 | VR-02 | 2.84 | 0.7500 | 2.130 | $129.3862 | $275.59 | $273.02 | **blank** | **blank**× |
+| AN-01 | 2.90 | 0.5833 | 1.692 | $129.3862 | $218.88 | $216.25 | $870.76 | 3.98× |
 
 ## Karat pairs (same design, both karats sold by the same retailer)
 
@@ -124,17 +125,17 @@ Generated 2026-10-22 23:25 UTC from `data/*.json` by `scripts/gen_verification.p
 - **MJ-03** (Mejuri · Pave Diamond Slim Signet): weight not published on the captured page → https://mejuri.com/products/pave-diamond-slim-signet-ring
 - **MJ-04** (Mejuri · Pave Diamond Thin Dome Ring): weight not published on the captured page → https://mejuri.com/products/pave-diamond-thin-dome-ring
 - **MJ-05** (Mejuri · Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)): weight not published on the captured page → https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring
-- **AN-01** (Anjolee · Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)): weight, solid-gold wording not published on the captured page → https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx
+- **AN-01** (Anjolee · Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)): solid-gold wording not published on the captured page → https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx
 
 ## Integrity audit output (hallucination / security check)
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-22T23:24:00+00:00
+run_utc: 2026-10-22T23:40:32+00:00
 dataset rows: 20 | sellers: 6 | sources: 13
 spot benchmark: $4,024.36/oz (21 October, 2026) = $129.3862/g
 
-RESULT: PASS  (55 passed, 0 warnings, 0 failures)
+RESULT: PASS  (56 passed, 0 warnings, 0 failures)
 
 No warnings, no failures.
 

@@ -55,16 +55,17 @@ No third-party dependencies, no network access required to build. Python 3.10+.
 | Rings tracked | 20 |
 | Retailers with product rows | 5 (Blue Nile, Allurez, VRAI, Mejuri, Anjolee) |
 | Prices read from the retailer's own page | 19 of 20 (1 deliberately blank) |
-| Gram weights published by the retailer | 6 of 20 — only these rows have a computable gold value |
+| Gram weights published by the retailer | 7 of 20 — only these rows have a computable gold value |
 | Rows with explicit *solid gold* wording | 5 of 20 (all Mejuri) |
 | Rows publishing a hallmark / maker's mark | **0 of 20** — it can only be checked in your hand |
 | Gold benchmark used | $4,024.36/oz = $129.3862/g, 21 Oct 2026 |
 | Flags raised for review | published on the Flagged page, with sources |
+| Pass-3 re-verification (2026-10-22) | every row re-fetched from its official page: 19/19 prices and 7/7 weights re-read and matched; 0 disagreements; see the Log page |
 
 **Headline findings**
 
 1. A stamp is a claim with a legal tolerance, not a measurement: under 15 U.S.C. § 295 an "18K" ring may be as low as 74.3% gold and a "14K" ring as low as 57.63%.
-2. Most major retailers do not publish a gram weight, so their rings cannot be priced against their own gold. Only Allurez and VRAI did in this pass.
+2. Most major retailers do not publish a gram weight, so their rings cannot be priced against their own gold. Only Allurez, VRAI and Anjolee did in this pass (Anjolee's 2.90 g was recovered on the pass-3 re-verification).
 3. The 18K premium is inconsistent: +15.5% (Blue Nile Petite Solitaire), +40.1% (Blue Nile Comfort Fit), +68.0% (Allurez Split Shank) — and for the one pair with both weights published, 54.9% of that premium is simply more gold.
 4. Return windows all look like "30 days", but exclusions differ sharply (resized, engraved, custom). One seller (Anjolee) explicitly accepts returns on customised orders; another (Allurez) makes custom orders non-refundable.
 5. Several retailer pages contradict their own specification blocks; each case is listed on the Flagged page.
