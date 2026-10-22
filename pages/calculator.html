@@ -39,6 +39,7 @@
     <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
     <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
     <li><strong>Anything uncertain is published on <a href="../pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
   </ul>
 </div>
 
@@ -65,8 +66,8 @@
       </div>
       <div class="field">
         <label for="c-spot">Gold spot (USD per troy ounce)</label>
-        <input id="c-spot" type="number" min="0" step="0.01" value="4024.36" inputmode="decimal">
-        <div class="hint">Pre-filled with the captured benchmark: $4,024.36/oz on 21 October, 2026. Change it to test another price — the page will not do it for you.</div>
+        <input id="c-spot" type="number" min="0" step="0.01" value="4028.53" inputmode="decimal">
+        <div class="hint">Pre-filled with the captured benchmark: $4,028.53/oz on 21 October, 2026. Change it to test another price — the page will not do it for you.</div>
       </div>
       <div class="field">
         <label for="c-price">Asking price (optional)</label>
@@ -102,16 +103,16 @@
   <div class="table-wrap"><table>
     <thead><tr><th>Karat</th><th class="num">Gold %</th><th class="num">Value of 1 g</th><th class="num">Value of 3 g</th><th class="num">Value of 5 g</th><th class="num">Value of 8 g</th></tr></thead>
     <tbody><tr><td>24K</td><td class="num">100.00%</td>
-      <td class="num">$129.39</td><td class="num">$388.16</td>
-      <td class="num">$646.93</td><td class="num">$1,035.09</td></tr><tr><td>22K</td><td class="num">91.67%</td>
-      <td class="num">$118.60</td><td class="num">$355.81</td>
-      <td class="num">$593.02</td><td class="num">$948.83</td></tr><tr><td>18K</td><td class="num">75.00%</td>
-      <td class="num">$97.04</td><td class="num">$291.12</td>
-      <td class="num">$485.20</td><td class="num">$776.32</td></tr><tr><td>14K</td><td class="num">58.33%</td>
-      <td class="num">$75.48</td><td class="num">$226.43</td>
-      <td class="num">$377.38</td><td class="num">$603.80</td></tr><tr><td>10K</td><td class="num">41.67%</td>
-      <td class="num">$53.91</td><td class="num">$161.73</td>
-      <td class="num">$269.55</td><td class="num">$431.29</td></tr></tbody>
+      <td class="num">$129.52</td><td class="num">$388.56</td>
+      <td class="num">$647.60</td><td class="num">$1,036.16</td></tr><tr><td>22K</td><td class="num">91.67%</td>
+      <td class="num">$118.73</td><td class="num">$356.18</td>
+      <td class="num">$593.63</td><td class="num">$949.82</td></tr><tr><td>18K</td><td class="num">75.00%</td>
+      <td class="num">$97.14</td><td class="num">$291.42</td>
+      <td class="num">$485.70</td><td class="num">$777.12</td></tr><tr><td>14K</td><td class="num">58.33%</td>
+      <td class="num">$75.55</td><td class="num">$226.66</td>
+      <td class="num">$377.77</td><td class="num">$604.43</td></tr><tr><td>10K</td><td class="num">41.67%</td>
+      <td class="num">$53.97</td><td class="num">$161.90</td>
+      <td class="num">$269.83</td><td class="num">$431.73</td></tr></tbody>
   </table></div>
 </section>
 
@@ -123,44 +124,44 @@
     <tbody><tr data-row-id="AL-01" data-search="al-01 engraved floral solitaire engagement ring setting allurez">
       <td class="id">AL-01</td><td>Engraved Floral Solitaire Engagement Ring Setting<span class="sub">Allurez</span></td>
       <td class="num">14K</td><td class="num">3.58 g</td><td class="num">2.088 g</td>
-      <td class="num">$270.20</td><td class="num">$585</td><td class="num">2.17</td>
+      <td class="num">$270.48</td><td class="num">$585</td><td class="num">2.16</td>
       <td class="src"><a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="AL-02" data-search="al-02 milgrain trellis solitaire engagement ring allurez">
       <td class="id">AL-02</td><td>Milgrain Trellis Solitaire Engagement Ring<span class="sub">Allurez</span></td>
       <td class="num">14K</td><td class="num">3.40 g</td><td class="num">1.983 g</td>
-      <td class="num">$256.62</td><td class="num">$724</td><td class="num">2.82</td>
+      <td class="num">$256.88</td><td class="num">$724</td><td class="num">2.82</td>
       <td class="src"><a href="https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="AL-03" data-search="al-03 split shank solitaire engagement ring allurez">
       <td class="id">AL-03</td><td>Split Shank Solitaire Engagement Ring<span class="sub">Allurez</span></td>
       <td class="num">14K</td><td class="num">4.40 g</td><td class="num">2.567 g</td>
-      <td class="num">$332.09</td><td class="num">$848</td><td class="num">2.55</td>
+      <td class="num">$332.44</td><td class="num">$848</td><td class="num">2.55</td>
       <td class="src"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="AL-04" data-search="al-04 split shank solitaire engagement ring allurez">
       <td class="id">AL-04</td><td>Split Shank Solitaire Engagement Ring<span class="sub">Allurez</span></td>
       <td class="num">18K</td><td class="num">5.30 g</td><td class="num">3.975 g</td>
-      <td class="num">$514.31</td><td class="num">$1,425</td><td class="num">2.77</td>
-      <td class="src"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="VR-01" data-search="vr-01 the classic engagement ring (4-prong dome, plain band) vrai">
+      <td class="num">$514.84</td><td class="num">$1,425</td><td class="num">2.77</td>
+      <td class="src"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="AN-01" data-search="an-01 six curved prongs solitaire diamond engagement ring (ms354-a) anjolee">
+      <td class="id">AN-01</td><td>Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)<span class="sub">Anjolee</span></td>
+      <td class="num">14K</td><td class="num">2.90 g</td><td class="num">1.692 g</td>
+      <td class="num">$219.11</td><td class="num">$870.76</td><td class="num">3.97</td>
+      <td class="src"><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="VR-01" data-search="vr-01 the classic engagement ring (4-prong dome, plain band) vrai">
       <td class="id">VR-01</td><td>The Classic Engagement Ring (4-prong dome, plain band)<span class="sub">VRAI</span></td>
       <td class="num">18K</td><td class="num">2.86 g</td><td class="num">2.145 g</td>
-      <td class="num">$277.53</td><td class="num">$1,035</td><td class="num">3.73</td>
+      <td class="num">$277.82</td><td class="num">$1,035</td><td class="num">3.73</td>
       <td class="src"><a href="https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="VR-02" data-search="vr-02 signature 6 prong engagement ring (plain band) vrai">
       <td class="id">VR-02</td><td>Signature 6 Prong Engagement Ring (plain band)<span class="sub">VRAI</span></td>
       <td class="num">18K</td><td class="num">2.84 g</td><td class="num">2.130 g</td>
-      <td class="num">$275.59</td><td class="num"><span class="blank" title="not published by the retailer">—</span></td><td class="num"><span class="blank">—</span></td>
-      <td class="src"><a href="https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301" target="_blank" rel="noopener">source</a></td></tr><tr data-row-id="AN-01" data-search="an-01 six curved prongs solitaire diamond engagement ring (ms354-a) anjolee">
-      <td class="id">AN-01</td><td>Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)<span class="sub">Anjolee</span></td>
-      <td class="num">14K</td><td class="num">2.90 g</td><td class="num">1.692 g</td>
-      <td class="num">$218.88</td><td class="num">$870.76</td><td class="num">3.98</td>
-      <td class="src"><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">source</a></td></tr></tbody>
+      <td class="num">$275.88</td><td class="num"><span class="blank" title="not published by the retailer">—</span></td><td class="num"><span class="blank">—</span></td>
+      <td class="src"><a href="https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301" target="_blank" rel="noopener">source</a></td></tr></tbody>
   </table></div>
   <p class="small" style="margin-top:10px">Multiple = asking price ÷ the gold value of the published weight. It is a sanity check on pricing, not a verdict: a $1,035 setting with 2.86 g of
-  18K gold carries about $277.53 of gold at spot, so roughly 3.73× the metal value — normal for a brand setting, alarming if it were 1.1× with a "solid gold" promise and a suspiciously low price.</p>
+  18K gold carries about $277.82 of gold at spot, so roughly 3.73× the metal value — normal for a brand setting, alarming if it were 1.1× with a "solid gold" promise and a suspiciously low price.</p>
 </section>
 
 </main>
 <footer class="wrap foot">
   <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
-  <p>Gold benchmark: $4,024.36/oz as of 21 October, 2026 (World Gold Council) = $129.3862/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:40 UTC · dataset 20 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:50 UTC · dataset 22 rows · 14 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 <script src="../assets/app.js"></script>
 </body>

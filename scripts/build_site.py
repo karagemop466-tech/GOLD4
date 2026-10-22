@@ -49,8 +49,13 @@ FLAG_HELP = {
     "ENGRAVING_NON_RETURNABLE": ("warn", "engraving kills the return right"),
     "SCS_CERT_REQUIRED_FOR_RETURN": ("warn", "return needs the SCS certificate"),
     "WHITE_GOLD": ("info", "white gold, not yellow"),
-    "VARIANT_URL_REQUIRED": ("warn", "bare link opens a different metal variant"),
-    "PAVE_SPEC_ON_PLAIN_BAND": ("bad", "spec block lists pavé weight on a plain band"),
+    "CENTRE_STONE_LAB_CREATED": ("bad", "price includes a lab-created diamond"),
+    "SPEC_LISTED_PAVE_ON_PLAIN_BAND": ("warn", "spec lists pavé on a plain-band page"),
+    "PRICE_VARIANT_DEPENDENT": ("info", "price depends on the metal variant selected"),
+    "RESIZE_TERMS_INCONSISTENT": ("bad", "resize terms differ between captures"),
+    "RETURN_WINDOW_NOT_REDISPLAYED": ("warn", "return window not re-displayed on re-read"),
+    "PRICE_CURRENCY_LOCALIZED": ("warn", "page price is rendered in visitor currency"),
+    "RETURN_EXCLUSIONS_NOT_ITEMISED": ("warn", "exclusions not itemised on the page"),
 }
 
 
@@ -68,7 +73,7 @@ def short_basis(row) -> str:
 
 
 def build_flag_item(r) -> str:
-    detail = r.get("flag_detail")
+    detail = r.get("flag_detail") or r.get("variant_note")
     extra = f'<br><span class="small">{esc(detail)}</span>' if detail else ""
     return (
         f'<li><strong>{esc(r["id"])}</strong> · {esc(r["product_name"])} · {esc(r["retailer"])} — '
@@ -192,6 +197,7 @@ def no_hallucination_block(prefix: str = "") -> str:
     <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
     <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
     <li><strong>Anything uncertain is published on <a href="{prefix}pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
   </ul>
 </div>
 """
@@ -227,11 +233,11 @@ def table(rows, root: str, show_category: bool = False) -> str:
         <span class="sub">{'published' if r['weight_g'] else 'not published'}</span></td>
     <td class="num">{num(r['pure_gold_g'], 3) if r['pure_gold_g'] else '—'}<span class="sub">derived</span></td>
     <td class="num">{money(r['gold_value_usd']) if r['gold_value_usd'] else '—'}<span class="sub">derived</span></td>
-    <td class="num">{num(r['price_to_gold_multiple']) if r['price_to_gold_multiple'] else '—'}</td>
+    <td class="num">{num(r['price_to_gold_multiple']) if r['price_to_gold_multiple'] else '—'}{'<span class="sub">price includes a centre stone</span>' if r.get('multiple_basis') == 'includes_centre_stone' and r['price_to_gold_multiple'] else ''}</td>
     <td>{ret_cell}</td>
     <td>{solid_cell}</td>
     <td class="src"><a href="{esc(r['url'])}" target="_blank" rel="noopener">{esc(short_url(r['url']))}</a>
-        <span class="sub">{esc(r['price_verification'].split('_')[0])} · {esc(r['price_captured_utc'])}</span></td>
+        <span class="sub">{esc(r['price_verification'].split('_')[0])} · {esc(r['price_captured_utc'])}{' · re-checked ' + esc(r['reverified_utc']) if r.get('reverified_utc') else ''}</span></td>
     <td>{flag_chips(r)}</td>
   </tr>""")
     return f'<div class="table-wrap"><table>{head}<tbody>{"".join(body_rows)}</tbody></table></div>'
@@ -272,6 +278,23 @@ def main() -> None:
         "n_rows": len(rows),
         "n_sources": len(sources_doc["sources"]),
     }
+
+    pairs_by_id = {pr["pair_id"]: pr for pr in d["pairs"]}
+
+    def pair_gap(pid):
+        pr = pairs_by_id.get(pid) or {}
+        return pr.get("price_gap_pct")
+
+    def pct(v):
+        return f"{v:+.1f}%" if v is not None else "not computable"
+
+    def pair_card(pid, title, body):
+        return f'<div class="card"><h3>{esc(title)} — {pct(pair_gap(pid))}</h3><p>{body}</p></div>'
+
+    spot_reobs = spot.get("same_day_reobservation") or {}
+    reverif = rings.get("last_full_reverification_utc")
+    n_weight = st["rows_with_published_weight"]
+    n_rows = st["total_rows"]
 
     PAGES.mkdir(exist_ok=True)
 
@@ -315,7 +338,7 @@ def main() -> None:
 
     index_body = f"""
 <section class="hero">
-  <span class="eyebrow">● live dataset · captured {C['captured']}</span>
+  <span class="eyebrow">● live dataset · captured {C['captured']} · every row re-read from its source on {esc(reverif)}</span>
   <h1>Solid-gold engagement rings, with every number traceable to the seller's own page.</h1>
   <p class="lede">A small, deliberately boring dataset: {st['total_rows']} rings from {len(st['by_retailer'])} retailers, {st['rows_with_verified_price']} prices read
   from the retailer's page today, {st['rows_with_published_weight']} published gram weights, and the gold-value arithmetic that follows from them.
@@ -325,6 +348,7 @@ def main() -> None:
     {badge('source link on every row', 'ok')}
     {badge(f'{flags_total} flags published', 'warn')}
     {badge('spot benchmark dated', 'info')}
+    {badge('full re-verification pass ' + esc(reverif), 'ok')}
   </div>
 </section>
 {no_hallucination_block()}
@@ -340,15 +364,17 @@ def main() -> None:
   <h2>What the data actually shows</h2>
   <div class="grid two">
     <div class="card">
-      <h3>Only 6 of 20 rows can be priced against their gold at all</h3>
-      <p>Four Allurez settings and two VRAI settings publish a gram weight, so only those rows have a computable gold content.
-      Blue Nile and Mejuri publish a price but no weight, so their gold content is <em>blank</em> — not guessed.</p>
-      <p class="small">Price ÷ gold-value multiple across the six computable rows: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.</p>
+      <h3>Only {n_weight} of {n_rows} rows can be priced against their gold at all</h3>
+      <p>Four Allurez settings, two VRAI settings and one Anjolee setting publish a gram weight, so only those rows have a computable gold content.
+      Blue Nile, Brilliant Earth and Mejuri publish a price but no weight, so their gold content is <em>blank</em> — not guessed. Anjolee's price
+      includes a lab-created centre stone, so its multiple is marked and is not a setting markup either.</p>
+      <p class="small">Price ÷ gold-value multiple across the {n_weight} rows that have both a price and a published weight: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.
+      One of them (AN-01) is priced with a lab-created centre stone included, so its multiple is labelled in the table and is not a setting markup.</p>
     </div>
     <div class="card">
       <h3>18K costs more than its extra gold — and by an inconsistent amount</h3>
-      <p>Same design, same retailer, only the karat changed: Petite Solitaire is +15.5% going 14K→18K, the Comfort Fit is +40.1%, and the Allurez Split Shank is +68.0%.</p>
-      <p>For the Allurez pair both prices and weights are published, so the 18K premium can be split: +54.9% of it is simply more gold, and the rest is labour and margin.</p>
+      <p>Same design, same retailer, only the karat changed: Petite Solitaire is {pct(pair_gap('PAIR-BN-PETITE'))} going 14K→18K, the Comfort Fit is {pct(pair_gap('PAIR-BN-COMFORT'))}, the Brilliant Earth Atelier is {pct(pair_gap('PAIR-BE-ATELIER'))}, and the Allurez Split Shank is {pct(pair_gap('PAIR-AL-SPLIT'))}.</p>
+      <p>For the Allurez pair both prices and weights are published, so the 18K premium can be split: {pct(pairs_by_id.get('PAIR-AL-SPLIT', {}).get('gold_gap_pct'))} of it is simply more gold, and the rest is labour and margin.</p>
       <p class="small"><a href="pages/purity.html">See the full karat analysis →</a></p>
     </div>
     <div class="card">
@@ -463,9 +489,14 @@ def main() -> None:
     <tbody>{pairs_html}</tbody>
   </table></div>
   <div class="grid two" style="margin-top:16px">
-    <div class="card"><h3>Petite Solitaire — +15.5%</h3><p>Blue Nile's 14K is $1,000 and the 18K is $1,155 for the identical 1.80 mm design. That is close to the gold-cost difference you would expect, and it is the cheapest karat upgrade in the dataset.</p></div>
-    <div class="card"><h3>Comfort Fit 2.5 mm — +40.1%</h3><p>The same retailer charges 40% more for 18K on this design. Without published weights there is no way to prove how much of that is gold, which is exactly why the weight column matters.</p></div>
-    <div class="card"><h3>Allurez Split Shank — +68.0%</h3><p>Here both weights are published: 4.4 g in 14K becomes 5.3 g in 18K. Gold content rises 54.9%, so most of the premium is more metal rather than a purer alloy — and the price-to-gold multiple still rises, from 2.55× to 2.77×.</p></div>
+    {pair_card('PAIR-BN-PETITE', 'Blue Nile Petite Solitaire',
+      f"14K is {money(pairs_by_id['PAIR-BN-PETITE']['low_price'])} and 18K is {money(pairs_by_id['PAIR-BN-PETITE']['high_price'])} for the identical 1.80 mm design. Blue Nile publishes no gram weight for either, so the gold-cost share of that gap cannot be measured.") if 'PAIR-BN-PETITE' in pairs_by_id else ''}
+    {pair_card('PAIR-BN-COMFORT', 'Blue Nile Comfort Fit 2.5 mm',
+      f"14K is {money(pairs_by_id['PAIR-BN-COMFORT']['low_price'])} and 18K is {money(pairs_by_id['PAIR-BN-COMFORT']['high_price'])}. Without published weights there is no way to prove how much of that gap is gold, which is exactly why the weight column matters.") if 'PAIR-BN-COMFORT' in pairs_by_id else ''}
+    {pair_card('PAIR-BE-ATELIER', 'Brilliant Earth Atelier Solitaire',
+      f"14K is {money(pairs_by_id['PAIR-BE-ATELIER']['low_price'])} and 18K is {money(pairs_by_id['PAIR-BE-ATELIER']['high_price'])} setting-only, same 2 mm design. Brilliant Earth publishes no gram weight for either row, so again the metal share of the gap is unmeasurable.") if 'PAIR-BE-ATELIER' in pairs_by_id else ''}
+    {pair_card('PAIR-AL-SPLIT', 'Allurez Split Shank',
+      f"Here both weights are published: {num(pairs_by_id['PAIR-AL-SPLIT']['low_weight_g'])} g in 14K becomes {num(pairs_by_id['PAIR-AL-SPLIT']['high_weight_g'])} g in 18K. Gold content rises {pct(pairs_by_id['PAIR-AL-SPLIT']['gold_gap_pct'])}, so much of the premium is more metal rather than a purer alloy — and the price-to-gold multiple still moves, from {num(pairs_by_id['PAIR-AL-SPLIT']['low_multiple'])}× to {num(pairs_by_id['PAIR-AL-SPLIT']['high_multiple'])}×.") if 'PAIR-AL-SPLIT' in pairs_by_id else ''}
     <div class="card"><h3>What this means for shopping</h3><p>Ask for the weight <em>and</em> the karat. A karat upgrade with no weight disclosure is a price increase you cannot audit.</p></div>
   </div>
 </section>
@@ -518,7 +549,7 @@ def main() -> None:
     <tbody>
     {''.join(f'''<tr><td><a href="#{esc(s['id'])}">{esc(s['name'])}</a></td>
       <td>{s['return_window_days']} days</td>
-      <td>{badge('no', 'bad') if any('resized' in x.lower() or 'altered' in x.lower() for x in s['return_exclusions']) else badge('not excluded', 'ok')}</td>
+      <td>{badge('no', 'bad') if any('resized' in x.lower() or 'altered' in x.lower() for x in s['return_exclusions']) else (badge('not itemised', 'mute') if not s['return_exclusions'] else badge('not excluded', 'ok'))}</td>
       <td>{badge('excluded', 'warn') if any(('custom' in x.lower() or 'engrav' in x.lower()) for x in s['return_exclusions']) else badge('no exclusion captured', 'mute')}</td>
       <td class="small">{esc((s.get('resize_policy') or 'not captured')[:80])}</td>
       <td class="small">{esc(s['contact'].get('phone') or s['contact'].get('email') or 'not captured')}</td>
@@ -706,48 +737,60 @@ def main() -> None:
     </div>
     <div class="card">
       <h3>Weights labelled "approximate"</h3>
-      <p>Allurez publishes "Approximate Metal Weight", VRAI publishes a metal weight for ring size 6, and Anjolee publishes
-      "Approx. Metal Weight" for one configuration. None is a measurement of the ring you will receive;
+      <p>Allurez publishes "Approximate Metal Weight" and VRAI publishes a metal weight for ring size 6. Neither is a measurement of the ring you will receive;
       a size change moves the weight. Every derived gold value inherits that uncertainty.</p>
-      <p class="small">Pass 3 note: the Anjolee weight (2.90 g) was blank in the first dataset because it had not been re-read from the live
-      page at the time. Pass 3 re-read it from the <a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">official Product Details table</a>
-      and it is now recorded on <a href="solitaire.html">AN-01</a> with its scope.</p>
     </div>
     <div class="card">
-      <h3>Mejuri's bare product links open a different metal variant</h3>
-      <p>On pass 3, the bare product URLs for the Diamonds Team Ring, Pavé Diamond Slim Signet and Ziggy Ring redirected to a
-      different default variant (white gold, white gold, and sterling silver showing "From $398"). The 14k yellow-gold prices
-      recorded in this dataset were re-read from the retailer's own variant URLs, which are the price links on
-      <a href="band.html">MJ-01</a>, <a href="pave.html">MJ-03</a> and <a href="band.html">MJ-05</a>.
-      Always open the variant link, not the bare product link, and confirm the metal line reads "Solid Yellow Gold (14k)".</p>
+      <h3>Mejuri's price depends on which colourway the page opens on</h3>
+      <p>The same Mejuri product URL opens on whichever metal the site selects. The Diamonds Team Ring and the Pavé Diamond Slim Signet opened on
+      white gold, and the Ziggy Ring opened on sterling silver at "From $398" — the 14k yellow gold variant in this dataset reads "From $598".
+      A saved link can therefore show a different price than the row you are comparing. Select the metal and stone explicitly before you read the price.</p>
+      <p class="small">Recorded on MJ-01, MJ-03 and MJ-05. The yellow-gold variants were opened separately on 2026-10-22 to confirm the recorded prices.</p>
     </div>
     <div class="card">
-      <h3>VRAI spec block lists pavé weight on a plain band</h3>
-      <p>Both captured VRAI configurations are plain-band designs ("Plain band" in the band selector and in the page title),
-      yet their Setting Details both list "Pavé carat weight: 0.18ctw". Either the spec block is generic copy or the setting
-      contains pavé the selector does not describe. Recorded on <a href="solitaire.html">VR-01</a> and
-      <a href="solitaire.html">VR-02</a>; ask VRAI in writing which it is before paying, because pavé weight is diamond weight,
-      not gold weight.</p>
+      <h3>Brilliant Earth's resize terms changed between captures of the same page</h3>
+      <p>The Atelier Solitaire page showed "Free 1-Year Resizing" on the re-read of 2026-10-22, while the earlier capture of the same page described
+      one complimentary resize within 60 days of purchase. Both were read from Brilliant Earth's own page, so the seller is the only source that can
+      settle which applies to your order — and it matters, because the resize has to happen without destroying the return right.</p>
+      <p class="small">Recorded on the <a href="sellers.html">Sellers</a> page for Brilliant Earth, with the page linked.</p>
     </div>
     <div class="card">
-      <h3>Basis of the "legal minimum" arithmetic (for review)</h3>
-      <p>The legal-floor column computes karat ÷ 24 minus the 0.007 whole-article tolerance of
-      <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.
-      Under the millesimal convention a 14K article is often assayed against 585‰ instead of 583.3‰; the same tolerance on
-      585‰ gives 57.8% rather than 57.63%. The project publishes both readings in
-      <code>data/methodology.json</code> so the basis is explicit. Neither figure measures a particular ring — only an assay does.</p>
-    </div>
-    <div class="card">
-      <h3>The live gold quote has moved since capture</h3>
-      <p>The frozen benchmark is $4,024.36/oz dated 21 October 2026. On pass 3 the same
-      <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">World Gold Council page</a>
-      showed a live panel reading of $4,028.53/oz. Nothing was silently recomputed: every derived value stays tied to the
-      dated quote. Re-check the quote on the day you buy.</p>
+      <h3>The gold spot panel moved during the day while its date stayed put</h3>
+      <p>The World Gold Council page showed ${spot_reobs.get('value_usd_per_oz', 0):,.2f}/oz on a second read on {esc(reverif)}, against the frozen
+      ${C['spot_oz']:,.2f}/oz used for every calculation here, while the page's date line still read "Data as of {esc(C['spot_date'])}".
+      A live panel is not a fixed benchmark. This project keeps the first read so no derived number silently restates itself, and publishes the second
+      read beside it.</p>
+      <p class="small">Both reads are recorded in <span class="mono">data/gold_spot.json</span>; source: <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">World Gold Council</a>.</p>
     </div>
     <div class="card">
       <h3>No seller publishes a hallmark</h3>
       <p>Zero of {len(rows)} rows show the physical stamp or the maker's mark, which is the one item on the checklist that can only be verified in your hand.
       The FTC guidance is blunt: if the karat mark has no trademark beside it, don't buy it.</p>
+    </div>
+    <div class="card">
+      <h3>VRAI's spec block lists pavé weight on plain-band settings</h3>
+      <p>Both captured VRAI configurations are plain-band designs (the page title and the band selector say Plain), yet their
+      Setting Details both list "Pavé carat weight: 0.18ctw". Either the spec block is generic copy or the setting contains
+      pavé the selector does not describe. Recorded on <a href="solitaire.html">VR-01</a> and
+      <a href="solitaire.html">VR-02</a>; ask VRAI in writing which it is before paying, because pavé weight is diamond
+      weight, not gold weight. Found independently by two sessions (pass 2 and pass 7).</p>
+    </div>
+    <div class="card">
+      <h3>Basis of the "legal minimum" arithmetic (for review)</h3>
+      <p>The legal-floor column computes karat ÷ 24 minus the 0.007 whole-article tolerance of
+      <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.
+      Under the millesimal convention a 14K article is often assayed against 585 parts per 1000 instead of 583.3; the same
+      tolerance on 585 would give 57.8% rather than 57.63%. Both readings are published in
+      <code>data/methodology.json</code> so the basis is explicit. Neither figure measures a particular ring — only an
+      assay does.</p>
+    </div>
+    <div class="card">
+      <h3>Brilliant Earth prices render in the visitor's currency</h3>
+      <p>During the pass-7 re-check the 14K Atelier page served a EUR rendering ("1,350.00 EUR (Setting Only)") with a
+      Global-e checkout while the sibling 18K page served USD. The recorded USD figures come from same-day USD captures,
+      and the 18K figure re-confirmed exactly, but the 14K figure could not be reproduced in the non-USD rendering.
+      Flagged on <a href="solitaire.html">BE-01</a> and <a href="solitaire.html">BE-02</a>: open the page with
+      United States / USD selected and re-read the price before relying on it.</p>
     </div>
   </div>
 </section>

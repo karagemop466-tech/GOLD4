@@ -24,7 +24,7 @@
 <section class="hero">
   <span class="eyebrow">Sources</span>
   <h1>Every source, with what it actually supports.</h1>
-  <p class="lede">13 registered sources. Tier A government/regulator, Tier B market benchmark, Tier C the seller's own site.
+  <p class="lede">14 registered sources. Tier A government/regulator, Tier B market benchmark, Tier C the seller's own site.
   Retailer product pages are cited on each row rather than listed here.</p>
 </section>
 
@@ -39,6 +39,7 @@
     <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
     <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
     <li><strong>Anything uncertain is published on <a href="../pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
   </ul>
 </div>
 
@@ -52,7 +53,7 @@
         <td>U.S. Federal Trade Commission / eCFR (National Archives)<span class="sub">16 CFR Part 23 - Guides for the Jewelry, Precious Metals, and Pewter Industries</span></td>
         <td class="src"><a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23" target="_blank" rel="noopener">ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23</a></td>
         <td>2026-10-22</td>
-        <td class="small">§ 23.3(a): it is deceptive to misrepresent the presence, quantity or karat fineness of gold in a product; § 23.3(b): examples of misleading &#x27;gold&#x27; usage for coated/plated products; § 23.3(c)(1): a gold-alloy product with a hollow centre must disclose the hollo</td></tr><tr><td>usc-15-295</td><td><span class="badge b-gold">Tier A</span></td>
+        <td class="small">§ 23.3(a): it is unfair or deceptive to misrepresent the presence, quantity or karat fineness of gold in a product, or the fineness, thickness, weight ratio or manner of application of any gold plating; § 23.3(b): examples of misleading &#x27;gold&#x27; usage for coated</td></tr><tr><td>usc-15-295</td><td><span class="badge b-gold">Tier A</span></td>
         <td>U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 295<span class="sub">Standard of fineness of gold articles; deviation</span></td>
         <td class="src"><a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">law.cornell.edu/uscode/text/15/295</a></td>
         <td>2026-10-22</td>
@@ -64,7 +65,7 @@
         <td>World Gold Council (Goldhub)<span class="sub">Gold spot prices &amp; market history</span></td>
         <td class="src"><a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">gold.org/goldhub/data/gold-prices</a></td>
         <td>2026-10-22</td>
-        <td class="small">Gold spot price USD 4,024.36 per troy ounce, data as of 21 October 2026; The LBMA Gold Price is the key benchmark used throughout the gold market</td></tr><tr><td>lbma-prices</td><td><span class="badge b-gold">Tier B</span></td>
+        <td class="small">Gold spot price panel read twice on 22 October 2026: USD 4,028.53/oz on the second (Pass 2) read, USD 4,024.36/oz on the first; the page&#x27;s date line read &#x27;Data as of 21 October, 2026&#x27; both times; The panel is a live quote — the two reads differ by 0.10%, which</td></tr><tr><td>lbma-prices</td><td><span class="badge b-gold">Tier B</span></td>
         <td>London Bullion Market Association<span class="sub">LBMA Precious Metal Prices</span></td>
         <td class="src"><a href="https://www.lbma.org.uk/prices-and-data/precious-metal-prices" target="_blank" rel="noopener">lbma.org.uk/prices-and-data/precious-metal-prices</a></td>
         <td>2026-10-22</td>
@@ -92,11 +93,15 @@
         <td>Brilliant Earth<span class="sub">Atelier Solitaire Ring in 18K Yellow Gold</span></td>
         <td class="src"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-420…</a></td>
         <td>2026-10-22</td>
-        <td class="small">Offered in 14K/18K white gold, 14K/18K yellow gold, 14K rose gold and platinum; One complimentary resizing within 60 days of purchase (up to 1 year if within the recommended range), free shipping both ways; Order includes a professional appraisal, free lifetim</td></tr><tr><td>anjolee-ms354a</td><td><span class="badge b-mute">Tier C</span></td>
+        <td class="small">Setting price $1,390 for the 18K yellow gold version, labelled &quot;(Setting Only)&quot; (read 2026-10-22); Offered in 14K white gold, 18K white gold, 14K yellow gold, 18K yellow gold, 14K rose gold and platinum (variant links listed on the page); Style BE1D2444-18KY, </td></tr><tr><td>anjolee-ms354a</td><td><span class="badge b-mute">Tier C</span></td>
         <td>Anjolee<span class="sub">Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)</span></td>
         <td class="src"><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Cu…</a></td>
         <td>2026-10-22</td>
-        <td class="small">Price $870.76 for the configured 14K white gold, 0.50 ct, FG/VS version (price includes the centre diamond); 30-day returns, and the page states &#x27;All customized orders can be returned for full refund within 30 days of receipt&#x27;; Lifetime warranty (prong tighten</td></tr></tbody>
+        <td class="small">Price $870.76 for the configured 14K white gold, 0.50 ct lab-created FG/VS version (price includes the centre stone); Product Details table: Metal Type 14K White Gold, &#x27;Approx. Metal Weight: 2.90 Gr.&#x27;, ring size 6.5, item width 2.82 mm; Center Diamond Color &#x27;L</td></tr><tr><td>brilliantearth-atelier-14k</td><td><span class="badge b-mute">Tier C</span></td>
+        <td>Brilliant Earth<span class="sub">Atelier Solitaire Ring in 14K Yellow Gold</span></td>
+        <td class="src"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444…</a></td>
+        <td>2026-10-22</td>
+        <td class="small">Setting price $1,190 for the 14K yellow gold version, labelled &quot;(Setting Only)&quot; (read 2026-10-22); Style BE1D2444-14KY, metal 14K Yellow Gold, width 2 mm, claw-prong setting; Page badges: Free Shipping &amp; Returns, Free Lifetime Warranty, Lifetime Diamond Upgrad</td></tr></tbody>
 </table></div>
 <div class="callout info" style="margin-top:18px">
   <h4>Not acceptable as a source</h4>
@@ -108,9 +113,9 @@
 <footer class="wrap foot">
   <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
-  <p>Gold benchmark: $4,024.36/oz as of 21 October, 2026 (World Gold Council) = $129.3862/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:40 UTC · dataset 20 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:50 UTC · dataset 22 rows · 14 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

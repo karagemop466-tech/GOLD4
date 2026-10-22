@@ -27,10 +27,10 @@
       "retrieved_utc": "2026-10-22",
       "verification": "V1_direct_page_fetch",
       "supports": [
-        "§ 23.3(a): it is deceptive to misrepresent the presence, quantity or karat fineness of gold in a product",
-        "§ 23.3(b): examples of misleading 'gold' usage for coated/plated products",
-        "§ 23.3(c)(1): a gold-alloy product with a hollow centre must disclose the hollow centre and must not be marked or described as 'solid'",
-        "§ 23.18: misrepresentation of weight and 'total weight'"
+        "§ 23.3(a): it is unfair or deceptive to misrepresent the presence, quantity or karat fineness of gold in a product, or the fineness, thickness, weight ratio or manner of application of any gold plating",
+        "§ 23.3(b): examples of misleading 'gold' usage for coated, plated, filled, overlay and electroplated products",
+        "§ 23.3(c)(1): using 'Gold' for a gold-alloy product with a hollow centre may mislead unless the hollow centre is disclosed immediately beside the word; such products 'should not be marked or described as solid'",
+        "§ 23.18: misrepresentation of weight and 'total weight' (section heading read in the part's table of contents)"
       ],
       "caveat": "The eCFR itself states the displayed content is 'authoritative but unofficial'; the official CFR print edition remains the legal reference."
     },
@@ -70,9 +70,12 @@
       "retrieved_utc": "2026-10-22",
       "verification": "V1_direct_page_fetch",
       "supports": [
-        "Gold spot price USD 4,024.36 per troy ounce, data as of 21 October 2026",
-        "The LBMA Gold Price is the key benchmark used throughout the gold market"
-      ]
+        "Gold spot price panel read twice on 22 October 2026: USD 4,028.53/oz on the second (Pass 2) read, USD 4,024.36/oz on the first; the page's date line read 'Data as of 21 October, 2026' both times",
+        "The panel is a live quote — the two reads differ by 0.10%, which is why the dataset stores the reading it actually saw and keeps the earlier one in prior_captures",
+        "The LBMA Gold Price is the key benchmark used throughout the gold market",
+        "Market data on the page is provided by ICE Data Services"
+      ],
+      "reverified_utc": "2026-10-22"
     },
     {
       "id": "lbma-prices",
@@ -176,12 +179,13 @@
       "retrieved_utc": "2026-10-22",
       "verification": "V1_direct_page_fetch",
       "supports": [
-        "Offered in 14K/18K white gold, 14K/18K yellow gold, 14K rose gold and platinum",
-        "One complimentary resizing within 60 days of purchase (up to 1 year if within the recommended range), free shipping both ways",
-        "Order includes a professional appraisal, free lifetime warranty and an FSC-certified wood box",
-        "Free 30-day returns, free shipping both ways"
+        "Setting price $1,390 for the 18K yellow gold version, labelled \"(Setting Only)\" (read 2026-10-22)",
+        "Offered in 14K white gold, 18K white gold, 14K yellow gold, 18K yellow gold, 14K rose gold and platinum (variant links listed on the page)",
+        "Style BE1D2444-18KY, metal 18K Yellow Gold, width 2 mm, claw-prong setting",
+        "Page badges: Free Shipping & Returns, Free Lifetime Warranty, Lifetime Diamond Upgrade, Free 1-Year Resizing",
+        "No gram weight and no hallmark are published on the page"
       ],
-      "caveat": "The item price and metal weight were not readable from the captured page content, so no price or weight is recorded for this product anywhere in the dataset."
+      "caveat": "The price is readable on this pass but the gram weight is not, so the product carries a price row and a blank weight. The page badge reads \"Free 1-Year Resizing\" while the earlier capture of the same page described one complimentary resize within 60 days, so the resize terms are recorded as inconsistent. The 30-day return window was read on the first capture and is not re-displayed in today's page text."
     },
     {
       "id": "anjolee-ms354a",
@@ -192,12 +196,30 @@
       "retrieved_utc": "2026-10-22",
       "verification": "V1_direct_page_fetch",
       "supports": [
-        "Price $870.76 for the configured 14K white gold, 0.50 ct, FG/VS version (price includes the centre diamond)",
+        "Price $870.76 for the configured 14K white gold, 0.50 ct lab-created FG/VS version (price includes the centre stone)",
+        "Product Details table: Metal Type 14K White Gold, 'Approx. Metal Weight: 2.90 Gr.', ring size 6.5, item width 2.82 mm",
+        "Center Diamond Color 'Lab Created FG', Clarity 'Lab Created VS', 0.50 ct",
         "30-day returns, and the page states 'All customized orders can be returned for full refund within 30 days of receipt'",
         "Lifetime warranty (prong tightening, re-polishing, rhodium plating, cleaning) plus one-year manufacturing-defect warranty",
         "Phone 877-265-6533"
       ],
-      "caveat": "The page did not display a gram weight in the captured content; a search snapshot showed '2.90 Gr.' but that is V2 evidence only, so the weight is recorded as unverified."
+      "caveat": "The metal weight is the seller's own 'approx.' figure for the 0.50 ct model at ring size 6.5, and the price includes a lab-created centre stone, so the price ÷ gold multiple for this row is not a setting markup."
+    },
+    {
+      "id": "brilliantearth-atelier-14k",
+      "tier": "C",
+      "publisher": "Brilliant Earth",
+      "title": "Atelier Solitaire Ring in 14K Yellow Gold",
+      "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "Setting price $1,190 for the 14K yellow gold version, labelled \"(Setting Only)\" (read 2026-10-22)",
+        "Style BE1D2444-14KY, metal 14K Yellow Gold, width 2 mm, claw-prong setting",
+        "Page badges: Free Shipping & Returns, Free Lifetime Warranty, Lifetime Diamond Upgrade, Free 1-Year Resizing",
+        "No gram weight and no hallmark are published on the page"
+      ],
+      "caveat": "Price only; no weight and no hallmark published."
     }
   ]
 }

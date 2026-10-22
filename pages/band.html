@@ -39,6 +39,7 @@
     <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
     <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
     <li><strong>Anything uncertain is published on <a href="../pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
   </ul>
 </div>
 
@@ -54,7 +55,7 @@
     <th class="num">Gold content</th><th class="num">Gold value</th><th class="num">Price ÷ gold</th>
     <th>Returns</th><th>Solid / hallmark</th><th>Source</th><th>Flags</th>
   </tr></thead><tbody>
-  <tr data-row-id="MJ-01" data-search="mj-01 mejuri diamonds team ring half-eternity diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal variant_url_required">
+  <tr data-row-id="MJ-01" data-search="mj-01 mejuri diamonds team ring half-eternity diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal price_variant_dependent">
     <td class="id">MJ-01</td>
     <td>Mejuri</td>
     <td class="prod"><a href="https://mejuri.com/products/diamonds-team-ring" target="_blank" rel="noopener">Diamonds Team Ring</a>
@@ -69,8 +70,8 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://mejuri.com/products/diamonds-team-ring" target="_blank" rel="noopener">mejuri.com/products/diamonds-team-ring</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span><span class="flag" title="VARIANT_URL_REQUIRED">bare link opens a different metal variant</span></div></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span><span class="flag" title="PRICE_VARIANT_DEPENDENT">price depends on the metal variant selected</span></div></td>
   </tr>
   <tr data-row-id="MJ-02" data-search="mj-02 mejuri diamonds band diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal">
     <td class="id">MJ-02</td>
@@ -87,16 +88,16 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://mejuri.com/products/diamonds-band" target="_blank" rel="noopener">mejuri.com/products/diamonds-band</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span></div></td>
   </tr>
-  <tr data-row-id="MJ-05" data-search="mj-05 mejuri ziggy ring (bezel lab grown diamond zig-zag ring) bezel-set zig-zag diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal scs_cert_required_for_return variant_url_required price_is_from_price">
+  <tr data-row-id="MJ-05" data-search="mj-05 mejuri ziggy ring (bezel lab grown diamond zig-zag ring) bezel-set zig-zag diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal scs_cert_required_for_return price_is_from_price">
     <td class="id">MJ-05</td>
     <td>Mejuri</td>
     <td class="prod"><a href="https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring" target="_blank" rel="noopener">Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)</a>
         <span class="sub">Bezel-set zig-zag diamond band</span></td>
     <td>Solid Yellow Gold (14k)<span class="sub">14K · 58.3333% gold</span></td>
-    <td class="num">$598<span class="sub">&#x27;from&#x27; price</span></td>
+    <td class="num">$598<span class="sub">ring as sold</span></td>
     <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
         <span class="sub">not published</span></td>
     <td class="num">—<span class="sub">derived</span></td>
@@ -105,8 +106,8 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring" target="_blank" rel="noopener">mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span><span class="flag" title="SCS_CERT_REQUIRED_FOR_RETURN">return needs the SCS certificate</span><span class="flag" title="VARIANT_URL_REQUIRED">bare link opens a different metal variant</span><span class="flag" title="PRICE_IS_FROM_PRICE">&#x27;from&#x27; price, not a fixed quote</span></div></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span><span class="flag" title="SCS_CERT_REQUIRED_FOR_RETURN">return needs the SCS certificate</span><span class="flag" title="PRICE_IS_FROM_PRICE">&#x27;from&#x27; price, not a fixed quote</span></div></td>
   </tr></tbody></table></div>
 <p class="small" style="margin-top:12px">Blank weight cells mean the retailer publishes no gram weight for that item. See the <a href="flagged.html">Flagged</a> page for the full list.</p>
 
@@ -114,9 +115,9 @@
 <footer class="wrap foot">
   <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
-  <p>Gold benchmark: $4,024.36/oz as of 21 October, 2026 (World Gold Council) = $129.3862/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:40 UTC · dataset 20 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:50 UTC · dataset 22 rows · 14 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>
