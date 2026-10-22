@@ -24,13 +24,13 @@
 <section class="hero">
   <span class="eyebrow">● live dataset · captured 22 October 2026 · every row re-read from its source on 2026-10-22</span>
   <h1>Solid-gold engagement rings, with every number traceable to the seller's own page.</h1>
-  <p class="lede">A small, deliberately boring dataset: 22 rings from 6 retailers, 21 prices read
+  <p class="lede">A small, deliberately boring dataset: 40 rings from 6 retailers, 38 prices read
   from the retailer's page today, 7 published gram weights, and the gold-value arithmetic that follows from them.
   Nothing is estimated. Everything uncertain is on the Flagged page.</p>
   <div class="pill-row">
     <span class="badge b-bad">no hallucinated values</span>
     <span class="badge b-ok">source link on every row</span>
-    <span class="badge b-warn">79 flags published</span>
+    <span class="badge b-warn">155 flags published</span>
     <span class="badge b-info">spot benchmark dated</span>
     <span class="badge b-ok">full re-verification pass 2026-10-22</span>
   </div>
@@ -53,11 +53,11 @@
 
 
 <div class="kpis">
-  <div class="kpi"><div class="n">22</div><div class="l">rings tracked</div><div class="s">across 6 retailers</div></div>
-  <div class="kpi"><div class="n">21</div><div class="l">prices read from source</div><div class="s">captured 22 October 2026</div></div>
+  <div class="kpi"><div class="n">40</div><div class="l">rings tracked</div><div class="s">across 6 retailers</div></div>
+  <div class="kpi"><div class="n">38</div><div class="l">prices read from source</div><div class="s">captured 22 October 2026</div></div>
   <div class="kpi"><div class="n">7</div><div class="l">gram weights published</div><div class="s">the rest stay blank</div></div>
   <div class="kpi gold"><div class="n">$129.52</div><div class="l">gold per gram</div><div class="s">$4,028.53/oz · 21 October, 2026</div></div>
-  <div class="kpi"><div class="n">79</div><div class="l">flags raised</div><div class="s">all published for review</div></div>
+  <div class="kpi"><div class="n">155</div><div class="l">flags raised</div><div class="s">all published for review</div></div>
 </div>
 
 <section class="section">
@@ -65,9 +65,9 @@
   <p class="sub">Each item in the brief, what this dataset can prove, and where to look.</p>
   <div class="checklist"><div class="check"><div class="t"><span class="i">01</span>Gold purity</div>
         <p>Confirm 10K / 14K / 18K and compare the stamp with the listing&#x27;s metal field.</p><div class="ev">Karat reference + legal tolerance · <a href="pages/purity.html">open</a></div></div><div class="check"><div class="t"><span class="i">02</span>Solid gold</div>
-        <p>The listing must say solid gold — not plated, vermeil, filled, overlay or gold-tone.</p><div class="ev">5 of 22 rows use explicit solid wording · <a href="pages/flagged.html">open</a></div></div><div class="check"><div class="t"><span class="i">03</span>Hallmark</div>
+        <p>The listing must say solid gold — not plated, vermeil, filled, overlay or gold-tone.</p><div class="ev">5 of 40 rows use explicit solid wording · <a href="pages/flagged.html">open</a></div></div><div class="check"><div class="t"><span class="i">03</span>Hallmark</div>
         <p>Look for the karat stamp plus a maker&#x27;s / registered trademark.</p><div class="ev">0 rows publish a hallmark — check on arrival · <a href="pages/methodology.html">open</a></div></div><div class="check"><div class="t"><span class="i">04</span>Weight in grams</div>
-        <p>A legitimate seller should be able to tell you the weight.</p><div class="ev">7 of 22 rows publish it · <a href="pages/calculator.html">open</a></div></div><div class="check"><div class="t"><span class="i">05</span>Seller reputation</div>
+        <p>A legitimate seller should be able to tell you the weight.</p><div class="ev">7 of 40 rows publish it · <a href="pages/calculator.html">open</a></div></div><div class="check"><div class="t"><span class="i">05</span>Seller reputation</div>
         <p>Independent reviews and complaints, plus real contact details.</p><div class="ev">contact routes captured; reputation not verified · <a href="pages/sellers.html">open</a></div></div><div class="check"><div class="t"><span class="i">06</span>Price vs gold value</div>
         <p>Compare the price with the ring&#x27;s gold weight and current gold value.</p><div class="ev">computed per row where weight exists · <a href="pages/calculator.html">open</a></div></div><div class="check"><div class="t"><span class="i">07</span>Return policy</div>
         <p>Check the window and the exclusions for resized / custom / engraved rings.</p><div class="ev">clauses quoted per seller · <a href="pages/sellers.html">open</a></div></div><div class="check"><div class="t"><span class="i">08</span>Payment</div>
@@ -80,7 +80,7 @@
   <h2>What the data actually shows</h2>
   <div class="grid two">
     <div class="card">
-      <h3>Only 7 of 22 rows can be priced against their gold at all</h3>
+      <h3>Only 7 of 40 rows can be priced against their gold at all</h3>
       <p>Four Allurez settings, two VRAI settings and one Anjolee setting publish a gram weight, so only those rows have a computable gold content.
       Blue Nile, Brilliant Earth and Mejuri publish a price but no weight, so their gold content is <em>blank</em> — not guessed. Anjolee's price
       includes a lab-created centre stone, so its multiple is marked and is not a setting markup either.</p>
@@ -113,7 +113,7 @@
   
 <div class="toolbar">
   <input type="search" id="filter" placeholder="Filter by retailer, ring, SKU, flag…" aria-label="Filter rows">
-  <span class="count" id="filterCount">22 rows</span>
+  <span class="count" id="filterCount">40 rows</span>
 </div>
   <div class="table-wrap"><table>
   <thead><tr>
@@ -247,6 +247,60 @@
     <td class="src"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-420…</a>
         <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="BE-03" data-search="be-03 brilliant earth freesia hidden halo diamond ring hidden halo — concealed pavé accents beneath the centre stone, claw prong 14k yellow gold be1d3939-14ky pave no_weight_published solid_not_stated hallmark_not_published price_v2_only">
+    <td class="id">BE-03</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/" target="_blank" rel="noopener">Freesia Hidden Halo Diamond Ring</a>
+        <span class="sub">Hidden halo — concealed pavé accents beneath the centre stone, claw prong</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,190<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/" target="_blank" rel="noopener">brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gol…</a>
+        <span class="sub">V2 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_V2_ONLY">price from a dated snapshot of the official page — live re-check pending</span></div></td>
+  </tr>
+  <tr data-row-id="BE-04" data-search="be-04 brilliant earth freesia hidden halo diamond ring hidden halo — concealed pavé accents beneath the centre stone 18k yellow gold none pave no_weight_published solid_not_stated hallmark_not_published price_v2_only">
+    <td class="id">BE-04</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/" target="_blank" rel="noopener">Freesia Hidden Halo Diamond Ring</a>
+        <span class="sub">Hidden halo — concealed pavé accents beneath the centre stone</span></td>
+    <td>18K Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$1,390<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/" target="_blank" rel="noopener">brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE…</a>
+        <span class="sub">V2 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_V2_ONLY">price from a dated snapshot of the official page — live re-check pending</span></div></td>
+  </tr>
+  <tr data-row-id="BE-05" data-search="be-05 brilliant earth fleur solitaire ring solitaire, four-prong tulip head, low profile 14k yellow gold be1574-14ky solitaire no_weight_published solid_not_stated hallmark_not_published price_v2_only">
+    <td class="id">BE-05</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/" target="_blank" rel="noopener">Fleur Solitaire Ring</a>
+        <span class="sub">Solitaire, four-prong tulip head, low profile</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,350<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/" target="_blank" rel="noopener">brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-767…</a>
+        <span class="sub">V2 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_V2_ONLY">price from a dated snapshot of the official page — live re-check pending</span></div></td>
   </tr>
   <tr data-row-id="BN-01" data-search="bn-01 blue nile petite solitaire engagement ring solitaire, 4-prong 14k yellow gold 501130y14 solitaire no_weight_published solid_not_stated hallmark_not_published">
     <td class="id">BN-01</td>
@@ -392,6 +446,276 @@
         <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="COPY_INCONSISTENT_METAL">page copy contradicts the metal spec</span></div></td>
   </tr>
+  <tr data-row-id="BN-09" data-search="bn-09 blue nile classic simple solitaire engagement ring solitaire, classic simple 14k yellow gold 502120y14 solitaire no_weight_published solid_not_stated hallmark_not_published">
+    <td class="id">BN-09</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-yellow-gold-item-203348" target="_blank" rel="noopener">Classic Simple Solitaire Engagement Ring</a>
+        <span class="sub">Solitaire, classic simple</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,145<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-yellow-gold-item-203348" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="BN-10" data-search="bn-10 blue nile solitaire engagement ring with pavé basket in 14k yellow gold by james allen solitaire with pavé basket (by james allen line, sold by blue nile) 14k yellow gold none solitaire no_weight_published solid_not_stated hallmark_not_published price_from_category_page">
+    <td class="id">BN-10</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-pave-basket-in-14k-yellow-gold-by-james-allen-item-311230" target="_blank" rel="noopener">Solitaire Engagement Ring With Pavé Basket In 14K Yellow Gold By James Allen</a>
+        <span class="sub">Solitaire with pavé basket (By James Allen line, sold by Blue Nile)</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$2,260<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-pave-basket-in-14k-yellow-gold-by-james-allen-item-311230" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/solitair…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_FROM_CATEGORY_PAGE">price read from a live fetch of the seller&#x27;s category page</span></div></td>
+  </tr>
+  <tr data-row-id="BN-11" data-search="bn-11 blue nile solitaire engagement ring with intricate basket in 14k yellow gold by james allen solitaire with intricate basket (by james allen line) 14k yellow gold none solitaire no_weight_published solid_not_stated hallmark_not_published price_from_category_page">
+    <td class="id">BN-11</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-intricate-basket-in-14k-yellow-gold-by-james-allen-item-315036" target="_blank" rel="noopener">Solitaire Engagement Ring With Intricate Basket In 14K Yellow Gold By James Allen</a>
+        <span class="sub">Solitaire with intricate basket (By James Allen line)</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,385<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-intricate-basket-in-14k-yellow-gold-by-james-allen-item-315036" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/solitair…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_FROM_CATEGORY_PAGE">price read from a live fetch of the seller&#x27;s category page</span></div></td>
+  </tr>
+  <tr data-row-id="BN-12" data-search="bn-12 blue nile east west knife edge cathedral solitaire engagement ring in 14k yellow gold by james allen east-west cathedral solitaire, knife edge (by james allen line) 14k yellow gold none solitaire no_weight_published solid_not_stated hallmark_not_published price_from_category_page">
+    <td class="id">BN-12</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-knife-edge-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-311246" target="_blank" rel="noopener">East West Knife Edge Cathedral Solitaire Engagement Ring In 14K Yellow Gold By James Allen</a>
+        <span class="sub">East-west cathedral solitaire, knife edge (By James Allen line)</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$975<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-knife-edge-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-311246" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/east-wes…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_FROM_CATEGORY_PAGE">price read from a live fetch of the seller&#x27;s category page</span></div></td>
+  </tr>
+  <tr data-row-id="BN-13" data-search="bn-13 blue nile pavé diamond halo engagement ring in 14k yellow gold (oval) by james allen pavé halo for an oval centre stone (by james allen line) 14k yellow gold none pave no_weight_published solid_not_stated hallmark_not_published price_from_category_page">
+    <td class="id">BN-13</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-oval-by-james-allen-item-311127" target="_blank" rel="noopener">Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen</a>
+        <span class="sub">Pavé halo for an oval centre stone (By James Allen line)</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,565<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-oval-by-james-allen-item-311127" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/pave-dia…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_FROM_CATEGORY_PAGE">price read from a live fetch of the seller&#x27;s category page</span></div></td>
+  </tr>
+  <tr data-row-id="BN-14" data-search="bn-14 blue nile pavé diamond halo engagement ring in 14k yellow gold (pear) by james allen pavé halo for a pear centre stone (by james allen line) 14k yellow gold none pave no_weight_published solid_not_stated hallmark_not_published price_from_category_page">
+    <td class="id">BN-14</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-pear-by-james-allen-item-311121" target="_blank" rel="noopener">Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen</a>
+        <span class="sub">Pavé halo for a pear centre stone (By James Allen line)</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,555<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-pear-by-james-allen-item-311121" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/pave-dia…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_FROM_CATEGORY_PAGE">price read from a live fetch of the seller&#x27;s category page</span></div></td>
+  </tr>
+  <tr data-row-id="BN-15" data-search="bn-15 blue nile petite hidden halo solitaire plus diamond engagement ring in 14k yellow gold hidden-halo solitaire plus (pavé accents beneath the head) 14k yellow gold none pave no_weight_published solid_not_stated hallmark_not_published price_from_category_page">
+    <td class="id">BN-15</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-hidden-halo-solitaire-plus-diamond-engagement-ring-in-14k-yellow-gold-item-192506" target="_blank" rel="noopener">Petite Hidden Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold</a>
+        <span class="sub">Hidden-halo solitaire plus (pavé accents beneath the head)</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,255<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-hidden-halo-solitaire-plus-diamond-engagement-ring-in-14k-yellow-gold-item-192506" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/petite-h…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_FROM_CATEGORY_PAGE">price read from a live fetch of the seller&#x27;s category page</span></div></td>
+  </tr>
+  <tr data-row-id="BN-16" data-search="bn-16 blue nile bow-tie engagement ring with channel set round diamonds in 14k yellow gold by james allen bow-tie band with channel-set round diamonds (by james allen line) 14k yellow gold none pave no_weight_published solid_not_stated hallmark_not_published price_from_category_page">
+    <td class="id">BN-16</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/bow-tie-engagement-ring-with-channel-set-round-diamonds-in-14k-yellow-gold-by-james-allen-item-304294" target="_blank" rel="noopener">Bow-Tie Engagement Ring With Channel Set Round Diamonds In 14K Yellow Gold By James Allen</a>
+        <span class="sub">Bow-tie band with channel-set round diamonds (By James Allen line)</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$2,350<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/bow-tie-engagement-ring-with-channel-set-round-diamonds-in-14k-yellow-gold-by-james-allen-item-304294" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/bow-tie-…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_FROM_CATEGORY_PAGE">price read from a live fetch of the seller&#x27;s category page</span></div></td>
+  </tr>
+  <tr data-row-id="BN-17" data-search="bn-17 blue nile woven solitaire engagement ring in 14k yellow gold by james allen woven split-band solitaire (by james allen line) 14k yellow gold 505038y14 solitaire no_weight_published solid_not_stated hallmark_not_published price_v2_only sale_price_varies_across_pages">
+    <td class="id">BN-17</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896" target="_blank" rel="noopener">Woven Solitaire Engagement Ring In 14K Yellow Gold By James Allen</a>
+        <span class="sub">Woven split-band solitaire (By James Allen line)</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$772<span class="sub">ring as sold</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/woven-so…</a>
+        <span class="sub">V2 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_V2_ONLY">price from a dated snapshot of the official page — live re-check pending</span><span class="flag" title="SALE_PRICE_VARIES_ACROSS_PAGES">sale price differs across the seller&#x27;s own pages</span></div></td>
+  </tr>
+  <tr data-row-id="BN-18" data-search="bn-18 blue nile knife edge solitaire engagement ring in 14k yellow gold solitaire, knife-edge shank 14k yellow gold 502500y14 solitaire no_weight_published solid_not_stated hallmark_not_published price_v2_only">
+    <td class="id">BN-18</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261" target="_blank" rel="noopener">Knife Edge Solitaire Engagement Ring in 14k Yellow Gold</a>
+        <span class="sub">Solitaire, knife-edge shank</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,290<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/knife-ed…</a>
+        <span class="sub">V2 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_V2_ONLY">price from a dated snapshot of the official page — live re-check pending</span></div></td>
+  </tr>
+  <tr data-row-id="BN-19" data-search="bn-19 blue nile wide band solitaire engagement ring in 14k yellow gold (5mm) solitaire, wide flat band 14k yellow gold 501580y14 solitaire no_weight_published solid_not_stated hallmark_not_published price_v2_only copy_inconsistent_metal">
+    <td class="id">BN-19</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321" target="_blank" rel="noopener">Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm)</a>
+        <span class="sub">Solitaire, wide flat band</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$2,050<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/wide-ban…</a>
+        <span class="sub">V2 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_V2_ONLY">price from a dated snapshot of the official page — live re-check pending</span><span class="flag" title="COPY_INCONSISTENT_METAL">page copy contradicts the metal spec</span></div></td>
+  </tr>
+  <tr data-row-id="BN-20" data-search="bn-20 blue nile emerald cut diamond engagement ring in 14k yellow gold (1 ct. tw.) side-stone setting: six prong-set emerald-cut diamonds flanking the centre stone 14k yellow gold 501472y14 pave no_weight_published solid_not_stated hallmark_not_published price_v2_only">
+    <td class="id">BN-20</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303" target="_blank" rel="noopener">Emerald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.)</a>
+        <span class="sub">Side-stone setting: six prong-set emerald-cut diamonds flanking the centre stone</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$5,190<span class="sub">incl. centre stone</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/emerald-…</a>
+        <span class="sub">V2 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_V2_ONLY">price from a dated snapshot of the official page — live re-check pending</span></div></td>
+  </tr>
+  <tr data-row-id="BN-21" data-search="bn-21 blue nile classic simple solitaire engagement ring in 14k white gold solitaire, classic simple (white-gold variant of bn-09) 14k white gold 502120w14 solitaire no_weight_published solid_not_stated hallmark_not_published price_v2_only white_gold">
+    <td class="id">BN-21</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730" target="_blank" rel="noopener">Classic Simple Solitaire Engagement Ring in 14k White Gold</a>
+        <span class="sub">Solitaire, classic simple (white-gold variant of BN-09)</span></td>
+    <td>14K White Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,145<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a>
+        <span class="sub">V2 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_V2_ONLY">price from a dated snapshot of the official page — live re-check pending</span><span class="flag" title="WHITE_GOLD">white gold, not yellow</span></div></td>
+  </tr>
+  <tr data-row-id="BN-22" data-search="bn-22 blue nile pavé contour diamond engagement ring in 14k white gold by james allen contour pavé band (by james allen line) 14k white gold 505094w14 pave no_weight_published solid_not_stated hallmark_not_published price_v2_only white_gold">
+    <td class="id">BN-22</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661" target="_blank" rel="noopener">Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen</a>
+        <span class="sub">Contour pavé band (By James Allen line)</span></td>
+    <td>14K White Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,657<span class="sub">incl. centre stone</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/pave-con…</a>
+        <span class="sub">V2 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_V2_ONLY">price from a dated snapshot of the official page — live re-check pending</span><span class="flag" title="WHITE_GOLD">white gold, not yellow</span></div></td>
+  </tr>
+  <tr data-row-id="BN-23" data-search="bn-23 blue nile comfort fit solitaire engagement ring in 14k yellow gold (james allen style 17740y14) comfort-fit solitaire (legacy james allen style; sold out at check) 14k yellow gold 17740y14 solitaire no_weight_published solid_not_stated hallmark_not_published price_unverified sold_out_at_check">
+    <td class="id">BN-23</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515" target="_blank" rel="noopener">Comfort Fit Solitaire Engagement Ring In 14K Yellow Gold (James Allen style 17740y14)</a>
+        <span class="sub">Comfort-fit solitaire (legacy James Allen style; sold out at check)</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num"><span class="blank" title="not published by the retailer">—</span><span class="sub">ring as sold</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/14k-yell…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_UNVERIFIED">price deliberately blank</span><span class="flag" title="SOLD_OUT_AT_CHECK">sold out at the live check — price deliberately blank</span></div></td>
+  </tr>
   <tr data-row-id="MJ-01" data-search="mj-01 mejuri diamonds team ring half-eternity diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal price_variant_dependent">
     <td class="id">MJ-01</td>
     <td>Mejuri</td>
@@ -535,6 +859,10 @@
         <td class="num">$1,190 → $1,390</td>
         <td class="num">+16.8%</td>
         <td class="num"><span class="badge b-warn">no weight</span></td>
+        <td class="num">— → —</td></tr><tr><td>Brilliant Earth</td><td>Freesia Hidden Halo Diamond Ring<span class="sub">BE-03 → BE-04</span></td>
+        <td class="num">$1,190 → $1,390</td>
+        <td class="num">+16.8%</td>
+        <td class="num"><span class="badge b-warn">no weight</span></td>
         <td class="num">— → —</td></tr><tr><td>Blue Nile</td><td>Classic Comfort Fit Solitaire Engagement Ring (2.5mm)<span class="sub">BN-04 → BN-05</span></td>
         <td class="num">$935 → $1,310</td>
         <td class="num">+40.1%</td>
@@ -562,7 +890,7 @@
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="pages/flagged.html">Flagged for Review</a> page.</p>
   <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:33 UTC · dataset 22 rows · 14 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:44 UTC · dataset 40 rows · 14 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

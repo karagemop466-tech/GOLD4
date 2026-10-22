@@ -55,6 +55,10 @@ FLAG_HELP = {
     "RESIZE_TERMS_INCONSISTENT": ("bad", "resize terms differ between captures"),
     "RETURN_WINDOW_NOT_REDISPLAYED": ("warn", "return window not re-displayed on re-read"),
     "RETURN_EXCLUSIONS_NOT_ITEMISED": ("warn", "exclusions not itemised on the page"),
+    "PRICE_V2_ONLY": ("warn", "price from a dated snapshot of the official page — live re-check pending"),
+    "SOLD_OUT_AT_CHECK": ("info", "sold out at the live check — price deliberately blank"),
+    "SALE_PRICE_VARIES_ACROSS_PAGES": ("warn", "sale price differs across the seller's own pages"),
+    "PRICE_FROM_CATEGORY_PAGE": ("info", "price read from a live fetch of the seller's category page"),
 }
 
 

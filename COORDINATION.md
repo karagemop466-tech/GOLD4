@@ -237,9 +237,57 @@ The published dataset was treated as **untrusted input** and re-fetched page by 
 - **2026-10-22 23:32 UTC** — Live-site verification after deploy (not just "the workflow went green"): the dashboard and the Flagged page were fetched over HTTPS and confirmed to serve the corrected dataset — 7 weights, $4,028.53/oz, 70 flags, the AN-01 lab-created caveat, and both new flags. An earlier fetch returned the pre-merge build from cache; the re-fetch with a cache-buster returned the new build, which is why the check was repeated rather than assumed.
 - **2026-10-22 23:33 UTC** — Cosmetic fix found *because* the live page was read: the two new flags rendered with a raw lowercase name instead of a human-readable label. Labels added in `scripts/build_site.py`, site rebuilt, all checks re-run (audit PASS 56/0/0, check_site PASS). Shipped as PR #9.
 
+## Session `arena/22b5b06c-gold4` — independent collection + integration pass (2026-10-22 23:10–23:59 UTC)
+
+**Coordination note:** this session started at 23:10 UTC from the bare `7f442a1` commit on its own fixed Arena branch
+(`arena/22b5b06c-gold4`, required by its environment) and created a fresh board before it could see any other session's
+work — `COORDINATION.md` did not exist on its branch point. By the time it went to integrate, `main` had moved five PRs
+ahead. Resolution: it **merged `main` into its branch taking the published tree as primary** (`-X theirs` on conflicts),
+then added only its own independently collected data on top. Nothing published by any earlier session was deleted,
+renamed, rewritten or force-pushed. Its earlier standalone artifacts are preserved at `docs/legacy/*_22b5b06c*`,
+`data/preserved/*_22b5b06c.json` and `scripts/session_22b5b06c/`.
+
+**Claim (recorded retroactively for this section):** scope = `data/rings.json` (additive rows BE-03…BE-05, BN-09…BN-23 and an
+appended corroboration note on BE-01), `data/gold_spot.json` (new informational key only), `data/verification_log.json`
+(Pass 6 entry), regenerated outputs (`data/derived.json`, `VERIFICATION.md`, `AUDIT.md`, `index.html`, `pages/*`,
+`reports/*`), four additive `FLAG_HELP` labels in `scripts/build_site.py`, and this session's preserved/artifact paths.
+No other session's open task was taken over; PRs #8 and #12 (other sessions) remain open and untouched.
+
+| # | Task | Status | Owner | Files |
+|---|------|--------|-------|-------|
+| 20 | Independent collection: 19 candidate rows (9 live-fetched V1, 10 snapshot V2) + live spot reading | done | arena/22b5b06c-gold4 | data/preserved/rings_candidates_22b5b06c.json |
+| 21 | Corroboration pass: SKUs/widths/diamond specs + JSON-LD cross-reads; 2 new irregularities found | done | arena/22b5b06c-gold4 | same + scripts/session_22b5b06c/patch_20261022_corroboration.py |
+| 22 | Integration into published schema (18 new rows; 1 duplicate resolved into BE-01's note) | done | arena/22b5b06c-gold4 | data/rings.json, data/gold_spot.json, data/verification_log.json |
+| 23 | Re-run full pipeline: compute + gen_verification + build + audit + check_site + verify | done — audit PASS 76/9 warn/0 fail; check_site PASS; verify PASS (40 records) | arena/22b5b06c-gold4 | reports/audit_latest.txt, AUDIT.md, site pages |
+| 24 | Publish via PR #11 → merge → confirm Pages deploy | in progress (record below after merge) | arena/22b5b06c-gold4 | this file |
+
+**Sources (all official; URLs recorded per row):** bluenile.com product pages (items 203348, 41515 live-fetched; 192261,
+203321, 203303, 195730, 315661, 310896 via dated official-page snapshots), bluenile.com yellow-gold category page
+(live-fetched: items 311230, 315036, 311246, 311127, 311121, 192506, 304294), brilliantearth.com product pages
+(BE1D3939 14K/18K, BE1574, BE1D2444 via dated snapshots incl. category JSON-LD), api.gold-api.com/price/XAU (live),
+kitco.com and apmex.com (dated snapshots, informational cross-check only).
+
+**Irregularities this pass adds to the Flagged page:** BN-19 `COPY_INCONSISTENT_METAL` ("platinum" wording on a 14K YG
+page — third such Blue Nile copy contradiction), BN-17 `SALE_PRICE_VARIES_ACROSS_PAGES` ($772/$724/$730/$728 for one SKU
+across four official pages), BN-23 `SOLD_OUT_AT_CHECK` + `PRICE_UNVERIFIED` (older $660 snapshot deliberately not used),
+10 rows `PRICE_V2_ONLY` pending live re-fetch (outage 23:20–23:47 UTC), Pass 5 timestamp anomaly noted in
+`data/verification_log.json` (not corrected — another session's record).
+
+### PR and merge record (to be completed by follow-up commit, per established pattern)
+
+| Item | Result |
+|---|---|
+| PR #11 (this integration) | pending — link https://github.com/karagemop466-tech/GOLD4/pull/11 |
+| Pages workflow run | recorded after merge |
+| Live-site verification | recorded after deploy |
+
 ## What a human should look at first
 
 1. **Anjolee AN-01** — the only row whose price includes a diamond, and that diamond is **lab-created**. It is the cheapest-looking solitaire in the table for that reason. Do not read it as "gold cheaper than Blue Nile".
 2. **Blue Nile BN-04 / BN-07 / BN-08** — three pages whose own copy contradicts their own specification block. Nothing has been inferred about which side is right; that is a question for Blue Nile in writing.
 3. **VRAI VR-02** — weight published, price not. The blank is correct, not a gap to fill.
 4. **Every seller's reputation** — still unverified for all six. The FTC's own advice is to search the seller's name with "complaint" or "review"; this dataset does not do that for you and does not pretend to.
+5. **Blue Nile BN-19 (Wide Band Solitaire, added by Pass 6)** — the page's own description says "platinum solitaire setting" while every spec says 14K Yellow Gold. Third copy/spec contradiction found on Blue Nile pages; ask the seller in writing which is true.
+6. **Blue Nile BN-17 (Woven Solitaire, added by Pass 6)** — four official Blue Nile pages showed four different sale prices for the same SKU at snapshot time ($772/−20%, $724/−25%, $730, $728). Sale prices are volatile; never treat a snapshot sale price as the price.
+7. **BN-23 (James Allen Comfort Fit)** — sold out at the live check; the price cell is blank *by design*. It also documents the James Allen → Blue Nile merger redirect.
+8. **The 10 `PRICE_V2_ONLY` rows** — prices read from dated snapshots of the official pages during a fetch outage (each corroborated by ≥2 official reads, most with the seller's own JSON-LD). They are provisional until a live re-fetch; the Flagged page lists every one.

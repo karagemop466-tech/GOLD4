@@ -48,5 +48,40 @@
    "note": "Earlier capture of the same World Gold Council spot panel on the same day. Superseded during Pass 2 because the live panel had moved by the time it was re-read. Kept for audit, not used in any calculation."
   }
  ],
- "recheck_note": "Re-read during Pass 2. Any derived value in this repository can be recomputed in one line from value_usd_per_oz and 31.1034768 g/oz; scripts/audit.py re-derives all of them on every run."
+ "recheck_note": "Re-read during Pass 2. Any derived value in this repository can be recomputed in one line from value_usd_per_oz and 31.1034768 g/oz; scripts/audit.py re-derives all of them on every run.",
+ "same_day_external_readings_22b5b06c": {
+  "purpose": "Informational same-day cross-checks recorded by session arena/22b5b06c-gold4. NOT used for any derived number in this repository — the World Gold Council benchmark above remains the single calculation basis.",
+  "live_api_reading": {
+   "source": "gold-api.com metals API",
+   "source_url": "https://api.gold-api.com/price/XAU",
+   "value_usd_per_oz": 4028.1,
+   "source_reported_updated_at": "2026-10-22T23:01:42Z",
+   "fetched_by_session_at_utc": "2026-10-22T23:17Z (live JSON fetch)",
+   "verification": "live fetch of the API response"
+  },
+  "snapshot_readings": [
+   {
+    "source": "Kitco — Gold Price Today",
+    "url": "https://www.kitco.com/charts/gold",
+    "value_usd_per_oz": 4062.3,
+    "as_of": "2026-10-22 10:54 a.m. ET bid (down $78.00 / −1.88% on the day)",
+    "verification": "dated search snapshot of the official page (fetch-service outage at the time)"
+   },
+   {
+    "source": "Kitco — Gold Spot Prices",
+    "url": "https://www.kitco.com/price/precious-metals",
+    "value_usd_per_oz": 4032.8,
+    "as_of": "2026-10-22 14:46 ET (bid 4,032.80 / ask 4,034.80)",
+    "verification": "dated search snapshot of the official page"
+   },
+   {
+    "source": "APMEX — Gold Price",
+    "url": "https://www.apmex.com/gold-price",
+    "value_usd_per_oz": 4042.9,
+    "as_of": "2026-10-22 7:13:01 PM ET (per-gram $129.98)",
+    "verification": "dated search snapshot of the official page"
+   }
+  ],
+  "assessment": "The WGC benchmark $4,028.53/oz and this session's independent live reading $4,028.10/oz (23:01:42Z) differ by 0.01%. All same-day readings sit inside the 22 Oct intraday range ($4,028.10-$4,062.30) on a day the market fell ~1.9-2.6%. Consistent — no evidence of a fabricated or stale quote in either direction."
+ }
 }

@@ -75,24 +75,25 @@ Every re-read is recorded per row in `data/rings.json` (`reverified_utc`, `rever
 
 | Metric | Value |
 |---|---|
-| Rings tracked | 22 |
-| Retailers with product rows | 6 (Blue Nile, Allurez, VRAI, Mejuri, Brilliant Earth, Anjolee) |
-| Prices read from the retailer's own page | 21 of 22 (1 deliberately blank) |
-| Gram weights published by the retailer | 7 of 22 — only these rows have a computable gold value |
-| Rows with explicit *solid gold* wording | 5 of 22 (all Mejuri) |
-| Rows publishing a hallmark / maker's mark | **0 of 22** — it can only be checked in your hand |
-| Rows re-read from their own source page | 22 of 22, on 2026-10-22 (twice, by two independent sessions) |
-| Gold benchmark used | $4,028.53/oz = $129.5202/g, data as of 21 Oct 2026 |
-| Gold benchmark used | $4,024.36/oz = $129.3862/g, 21 Oct 2026 |
+| Rings tracked | 40 |
+| Retailers with product rows | 6 (Blue Nile — including the James Allen line, Allurez, VRAI, Mejuri, Brilliant Earth, Anjolee) |
+| Prices read from the retailer's own page | 38 of 40 (2 deliberately blank: VRAI VR-02 publishes no price; Blue Nile BN-23 was sold out at the live check) |
+| Price provenance | 30 rows V1 (live page fetch) · 9 rows V2 (dated snapshot of the official page, flagged `PRICE_V2_ONLY` pending live re-fetch) · 1 row with no published price (`U_unverified`, VRAI VR-02) |
+| Gram weights published by the retailer | 7 of 40 — only these rows have a computable gold value |
+| Rows with explicit *solid gold* wording | 5 of 40 (all Mejuri) |
+| Rows publishing a hallmark / maker's mark | **0 of 40** — it can only be checked in your hand |
+| Rows re-read from their own source page | 22 of 22 published rows on 2026-10-22 (twice, by two independent sessions); the 18 rows added by Pass 6 were each read from their official page at collection (9 live-fetched, 9 corroborated from ≥2 dated official-page reads) |
+| Gold benchmark used | $4,028.53/oz = $129.5202/g, data as of 21 Oct 2026 (prior same-day capture $4,024.36/oz; an independent live reading of $4,028.10/oz at 23:01 UTC and same-day Kitco/APMEX snapshots are recorded informationally in `data/gold_spot.json`) |
 | Flags raised for review | published on the Flagged page, with sources |
 
 **Headline findings**
 
 1. A stamp is a claim with a legal tolerance, not a measurement: under 15 U.S.C. § 295 an "18K" ring may be as low as 74.3% gold and a "14K" ring as low as 57.63%.
 2. Most major retailers do not publish a gram weight, so their rings cannot be priced against their own gold. Only Allurez, VRAI and Anjolee did. Anjolee's price includes a lab-created centre stone, so even that multiple is not a setting markup.
-3. The 18K premium is inconsistent: +15.5% (Blue Nile Petite Solitaire), +16.8% (Brilliant Earth Atelier), +40.1% (Blue Nile Comfort Fit), +68.0% (Allurez Split Shank) — and for the one pair with both weights published, 54.9% of that premium is simply more gold.
+3. The 18K premium is inconsistent: +15.5% (Blue Nile Petite Solitaire), +16.8% (Brilliant Earth Atelier), +16.8% (Brilliant Earth Freesia, added by Pass 6), +40.1% (Blue Nile Comfort Fit), +68.0% (Allurez Split Shank) — and for the one pair with both weights published, 54.9% of that premium is simply more gold.
 4. Return windows all look like "30 days", but exclusions differ sharply (resized, engraved, custom). One seller (Anjolee) explicitly accepts returns on customised orders; another (Allurez) makes custom orders non-refundable.
-5. Several retailer pages contradict their own specification blocks; each case is listed on the Flagged page.
+5. Several retailer pages contradict their own specification blocks; each case is listed on the Flagged page. Pass 6 found two more on Blue Nile: a 14K yellow-gold page whose copy says "platinum solitaire setting" (BN-19), and one SKU showing four different sale prices across four official category pages (BN-17).
+6. James Allen now redirects into Blue Nile: jamesallen.com product URLs land on bluenile.com, which states "James Allen is Now Part of Blue Nile" (live-verified 2026-10-22, recorded on BN-23). "By James Allen" collection rings are Blue Nile listings and carry Blue Nile's policies.
 
 ## Sources
 
@@ -116,6 +117,9 @@ Several agent sessions worked in this repository. `main` already contained two o
 | `scripts/verify.py`, `AUDIT.md` | session `arena/93da71b4-gold4` | Kept and made schema-aware; still runs and still fails on an unsourced value |
 | `docs/legacy/index_placeholder_b4413b13.html` | session `arena/b4413b13-gold4` | Original root dashboard, preserved after the integrated dashboard replaced it |
 | `docs/legacy/COORDINATION_merged_before_9614479d.md`, `docs/legacy/README_before_9614479d.md` | pre-merge state of `main` | Preserved for audit |
+| `data/preserved/rings_candidates_22b5b06c.json`, `data/preserved/gold_spot_capture_22b5b06c.json` | session `arena/22b5b06c-gold4` (PR #11) | Its independent 19-row working dataset and live spot capture, preserved verbatim; 18 of those rows were converted into the canonical schema (BE-03…BE-05, BN-09…BN-23) and one duplicate was folded into BE-01's corroboration note |
+| `docs/legacy/REPO_REVIEW_22b5b06c.md`, `docs/legacy/VERIFICATION_22b5b06c.md`, `docs/legacy/COORDINATION_22b5b06c.md`, `docs/legacy/README_22b5b06c.md` | same session | Its baseline repo review, line-by-line verification log, task board and README, preserved as written |
+| `scripts/session_22b5b06c/` | same session | Its standalone checker (`verify_data_22b5b06c.py`), link checker, corroboration patch and last check report — kept as the audit trail of how its rows were validated before integration |
 
 Three checkers now run against the combined repository, and all three must pass before a merge:
 
