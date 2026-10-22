@@ -42,6 +42,8 @@ warnings = []
 
 pages = ["index.html", "flagged.html"]
 pages += sorted(str(p.relative_to(ROOT)) for p in (ROOT / "pages").glob("*.html"))
+if (ROOT / "categories").exists():
+    pages += sorted(str(p.relative_to(ROOT)) for p in (ROOT / "categories").glob("*.html"))
 pages += sorted(str(p.relative_to(ROOT)) for p in (ROOT / "docs").glob("*.html"))
 
 for filename in pages:

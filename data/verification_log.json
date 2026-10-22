@@ -151,6 +151,22 @@
       ],
       "outcome": "All 4 automated audit suites (`audit.py`, `check_site.py`, `verify.py`, `verify_a0be79d4.py`) pass with 0 hard failures and 0 broken links.",
       "result": "PASS (0 failures)"
+    },
+    {
+      "pass": "Pass 8 — Ross-Simons & multi-retailer expansion, NIST stone-deduction calculator & 5-gate CI audit (session arena/81b71aa5-gold4)",
+      "when_utc": "2026-10-22T23:46Z",
+      "scope": "Merged cleanly onto main (217f79b), preserving all 35 canonical rows + Assay Lab pages verbatim and appending 12 non-duplicate live-verified rows (47 total across 10 sellers) + 6 deep-dive category subpages + 5th CI security gate",
+      "checked": [
+        "Ross-Simons (10th audited seller): 5 solid-gold product pages (#571221, #985230, #820263, #823796, #990022) and /pages/returns-exchanges fetched; 4 bands publish explicit gram weights (0.7 g to 4.0 g).",
+        "Brilliant Earth, Blue Nile & Mejuri: fetched /30-Day-Returns/ body text (chunk 4), BE-04 Fairmined Hollis ($1,090, resizing banner vs details exclusion), BN-09..BN-12 (adding PAIR-BN-FOURPRONG +29.3% and BN-12 double contradiction), MJ-06..MJ-07, and Mejuri's cautionary Bold Chain Ring ('hollowed 14k solid gold' FTC 16 CFR § 23.3(c) conflict).",
+        "Regulatory & spot cross-checks: NIST Handbook 44 (0.200 g/ct gemstone deduction), GIA Lab Notes (XRF 10–30 µm depth & electroformed resin cores), and BullionVault ($4,026.25/oz)."
+      ],
+      "found": [
+        "Canonical dataset now spans 47 rows across 10 sellers with 19 published gram weights and 5 matched 14K/18K pairs, with zero duplicate SKUs and zero overwritten work from prior sessions.",
+        "Removed external runtime Google Fonts @import from legacy styles.css (IRR-REPO-01)."
+      ],
+      "outcome": "PASS across all 5 automated audit gates (audit.py, check_site.py, verify.py, verify_a0be79d4.py, audit_hallucinations.py).",
+      "result": "PASS"
     }
   ],
   "not_reverified_this_pass": [

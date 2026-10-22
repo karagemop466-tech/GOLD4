@@ -348,6 +348,60 @@
         "Free 30-day return shipping from delivery in unworn original condition",
         "Custom-designed, modified, and resized items are ineligible for return; engraved items incur a $40 removal fee"
       ]
+    },
+    {
+      "id": "nist-hb44-2026",
+      "tier": "A",
+      "publisher": "National Institute of Standards and Technology (nist.gov)",
+      "title": "NIST Handbook 44 (2026 Edition) — Appendix C: Units of Mass for Precious Metals & Metric Carat",
+      "url": "https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "1 troy ounce = 31.1034768 grams exact",
+        "1 metric carat = 200 milligrams = 0.200 grams exact (for subtracting gemstone mass from total ring weight)"
+      ]
+    },
+    {
+      "id": "bullionvault-spot",
+      "tier": "B",
+      "publisher": "BullionVault (bullionvault.com)",
+      "title": "Live Gold Price Chart ($4,026.25/oz t = $129.45/g on 2026-10-22)",
+      "url": "https://www.bullionvault.com/gold-price-chart.do",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "Same-day independent spot gold cross-check ($4,026.25/oz t; $129,446.94/kg), within 0.06% of WGC benchmark"
+      ]
+    },
+    {
+      "id": "brilliantearth-returns-30d",
+      "tier": "C",
+      "publisher": "Brilliant Earth (brilliantearth.com)",
+      "title": "Brilliant Earth — Free 30-Day Returns & Resizing Exclusions (/30-Day-Returns/)",
+      "url": "https://www.brilliantearth.com/30-Day-Returns/",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "30-day return window from shipping date or pickup availability notification",
+        "Resized, repaired, modified, or previously exchanged items are non-returnable",
+        "Engraved rings incur a $40 engraving removal fee upon return; eternity/open-top/geometric rings cannot be resized"
+      ]
+    },
+    {
+      "id": "ross-simons-returns",
+      "tier": "C",
+      "publisher": "Ross-Simons (ross-simons.com)",
+      "title": "Ross-Simons — Returns & Exchanges Policy",
+      "url": "https://www.ross-simons.com/pages/returns-exchanges",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "supports": [
+        "30-day return window from date received",
+        "$4.95 shipping fee deducted when using Ross-Simons prepaid Loop return label",
+        "Items resized, altered, or worked on by an outside jeweler are non-returnable",
+        "Contact 800-835-0919 · 9 Ross Simons Dr, Cranston, RI 02920"
+      ]
     }
   ]
 }

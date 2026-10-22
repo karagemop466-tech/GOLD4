@@ -69,5 +69,12 @@
       "retrieved_utc": "2026-10-22",
       "spread_vs_active_benchmark_pct": 0.279
     }
-  ]
+  ],
+  "bullionvault_cross_check_2026_10_22": {
+    "source_id": "bullionvault-spot",
+    "source_url": "https://www.bullionvault.com/gold-price-chart.do",
+    "value_usd_per_oz": 4026.25,
+    "value_usd_per_gram": 129.446943,
+    "captured_utc": "2026-10-22"
+  }
 }

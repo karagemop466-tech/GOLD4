@@ -15,7 +15,7 @@
       <span>GOLD4<small>gold-ring verification desk</small></span>
     </a>
     <nav class="main">
-      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="log.html" class="active">Log</a><a href="../dashboard.html" class="">Assay Lab+</a>
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="log.html" class="active">Log</a><a href="../dashboard.html" class="">Assay Lab+</a><a href="../categories/calculator.html" class="">Stone-Deduction Calc</a><a href="../categories/verification-audit.html" class="">Deep Audit</a>
     </nav>
   </div>
 </header>
@@ -82,16 +82,21 @@
       <p class="small">2026-10-22T23:36Z · Full line-by-line repo &amp; live web verification across 9 retailers (35 rows), 11 Assay Lab standalone pages, and 4 automated CI security/hallucination gates</p>
       <ul class="small"><li>Caught and fixed TWO live HTTP 404 government URLs in merged docs/sources.html (`ftc.gov/business-center/advertising-and-marketing` &amp; `nist.gov/publications/nist-special-publication-811`) using live-verified 200 OK replacements (`consumer.ftc.gov/...`, `ecfr.gov/.../part-23`, `nist.gov/pml/special-publication-811`)</li><li>Caught and blocklisted dead 404 GIA URL (`summer-2025-lab-notes-gold-plated-gold0`) found in sibling branch `81b71aa5`, linking verified 200 OK GIA XRF &amp; Carlsbad electroforming fraud lab studies</li><li>Spot-verified `gold.org` ($4,028.53/oz), `Allurez AL-01` ($585, 3.58g), `Anjolee AN-01`, &amp; `VRAI VR-01` live on 2026-10-22 alongside same-day `Kitco` ($4,024.60/oz = $129.39/g) &amp; `JM Bullion` ($4,039.76/oz = $129.88/g) quotes</li><li>Expanded canonical dataset from 22 -&gt; 35 rows across 9 retailers (`10K`, `14K`, `18K`, `24K`), adding plain solid band melt benchmarks (1.33x–1.50x raw melt), the 10K-vs-18K 5mm density pair (`SR-01` vs `SR-03`), two live Sarraf karat contradictions (`F1625` $20,671 &amp; `121987-.72P` $2,858), and Mejuri&#x27;s $188 vermeil copy trap (`G4-RED-01`)</li></ul>
       <p class="small"><strong>Outcome:</strong> All 4 automated audit suites (`audit.py`, `check_site.py`, `verify.py`, `verify_a0be79d4.py`) pass with 0 hard failures and 0 broken links.</p>
+    </div><div class="card">
+      <h3>Pass 8 — Ross-Simons &amp; multi-retailer expansion, NIST stone-deduction calculator &amp; 5-gate CI audit (session arena/81b71aa5-gold4) <span class="badge b-ok">PASS</span></h3>
+      <p class="small">2026-10-22T23:46Z · Merged cleanly onto main (217f79b), preserving all 35 canonical rows + Assay Lab pages verbatim and appending 12 non-duplicate live-verified rows (47 total across 10 sellers) + 6 deep-dive category subpages + 5th CI security gate</p>
+      <ul class="small"><li>Ross-Simons (10th audited seller): 5 solid-gold product pages (#571221, #985230, #820263, #823796, #990022) and /pages/returns-exchanges fetched; 4 bands publish explicit gram weights (0.7 g to 4.0 g).</li><li>Brilliant Earth, Blue Nile &amp; Mejuri: fetched /30-Day-Returns/ body text (chunk 4), BE-04 Fairmined Hollis ($1,090, resizing banner vs details exclusion), BN-09..BN-12 (adding PAIR-BN-FOURPRONG +29.3% and BN-12 double contradiction), MJ-06..MJ-07, and Mejuri&#x27;s cautionary Bold Chain Ring (&#x27;hollowed 14k solid gold&#x27; FTC 16 CFR § 23.3(c) conflict).</li><li>Regulatory &amp; spot cross-checks: NIST Handbook 44 (0.200 g/ct gemstone deduction), GIA Lab Notes (XRF 10–30 µm depth &amp; electroformed resin cores), and BullionVault ($4,026.25/oz).</li></ul>
+      <p class="small"><strong>Outcome:</strong> PASS across all 5 automated audit gates (audit.py, check_site.py, verify.py, verify_a0be79d4.py, audit_hallucinations.py).</p>
     </div></div></section>
 <section class="section">
   <h2>Latest integrity audit output</h2>
   <p class="sub">Produced by <span class="mono">scripts/audit.py</span>. Any FAIL fails the build; warnings must be published on the Flagged page.</p>
   <pre class="mono" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;white-space:pre-wrap">GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-22T23:47:46+00:00
-dataset rows: 35 | sellers: 9 | sources: 24
+run_utc: 2026-10-22T23:49:53+00:00
+dataset rows: 47 | sellers: 10 | sources: 28
 spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
 
-RESULT: PASS  (91 passed, 0 warnings, 0 failures)
+RESULT: PASS  (112 passed, 0 warnings, 0 failures)
 
 No warnings, no failures.
 
@@ -115,7 +120,7 @@ per-row source-link requirement, and render-text sanity.
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
   <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:47 UTC · dataset 35 rows · 24 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:49 UTC · dataset 47 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

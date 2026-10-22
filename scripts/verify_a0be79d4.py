@@ -41,6 +41,10 @@ ALLOWED_OFFICIAL_HOSTS = {
     "www.mejuri.com",
     "mene.com",
     "www.mene.com",
+    "support.mene.com",
+    "www.ross-simons.com",
+    "ross-simons.com",
+    "bullionvault.com",
     "www.jamesallen.com",
     "www.costco.com",
     "www.kay.com",
@@ -206,6 +210,7 @@ def main() -> int:
     all_html_files = (
         [ROOT / p for p in EXPECTED_ROOT_PAGES]
         + sorted((ROOT / "pages").glob("*.html"))
+        + sorted((ROOT / "categories").glob("*.html"))
         + sorted((ROOT / "docs").glob("*.html"))
     )
     total_links_checked = 0
