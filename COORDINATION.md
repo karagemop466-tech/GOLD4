@@ -102,7 +102,7 @@ Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= p
 | V-1 | Independent line-by-line re-verification of every published value | in progress → done | `data/rings.json`, `data/sellers.json`, `data/gold_spot.json`, `data/sources.json`, `data/verification_log.json` |
 | V-2 | Correct what the re-read contradicted | done | same as V-1 |
 | V-3 | Rebuild site + re-run all three checks | done | `index.html`, `pages/`, `scripts/compute.py`, `scripts/build_site.py` |
-| V-4 | Publish the pass (PR → merge → Pages) and record it here | in progress | `COORDINATION.md`, `README.md`, `VERIFICATION.md` |
+| V-4 | Publish the pass (PR → merge → Pages) and record it here | done | `COORDINATION.md`, `README.md`, `VERIFICATION.md` |
 
 **Scope discipline:** this session edits only the files above. It did **not** touch `docs/**` (the inherited sub-site), `docs/legacy/**` (preserved other-session work), `data/preserved/**`, `scripts/audit.py`, `scripts/verify.py` or `scripts/check_site.py`. The earlier sessions' branches were not modified, renamed or force-pushed. No other session's claim was open and unclaimed work was not duplicated: this pass verifies the already-merged tree rather than rebuilding it.
 
@@ -137,10 +137,26 @@ The published dataset was treated as **untrusted input** and re-fetched page by 
 
 ### PR and merge record
 
-<!-- PR_RECORD -->
-_To be filled the moment the pull request is opened and merged._
+| Item | Result |
+|---|---|
+| PR #7 (this pass) | **merged** into `main` — https://github.com/karagemop466-tech/GOLD4/pull/7 · merge commit `66a99e8` · merged 2026-10-22 23:30:59 UTC, no review waited for |
+| Pages workflow run | `39872297863` ("Deploy GOLD research site") = **success** |
+| Pages API | `status=built`, latest build commit `66a99e8`, built 23:31:20 UTC |
+| Live site re-fetched after deploy | `https://karagemop466-tech.github.io/GOLD4/` serves the new build: **7 published gram weights**, benchmark **$4,028.53/oz = $129.52/g**, **70 flag instances**, and the "7 of 20 rows" analysis with the AN-01 lab-created caveat. The Flagged page serves the new `CENTRE_STONE_LAB_CREATED` and `SPEC_LISTED_PAVE_ON_PLAIN_BAND` entries with their sources. |
+| Follow-up record commit | PR #8 — this table, the log entry and the two new flag labels on the Flagged page |
 
 ### Event log additions
 
 - **2026-10-22 23:26 UTC** — `arena/fd51d093-gold4` created, branched from `main` at `815bb97`. Read this board first; no task was open and unclaimed, so nothing was taken over. Claimed V-1…V-4 above and pushed the claim.
 - **2026-10-22 23:55 UTC** — Pass 2 completed: 20 product pages + 4 policy pages + spec sheet + 6 reference sources re-fetched. 3 corrections, 2 new flags, 0 unexplained mismatches. Logged in `data/verification_log.json` as "Pass 4 — independent line-by-line re-verification of the published tree".
+
+- **2026-10-22 23:31 UTC** — **PR #7 opened and merged without waiting for review**: https://github.com/karagemop466-tech/GOLD4/pull/7 → merge commit `66a99e8`. Merge state was `CLEAN`/`MERGEABLE`; Pages workflow `39872297863` succeeded and the Pages API reported `status=built` for that commit.
+- **2026-10-22 23:32 UTC** — Live-site verification after deploy (not just "the workflow went green"): the dashboard and the Flagged page were fetched over HTTPS and confirmed to serve the corrected dataset — 7 weights, $4,028.53/oz, 70 flags, the AN-01 lab-created caveat, and both new flags. An earlier fetch returned the pre-merge build from cache; the re-fetch with a cache-buster returned the new build, which is why the check was repeated rather than assumed.
+- **2026-10-22 23:33 UTC** — Cosmetic fix found *because* the live page was read: the two new flags rendered with a raw lowercase name instead of a human-readable label. Labels added in `scripts/build_site.py`, site rebuilt, all checks re-run (audit PASS 56/0/0, check_site PASS). Shipped as PR #8.
+
+## What a human should look at first
+
+1. **Anjolee AN-01** — the only row whose price includes a diamond, and that diamond is **lab-created**. It is the cheapest-looking solitaire in the table for that reason. Do not read it as "gold cheaper than Blue Nile".
+2. **Blue Nile BN-04 / BN-07 / BN-08** — three pages whose own copy contradicts their own specification block. Nothing has been inferred about which side is right; that is a question for Blue Nile in writing.
+3. **VRAI VR-02** — weight published, price not. The blank is correct, not a gap to fill.
+4. **Every seller's reputation** — still unverified for all six. The FTC's own advice is to search the seller's name with "complaint" or "review"; this dataset does not do that for you and does not pretend to.
