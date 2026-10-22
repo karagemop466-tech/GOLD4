@@ -143,7 +143,7 @@ The published dataset was treated as **untrusted input** and re-fetched page by 
 | Pages workflow run | `39872297863` ("Deploy GOLD research site") = **success** |
 | Pages API | `status=built`, latest build commit `66a99e8`, built 23:31:20 UTC |
 | Live site re-fetched after deploy | `https://karagemop466-tech.github.io/GOLD4/` serves the new build: **7 published gram weights**, benchmark **$4,028.53/oz = $129.52/g**, **70 flag instances**, and the "7 of 20 rows" analysis with the AN-01 lab-created caveat. The Flagged page serves the new `CENTRE_STONE_LAB_CREATED` and `SPEC_LISTED_PAVE_ON_PLAIN_BAND` entries with their sources. |
-| Follow-up record commit | PR #8 — this table, the log entry and the two new flag labels on the Flagged page |
+| Follow-up record commit | PR #9 — this table, the log entry and the two new flag labels on the Flagged page |
 
 ### Event log additions
 
@@ -152,7 +152,7 @@ The published dataset was treated as **untrusted input** and re-fetched page by 
 
 - **2026-10-22 23:31 UTC** — **PR #7 opened and merged without waiting for review**: https://github.com/karagemop466-tech/GOLD4/pull/7 → merge commit `66a99e8`. Merge state was `CLEAN`/`MERGEABLE`; Pages workflow `39872297863` succeeded and the Pages API reported `status=built` for that commit.
 - **2026-10-22 23:32 UTC** — Live-site verification after deploy (not just "the workflow went green"): the dashboard and the Flagged page were fetched over HTTPS and confirmed to serve the corrected dataset — 7 weights, $4,028.53/oz, 70 flags, the AN-01 lab-created caveat, and both new flags. An earlier fetch returned the pre-merge build from cache; the re-fetch with a cache-buster returned the new build, which is why the check was repeated rather than assumed.
-- **2026-10-22 23:33 UTC** — Cosmetic fix found *because* the live page was read: the two new flags rendered with a raw lowercase name instead of a human-readable label. Labels added in `scripts/build_site.py`, site rebuilt, all checks re-run (audit PASS 56/0/0, check_site PASS). Shipped as PR #8.
+- **2026-10-22 23:33 UTC** — Cosmetic fix found *because* the live page was read: the two new flags rendered with a raw lowercase name instead of a human-readable label. Labels added in `scripts/build_site.py`, site rebuilt, all checks re-run (audit PASS 56/0/0, check_site PASS). Shipped as PR #9.
 
 ## What a human should look at first
 
