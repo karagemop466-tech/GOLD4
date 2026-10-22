@@ -1,0 +1,20 @@
+{
+  "metal": "Gold (XAU)",
+  "price_usd_per_troy_oz": 4028.10,
+  "price_usd_per_gram": 129.5071,
+  "price_usd_per_gram_note": "Derived arithmetic: 4028.10 / 31.1034768 g per troy oz = 129.5071 (rounded 4dp). Pure calculation from the fetched spot price, not an external claim.",
+  "troy_oz_in_grams": 31.1034768,
+  "source_name": "gold-api.com live metals API (XAU/USD)",
+  "source_url": "https://api.gold-api.com/price/XAU",
+  "source_reported_updated_at": "2026-10-22T23:01:42Z",
+  "fetched_at_utc_approx": "2026-10-22T23:17Z",
+  "verification_level": "A-LIVE",
+  "cross_check": {
+    "status": "PENDING",
+    "note": "Second-source cross-check (e.g., Kitco or LBMA) pending due to fetch service outage at collection time; recorded on Flagged for Review page until completed. Source API's 'updated a few seconds ago' text (23:01:42Z) is ~15 min before our fetch time; value may lag real-time by minutes.",
+    "planned_sources": [
+      "https://www.kitco.com/charts/gold",
+      "https://www.lbma.org.uk/prices-and-data/precious-metal-prices"
+    ]
+  }
+}
