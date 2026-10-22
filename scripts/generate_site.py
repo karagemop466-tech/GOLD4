@@ -1012,7 +1012,7 @@ Thank you!</pre>
       <div class="eyebrow">TRANSPARENCY &amp; NON-FABRICATION REGISTER</div>
       <h1>Flagged for Review — Spec Conflicts, Disqualified Traps &amp; Unverified Fields</h1>
       <p class="lead">
-        Under our <a href="index.html#zero-hallucination-policy"><strong>Zero-Hallucination Policy</strong></a>,
+        Under our <a href="dashboard.html#zero-hallucination-policy"><strong>Zero-Hallucination Policy</strong></a>,
         no missing gram weight, ambiguous karat claim, or placeholder row is ever guessed or hidden.
         Every irregularity discovered during repository review and live retailer verification is logged publicly below.
       </p>
@@ -1021,9 +1021,9 @@ Thank you!</pre>
         <label>Filter by Severity
           <select id="filter-flag-severity">
             <option value="all">All Severities ({len(catalog['flagged_items'])})</option>
-            <option value="CRITICAL">CRITICAL — Spec Conflicts &amp; Vermeil Traps (3)</option>
-            <option value="HIGH">HIGH — XRF Spoofing, Multi-Metal &amp; Return Traps (5)</option>
-            <option value="MEDIUM">MEDIUM — Omitted Weights, 404 Link Catch &amp; Repo Audit (3)</option>
+            <option value="CRITICAL">CRITICAL — Spec Conflicts, Vermeil &amp; 404 Catches ({sum(1 for f in catalog['flagged_items'] if f['severity']=='CRITICAL')})</option>
+            <option value="HIGH">HIGH — XRF Spoofing, Multi-Metal &amp; Return Traps ({sum(1 for f in catalog['flagged_items'] if f['severity']=='HIGH')})</option>
+            <option value="MEDIUM">MEDIUM — Omitted Weights &amp; Sibling Repo Audit ({sum(1 for f in catalog['flagged_items'] if f['severity']=='MEDIUM')})</option>
           </select>
         </label>
       </div>
