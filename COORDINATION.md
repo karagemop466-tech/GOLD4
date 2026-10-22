@@ -90,3 +90,57 @@ Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= p
 **Unresolved by design, published on the Flagged page, and not blocking:** 14 of 20 rows have no published gram weight; 0 of 20 rows publish a hallmark; 1 price is blank (VR-02); 1 weight is blank (AN-01, the 2.90 g figure could not be re-read from the live page); every retailer's reputation is unverified; three Blue Nile pages contradict their own metal specification.
 
 **Open work handed off (not claimed by this session):** `arena/22b5b06c-gold4`'s branch still holds a `COORDINATION.md` that conflicts with this board; its review document is preserved at `docs/legacy/REPO_REVIEW_22b5b06c.md`. If that session returns, it should take the board from `main`, not force-push its copy.
+
+---
+
+## Session `arena/fd51d093-gold4` — independent verification pass (2026-10-22 23:55 UTC)
+
+### Claim (made before any file was edited)
+
+| Task | Status | Owner | Files in scope |
+|---|---|---|---|
+| V-1 | Independent line-by-line re-verification of every published value | in progress → done | `data/rings.json`, `data/sellers.json`, `data/gold_spot.json`, `data/sources.json`, `data/verification_log.json` |
+| V-2 | Correct what the re-read contradicted | done | same as V-1 |
+| V-3 | Rebuild site + re-run all three checks | done | `index.html`, `pages/`, `scripts/compute.py`, `scripts/build_site.py` |
+| V-4 | Publish the pass (PR → merge → Pages) and record it here | in progress | `COORDINATION.md`, `README.md`, `VERIFICATION.md` |
+
+**Scope discipline:** this session edits only the files above. It did **not** touch `docs/**` (the inherited sub-site), `docs/legacy/**` (preserved other-session work), `data/preserved/**`, `scripts/audit.py`, `scripts/verify.py` or `scripts/check_site.py`. The earlier sessions' branches were not modified, renamed or force-pushed. No other session's claim was open and unclaimed work was not duplicated: this pass verifies the already-merged tree rather than rebuilding it.
+
+### What was done — and what it found
+
+The published dataset was treated as **untrusted input** and re-fetched page by page. 20 product pages, 4 retailer policy pages, the Anjolee spec sheet, the World Gold Council spot panel, LBMA, the FTC jewellery article, 16 CFR 23.3, 15 U.S.C. § 295 and the FTC credit-card article were all re-read during this session.
+
+**Matched (no change needed):** all 20 prices; all 20 karat/metal labels; the 8 Blue Nile stock numbers and widths; the 4 Allurez and 2 VRAI gram weights; the 5 Mejuri yellow-gold prices; all four retailers' return windows, exclusions, fees and resize terms; every Tier A/B legal claim (karat = parts of 24, trademark-beside-karat-mark, hollow-centre ban, the 0.003/0.007 tolerances, LBMA's twice-daily 10:30/15:00 auctions).
+
+**Corrected — the previous pass was wrong, and this is exactly the class of error the audit exists to catch:**
+
+1. **AN-01's weight was recorded as unverified when the live page publishes it.** Anjolee's own Product Details table reads `Approx. Metal Weight: 2.90 Gr.` for the 0.50 ct / ring-size-6.5 configuration, and the linked spec sheet (`MS354-A.pdf` on anjolee.com) lists `2.9 Gr` for the 0.50 ct size. The value is now recorded with its source and the `WEIGHT_UNVERIFIED` flag is gone. The seller-level `WEIGHT_NOT_PUBLISHED` flag on Anjolee was also wrong and was removed.
+2. **AN-01's centre stone is lab-created and the dataset did not say so.** The same table states `Center Diamond Color: Lab Created FG` / `Center Diamond Clarity: Lab Created VS`. The price basis now says it, a `CENTRE_STONE_LAB_CREATED` flag was added, and the row's price ÷ gold multiple is labelled "price includes a centre stone" in the table so it cannot be read as a setting markup.
+3. **The gold benchmark moved between reads.** The World Gold Council panel read `USD 4,028.53/oz` on this pass versus `4,024.36/oz` recorded earlier the same day (both with `Data as of 21 October, 2026`). The earlier value is preserved in `gold_spot.json → prior_captures` and the active benchmark is now the reading this session actually saw; all derived values were recomputed and the audit re-derived them.
+
+**New irregularities flagged, not resolved (published on the Flagged for Review page):**
+
+- `SPEC_LISTED_PAVE_ON_PLAIN_BAND` (VR-01, VR-02): the selected band is `Plain band`, yet the Setting Details block still lists `Pave carat weight:0.18ctw`.
+- Re-confirmed on the live pages: Blue Nile's 14K page whose copy says "crafted in 18k yellow gold" (BN-04), the 14K page whose copy says "set in 14k white gold" (BN-08), and the 14K page whose copy mentions "platinum prongs" (BN-07).
+
+**Carried forward as NOT verified, and said so on the site:** Brilliant Earth's seller-level facts were not re-fetched this pass (marked earlier-pass-only); no seller's reputation was verified; no item was assayed or XRF-tested; the blank price on VR-02 is correct because the design page genuinely shows no setting price.
+
+### Result
+
+| Check | Result |
+|---|---|
+| `scripts/compute.py` | 20 rows; 7 with published weight; 19 with verified price; spot $129.5202/g |
+| `scripts/audit.py` | **PASS** — 56 passed, 0 warnings, 0 failures |
+| `scripts/check_site.py` | PASS — 20 pages, local links resolve, every populated row carries its own official source link |
+| `scripts/verify.py` | 0 hard failures; 15 deliberately blank values flagged |
+| Dataset | 20 rows · 5 retailers · 19 prices · 7 weights · 0 hallmarks · all sellers' reputations unverified |
+
+### PR and merge record
+
+<!-- PR_RECORD -->
+_To be filled the moment the pull request is opened and merged._
+
+### Event log additions
+
+- **2026-10-22 23:26 UTC** — `arena/fd51d093-gold4` created, branched from `main` at `815bb97`. Read this board first; no task was open and unclaimed, so nothing was taken over. Claimed V-1…V-4 above and pushed the claim.
+- **2026-10-22 23:55 UTC** — Pass 2 completed: 20 product pages + 4 policy pages + spec sheet + 6 reference sources re-fetched. 3 corrections, 2 new flags, 0 unexplained mismatches. Logged in `data/verification_log.json` as "Pass 4 — independent line-by-line re-verification of the published tree".

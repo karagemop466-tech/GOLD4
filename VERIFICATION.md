@@ -1,19 +1,19 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-22 23:25 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-22 23:30 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
 > **No hallucination.** A value is recorded only if it was read from the official page linked in the same row and the fetch was made during this project (verification level **V1**). If a value could not be read from the official page it is **blank** and flagged `PRICE_UNVERIFIED` / `NO_WEIGHT_PUBLISHED` / `WEIGHT_UNVERIFIED` on the Flagged for Review page. Nothing is estimated, averaged, inferred from photos, or copied from a blog, marketplace, resale listing or price-comparison site. Derived values (gold grams, gold value, price ÷ gold) are arithmetic on published inputs and are re-computed independently by `scripts/audit.py` on every pass.
 
-**Benchmark:** gold spot **$4,024.36/oz** as shown on the World Gold Council page for **21 October, 2026** (retrieved 2026-10-22) = **$129.3862/g**. Benchmark source: https://www.gold.org/goldhub/data/gold-prices
+**Benchmark:** gold spot **$4,028.53/oz** as shown on the World Gold Council page for **21 October, 2026** (retrieved 2026-10-22) = **$129.5202/g**. Benchmark source: https://www.gold.org/goldhub/data/gold-prices
 
 
 ## Coverage summary
 
 - Rows: **20**
 - Prices read from the seller's page: **19**
-- Gram weights published by the seller: **6** (therefore only these rows have a computable gold value)
+- Gram weights published by the seller: **7** (therefore only these rows have a computable gold value)
 - Rows with explicit *solid gold* wording: **5**
 - Rows publishing a hallmark or maker's mark: **0** (the legal requirement is quoted in `data/methodology.json`)
 - Rows carrying at least one flag: **20**
@@ -30,29 +30,30 @@ Generated 2026-10-22 23:25 UTC from `data/*.json` by `scripts/gen_verification.p
 | BN-06 | Blue Nile | [Six-Prong Low Dome Comfort Fit Solitaire Engagement Ring (2mm)](https://www.bluenile.com/engagement-rings/design-your-own-ring/six-prong-low-dome-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-2mm-item-195379) | 18K | $1,295 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | BN-07 | Blue Nile | [Classic Four Prong Solitaire Engagement Ring](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257) | 14K | $870 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, MIXED_METAL_UNCLEAR |
 | BN-08 | Blue Nile | [Riviera Pave Diamond Engagement Ring (1/6 ct. tw.)](https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512) | 14K | $1,500 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, COPY_INCONSISTENT_METAL |
-| AL-01 | Allurez | [Engraved Floral Solitaire Engagement Ring Setting](https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold) | 14K | $585 | V1 · 2026-10-22 | 3.58 g | V1 | $270.20 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| AL-02 | Allurez | [Milgrain Trellis Solitaire Engagement Ring](https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold) | 14K | $724 | V1 · 2026-10-22 | 3.40 g | V1 | $256.62 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| AL-03 | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold) | 14K | $848 | V1 · 2026-10-22 | 4.40 g | V1 | $332.09 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| AL-04 | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold) | 18K | $1,425 | V1 · 2026-10-22 | 5.30 g | V1 | $514.31 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.53 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.59 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| AL-01 | Allurez | [Engraved Floral Solitaire Engagement Ring Setting](https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold) | 14K | $585 | V1 · 2026-10-22 | 3.58 g | V1 | $270.48 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| AL-02 | Allurez | [Milgrain Trellis Solitaire Engagement Ring](https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold) | 14K | $724 | V1 · 2026-10-22 | 3.40 g | V1 | $256.88 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| AL-03 | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold) | 14K | $848 | V1 · 2026-10-22 | 4.40 g | V1 | $332.44 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| AL-04 | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold) | 18K | $1,425 | V1 · 2026-10-22 | 5.30 g | V1 | $514.84 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.82 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND |
+| VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.88 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND |
 | MJ-01 | Mejuri | [Diamonds Team Ring](https://mejuri.com/products/diamonds-team-ring) | 14K | $548 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL |
 | MJ-02 | Mejuri | [Diamonds Band](https://mejuri.com/products/diamonds-band) | 14K | $648 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL |
 | MJ-03 | Mejuri | [Pave Diamond Slim Signet](https://mejuri.com/products/pave-diamond-slim-signet-ring) | 14K | $548 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, ENGRAVING_NON_RETURNABLE |
 | MJ-04 | Mejuri | [Pave Diamond Thin Dome Ring](https://mejuri.com/products/pave-diamond-thin-dome-ring) | 14K | $798 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL |
 | MJ-05 | Mejuri | [Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)](https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring) | 14K | $598 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, SCS_CERT_REQUIRED_FOR_RETURN |
-| AN-01 | Anjolee | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) | 14K | $870.76 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | PRICE_INCLUDES_CENTRE_STONE, WEIGHT_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
+| AN-01 | Anjolee | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) | 14K | $870.76 | V1 · 2026-10-22 | 2.90 g | V1 | $219.11 | not stated | not published | PRICE_INCLUDES_CENTRE_STONE, CENTRE_STONE_LAB_CREATED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
 
 ## Derived arithmetic (re-computed and cross-checked by the audit)
 
 | ID | Weight (g) | Fineness | Pure gold (g) | Spot $/g | Gold value | Legal-min value (stamp − 0.007) | Price | Price ÷ gold |
 |---|---|---|---|---|---|---|---|---|
-| AL-01 | 3.58 | 0.5833 | 2.088 | $129.3862 | $270.20 | $266.96 | $585 | 2.17× |
-| AL-02 | 3.40 | 0.5833 | 1.983 | $129.3862 | $256.62 | $253.54 | $724 | 2.82× |
-| AL-03 | 4.40 | 0.5833 | 2.567 | $129.3862 | $332.09 | $328.11 | $848 | 2.55× |
-| AL-04 | 5.30 | 0.7500 | 3.975 | $129.3862 | $514.31 | $509.51 | $1,425 | 2.77× |
-| VR-01 | 2.86 | 0.7500 | 2.145 | $129.3862 | $277.53 | $274.94 | $1,035 | 3.73× |
-| VR-02 | 2.84 | 0.7500 | 2.130 | $129.3862 | $275.59 | $273.02 | **blank** | **blank**× |
+| AL-01 | 3.58 | 0.5833 | 2.088 | $129.5202 | $270.48 | $267.24 | $585 | 2.16× |
+| AL-02 | 3.40 | 0.5833 | 1.983 | $129.5202 | $256.88 | $253.80 | $724 | 2.82× |
+| AL-03 | 4.40 | 0.5833 | 2.567 | $129.5202 | $332.44 | $328.45 | $848 | 2.55× |
+| AL-04 | 5.30 | 0.7500 | 3.975 | $129.5202 | $514.84 | $510.04 | $1,425 | 2.77× |
+| VR-01 | 2.86 | 0.7500 | 2.145 | $129.5202 | $277.82 | $275.23 | $1,035 | 3.73× |
+| VR-02 | 2.84 | 0.7500 | 2.130 | $129.5202 | $275.88 | $273.30 | **blank** | **blank**× |
+| AN-01 | 2.90 | 0.5833 | 1.692 | $129.5202 | $219.11 | $216.48 | $870.76 | 3.97× |
 
 ## Karat pairs (same design, both karats sold by the same retailer)
 
@@ -124,17 +125,17 @@ Generated 2026-10-22 23:25 UTC from `data/*.json` by `scripts/gen_verification.p
 - **MJ-03** (Mejuri · Pave Diamond Slim Signet): weight not published on the captured page → https://mejuri.com/products/pave-diamond-slim-signet-ring
 - **MJ-04** (Mejuri · Pave Diamond Thin Dome Ring): weight not published on the captured page → https://mejuri.com/products/pave-diamond-thin-dome-ring
 - **MJ-05** (Mejuri · Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)): weight not published on the captured page → https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring
-- **AN-01** (Anjolee · Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)): weight, solid-gold wording not published on the captured page → https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx
+- **AN-01** (Anjolee · Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)): solid-gold wording not published on the captured page → https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx
 
 ## Integrity audit output (hallucination / security check)
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-22T23:24:00+00:00
+run_utc: 2026-10-22T23:30:35+00:00
 dataset rows: 20 | sellers: 6 | sources: 13
-spot benchmark: $4,024.36/oz (21 October, 2026) = $129.3862/g
+spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
 
-RESULT: PASS  (55 passed, 0 warnings, 0 failures)
+RESULT: PASS  (56 passed, 0 warnings, 0 failures)
 
 No warnings, no failures.
 
