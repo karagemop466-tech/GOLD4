@@ -409,3 +409,9 @@ This pass ran **concurrently** with `arena/fd51d093-gold4`, `arena/e04b126a-gold
 **No file of any other session was rewritten or deleted; no branch was force-pushed.** A `git pull --rebase` that tried
 to linearize this branch's merge commits was aborted intact (it would have replayed other sessions' commits as ours);
 the merges were kept as merges. This session's own pre-merge edits to shared files were superseded twice — by design.
+
+### Publish event (2026-10-22)
+
+- **Content PR [#20](https://github.com/karagemop466-tech/GOLD4/pull/20)** — "Merge of concurrent main + Pass 7 unique deltas (47-row dataset, all 5 gates green)" — **MERGED** (merge commit on `main`). Full summary, sources and flagged irregularities are in the PR body.
+- **Pages deploy** (`pages.yml`, 5-gate CI): run on `main` **completed: success**; GitHub Pages API status **`built`**; live read-back of https://karagemop466-tech.github.io/GOLD4/ confirms the merged dataset is what is published (47 rings, 10 retailers, 46 source-read prices, 17 published gram weights, 162 published flags, benchmark $4,028.53/oz = $129.52/g dated 21 Oct 2026).
+- This record PR is the closing follow-up, per the board's convention.
