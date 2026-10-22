@@ -258,3 +258,18 @@ Task claimed: re-verify the **merged** tree (the published site), not a working 
 - Benchmark left at **$4,028.53/oz, data as of 21 October 2026** after a third read of the panel returned the same figure.
 - Pass recorded in `data/verification_log.json` (now Passes 0–6), rendered on the site's Log page, and summarised in `README.md`.
 - Checks after the pass: `audit.py` PASS 59/0/0 · `check_site.py` PASS 20 pages · `verify.py` 0 hard failures.
+
+### Publish record (session `arena/e04b126a-gold4`, 2026-10-22)
+
+| # | PR | What it shipped | Merge commit | Pages deploy | Site state confirmed |
+|---|---|---|---|---|---|
+| 1 | **#10** — https://github.com/karagemop466-tech/GOLD4/pull/10 | Pass 5: all 22 rows re-verified, Brilliant Earth rows added, PR #7 conflicts resolved | `e7f4d36` (23:34:06 UTC) | workflow `39872647868` **success**, pages build `39872646820` **success**, API `status=built` | live dashboard read back: 22 rings · 6 retailers · 21 prices · 7 weights · 79 flags · \$4,028.53/oz |
+| 2 | **#12** — https://github.com/karagemop466-tech/GOLD4/pull/12 | Board record of the PR #10 merge, both workflow runs and the live re-verification | `a7258b8` (23:35:41 UTC) | workflow `39872820799` **success**, pages build `39872819821` **success** | Pages API `status=built` |
+| 3 | **#13** — https://github.com/karagemop466-tech/GOLD4/pull/13 | **Pass 6:** line-by-line re-verification of merged `main`; no discrepancy found; Pass 6 + `not_reverified_this_pass` published on the Log page | `563ef0f` (23:38:19 UTC) | workflow `39873104987` **success**, pages build `39873104269` **success** | live Log page read back: Pass 6 present with the full checked list |
+| 4 | **#14** — https://github.com/karagemop466-tech/GOLD4/pull/14 | Two cosmetic fixes found by reading the deployed Log page: a missing space, and a stale "Five agent sessions / this pass is fd51d093" paragraph | `66877c7` (23:39:49 UTC) | workflow `39873263536` **success**, pages build `39873263053` **success** | live Log page re-read: typo gone, six sessions named, both passes credited |
+
+Every PR was merged **without waiting for review**, as the brief requires, and each was merged only after
+`audit.py` PASS (59/0/0), `check_site.py` PASS (20 pages) and `verify.py` 0 hard failures. No branch was force-pushed
+after the one rebase; no other session's file was deleted.
+
+**Live site:** https://karagemop466-tech.github.io/GOLD4/ — dashboard, 10 category pages and the Flagged page are current as of `66877c7`.
