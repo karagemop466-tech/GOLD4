@@ -8,6 +8,18 @@ A small, auditable dataset of **solid-gold engagement rings** with retailer pric
 
 **Live site:** https://karagemop466-tech.github.io/GOLD4/
 
+**Latest pass — Pass 15 (2026-10-23), the first *online* audit in this project.** Every one of the 64 ring URLs and all 28 registered sources was re-opened from a GitHub runner with open internet, and each page's own schema.org / price-meta offer was compared with the stored value:
+
+| Result | Count | What it means |
+|---|---|---|
+| Prices re-confirmed by the page itself | **45** | the page's own structured data prints exactly the stored amount |
+| Prices the page now prints differently | **4** | VR-01, MN-01, MN-02, MJ-06 — both numbers published, nothing overwritten |
+| Source URLs that now return 404 | **5** | BN-09, BN-10, BN-11, BN-12, RS-05 — flagged `SOURCE_URL_DEAD` |
+| Sources that refuse automated checks (403) | **7** | all Brilliant Earth — no price claim made, flagged `SOURCE_BOT_BLOCKED` |
+| JavaScript-only pages (price unreadable) | **1** | AN-01 (Anjolee) |
+
+See the **[Freshness page](https://karagemop466-tech.github.io/GOLD4/pages/freshness.html)** for the line-by-line table. No stored value was changed by that check: a dead link or a blocked page never becomes a guessed price.
+
 ---
 
 ## ⚠ No hallucination rule (read before trusting anything here)
@@ -35,20 +47,34 @@ When reviewing anything in this repo, **ask of each value: where is the official
 | `data/methodology.json` | Karat table, 15 U.S.C. § 295 tolerances, formulas, assumptions, verification levels |
 | `data/gold_spot.json` | The gold benchmark: **$4,028.53/oz, data as of 21 Oct 2026** (World Gold Council, read 22 Oct 2026). The earlier same-day reading of $4,024.36/oz is kept in `prior_captures` |
 | `data/derived.json` | Computed gold content / value / multiples (generated) |
-| `data/verification_log.json` | The verification passes (0–9) rendered on the site's Log page |
+| `data/verification_log.json` | The verification passes (0–15) rendered on the site's Log page |
 | `VERIFICATION.md` | Line-by-line verification record (generated from the JSON) |
 | `reports/audit_latest.txt` | Latest integrity-audit output |
+| `reports/live_source_check_*.json` | Raw live evidence: per-URL HTTP status, page title and the price strings the page printed |
+| `data/source_health.json` | Per-row reconciliation of that evidence (source state + price verdict) |
 | `COORDINATION.md` | Shared task board for the agent sessions working in this repo |
 | `scripts/` | `compute.py`, `build_site.py`, `audit.py`, `gen_verification.py` |
 
 ## Reproduce / re-verify
 
 ```bash
-python3 scripts/compute.py        # derived gold values from published inputs
-python3 scripts/build_site.py     # regenerate the static site
-python3 scripts/gen_verification.py
-python3 scripts/audit.py          # hallucination + integrity audit; non-zero exit on failure
+python3 scripts/compute.py            # derived gold values from published inputs
+python3 scripts/generate_site.py      # Assay Lab section (secondary 22-item catalogue)
+python3 scripts/build_site.py         # canonical dashboard + pages/ (run last: it owns index.html)
+python3 scripts/gen_verification.py   # regenerates VERIFICATION.md from the log
+python3 scripts/audit.py              # gate 1 — integrity / hallucination audit
+python3 scripts/check_site.py         # gate 2 — links, source link per row, no-hallucination banner
+python3 scripts/verify.py             # gate 3 — schema + blank-value accounting
+python3 scripts/verify_a0be79d4.py    # gate 4 — XSS, dead-link and 404 blocklist scanner
+python3 scripts/audit_hallucinations.py  # gate 5 — phantom-math / unsourced-value auditor
+python3 scripts/audit_freshness.py    # gate 6 — live-evidence freshness & source-health
 ```
+
+### The online half of the audit (needs internet)
+
+`scripts/live_source_check.py` makes read-only GETs to every official URL in the dataset, restricted to the host allow-list in `data/sources.json`, and writes an evidence artifact (HTTP status, soft-404 detection, page title, and the raw price strings the page prints) to `reports/`. It never writes a value into the dataset. `scripts/build_source_health.py` reconciles that artifact into `data/source_health.json`, and `scripts/apply_source_health.py` stamps each row with a `source_check` block plus review flags. The whole chain runs in CI (`.github/workflows/live-source-check.yml`) and commits its evidence back to the branch.
+
+**Rule for the reconciliation:** `CONFIRMED` requires the page's own structured data to print exactly the stored USD amount. A 404, a 403 or a JavaScript-only shell produces *no claim at all*. A different number is reported, never silently adopted.
 
 No third-party dependencies, no network access required to build. Python 3.10+.
 

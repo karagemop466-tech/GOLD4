@@ -45,7 +45,7 @@ def sentence(state_row: dict, checked: str) -> str:
     found = ", ".join(
         f"{p['value']:,.2f} {p['currency'] or 'n/a'} via {p['source']}" for p in state_row.get("found_prices", [])
     )
-    head = f"Pass 12 source check {checked}: "
+    head = f"Pass 15 source check {checked}: "
     if st == "HTTP_404":
         return head + (
             "the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); "
@@ -117,11 +117,11 @@ def main() -> int:
 
         # Append the evidence sentence once, keeping whatever an earlier pass wrote.
         existing = row.get("flag_detail") or ""
-        marker = "Pass 12 source check"
+        marker = "Pass 15 source check"
         if marker in existing:
             existing = existing.split(" | " + marker)[0].rstrip(" |")
         note = sentence(st, checked)
-        if st.get("source_state") == "OK" or st.get("price_state") == "NO_STORED_PRICE":
+        if st.get("source_state") == "OK" and st.get("price_state") in ("CONFIRMED", "NO_STORED_PRICE"):
             # confirmed / nothing to raise: record it in source_check only, do not
             # clutter flag_detail on 45 healthy rows.
             pass
@@ -130,7 +130,7 @@ def main() -> int:
         changed += 1
 
     doc["source_health_pass"] = (
-        f"Pass 12 (session arena/03c0c10f-gold4) re-opened all {len(by_id)} store URLs live from a GitHub runner "
+        f"Pass 15 (session arena/03c0c10f-gold4) re-opened all {len(by_id)} store URLs live from a GitHub runner "
         f"at {health.get('evidence_checked_utc')} and recorded the HTTP status and the page's own structured price "
         "in each row's `source_check` block. This pass changed no price, weight or URL."
     )

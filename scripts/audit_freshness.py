@@ -164,7 +164,7 @@ def main() -> int:
         if h["source_state"] == "HTTP_404":
             if not str(row.get("url", "")).startswith("https://"):
                 bad(f"{rid}: dead URL is not even an https official link")
-            elif "Pass 12 source check" not in (row.get("flag_detail") or ""):
+            elif "Pass 15 source check" not in (row.get("flag_detail") or ""):
                 warn(f"{rid}: SOURCE_URL_DEAD raised without the evidence sentence in flag_detail")
             else:
                 ok()

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-GOLD4 — LIVE source-health check (Pass 12, session arena/03c0c10f-gold4).
+GOLD4 — LIVE source-health check (Pass 15, session arena/03c0c10f-gold4).
 
 WHY THIS EXISTS
 ---------------

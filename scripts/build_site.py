@@ -965,7 +965,7 @@ def main() -> None:
 """
     (PAGES / "sources.html").write_text(render("Sources", sources_body, "sources", root="../"), encoding="utf-8")
 
-    # ---------------------------------------------------------------- freshness (Pass 12)
+    # ---------------------------------------------------------------- freshness (Pass 15)
     try:
         health = load("source_health.json")
     except FileNotFoundError:
@@ -1218,7 +1218,7 @@ def main() -> None:
   <div class="nohall">
     <h2>⚠ This page moved — you are being redirected</h2>
     <p><strong>No hallucinations:</strong> this URL used to serve a second, older copy of the {esc(label.lower())}.
-    Keeping two copies meant two different row sets on one site, so it was retired in the Pass 12 consolidation.
+    Keeping two copies meant two different row sets on one site, so it was retired in the Pass 15 consolidation.
     Nothing was deleted: the canonical page is generated from the same repository data and covers every row.</p>
     <p>The canonical page is <a href="{new_path}"><strong>{esc(new_path)}</strong></a> — {esc(blurb)}.</p>
     <p class="small">If your browser does not redirect automatically, follow the link above. The consumer rules used
