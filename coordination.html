@@ -36,15 +36,28 @@
       </a>
       <div class="header-badges">
         <span class="badge badge-ok">18K: $97.05/g · 14K: $75.48/g · 10K: $53.91/g</span>
-        <a class="badge badge-crit" href="flagged.html" style="text-decoration:none;">12 Flagged Irregularities ↗</a>
+        <a class="badge badge-crit" href="pages/flagged.html" style="text-decoration:none;">12 Flagged Irregularities ↗</a>
       </div>
     </div>
     <nav class="site-nav" aria-label="Primary site navigation">
-      <a href="index.html">Main Desk (64) <span class="nav-badge">64</span></a><a href="dashboard.html">Assay Lab <span class="nav-badge">22</span></a><a href="solitaires.html">Solitaires <span class="nav-badge">8</span></a><a href="three-stone-halo.html">3-Stone &amp; Halo <span class="nav-badge">4</span></a><a href="bands.html">Solid Bands &amp; 24K <span class="nav-badge">9</span></a><a href="calculator.html">Melt Calculator</a><a href="checklist.html">12-Point Checklist <span class="nav-badge">12</span></a><a href="sellers.html">Sellers <span class="nav-badge">6</span></a><a href="standards.html">FTC &amp; XRF Law <span class="nav-badge">5</span></a><a href="flagged.html">Flagged Register <span class="nav-badge nav-badge-alert">12</span></a><a href="audit.html">Security Audit <span class="nav-badge">PASS</span></a><a href="coordination.html" class="active" aria-current="page">Git Coordination</a>
+      <a href="index.html">Dashboard <span class="nav-badge">64</span></a><a href="dashboard.html">Assay Lab home <span class="nav-badge">22</span></a><a href="solitaires.html">Solitaires <span class="nav-badge">8</span></a><a href="three-stone-halo.html">3-Stone &amp; Halo <span class="nav-badge">4</span></a><a href="bands.html">Solid Bands &amp; 24K <span class="nav-badge">9</span></a><a href="pages/calculator.html">Melt Calculator</a><a href="checklist.html">12-Point Checklist <span class="nav-badge">12</span></a><a href="pages/sellers.html">Sellers <span class="nav-badge">10</span></a><a href="standards.html">FTC &amp; XRF Law <span class="nav-badge">5</span></a><a href="pages/flagged.html">Flagged Register <span class="nav-badge nav-badge-alert">12</span></a><a href="pages/freshness.html">Source Freshness</a><a href="audit.html">Security Audit <span class="nav-badge">PASS</span></a><a href="coordination.html" class="active" aria-current="page">Git Coordination</a>
     </nav>
   </header>
 
   <main id="main-content" class="container">
+    <div class="audit-banner" role="note" style="border-left-color:#9e7620">
+      <div>
+        <strong>ASSAY LAB — secondary deep-dive.</strong> This section is a 22-item curated catalogue with its own
+        two Kitco / JM Bullion cross-check quotes (22 October 2026). The canonical dataset is
+        <strong>64 rows / 10 retailers</strong> on the <a href="index.html">Dashboard</a>, benchmarked on the
+        World Gold Council panel, with <a href="pages/freshness.html">live source health</a> checked line by line.
+        Where the two differ, the Dashboard wins — this section is a companion, not a second source of truth.
+      </div>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        <a class="btn btn-sm" href="index.html">Canonical Dashboard →</a>
+        <a class="btn btn-sm" href="pages/freshness.html">Source Freshness →</a>
+      </div>
+    </div>
     
         <div class="audit-banner" role="note">
           <div>
@@ -52,7 +65,8 @@
           </div>
           <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
             <a class="btn btn-sm" href="dashboard.html#zero-hallucination-policy">Read Policy ↑</a>
-            <a class="btn btn-sm" href="flagged.html">Flagged Register →</a>
+            <a class="btn btn-sm" href="pages/flagged.html">Flagged Register (64 rows) →</a>
+            <a class="btn btn-sm" href="pages/freshness.html">Live Source Check →</a>
             <a class="btn btn-sm" href="audit.html">Security Audit Log →</a>
           </div>
         </div>
@@ -70,6 +84,28 @@
       <div class="card">
         <h3>Live Shared `COORDINATION.md` Snapshot</h3>
         <pre style="white-space:pre-wrap;background:var(--surface-alt);padding:1rem;border-radius:8px;border:1px solid var(--border);font-size:0.8rem;line-height:1.5;"># COORDINATION.md — GOLD4 shared task board
+
+## Session `arena/03c0c10f-gold4` — Pass 12: live source-health audit, price-freshness refresh &amp; landing-page consolidation (2026-10-23)
+
+**Claim (written before any file in scope was edited; committed and pushed immediately).**
+This session owns the *freshness and publication* scope only:
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 20 | **Source-health audit of all 64 row URLs + 28 registered sources** — re-open every official page, record HTTP status / reachability, flag every URL that no longer resolves as `SOURCE_URL_UNREACHABLE` with the date checked | `in progress` | `arena/03c0c10f` | `data/rings.json`, `data/sources.json`, `reports/live_source_check_*.json`, `scripts/live_source_check.py` |
+| 21 | **Price-freshness refresh** — re-read every reachable product page; correct any price that moved, stamp `price_captured_utc`, never fill a blank without a source | `in progress` | `arena/03c0c10f` | `data/rings.json`, `data/verification_log.json` |
+| 22 | **Landing-page consolidation** — one clean landing page + category subpages, no duplicate/legacy shadow pages, no dead nav targets | `in progress` | `arena/03c0c10f` | `index.html`, `pages/*.html`, `docs/*.html`, `scripts/build_site.py`, `assets/*` |
+| 23 | **Freshness gate** — extend the automated audit so a row whose source is unreachable, or whose price is older than the freshness window, is flagged instead of passing silently | `in progress` | `arena/03c0c10f` | `scripts/audit_hallucinations.py`, `scripts/audit.py`, `.github/workflows/pages.yml` |
+| 24 | **Publish** — PR → merge → confirm GitHub Pages deploy → record result here | `unclaimed` | — | this file |
+
+**Branch note (deviation, logged deliberately):** the board&#x27;s convention is `session-&lt;id&gt;/&lt;task&gt;`. This session is executed by Arena Agent Mode, which is pinned to the branch **`arena/03c0c10f-gold4`** and may not create or push any other branch. All work is therefore committed to `arena/03c0c10f-gold4`, which is functionally equivalent to `session-03c0c10f/pass12`. No other branch is modified and nothing is force-pushed.
+
+**Non-overlap declaration:** this session does **not** rewrite the ring values owned by earlier passes into new estimates — it only (a) re-reads them and records the re-read, (b) flags what could not be re-read, and (c) changes a stored value **only** when the live official page prints a different number, in which case the old value is preserved in the row&#x27;s `reverification` / `flag_detail` text. It does not edit `data/sellers.json`, `data/standards_and_spot.json`, `data/catalog_a0be79d4.json` or `data/verified_rings.json` (owned by earlier sessions; read-only here).
+
+**Pass 12 early evidence (recorded before any edit):**
+- `python3 scripts/audit.py` → PASS 128 passed / 3 warnings / 0 failures; `check_site.py` → PASS 26 pages (4 legacy `docs/` warnings); `verify.py` → PASS 64 records; `verify_a0be79d4.py` → PASS 36 pages / 1953 links; `audit_hallucinations.py` → PASS 879 checks.
+- **New irregularity found on first contact:** the source URL stored on row **BN-22** (`https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321`) now returns Blue Nile&#x27;s **&quot;We&#x27;re sorry, the page you&#x27;re looking for cannot be found&quot;** 404 page, while the row still carries `price_verification: V1_direct_page_fetch`. The stored price is therefore no longer checkable at the URL published beside it. This class of defect — *price was verified once, the link has since rotted* — is exactly what the existing five gates cannot see, because they are offline. Task 20 exists to measure it across all 64 rows.
+
 
 Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold engagement-ring data (with a live GitHub Pages dashboard).
 
@@ -674,10 +710,11 @@ BE-05/BE-06/BE-07 (Brilliant Earth): re-fetch **attempted** ~00:31–00:33Z; the
         Unconfirmed fields are never estimated or inferred — always check for hallucinations after every review.
       </div>
       <div style="display:flex;gap:0.9rem;flex-wrap:wrap;">
-        <a href="index.html">Overview</a>
-        <a href="calculator.html">Melt Calculator</a>
+        <a href="index.html">Canonical Dashboard</a>
+        <a href="pages/calculator.html">Melt Calculator</a>
         <a href="checklist.html">12-Point Checklist</a>
-        <a href="flagged.html">Flagged for Review</a>
+        <a href="pages/flagged.html">Flagged for Review</a>
+        <a href="pages/freshness.html">Source Freshness</a>
         <a href="audit.html">Security Audit</a>
         <a href="coordination.html">Git Coordination</a>
         <a href="docs/index.html">Preserved /docs/ Sub-Site</a>

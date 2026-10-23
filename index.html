@@ -15,14 +15,14 @@
       <span>GOLD4<small>gold-ring verification desk</small></span>
     </a>
     <nav class="main">
-      <a href="index.html" class="active">Dashboard</a><a href="pages/solitaire.html" class="">Solitaire</a><a href="pages/pave.html" class="">Pavé</a><a href="pages/band.html" class="">Bands</a><a href="pages/purity.html" class="">14K vs 18K</a><a href="pages/sellers.html" class="">Sellers</a><a href="pages/calculator.html" class="">Calculator</a><a href="pages/flagged.html" class="">Flagged</a><a href="pages/methodology.html" class="">Method</a><a href="pages/sources.html" class="">Sources</a><a href="pages/log.html" class="">Log</a><a href="dashboard.html" class="">Assay Lab+</a><a href="categories/calculator.html" class="">Stone-Deduction Calc</a><a href="categories/verification-audit.html" class="">Deep Audit</a>
+      <a href="index.html" class="active">Dashboard</a><a href="pages/solitaire.html" class="">Solitaire</a><a href="pages/pave.html" class="">Pavé</a><a href="pages/band.html" class="">Bands</a><a href="pages/purity.html" class="">14K vs 18K</a><a href="pages/sellers.html" class="">Sellers</a><a href="pages/calculator.html" class="">Calculator</a><a href="pages/flagged.html" class="">Flagged</a><a href="pages/methodology.html" class="">Method</a><a href="pages/sources.html" class="">Sources</a><a href="pages/freshness.html" class="">Freshness</a><a href="checklist.html" class="">Checklist</a><a href="pages/log.html" class="">Log</a><a href="dashboard.html" class="">Assay Lab+</a>
     </nav>
   </div>
 </header>
 <main class="wrap">
 
 <section class="hero">
-  <span class="eyebrow">● live dataset · captured 22 October 2026 · every row re-read from its source on 2026-10-22</span>
+  <span class="eyebrow">● live dataset · prices captured 22 October 2026 · source URLs re-opened live 2026-10-23T10:00:09Z</span>
   <h1>Solid-gold engagement rings, with every number traceable to the seller's own page.</h1>
   <p class="lede">A small, deliberately boring dataset: 64 rings from 10 retailers, 62 prices read
   from the retailer's page today, 17 published gram weights, and the gold-value arithmetic that follows from them.
@@ -59,6 +59,24 @@
   <div class="kpi gold"><div class="n">$129.39</div><div class="l">gold per gram</div><div class="s">$4,024.45/oz · 22 October, 2026</div></div>
   <div class="kpi"><div class="n">233</div><div class="l">flags raised</div><div class="s">all published for review</div></div>
 </div>
+
+<section class="section">
+  <h2>Source health: are these prices still what the retailers print?</h2>
+  <p class="sub">The audits in this repo are offline — they cannot see a link that has since rotted. On
+  <strong>2026-10-23T10:00:09Z</strong> a GitHub runner with open internet re-opened every one of the
+  64 ring URLs and 28 registered sources, read each page's own
+  structured price, and recorded the result. <a href="pages/freshness.html"><strong>Open the line-by-line table →</strong></a></p>
+  <div class="kpis">
+    <div class="kpi gold"><div class="n">45</div><div class="l">prices re-confirmed</div><div class="s">page printed exactly the stored amount</div></div>
+    <div class="kpi"><div class="n">5</div><div class="l">dead source URLs</div><div class="s">flagged SOURCE_URL_DEAD</div></div>
+    <div class="kpi"><div class="n">7</div><div class="l">bot-blocked checks</div><div class="s">no price claim made</div></div>
+    <div class="kpi"><div class="n">4</div><div class="l">prices that differ</div><div class="s">both numbers published</div></div>
+  </div>
+  <p class="small">Nothing on this site was changed by that check. A 404, a 403 or a JavaScript-only page never becomes a
+  guessed price: the stored value keeps its original capture date and is flagged instead.
+  <a href="pages/freshness.html">See exactly what each state means →</a></p>
+</section>
+
 
 <section class="section">
   <h2>The buying checklist, answered with evidence</h2>
@@ -1341,7 +1359,7 @@
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="pages/flagged.html">Flagged for Review</a> page.</p>
   <p>Gold benchmark: $4,024.45/oz as of 22 October, 2026 (World Gold Council) = $129.3891/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-23 09:56 UTC · dataset 64 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-23 10:03 UTC · dataset 64 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

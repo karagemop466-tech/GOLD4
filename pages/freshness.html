@@ -1,0 +1,1127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freshness · GOLD4 gold-ring verification desk</title>
+<meta name="description" content="Verified solid-gold engagement-ring data: retailer prices, published gram weights, computed gold content and flagged irregularities. No hallucinated values.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" style="text-decoration:none;color:inherit">
+      <span class="mark">Au</span>
+      <span>GOLD4<small>gold-ring verification desk</small></span>
+    </a>
+    <nav class="main">
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="freshness.html" class="active">Freshness</a><a href="../checklist.html" class="">Checklist</a><a href="log.html" class="">Log</a><a href="../dashboard.html" class="">Assay Lab+</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+
+<section class="hero">
+  <span class="eyebrow">● live check 2026-10-23T10:00:09Z · every official URL re-opened · no value changed by the check</span>
+  <h1>Are the prices on this site still what the retailers print?</h1>
+  <p class="lede">The integrity audits in this repo are offline: they prove a value is internally consistent and carries a
+  source URL. They cannot see a link that has since rotted. This page does. On <strong>2026-10-23T10:00:09Z</strong> a GitHub
+  runner with open internet access re-opened all <strong>64</strong> ring URLs and
+  <strong>28</strong> registered sources, and recorded the HTTP status plus the price the page
+  itself publishes in its schema.org data.</p>
+  <div class="pill-row">
+    <span class="badge b-ok">45 prices re-confirmed by the page itself</span>
+    <span class="badge b-bad">5 URLs now 404</span>
+    <span class="badge b-warn">7 blocked by bot protection</span>
+    <span class="badge b-warn">1 JavaScript-only shell</span>
+    <span class="badge b-info">no value changed by this check</span>
+  </div>
+</section>
+
+<div class="nohall">
+  <h2>⚠ NO HALLUCINATIONS — read before using any number</h2>
+  <p><strong>No hallucinations.</strong> This project manufactures no values. A price, weight, karat, deadline or contact detail is only shown if it was read from the
+  official page linked in the same row. The consumer rules being applied come from the
+  <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC's guidance on buying gold jewelry</a>
+  and <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.</p>
+  <ul>
+    <li><strong>Blank means blank.</strong> If a retailer did not publish a gram weight, the weight cell stays empty — it is never estimated from photos, blogs or "typical" rings.</li>
+    <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
+    <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
+    <li><strong>Anything uncertain is published on <a href="../pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
+  </ul>
+</div>
+
+
+<div class="kpis">
+  <div class="kpi"><div class="n">45</div><div class="l">prices re-confirmed</div><div class="s">page's own structured price = stored price</div></div>
+  <div class="kpi"><div class="n">5</div><div class="l">dead source URLs</div><div class="s">HTTP 404 at the check</div></div>
+  <div class="kpi"><div class="n">7</div><div class="l">bot-blocked sources</div><div class="s">HTTP 403 — no price statement made</div></div>
+  <div class="kpi gold"><div class="n">1</div><div class="l">JavaScript-only pages</div><div class="s">price cannot be read without a browser</div></div>
+  <div class="kpi"><div class="n">4</div><div class="l">prices that differ</div><div class="s">both numbers shown, nothing overwritten</div></div>
+</div>
+
+<section class="section">
+  <h2>What each state means — and what it does not mean</h2>
+  <div class="grid two">
+    <div class="card">
+      <h3>Reading the check honestly</h3>
+      <ul>
+        <li><strong>Page served and read</strong> — a 200 response with product text. The price is compared with the page's own schema.org offer price.</li>
+        <li><strong>404</strong> — the URL stored beside the value no longer resolves. The value stays as captured (with its original date) and is flagged <span class="mono">SOURCE_URL_DEAD</span>; it is <em>not</em> re-confirmed and <em>not</em> silently deleted.</li>
+        <li><strong>403</strong> — the retailer's bot protection refused the runner. That is a statement about the runner, not about the price. No claim is made.</li>
+        <li><strong>JavaScript-only</strong> — the server sends a shell; the price is rendered in the browser. Again, no claim is made.</li>
+        <li><strong>Differs</strong> — the page's structured offer price is a different number (usually a different variant/configuration selected on that page). Both numbers are published; the stored value is <em>not</em> overwritten without a human reading the page.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Dead links found by this pass (5)</h3>
+      <ul class="small"><li><strong>BN-09</strong> · Blue Nile · <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y" target="_blank" rel="noopener">the URL that now 404s</a></li><li><strong>BN-10</strong> · Blue Nile · <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14" target="_blank" rel="noopener">the URL that now 404s</a></li><li><strong>BN-11</strong> · Blue Nile · <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y" target="_blank" rel="noopener">the URL that now 404s</a></li><li><strong>BN-12</strong> · Blue Nile · <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y" target="_blank" rel="noopener">the URL that now 404s</a></li><li><strong>RS-05</strong> · Ross-Simons · <a href="https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html" target="_blank" rel="noopener">the URL that now 404s</a></li></ul>
+      <h3 style="margin-top:14px">Prices the page now prints differently (4)</h3>
+      <ul class="small"><li><strong>VR-01</strong> · stored $1,035 vs page 2,185.00 USD · <a href="https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861" target="_blank" rel="noopener">open the page</a></li><li><strong>MN-01</strong> · stored $1,465 vs page 2,441.00 USD, 1,908.00 USD, 2,223.00 USD, 1,800.00 USD, 1,888.00 USD, 1,770.00 USD, 1,627.00 USD, 1,530.00 USD, 1,454.00 USD · <a href="https://mene.com/products/knot-ring-gold" target="_blank" rel="noopener">open the page</a></li><li><strong>MN-02</strong> · stored $1,730 vs page 2,565.00 USD, 2,386.00 USD, 2,378.00 USD, 2,264.00 USD, 2,189.00 USD, 2,201.00 USD, 1,961.00 USD, 1,906.00 USD · <a href="https://mene.com/products/etruscan-sun-band-gold" target="_blank" rel="noopener">open the page</a></li><li><strong>MJ-06</strong> · stored $1,100 vs page 1,200.00 USD, 1,600.00 USD, 1,500.00 USD, 1,400.00 USD, 1,300.00 USD, 1,700.00 USD · <a href="https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&amp;Stone=Natural+Diamond" target="_blank" rel="noopener">open the page</a></li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Every ring URL, checked line by line</h2>
+  <p class="sub">HTTP status and the price the page itself publishes. Blank cells mean the page did not publish the value in machine-readable form — never that it was assumed.</p>
+  
+<div class="toolbar">
+  <input type="search" id="filter" placeholder="Filter by retailer, ring, SKU, flag…" aria-label="Filter rows">
+  <span class="count" id="filterCount">64 rows</span>
+</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>ID</th><th>Retailer</th><th>Ring / page title returned</th><th class="num">HTTP</th><th>Source state</th>
+    <th class="num">Stored price</th><th class="num">Page's structured price</th><th>Price verdict</th><th>Source</th></tr></thead>
+    <tbody>
+  <tr data-row-id="AL-01">
+    <td class="id">AL-01</td>
+    <td>Allurez</td>
+    <td class="prod"><a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">Engraved Floral Solitaire Engagement Ring Setting</a>
+        <span class="sub">Engraved Floral Solitaire Engagement Ring Setting 14K Yellow Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$585<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">585.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">allurez.com/products/floral-solitaire-engagement-ring-14k-y…</a></td>
+  </tr>
+  <tr data-row-id="AL-02">
+    <td class="id">AL-02</td>
+    <td>Allurez</td>
+    <td class="prod"><a href="https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">Milgrain Trellis Solitaire Engagement Ring</a>
+        <span class="sub">Milgrain Trellis Solitaire Engagement Ring 14k Yellow Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$724<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">724.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">allurez.com/products/milgrain-trellis-solitaire-engagement-…</a></td>
+  </tr>
+  <tr data-row-id="AL-03">
+    <td class="id">AL-03</td>
+    <td>Allurez</td>
+    <td class="prod"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">Split Shank Solitaire Engagement Ring</a>
+        <span class="sub">Split Shank Solitaire Engagement Ring 14k Yellow Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$848<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">848.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">allurez.com/products/split-shank-solitaire-engagement-ring-…</a></td>
+  </tr>
+  <tr data-row-id="AL-04">
+    <td class="id">AL-04</td>
+    <td>Allurez</td>
+    <td class="prod"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold" target="_blank" rel="noopener">Split Shank Solitaire Engagement Ring</a>
+        <span class="sub">Split Shank Solitaire Engagement Ring 18k Yellow Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,425<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,425.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold" target="_blank" rel="noopener">allurez.com/products/split-shank-solitaire-engagement-ring-…</a></td>
+  </tr>
+  <tr data-row-id="AN-01">
+    <td class="id">AN-01</td>
+    <td>Anjolee</td>
+    <td class="prod"><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)</a>
+        <span class="sub">Anjolee</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-warn">200 but JavaScript-only shell</span></td>
+    <td class="num">$870.76<span class="sub">captured 2026-10-22</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">price not machine-readable</span></td>
+    <td class="src"><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Cu…</a></td>
+  </tr>
+  <tr data-row-id="BE-01">
+    <td class="id">BE-01</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/" target="_blank" rel="noopener">Atelier Solitaire Ring (2 mm, claw-prong bypass)</a>
+        <span class="sub">Brilliant Earth - Verifying</span></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
+    <td class="num">$1,190<span class="sub">captured 2026-10-22</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">page not read — no price statement</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444…</a></td>
+  </tr>
+  <tr data-row-id="BE-02">
+    <td class="id">BE-02</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">Atelier Solitaire Ring (2 mm, claw-prong bypass)</a>
+        <span class="sub">Brilliant Earth - Verifying</span></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
+    <td class="num">$1,390<span class="sub">captured 2026-10-22</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">page not read — no price statement</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-420…</a></td>
+  </tr>
+  <tr data-row-id="BN-01">
+    <td class="id">BN-01</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639" target="_blank" rel="noopener">Petite Solitaire Engagement Ring</a>
+        <span class="sub">Petite Solitaire Engagement Ring in 14k Yellow Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,000<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,000.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/petite-s…</a></td>
+  </tr>
+  <tr data-row-id="BN-02">
+    <td class="id">BN-02</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269" target="_blank" rel="noopener">Petite Solitaire Engagement Ring</a>
+        <span class="sub">Petite Solitaire Engagement Ring in 18k Yellow Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,155<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,155.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/petite-s…</a></td>
+  </tr>
+  <tr data-row-id="BN-03">
+    <td class="id">BN-03</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272" target="_blank" rel="noopener">Classic Six-Prong Solitaire Engagement Ring</a>
+        <span class="sub">Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,000<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,000.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a></td>
+  </tr>
+  <tr data-row-id="BN-04">
+    <td class="id">BN-04</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284" target="_blank" rel="noopener">Classic Comfort Fit Solitaire Engagement Ring (2.5mm)</a>
+        <span class="sub">Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$935<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">935.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a></td>
+  </tr>
+  <tr data-row-id="BN-05">
+    <td class="id">BN-05</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941" target="_blank" rel="noopener">Classic Comfort Fit Solitaire Engagement Ring (2.5mm)</a>
+        <span class="sub">Classic Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2.5mm)</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,310<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,310.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a></td>
+  </tr>
+  <tr data-row-id="BN-06">
+    <td class="id">BN-06</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/six-prong-low-dome-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-2mm-item-195379" target="_blank" rel="noopener">Six-Prong Low Dome Comfort Fit Solitaire Engagement Ring (2mm)</a>
+        <span class="sub">Six -Prong Low Dome Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2mm)</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,295<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,295.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/six-prong-low-dome-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-2mm-item-195379" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/six-pron…</a></td>
+  </tr>
+  <tr data-row-id="BN-07">
+    <td class="id">BN-07</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257" target="_blank" rel="noopener">Classic Four Prong Solitaire Engagement Ring</a>
+        <span class="sub">Classic Four Prong Solitaire Engagement Ring in 14K Yellow Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$870<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">870.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a></td>
+  </tr>
+  <tr data-row-id="BN-08">
+    <td class="id">BN-08</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512" target="_blank" rel="noopener">Riviera Pave Diamond Engagement Ring (1/6 ct. tw.)</a>
+        <span class="sub">Riviera Pavé Diamond Engagement Ring in 14K Yellow Gold (1/6 ct. tw.)</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,500<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,500.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/riviera-…</a></td>
+  </tr>
+  <tr data-row-id="MJ-01">
+    <td class="id">MJ-01</td>
+    <td>Mejuri</td>
+    <td class="prod"><a href="https://mejuri.com/products/diamonds-team-ring" target="_blank" rel="noopener">Diamonds Team Ring</a>
+        <span class="sub">Diamonds Team Ring | Mejuri</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$548<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">548.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://mejuri.com/products/diamonds-team-ring" target="_blank" rel="noopener">mejuri.com/products/diamonds-team-ring</a></td>
+  </tr>
+  <tr data-row-id="MJ-02">
+    <td class="id">MJ-02</td>
+    <td>Mejuri</td>
+    <td class="prod"><a href="https://mejuri.com/products/diamonds-band" target="_blank" rel="noopener">Diamonds Band</a>
+        <span class="sub">Diamond Band Ring | Mejuri</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$648<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">648.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://mejuri.com/products/diamonds-band" target="_blank" rel="noopener">mejuri.com/products/diamonds-band</a></td>
+  </tr>
+  <tr data-row-id="MJ-03">
+    <td class="id">MJ-03</td>
+    <td>Mejuri</td>
+    <td class="prod"><a href="https://mejuri.com/products/pave-diamond-slim-signet-ring" target="_blank" rel="noopener">Pave Diamond Slim Signet</a>
+        <span class="sub">14k Yellow Gold Handcrafted Pavé Diamond Signet Ring - Jewelry | Mejuri</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$548<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">548.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://mejuri.com/products/pave-diamond-slim-signet-ring" target="_blank" rel="noopener">mejuri.com/products/pave-diamond-slim-signet-ring</a></td>
+  </tr>
+  <tr data-row-id="MJ-04">
+    <td class="id">MJ-04</td>
+    <td>Mejuri</td>
+    <td class="prod"><a href="https://mejuri.com/products/pave-diamond-thin-dome-ring" target="_blank" rel="noopener">Pave Diamond Thin Dome Ring</a>
+        <span class="sub">14k Solid Gold Pavé Diamond Thin Dôme Ring - Jewelry | Mejuri</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$798<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">798.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://mejuri.com/products/pave-diamond-thin-dome-ring" target="_blank" rel="noopener">mejuri.com/products/pave-diamond-thin-dome-ring</a></td>
+  </tr>
+  <tr data-row-id="MJ-05">
+    <td class="id">MJ-05</td>
+    <td>Mejuri</td>
+    <td class="prod"><a href="https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring" target="_blank" rel="noopener">Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)</a>
+        <span class="sub">Ziggy Ring</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$598<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">598.00 USD, 398.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring" target="_blank" rel="noopener">mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring</a></td>
+  </tr>
+  <tr data-row-id="VR-01">
+    <td class="id">VR-01</td>
+    <td>VRAI</td>
+    <td class="prod"><a href="https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861" target="_blank" rel="noopener">The Classic Engagement Ring (4-prong dome, plain band)</a>
+        <span class="sub">Classic Round Brilliant Engagement Ring | Plain Band | 18k Yellow Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,035<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">2,185.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-bad">page prints a different amount</span></td>
+    <td class="src"><a href="https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861" target="_blank" rel="noopener">vrai.com/configure/setting-to-diamond/classic-4-prong-dome/…</a></td>
+  </tr>
+  <tr data-row-id="VR-02">
+    <td class="id">VR-02</td>
+    <td>VRAI</td>
+    <td class="prod"><a href="https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301" target="_blank" rel="noopener">Signature 6 Prong Engagement Ring (plain band)</a>
+        <span class="sub">Signature 6 Prong Round Brilliant Engagement Ring in 18k Yellow Gold with Plain Band</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num"><span class="blank" title="not published by the retailer">—</span><span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,150.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-mute">no price stored by design</span></td>
+    <td class="src"><a href="https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301" target="_blank" rel="noopener">vrai.com/configure/setting-to-diamond/signature-6-prong/rou…</a></td>
+  </tr>
+  <tr data-row-id="BE-03">
+    <td class="id">BE-03</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/" target="_blank" rel="noopener">Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K Shank + 14K White Gold Prongs)</a>
+        <span class="sub">Brilliant Earth - Verifying</span></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
+    <td class="num">$850<span class="sub">captured 2026-10-22</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">page not read — no price statement</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/" target="_blank" rel="noopener">brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solit…</a></td>
+  </tr>
+  <tr data-row-id="SR-01">
+    <td class="id">SR-01</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">10k White Gold 5mm High Polished Traditional Domed Wedding Band</a>
+        <span class="sub">10k White Gold 5mm High Polished Traditional Domed Wedding Band | SARRAF.COM</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$352<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">352.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">sarraf.com/products/10k-White-Gold-5mm-High-Polished-Tradit…</a></td>
+  </tr>
+  <tr data-row-id="SR-02">
+    <td class="id">SR-02</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html" target="_blank" rel="noopener">14k Yellow Gold 6mm High Polished Comfort Fit Heavy Wedding Band</a>
+        <span class="sub">14k Gold 6mm High Polished Comfort Fit Wedding Band | SARRAF.COM</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,063<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,063.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html" target="_blank" rel="noopener">sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-…</a></td>
+  </tr>
+  <tr data-row-id="SR-03">
+    <td class="id">SR-03</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band</a>
+        <span class="sub">18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band | SARRAF.COM</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$871<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">871.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Tradi…</a></td>
+  </tr>
+  <tr data-row-id="SR-04">
+    <td class="id">SR-04</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html" target="_blank" rel="noopener">18K Yellow Gold 6mm High Polished Flat Comfort Fit Heavy Band</a>
+        <span class="sub">18K Gold 6mm High Polished Flat Comfort Fit Wedding Band | SARRAF.COM</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,436<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,436.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html" target="_blank" rel="noopener">sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort…</a></td>
+  </tr>
+  <tr data-row-id="SR-05">
+    <td class="id">SR-05</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html" target="_blank" rel="noopener">14k Yellow Gold Men&#x27;s Solitaire Natural Diamond Ring (0.50 ct H/SI1)</a>
+        <span class="sub">14k Yellow gold Mens Solitaire Diamond Ring 1/2 ct. | SARRAF.COM</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$2,858<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">2,858.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html" target="_blank" rel="noopener">sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-…</a></td>
+  </tr>
+  <tr data-row-id="SR-06">
+    <td class="id">SR-06</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html" target="_blank" rel="noopener">18k Yellow Gold Men&#x27;s Solitaire Natural Diamond Ring (0.74 ct J/SI1)</a>
+        <span class="sub">18k Yellow gold Mens Solitaire Diamond Ring 3/4 ct. | SARRAF.COM</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$4,068<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">4,068.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html" target="_blank" rel="noopener">sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-…</a></td>
+  </tr>
+  <tr data-row-id="SR-07">
+    <td class="id">SR-07</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-engagement-diamond-ring.html" target="_blank" rel="noopener">14k Gold 1/2 Ctw Natural Diamond Solitaire Engagement Ring (G/SI1)</a>
+        <span class="sub">14k Gold 1/2 Ctw Diamond Solitaire Engagement Diamond Ring | SARRAF.COM</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$2,183<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">2,183.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-engagement-diamond-ring.html" target="_blank" rel="noopener">sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-enga…</a></td>
+  </tr>
+  <tr data-row-id="SR-08">
+    <td class="id">SR-08</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html" target="_blank" rel="noopener">18k Yellow Gold 1/2 Carat Round Diamond Solitaire Engagement Ring</a>
+        <span class="sub">18k Yellow gold 1/2 Carat Round Diamond Solitaire Engagement Ring | SARRAF.COM</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$2,461<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">2,461.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html" target="_blank" rel="noopener">sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond…</a></td>
+  </tr>
+  <tr data-row-id="CB-01">
+    <td class="id">CB-01</td>
+    <td>Catbird NYC</td>
+    <td class="prod"><a href="https://www.catbirdnyc.com/the-swan-solitaire-2475.html" target="_blank" rel="noopener">The Swan Solitaire Diamond Engagement Ring (1.0mm Recycled 14K Band)</a>
+        <span class="sub">The Swan Solitaire Brilliant Cut White Diamond Engagement Ring in 14K Gold &amp; Platinum | Ca</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$3,900<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">3,900.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.catbirdnyc.com/the-swan-solitaire-2475.html" target="_blank" rel="noopener">catbirdnyc.com/the-swan-solitaire-2475.html</a></td>
+  </tr>
+  <tr data-row-id="CB-02">
+    <td class="id">CB-02</td>
+    <td>Catbird NYC</td>
+    <td class="prod"><a href="https://www.catbirdnyc.com/grand-painters-ring.html" target="_blank" rel="noopener">Grand Painter&#x27;s Solid 14k Yellow Gold Band</a>
+        <span class="sub">Grand Painter&amp;#039;s Ring, Solid 14k Yellow Gold | Catbird Jewelry</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$313.50<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">313.50 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.catbirdnyc.com/grand-painters-ring.html" target="_blank" rel="noopener">catbirdnyc.com/grand-painters-ring.html</a></td>
+  </tr>
+  <tr data-row-id="MN-01">
+    <td class="id">MN-01</td>
+    <td>Menē</td>
+    <td class="prod"><a href="https://mene.com/products/knot-ring-gold" target="_blank" rel="noopener">Menē 24k Pure Solid Gold Knot Ring</a>
+        <span class="sub">Knot ring - 24k Gold | Menē</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,465<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">2,441.00 USD, 1,908.00 USD, 2,223.00 USD, 1,800.00 USD, 1,888.00 USD, 1,770.00 USD, 1,627.00 USD, 1,530.00 USD, 1,454.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-bad">page prints a different amount</span></td>
+    <td class="src"><a href="https://mene.com/products/knot-ring-gold" target="_blank" rel="noopener">mene.com/products/knot-ring-gold</a></td>
+  </tr>
+  <tr data-row-id="MN-02">
+    <td class="id">MN-02</td>
+    <td>Menē</td>
+    <td class="prod"><a href="https://mene.com/products/etruscan-sun-band-gold" target="_blank" rel="noopener">Menē 24k Pure Solid Gold Etruscan Sun Band (4.5mm)</a>
+        <span class="sub">Menē Etruscan Sun Band - 24k Gold | Menē</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,730<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">2,565.00 USD, 2,386.00 USD, 2,378.00 USD, 2,264.00 USD, 2,189.00 USD, 2,201.00 USD, 1,961.00 USD, 1,906.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-bad">page prints a different amount</span></td>
+    <td class="src"><a href="https://mene.com/products/etruscan-sun-band-gold" target="_blank" rel="noopener">mene.com/products/etruscan-sun-band-gold</a></td>
+  </tr>
+  <tr data-row-id="BN-09">
+    <td class="id">BN-09</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y" target="_blank" rel="noopener">Classic Four-Prong Solitaire Engagement Ring (Platinum Prongs)</a>
+        <span class="sub">no title returned</span></td>
+    <td class="num">404</td>
+    <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
+    <td class="num">$1,125<span class="sub">captured 2026-10-22</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">page not read — no price statement</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a></td>
+  </tr>
+  <tr data-row-id="BN-10">
+    <td class="id">BN-10</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14" target="_blank" rel="noopener">Low Dome Comfort Fit Solitaire Engagement Ring</a>
+        <span class="sub">no title returned</span></td>
+    <td class="num">404</td>
+    <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
+    <td class="num">$1,145<span class="sub">captured 2026-10-22</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">page not read — no price statement</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/low-dome…</a></td>
+  </tr>
+  <tr data-row-id="BN-11">
+    <td class="id">BN-11</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y" target="_blank" rel="noopener">French Pavé Diamond Engagement Ring (1/20 ct. tw.)</a>
+        <span class="sub">no title returned</span></td>
+    <td class="num">404</td>
+    <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
+    <td class="num">$1,805<span class="sub">captured 2026-10-22</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">page not read — no price statement</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/french-p…</a></td>
+  </tr>
+  <tr data-row-id="BN-12">
+    <td class="id">BN-12</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y" target="_blank" rel="noopener">Tapered Baguette Diamond Engagement Ring (1/6 ct. tw.)</a>
+        <span class="sub">no title returned</span></td>
+    <td class="num">404</td>
+    <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
+    <td class="num">$2,515<span class="sub">captured 2026-10-22</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">page not read — no price statement</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/tapered-…</a></td>
+  </tr>
+  <tr data-row-id="BN-13">
+    <td class="id">BN-13</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-pave-basket-in-14k-yellow-gold-by-james-allen-item-311230" target="_blank" rel="noopener">Solitaire Engagement Ring With Pavé Basket In 14K Yellow Gold By James Allen</a>
+        <span class="sub">Solitaire Engagement Ring With Pavé Basket In 14K Yellow Gold By James Allen</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$2,260<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">2,260.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-pave-basket-in-14k-yellow-gold-by-james-allen-item-311230" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/solitair…</a></td>
+  </tr>
+  <tr data-row-id="BN-14">
+    <td class="id">BN-14</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-intricate-basket-in-14k-yellow-gold-by-james-allen-item-315036" target="_blank" rel="noopener">Solitaire Engagement Ring With Intricate Basket In 14K Yellow Gold By James Allen</a>
+        <span class="sub">Solitaire Engagement Ring With Intricate Basket In 14K Yellow Gold By James Allen</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,385<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,385.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-intricate-basket-in-14k-yellow-gold-by-james-allen-item-315036" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/solitair…</a></td>
+  </tr>
+  <tr data-row-id="BN-15">
+    <td class="id">BN-15</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-knife-edge-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-311246" target="_blank" rel="noopener">East West Knife Edge Cathedral Solitaire Engagement Ring In 14K Yellow Gold By James Allen</a>
+        <span class="sub">East West Knife Edge Cathedral Solitaire Engagement Ring In 14K Yellow Gold By James Allen</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$975<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">975.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-knife-edge-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-311246" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/east-wes…</a></td>
+  </tr>
+  <tr data-row-id="BN-16">
+    <td class="id">BN-16</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-oval-by-james-allen-item-311127" target="_blank" rel="noopener">Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen</a>
+        <span class="sub">Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,565<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,565.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-oval-by-james-allen-item-311127" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/pave-dia…</a></td>
+  </tr>
+  <tr data-row-id="BN-17">
+    <td class="id">BN-17</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-pear-by-james-allen-item-311121" target="_blank" rel="noopener">Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen</a>
+        <span class="sub">Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,555<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,555.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-pear-by-james-allen-item-311121" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/pave-dia…</a></td>
+  </tr>
+  <tr data-row-id="BN-18">
+    <td class="id">BN-18</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-hidden-halo-solitaire-plus-diamond-engagement-ring-in-14k-yellow-gold-item-192506" target="_blank" rel="noopener">Petite Hidden Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold</a>
+        <span class="sub">Petite Hidden Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,255<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,255.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-hidden-halo-solitaire-plus-diamond-engagement-ring-in-14k-yellow-gold-item-192506" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/petite-h…</a></td>
+  </tr>
+  <tr data-row-id="BN-19">
+    <td class="id">BN-19</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/bow-tie-engagement-ring-with-channel-set-round-diamonds-in-14k-yellow-gold-by-james-allen-item-304294" target="_blank" rel="noopener">Bow-Tie Engagement Ring With Channel Set Round Diamonds In 14K Yellow Gold By James Allen</a>
+        <span class="sub">Bow-Tie Engagement Ring With Channel Set Round Diamonds In 14K Yellow Gold By James Allen</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$2,350<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">2,350.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/bow-tie-engagement-ring-with-channel-set-round-diamonds-in-14k-yellow-gold-by-james-allen-item-304294" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/bow-tie-…</a></td>
+  </tr>
+  <tr data-row-id="BN-20">
+    <td class="id">BN-20</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896" target="_blank" rel="noopener">Woven Solitaire Engagement Ring In 14K Yellow Gold By James Allen</a>
+        <span class="sub">Woven Solitaire Engagement Ring In 14K Yellow Gold By James Allen</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$965<span class="sub">captured 2026-10-23</span></td>
+    <td class="num">965.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/woven-so…</a></td>
+  </tr>
+  <tr data-row-id="BN-21">
+    <td class="id">BN-21</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261" target="_blank" rel="noopener">Knife Edge Solitaire Engagement Ring in 14k Yellow Gold</a>
+        <span class="sub">Knife Edge Solitaire Engagement Ring in 14k Yellow Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,290<span class="sub">captured 2026-10-23</span></td>
+    <td class="num">1,290.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/knife-ed…</a></td>
+  </tr>
+  <tr data-row-id="BN-22">
+    <td class="id">BN-22</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321" target="_blank" rel="noopener">Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm)</a>
+        <span class="sub">Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm)</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$2,050<span class="sub">captured 2026-10-23</span></td>
+    <td class="num">2,050.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/wide-ban…</a></td>
+  </tr>
+  <tr data-row-id="BN-23">
+    <td class="id">BN-23</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303" target="_blank" rel="noopener">Emerald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.)</a>
+        <span class="sub">Emerald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.)</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$5,190<span class="sub">captured 2026-10-23</span></td>
+    <td class="num">5,190.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/emerald-…</a></td>
+  </tr>
+  <tr data-row-id="BN-24">
+    <td class="id">BN-24</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730" target="_blank" rel="noopener">Classic Simple Solitaire Engagement Ring in 14k White Gold</a>
+        <span class="sub">Classic Simple Solitaire Engagement Ring in 14k White Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,145<span class="sub">captured 2026-10-23</span></td>
+    <td class="num">1,145.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a></td>
+  </tr>
+  <tr data-row-id="BN-25">
+    <td class="id">BN-25</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661" target="_blank" rel="noopener">Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen</a>
+        <span class="sub">Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$2,210<span class="sub">captured 2026-10-23</span></td>
+    <td class="num">2,210.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/pave-con…</a></td>
+  </tr>
+  <tr data-row-id="BN-26">
+    <td class="id">BN-26</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515" target="_blank" rel="noopener">Comfort Fit Solitaire Engagement Ring In 14K Yellow Gold (James Allen style 17740y14)</a>
+        <span class="sub">Comfort Fit Solitaire Engagement Ring In 14K Yellow Gold</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num"><span class="blank" title="not published by the retailer">—</span><span class="sub">captured 2026-10-22</span></td>
+    <td class="num">858.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-mute">no price stored by design</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/14k-yell…</a></td>
+  </tr>
+  <tr data-row-id="BE-04">
+    <td class="id">BE-04</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/" target="_blank" rel="noopener">Fairmined Hollis Knife Edge Solitaire Engagement Ring</a>
+        <span class="sub">Brilliant Earth - Verifying</span></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
+    <td class="num">$1,090<span class="sub">captured 2026-10-22</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">page not read — no price statement</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/" target="_blank" rel="noopener">brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-En…</a></td>
+  </tr>
+  <tr data-row-id="BE-05">
+    <td class="id">BE-05</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/" target="_blank" rel="noopener">Freesia Hidden Halo Diamond Ring</a>
+        <span class="sub">Brilliant Earth - Verifying</span></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
+    <td class="num">$1,190<span class="sub">captured 2026-10-22</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">page not read — no price statement</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/" target="_blank" rel="noopener">brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gol…</a></td>
+  </tr>
+  <tr data-row-id="BE-06">
+    <td class="id">BE-06</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/" target="_blank" rel="noopener">Freesia Hidden Halo Diamond Ring</a>
+        <span class="sub">Brilliant Earth - Verifying</span></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
+    <td class="num">$1,390<span class="sub">captured 2026-10-23</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">page not read — no price statement</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/" target="_blank" rel="noopener">brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE…</a></td>
+  </tr>
+  <tr data-row-id="BE-07">
+    <td class="id">BE-07</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/" target="_blank" rel="noopener">Fleur Solitaire Ring</a>
+        <span class="sub">Brilliant Earth - Verifying</span></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
+    <td class="num">$1,350<span class="sub">captured 2026-10-23</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">page not read — no price statement</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/" target="_blank" rel="noopener">brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-767…</a></td>
+  </tr>
+  <tr data-row-id="RS-01">
+    <td class="id">RS-01</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/jewelry/rings/571221.html" target="_blank" rel="noopener">14kt Yellow Gold 2mm Wedding Band</a>
+        <span class="sub">Women&#x27;s 2mm 14kt Yellow Gold Band</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$400<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">400.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/571221.html" target="_blank" rel="noopener">ross-simons.com/jewelry/rings/571221.html</a></td>
+  </tr>
+  <tr data-row-id="RS-02">
+    <td class="id">RS-02</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/jewelry/rings/985230.html" target="_blank" rel="noopener">Italian 18kt Yellow Gold 2mm Wedding Band</a>
+        <span class="sub">2mm 18kt Yellow Gold Polished Ring</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$249<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">249.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/985230.html" target="_blank" rel="noopener">ross-simons.com/jewelry/rings/985230.html</a></td>
+  </tr>
+  <tr data-row-id="RS-03">
+    <td class="id">RS-03</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/jewelry/rings/820263.html" target="_blank" rel="noopener">14kt Yellow Gold 3mm Comfort-Fit Wedding Band</a>
+        <span class="sub">Italian 14kt Yellow Gold Double Love Knot Ring</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$595<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">595.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/820263.html" target="_blank" rel="noopener">ross-simons.com/jewelry/rings/820263.html</a></td>
+  </tr>
+  <tr data-row-id="RS-04">
+    <td class="id">RS-04</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/jewelry/rings/823796.html" target="_blank" rel="noopener">14kt Yellow Gold 4mm Flat Wedding Band Ring</a>
+        <span class="sub">Italian 14kt Yellow Gold Diamond-Cut Dome Ring</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,195<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,195.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/823796.html" target="_blank" rel="noopener">ross-simons.com/jewelry/rings/823796.html</a></td>
+  </tr>
+  <tr data-row-id="RS-05">
+    <td class="id">RS-05</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html" target="_blank" rel="noopener">0.80 Carat GIA Certified Solitaire Diamond Engagement Ring</a>
+        <span class="sub">404 Not Found</span></td>
+    <td class="num">404</td>
+    <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
+    <td class="num">$2,819<span class="sub">captured 2026-10-22</span></td>
+    <td class="num"><span class="blank">—</span><span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-warn">page not read — no price statement</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html" target="_blank" rel="noopener">ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond…</a></td>
+  </tr>
+  <tr data-row-id="MJ-06">
+    <td class="id">MJ-06</td>
+    <td>Mejuri</td>
+    <td class="prod"><a href="https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&amp;Stone=Natural+Diamond" target="_blank" rel="noopener">Pavé Diamond Slim Eternity Band</a>
+        <span class="sub">Diamond Eternity Band | Mejuri</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$1,100<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">1,200.00 USD, 1,600.00 USD, 1,500.00 USD, 1,400.00 USD, 1,300.00 USD, 1,700.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-bad">page prints a different amount</span></td>
+    <td class="src"><a href="https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&amp;Stone=Natural+Diamond" target="_blank" rel="noopener">mejuri.com/us/en/products/diamond-eternity-band?Material=14…</a></td>
+  </tr>
+  <tr data-row-id="MJ-07">
+    <td class="id">MJ-07</td>
+    <td>Mejuri</td>
+    <td class="prod"><a href="https://mejuri.com/us/en/products/diamonds-line-ring" target="_blank" rel="noopener">Diamonds Line Ring</a>
+        <span class="sub">Diamonds Line Ring | Mejuri</span></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="num">$348<span class="sub">captured 2026-10-22</span></td>
+    <td class="num">348.00 USD<span class="sub">page's own structured data</span></td>
+    <td><span class="badge b-ok">page&#x27;s own structured price matches</span></td>
+    <td class="src"><a href="https://mejuri.com/us/en/products/diamonds-line-ring" target="_blank" rel="noopener">mejuri.com/us/en/products/diamonds-line-ring</a></td>
+  </tr></tbody>
+  </table></div>
+</section>
+
+<section class="section">
+  <h2>Registered sources, checked the same way</h2>
+  <p class="sub">Government and market-benchmark documents plus retailer policy pages. 20 of 28 answered and were read.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>ID</th><th>Tier</th><th>Publisher</th><th>Link</th><th class="num">HTTP</th><th>State</th></tr></thead>
+    <tbody>
+  <tr>
+    <td class="id">ftc-gold-jewelry</td>
+    <td>A</td>
+    <td>U.S. Federal Trade Commission (consumer.ftc.gov)</td>
+    <td><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">consumer.ftc.gov/articles/buying-platinum-gold-and-silver-j…</a></td>
+    <td class="num">404</td>
+    <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
+  </tr>
+  <tr>
+    <td class="id">ecfr-16-23</td>
+    <td>A</td>
+    <td>U.S. Federal Trade Commission / eCFR (National Archives)</td>
+    <td><a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23" target="_blank" rel="noopener">ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">usc-15-295</td>
+    <td>A</td>
+    <td>U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 295</td>
+    <td><a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">law.cornell.edu/uscode/text/15/295</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">usc-15-ch8</td>
+    <td>A</td>
+    <td>U.S. Code (Legal Information Institute) - 15 U.S.C. ch. 8</td>
+    <td><a href="https://www.law.cornell.edu/uscode/text/15/chapter-8" target="_blank" rel="noopener">law.cornell.edu/uscode/text/15/chapter-8</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">wgc-gold-prices</td>
+    <td>B</td>
+    <td>World Gold Council (Goldhub)</td>
+    <td><a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">gold.org/goldhub/data/gold-prices</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">lbma-prices</td>
+    <td>B</td>
+    <td>London Bullion Market Association</td>
+    <td><a href="https://www.lbma.org.uk/prices-and-data/precious-metal-prices" target="_blank" rel="noopener">lbma.org.uk/prices-and-data/precious-metal-prices</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">ftc-credit-cards</td>
+    <td>A</td>
+    <td>U.S. Federal Trade Commission (consumer.ftc.gov)</td>
+    <td><a href="https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges" target="_blank" rel="noopener">consumer.ftc.gov/articles/using-credit-cards-and-disputing-…</a></td>
+    <td class="num">404</td>
+    <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
+  </tr>
+  <tr>
+    <td class="id">bluenile-returns</td>
+    <td>C</td>
+    <td>Blue Nile</td>
+    <td><a href="https://www.bluenile.com/policies/returns" target="_blank" rel="noopener">bluenile.com/policies/returns</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">allurez-returns</td>
+    <td>C</td>
+    <td>Allurez</td>
+    <td><a href="https://www.allurez.com/pages/return-policy" target="_blank" rel="noopener">allurez.com/pages/return-policy</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">vrai-returns</td>
+    <td>C</td>
+    <td>VRAI</td>
+    <td><a href="https://www.vrai.com/returns-exchanges" target="_blank" rel="noopener">vrai.com/returns-exchanges</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">mejuri-returns</td>
+    <td>C</td>
+    <td>Mejuri</td>
+    <td><a href="https://mejuri.com/company/returns-terms" target="_blank" rel="noopener">mejuri.com/company/returns-terms</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">brilliantearth-atelier</td>
+    <td>C</td>
+    <td>Brilliant Earth</td>
+    <td><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-420…</a></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
+  </tr>
+  <tr>
+    <td class="id">anjolee-ms354a</td>
+    <td>C</td>
+    <td>Anjolee</td>
+    <td><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Cu…</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-warn">200 but JavaScript-only shell</span></td>
+  </tr>
+  <tr>
+    <td class="id">brilliantearth-atelier-14k</td>
+    <td>C</td>
+    <td>Brilliant Earth</td>
+    <td><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444…</a></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
+  </tr>
+  <tr>
+    <td class="id">kitco-gold-spot</td>
+    <td>B</td>
+    <td>Kitco Metals Inc.</td>
+    <td><a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener">kitco.com/charts/gold</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">jmbullion-gold-spot</td>
+    <td>B</td>
+    <td>JM Bullion</td>
+    <td><a href="https://www.jmbullion.com/charts/gold-price/" target="_blank" rel="noopener">jmbullion.com/charts/gold-price/</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">cfpb-fcba-en61</td>
+    <td>A</td>
+    <td>Consumer Financial Protection Bureau (CFPB)</td>
+    <td><a href="https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/" target="_blank" rel="noopener">consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-m…</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">gia-xrf-winter2024</td>
+    <td>B</td>
+    <td>Gemological Institute of America (GIA)</td>
+    <td><a href="https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis" target="_blank" rel="noopener">gia.edu/gems-gemology/winter-2024-chemical-analysis</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">gia-electroform-fraud-2024</td>
+    <td>B</td>
+    <td>Gemological Institute of America (GIA Carlsbad Laboratory)</td>
+    <td><a href="https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet" target="_blank" rel="noopener">gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-g…</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">nist-sp811-pml</td>
+    <td>A</td>
+    <td>National Institute of Standards and Technology (NIST)</td>
+    <td><a href="https://www.nist.gov/pml/special-publication-811" target="_blank" rel="noopener">nist.gov/pml/special-publication-811</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">sarraf-returns</td>
+    <td>C</td>
+    <td>Sarraf Jewelry Inc.</td>
+    <td><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Tradi…</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">catbird-returns</td>
+    <td>C</td>
+    <td>Catbird NYC</td>
+    <td><a href="https://www.catbirdnyc.com/returns" target="_blank" rel="noopener">catbirdnyc.com/returns</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">mene-returns</td>
+    <td>C</td>
+    <td>Menē Inc.</td>
+    <td><a href="https://mene.com/customer-care/en-US/articles/returns-319505" target="_blank" rel="noopener">mene.com/customer-care/en-US/articles/returns-319505</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">brilliant-earth-returns</td>
+    <td>C</td>
+    <td>Brilliant Earth, LLC</td>
+    <td><a href="https://www.brilliantearth.com/30-Day-Returns/" target="_blank" rel="noopener">brilliantearth.com/30-Day-Returns/</a></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
+  </tr>
+  <tr>
+    <td class="id">nist-hb44-2026</td>
+    <td>A</td>
+    <td>National Institute of Standards and Technology (nist.gov)</td>
+    <td><a href="https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44" target="_blank" rel="noopener">nist.gov/pml/owm/metric-publications/nist-handbook-44</a></td>
+    <td class="num">404</td>
+    <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
+  </tr>
+  <tr>
+    <td class="id">bullionvault-spot</td>
+    <td>B</td>
+    <td>BullionVault (bullionvault.com)</td>
+    <td><a href="https://www.bullionvault.com/gold-price-chart.do" target="_blank" rel="noopener">bullionvault.com/gold-price-chart.do</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">brilliantearth-returns-30d</td>
+    <td>C</td>
+    <td>Brilliant Earth (brilliantearth.com)</td>
+    <td><a href="https://www.brilliantearth.com/30-Day-Returns/" target="_blank" rel="noopener">brilliantearth.com/30-Day-Returns/</a></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
+  </tr>
+  <tr>
+    <td class="id">ross-simons-returns</td>
+    <td>C</td>
+    <td>Ross-Simons (ross-simons.com)</td>
+    <td><a href="https://www.ross-simons.com/pages/returns-exchanges" target="_blank" rel="noopener">ross-simons.com/pages/returns-exchanges</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr></tbody>
+  </table></div>
+</section>
+
+<section class="section">
+  <h2>How to reproduce this page</h2>
+  <div class="card">
+    <p><span class="mono">python3 scripts/live_source_check.py</span> performs read-only GETs against the allow-listed
+    hostnames in <span class="mono">data/sources.json</span> and writes
+    <span class="mono">reports/live_source_check_latest.json</span>.
+    <span class="mono">python3 scripts/build_source_health.py</span> reconciles that artifact with the dataset into
+    <span class="mono">data/source_health.json</span>, and <span class="mono">python3 scripts/build_site.py</span>
+    renders this page. The check is re-run by CI on every pull request that touches the data.</p>
+    <p class="small">Rules baked into the reconciliation: nothing overwrites a stored value; a page that cannot be fetched
+    says nothing about its price; no currency conversion, no averaging, no interpolation.</p>
+  </div>
+</section>
+
+</main>
+<footer class="wrap foot">
+  <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
+  22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
+  <p>Gold benchmark: $4,024.45/oz as of 22 October, 2026 (World Gold Council) = $129.3891/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
+  <p class="small">Built 2026-10-23 10:03 UTC · dataset 64 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+</footer>
+
+</body>
+</html>

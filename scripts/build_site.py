@@ -30,10 +30,10 @@ NAV = [
     ("pages/flagged.html", "Flagged", "flagged"),
     ("pages/methodology.html", "Method", "method"),
     ("pages/sources.html", "Sources", "sources"),
+    ("pages/freshness.html", "Freshness", "freshness"),
+    ("checklist.html", "Checklist", "checklist"),
     ("pages/log.html", "Log", "log"),
     ("dashboard.html", "Assay Lab+", "assay"),
-    ("categories/calculator.html", "Stone-Deduction Calc", "stonecalc"),
-    ("categories/verification-audit.html", "Deep Audit", "deepaudit"),
 ]
 
 FLAG_HELP = {
@@ -72,6 +72,10 @@ FLAG_HELP = {
     "RETURN_EXCLUSIONS_NOT_ITEMISED": ("warn", "exclusions not itemised on the page"),
     "WARRANTY_VOID_ON_THIRD_PARTY_RESIZE": ("warn", "warranty voids on third-party resize"),
     "PRICE_CURRENCY_LOCALIZED": ("warn", "page price is rendered in visitor currency"),
+    "SOURCE_URL_DEAD": ("bad", "source URL returns 404 as of the live check"),
+    "SOURCE_BOT_BLOCKED": ("info", "retailer blocked the automated check (HTTP 403)"),
+    "PRICE_STRUCTURED_DIFFERS": ("bad", "page's structured price differs from the stored price"),
+    "SOURCE_PRICE_NOT_MACHINE_READABLE": ("info", "price not published in machine-readable form"),
 }
 
 
@@ -352,9 +356,38 @@ def main() -> None:
         for p in sorted(d["pairs"], key=lambda x: x["pair_id"])
     )
 
+    try:
+        health_doc = load("source_health.json")
+    except FileNotFoundError:
+        health_doc = None
+
+    if health_doc:
+        hk = health_doc["row_states"]
+        hp = health_doc["price_states"]
+        fresh_strip = f"""
+<section class="section">
+  <h2>Source health: are these prices still what the retailers print?</h2>
+  <p class="sub">The audits in this repo are offline — they cannot see a link that has since rotted. On
+  <strong>{esc(health_doc['evidence_checked_utc'])}</strong> a GitHub runner with open internet re-opened every one of the
+  {len(health_doc['rows'])} ring URLs and {len(health_doc['sources'])} registered sources, read each page's own
+  structured price, and recorded the result. <a href="pages/freshness.html"><strong>Open the line-by-line table →</strong></a></p>
+  <div class="kpis">
+    <div class="kpi gold"><div class="n">{hp.get('CONFIRMED', 0)}</div><div class="l">prices re-confirmed</div><div class="s">page printed exactly the stored amount</div></div>
+    <div class="kpi"><div class="n">{hk.get('HTTP_404', 0)}</div><div class="l">dead source URLs</div><div class="s">flagged SOURCE_URL_DEAD</div></div>
+    <div class="kpi"><div class="n">{hk.get('REFUSED_403', 0)}</div><div class="l">bot-blocked checks</div><div class="s">no price claim made</div></div>
+    <div class="kpi"><div class="n">{hp.get('DIFFERS', 0)}</div><div class="l">prices that differ</div><div class="s">both numbers published</div></div>
+  </div>
+  <p class="small">Nothing on this site was changed by that check. A 404, a 403 or a JavaScript-only page never becomes a
+  guessed price: the stored value keeps its original capture date and is flagged instead.
+  <a href="pages/freshness.html">See exactly what each state means →</a></p>
+</section>
+"""
+    else:
+        fresh_strip = ""
+
     index_body = f"""
 <section class="hero">
-  <span class="eyebrow">● live dataset · captured {C['captured']} · every row re-read from its source on {esc(reverif)}</span>
+  <span class="eyebrow">● live dataset · prices captured {C['captured']} · source URLs re-opened live {esc((health_doc or {}).get('evidence_checked_utc', reverif))}</span>
   <h1>Solid-gold engagement rings, with every number traceable to the seller's own page.</h1>
   <p class="lede">A small, deliberately boring dataset: {st['total_rows']} rings from {len(st['by_retailer'])} retailers, {st['rows_with_verified_price']} prices read
   from the retailer's page today, {st['rows_with_published_weight']} published gram weights, and the gold-value arithmetic that follows from them.
@@ -369,6 +402,7 @@ def main() -> None:
 </section>
 {no_hallucination_block()}
 {kpis}
+{fresh_strip}
 
 <section class="section">
   <h2>The buying checklist, answered with evidence</h2>
@@ -931,6 +965,198 @@ def main() -> None:
 """
     (PAGES / "sources.html").write_text(render("Sources", sources_body, "sources", root="../"), encoding="utf-8")
 
+    # ---------------------------------------------------------------- freshness (Pass 12)
+    try:
+        health = load("source_health.json")
+    except FileNotFoundError:
+        health = None
+
+    FRESH_KIND = {
+        "OK": ("ok", "page served and read"),
+        "HTTP_404": ("bad", "404 — the URL no longer resolves"),
+        "REFUSED_403": ("warn", "HTTP 403 — retailer blocked the check"),
+        "EMPTY_OR_JS_SHELL": ("warn", "200 but JavaScript-only shell"),
+        "NOT_CHECKED": ("mute", "not in the last check"),
+    }
+    PRICE_KIND = {
+        "CONFIRMED": ("ok", "page's own structured price matches"),
+        "DIFFERS": ("bad", "page prints a different amount"),
+        "SOURCE_NOT_REACHED": ("warn", "page not read — no price statement"),
+        "NOT_MACHINE_READABLE": ("warn", "price not machine-readable"),
+        "NO_STORED_PRICE": ("mute", "no price stored by design"),
+    }
+
+    if health is None:
+        fresh_body = f"""
+<section class="hero">
+  <span class="eyebrow">Freshness</span>
+  <h1>Live source health</h1>
+  <p class="lede">No live evidence artifact is present in this build. The live check runs on a runner with
+  open internet access (<span class="mono">.github/workflows/live-source-check.yml</span>) and writes
+  <span class="mono">reports/live_source_check_latest.json</span>; <span class="mono">scripts/build_source_health.py</span>
+  turns it into <span class="mono">data/source_health.json</span>.</p>
+</section>
+{no_hallucination_block("../")}
+"""
+    else:
+        rk = health["row_states"]
+        pk = health["price_states"]
+        sk = health["source_states"]
+        n_rows = len(health["rows"])
+        n_conf = pk.get("CONFIRMED", 0)
+        n_dead = rk.get("HTTP_404", 0)
+        n_blocked = rk.get("REFUSED_403", 0)
+        n_js = rk.get("EMPTY_OR_JS_SHELL", 0)
+        checked = health.get("evidence_checked_utc", "")
+
+        def fresh_rows() -> str:
+            out = []
+            for h in health["rows"]:
+                fk, fl = FRESH_KIND.get(h["source_state"], ("mute", h["source_state"]))
+                pkk, pkl = PRICE_KIND.get(h["price_state"], ("mute", h["price_state"]))
+                found = ", ".join(
+                    f"{p['value']:,.2f} {esc(p['currency'] or '')}".strip() for p in h.get("found_prices", [])
+                ) or '<span class="blank">—</span>'
+                stored = money(h["stored_price_usd"])
+                title = (h.get("page_title") or "").strip()
+                out.append(f"""
+  <tr data-row-id="{esc(h['id'])}">
+    <td class="id">{esc(h['id'])}</td>
+    <td>{esc(h['retailer'])}</td>
+    <td class="prod"><a href="{esc(h['url'])}" target="_blank" rel="noopener">{esc(h['product_name'])}</a>
+        <span class="sub">{esc(title[:90]) if title else 'no title returned'}</span></td>
+    <td class="num">{h.get('http_status') if h.get('http_status') is not None else '<span class="blank">—</span>'}</td>
+    <td>{badge(fl, fk)}</td>
+    <td class="num">{stored}<span class="sub">captured {esc(str(h.get('stored_price_captured_utc') or '—'))}</span></td>
+    <td class="num">{found}<span class="sub">page's own structured data</span></td>
+    <td>{badge(pkl, pkk)}</td>
+    <td class="src"><a href="{esc(h['url'])}" target="_blank" rel="noopener">{esc(short_url(h['url']))}</a></td>
+  </tr>""")
+            return "".join(out)
+
+        def fresh_sources() -> str:
+            out = []
+            for src in health["sources"]:
+                fk, fl = FRESH_KIND.get(src["source_state"], ("mute", src["source_state"]))
+                out.append(f"""
+  <tr>
+    <td class="id">{esc(src['id'])}</td>
+    <td>{esc(src.get('tier') or '')}</td>
+    <td>{esc(src['publisher'])}</td>
+    <td><a href="{esc(src['url'])}" target="_blank" rel="noopener">{esc(short_url(src['url']))}</a></td>
+    <td class="num">{src.get('http_status') if src.get('http_status') is not None else '<span class="blank">—</span>'}</td>
+    <td>{badge(fl, fk)}</td>
+  </tr>""")
+            return "".join(out)
+
+        dead_list = "".join(
+            f'<li><strong>{esc(h["id"])}</strong> · {esc(h["retailer"])} · '
+            f'<a href="{esc(h["url"])}" target="_blank" rel="noopener">the URL that now 404s</a></li>'
+            for h in health["rows"] if h["source_state"] == "HTTP_404"
+        ) or "<li>none</li>"
+        def diff_items() -> str:
+            items = []
+            for h in health["rows"]:
+                if h["price_state"] != "DIFFERS":
+                    continue
+                found = ", ".join(
+                    "{:,.2f} {}".format(p["value"], p["currency"]) for p in h.get("found_prices", [])
+                )
+                items.append(
+                    '<li><strong>{}</strong> · stored {} vs page {} · '
+                    '<a href="{}" target="_blank" rel="noopener">open the page</a></li>'.format(
+                        esc(h["id"]), money(h["stored_price_usd"]), esc(found), esc(h["url"])
+                    )
+                )
+            return "".join(items) or "<li>none</li>"
+
+        diff_list = diff_items()
+
+        fresh_body = f"""
+<section class="hero">
+  <span class="eyebrow">● live check {esc(checked)} · every official URL re-opened · no value changed by the check</span>
+  <h1>Are the prices on this site still what the retailers print?</h1>
+  <p class="lede">The integrity audits in this repo are offline: they prove a value is internally consistent and carries a
+  source URL. They cannot see a link that has since rotted. This page does. On <strong>{esc(checked)}</strong> a GitHub
+  runner with open internet access re-opened all <strong>{n_rows}</strong> ring URLs and
+  <strong>{len(health['sources'])}</strong> registered sources, and recorded the HTTP status plus the price the page
+  itself publishes in its schema.org data.</p>
+  <div class="pill-row">
+    {badge(f'{n_conf} prices re-confirmed by the page itself', 'ok')}
+    {badge(f'{n_dead} URLs now 404', 'bad')}
+    {badge(f'{n_blocked} blocked by bot protection', 'warn')}
+    {badge(f'{n_js} JavaScript-only shell', 'warn')}
+    {badge('no value changed by this check', 'info')}
+  </div>
+</section>
+{no_hallucination_block("../")}
+
+<div class="kpis">
+  <div class="kpi"><div class="n">{n_conf}</div><div class="l">prices re-confirmed</div><div class="s">page's own structured price = stored price</div></div>
+  <div class="kpi"><div class="n">{n_dead}</div><div class="l">dead source URLs</div><div class="s">HTTP 404 at the check</div></div>
+  <div class="kpi"><div class="n">{n_blocked}</div><div class="l">bot-blocked sources</div><div class="s">HTTP 403 — no price statement made</div></div>
+  <div class="kpi gold"><div class="n">{n_js}</div><div class="l">JavaScript-only pages</div><div class="s">price cannot be read without a browser</div></div>
+  <div class="kpi"><div class="n">{pk.get('DIFFERS', 0)}</div><div class="l">prices that differ</div><div class="s">both numbers shown, nothing overwritten</div></div>
+</div>
+
+<section class="section">
+  <h2>What each state means — and what it does not mean</h2>
+  <div class="grid two">
+    <div class="card">
+      <h3>Reading the check honestly</h3>
+      <ul>
+        <li><strong>Page served and read</strong> — a 200 response with product text. The price is compared with the page's own schema.org offer price.</li>
+        <li><strong>404</strong> — the URL stored beside the value no longer resolves. The value stays as captured (with its original date) and is flagged <span class="mono">SOURCE_URL_DEAD</span>; it is <em>not</em> re-confirmed and <em>not</em> silently deleted.</li>
+        <li><strong>403</strong> — the retailer's bot protection refused the runner. That is a statement about the runner, not about the price. No claim is made.</li>
+        <li><strong>JavaScript-only</strong> — the server sends a shell; the price is rendered in the browser. Again, no claim is made.</li>
+        <li><strong>Differs</strong> — the page's structured offer price is a different number (usually a different variant/configuration selected on that page). Both numbers are published; the stored value is <em>not</em> overwritten without a human reading the page.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Dead links found by this pass ({n_dead})</h3>
+      <ul class="small">{dead_list}</ul>
+      <h3 style="margin-top:14px">Prices the page now prints differently ({pk.get('DIFFERS', 0)})</h3>
+      <ul class="small">{diff_list}</ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Every ring URL, checked line by line</h2>
+  <p class="sub">HTTP status and the price the page itself publishes. Blank cells mean the page did not publish the value in machine-readable form — never that it was assumed.</p>
+  {filter_bar(n_rows)}
+  <div class="table-wrap"><table>
+    <thead><tr><th>ID</th><th>Retailer</th><th>Ring / page title returned</th><th class="num">HTTP</th><th>Source state</th>
+    <th class="num">Stored price</th><th class="num">Page's structured price</th><th>Price verdict</th><th>Source</th></tr></thead>
+    <tbody>{fresh_rows()}</tbody>
+  </table></div>
+</section>
+
+<section class="section">
+  <h2>Registered sources, checked the same way</h2>
+  <p class="sub">Government and market-benchmark documents plus retailer policy pages. {sk.get('OK', 0)} of {len(health['sources'])} answered and were read.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>ID</th><th>Tier</th><th>Publisher</th><th>Link</th><th class="num">HTTP</th><th>State</th></tr></thead>
+    <tbody>{fresh_sources()}</tbody>
+  </table></div>
+</section>
+
+<section class="section">
+  <h2>How to reproduce this page</h2>
+  <div class="card">
+    <p><span class="mono">python3 scripts/live_source_check.py</span> performs read-only GETs against the allow-listed
+    hostnames in <span class="mono">data/sources.json</span> and writes
+    <span class="mono">{esc(health.get('evidence_artifact', ''))}</span>.
+    <span class="mono">python3 scripts/build_source_health.py</span> reconciles that artifact with the dataset into
+    <span class="mono">data/source_health.json</span>, and <span class="mono">python3 scripts/build_site.py</span>
+    renders this page. The check is re-run by CI on every pull request that touches the data.</p>
+    <p class="small">Rules baked into the reconciliation: nothing overwrites a stored value; a page that cannot be fetched
+    says nothing about its price; no currency conversion, no averaging, no interpolation.</p>
+  </div>
+</section>
+"""
+    (PAGES / "freshness.html").write_text(render("Freshness", fresh_body, "freshness", root="../"), encoding="utf-8")
+
     # ---------------------------------------------------------------- log
     entries = "".join(
         f"""<div class="card">
@@ -962,6 +1188,49 @@ def main() -> None:
 </section>
 """
     (PAGES / "log.html").write_text(render("Verification log", log_body, "log", root="../"), encoding="utf-8")
+
+    # ---------------------------------------------------------------- retired duplicates
+    # Earlier passes emitted a second copy of the calculator, the return-policy audit and the
+    # flagged register at the repository root. They drifted from the canonical pages in pages/
+    # and showed a different row set, which is exactly the kind of contradiction this project
+    # cannot afford. The canonical pages stay; the old URLs become explicit redirect stubs.
+    RETIRED = {
+        "calculator.html": ("pages/calculator.html", "Gold & melt calculator",
+                            "the canonical calculator, driven by the same 64-row dataset and the dated spot benchmark"),
+        "sellers.html": ("pages/sellers.html", "Seller return windows & contract terms",
+                         "the canonical seller audit, covering all 10 retailers with their quoted clauses"),
+        "flagged.html": ("pages/flagged.html", "Flagged for Review register",
+                         "the canonical register, covering all 64 rows' flags including the dead-source and price-difference findings"),
+    }
+    for old_path, (new_path, label, blurb) in RETIRED.items():
+        stub = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moved · {esc(label)} · GOLD4</title>
+<link rel="canonical" href="{new_path}">
+<meta http-equiv="refresh" content="4; url={new_path}">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="wrap" style="max-width:760px;padding-top:48px">
+  <div class="nohall">
+    <h2>⚠ This page moved — you are being redirected</h2>
+    <p><strong>No hallucinations:</strong> this URL used to serve a second, older copy of the {esc(label.lower())}.
+    Keeping two copies meant two different row sets on one site, so it was retired in the Pass 12 consolidation.
+    Nothing was deleted: the canonical page is generated from the same repository data and covers every row.</p>
+    <p>The canonical page is <a href="{new_path}"><strong>{esc(new_path)}</strong></a> — {esc(blurb)}.</p>
+    <p class="small">If your browser does not redirect automatically, follow the link above. The consumer rules used
+    throughout this site come from the
+    <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC's gold-jewelry guidance</a>
+    and <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.</p>
+  </div>
+</main>
+</body>
+</html>
+"""
+        (ROOT / old_path).write_text(stub, encoding="utf-8")
 
     # ---------------------------------------------------------------- housekeeping
     (ROOT / ".nojekyll").write_text("", encoding="utf-8")
