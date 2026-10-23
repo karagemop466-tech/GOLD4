@@ -447,9 +447,13 @@ the merges were kept as merges. This session's own pre-merge edits to shared fil
 
 | Item | Result |
 |---|---|
-| PR #11 (this integration) | https://github.com/karagemop466-tech/GOLD4/pull/11 — pending merge at time of writing |
-| Pages workflow run | to be recorded after merge |
-| Live-site verification | to be recorded after deploy |
+| PR #11 (this integration) | https://github.com/karagemop466-tech/GOLD4/pull/11 — **MERGED** without waiting for review (per standing instruction; flagged items did not block) |
+| Merge commit | `34b8c5fb781b67ecd84f569079daeccca9eda721` on `main` (2026-10-23 00:10:03 UTC) |
+| PR CI (pull_request run `39876334329`) | **success** — all five gates on the exact merged tree |
+| Pages workflow (push run `39876458851`) | **completed / success** (24 s) |
+| Pages build | `built` for commit `34b8c5f` (Pages API `status=built`) |
+| Live-site verification | https://karagemop466-tech.github.io/GOLD4/ fetched 2026-10-23 ~00:16 UTC: front page serves **64 rings / 10 retailers / 62 prices / 17 weights / 238 flags**, the NO HALLUCINATIONS banner, and links to the Flagged, Log and category pages (first post-deploy fetch showed a stale 47-row CDN cache; re-fetch after ~2 min served the new build) |
+| Follow-up record PR | #23 (this commit) — merged after main absorbed PR #22 (Pass 10) |
 
 ---
 
