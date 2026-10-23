@@ -36,7 +36,7 @@
    ],
    "reverified_utc": "2026-10-23",
    "reverified_by": "arena/04f1f10d-gold4 (Pass 14) + arena/46691f83-gold4 (Pass 15)",
-   "reverification": "Pass 12 (2026-10-23): price $585, 'Setting only. Center stone sold separately.', style number NG4426, metal 14k Yellow Gold and 'Approximate Metal Weight 3.58 grams' all re-read and match this record. Earlier: Pass 2: page re-fetched; $585 and 'Approximate Metal Weight 3.58 grams' re-read and match this record. PASS 14 (2026-10-23): official Allurez page re-fetched live a second time by this session and re-read: '$585', 'Setting only. Center stone sold separately.', Style number NG4426, Metal 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams'. Identical to the Pass 12 reading — two sessions, same values. Earlier: Independent Pass 15 read (arena/46691f83-gold4, 2026-10-23): $585, 'Setting only. Center stone sold separately.', style NG4426, 14k Yellow Gold and 'Approximate Metal Weight 3.58 grams' re-read and unchanged.",
+   "reverification": "Pass 12 (2026-10-23): price $585, 'Setting only. Center stone sold separately.', style number NG4426, metal 14k Yellow Gold and 'Approximate Metal Weight 3.58 grams' all re-read and match this record. Earlier: Pass 2: page re-fetched; $585 and 'Approximate Metal Weight 3.58 grams' re-read and match this record. PASS 14 (2026-10-23): official Allurez page re-fetched live a second time by this session and re-read: '$585', 'Setting only. Center stone sold separately.', Style number NG4426, Metal 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams'. Identical to the Pass 12 reading — two sessions, same values. Earlier: Independent Pass 15 read (arena/46691f83-gold4, 2026-10-23): $585, 'Setting only. Center stone sold separately.', style NG4426, 14k Yellow Gold and 'Approximate Metal Weight 3.58 grams' re-read and unchanged. PASS 17 (2026-10-23, arena/0e04577b-gold4): official Allurez page re-fetched live and re-read: '$585', 'Setting only. Center stone sold separately.', Style number NG4426, Metal 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams'. Identical to the stored record — a further independent corroboration. No value changed.",
    "source_check": {
     "checked_utc": "2026-10-23T20:23:21Z",
     "evidence_artifact": "reports/live_source_check_latest.json",
@@ -823,7 +823,7 @@
    "flag_detail": "Mejuri lists this as a fine-jewellery ring rather than a bridal/engagement ring. It is included because it is 14k solid gold with a stated material, but it is not sold as an engagement setting. Pass 12 live re-read (2026-10-23): the page resolved to the Solid White Gold (14k) variant at $548, so the recorded price is variant-dependent and the metal shown at that price differed from this row's yellow-gold label.",
    "reverified_utc": "2026-10-23",
    "reverified_by": "arena/d1586f6a-gold4 (Pass 12) + arena/46691f83-gold4 (Pass 15)",
-   "reverification": "Pass 12 (2026-10-23): price $548 re-read, but the page opened on the 'Solid White Gold (14k), Natural Diamond' variant, not the 14k yellow gold recorded in this row; no gram weight is published on the page. Earlier: Pass 2: $548 re-read from the 14k Yellow Gold Rings collection card ('Solid Yellow Gold (14k), Natural Diamond') and matches. The product page itself opens on the white-gold variant, also $548. Earlier: Independent Pass 15 read (arena/46691f83-gold4, 2026-10-23): landed on the same Solid White Gold (14k) / Natural Diamond variant at $548 — price corroborated; yellow-gold variant still not re-confirmed.",
+   "reverification": "Pass 12 (2026-10-23): price $548 re-read, but the page opened on the 'Solid White Gold (14k), Natural Diamond' variant, not the 14k yellow gold recorded in this row; no gram weight is published on the page. Earlier: Pass 2: $548 re-read from the 14k Yellow Gold Rings collection card ('Solid Yellow Gold (14k), Natural Diamond') and matches. The product page itself opens on the white-gold variant, also $548. Earlier: Independent Pass 15 read (arena/46691f83-gold4, 2026-10-23): landed on the same Solid White Gold (14k) / Natural Diamond variant at $548 — price corroborated; yellow-gold variant still not re-confirmed. PASS 17 (2026-10-23, arena/0e04577b-gold4): official Mejuri page re-fetched live: the URL again resolves to the 'Solid White Gold (14k), Natural Diamond' variant at $548 (price matches the stored record; metal variant still differs from this row's yellow-gold basis — PRICE_VARIANT_DEPENDENT stands). The same page's Materials blurb is headed 'Solid Yellow Gold (14k)' while describing white-gold rhodium finishing, and states a two-year warranty and free 30-day returns from delivery. No gram weight published. No value changed.",
    "variant_note": "The product URL opens on the Solid White Gold (14k) variant by default; the yellow-gold variant was opened on the same URL on 2026-10-22 and displayed the same $548, so the price is not variant-specific on this product. The ring is sold as fine jewellery, not bridal.",
    "source_check": {
     "checked_utc": "2026-10-23T20:23:21Z",
@@ -1364,7 +1364,7 @@
    ],
    "reverified_utc": "2026-10-23",
    "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
-   "reverification": "Pass 12 (2026-10-23): price US$871.00 ('Now'), SKU 18KY-LPBWB05, stock 140139, '18K Solid Gold' and 'Approximate Metal Weight: 6.70 grams' (page states the weight is for a size-10 ring) all re-read and match this record.",
+   "reverification": "Pass 12 (2026-10-23): price US$871.00 ('Now'), SKU 18KY-LPBWB05, stock 140139, '18K Solid Gold' and 'Approximate Metal Weight: 6.70 grams' (page states the weight is for a size-10 ring) all re-read and match this record. PASS 17 (2026-10-23, arena/0e04577b-gold4): official Sarraf page re-fetched live and re-read: 'Now: US$871.00' (MSRP US$3,388.00, Was US$1,019.00), SKU 18KY-LPBWB05, Stock Number 140139, Material '18K Solid Gold', 'Approximate Metal Weight 6.70 grams' (size-10 basis). Identical to the stored record; the 3.9x MSRP anchor (FLG-MED-14) reproduces live. No value changed.",
    "source_check": {
     "checked_utc": "2026-10-23T20:23:21Z",
     "evidence_artifact": "reports/live_source_check_latest.json",
@@ -1813,7 +1813,8 @@
      }
     ],
     "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
-   }
+   },
+   "reverification": " PASS 17 (2026-10-23, arena/0e04577b-gold4): official Mene page re-fetched live: display price today is $1,442 USD for the default size (stored record: $1,465 captured 2026-10-22; Pass 16 structured size offers $1,800-$2,441). The page states 'Products are sold by weight, not size' and resale/exchange 'at the daily metal value', i.e. the price floats. Both dated readings are published; the stored value was NOT overwritten. PRICE_STRUCTURED_DIFFERS stands (FLG-PASS17-04). No gram weight was read from the fetched page content, so weight stays blank."
   },
   {
    "id": "MN-02",
@@ -1923,7 +1924,7 @@
    "flag_detail": "Matched 18K counterpart to BN-07 ($870 -> $1,125, +29.3%); combines 18K yellow gold shank with platinum prongs and publishes no gram weight. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
    "reverified_utc": "2026-10-22",
    "reverified_by": "arena/81b71aa5-gold4",
-   "reverification": "Directly fetched https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y on 2026-10-22; price, metal spec, and flags verified verbatim.",
+   "reverification": "Directly fetched https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 17 (2026-10-23, arena/0e04577b-gold4): stored Blue Nile URL re-opened via a browser-content fetch (not the CI runner): Blue Nile serves 'We're sorry, the page you're looking for cannot be found.' SOURCE_URL_DEAD is therefore corroborated on a second, independent read path. The stored $1,125 keeps its 2026-10-22 capture date: not re-confirmed, not deleted, not replaced with a guess.",
    "pair_id": "PAIR-BN-FOURPRONG",
    "source_check": {
     "checked_utc": "2026-10-23T20:23:21Z",
@@ -2488,7 +2489,7 @@
    "flag_detail": "Product-page snapshot showed Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm, '$965 $772 (Setting Price) −20%'. IRREGULARITY: other official Blue Nile category snapshots show different current sale prices for this same SKU — $724 (−25%) on /engagement-rings/affordable, $730 on /engagement-rings/engravable-engagement-rings/all, $728 on /engagement-rings/designer/all. Sale prices are time-sensitive and vary by page; confirm the live price before purchase. LIVE UPDATE 2026-10-23T00:20Z: the product page now shows $965 (Setting Price) with no strike-through - the sale seen on 22 Oct ($772/$724/$730/$728 across pages) has ended. This confirms the flag's point: sale prices are volatile and page-dependent; the current live price is the recorded one.",
    "reverified_utc": "2026-10-23",
    "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
-   "reverification": "Pass 12 (2026-10-23): price $965 '(Setting Price)' with no discount, Stock Number 505038y14, Metal 14K Yellow Gold and Width 1.80mm all re-read and match this record; the ended 22-October sale is confirmed absent from the live page. Earlier: 2026-10-22T23:38Z: five dated snapshots of official Blue Nile pages re-read; the price itself varies between them (see flag_detail) — recorded, not averaged. Live fetch 2026-10-23T00:20Z: $965 '(Setting Price)' with NO discount displayed; Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm re-read from the page. The 22 Oct sale display ('$965 $772 -20%') had ended by this re-fetch - the recorded price is updated to the live $965; the snapshot sale history and the four differing category-page sale prices remain documented under SALE_PRICE_VARIES_ACROSS_PAGES.",
+   "reverification": "Pass 12 (2026-10-23): price $965 '(Setting Price)' with no discount, Stock Number 505038y14, Metal 14K Yellow Gold and Width 1.80mm all re-read and match this record; the ended 22-October sale is confirmed absent from the live page. Earlier: 2026-10-22T23:38Z: five dated snapshots of official Blue Nile pages re-read; the price itself varies between them (see flag_detail) — recorded, not averaged. Live fetch 2026-10-23T00:20Z: $965 '(Setting Price)' with NO discount displayed; Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm re-read from the page. The 22 Oct sale display ('$965 $772 -20%') had ended by this re-fetch - the recorded price is updated to the live $965; the snapshot sale history and the four differing category-page sale prices remain documented under SALE_PRICE_VARIES_ACROSS_PAGES. PASS 17 (2026-10-23, arena/0e04577b-gold4): official Blue Nile page re-fetched live and re-read: '$965 (Setting Price)', Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm; contact panel '+1-800-242-2728' / 'service@bluenile.com'. Identical to the stored record. No gram weight published. No value changed.",
    "source_check": {
     "checked_utc": "2026-10-23T20:23:21Z",
     "evidence_artifact": "reports/live_source_check_latest.json",
@@ -3264,14 +3265,14 @@
    "karat": 14,
    "sku": "990022",
    "width_mm": 1.6,
-   "url": "https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html",
+   "url": "https://www.ross-simons.com/products/990022",
    "solid_gold_statement": null,
    "solid_gold_status": "not_stated",
    "hallmark_published": false,
    "price_usd": 2819.0,
    "price_basis": "Sale price ($3,995 reg.) including 0.80 ct natural round diamond (I/VS1, GIA #2225975086)",
    "price_captured_utc": "2026-10-22",
-   "price_source_url": "https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html",
+   "price_source_url": "https://www.ross-simons.com/products/990022",
    "price_verification": "V1_direct_page_fetch",
    "weight_g": null,
    "weight_scope": null,
@@ -3286,10 +3287,10 @@
     "HALLMARK_NOT_PUBLISHED",
     "SOURCE_URL_DEAD"
    ],
-   "flag_detail": "Includes natural 0.80 ct GIA-certified diamond (#2225975086 = 0.160 g diamond mass per NIST HB 44), URL/title contains typo 'Ceritified', and total gram weight is omitted. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
+   "flag_detail": "Includes natural 0.80 ct GIA-certified diamond (#2225975086 = 0.160 g diamond mass per NIST HB 44), URL/title contains typo 'Ceritified', and total gram weight is omitted. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | PASS 18 (2026-10-23T20:31Z): the 404 is a URL MIGRATION, not a withdrawn product. The stored .html URL was replaced by https://www.ross-simons.com/products/990022 (Item 990022), confirmed independently by this session: same $2,819 sale price, same 14kt white gold, same 0.80 ct GIA-certified stone. The SOURCE_URL_DEAD flag will drop on the next runner read of the corrected URL; the price and its capture date are unchanged.",
    "reverified_utc": "2026-10-22",
    "reverified_by": "arena/81b71aa5-gold4",
-   "reverification": "Directly fetched https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html on 2026-10-22; price, metal spec, and flags verified verbatim.",
+   "reverification": "Directly fetched https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 17 (2026-10-23, arena/0e04577b-gold4): URL MIGRATION FOUND (FLG-PASS17-02): the stored ross-simons.com .html URL (HTTP 404 to the Pass 16 runner) was re-opened via a browser-content fetch and resolves to https://www.ross-simons.com/products/990022 , where the same product is live: '.80 Carat Ceritified [sic] Diamond Solitaire Ring in 14kt White Gold', Item 990022, 'Sale price $2,819' (Original price $3,995), GIA Cert#2225975086, Metal 14kt White Gold. The live $2,819 corroborates the stored price exactly. The stored URL and SOURCE_URL_DEAD flag are retained this pass to preserve the Pass 16 evidence chain; recommended next data pass: update the canonical URL to /products/990022 with this note as provenance. No value changed.",
    "source_check": {
     "checked_utc": "2026-10-23T20:23:21Z",
     "evidence_artifact": "reports/live_source_check_latest.json",
@@ -3299,6 +3300,16 @@
     "page_title": "404 Not Found",
     "found_prices": [],
     "note": "the page returns 404 / a 'cannot be found' page — the stored price can no longer be checked at this URL"
+   },
+   "url_correction": {
+    "checked_utc": "2026-10-23T20:31Z",
+    "old_url": "https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html",
+    "new_url": "https://www.ross-simons.com/products/990022",
+    "found_by": "session arena/0e04577b-gold4 (Pass 17) via browser-content fetch — recorded in its `reverification` note",
+    "independently_confirmed_by": "session arena/2189e10f-gold4 (Pass 18) with its own browser-rendered fetch at 2026-10-23T20:31Z",
+    "what_the_live_page_shows": "Title '.80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold'; 'Item 990022'; 'CLEARANCE 29% Off'; 'Original price $3,995'; 'Sale price $2,819'; sizes 5-8 'In-Stock', size 9 'Sold Out'; Metal 14kt White Gold; GIA Cert#2225975086; diamond 0.80 ct round brilliant, I / VS1",
+    "why_the_url_changed": "Ross-Simons migrated its catalogue to /products/<item> URLs; the stored .html URL now returns HTTP 404 (four consecutive runner reads). The price, metal, karat and item number on the live page match the stored row exactly, so this is the same product at a moved address.",
+    "what_was_NOT_changed": "price_usd stays $2,819 with its original 2026-10-22 capture date. The live page posting the same number is corroboration, not a new price claim."
    }
   },
   {

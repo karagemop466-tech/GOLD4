@@ -1,6 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-23 20:26 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-23 20:30 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
@@ -83,7 +83,7 @@ Generated 2026-10-23 20:26 UTC from `data/*.json` by `scripts/gen_verification.p
 | RS-02 | Ross-Simons | [Italian 18kt Yellow Gold 2mm Wedding Band](https://www.ross-simons.com/jewelry/rings/985230.html) | 18K | $249 | V1 · 2026-10-22 | 0.70 g | V1 | $67.45 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | RS-03 | Ross-Simons | [14kt Yellow Gold 3mm Comfort-Fit Wedding Band](https://www.ross-simons.com/jewelry/rings/820263.html) | 14K | $595 | V1 · 2026-10-22 | 2.10 g | V1 | $157.39 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | RS-04 | Ross-Simons | [14kt Yellow Gold 4mm Flat Wedding Band Ring](https://www.ross-simons.com/jewelry/rings/823796.html) | 14K | $1,195 | V1 · 2026-10-22 | 4.00 g | V1 | $299.80 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| RS-05 | Ross-Simons | [0.80 Carat GIA Certified Solitaire Diamond Engagement Ring](https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html) | 14K | $2,819 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, PRICE_INCLUDES_CENTRE_STONE, WHITE_GOLD, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SOURCE_URL_DEAD |
+| RS-05 | Ross-Simons | [0.80 Carat GIA Certified Solitaire Diamond Engagement Ring](https://www.ross-simons.com/products/990022) | 14K | $2,819 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, PRICE_INCLUDES_CENTRE_STONE, WHITE_GOLD, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SOURCE_URL_DEAD |
 | MJ-06 | Mejuri | [Pavé Diamond Slim Eternity Band](https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&Stone=Natural+Diamond) | 14K | $1,100 | V1 · 2026-10-22 | **blank** | — | — | stated: “14k solid gold” | not published | NO_WEIGHT_PUBLISHED, PRICE_IS_FROM_PRICE, HALLMARK_NOT_PUBLISHED, ENGRAVING_NON_RETURNABLE, COPY_CARAT_MISMATCH, PRICE_STRUCTURED_DIFFERS |
 | MJ-07 | Mejuri | [Diamonds Line Ring](https://mejuri.com/us/en/products/diamonds-line-ring) | 10K | $348 | V1 · 2026-10-22 | **blank** | — | — | stated: “10k solid gold” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, COPY_INCONSISTENT_METAL, ENGRAVING_NON_RETURNABLE, NOT_MARKETED_AS_BRIDAL |
 
@@ -241,7 +241,7 @@ Generated 2026-10-23 20:26 UTC from `data/*.json` by `scripts/gen_verification.p
 - **RS-02** (Ross-Simons · Italian 18kt Yellow Gold 2mm Wedding Band): solid-gold wording not published on the captured page → https://www.ross-simons.com/jewelry/rings/985230.html
 - **RS-03** (Ross-Simons · 14kt Yellow Gold 3mm Comfort-Fit Wedding Band): solid-gold wording not published on the captured page → https://www.ross-simons.com/jewelry/rings/820263.html
 - **RS-04** (Ross-Simons · 14kt Yellow Gold 4mm Flat Wedding Band Ring): solid-gold wording not published on the captured page → https://www.ross-simons.com/jewelry/rings/823796.html
-- **RS-05** (Ross-Simons · 0.80 Carat GIA Certified Solitaire Diamond Engagement Ring): weight, solid-gold wording not published on the captured page → https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html
+- **RS-05** (Ross-Simons · 0.80 Carat GIA Certified Solitaire Diamond Engagement Ring): weight, solid-gold wording not published on the captured page → https://www.ross-simons.com/products/990022
 - **MJ-06** (Mejuri · Pavé Diamond Slim Eternity Band): weight not published on the captured page → https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&Stone=Natural+Diamond
 - **MJ-07** (Mejuri · Diamonds Line Ring): weight not published on the captured page → https://mejuri.com/us/en/products/diamonds-line-ring
 
@@ -249,7 +249,11 @@ Generated 2026-10-23 20:26 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T20:26:36+00:00
+<<<<<<< HEAD
+run_utc: 2026-10-23T20:26:47+00:00
+=======
+run_utc: 2026-10-23T20:27:17+00:00
+>>>>>>> origin/main
 dataset rows: 64 | sellers: 10 | sources: 31
 spot benchmark: $3,996.31/oz (22 October, 2026) = $128.4844/g
 

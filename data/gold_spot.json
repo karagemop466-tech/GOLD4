@@ -208,5 +208,18 @@
    "retrieved_utc": "2026-10-23",
    "spread_vs_active_benchmark_pct": 0.358
   }
- ]
+ ],
+ "pass17_live_reading_2026_10_23": {
+  "publisher": "World Gold Council (Goldhub)",
+  "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+  "value_usd_per_oz": 3996.31,
+  "page_date_as_shown_on_source": "22 October, 2026",
+  "data_as_of_shown_on_source": "Data as of 22 October, 2026",
+  "market_data_credit_as_shown": "Market Data: Provided by ICE Data Services",
+  "retrieved_utc": "2026-10-23",
+  "verification": "V1_direct_page_fetch",
+  "spread_vs_active_benchmark_pct": -0.7,
+  "decision": "Benchmark RETAINED at USD 4,024.45/oz (the Pass 12/14 dated reading). The live tick moved -0.70% while the source's own 'Data as of' date did not advance, so this reading is recorded as a dated cross-check (FLG-PASS17-01), not silently substituted into derived values. Every derived figure on the site remains labelled with the benchmark and its date; the calculator accepts any spot the reader enters (at 3,996.31/oz, gold = $128.4844/g and a 4.0 g 14K ring's gold value is $299.80 vs $301.91 at the benchmark).",
+  "session": "arena/0e04577b-gold4 (Pass 17)"
+ }
 }
