@@ -22,7 +22,7 @@ renamed tree rather than hand-merging pages.
 | 49 | **Takeover of the stale PR #47 claim** — audit its 41-file delta against `main`, preserve its review evidence, and either integrate or close it with a written reason. | **done** — delta audited; its one substantive fix (Sarraf dedicated policy pages) re-verified from the pages and adopted; a note is posted on the PR and it is closed as superseded, not force-merged | `arena/bfbdf30c` | this file, `reviews/pass20/**` |
 | 50 | **Full-source re-verification** — re-open every ring URL and source from a runner with open internet *today*, commit the evidence artifact, reconcile line by line against the stored rows. No value applied blindly. | **done, narrower than planned and said so** — the runner was unavailable to this session (dispatch 403; run logs unreachable), so **11 of 64 rows + the benchmark + 2 policy pages were re-read by this session's own browser-rendered reader** and published in `reviews/pass20/observations.json`. **53 rows were not re-read** and keep their 22-10-2026 dates; the site states this explicitly | `arena/bfbdf30c` | `reports/live_source_check_*.json`, `reviews/pass20/**` |
 | 51 | **Hallucination / security scan + drift repair** — run all eight gates (nine invocations) and diff every headline number in the prose against `data/*.json`; fix drift, flag what cannot be fixed. | **done** — 9/9 invocations PASS (`reviews/pass20/gates.{json,txt}`); drift fixed in README (gate count 7→8 + Gate 8 listed, source count 31→32, "Latest pass — Pass 15" re-labelled, benchmark limitation updated); one new row flag and two additive data blocks | `arena/bfbdf30c` | `README.md`, `AUDIT.md`, `reviews/pass20/**` |
-| 52 | **Publish** — PR → merge without waiting → confirm the Pages deploy serves the new build → record the PR, merge commit and deploy run here. | **in progress** | `arena/bfbdf30c` | this file |
+| 52 | **Publish** — PR → merge without waiting → confirm the Pages deploy serves the new build → record the PR, merge commit and deploy run here. | **done** — PR [#51](https://github.com/karagemop466-tech/GOLD4/pull/51) **MERGED 2026-10-23T23:55:42Z**, merge commit `02704ad`; deploy run [40042347628](https://github.com/karagemop466-tech/GOLD4/actions/runs/40042347628) **success**; Pages `status=built` on the same commit; live page fetched and matched | `arena/bfbdf30c` | this file |
 
 **Baseline gates re-run at claim time on `main@a832eed` (nothing inherited is broken):** G1 `audit.py` PASS (131 checks, 1 warning BE-05) · G2 `check_site.py` PASS (28 pages) · G3 `verify.py` 64 records, 0 hard failures · G4 `verify_a0be79d4.py` PASS (38 pages, 2,180 links, 0 dead) · G5 `audit_hallucinations.py` PASS (978 checks) · G6a/6b citations PASS · G7 `audit_freshness.py` PASS (294 checks, 2 warnings) · G8 `test_assurance.py` 8/8 PASS.
 
@@ -53,9 +53,25 @@ which this sandbox cannot reach (`gh run view --log` fails with EOF), so **no pe
 read, quoted or applied here.** Gate 7 still describes the 20:23:21Z sweep, which is the most recent evidence
 whose contents have actually been inspected.
 
-**Publish record (in progress).** PR [#51](https://github.com/karagemop466-tech/GOLD4/pull/51) opened from
-`arena/bfbdf30c-gold4`; the PR build (all eight gates / nine invocations) passed. PR #47 was closed as
-superseded with its handover comment after its Sarraf fix was re-verified and integrated.
+**Publish record — MERGED AND LIVE.** PR [#51](https://github.com/karagemop466-tech/GOLD4/pull/51) opened from
+`arena/bfbdf30c-gold4` and **merged 2026-10-23T23:55:42Z** as merge commit `02704ad`
+(`02704ad67736f3daa0cf2ca6adbb764fef356b95`). The PR build ran all eight gates (nine invocations) and passed.
+The push-to-main **Deploy GOLD research site** run [40042347628](https://github.com/karagemop466-tech/GOLD4/actions/runs/40042347628)
+completed **success** in 25s, and `gh api repos/.../pages/builds/latest` reports `status=built`,
+`commit=02704ad…`, `error=none`. **Live verification:** `https://karagemop466-tech.github.io/GOLD4/pages/pass20.html`
+was fetched after the deploy and serves this pass's readings, findings `F20-01…F20-08`, the coverage numbers and
+the official source links. PR #47 was closed as superseded after its Sarraf fix was re-verified and integrated.
+Nothing was merged with a failing gate.
+
+**Correction found after the deploy, and fixed in the close-out PR.** The merged build's **Flagged for Review**
+page did not yet show the new `CLEARANCE_RETURN_TERMS_UNCLEAR` flag: `pages/*` is generated from
+`data/derived.json`, and that file had not been re-run after the flag was added to `data/rings.json`, so the
+flag existed in the dataset but not in the rendered pages (the flag-instance count still read 249 on the live
+site). `scripts/compute.py` was re-run — spot, stats and all 17 weighted rows recomputed **identically**, the
+only diff being RS-05's flags and its `pass20_observation` note — and the site was rebuilt: the Flagged page now
+lists the flag with the Ross-Simons source link and the count reads **250 flag instances across 64 rows**. All
+nine gate invocations were re-run after the rebuild and pass. Recorded here rather than quietly republished,
+because "the page did not show the finding" is itself a finding.
 
 **Not claimed.** No runner sweep happened this pass. No XRF or assay test exists for any ring. No seller's reputation was verified. No price on this site is a live quote.
 

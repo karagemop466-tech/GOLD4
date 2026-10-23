@@ -1,6 +1,6 @@
 === Gate 1 — Canonical dataset integrity & derived-math recompute ===
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T23:54:27+00:00
+run_utc: 2026-10-23T23:56:40+00:00
 dataset rows: 64 | sellers: 10 | sources: 32
 spot benchmark: $3,996.31/oz (22 October, 2026) = $128.4844/g
 
@@ -85,7 +85,7 @@ exit=0
 === Gate 4 — Multi-page XSS, 404-blocklist & Assay-Lab scanner ===
 === GOLD4 MULTI-PASS SECURITY & ANTI-HALLUCINATION AUDIT (`verify_a0be79d4.py`) ===
 HTML pages scanned      : 39
-Hyperlinks & assets     : 2243 verified (0 dead/unsafe URIs)
+Hyperlinks & assets     : 2244 verified (0 dead/unsafe URIs)
 Rendered table rows     : 44 verified (100% official HTTPS + dated)
 Hard failures           : 0
 FLAG NOTE               : By-design blank fields preserved strictly NULL (`UNVERIFIED`): 15 ring weights + 2 conflicting Sarraf karats (`F1625`, `121987-.72P`) + 1 disqualified vermeil control (`G4-RED-01`).
@@ -141,7 +141,7 @@ test_review_has_exactly_all_rows_and_blank_current_prices (__main__.AssuranceTes
 test_unreachable_never_confirms (__main__.AssuranceTests.test_unreachable_never_confirms) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.004s
+Ran 8 tests in 0.003s
 
 OK
 exit=0

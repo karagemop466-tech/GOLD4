@@ -222,7 +222,7 @@
   "decision": "Benchmark RETAINED at USD 4,024.45/oz (the Pass 12/14 dated reading). The live tick moved -0.70% while the source's own 'Data as of' date did not advance, so this reading is recorded as a dated cross-check (FLG-PASS17-01), not silently substituted into derived values. Every derived figure on the site remains labelled with the benchmark and its date; the calculator accepts any spot the reader enters (at 3,996.31/oz, gold = $128.4844/g and a 4.0 g 14K ring's gold value is $299.80 vs $301.91 at the benchmark).",
   "session": "arena/0e04577b-gold4 (Pass 17)"
  },
- "pass19_live_crosscheck_2026_10_23": {
+ "pass20_live_crosscheck_2026_10_23": {
   "session": "arena/bfbdf30c-gold4 (Pass 19)",
   "source_url": "https://www.gold.org/goldhub/data/gold-prices",
   "read_path": "browser-rendered page reader",
