@@ -1,6 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-23 00:08 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-23 00:14 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
@@ -42,8 +42,8 @@ Generated 2026-10-23 00:08 UTC from `data/*.json` by `scripts/gen_verification.p
 | MJ-03 | Mejuri | [Pave Diamond Slim Signet](https://mejuri.com/products/pave-diamond-slim-signet-ring) | 14K | $548 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, ENGRAVING_NON_RETURNABLE, PRICE_VARIANT_DEPENDENT |
 | MJ-04 | Mejuri | [Pave Diamond Thin Dome Ring](https://mejuri.com/products/pave-diamond-thin-dome-ring) | 14K | $798 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL |
 | MJ-05 | Mejuri | [Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)](https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring) | 14K | $598 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, SCS_CERT_REQUIRED_FOR_RETURN, PRICE_IS_FROM_PRICE |
-| VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.82 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND |
-| VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.88 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND |
+| VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.82 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND, WIDTH_UNVERIFIED |
+| VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.88 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND, WIDTH_UNVERIFIED |
 | BE-03 | Brilliant Earth | [Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K Shank + 14K White Gold Prongs)](https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/) | 18K | $850 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, MIXED_METAL_UNCLEAR |
 | SR-01 | Sarraf | [10k White Gold 5mm High Polished Traditional Domed Wedding Band](https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 10K | $352 | V1 · 2026-10-22 | 4.80 g | V1 | $259.04 | stated: “Material: 10K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
 | SR-02 | Sarraf | [14k Yellow Gold 6mm High Polished Comfort Fit Heavy Wedding Band](https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html) | 14K | $1,063 | V1 · 2026-10-22 | 9.40 g | V1 | $710.20 | stated: “Material: 14K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
@@ -246,13 +246,21 @@ Generated 2026-10-23 00:08 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-22T23:56:23+00:00
-dataset rows: 47 | sellers: 10 | sources: 28
+run_utc: 2026-10-23T00:14:10+00:00
+dataset rows: 64 | sellers: 10 | sources: 28
 spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
 
-RESULT: PASS  (112 passed, 0 warnings, 0 failures)
+RESULT: PASS  (128 passed, 9 warnings, 0 failures)
 
-No warnings, no failures.
+[WARN] B-08 price verification: BN-20: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-21: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-22: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-23: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-24: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BN-25: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BE-05: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BE-06: price is only V2 evidence and must be flagged
+[WARN] B-08 price verification: BE-07: price is only V2 evidence and must be flagged
 
 Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
 price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,
