@@ -41,8 +41,9 @@ jobs:
           fetch-depth: 0
       - name: Re-open every official source URL (read-only GET)
         env:
-          SOURCE_SESSION: ${{ github.head_ref || github.ref_name }}
-        run: python3 scripts/live_source_check.py --timeout 30 --session "$SOURCE_SESSION" --pass-label "Pull request live check"
+          GOLD4_EVIDENCE_SESSION: ${{ github.head_ref || github.ref_name }}
+          GOLD4_EVIDENCE_PASS: Pull request live check
+        run: python3 scripts/live_source_check.py --timeout 30
         continue-on-error: true
       - name: Publish evidence artifact
         if: always()

@@ -380,8 +380,17 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only", default="")
     ap.add_argument("--timeout", type=int, default=30)
-    ap.add_argument("--session", default="automated source-health review")
-    ap.add_argument("--pass-label", default="Live source check")
+    ap.add_argument(
+        "--session",
+        default=os.environ.get("GOLD4_EVIDENCE_SESSION")
+        or os.environ.get("GITHUB_HEAD_REF")
+        or os.environ.get("GITHUB_REF_NAME")
+        or "automated source-health review",
+    )
+    ap.add_argument(
+        "--pass-label",
+        default=os.environ.get("GOLD4_EVIDENCE_PASS") or "Live source check",
+    )
     args = ap.parse_args()
     if not re.fullmatch(r"[A-Za-z0-9 ./_:-]{1,120}", args.session):
         ap.error("--session contains unsupported characters")
