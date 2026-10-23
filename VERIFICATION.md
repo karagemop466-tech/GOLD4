@@ -1,6 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-22 23:56 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-23 00:11 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
@@ -42,8 +42,8 @@ Generated 2026-10-22 23:56 UTC from `data/*.json` by `scripts/gen_verification.p
 | MJ-03 | Mejuri | [Pave Diamond Slim Signet](https://mejuri.com/products/pave-diamond-slim-signet-ring) | 14K | $548 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, ENGRAVING_NON_RETURNABLE, PRICE_VARIANT_DEPENDENT |
 | MJ-04 | Mejuri | [Pave Diamond Thin Dome Ring](https://mejuri.com/products/pave-diamond-thin-dome-ring) | 14K | $798 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL |
 | MJ-05 | Mejuri | [Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)](https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring) | 14K | $598 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, SCS_CERT_REQUIRED_FOR_RETURN, PRICE_IS_FROM_PRICE |
-| VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.82 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND |
-| VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.88 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND |
+| VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.82 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND, WIDTH_UNVERIFIED |
+| VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.88 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND, WIDTH_UNVERIFIED |
 | BE-03 | Brilliant Earth | [Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K Shank + 14K White Gold Prongs)](https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/) | 18K | $850 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, MIXED_METAL_UNCLEAR |
 | SR-01 | Sarraf | [10k White Gold 5mm High Polished Traditional Domed Wedding Band](https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 10K | $352 | V1 · 2026-10-22 | 4.80 g | V1 | $259.04 | stated: “Material: 10K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
 | SR-02 | Sarraf | [14k Yellow Gold 6mm High Polished Comfort Fit Heavy Wedding Band](https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html) | 14K | $1,063 | V1 · 2026-10-22 | 9.40 g | V1 | $710.20 | stated: “Material: 14K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
@@ -156,15 +156,12 @@ Generated 2026-10-22 23:56 UTC from `data/*.json` by `scripts/gen_verification.p
 1. **Blue Nile copy contradicts its own specification (BN-04).** The 14K Comfort Fit 2.5 mm description says the ring is “crafted in 18k yellow gold” while the specification block says 14K Yellow Gold. Page: https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284
 2. **Blue Nile copy names the wrong metal colour (BN-08).** The Riviera Pavé 14K *yellow* gold page says the diamonds are “set in 14k white gold”. Page: https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512
 3. **Mixed-metal ambiguity (BN-07).** The Classic Four Prong Solitaire is titled 14K Yellow Gold but the description mentions “platinum prongs”; if true, the ring is not all gold and any gold-weight calculation would overstate the gold content. Page: https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257
-4. **No hallmark anywhere.** 0 of 21 rows publish the physical stamp or the maker's mark, so the hallmark requirement can only be checked in hand.
-5. **Weights are approximate where they exist.** Allurez labels its number “Approximate Metal Weight”, Anjolee “Approx. Metal Weight”; VRAI publishes a size-6 metal weight. None is a measurement of the ring you will receive.
-6. **Two snapshot-only values were resolved by direct re-read (2026-10-22, Pass 4).** The Anjolee “2.90 Gr.” weight was read from the live product page's details table and is now recorded as V1; the Brilliant Earth Atelier setting price ($1,390) was read from the live page and recorded as row BE-01. Brilliant Earth still publishes no gram weight, so its weight stays blank. Until that re-read, both values were correctly withheld as unverified.
+4. **No hallmark anywhere.** 0 of 20 rows publish the physical stamp or the maker's mark, so the hallmark requirement can only be checked in hand.
+5. **Weights are approximate where they exist.** Allurez labels its number “Approximate Metal Weight”; VRAI publishes a size-6 metal weight. Neither is a measurement of the ring you will receive.
+6. **Two search-snapshot-only values were deliberately NOT used:** an Anjolee “2.90 Gr.” weight and every Brilliant Earth price/weight. They appeared only in search-engine snapshots of the official pages and could not be re-read from the live page, so they are recorded as unverified rather than published.
 7. **Reputation was not verified for any seller.** No independent review or complaints dataset was collected, so no reputation claim is made anywhere on the site.
 8. **Seller contact gaps.** Mejuri's phone/email did not appear in the captured policy page; Brilliant Earth's email did not. Both are left blank rather than guessed.
 9. **Structured data notes used prices from a listing card.** VRAI's “From $1,035” is a listing-level price, while its 2.86 g weight comes from the configuration page for the same design. Both are VRAI pages, but the pair is flagged `PRICE_AND_WEIGHT_DIFFERENT_URLS`.
-10. **VRAI band widths blanked (2026-10-22, Pass 4).** The first capture recorded 1.7 mm (VR-01) and 1.6 mm (VR-02) band widths. Re-reading the live configuration pages showed “Band width: Standard” and a 1.6 mm band *depth*, but no numeric band width, so both cells were blanked and flagged `WIDTH_UNVERIFIED`. A value that cannot be re-read from the official page does not stay in the dataset.
-11. **AN-01 publishes no price-to-gold multiple, by design.** Its $870.76 price includes a 0.50 ct lab-created diamond (the first capture's basis line omitted “lab-created”; corrected in Pass 4). Dividing that price by the metal's gold value would produce a number that looks comparable with setting-only rows and is not; `scripts/compute.py` withholds it and `scripts/audit.py` (check D-05) fails the build if one is ever published for a stone-inclusive price.
-12. **Gold spot moved between capture and re-check.** The frozen benchmark is $4,024.36/oz as shown by the World Gold Council for 21 October 2026; re-reading the same page later on 2026-10-22 showed a live panel of $4,028.53/oz. Per the methodology the frozen value is retained and nothing was silently recomputed; the re-check is recorded in `data/gold_spot.json`. Re-read the source link before relying on any derived value.
 
 ## Unverified values published as blank
 
@@ -214,7 +211,7 @@ Generated 2026-10-22 23:56 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-22T23:49:53+00:00
+run_utc: 2026-10-23T00:10:03+00:00
 dataset rows: 47 | sellers: 10 | sources: 28
 spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
 

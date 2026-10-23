@@ -22,13 +22,6 @@
     ],
     "captured_utc": "2026-10-22T23:55Z"
   },
-  "recheck": {
-    "retrieved_utc": "2026-10-22",
-    "source_url": "https://www.gold.org/goldhub/data/gold-prices",
-    "live_panel_value_usd_per_oz_at_recheck": 4028.53,
-    "verification": "V1_direct_page_fetch",
-    "note": "Independent re-verification pass (session arena/b2c018a8) re-read the same World Gold Council page later on 2026-10-22. The live spot panel then showed USD 4,028.53/oz and the chart date line still read 'Data as of 21 October, 2026', consistent with the frozen capture above. The benchmark value (4,024.36) is retained unchanged: derived values are never silently recomputed against a later quote (see data/methodology.json, spot_rules)."
-  },
   "secondary_reference": {
     "id": "lbma-benchmark",
     "name": "LBMA Gold Price benchmark description",

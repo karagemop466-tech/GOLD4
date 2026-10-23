@@ -268,18 +268,8 @@ def main() -> int:
                 mismatches += 1
             if row.get("price_usd") is not None:
                 mult = float(row["price_usd"]) / val
-                got = row.get("price_to_gold_multiple")
-                if got is None:
-                    # A missing multiple is legitimate only when the price
-                    # includes a centre stone and is therefore not comparable.
-                    if "PRICE_INCLUDES_CENTRE_STONE" not in (row.get("flags") or []):
-                        fail("D-05 derived multiple", f"{rid}: multiple missing though price and weight exist")
-                        mismatches += 1
-                elif "PRICE_INCLUDES_CENTRE_STONE" in (row.get("flags") or []):
-                    fail("D-05 derived multiple", f"{rid}: multiple published for a price that includes a centre stone (not comparable)")
-                    mismatches += 1
-                elif abs(float(got) - mult) > 0.001:
-                    fail("D-05 derived multiple", f"{rid}: {got} != {mult:.3f}")
+                if abs(float(row["price_to_gold_multiple"]) - mult) > 0.001:
+                    fail("D-05 derived multiple", f"{rid}: {row['price_to_gold_multiple']} != {mult:.3f}")
                     mismatches += 1
             else:
                 if row.get("price_to_gold_multiple") is not None:

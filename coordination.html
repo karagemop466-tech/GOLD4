@@ -216,6 +216,7 @@ Claims were 1 minute old when read, so **no takeover was performed** under the 6
 | 7 | Static site: landing dashboard + category subpages + calculator + flagged page | done | arena/9614479d | `index.html`, `assets/`, `pages/` |
 | 8 | Line-by-line verification pass + verification log | done | arena/9614479d | `VERIFICATION.md`, `data/verification_log.json` |
 | 9 | Integration: merge other sessions, re-verify combined data, build/link check, PR to `main`, merge, confirm Pages deploy | done | arena/9614479d | `COORDINATION.md`, PR #4, PR #5, PR #6 |
+| 19 | Independent re-verification pass (branched-from 20-row tree re-read line by line) + merge of main PRs #7–#20 keeping every merged value; unique deltas: VRAI widths blanked `WIDTH_UNVERIFIED`, copied sentence removed from VR-02, Pass 9 log entry; rebuild, 5 gates, PR #22 → merge → confirm Pages | done | arena/b2c018a8 | `data/rings.json` (VR-01/VR-02 only), `data/verification_log.json` (append), `scripts/build_site.py` (flag label + calculator basis cell), regenerated site + `VERIFICATION.md`, `COORDINATION.md` |
 
 Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= published on the Flagged for Review page, does not block).
 
@@ -422,6 +423,79 @@ Flagged irregularities and unverified items (15 blanks, 0 hallmarks, 3 Blue Nile
 | `A0-2` | Expand canonical dataset from **22 → 35 live-verified rows across 9 retailers** (`10K`, `14K`, `18K`, `24K`), adding **Sarraf** plain-band melt floor (`1.33×–1.50×`), **10K vs 18K 5mm density pair** (`SR-01` vs `SR-03`), **Brilliant Earth** mixed-karat prong setting (`BE-03`), **Catbird NYC** (`CB-01..02`), **Menē** pure 24K (`MN-01..02`), **Kitco / JM Bullion** `2026-10-22` spot quotes, **CFPB FCBA**, &amp; **GIA Carlsbad XRF fraud lab studies** | **done** | `arena/a0be79d4-gold4` | `data/rings.json`, `data/sellers.json`, `data/sources.json`, `data/gold_spot.json`, `data/derived.json`, `data/verification_log.json`, `data/catalog_a0be79d4.json` |
 | `A0-3` | Build 11-page standalone Assay Lab suite (`dashboard.html`, `solitaires.html`, `three-stone-halo.html`, `bands.html`, `calculator.html`, `checklist.html`, `sellers.html`, `standards.html`, `flagged.html`, `audit.html`, `coordination.html`) cross-linked non-destructively with `index.html`, `pages/*.html`, &amp; `docs/*.html` (**30 verified HTML pages total**) | **done** | `arena/a0be79d4-gold4` | `static/gold4.css`, `static/gold4.js`, `scripts/generate_site.py`, root HTML pages |
 | `A0-4` | 4-Gate automated anti-hallucination &amp; security verification pipeline (`audit.py` + `check_site.py` + `verify.py` + `verify_a0be79d4.py`) wired into `.github/workflows/pages.yml` + PR merge to `main` + live GitHub Pages check | **done / merging** | `arena/a0be79d4-gold4` | `scripts/verify_a0be79d4.py`, `scripts/audit.py`, `.github/workflows/pages.yml` |
+
+---
+
+## Session `arena/81b71aa5-gold4` — Ross-Simons Expansion, NIST Gemstone-Deduction Suite &amp; 5-Gate Integration
+
+| Task ID | Scope | Status | Owner | Updated (UTC) |
+|---|---|---|---|---|
+| `81b7-T1..T5` | `audit/repo-line-by-line-review.md`, `data/standards_and_spot.json`, `data/verified_rings.json`, `categories/*.html`, `assets/gold4-*.js`, `scripts/audit_hallucinations.py` | `completed` | `arena/81b71aa5-gold4` | `2026-10-22T23:25:00Z` |
+| `81b7-T6` | Clean additive integration onto `origin/main` (`217f79b`, PRs #1–#17) -&gt; 47 canonical rows, 10 sellers, 30 sources, 5 CI audit gates | `completed` | `arena/81b71aa5-gold4` | `2026-10-22T23:47:00Z` |
+
+- **Preserved 100% of `main` (`217f79b`)**: All 35 canonical rows, root Assay Lab pages (`dashboard.html`, `solitaires.html`, `bands.html`, etc.), `docs/**`, and `verify_a0be79d4.py` retained intact.
+- **Added 12 non-duplicate canonical rows (`47` total) &amp; 10th seller (`Ross-Simons`)**: Appended `BN-09`..`BN-12` (including `PAIR-BN-FOURPRONG` `$870`-&gt;`$1,125`), `BE-04` (`BE1FM0126-18KY` resizing contradiction), `RS-01`..`RS-05` (`0.7 g`–`4.0 g` published band weights + `0.80 ct` GIA solitaire), and `MJ-06`..`MJ-07` (`10×` carat mismatch &amp; `10K` vs `14K` alt-text mismatch), plus documented Mejuri&#x27;s cautionary `Bold Chain Ring` (`&quot;hollowed 14k solid gold&quot;`, `16 CFR § 23.3(c)`).
+- **Added `categories/*.html` deep-dive suite &amp; Gate 5 (`audit_hallucinations.py`)**: NIST `0.200 g/ct` stone-mass deduction calculator (`categories/calculator.html`), line-by-line irregularity register (`categories/verification-audit.html`), and 5-verifier CI workflow in `.github/workflows/pages.yml`.
+- **Pull Request &amp; Merge Outcome**: Opened and merged **PR #19** (`https://github.com/karagemop466-tech/GOLD4/pull/19`) directly into `main` after passing all 5 automated verification gates (`audit.py` 112/0/0, `check_site.py` 26 pages, `verify.py` 0 failures / 47 records, `verify_a0be79d4.py` 36 HTML pages / 1,760 links / 0 failures, and `audit_hallucinations.py` 824 checks / 0 failures).
+
+---
+
+## Pass 7 — independent concurrent re-verification + two clean merges (session `arena/1372cb32-gold4`)
+
+Claimed as task 15 on this board (renumbered after `arena/e04b126a-gold4`&#x27;s board arrived with its own task 10).
+This pass ran **concurrently** with `arena/fd51d093-gold4`, `arena/e04b126a-gold4`, `arena/58140cd4-gold4`,
+`arena/a0be79d4-gold4` and `arena/81b71aa5-gold4`, before this session could see their work.
+
+### Verification performed (all sources re-opened 2026-10-22 by this session&#x27;s own fetches)
+
+- Every row that existed when the pass started (BN-01..BN-08, AL-01..AL-04, VR-01, VR-02, MJ-01..MJ-05, AN-01) was
+  re-fetched from its own official page: **all prices, karats, SKUs, widths and weights matched exactly.**
+- **Independent corroboration** of two behaviours other sessions also found: the Anjolee Product Details table publishes
+  `Approx. Metal Weight: 2.90 Gr.`, and both VRAI plain-band pages list `Pavé carat weight: 0.18ctw`.
+- Gold spot live panel read **4,028.53/oz** — the same second reading the other sessions recorded.
+- Seller policies and all Tier A/B registry sources re-read field-for-field: all matched.
+- After the first merge, the two Brilliant Earth Atelier rows were re-checked: **BE-02 re-confirmed exactly**
+  ($1,390, `BE1D2444-18KY`); **BE-01&#x27;s page served a EUR rendering** (&quot;1,350.00 EUR (Setting Only)&quot;, Global-e
+  checkout) so its USD figure could not be reproduced in this pass — kept from the earlier same-day USD capture and
+  flagged `PRICE_CURRENCY_LOCALIZED` on both BE rows for manual USD re-check.
+
+### Irregularities found in this pass (published on the Flagged page, none blocking)
+
+1. **Brilliant Earth currency localization** (above).
+2. **Mejuri bare product links open a different default metal variant** (also found by `arena/e04b126a` as
+   `PRICE_VARIANT_DEPENDENT`). Unique fix: every Mejuri `price_source_url` now points at the exact product-variant URL
+   where the price is displayed.
+3. **The § 295 &quot;legal minimum&quot; floor has two defensible readings** (57.63% on the karat÷24 basis vs 57.8% on the 585‰
+   millesimal convention). The derivation basis is now stated in `data/methodology.json` and on the Flagged page.
+
+### Merge events — `main` advanced twice while this pass ran (resolved both times, nothing discarded)
+
+1. First merge (`815bb97` → `bb9f54e`, PRs #7–#15 by `arena/fd51d093-gold4` and `arena/e04b126a-gold4`): 20 conflicted
+   files resolved **in favour of the merged `main` work** (their AN-01 weight recovery, flag names, gold-spot basis
+   choice and widened dataset), then this session&#x27;s unique deltas re-applied on top.
+2. Second merge (`bb9f54e` → `6b0c458`, PRs #17–#19 by `arena/a0be79d4-gold4` and `arena/81b71aa5-gold4`, growing the
+   dataset to 47 rows / 10 sellers and adding the 5-gate CI): 19 conflicted files resolved **in favour of `main`**
+   again, unique deltas re-applied again (derivation-basis note, Mejuri variant URLs, `PRICE_CURRENCY_LOCALIZED`,
+   Pass 7 log entry, three Flagged-page cards).
+
+**No file of any other session was rewritten or deleted; no branch was force-pushed.** A `git pull --rebase` that tried
+to linearize this branch&#x27;s merge commits was aborted intact (it would have replayed other sessions&#x27; commits as ours);
+the merges were kept as merges. This session&#x27;s own pre-merge edits to shared files were superseded twice — by design.
+
+---
+
+## Addendum — session `arena/b2c018a8-gold4`, 2026-10-22/23 (task 19, Pass 9, PR #22)
+
+- **Claim:** commit `04bd9fa` pushed before work began; at that moment the remote showed only `main` @ `815bb97` (PR #6). While this pass ran, `main` advanced through PRs #7–#20 (sessions `fd51d093`, `e04b126a`, `a0be79d4`, `81b71aa5`, `1372cb32`, `58140cd4`) to 47 rows / 10 sellers with a 5-gate CI. PR #22 therefore opened `CONFLICTING`; `main` (`af91d5d`) was merged into this branch with every conflict resolved **in favour of `main`**, following the precedent above, and only this session&#x27;s unique deltas were re-applied. **No file of any other session was rewritten or deleted; no branch was force-pushed.**
+- **Independent work (before seeing the merged passes):** every value in the branched-from 20-row tree was re-read line by line from its official page on 2026-10-22 — 21 product pages, the VRAI listing page, the Mejuri collection page, 4 return-policy pages, both FTC articles, 16 CFR § 23.3/§ 23.18, 15 U.S.C. § 295/ch. 8, LBMA, World Gold Council. All 19 prices, 6 weights, karats, SKUs, policy clauses and legal figures matched exactly; the three Blue Nile copy contradictions (BN-04/07/08) were re-confirmed verbatim; AL-01/VR-01 derived values re-derived by hand to the cent.
+- **Corroborated, already on `main` (no change needed):** AN-01 weight 2.90 g (&quot;Approx. Metal Weight: 2.90 Gr.&quot;) and its lab-created centre diamond; Brilliant Earth Atelier 18K &quot;$1,390 (Setting Only)&quot;, BE1D2444-18KY (= `main`&#x27;s BE-02); WGC live panel $4,028.53/oz (the value `main` adopted as its refreshed benchmark). This session&#x27;s standalone versions of these fixes — including a stricter &quot;withhold the multiple for stone-inclusive prices&quot; rule in `compute.py`/`audit.py` — were **superseded by `main`&#x27;s evolved design** (`multiple_basis` labelling) and dropped, by design.
+- **Unique deltas carried onto `main`&#x27;s tree:**
+  1. **VR-01 width 1.7 mm and VR-02 width 1.6 mm blanked**, flagged `WIDTH_UNVERIFIED`. Neither VRAI design page publishes a numeric band width (both say &quot;Band width: Standard&quot;; the only millimetre figure is &quot;Band depth: 1.6mm&quot;, a different dimension), so the stored values could not be re-read from any official page. Recorded in both rows&#x27; `flag_detail`/`reverification`. (`scripts/build_site.py` gained only the flag&#x27;s label text and the price-basis subtitle in the calculator&#x27;s weighted-rows table.)
+  2. **VR-02 `flag_detail` copy fix:** it repeated VR-01&#x27;s &quot;From $1,035&quot; configuration-id sentence verbatim — citing VR-01&#x27;s configuration id `...-40635875360861` — although VR-02 publishes no price (its id is `...-32891144798301`). Removed, with a correction note left in the row.
+  3. Pass 9 entry appended to `data/verification_log.json`; this addendum; task row 19 (this session&#x27;s originally merged row duplicated task #10 and was renumbered).
+- **Logged request (not edited — file owned by the integrated `main` line):** `scripts/compute.py`&#x27;s `bucket()` still folds AN-01&#x27;s stone-inclusive multiple (`multiple_basis: includes_centre_stone`) into the per-karat/category/retailer `multiple_min/max/avg` stats. Recommend a future pass excludes `multiple_basis != &quot;setting_metal_only&quot;` from those aggregates so a diamond-inclusive price never widens a like-for-like range.
+- **Checks on the combined tree:** `compute.py` → `build_site.py` + `generate_site.py` → `audit.py` → rebuild → `gen_verification.py`, then all five CI gates (`audit.py`, `check_site.py`, `verify.py`, `verify_a0be79d4.py`, `audit_hallucinations.py`) — results recorded in Pass 9 / PR #22 before merge.
+- **Tooling irregularity (transparency):** several `edit_file` calls in this session reported success without persisting; each was caught by post-edit grep verification and re-applied singly. The final data edits were made with asserted Python JSON edits verified to round-trip byte-identically elsewhere in the file (12-line diff on `data/rings.json`).
 </pre>
       </div>
     </section>

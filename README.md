@@ -109,13 +109,12 @@ Every re-read is recorded per row in `data/rings.json` (`reverified_utc`, `rever
 3. The 18K premium is inconsistent: +15.5% (Blue Nile Petite Solitaire), +16.8% (Brilliant Earth Atelier), +40.1% (Blue Nile Comfort Fit), +68.0% (Allurez Split Shank) — and for the one pair with both weights published, 54.9% of that premium is simply more gold.
 4. Return windows all look like "30 days", but exclusions differ sharply (resized, engraved, custom). One seller (Anjolee) explicitly accepts returns on customised orders; another (Allurez) makes custom orders non-refundable.
 5. Several retailer pages contradict their own specification blocks; each case is listed on the Flagged page.
-6. An independent re-verification pass on 2026-10-22 re-read every value from its official page: every price and policy was confirmed unchanged, three stored values were corrected (Anjolee's 2.90 g weight upgraded to directly-read; a new Brilliant Earth row added because its $1,390 setting price is now readable; two VRAI band widths blanked because the pages publish no numeric width), and one price (Anjolee's) is deliberately shown without a price÷gold multiple because it includes a diamond. Details: `data/verification_log.json` Pass 4 and the site's Log page.
 
 ## Sources
 
 - **Tier A — government/regulator:** FTC consumer guidance on jewellery; 16 CFR Part 23 (§ 23.3); 15 U.S.C. § 295 and ch. 8; FTC credit-card dispute guidance.
 - **Tier B — market benchmark:** World Gold Council gold spot; LBMA benchmark description.
-- **Tier C — retailer's own site:** 21 product pages plus return-policy pages from Blue Nile, Allurez, VRAI, Mejuri, Brilliant Earth and Anjolee.
+- **Tier C — retailer's own site:** 20 product pages plus return-policy pages from Blue Nile, Allurez, VRAI, Mejuri, Brilliant Earth and Anjolee.
 
 The full registry, with what each source supports, is in `data/sources.json` and on the site's Sources page.
 

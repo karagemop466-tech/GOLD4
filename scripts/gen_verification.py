@@ -83,14 +83,8 @@ def main() -> None:
     for r in rows:
         if r["weight_g"] is None:
             continue
-        if r["price_to_gold_multiple"] is not None:
-            mult = f"{num(r['price_to_gold_multiple'])}×"
-        elif "PRICE_INCLUDES_CENTRE_STONE" in (r.get("flags") or []):
-            mult = "**not comparable** (price includes a diamond)"
-        else:
-            mult = "**blank**"
         out.append(f"| {r['id']} | {r['weight_g']:.2f} | {r['fineness']:.4f} | {r['pure_gold_g']:.3f} | ${usd_g:,.4f} | {money(r['gold_value_usd'])} | "
-                   f"{money(r['legal_min_gold_value_usd'])} | {money(r['price_usd'])} | {mult} |")
+                   f"{money(r['legal_min_gold_value_usd'])} | {money(r['price_usd'])} | {num(r['price_to_gold_multiple'])}× |")
 
     out.append("\n## Karat pairs (same design, both karats sold by the same retailer)\n")
     out.append("| Pair | Retailer | Design | 14K → 18K price | Price gap | Gold-content gap | Multiple 14K → 18K |")
@@ -128,15 +122,12 @@ def main() -> None:
                f"Page: {next(r['url'] for r in rows if r['id']=='BN-08')}")
     out.append("3. **Mixed-metal ambiguity (BN-07).** The Classic Four Prong Solitaire is titled 14K Yellow Gold but the description mentions “platinum prongs”; if true, the ring is not all gold and any gold-weight calculation would overstate the gold content. "
                f"Page: {next(r['url'] for r in rows if r['id']=='BN-07')}")
-    out.append(f"4. **No hallmark anywhere.** {st['rows_with_hallmark_published']} of {st['total_rows']} rows publish the physical stamp or the maker's mark, so the hallmark requirement can only be checked in hand.")
-    out.append("5. **Weights are approximate where they exist.** Allurez labels its number “Approximate Metal Weight”, Anjolee “Approx. Metal Weight”; VRAI publishes a size-6 metal weight. None is a measurement of the ring you will receive.")
-    out.append("6. **Two snapshot-only values were resolved by direct re-read (2026-10-22, Pass 4).** The Anjolee “2.90 Gr.” weight was read from the live product page's details table and is now recorded as V1; the Brilliant Earth Atelier setting price ($1,390) was read from the live page and recorded as row BE-01. Brilliant Earth still publishes no gram weight, so its weight stays blank. Until that re-read, both values were correctly withheld as unverified.")
+    out.append("4. **No hallmark anywhere.** 0 of 20 rows publish the physical stamp or the maker's mark, so the hallmark requirement can only be checked in hand.")
+    out.append("5. **Weights are approximate where they exist.** Allurez labels its number “Approximate Metal Weight”; VRAI publishes a size-6 metal weight. Neither is a measurement of the ring you will receive.")
+    out.append("6. **Two search-snapshot-only values were deliberately NOT used:** an Anjolee “2.90 Gr.” weight and every Brilliant Earth price/weight. They appeared only in search-engine snapshots of the official pages and could not be re-read from the live page, so they are recorded as unverified rather than published.")
     out.append("7. **Reputation was not verified for any seller.** No independent review or complaints dataset was collected, so no reputation claim is made anywhere on the site.")
     out.append("8. **Seller contact gaps.** Mejuri's phone/email did not appear in the captured policy page; Brilliant Earth's email did not. Both are left blank rather than guessed.")
     out.append("9. **Structured data notes used prices from a listing card.** VRAI's “From $1,035” is a listing-level price, while its 2.86 g weight comes from the configuration page for the same design. Both are VRAI pages, but the pair is flagged `PRICE_AND_WEIGHT_DIFFERENT_URLS`.")
-    out.append("10. **VRAI band widths blanked (2026-10-22, Pass 4).** The first capture recorded 1.7 mm (VR-01) and 1.6 mm (VR-02) band widths. Re-reading the live configuration pages showed “Band width: Standard” and a 1.6 mm band *depth*, but no numeric band width, so both cells were blanked and flagged `WIDTH_UNVERIFIED`. A value that cannot be re-read from the official page does not stay in the dataset.")
-    out.append("11. **AN-01 publishes no price-to-gold multiple, by design.** Its $870.76 price includes a 0.50 ct lab-created diamond (the first capture's basis line omitted “lab-created”; corrected in Pass 4). Dividing that price by the metal's gold value would produce a number that looks comparable with setting-only rows and is not; `scripts/compute.py` withholds it and `scripts/audit.py` (check D-05) fails the build if one is ever published for a stone-inclusive price.")
-    out.append("12. **Gold spot moved between capture and re-check.** The frozen benchmark is $4,024.36/oz as shown by the World Gold Council for 21 October 2026; re-reading the same page later on 2026-10-22 showed a live panel of $4,028.53/oz. Per the methodology the frozen value is retained and nothing was silently recomputed; the re-check is recorded in `data/gold_spot.json`. Re-read the source link before relying on any derived value.")
 
     out.append("\n## Unverified values published as blank\n")
     for r in rows:

@@ -731,7 +731,7 @@
    "metal_label": "18k Yellow Gold",
    "karat": 18,
    "sku": null,
-   "width_mm": 1.7,
+   "width_mm": null,
    "url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
    "solid_gold_statement": null,
    "solid_gold_status": "not_stated",
@@ -751,12 +751,13 @@
     "PRICE_AND_WEIGHT_DIFFERENT_URLS",
     "SOLID_NOT_STATED",
     "HALLMARK_NOT_PUBLISHED",
-    "SPEC_LISTED_PAVE_ON_PLAIN_BAND"
+    "SPEC_LISTED_PAVE_ON_PLAIN_BAND",
+    "WIDTH_UNVERIFIED"
    ],
-   "flag_detail": "The 'From $1,035' figure comes from the VRAI engagement-rings listing page for this design; the 2.86 g metal weight comes from the design's own configuration page. Both are VRAI pages for the same design, but they are not the same URL, so confirm the exact price for your ring size and carat in the cart before relying on it. SPEC_LISTED_PAVE_ON_PLAIN_BAND: on the re-fetched design page the selected band is a PLAIN band ('Band: Plain band'), yet the Setting Details block still lists 'Pave carat weight:0.18ctw'. The weight figure quoted in this row is the 'Metal weight' line, which is unambiguous, but the pavé line suggests the spec block is shared across band variants. Confirm which band you are buying before relying on any diamond-weight figure. Also re-checked 2026-10-22: the listing card that shows \"From $1,035\" links to configuration id ...-32797281484893, not to the configuration id in this row (...-40635875360861) from which the metal weight was read. Same design and metal, different configuration identifier — confirm the setting price for your exact ring size in the cart.",
+   "flag_detail": "The 'From $1,035' figure comes from the VRAI engagement-rings listing page for this design; the 2.86 g metal weight comes from the design's own configuration page. Both are VRAI pages for the same design, but they are not the same URL, so confirm the exact price for your ring size and carat in the cart before relying on it. SPEC_LISTED_PAVE_ON_PLAIN_BAND: on the re-fetched design page the selected band is a PLAIN band ('Band: Plain band'), yet the Setting Details block still lists 'Pave carat weight:0.18ctw'. The weight figure quoted in this row is the 'Metal weight' line, which is unambiguous, but the pavé line suggests the spec block is shared across band variants. Confirm which band you are buying before relying on any diamond-weight figure. Also re-checked 2026-10-22: the listing card that shows \"From $1,035\" links to configuration id ...-32797281484893, not to the configuration id in this row (...-40635875360861) from which the metal weight was read. Same design and metal, different configuration identifier — confirm the setting price for your exact ring size in the cart. WIDTH_UNVERIFIED: no numeric band width is published on the design page — its specs say only 'Band width: Standard' (the one millimetre figure shown is 'Band depth: 1.6mm', a different dimension). The 1.7 mm value carried by this row since the first capture could not be re-read from any official page, so the width is blanked (independent re-verification, arena/b2c018a8-gold4, 2026-10-22).",
    "reverified_utc": "2026-10-22",
-   "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5)",
-   "reverification": "Pass 2: 'Metal weight:2.86g (Ring size 6)' re-read on the design page, and 'From $1,035' re-read on the VRAI engagement-rings listing card; both match this record."
+   "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5) + arena/b2c018a8-gold4 (independent re-verification, 2026-10-22)",
+   "reverification": "Pass 2: 'Metal weight:2.86g (Ring size 6)' re-read on the design page, and 'From $1,035' re-read on the VRAI engagement-rings listing card; both match this record. Independent pass (arena/b2c018a8, 2026-10-22): 'From $1,035' on the listing page and 'Metal weight:2.86g (Ring size 6)' on the design page re-read and match; no numeric band width is published anywhere on the page ('Band width: Standard', 'Band depth: 1.6mm'), so the earlier 1.7 mm value is blanked and flagged WIDTH_UNVERIFIED."
   },
   {
    "id": "VR-02",
@@ -768,7 +769,7 @@
    "metal_label": "18k Yellow Gold",
    "karat": 18,
    "sku": null,
-   "width_mm": 1.6,
+   "width_mm": null,
    "url": "https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301",
    "solid_gold_statement": null,
    "solid_gold_status": "not_stated",
@@ -787,12 +788,13 @@
     "PRICE_UNVERIFIED",
     "SOLID_NOT_STATED",
     "HALLMARK_NOT_PUBLISHED",
-    "SPEC_LISTED_PAVE_ON_PLAIN_BAND"
+    "SPEC_LISTED_PAVE_ON_PLAIN_BAND",
+    "WIDTH_UNVERIFIED"
    ],
-   "flag_detail": "No price for this exact design was visible on the configuration page or on the captured listing page, so the price cell is deliberately blank. Ask VRAI for the current setting price in writing. SPEC_LISTED_PAVE_ON_PLAIN_BAND: on the re-fetched design page the selected band is a PLAIN band ('Band: Plain band'), yet the Setting Details block still lists 'Pave carat weight:0.18ctw'. The weight figure quoted in this row is the 'Metal weight' line, which is unambiguous, but the pavé line suggests the spec block is shared across band variants. Confirm which band you are buying before relying on any diamond-weight figure. Also re-checked 2026-10-22: the listing card that shows \"From $1,035\" links to configuration id ...-32797281484893, not to the configuration id in this row (...-40635875360861) from which the metal weight was read. Same design and metal, different configuration identifier — confirm the setting price for your exact ring size in the cart.",
+   "flag_detail": "No price for this exact design was visible on the configuration page or on the captured listing page, so the price cell is deliberately blank. Ask VRAI for the current setting price in writing. SPEC_LISTED_PAVE_ON_PLAIN_BAND: on the re-fetched design page the selected band is a PLAIN band ('Band: Plain band'), yet the Setting Details block still lists 'Pave carat weight:0.18ctw'. The weight figure quoted in this row is the 'Metal weight' line, which is unambiguous, but the pavé line suggests the spec block is shared across band variants. Confirm which band you are buying before relying on any diamond-weight figure. WIDTH_UNVERIFIED: no numeric band width is published on the design page — its specs say only 'Band width: Standard' (the one millimetre figure shown is 'Band depth: 1.6mm', a different dimension). The 1.6 mm value carried by this row since the first capture could not be re-read from any official page, so the width is blanked (independent re-verification, arena/b2c018a8-gold4, 2026-10-22). Correction note: an earlier version of this flag detail repeated VR-01's 'From $1,035' configuration-id note verbatim, citing VR-01's configuration id (...-40635875360861); it belongs to VR-01 only (this row's configuration id is ...-32891144798301 and no price is published for it) and has been removed from this row.",
    "reverified_utc": "2026-10-22",
-   "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5)",
-   "reverification": "Pass 2: 'Metal weight:2.84g (Ring size 6)' re-read and matches. The design page again published no setting price (it offers 'Continue to diamond'), so the price stays blank."
+   "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5) + arena/b2c018a8-gold4 (independent re-verification, 2026-10-22)",
+   "reverification": "Pass 2: 'Metal weight:2.84g (Ring size 6)' re-read and matches. The design page again published no setting price (it offers 'Continue to diamond'), so the price stays blank. Independent pass (arena/b2c018a8, 2026-10-22): 'Metal weight:2.84g (Ring size 6)' re-read and matches; still no setting price published; no numeric band width published ('Band width: Standard', 'Band depth: 1.6mm'), so the earlier 1.6 mm value is blanked and flagged WIDTH_UNVERIFIED. Also removed from flag_detail a sentence copied from VR-01 that cited VR-01's configuration id."
   },
   {
    "id": "BE-03",
