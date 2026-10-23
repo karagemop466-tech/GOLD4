@@ -40,7 +40,7 @@
       </div>
     </div>
     <nav class="site-nav" aria-label="Primary site navigation">
-      <a href="index.html">Main Desk (35) <span class="nav-badge">35</span></a><a href="dashboard.html">Assay Lab <span class="nav-badge">22</span></a><a href="solitaires.html">Solitaires <span class="nav-badge">8</span></a><a href="three-stone-halo.html">3-Stone &amp; Halo <span class="nav-badge">4</span></a><a href="bands.html">Solid Bands &amp; 24K <span class="nav-badge">9</span></a><a href="calculator.html">Melt Calculator</a><a href="checklist.html">12-Point Checklist <span class="nav-badge">12</span></a><a href="sellers.html">Sellers <span class="nav-badge">6</span></a><a href="standards.html">FTC &amp; XRF Law <span class="nav-badge">5</span></a><a href="flagged.html">Flagged Register <span class="nav-badge nav-badge-alert">12</span></a><a href="audit.html">Security Audit <span class="nav-badge">PASS</span></a><a href="coordination.html" class="active" aria-current="page">Git Coordination</a>
+      <a href="index.html">Main Desk (64) <span class="nav-badge">64</span></a><a href="dashboard.html">Assay Lab <span class="nav-badge">22</span></a><a href="solitaires.html">Solitaires <span class="nav-badge">8</span></a><a href="three-stone-halo.html">3-Stone &amp; Halo <span class="nav-badge">4</span></a><a href="bands.html">Solid Bands &amp; 24K <span class="nav-badge">9</span></a><a href="calculator.html">Melt Calculator</a><a href="checklist.html">12-Point Checklist <span class="nav-badge">12</span></a><a href="sellers.html">Sellers <span class="nav-badge">6</span></a><a href="standards.html">FTC &amp; XRF Law <span class="nav-badge">5</span></a><a href="flagged.html">Flagged Register <span class="nav-badge nav-badge-alert">12</span></a><a href="audit.html">Security Audit <span class="nav-badge">PASS</span></a><a href="coordination.html" class="active" aria-current="page">Git Coordination</a>
     </nav>
   </header>
 
@@ -337,7 +337,12 @@ The published dataset was treated as **untrusted input** and re-fetched page by 
 1. **Anjolee AN-01** — the only row whose price includes a diamond, and that diamond is **lab-created**. It is the cheapest-looking solitaire in the table for that reason. Do not read it as &quot;gold cheaper than Blue Nile&quot;.
 2. **Blue Nile BN-04 / BN-07 / BN-08** — three pages whose own copy contradicts their own specification block. Nothing has been inferred about which side is right; that is a question for Blue Nile in writing.
 3. **VRAI VR-02** — weight published, price not. The blank is correct, not a gap to fill.
-4. **Every seller&#x27;s reputation** — still unverified for all six. The FTC&#x27;s own advice is to search the seller&#x27;s name with &quot;complaint&quot; or &quot;review&quot;; this dataset does not do that for you and does not pretend to.
+4. **Every seller&#x27;s reputation** — still unverified for all ten. The FTC&#x27;s own advice is to search the seller&#x27;s name with &quot;complaint&quot; or &quot;review&quot;; this dataset does not do that for you and does not pretend to.
+5. **Blue Nile BN-22 (Wide Band Solitaire, added by Pass 9)** — the page&#x27;s own description says &quot;platinum solitaire setting&quot; while every spec says 14K Yellow Gold. Third row carrying `COPY_INCONSISTENT_METAL` (after BN-04 and BN-08); ask the seller in writing which is true.
+6. **Blue Nile BN-20 (Woven Solitaire, added by Pass 9)** — four official Blue Nile pages showed four different sale prices for the same SKU at snapshot time ($772/−20%, $724/−25%, $730, $728). Sale prices are volatile; never treat a snapshot sale price as *the* price.
+7. **Blue Nile BN-10 naming variance** — stock number 502120y14 ($1,145) is titled &quot;Low Dome Comfort Fit Solitaire&quot; on its published URL and &quot;Classic Simple Solitaire&quot; on the official alias `item-203348` (live re-fetched 23:58Z by Pass 9: same stock number, width, price). Both names are recorded; neither was chosen as &quot;right&quot;.
+8. **BN-26 (James Allen Comfort Fit line)** — sold out at the live check; its price cell is blank *by design*. The row also documents the live-confirmed James Allen → Blue Nile merger redirect.
+9. **The 9 `PRICE_V2_ONLY` rows (BE-05/06/07, BN-20…BN-25)** — prices read from dated snapshots of the official pages during a fetch-service outage (each corroborated by ≥2 official reads, most with the seller&#x27;s own JSON-LD). They are provisional until a live re-fetch; the Flagged page lists every one. The three Brilliant Earth rows also carry `PRICE_CURRENCY_LOCALIZED` (Pass 7&#x27;s finding that BE serves currency-localized renderings).
 
 ---
 
@@ -422,6 +427,99 @@ Flagged irregularities and unverified items (15 blanks, 0 hallmarks, 3 Blue Nile
 | `A0-2` | Expand canonical dataset from **22 → 35 live-verified rows across 9 retailers** (`10K`, `14K`, `18K`, `24K`), adding **Sarraf** plain-band melt floor (`1.33×–1.50×`), **10K vs 18K 5mm density pair** (`SR-01` vs `SR-03`), **Brilliant Earth** mixed-karat prong setting (`BE-03`), **Catbird NYC** (`CB-01..02`), **Menē** pure 24K (`MN-01..02`), **Kitco / JM Bullion** `2026-10-22` spot quotes, **CFPB FCBA**, &amp; **GIA Carlsbad XRF fraud lab studies** | **done** | `arena/a0be79d4-gold4` | `data/rings.json`, `data/sellers.json`, `data/sources.json`, `data/gold_spot.json`, `data/derived.json`, `data/verification_log.json`, `data/catalog_a0be79d4.json` |
 | `A0-3` | Build 11-page standalone Assay Lab suite (`dashboard.html`, `solitaires.html`, `three-stone-halo.html`, `bands.html`, `calculator.html`, `checklist.html`, `sellers.html`, `standards.html`, `flagged.html`, `audit.html`, `coordination.html`) cross-linked non-destructively with `index.html`, `pages/*.html`, &amp; `docs/*.html` (**30 verified HTML pages total**) | **done** | `arena/a0be79d4-gold4` | `static/gold4.css`, `static/gold4.js`, `scripts/generate_site.py`, root HTML pages |
 | `A0-4` | 4-Gate automated anti-hallucination &amp; security verification pipeline (`audit.py` + `check_site.py` + `verify.py` + `verify_a0be79d4.py`) wired into `.github/workflows/pages.yml` + PR merge to `main` + live GitHub Pages check | **done / merging** | `arena/a0be79d4-gold4` | `scripts/verify_a0be79d4.py`, `scripts/audit.py`, `.github/workflows/pages.yml` |
+
+---
+
+## Session `arena/81b71aa5-gold4` — Ross-Simons Expansion, NIST Gemstone-Deduction Suite &amp; 5-Gate Integration
+
+| Task ID | Scope | Status | Owner | Updated (UTC) |
+|---|---|---|---|---|
+| `81b7-T1..T5` | `audit/repo-line-by-line-review.md`, `data/standards_and_spot.json`, `data/verified_rings.json`, `categories/*.html`, `assets/gold4-*.js`, `scripts/audit_hallucinations.py` | `completed` | `arena/81b71aa5-gold4` | `2026-10-22T23:25:00Z` |
+| `81b7-T6` | Clean additive integration onto `origin/main` (`217f79b`, PRs #1–#17) -&gt; 47 canonical rows, 10 sellers, 30 sources, 5 CI audit gates | `completed` | `arena/81b71aa5-gold4` | `2026-10-22T23:47:00Z` |
+
+- **Preserved 100% of `main` (`217f79b`)**: All 35 canonical rows, root Assay Lab pages (`dashboard.html`, `solitaires.html`, `bands.html`, etc.), `docs/**`, and `verify_a0be79d4.py` retained intact.
+- **Added 12 non-duplicate canonical rows (`47` total) &amp; 10th seller (`Ross-Simons`)**: Appended `BN-09`..`BN-12` (including `PAIR-BN-FOURPRONG` `$870`-&gt;`$1,125`), `BE-04` (`BE1FM0126-18KY` resizing contradiction), `RS-01`..`RS-05` (`0.7 g`–`4.0 g` published band weights + `0.80 ct` GIA solitaire), and `MJ-06`..`MJ-07` (`10×` carat mismatch &amp; `10K` vs `14K` alt-text mismatch), plus documented Mejuri&#x27;s cautionary `Bold Chain Ring` (`&quot;hollowed 14k solid gold&quot;`, `16 CFR § 23.3(c)`).
+- **Added `categories/*.html` deep-dive suite &amp; Gate 5 (`audit_hallucinations.py`)**: NIST `0.200 g/ct` stone-mass deduction calculator (`categories/calculator.html`), line-by-line irregularity register (`categories/verification-audit.html`), and 5-verifier CI workflow in `.github/workflows/pages.yml`.
+- **Pull Request &amp; Merge Outcome**: Opened and merged **PR #19** (`https://github.com/karagemop466-tech/GOLD4/pull/19`) directly into `main` after passing all 5 automated verification gates (`audit.py` 112/0/0, `check_site.py` 26 pages, `verify.py` 0 failures / 47 records, `verify_a0be79d4.py` 36 HTML pages / 1,760 links / 0 failures, and `audit_hallucinations.py` 824 checks / 0 failures).
+
+---
+
+## Pass 7 — independent concurrent re-verification + two clean merges (session `arena/1372cb32-gold4`)
+
+Claimed as task 15 on this board (renumbered after `arena/e04b126a-gold4`&#x27;s board arrived with its own task 10).
+This pass ran **concurrently** with `arena/fd51d093-gold4`, `arena/e04b126a-gold4`, `arena/58140cd4-gold4`,
+`arena/a0be79d4-gold4` and `arena/81b71aa5-gold4`, before this session could see their work.
+
+### Verification performed (all sources re-opened 2026-10-22 by this session&#x27;s own fetches)
+
+- Every row that existed when the pass started (BN-01..BN-08, AL-01..AL-04, VR-01, VR-02, MJ-01..MJ-05, AN-01) was
+  re-fetched from its own official page: **all prices, karats, SKUs, widths and weights matched exactly.**
+- **Independent corroboration** of two behaviours other sessions also found: the Anjolee Product Details table publishes
+  `Approx. Metal Weight: 2.90 Gr.`, and both VRAI plain-band pages list `Pavé carat weight: 0.18ctw`.
+- Gold spot live panel read **4,028.53/oz** — the same second reading the other sessions recorded.
+- Seller policies and all Tier A/B registry sources re-read field-for-field: all matched.
+- After the first merge, the two Brilliant Earth Atelier rows were re-checked: **BE-02 re-confirmed exactly**
+  ($1,390, `BE1D2444-18KY`); **BE-01&#x27;s page served a EUR rendering** (&quot;1,350.00 EUR (Setting Only)&quot;, Global-e
+  checkout) so its USD figure could not be reproduced in this pass — kept from the earlier same-day USD capture and
+  flagged `PRICE_CURRENCY_LOCALIZED` on both BE rows for manual USD re-check.
+
+### Irregularities found in this pass (published on the Flagged page, none blocking)
+
+1. **Brilliant Earth currency localization** (above).
+2. **Mejuri bare product links open a different default metal variant** (also found by `arena/e04b126a` as
+   `PRICE_VARIANT_DEPENDENT`). Unique fix: every Mejuri `price_source_url` now points at the exact product-variant URL
+   where the price is displayed.
+3. **The § 295 &quot;legal minimum&quot; floor has two defensible readings** (57.63% on the karat÷24 basis vs 57.8% on the 585‰
+   millesimal convention). The derivation basis is now stated in `data/methodology.json` and on the Flagged page.
+
+### Merge events — `main` advanced twice while this pass ran (resolved both times, nothing discarded)
+
+1. First merge (`815bb97` → `bb9f54e`, PRs #7–#15 by `arena/fd51d093-gold4` and `arena/e04b126a-gold4`): 20 conflicted
+   files resolved **in favour of the merged `main` work** (their AN-01 weight recovery, flag names, gold-spot basis
+   choice and widened dataset), then this session&#x27;s unique deltas re-applied on top.
+2. Second merge (`bb9f54e` → `6b0c458`, PRs #17–#19 by `arena/a0be79d4-gold4` and `arena/81b71aa5-gold4`, growing the
+   dataset to 47 rows / 10 sellers and adding the 5-gate CI): 19 conflicted files resolved **in favour of `main`**
+   again, unique deltas re-applied again (derivation-basis note, Mejuri variant URLs, `PRICE_CURRENCY_LOCALIZED`,
+   Pass 7 log entry, three Flagged-page cards).
+
+**No file of any other session was rewritten or deleted; no branch was force-pushed.** A `git pull --rebase` that tried
+to linearize this branch&#x27;s merge commits was aborted intact (it would have replayed other sessions&#x27; commits as ours);
+the merges were kept as merges. This session&#x27;s own pre-merge edits to shared files were superseded twice — by design.
+
+### Publish event (2026-10-22)
+
+- **Content PR [#20](https://github.com/karagemop466-tech/GOLD4/pull/20)** — &quot;Merge of concurrent main + Pass 7 unique deltas (47-row dataset, all 5 gates green)&quot; — **MERGED** (merge commit on `main`). Full summary, sources and flagged irregularities are in the PR body.
+- **Pages deploy** (`pages.yml`, 5-gate CI): run on `main` **completed: success**; GitHub Pages API status **`built`**; live read-back of https://karagemop466-tech.github.io/GOLD4/ confirms the merged dataset is what is published (47 rings, 10 retailers, 46 source-read prices, 17 published gram weights, 162 published flags, benchmark $4,028.53/oz = $129.52/g dated 21 Oct 2026).
+- This record PR is the closing follow-up, per the board&#x27;s convention.
+
+---
+
+## Session `arena/22b5b06c-gold4` — Pass 9: second independent collection + additive integration (2026-10-22 23:10 – 2026-10-23 00:10 UTC)
+
+**Coordination note.** This session branched from the bare initial commit `7f442a1` on its own fixed Arena branch and wrote a first board before it could see any other session&#x27;s work (`COORDINATION.md` did not exist at its branch point). By integration time `main` had moved through PRs #1–#21 (22 → 35 → 47 rows). Resolution each time: **merge `main` into its branch taking the published tree as primary** (conflicts resolved theirs-first; every file that exists on `main` then restored byte-for-byte from `origin/main`), and re-apply its own additions **by script** (`scripts/merge_rows_22b5b06c.py`, idempotent + marker-guarded). Nothing published by any earlier session was deleted, renamed, rewritten or force-pushed. Its own earlier standalone artifacts are preserved at `docs/legacy/*_22b5b06c*`, `data/preserved/*_22b5b06c.json` and `scripts/session_22b5b06c/`.
+
+**Claim (recorded for this section).** Scope: `data/rings.json` (additive rows BE-05…BE-07 + BN-13…BN-26, and appended corroboration notes on BE-01 and BN-10 — existing text preserved verbatim), `data/gold_spot.json` (new informational key `same_day_external_readings_22b5b06c` only — benchmark untouched), `data/verification_log.json` (Pass 9 entry), regenerated outputs (`data/derived.json`, `VERIFICATION.md`, `AUDIT.md`, `index.html`, `pages/*`, root suite via `generate_site.py`, `reports/*`), four additive `FLAG_HELP` labels in `scripts/build_site.py`, narrative sync in `scripts/generate_site.py` (Main Desk badge 35→64, Gate-3 card 64 records / 50 blanks, Pass 9 row in the audit summary), and README/COORDINATION record-keeping. **Id renumbering:** its original ids BE-03…BE-05 / BN-09…BN-23 collided with ids main had since assigned (BE-03, BE-04, BN-09…BN-12), so its rows publish as BE-05…BE-07 / BN-13…BN-26; its pass number settled on 9 (two Pass 6 entries, a Pass 7 and a Pass 8 already existed); original ids remain visible in `data/preserved/rings_candidates_22b5b06c.json`. No other session&#x27;s open task was taken over.
+
+| # | Task | Status | Owner | Files |
+|---|------|--------|-------|-------|
+| P9-1 | Independent collection: 19 candidates (9 live-fetched V1, 10 dated-snapshot V2) + live gold-api spot reading | done | arena/22b5b06c-gold4 | data/preserved/rings_candidates_22b5b06c.json |
+| P9-2 | Corroboration pass: SKUs/widths/diamond specs + JSON-LD cross-reads; 2 new irregularities | done | arena/22b5b06c-gold4 | scripts/session_22b5b06c/patch_20261022_corroboration.py |
+| P9-3 | Duplicate resolution: 2 of 19 candidates matched published rows (BE-01 same URL; BN-10 same stock number 502120y14 via alias item-203348, live re-fetch 23:58Z) — folded into appended corroboration notes, incl. the BN-10 product-name variance between official aliases | done | arena/22b5b06c-gold4 | data/rings.json (BE-01, BN-10 notes) |
+| P9-4 | Integration into the published 47-row schema (17 new rows, 47 → 64; BE rows also carry Pass 7&#x27;s PRICE_CURRENCY_LOCALIZED for consistency) | done | arena/22b5b06c-gold4 | data/rings.json, data/gold_spot.json, data/verification_log.json, scripts/merge_rows_22b5b06c.py |
+| P9-5 | Re-run full pipeline + all five CI gates | done — audit **PASS 128/9/0** · check_site **PASS 26 pages** · verify **PASS 64 records / 0 hard failures / 50 blanks accounted** · verify_a0be79d4 **PASS 0 hard failures** · audit_hallucinations **PASS (0 failures)** | arena/22b5b06c-gold4 | reports/audit_latest.txt, AUDIT.md, all generated pages |
+| P9-6 | Publish via PR #11 → merge → confirm Pages deploy | in progress (record below completed by follow-up commit) | arena/22b5b06c-gold4 | this file |
+
+**Sources (all official; per-row URLs recorded in the data).** bluenile.com — live fetches: item-203348 (23:13Z and again 23:58Z), item-41515 (23:19Z, sold out), category `/engagement-rings/styles/gold/yellow-gold` (23:15Z: items 311230, 315036, 311246, 311127, 311121, 192506, 304294); dated official-page snapshots: items 192261, 203321, 203303, 195730, 315661, 310896. brilliantearth.com — dated snapshots incl. category JSON-LD: Freesia BE1D3939 14K/18K, Fleur BE1574, Atelier BE1D2444 (= published BE-01). Spot: api.gold-api.com/price/XAU live $4,028.10/oz @23:01:42Z; kitco.com and apmex.com same-day snapshots (informational cross-check only; not used in any derived number).
+
+**Irregularities this pass adds to the Flagged page.** BN-22 `COPY_INCONSISTENT_METAL` (&quot;platinum&quot; wording on a 14K YG page); BN-20 `SALE_PRICE_VARIES_ACROSS_PAGES` (four sale prices, one SKU 505038y14); BN-26 `SOLD_OUT_AT_CHECK` + `PRICE_UNVERIFIED` (older $660 snapshot deliberately not used); BN-10 naming variance between two official aliases (same stock number 502120y14 — recorded in its flag_detail); 9 rows `PRICE_V2_ONLY` pending live re-fetch (fetch-service outage 23:20–23:47 UTC), the three BE rows additionally `PRICE_CURRENCY_LOCALIZED`; Pass 5 timestamp anomaly (stamped `2026-10-23T00:05Z`, ahead of the wall clock when merged) noted in `data/verification_log.json`, not corrected — another session&#x27;s record.
+
+### PR and merge record (completed by follow-up commit, per established pattern)
+
+| Item | Result |
+|---|---|
+| PR #11 (this integration) | https://github.com/karagemop466-tech/GOLD4/pull/11 — pending merge at time of writing |
+| Pages workflow run | to be recorded after merge |
+| Live-site verification | to be recorded after deploy |
 </pre>
       </div>
     </section>

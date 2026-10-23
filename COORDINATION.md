@@ -266,7 +266,12 @@ The published dataset was treated as **untrusted input** and re-fetched page by 
 1. **Anjolee AN-01** — the only row whose price includes a diamond, and that diamond is **lab-created**. It is the cheapest-looking solitaire in the table for that reason. Do not read it as "gold cheaper than Blue Nile".
 2. **Blue Nile BN-04 / BN-07 / BN-08** — three pages whose own copy contradicts their own specification block. Nothing has been inferred about which side is right; that is a question for Blue Nile in writing.
 3. **VRAI VR-02** — weight published, price not. The blank is correct, not a gap to fill.
-4. **Every seller's reputation** — still unverified for all six. The FTC's own advice is to search the seller's name with "complaint" or "review"; this dataset does not do that for you and does not pretend to.
+4. **Every seller's reputation** — still unverified for all ten. The FTC's own advice is to search the seller's name with "complaint" or "review"; this dataset does not do that for you and does not pretend to.
+5. **Blue Nile BN-22 (Wide Band Solitaire, added by Pass 9)** — the page's own description says "platinum solitaire setting" while every spec says 14K Yellow Gold. Third row carrying `COPY_INCONSISTENT_METAL` (after BN-04 and BN-08); ask the seller in writing which is true.
+6. **Blue Nile BN-20 (Woven Solitaire, added by Pass 9)** — four official Blue Nile pages showed four different sale prices for the same SKU at snapshot time ($772/−20%, $724/−25%, $730, $728). Sale prices are volatile; never treat a snapshot sale price as *the* price.
+7. **Blue Nile BN-10 naming variance** — stock number 502120y14 ($1,145) is titled "Low Dome Comfort Fit Solitaire" on its published URL and "Classic Simple Solitaire" on the official alias `item-203348` (live re-fetched 23:58Z by Pass 9: same stock number, width, price). Both names are recorded; neither was chosen as "right".
+8. **BN-26 (James Allen Comfort Fit line)** — sold out at the live check; its price cell is blank *by design*. The row also documents the live-confirmed James Allen → Blue Nile merger redirect.
+9. **The 9 `PRICE_V2_ONLY` rows (BE-05/06/07, BN-20…BN-25)** — prices read from dated snapshots of the official pages during a fetch-service outage (each corroborated by ≥2 official reads, most with the seller's own JSON-LD). They are provisional until a live re-fetch; the Flagged page lists every one. The three Brilliant Earth rows also carry `PRICE_CURRENCY_LOCALIZED` (Pass 7's finding that BE serves currency-localized renderings).
 
 ---
 
@@ -415,3 +420,32 @@ the merges were kept as merges. This session's own pre-merge edits to shared fil
 - **Content PR [#20](https://github.com/karagemop466-tech/GOLD4/pull/20)** — "Merge of concurrent main + Pass 7 unique deltas (47-row dataset, all 5 gates green)" — **MERGED** (merge commit on `main`). Full summary, sources and flagged irregularities are in the PR body.
 - **Pages deploy** (`pages.yml`, 5-gate CI): run on `main` **completed: success**; GitHub Pages API status **`built`**; live read-back of https://karagemop466-tech.github.io/GOLD4/ confirms the merged dataset is what is published (47 rings, 10 retailers, 46 source-read prices, 17 published gram weights, 162 published flags, benchmark $4,028.53/oz = $129.52/g dated 21 Oct 2026).
 - This record PR is the closing follow-up, per the board's convention.
+
+---
+
+## Session `arena/22b5b06c-gold4` — Pass 9: second independent collection + additive integration (2026-10-22 23:10 – 2026-10-23 00:10 UTC)
+
+**Coordination note.** This session branched from the bare initial commit `7f442a1` on its own fixed Arena branch and wrote a first board before it could see any other session's work (`COORDINATION.md` did not exist at its branch point). By integration time `main` had moved through PRs #1–#21 (22 → 35 → 47 rows). Resolution each time: **merge `main` into its branch taking the published tree as primary** (conflicts resolved theirs-first; every file that exists on `main` then restored byte-for-byte from `origin/main`), and re-apply its own additions **by script** (`scripts/merge_rows_22b5b06c.py`, idempotent + marker-guarded). Nothing published by any earlier session was deleted, renamed, rewritten or force-pushed. Its own earlier standalone artifacts are preserved at `docs/legacy/*_22b5b06c*`, `data/preserved/*_22b5b06c.json` and `scripts/session_22b5b06c/`.
+
+**Claim (recorded for this section).** Scope: `data/rings.json` (additive rows BE-05…BE-07 + BN-13…BN-26, and appended corroboration notes on BE-01 and BN-10 — existing text preserved verbatim), `data/gold_spot.json` (new informational key `same_day_external_readings_22b5b06c` only — benchmark untouched), `data/verification_log.json` (Pass 9 entry), regenerated outputs (`data/derived.json`, `VERIFICATION.md`, `AUDIT.md`, `index.html`, `pages/*`, root suite via `generate_site.py`, `reports/*`), four additive `FLAG_HELP` labels in `scripts/build_site.py`, narrative sync in `scripts/generate_site.py` (Main Desk badge 35→64, Gate-3 card 64 records / 50 blanks, Pass 9 row in the audit summary), and README/COORDINATION record-keeping. **Id renumbering:** its original ids BE-03…BE-05 / BN-09…BN-23 collided with ids main had since assigned (BE-03, BE-04, BN-09…BN-12), so its rows publish as BE-05…BE-07 / BN-13…BN-26; its pass number settled on 9 (two Pass 6 entries, a Pass 7 and a Pass 8 already existed); original ids remain visible in `data/preserved/rings_candidates_22b5b06c.json`. No other session's open task was taken over.
+
+| # | Task | Status | Owner | Files |
+|---|------|--------|-------|-------|
+| P9-1 | Independent collection: 19 candidates (9 live-fetched V1, 10 dated-snapshot V2) + live gold-api spot reading | done | arena/22b5b06c-gold4 | data/preserved/rings_candidates_22b5b06c.json |
+| P9-2 | Corroboration pass: SKUs/widths/diamond specs + JSON-LD cross-reads; 2 new irregularities | done | arena/22b5b06c-gold4 | scripts/session_22b5b06c/patch_20261022_corroboration.py |
+| P9-3 | Duplicate resolution: 2 of 19 candidates matched published rows (BE-01 same URL; BN-10 same stock number 502120y14 via alias item-203348, live re-fetch 23:58Z) — folded into appended corroboration notes, incl. the BN-10 product-name variance between official aliases | done | arena/22b5b06c-gold4 | data/rings.json (BE-01, BN-10 notes) |
+| P9-4 | Integration into the published 47-row schema (17 new rows, 47 → 64; BE rows also carry Pass 7's PRICE_CURRENCY_LOCALIZED for consistency) | done | arena/22b5b06c-gold4 | data/rings.json, data/gold_spot.json, data/verification_log.json, scripts/merge_rows_22b5b06c.py |
+| P9-5 | Re-run full pipeline + all five CI gates | done — audit **PASS 128/9/0** · check_site **PASS 26 pages** · verify **PASS 64 records / 0 hard failures / 50 blanks accounted** · verify_a0be79d4 **PASS 0 hard failures** · audit_hallucinations **PASS (0 failures)** | arena/22b5b06c-gold4 | reports/audit_latest.txt, AUDIT.md, all generated pages |
+| P9-6 | Publish via PR #11 → merge → confirm Pages deploy | in progress (record below completed by follow-up commit) | arena/22b5b06c-gold4 | this file |
+
+**Sources (all official; per-row URLs recorded in the data).** bluenile.com — live fetches: item-203348 (23:13Z and again 23:58Z), item-41515 (23:19Z, sold out), category `/engagement-rings/styles/gold/yellow-gold` (23:15Z: items 311230, 315036, 311246, 311127, 311121, 192506, 304294); dated official-page snapshots: items 192261, 203321, 203303, 195730, 315661, 310896. brilliantearth.com — dated snapshots incl. category JSON-LD: Freesia BE1D3939 14K/18K, Fleur BE1574, Atelier BE1D2444 (= published BE-01). Spot: api.gold-api.com/price/XAU live $4,028.10/oz @23:01:42Z; kitco.com and apmex.com same-day snapshots (informational cross-check only; not used in any derived number).
+
+**Irregularities this pass adds to the Flagged page.** BN-22 `COPY_INCONSISTENT_METAL` ("platinum" wording on a 14K YG page); BN-20 `SALE_PRICE_VARIES_ACROSS_PAGES` (four sale prices, one SKU 505038y14); BN-26 `SOLD_OUT_AT_CHECK` + `PRICE_UNVERIFIED` (older $660 snapshot deliberately not used); BN-10 naming variance between two official aliases (same stock number 502120y14 — recorded in its flag_detail); 9 rows `PRICE_V2_ONLY` pending live re-fetch (fetch-service outage 23:20–23:47 UTC), the three BE rows additionally `PRICE_CURRENCY_LOCALIZED`; Pass 5 timestamp anomaly (stamped `2026-10-23T00:05Z`, ahead of the wall clock when merged) noted in `data/verification_log.json`, not corrected — another session's record.
+
+### PR and merge record (completed by follow-up commit, per established pattern)
+
+| Item | Result |
+|---|---|
+| PR #11 (this integration) | https://github.com/karagemop466-tech/GOLD4/pull/11 — pending merge at time of writing |
+| Pages workflow run | to be recorded after merge |
+| Live-site verification | to be recorded after deploy |

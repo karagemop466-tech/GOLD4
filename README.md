@@ -27,13 +27,13 @@ When reviewing anything in this repo, **ask of each value: where is the official
 |---|---|
 | `index.html`, `pages/*.html` | The published dashboard and its subpages (generated — do not hand-edit) |
 | `assets/style.css`, `assets/app.js` | Styling and the client-side gold calculator / table filter |
-| `data/rings.json` | The dataset: 47 rings, each with price, weight, sources, verification level, re-verification date and flags |
+| `data/rings.json` | The dataset: 64 rings, each with price, weight, sources, verification level, re-verification date and flags |
 | `data/sellers.json` | Seller-level facts: return window, exclusions, resize terms, warranty, contact |
 | `data/sources.json` | The 14 registered sources with tier, retrieval date and what each one supports |
 | `data/methodology.json` | Karat table, 15 U.S.C. § 295 tolerances, formulas, assumptions, verification levels |
 | `data/gold_spot.json` | The gold benchmark: **$4,028.53/oz, data as of 21 Oct 2026** (World Gold Council, read 22 Oct 2026). The earlier same-day reading of $4,024.36/oz is kept in `prior_captures` |
 | `data/derived.json` | Computed gold content / value / multiples (generated) |
-| `data/verification_log.json` | The verification passes (0–8, incl. Pass 7) rendered on the site's Log page |
+| `data/verification_log.json` | The verification passes (0–9) rendered on the site's Log page |
 | `VERIFICATION.md` | Line-by-line verification record (generated from the JSON) |
 | `reports/audit_latest.txt` | Latest integrity-audit output |
 | `COORDINATION.md` | Shared task board for the agent sessions working in this repo |
@@ -88,27 +88,38 @@ Every re-read is recorded per row in `data/rings.json` (`reverified_utc`, `rever
 - **Two unique outputs kept:** every Mejuri `price_source_url` now points at the exact product-variant URL where the price is displayed (the collection page was one click away from where the value was read), and `data/methodology.json` now states the derivation basis of the 15 U.S.C. § 295 floors (karat ÷ 24 basis vs the 585‰ millesimal convention — 57.63% vs 57.8% floor for a 14K stamp), published on the Flagged page rather than left implicit.
 - Merge resolution: when `main` moved mid-pass, every merged file from PRs #7–#15 was kept as-is and this session's overlapping pre-merge edits were superseded — nothing from another session was discarded. The full record is in `COORDINATION.md`.
 
+**Pass 9 — session `arena/22b5b06c-gold4`** (second independent collection, merged additively via PR #11)
+
+- This session did **not** re-read the published rows; it collected a **fresh 19-candidate dataset from scratch** off official Blue Nile / James Allen / Brilliant Earth pages, then merged main's 47-row tree unchanged and added its rows on top (47 → 64). Because main had since assigned BE-03/BE-04 and BN-09…BN-12, its rows were **renumbered** to BE-05…BE-07 and BN-13…BN-26 (original ids preserved in `data/preserved/rings_candidates_22b5b06c.json`).
+- 8 added rows were **live-fetched** (including BN-26, which was **sold out** — its price stays blank; an older $660 snapshot was deliberately *not* used), and 9 came from **dated snapshots of the same official pages** during a fetch-service outage, each corroborated by at least one further official read (schema.org JSON-LD where published). Those rows are flagged `PRICE_V2_ONLY` until a live re-fetch upgrades them; the three Brilliant Earth rows also carry Pass 7's `PRICE_CURRENCY_LOCALIZED` flag (their snapshots displayed US-dollar figures).
+- **Two duplicates resolved, not stacked:** its Atelier Solitaire 14K candidate was published BE-01 (same URL, same $1,190), and its "Classic Simple Solitaire" candidate (item-203348) turned out to be published **BN-10** — a live re-fetch at 23:58Z showed the *same stock number 502120y14*, width 2.40mm and $1,145 under a second official URL alias with a *different product name*. Both times the published row was kept and the independent corroboration **appended** to its record; the BN-10 naming variance is recorded, not resolved.
+- **Two new Blue Nile contradictions:** BN-22's copy says "platinum solitaire setting" against a 14K Yellow Gold spec (`COPY_INCONSISTENT_METAL`), and BN-20 showed four sale prices ($772/$724/$730/$728) for one SKU across four official pages (`SALE_PRICE_VARIES_ACROSS_PAGES`).
+- **Benchmark cross-check:** an independent live API reading of **$4,028.10/oz** (23:01:42 UTC) sits 0.01% from the WGC benchmark $4,028.53/oz; same-day Kitco/APMEX snapshots are recorded informationally in `data/gold_spot.json`. The benchmark itself was left untouched.
+- Full pipeline re-run after integration, all five CI gates green: `audit.py` **PASS (128 checks, 9 informational warnings, 0 failures)**, `check_site.py` PASS (26 pages), `verify.py` 0 hard failures (64 records), `verify_a0be79d4.py` 0 hard failures, `audit_hallucinations.py` **PASS (0 failures)**.
+
 ## What the data currently shows
 
 | Metric | Value |
 |---|---|
-| Rings tracked | 47 |
-| Retailers with product rows | 10 (Blue Nile, Allurez, VRAI, Mejuri, Brilliant Earth, Anjolee, Ross-Simons, Sarraf, Catbird, Mene) |
-| Prices read from the retailer's own page | 46 of 47 (1 deliberately blank) |
-| Gram weights published by the retailer | 17 of 47 — only these rows have a computable gold value |
-| Rows with explicit *solid gold* wording | 19 of 47 |
-| Rows publishing a hallmark / maker's mark | **0 of 47** — it can only be checked in your hand |
-| Rows re-read from their own source page | the original 20 rows were re-read by up to four independent sessions on 2026-10-22; every row carries its re-verification record |
-| Gold benchmark used | $4,028.53/oz = $129.5202/g, data as of 21 Oct 2026 (earlier same-day reading $4,024.36/oz kept in `prior_captures`) |
+| Rings tracked | 64 |
+| Retailers with product rows | 10 (Blue Nile — including the James Allen line, Allurez, VRAI, Mejuri, Brilliant Earth, Anjolee, Ross-Simons, Sarraf, Catbird, Mene) |
+| Prices read from the retailer's own page | 62 of 64 (2 deliberately blank: VRAI VR-02 publishes no price; Blue Nile BN-26 was sold out at the live check) |
+| Price provenance | 54 rows V1 (live page fetch) · 9 rows V2 (dated snapshot of the official page, each corroborated by ≥2 official reads, flagged `PRICE_V2_ONLY` pending live re-fetch) · 1 row with no published price (`U_unverified`) |
+| Gram weights published by the retailer | 17 of 64 — only these rows have a computable gold value |
+| Rows with explicit *solid gold* wording | 19 of 64 |
+| Rows publishing a hallmark / maker's mark | **0 of 64** — it can only be checked in your hand |
+| Rows re-read from their own source page | the original 20 rows were re-read by up to four independent sessions on 2026-10-22; the 17 rows added by Pass 9 were each read from their official page at collection (8 live-fetched, 9 from dated official-page snapshots with corroboration); every row carries its re-verification record |
+| Gold benchmark used | $4,028.53/oz = $129.5202/g, data as of 21 Oct 2026 (earlier same-day reading $4,024.36/oz kept in `prior_captures`; an independent live reading of $4,028.10/oz at 23:01 UTC on 22 Oct plus same-day Kitco/APMEX snapshots are recorded informationally in `data/gold_spot.json` — derived arithmetic uses only the benchmark) |
 | Flags raised for review | published on the Flagged page, with sources |
 
 **Headline findings**
 
 1. A stamp is a claim with a legal tolerance, not a measurement: under 15 U.S.C. § 295 an "18K" ring may be as low as 74.3% gold and a "14K" ring as low as 57.63%.
-2. Most major retailers do not publish a gram weight, so their rings cannot be priced against their own gold. Only Allurez, VRAI and Anjolee did. Anjolee's price includes a lab-created centre stone, so even that multiple is not a setting markup.
-3. The 18K premium is inconsistent: +15.5% (Blue Nile Petite Solitaire), +16.8% (Brilliant Earth Atelier), +40.1% (Blue Nile Comfort Fit), +68.0% (Allurez Split Shank) — and for the one pair with both weights published, 54.9% of that premium is simply more gold.
+2. Most major retailers do not publish a gram weight, so their rings cannot be priced against their own gold. Only Allurez, VRAI, Anjolee, Sarraf and Ross-Simons did (17 of 64 rows). Anjolee's price includes a lab-created centre stone, so even that multiple is not a setting markup. Blue Nile and Brilliant Earth publish none at all.
+3. The 18K premium is inconsistent: +15.5% (Blue Nile Petite Solitaire), +16.8% (Brilliant Earth Atelier), +16.8% (Brilliant Earth Freesia, added by Pass 9), +40.1% (Blue Nile Comfort Fit), +68.0% (Allurez Split Shank) — and for the one pair with both weights published, 54.9% of that premium is simply more gold.
 4. Return windows all look like "30 days", but exclusions differ sharply (resized, engraved, custom). One seller (Anjolee) explicitly accepts returns on customised orders; another (Allurez) makes custom orders non-refundable.
-5. Several retailer pages contradict their own specification blocks; each case is listed on the Flagged page.
+5. Several retailer pages contradict their own specification blocks; each case is listed on the Flagged page. Pass 9 found two more on Blue Nile: a 14K yellow-gold page whose copy says "platinum solitaire setting" (BN-22), and one SKU showing four different sale prices across four official category pages (BN-20). It also recorded a naming variance: stock number 502120y14 is titled "Low Dome Comfort Fit Solitaire" on one official URL and "Classic Simple Solitaire" on its alias (BN-10's record).
+6. James Allen now redirects into Blue Nile: jamesallen.com product URLs land on bluenile.com, which states "James Allen is Now Part of Blue Nile" (live-verified 2026-10-22, recorded on BN-26). "By James Allen" collection rings are Blue Nile listings and carry Blue Nile's policies.
 
 ## Sources
 
@@ -132,13 +143,18 @@ Several agent sessions worked in this repository. `main` already contained two o
 | `scripts/verify.py`, `AUDIT.md` | session `arena/93da71b4-gold4` | Kept and made schema-aware; still runs and still fails on an unsourced value |
 | `docs/legacy/index_placeholder_b4413b13.html` | session `arena/b4413b13-gold4` | Original root dashboard, preserved after the integrated dashboard replaced it |
 | `docs/legacy/COORDINATION_merged_before_9614479d.md`, `docs/legacy/README_before_9614479d.md` | pre-merge state of `main` | Preserved for audit |
+| `data/preserved/rings_candidates_22b5b06c.json`, `data/preserved/gold_spot_capture_22b5b06c.json` | session `arena/22b5b06c-gold4` (PR #11) | Its independent 19-candidate working dataset (with its original ids) and live spot capture, preserved verbatim; 17 candidates were converted into the canonical schema as BE-05…BE-07 / BN-13…BN-26 and 2 duplicates were folded into corroboration notes on BE-01 and BN-10 |
+| `docs/legacy/REPO_REVIEW_22b5b06c.md`, `docs/legacy/VERIFICATION_22b5b06c.md`, `docs/legacy/COORDINATION_22b5b06c.md`, `docs/legacy/README_22b5b06c.md` | same session | Its baseline repo review (annotated), line-by-line verification log, task board and README, preserved as written |
+| `scripts/session_22b5b06c/`, `scripts/merge_rows_22b5b06c.py` | same session | Its standalone checkers and the idempotent converter that documents exactly how each added row was sourced — the audit trail of the Pass 9 integration |
 
-Three checkers now run against the combined repository, and all three must pass before a merge:
+Five CI gates now run against the combined repository (`.github/workflows/pages.yml`), and all five must pass before a merge:
 
 ```bash
-python3 scripts/check_site.py   # links + per-row source links + FTC/no-hallucination presence
-python3 scripts/verify.py       # schema-aware data audit, rewrites AUDIT.md
-python3 scripts/audit.py        # deep audit: allow-list, recomputation, speculation scan
+python3 scripts/audit.py                # Gate 1 — deep audit: allow-list, recomputation, speculation scan
+python3 scripts/check_site.py           # Gate 2 — links + per-row source links + FTC/no-hallucination presence
+python3 scripts/verify.py               # Gate 3 — schema-aware data audit, rewrites AUDIT.md
+python3 scripts/verify_a0be79d4.py      # Gate 4 — multi-page XSS / 404 blocklist / Assay-Lab scanner
+python3 scripts/audit_hallucinations.py # Gate 5 — gemstone-deduction, category-subpage & deep hallucination auditor
 ```
 
 The earlier sessions' own records (including the note that their sandboxes had no outbound access, which is why their catalogs were empty) are preserved in `COORDINATION.md` and in the site's Log page.
