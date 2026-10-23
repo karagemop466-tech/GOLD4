@@ -1,412 +1,414 @@
 {
-  "schema_version": "1.0.0",
-  "captured_utc": "2026-10-22",
-  "purpose": "Seller-level facts read from each seller's own website: contact route, return window, return exclusions, resize terms, warranty. Nothing here is a reputation score: reputation claims would need independent review data, which this project did not collect, so that field is deliberately empty and flagged.",
-  "sellers": [
-    {
-      "id": "blue-nile",
-      "name": "Blue Nile",
-      "official_url": "https://www.bluenile.com/",
-      "contact": {
-        "phone": "+1-800-242-2728",
-        "email": "service@bluenile.com",
-        "contact_page": "https://www.bluenile.com/contact-us",
-        "verified_from": "https://www.bluenile.com/policies/returns",
-        "verification": "V1_direct_page_fetch",
-        "pass12_live_check": {
-          "retrieved_utc": "2026-10-23",
-          "verified_from": "https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896",
-          "what_the_page_shows": "Contact panel lists '+1-800-242-2728', 'service@bluenile.com', a WhatsApp number and a Contact Us page link.",
-          "phone_matches_record": true,
-          "email_matches_record": true
-        }
-      },
-      "return_window_days": 30,
-      "return_window_basis": "30 days from the shipment date",
-      "return_exclusions": [
-        "Personalized jewellery",
-        "Custom orders",
-        "Engraved items",
-        "Items resized after initial purchase",
-        "Diamond Upgrade Program purchases",
-        "Clearance and Final Sale items",
-        "Personalized gemstones collection"
-      ],
-      "free_returns_limit": "Two complimentary returns per customer, per year; RMA number required",
-      "missing_document_fee_usd": 150,
-      "resize_policy": "One free resize up or down two sizes within 6 months if the design permits; eternity bands, tension rings, alternative-metal rings and some milgrain/ornate bands cannot be resized",
-      "warranty": "Limited lifetime warranty on gold and platinum items with a purchase price of $1,000 or more (limitations apply)",
-      "returns_source_id": "bluenile-returns",
-      "solid_gold_stated": false,
-      "hallmark_published": false,
-      "reputation_independently_verified": null,
-      "flags": [
-        "SOLID_NOT_STATED",
-        "RESIZED_ITEMS_NOT_RETURNABLE",
-        "REPUTATION_NOT_VERIFIED"
-      ],
-      "notes": [
-        "The product page also states 'Free Overnight Shipping' and 'Returns Policy' at the item level.",
-        "Every Blue Nile product page captured for this project failed to publish a gram weight."
-      ],
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
-      "reverification": "Pass 2: /policies/returns re-fetched. 30 days from shipment, two complimentary returns per customer per year, RMA required, $150 fee for a missing grading report, one free resize up or down two sizes within 6 months, and the exclusions for personalized/custom/engraved/resized-after-purchase/clearance items all match this record."
-    },
-    {
-      "id": "allurez",
-      "name": "Allurez",
-      "official_url": "https://www.allurez.com/",
-      "contact": {
-        "phone": "+1-800-554-3509",
-        "email": "service@allurez.com",
-        "contact_page": "https://www.allurez.com/pages/contact",
-        "verified_from": "https://www.allurez.com/pages/return-policy",
-        "verification": "V1_direct_page_fetch"
-      },
-      "return_window_days": 30,
-      "return_window_basis": "The return must ARRIVE at Allurez within 30 days of the original shipment",
-      "return_exclusions": [
-        "Engraved items",
-        "Custom-made orders (non-refundable and non-cancellable)",
-        "Design Your Own engagement rings (exchange only, same or higher value, not for loose diamonds)",
-        "Contoured wedding bands",
-        "Clearance items",
-        "Appraisals",
-        "Gift cards",
-        "Layaway deposits",
-        "Items that have been resized or altered"
-      ],
-      "free_returns_limit": "Buyer pays return shipping; original shipping cost is not refundable; RMA required",
-      "missing_document_fee_usd": 300,
-      "resize_policy": "Not published as a free service; the included 1-year warranty covers free ring sizing",
-      "warranty": "Free 1-year limited warranty included (2-year +$59, 10-year +$79, lifetime +$149 on the 14k floral setting); covers sizing, missing stones, prong tightening, polishing, rhodium plating",
-      "returns_source_id": "allurez-returns",
-      "solid_gold_stated": false,
-      "hallmark_published": false,
-      "reputation_independently_verified": null,
-      "flags": [
-        "SOLID_NOT_STATED",
-        "CUSTOM_NON_REFUNDABLE",
-        "DESIGN_YOUR_OWN_EXCHANGE_ONLY",
-        "REPUTATION_NOT_VERIFIED"
-      ],
-      "notes": [
-        "Allurez is the only seller in this dataset whose product pages publish a gram weight for gold settings, which is why it carries most of the computable rows.",
-        "The weight is labelled 'approximate' by the seller, so derived gold values inherit that uncertainty."
-      ],
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
-      "reverification": "Pass 2: /pages/return-policy re-fetched. Return must ARRIVE within 30 days of shipment; engraved non-refundable; Design Your Own exchange-only; custom-made non-refundable and non-cancellable; contoured bands not returnable; $300 per missing diamond certificate; refund within 7 business days; buyer pays return shipping. All match this record."
-    },
-    {
-      "id": "vrai",
-      "name": "VRAI",
-      "official_url": "https://www.vrai.com/",
-      "contact": {
-        "phone": null,
-        "email": "help@vrai.com",
-        "contact_page": "https://www.vrai.com/returns-exchanges",
-        "verified_from": "https://www.vrai.com/returns-exchanges",
-        "verification": "V1_direct_page_fetch"
-      },
-      "return_window_days": 30,
-      "return_window_basis": "30 days for eligible items; items below $15,000 can be refunded minus a recycling fee, or full store credit with the fee waived; items above $15,000 store credit only",
-      "return_exclusions": [
-        "Modified or resized rings",
-        "Custom-designed items",
-        "Engraved items and engraving/finishing fees",
-        "Items altered by a third party",
-        "All shipping fees",
-        "Gift cards"
-      ],
-      "free_returns_limit": "Free return shipping in the US; refund within 14 business days of receipt",
-      "recycling_fee_usd": 300,
-      "resize_policy": "One complimentary resize up to one full US size; infinity and eternity bands cannot be resized",
-      "warranty": "Lifetime warranty and annual shine are listed as included with the ring on the product page",
-      "returns_source_id": "vrai-returns",
-      "solid_gold_stated": false,
-      "hallmark_published": false,
-      "reputation_independently_verified": null,
-      "flags": [
-        "SOLID_NOT_STATED",
-        "RESIZED_RINGS_NOT_RETURNABLE",
-        "REFUND_RECYCLING_FEE",
-        "REPUTATION_NOT_VERIFIED"
-      ],
-      "notes": [
-        "VRAI publishes metal weight in grams per ring size on its product pages - the most transparent weight disclosure found in this project.",
-        "The $300 engagement-ring recycling fee is waived if you accept store credit instead of a refund, so a cash refund nets less than a store credit."
-      ],
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
-      "reverification": "Pass 2: /returns-exchanges re-fetched. 30 days; under $15,000 refund minus recycling fee or store credit, above $15,000 store credit only; $300 engagement ring, $50 wedding band ($300 if engraved), $50 made-to-order; resized and custom items excluded; free US return shipping; refund within 14 business days; one complimentary resize up to one full US size; infinity and eternity bands cannot be resized. All match this record."
-    },
-    {
-      "id": "mejuri",
-      "name": "Mejuri",
-      "official_url": "https://mejuri.com/",
-      "contact": {
-        "phone": null,
-        "email": null,
-        "contact_page": "https://mejuri.com/faq/top-faqs",
-        "verified_from": "https://mejuri.com/company/returns-terms",
-        "verification": "Contact route not captured on the fetched policy page"
-      },
-      "return_window_days": 30,
-      "return_window_basis": "Free 30-day returns in the US, Canada, UK, Australia and Germany, counted from delivery or in-store pickup",
-      "return_exclusions": [
-        "Engraved and monogrammed products (not eligible at any time)",
-        "Final sale items",
-        "Gift cards",
-        "Earrings used during a piercing appointment",
-        "Lab-grown diamond items returned without their SCS certificate"
-      ],
-      "free_returns_limit": "Free return shipping in the five listed countries; EU $20 and Rest of World $30 return fee; no online exchanges (30-day exchanges in stores)",
-      "resize_policy": "Not published as a standard free service on the captured returns page",
-      "warranty": "Two-year warranty from the date of receipt for defects or issues resulting from workmanship (stated on each Mejuri product page read on 2026-10-22)",
-      "returns_source_id": "mejuri-returns",
-      "solid_gold_stated": true,
-      "solid_gold_statement_example": "Solid Yellow Gold (14k) - the only seller in this dataset that uses explicit 'solid' wording on its listings",
-      "hallmark_published": false,
-      "reputation_independently_verified": null,
-      "flags": [
-        "CONTACT_NOT_CAPTURED",
-        "ENGRAVING_NON_RETURNABLE",
-        "REPUTATION_NOT_VERIFIED"
-      ],
-      "notes": [
-        "Mejuri reserves the right to suspend accounts for an atypical pattern of returns.",
-        "No telephone number appeared in the captured policy text, so the phone field is blank rather than guessed.",
-        "Pass 5: the two-year warranty is published on the product pages, so the warranty field was filled and WARRANTY_NOT_CAPTURED was removed.",
-        "Pass 5: product pages are variant-specific — the same URL opens on whichever colourway the site selects — so every Mejuri price was re-read with the yellow-gold variant explicitly selected."
-      ],
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/e04b126a-gold4 (Pass 5)",
-      "reverification": "Pass 2: /company/returns-terms re-fetched. Free 30-day returns in US/CA/UK/AU/DE counted from delivery or pickup; engraved and monogrammed never returnable; final sale and gift cards excluded; earrings pierced in-store excluded; SCS certificate required for lab-grown returns; EU $20 and Rest of World $30 return fee; no online exchanges, 30-day exchanges in stores; account suspension for atypical returns. All match. No telephone number appears on the page, so the phone field stays blank."
-    },
-    {
-      "id": "brilliant-earth",
-      "name": "Brilliant Earth",
-      "official_url": "https://www.brilliantearth.com/",
-      "contact": {
-        "phone": "800.691.0952",
-        "email": null,
-        "contact_page": "https://www.brilliantearth.com/contact/",
-        "verified_from": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
-        "verification": "V1_direct_page_fetch"
-      },
-      "return_window_days": 30,
-      "return_window_basis": "30 days — read on the first capture of this seller's product page on 2026-10-22; the Pass 5 re-read of the same page displays the \"Free Shipping & Returns\" badge but not a day count, so the 30-day figure is carried from that same-day capture instead of being re-displayed",
-      "return_exclusions": [
-        "Resized, repaired, modified, or previously exchanged items are non-returnable (per /30-Day-Returns/)",
-        "Custom-designed items are non-returnable",
-        "Engraved rings incur a $40 engraving removal fee on return (engraved gemstones non-returnable)",
-        "Eternity rings, open-top rings, and Fairmined complexity rings cannot be resized"
-      ],
-      "free_returns_limit": "Free shipping both ways (page badge \"Free Shipping & Returns\")",
-      "resize_policy": "Page badge reads \"Free 1-Year Resizing\" (Pass 5, 2026-10-22). The earlier capture of the same page described one complimentary resize within 60 days of purchase. The two captures disagree, so ask the seller which applies to your ring before ordering.",
-      "warranty": "Free Lifetime Warranty (product page badge)",
-      "returns_source_id": "brilliantearth-atelier",
-      "solid_gold_stated": false,
-      "hallmark_published": false,
-      "reputation_independently_verified": null,
-      "flags": [
-        "SOLID_NOT_STATED",
-        "REPUTATION_NOT_VERIFIED",
-        "RESIZE_TERMS_INCONSISTENT",
-        "RETURN_WINDOW_NOT_REDISPLAYED",
-        "RETURN_EXCLUSIONS_NOT_ITEMISED"
-      ],
-      "notes": [
-        "Two product rows now exist for this seller (BE-01 14K and BE-02 18K yellow gold, $1,190 and $1,390 setting-only). The earlier note that no product row could be read was correct for that pass and is superseded by Pass 5.",
-        "Neither product page publishes a gram weight, so both rows carry a blank weight rather than a guessed one.",
-        "Return exclusions were not itemised in either capture, so the list is blank rather than assumed.",
-        "The recorded phone number was read from the page header; it does not appear in the product page body text.",
-        "Pass 8 (arena/81b71aa5-gold4): /30-Day-Returns/ body text verified directly on 2026-10-22 (chunk 4 past mega-nav), confirming 30-day window and itemised exclusions; added BE-04 Fairmined Hollis ($1,090)."
-      ],
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/e04b126a-gold4 (Pass 5)",
-      "reverification": "Pass 5: both Atelier Solitaire product pages re-fetched. Setting prices $1,190 (14K) and $1,390 (18K) read from the pages themselves; both pages show Free Shipping & Returns, Free Lifetime Warranty, Lifetime Diamond Upgrade and Free 1-Year Resizing. No gram weight published. The return-window day count and the exclusions list were not re-displayed in the page text, so neither is restated as newly verified."
-    },
-    {
-      "id": "anjolee",
-      "name": "Anjolee",
-      "official_url": "https://www.anjolee.com/",
-      "contact": {
-        "phone": "877-265-6533",
-        "email": null,
-        "contact_page": "https://www.anjolee.com/information/ReturnPolicy",
-        "verified_from": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
-        "verification": "V1_direct_page_fetch"
-      },
-      "return_window_days": 30,
-      "return_window_basis": "Any item in its original condition within 30 days of receipt; the page states 'All customized orders can be returned for full refund within 30 days of receipt'",
-      "return_exclusions": [],
-      "free_returns_limit": "Free shipping and insurance on the order",
-      "resize_policy": "Not captured on the page",
-      "warranty": "Lifetime warranty (prong tightening, re-polishing, rhodium plating, cleaning) plus a one-year manufacturing-defect warranty covering diamond quality, metal, total carat weight, gemstones and craftsmanship",
-      "returns_source_id": "anjolee-ms354a",
-      "solid_gold_stated": false,
-      "hallmark_published": false,
-      "reputation_independently_verified": null,
-      "flags": [
-        "SOLID_NOT_STATED",
-        "PRICE_INCLUDES_CENTRE_STONE",
-        "REPUTATION_NOT_VERIFIED"
-      ],
-      "notes": [
-        "Anjolee's written policy that customized orders can be returned for a full refund is the most buyer-friendly custom-order clause found in this dataset - get it in writing at order time anyway.",
-        "Anjolee publishes an 'Approx. Metal Weight' on its product pages. Pass 2 read 'Approx. Metal Weight: 2.90 Gr.' for MS354-A, so the earlier WEIGHT_NOT_PUBLISHED flag was incorrect and has been removed.",
-        "The MS354-A configuration priced at $870.76 carries a LAB-CREATED centre diamond ('Lab Created FG' / 'Lab Created VS'), so its price cannot be compared with setting-only prices or natural-diamond prices."
-      ],
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5)",
-      "reverification": "Pass 2: the product page's Warranty & Return Policy block and the site's 30-Day Returns page were re-read. Return of any item in original condition within 30 days of receipt, including the statement that 'All customized orders can be returned for full refund within 30 days of receipt'; lifetime warranty for prong tightening, re-polishing, rhodium plating and cleaning plus a one-year manufacturing-defect warranty; phone 877-265-6533. All match this record. Anjolee DOES publish a gram weight ('Approx. Metal Weight: 2.90 Gr.'), so the seller-level WEIGHT_NOT_PUBLISHED flag was wrong and has been removed. Pass 5 independently re-read the product page and confirmed the same 'Approx. Metal Weight: 2.90 Gr.', ring size 6.5, 14K white gold, and 'Center Diamond Color: Lab Created FG' / 'Clarity: Lab Created VS' in the Product Details table."
-    },
-    {
-      "id": "sarraf",
-      "name": "Sarraf",
-      "official_url": "https://www.sarraf.com/",
-      "contact": {
-        "phone": "+1-888-472-7723",
-        "email": "info@sarraf.com",
-        "contact_page": "https://www.sarraf.com/",
-        "verified_from": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
-        "verification": "V1_direct_page_fetch"
-      },
-      "return_window_days": 30,
-      "return_window_basis": "30 days from receipt (unworn, original packaging & invoice; buyer pays insured shipping to 650 S Hill St #728, Los Angeles, CA 90014)",
-      "return_exclusions": [
-        "Used, worn, or altered items",
-        "Third-party resizing or repair immediately voids Lifetime Warranty",
-        "Special/custom orders non-refundable"
-      ],
-      "free_returns_limit": "Buyer pays insured signature return shipping",
-      "missing_document_fee_usd": null,
-      "resize_policy": "Third-party resizing immediately voids warranty; Lifetime Warranty replacement charges max($100, 10% of purchase price)",
-      "warranty": "Lifetime Warranty subject to seller inspection and max($100, 10% of purchase price) replacement fee",
-      "returns_source_id": "sarraf-returns",
-      "solid_gold_stated": true,
-      "hallmark_published": false,
-      "reputation_independently_verified": null,
-      "flags": [
-        "REPUTATION_NOT_VERIFIED",
-        "WARRANTY_VOID_ON_THIRD_PARTY_RESIZE"
-      ],
-      "notes": [
-        "Publishes explicit Approximate Metal Weight on plain bands and men's diamond rings (establishing our 1.33x–1.50x raw melt benchmark across 10K, 14K, and 18K), while omitting gram weights on women's solitaire diamond rings.",
-        "Line-by-line audit caught two live diamond ring pages (`SKU F1625` $20,671 & `SKU 121987-.72P` $2,858) contradicting themselves between 14K and 18K!"
-      ],
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/a0be79d4-gold4 (Pass 6)"
-    },
-    {
-      "id": "catbird",
-      "name": "Catbird NYC",
-      "official_url": "https://www.catbirdnyc.com/",
-      "contact": {
-        "phone": null,
-        "email": null,
-        "contact_page": "https://www.catbirdnyc.com/returns",
-        "verified_from": "https://www.catbirdnyc.com/returns",
-        "verification": "V1_direct_page_fetch"
-      },
-      "return_window_days": 20,
-      "return_window_basis": "Short 20-day return window from delivery ($9 return shipping fee deducted)",
-      "return_exclusions": [
-        "Engraved items (final sale)",
-        "Special orders and custom rings (final sale)",
-        "All international sales (final sale)"
-      ],
-      "free_returns_limit": "$9 return shipping deduction on domestic returns",
-      "missing_document_fee_usd": null,
-      "resize_policy": "Must inspect unengraved before return window closes (20 days)",
-      "warranty": "Standard studio craftsmanship support",
-      "returns_source_id": "catbird-returns",
-      "solid_gold_stated": true,
-      "hallmark_published": false,
-      "reputation_independently_verified": null,
-      "flags": [
-        "REPUTATION_NOT_VERIFIED",
-        "ENGRAVING_NON_RETURNABLE"
-      ],
-      "notes": [
-        "Explicitly states 'recycled solid 14k gold' / 'Solid gold always, never plated', with a shorter 20-day return window and ultra-delicate 1.0mm solitaire shanks."
-      ],
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/a0be79d4-gold4 (Pass 6)"
-    },
-    {
-      "id": "mene",
-      "name": "Menē",
-      "official_url": "https://mene.com/",
-      "contact": {
-        "phone": null,
-        "email": null,
-        "contact_page": "https://mene.com/customer-care/en-US/articles/returns-319505",
-        "verified_from": "https://mene.com/customer-care/en-US/articles/returns-319505",
-        "verification": "V1_direct_page_fetch"
-      },
-      "return_window_days": 7,
-      "return_window_basis": "Strict 7-day return window from receipt with Certificate of Authenticity",
-      "return_exclusions": [
-        "Items missing original Certificate of Authenticity or packaging",
-        "Worn, altered, or damaged items"
-      ],
-      "free_returns_limit": "7-day return window; lifetime buyback offered at daily bullion value minus Menē fee",
-      "missing_document_fee_usd": null,
-      "resize_policy": "Pure 24K bands cannot be traditionally torch-resized without specialized 24K goldsmithing",
-      "warranty": "Signed Certificate of Authenticity assaying pure 24K gold weight (+/-0.5g to +/-1.0g tolerance)",
-      "returns_source_id": "mene-returns",
-      "solid_gold_stated": true,
-      "hallmark_published": false,
-      "reputation_independently_verified": null,
-      "flags": [
-        "REPUTATION_NOT_VERIFIED"
-      ],
-      "notes": [
-        "Pure 24K (99.99% Au) bullion jewelry; static HTML omits per-size gram weight (loaded via JS modal), so static `weight_g` stays strictly null per policy."
-      ],
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/a0be79d4-gold4 (Pass 6)"
-    },
-    {
-      "id": "ross-simons",
-      "name": "Ross-Simons",
-      "official_url": "https://www.ross-simons.com/",
-      "contact": {
-        "phone": "800-835-0919",
-        "email": null,
-        "contact_page": "https://www.ross-simons.com/pages/returns-exchanges",
-        "verified_from": "https://www.ross-simons.com/pages/returns-exchanges",
-        "verification": "V1_direct_page_fetch"
-      },
-      "return_window_days": 30,
-      "return_window_basis": "30 days from date received for refund or exchange",
-      "return_exclusions": [
-        "Items resized, altered, damaged, or worked on by an outside jeweler",
-        "Custom or personalized/engraved items",
-        "Final sale items"
-      ],
-      "free_returns_limit": "$4.95 shipping fee deducted when using Ross-Simons prepaid Loop return label",
-      "resize_policy": "Outside jeweler resizing or alteration voids the 30-day return right",
-      "warranty": "100% satisfaction guarantee within 30 days of receipt",
-      "returns_source_id": "ross-simons-returns",
-      "solid_gold_stated": false,
-      "hallmark_published": false,
-      "reputation_independently_verified": null,
-      "flags": [
-        "SOLID_NOT_STATED",
-        "REPUTATION_NOT_VERIFIED"
-      ],
-      "notes": [
-        "Publishes explicit gram weights on all 4 solid-gold wedding bands audited (RS-01..RS-04: 0.7 g to 4.0 g), while omitting gram weight on diamond solitaire RS-05 ($2,819)."
-      ],
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/81b71aa5-gold4",
-      "reverification": "Returns policy and 5 solid-gold ring product pages directly fetched and verified on 2026-10-22."
+ "schema_version": "1.0.0",
+ "captured_utc": "2026-10-22",
+ "purpose": "Seller-level facts read from each seller's own website: contact route, return window, return exclusions, resize terms, warranty. Nothing here is a reputation score: reputation claims would need independent review data, which this project did not collect, so that field is deliberately empty and flagged.",
+ "sellers": [
+  {
+   "id": "blue-nile",
+   "name": "Blue Nile",
+   "official_url": "https://www.bluenile.com/",
+   "contact": {
+    "phone": "+1-800-242-2728",
+    "email": "service@bluenile.com",
+    "contact_page": "https://www.bluenile.com/contact-us",
+    "verified_from": "https://www.bluenile.com/policies/returns",
+    "verification": "V1_direct_page_fetch",
+    "pass12_live_check": {
+     "retrieved_utc": "2026-10-23",
+     "verified_from": "https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896",
+     "what_the_page_shows": "Contact panel lists '+1-800-242-2728', 'service@bluenile.com', a WhatsApp number and a Contact Us page link.",
+     "phone_matches_record": true,
+     "email_matches_record": true
     }
-  ],
-  "reverified_utc": "2026-10-23"
+   },
+   "return_window_days": 30,
+   "return_window_basis": "30 days from the shipment date",
+   "return_exclusions": [
+    "Personalized jewellery",
+    "Custom orders",
+    "Engraved items",
+    "Items resized after initial purchase",
+    "Diamond Upgrade Program purchases",
+    "Clearance and Final Sale items",
+    "Personalized gemstones collection"
+   ],
+   "free_returns_limit": "Two complimentary returns per customer, per year; RMA number required",
+   "missing_document_fee_usd": 150,
+   "resize_policy": "One free resize up or down two sizes within 6 months if the design permits; eternity bands, tension rings, alternative-metal rings and some milgrain/ornate bands cannot be resized",
+   "warranty": "Limited lifetime warranty on gold and platinum items with a purchase price of $1,000 or more (limitations apply)",
+   "returns_source_id": "bluenile-returns",
+   "solid_gold_stated": false,
+   "hallmark_published": false,
+   "reputation_independently_verified": null,
+   "flags": [
+    "SOLID_NOT_STATED",
+    "RESIZED_ITEMS_NOT_RETURNABLE",
+    "REPUTATION_NOT_VERIFIED"
+   ],
+   "notes": [
+    "The product page also states 'Free Overnight Shipping' and 'Returns Policy' at the item level.",
+    "Every Blue Nile product page captured for this project failed to publish a gram weight."
+   ],
+   "reverified_utc": "2026-10-22",
+   "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+   "reverification": "Pass 2: /policies/returns re-fetched. 30 days from shipment, two complimentary returns per customer per year, RMA required, $150 fee for a missing grading report, one free resize up or down two sizes within 6 months, and the exclusions for personalized/custom/engraved/resized-after-purchase/clearance items all match this record."
+  },
+  {
+   "id": "allurez",
+   "name": "Allurez",
+   "official_url": "https://www.allurez.com/",
+   "contact": {
+    "phone": "+1-800-554-3509",
+    "email": "service@allurez.com",
+    "contact_page": "https://www.allurez.com/pages/contact",
+    "verified_from": "https://www.allurez.com/pages/return-policy",
+    "verification": "V1_direct_page_fetch"
+   },
+   "return_window_days": 30,
+   "return_window_basis": "The return must ARRIVE at Allurez within 30 days of the original shipment",
+   "return_exclusions": [
+    "Engraved items",
+    "Custom-made orders (non-refundable and non-cancellable)",
+    "Design Your Own engagement rings (exchange only, same or higher value, not for loose diamonds)",
+    "Contoured wedding bands",
+    "Clearance items",
+    "Appraisals",
+    "Gift cards",
+    "Layaway deposits",
+    "Items that have been resized or altered"
+   ],
+   "free_returns_limit": "Buyer pays return shipping; original shipping cost is not refundable; RMA required",
+   "missing_document_fee_usd": 300,
+   "resize_policy": "Not published as a free service; the included 1-year warranty covers free ring sizing",
+   "warranty": "Free 1-year limited warranty included (2-year +$59, 10-year +$79, lifetime +$149 on the 14k floral setting); covers sizing, missing stones, prong tightening, polishing, rhodium plating",
+   "returns_source_id": "allurez-returns",
+   "solid_gold_stated": false,
+   "hallmark_published": false,
+   "reputation_independently_verified": null,
+   "flags": [
+    "SOLID_NOT_STATED",
+    "CUSTOM_NON_REFUNDABLE",
+    "DESIGN_YOUR_OWN_EXCHANGE_ONLY",
+    "REPUTATION_NOT_VERIFIED"
+   ],
+   "notes": [
+    "Allurez is the only seller in this dataset whose product pages publish a gram weight for gold settings, which is why it carries most of the computable rows.",
+    "The weight is labelled 'approximate' by the seller, so derived gold values inherit that uncertainty."
+   ],
+   "reverified_utc": "2026-10-22",
+   "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+   "reverification": "Pass 2: /pages/return-policy re-fetched. Return must ARRIVE within 30 days of shipment; engraved non-refundable; Design Your Own exchange-only; custom-made non-refundable and non-cancellable; contoured bands not returnable; $300 per missing diamond certificate; refund within 7 business days; buyer pays return shipping. All match this record."
+  },
+  {
+   "id": "vrai",
+   "name": "VRAI",
+   "official_url": "https://www.vrai.com/",
+   "contact": {
+    "phone": null,
+    "email": "help@vrai.com",
+    "contact_page": "https://www.vrai.com/returns-exchanges",
+    "verified_from": "https://www.vrai.com/returns-exchanges",
+    "verification": "V1_direct_page_fetch"
+   },
+   "return_window_days": 30,
+   "return_window_basis": "30 days for eligible items; items below $15,000 can be refunded minus a recycling fee, or full store credit with the fee waived; items above $15,000 store credit only",
+   "return_exclusions": [
+    "Modified or resized rings",
+    "Custom-designed items",
+    "Engraved items and engraving/finishing fees",
+    "Items altered by a third party",
+    "All shipping fees",
+    "Gift cards"
+   ],
+   "free_returns_limit": "Free return shipping in the US; refund within 14 business days of receipt",
+   "recycling_fee_usd": 300,
+   "resize_policy": "One complimentary resize up to one full US size; infinity and eternity bands cannot be resized",
+   "warranty": "Lifetime warranty and annual shine are listed as included with the ring on the product page",
+   "returns_source_id": "vrai-returns",
+   "solid_gold_stated": false,
+   "hallmark_published": false,
+   "reputation_independently_verified": null,
+   "flags": [
+    "SOLID_NOT_STATED",
+    "RESIZED_RINGS_NOT_RETURNABLE",
+    "REFUND_RECYCLING_FEE",
+    "REPUTATION_NOT_VERIFIED"
+   ],
+   "notes": [
+    "VRAI publishes metal weight in grams per ring size on its product pages - the most transparent weight disclosure found in this project.",
+    "The $300 engagement-ring recycling fee is waived if you accept store credit instead of a refund, so a cash refund nets less than a store credit."
+   ],
+   "reverified_utc": "2026-10-22",
+   "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
+   "reverification": "Pass 2: /returns-exchanges re-fetched. 30 days; under $15,000 refund minus recycling fee or store credit, above $15,000 store credit only; $300 engagement ring, $50 wedding band ($300 if engraved), $50 made-to-order; resized and custom items excluded; free US return shipping; refund within 14 business days; one complimentary resize up to one full US size; infinity and eternity bands cannot be resized. All match this record."
+  },
+  {
+   "id": "mejuri",
+   "name": "Mejuri",
+   "official_url": "https://mejuri.com/",
+   "contact": {
+    "phone": null,
+    "email": null,
+    "contact_page": "https://mejuri.com/faq/top-faqs",
+    "verified_from": "https://mejuri.com/company/returns-terms",
+    "verification": "Contact route not captured on the fetched policy page"
+   },
+   "return_window_days": 30,
+   "return_window_basis": "Free 30-day returns in the US, Canada, UK, Australia and Germany, counted from delivery or in-store pickup",
+   "return_exclusions": [
+    "Engraved and monogrammed products (not eligible at any time)",
+    "Final sale items",
+    "Gift cards",
+    "Earrings used during a piercing appointment",
+    "Lab-grown diamond items returned without their SCS certificate"
+   ],
+   "free_returns_limit": "Free return shipping in the five listed countries; EU $20 and Rest of World $30 return fee; no online exchanges (30-day exchanges in stores)",
+   "resize_policy": "Not published as a standard free service on the captured returns page",
+   "warranty": "Two-year warranty from the date of receipt for defects or issues resulting from workmanship (stated on each Mejuri product page read on 2026-10-22)",
+   "returns_source_id": "mejuri-returns",
+   "solid_gold_stated": true,
+   "solid_gold_statement_example": "Solid Yellow Gold (14k) - the only seller in this dataset that uses explicit 'solid' wording on its listings",
+   "hallmark_published": false,
+   "reputation_independently_verified": null,
+   "flags": [
+    "CONTACT_NOT_CAPTURED",
+    "ENGRAVING_NON_RETURNABLE",
+    "REPUTATION_NOT_VERIFIED"
+   ],
+   "notes": [
+    "Mejuri reserves the right to suspend accounts for an atypical pattern of returns.",
+    "No telephone number appeared in the captured policy text, so the phone field is blank rather than guessed.",
+    "Pass 5: the two-year warranty is published on the product pages, so the warranty field was filled and WARRANTY_NOT_CAPTURED was removed.",
+    "Pass 5: product pages are variant-specific — the same URL opens on whichever colourway the site selects — so every Mejuri price was re-read with the yellow-gold variant explicitly selected."
+   ],
+   "reverified_utc": "2026-10-22",
+   "reverified_by": "arena/e04b126a-gold4 (Pass 5)",
+   "reverification": "Pass 2: /company/returns-terms re-fetched. Free 30-day returns in US/CA/UK/AU/DE counted from delivery or pickup; engraved and monogrammed never returnable; final sale and gift cards excluded; earrings pierced in-store excluded; SCS certificate required for lab-grown returns; EU $20 and Rest of World $30 return fee; no online exchanges, 30-day exchanges in stores; account suspension for atypical returns. All match. No telephone number appears on the page, so the phone field stays blank."
+  },
+  {
+   "id": "brilliant-earth",
+   "name": "Brilliant Earth",
+   "official_url": "https://www.brilliantearth.com/",
+   "contact": {
+    "phone": "800.691.0952",
+    "email": null,
+    "contact_page": "https://www.brilliantearth.com/contact/",
+    "verified_from": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
+    "verification": "V1_direct_page_fetch"
+   },
+   "return_window_days": 30,
+   "return_window_basis": "30 days — read on the first capture of this seller's product page on 2026-10-22; the Pass 5 re-read of the same page displays the \"Free Shipping & Returns\" badge but not a day count, so the 30-day figure is carried from that same-day capture instead of being re-displayed",
+   "return_exclusions": [
+    "Resized, repaired, modified, or previously exchanged items are non-returnable (per /30-Day-Returns/)",
+    "Custom-designed items are non-returnable",
+    "Engraved rings incur a $40 engraving removal fee on return (engraved gemstones non-returnable)",
+    "Eternity rings, open-top rings, and Fairmined complexity rings cannot be resized"
+   ],
+   "free_returns_limit": "Free shipping both ways (page badge \"Free Shipping & Returns\")",
+   "resize_policy": "Page badge reads \"Free 1-Year Resizing\" (Pass 5, 2026-10-22). The earlier capture of the same page described one complimentary resize within 60 days of purchase. The two captures disagree, so ask the seller which applies to your ring before ordering.",
+   "warranty": "Free Lifetime Warranty (product page badge)",
+   "returns_source_id": "brilliantearth-atelier",
+   "solid_gold_stated": false,
+   "hallmark_published": false,
+   "reputation_independently_verified": null,
+   "flags": [
+    "SOLID_NOT_STATED",
+    "REPUTATION_NOT_VERIFIED",
+    "RESIZE_TERMS_INCONSISTENT",
+    "RETURN_WINDOW_NOT_REDISPLAYED",
+    "RETURN_EXCLUSIONS_NOT_ITEMISED"
+   ],
+   "notes": [
+    "Two product rows now exist for this seller (BE-01 14K and BE-02 18K yellow gold, $1,190 and $1,390 setting-only). The earlier note that no product row could be read was correct for that pass and is superseded by Pass 5.",
+    "Neither product page publishes a gram weight, so both rows carry a blank weight rather than a guessed one.",
+    "Return exclusions were not itemised in either capture, so the list is blank rather than assumed.",
+    "The recorded phone number was read from the page header; it does not appear in the product page body text.",
+    "Pass 8 (arena/81b71aa5-gold4): /30-Day-Returns/ body text verified directly on 2026-10-22 (chunk 4 past mega-nav), confirming 30-day window and itemised exclusions; added BE-04 Fairmined Hollis ($1,090)."
+   ],
+   "reverified_utc": "2026-10-22",
+   "reverified_by": "arena/e04b126a-gold4 (Pass 5)",
+   "reverification": "Pass 5: both Atelier Solitaire product pages re-fetched. Setting prices $1,190 (14K) and $1,390 (18K) read from the pages themselves; both pages show Free Shipping & Returns, Free Lifetime Warranty, Lifetime Diamond Upgrade and Free 1-Year Resizing. No gram weight published. The return-window day count and the exclusions list were not re-displayed in the page text, so neither is restated as newly verified."
+  },
+  {
+   "id": "anjolee",
+   "name": "Anjolee",
+   "official_url": "https://www.anjolee.com/",
+   "contact": {
+    "phone": "877-265-6533",
+    "email": null,
+    "contact_page": "https://www.anjolee.com/information/ReturnPolicy",
+    "verified_from": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
+    "verification": "V1_direct_page_fetch"
+   },
+   "return_window_days": 30,
+   "return_window_basis": "Any item in its original condition within 30 days of receipt; the page states 'All customized orders can be returned for full refund within 30 days of receipt'",
+   "return_exclusions": [],
+   "free_returns_limit": "Free shipping and insurance on the order",
+   "resize_policy": "Not captured on the page",
+   "warranty": "Lifetime warranty (prong tightening, re-polishing, rhodium plating, cleaning) plus a one-year manufacturing-defect warranty covering diamond quality, metal, total carat weight, gemstones and craftsmanship",
+   "returns_source_id": "anjolee-ms354a",
+   "solid_gold_stated": false,
+   "hallmark_published": false,
+   "reputation_independently_verified": null,
+   "flags": [
+    "SOLID_NOT_STATED",
+    "PRICE_INCLUDES_CENTRE_STONE",
+    "REPUTATION_NOT_VERIFIED"
+   ],
+   "notes": [
+    "Anjolee's written policy that customized orders can be returned for a full refund is the most buyer-friendly custom-order clause found in this dataset - get it in writing at order time anyway.",
+    "Anjolee publishes an 'Approx. Metal Weight' on its product pages. Pass 2 read 'Approx. Metal Weight: 2.90 Gr.' for MS354-A, so the earlier WEIGHT_NOT_PUBLISHED flag was incorrect and has been removed.",
+    "The MS354-A configuration priced at $870.76 carries a LAB-CREATED centre diamond ('Lab Created FG' / 'Lab Created VS'), so its price cannot be compared with setting-only prices or natural-diamond prices."
+   ],
+   "reverified_utc": "2026-10-22",
+   "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5)",
+   "reverification": "Pass 2: the product page's Warranty & Return Policy block and the site's 30-Day Returns page were re-read. Return of any item in original condition within 30 days of receipt, including the statement that 'All customized orders can be returned for full refund within 30 days of receipt'; lifetime warranty for prong tightening, re-polishing, rhodium plating and cleaning plus a one-year manufacturing-defect warranty; phone 877-265-6533. All match this record. Anjolee DOES publish a gram weight ('Approx. Metal Weight: 2.90 Gr.'), so the seller-level WEIGHT_NOT_PUBLISHED flag was wrong and has been removed. Pass 5 independently re-read the product page and confirmed the same 'Approx. Metal Weight: 2.90 Gr.', ring size 6.5, 14K white gold, and 'Center Diamond Color: Lab Created FG' / 'Clarity: Lab Created VS' in the Product Details table."
+  },
+  {
+   "id": "sarraf",
+   "name": "Sarraf",
+   "official_url": "https://www.sarraf.com/",
+   "contact": {
+    "phone": "+1-888-472-7723",
+    "email": "info@sarraf.com",
+    "contact_page": "https://www.sarraf.com/",
+    "verified_from": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+    "verification": "V1_direct_page_fetch"
+   },
+   "return_window_days": 30,
+   "return_window_basis": "30 days from receipt (unworn, original packaging & invoice; buyer pays insured shipping to 650 S Hill St #728, Los Angeles, CA 90014)",
+   "return_exclusions": [
+    "Used, worn, or altered items",
+    "Third-party resizing or repair immediately voids Lifetime Warranty",
+    "Special/custom orders non-refundable"
+   ],
+   "free_returns_limit": "Buyer pays insured signature return shipping",
+   "missing_document_fee_usd": null,
+   "resize_policy": "Third-party resizing immediately voids warranty; Lifetime Warranty replacement charges max($100, 10% of purchase price)",
+   "warranty": "Lifetime Warranty subject to seller inspection and max($100, 10% of purchase price) replacement fee",
+   "returns_source_id": "sarraf-returns",
+   "solid_gold_stated": true,
+   "hallmark_published": false,
+   "reputation_independently_verified": null,
+   "flags": [
+    "REPUTATION_NOT_VERIFIED",
+    "WARRANTY_VOID_ON_THIRD_PARTY_RESIZE"
+   ],
+   "notes": [
+    "Publishes explicit Approximate Metal Weight on plain bands and men's diamond rings (establishing our 1.33x–1.50x raw melt benchmark across 10K, 14K, and 18K), while omitting gram weights on women's solitaire diamond rings.",
+    "Line-by-line audit caught two live diamond ring pages (`SKU F1625` $20,671 & `SKU 121987-.72P` $2,858) contradicting themselves between 14K and 18K!",
+    "Final integration 2026-10-23: dedicated official Returns and Lifetime Guarantee pages re-read. Return window/exclusions remain anchored to sarraf-returns; warranty fee and third-party-alteration terms now have a separate sarraf-warranty source. The earlier product-page evidence and Pass 18 retraction remain preserved in the verification history."
+   ],
+   "reverified_utc": "2026-10-23",
+   "reverified_by": "arena/bc872fef-gold4 (final integration; prior product-page evidence retained)",
+   "warranty_source_id": "sarraf-warranty"
+  },
+  {
+   "id": "catbird",
+   "name": "Catbird NYC",
+   "official_url": "https://www.catbirdnyc.com/",
+   "contact": {
+    "phone": null,
+    "email": null,
+    "contact_page": "https://www.catbirdnyc.com/returns",
+    "verified_from": "https://www.catbirdnyc.com/returns",
+    "verification": "V1_direct_page_fetch"
+   },
+   "return_window_days": 20,
+   "return_window_basis": "Short 20-day return window from delivery ($9 return shipping fee deducted)",
+   "return_exclusions": [
+    "Engraved items (final sale)",
+    "Special orders and custom rings (final sale)",
+    "All international sales (final sale)"
+   ],
+   "free_returns_limit": "$9 return shipping deduction on domestic returns",
+   "missing_document_fee_usd": null,
+   "resize_policy": "Must inspect unengraved before return window closes (20 days)",
+   "warranty": "Standard studio craftsmanship support",
+   "returns_source_id": "catbird-returns",
+   "solid_gold_stated": true,
+   "hallmark_published": false,
+   "reputation_independently_verified": null,
+   "flags": [
+    "REPUTATION_NOT_VERIFIED",
+    "ENGRAVING_NON_RETURNABLE"
+   ],
+   "notes": [
+    "Explicitly states 'recycled solid 14k gold' / 'Solid gold always, never plated', with a shorter 20-day return window and ultra-delicate 1.0mm solitaire shanks."
+   ],
+   "reverified_utc": "2026-10-22",
+   "reverified_by": "arena/a0be79d4-gold4 (Pass 6)"
+  },
+  {
+   "id": "mene",
+   "name": "Menē",
+   "official_url": "https://mene.com/",
+   "contact": {
+    "phone": null,
+    "email": null,
+    "contact_page": "https://mene.com/customer-care/en-US/articles/returns-319505",
+    "verified_from": "https://mene.com/customer-care/en-US/articles/returns-319505",
+    "verification": "V1_direct_page_fetch"
+   },
+   "return_window_days": 7,
+   "return_window_basis": "Strict 7-day return window from receipt with Certificate of Authenticity",
+   "return_exclusions": [
+    "Items missing original Certificate of Authenticity or packaging",
+    "Worn, altered, or damaged items"
+   ],
+   "free_returns_limit": "7-day return window; lifetime buyback offered at daily bullion value minus Menē fee",
+   "missing_document_fee_usd": null,
+   "resize_policy": "Pure 24K bands cannot be traditionally torch-resized without specialized 24K goldsmithing",
+   "warranty": "Signed Certificate of Authenticity assaying pure 24K gold weight (+/-0.5g to +/-1.0g tolerance)",
+   "returns_source_id": "mene-returns",
+   "solid_gold_stated": true,
+   "hallmark_published": false,
+   "reputation_independently_verified": null,
+   "flags": [
+    "REPUTATION_NOT_VERIFIED"
+   ],
+   "notes": [
+    "Pure 24K (99.99% Au) bullion jewelry; static HTML omits per-size gram weight (loaded via JS modal), so static `weight_g` stays strictly null per policy."
+   ],
+   "reverified_utc": "2026-10-22",
+   "reverified_by": "arena/a0be79d4-gold4 (Pass 6)"
+  },
+  {
+   "id": "ross-simons",
+   "name": "Ross-Simons",
+   "official_url": "https://www.ross-simons.com/",
+   "contact": {
+    "phone": "800-835-0919",
+    "email": null,
+    "contact_page": "https://www.ross-simons.com/pages/returns-exchanges",
+    "verified_from": "https://www.ross-simons.com/pages/returns-exchanges",
+    "verification": "V1_direct_page_fetch"
+   },
+   "return_window_days": 30,
+   "return_window_basis": "30 days from date received for refund or exchange",
+   "return_exclusions": [
+    "Items resized, altered, damaged, or worked on by an outside jeweler",
+    "Custom or personalized/engraved items",
+    "Final sale items"
+   ],
+   "free_returns_limit": "$4.95 shipping fee deducted when using Ross-Simons prepaid Loop return label",
+   "resize_policy": "Outside jeweler resizing or alteration voids the 30-day return right",
+   "warranty": "100% satisfaction guarantee within 30 days of receipt",
+   "returns_source_id": "ross-simons-returns",
+   "solid_gold_stated": false,
+   "hallmark_published": false,
+   "reputation_independently_verified": null,
+   "flags": [
+    "SOLID_NOT_STATED",
+    "REPUTATION_NOT_VERIFIED"
+   ],
+   "notes": [
+    "Publishes explicit gram weights on all 4 solid-gold wedding bands audited (RS-01..RS-04: 0.7 g to 4.0 g), while omitting gram weight on diamond solitaire RS-05 ($2,819)."
+   ],
+   "reverified_utc": "2026-10-22",
+   "reverified_by": "arena/81b71aa5-gold4",
+   "reverification": "Returns policy and 5 solid-gold ring product pages directly fetched and verified on 2026-10-22."
+  }
+ ],
+ "reverified_utc": "2026-10-23"
 }

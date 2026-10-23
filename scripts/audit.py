@@ -342,6 +342,8 @@ def main() -> int:
             fail("E-04 return window type", f"{sid}")
         if seller.get("returns_source_id") not in source_ids:
             fail("E-05 returns source", f"{sid}: returns_source_id not in sources.json")
+        if seller.get("warranty_source_id") is not None and seller["warranty_source_id"] not in source_ids:
+            fail("E-05 warranty source", f"{sid}: warranty_source_id not in sources.json")
     ok("E-06 sellers", f"{len(sellers)} sellers checked")
 
     # ---------------------------------------------------------------- site

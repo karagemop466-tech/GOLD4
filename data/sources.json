@@ -1,670 +1,680 @@
 {
-  "schema_version": "1.0.0",
-  "retrieved_default_utc": "2026-10-22",
-  "sources": [
-    {
-      "id": "cfpb-fcba-en61",
-      "tier": "A",
-      "publisher": "Consumer Financial Protection Bureau (CFPB)",
-      "title": "How do I dispute a charge on my credit card bill? (Fair Credit Billing Act)",
-      "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Consumers must send a written billing-error notice to the card company within 60 calendar days after the charge appears on the statement.",
-        "After receiving the notice, the company has 30 days to send a written letter confirming it received the dispute, unless it completes the required billing-error resolution procedures within that time.",
-        "The page does NOT state the two-billing-cycle / 90-day outer limit; that limit is in 12 CFR 1026.13(c)(2) and 15 U.S.C. § 1666(a)(B), registered separately.",
-        "The page also points readers to a separate process for goods or services that turn out to be defective."
-      ],
-      "reverified_utc": "2026-10-23",
-      "reverification": "Re-read 2026-10-23. The 60-day notice window and the 30-day acknowledgment are on the page; the 90-day outer limit is not, and the supports list was corrected so it is no longer attributed to this page.",
-      "live_check": {
-        "checked_utc": "2026-10-23T20:22:56Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/"
-      }
-    },
-    {
-      "id": "ecfr-12-1026-13",
-      "tier": "A",
-      "publisher": "Consumer Financial Protection Bureau / eCFR (National Archives) - Regulation Z",
-      "title": "12 CFR § 1026.13 — Billing error resolution",
-      "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1026/subpart-B/section-1026.13",
-      "retrieved_utc": "2026-10-23",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "(b)(1): the billing-error notice must reach the creditor no later than 60 days after the first periodic statement reflecting the error.",
-        "(c)(1): written acknowledgment within 30 days of receiving the notice.",
-        "(c)(2): resolution within 2 complete billing cycles and in no event later than 90 days."
-      ],
-      "why_added": "The 60-day / 30-day figures are on the CFPB consumer page, but the 2-billing-cycle / 90-day outer limit is not. That limit is in this section, so it is now cited to the section itself.",
-      "live_check": {
-        "checked_utc": "2026-10-23T20:22:57Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://unblock.federalregister.gov/"
-      }
-    },
-    {
-      "id": "ecfr-16-23",
-      "tier": "A",
-      "publisher": "U.S. Federal Trade Commission / eCFR (National Archives)",
-      "title": "16 CFR Part 23 - Guides for the Jewelry, Precious Metals, and Pewter Industries",
-      "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "§ 23.3(a): it is unfair or deceptive to misrepresent the presence, quantity or karat fineness of gold in a product, or the fineness, thickness, weight ratio or manner of application of any gold plating",
-        "§ 23.3(b): examples of misleading 'gold' usage for coated, plated, filled, overlay and electroplated products",
-        "§ 23.3(c)(1): using 'Gold' for a gold-alloy product with a hollow centre may mislead unless the hollow centre is disclosed immediately beside the word; such products 'should not be marked or described as solid'",
-        "§ 23.18: misrepresentation of weight and 'total weight' (section heading read in the part's table of contents)"
-      ],
-      "caveat": "The eCFR itself states the displayed content is 'authoritative but unofficial'; the official CFR print edition remains the legal reference.",
-      "reverified_utc": "2026-10-23",
-      "reverification": "Re-read 2026-10-23: eCFR shows title 16 up to date as of 10/21/2026; § 23.3, § 23.4, § 23.7, § 23.8, § 23.10 headings and text confirmed. § 23.9 is pewter content, not quality marks.",
-      "live_check": {
-        "checked_utc": "2026-10-23T20:22:57Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://unblock.federalregister.gov/"
-      }
-    },
-    {
-      "id": "ftc-credit-cards",
-      "tier": "A",
-      "publisher": "U.S. Federal Trade Commission (consumer.ftc.gov)",
-      "title": "Using Credit Cards and Disputing Charges",
-      "url": "https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Consumers have a legal right to dispute credit-card billing errors",
-        "The issuer must investigate and respond in defined ways",
-        "The article also covers complaints about the quality of something bought"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:22:58Z",
-        "http_status": 404,
-        "state": "HTTP_404",
-        "final_url": "https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges"
-      },
-      "manual_verification": "Re-read 2026-10-23 via a browser-rendered fetch: the article loads with its full text (billing-error dispute rights). The runner's plain GET returns 404 — bot filtering, not a dead source."
-    },
-    {
-      "id": "ftc-gold-jewelry",
-      "tier": "A",
-      "publisher": "U.S. Federal Trade Commission (consumer.ftc.gov)",
-      "title": "Buying Platinum, Gold, and Silver Jewelry",
-      "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Karat is parts of pure gold out of 24 (18K = 18 parts gold to 6 parts other metal; 14K = 14 to 10)",
-        "'Solid gold' means the item is not hollow and carries a karat mark",
-        "A karat mark should be accompanied by the name or U.S. registered trademark of the company behind it; if the trademark is missing, don't buy it",
-        "Definitions of gold plated, gold filled, gold overlay, rolled gold plate (RGP), gold electroplate, vermeil, gold flashed, gold washed",
-        "Check a seller's refund and return policy and get it in writing; search the seller's name with 'complaint' or 'review'"
-      ],
-      "reverified_utc": "2026-10-23",
-      "reverification": "Re-read 2026-10-23: karat-out-of-24 definition, quality-mark-plus-trademark rule, 'solid gold' = not hollow, and the plated/filled/overlay/RGP/electroplate/vermeil definitions all still present.",
-      "live_check": {
-        "checked_utc": "2026-10-23T20:22:59Z",
-        "http_status": 404,
-        "state": "HTTP_404",
-        "final_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry"
-      },
-      "manual_verification": "Re-read 2026-10-23 via a browser-rendered fetch: the article loads with its full text (karat marks, 'solid gold' definition, plated/filled/vermeil definitions). The runner's plain GET returns 404 — bot filtering, not a dead source."
-    },
-    {
-      "id": "nist-hb44-2026",
-      "tier": "A",
-      "publisher": "National Institute of Standards and Technology (nist.gov)",
-      "title": "NIST Handbook 44 — Current Edition (2026): Specifications, Tolerances, and Other Technical Requirements for Weighing and Measuring Devices",
-      "url": "https://www.nist.gov/pml/owm/nist-handbook-44-current-edition",
-      "retrieved_utc": "2026-10-23",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "The live 2026 Handbook 44 index page was read; it links every section (1.10 General Code, 2.20 Scales, 2.21 … 2.25, Section 3 device codes) as DOCX/PDF.",
-        "The index page itself does NOT print a troy-ounce or metric-carat conversion factor, so no numeric factor is attributed to it by this project."
-      ],
-      "reverified_utc": "2026-10-23",
-      "correction_2026_10_23": "The previously registered URL https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44 was re-opened on 2026-10-23 and returned NIST's own 'Page not found' (error 404). It also carried the invented-looking subtitle 'Appendix C: Units of Mass for Precious Metals & Metric Carat', which is not what the page says. Both were replaced.",
-      "previous_urls": [
-        "https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:22:59Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.nist.gov/pml/owm/nist-handbook-44-current-edition"
-      }
-    },
-    {
-      "id": "nist-sp811-pml",
-      "tier": "A",
-      "publisher": "National Institute of Standards and Technology (NIST)",
-      "title": "NIST Special Publication 811 — Guide for the Use of the International System of Units (SI)",
-      "url": "https://www.nist.gov/pml/special-publication-811",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "'carat, metric → gram' is listed as 2.0 E-01 in bold (= exact) in Appendix B.8, i.e. 0.200 g exactly.",
-        "'ounce (troy or apothecary) → gram' is listed as 3.110 348 E+01 and is NOT bold, i.e. 31.10348 g rounded, not an exact table value."
-      ],
-      "reverified_utc": "2026-10-23",
-      "correction_2026_10_23": "This project uses 31.1034768 g per troy ounce, which is the 480-grain definition (480 × 64.79891 mg) and agrees with NIST's rounded table entry. It must not be quoted as 'NIST's exact conversion factor'. The earlier supports text did exactly that and has been corrected; the constant itself is unchanged and still exact by definition.",
-      "verified_subpage": {
-        "url": "https://www.nist.gov/physical-measurement-laboratory/nist-guide-si-appendix-b8",
-        "title": "NIST Guide to the SI, Appendix B.8: Factors for Units Listed Alphabetically",
-        "retrieved_utc": "2026-10-23"
-      },
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:00Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.nist.gov/pml/special-publication-811"
-      }
-    },
-    {
-      "id": "usc-15-1666",
-      "tier": "A",
-      "publisher": "U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 1666",
-      "title": "15 U.S.C. § 1666 — Correction of billing errors (Fair Credit Billing Act)",
-      "url": "https://www.law.cornell.edu/uscode/text/15/1666",
-      "retrieved_utc": "2026-10-23",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "(a)(A): the creditor must send a written acknowledgment within 30 days of receiving the billing-error notice, unless it completes the correction in that period.",
-        "(a)(B): the creditor must correct the account or send a written explanation within two complete billing cycles and in no event later than 90 days.",
-        "(a)(B)(ii): where the goods were never delivered, the creditor cannot treat the amount as correctly shown unless it determines the goods were actually delivered."
-      ],
-      "why_added": "The two-billing-cycle / 90-day limit and the 30-day acknowledgment are statutory here. The catalog cites § 1666; this registry entry gives that citation a verified page. Read directly on 2026-10-23 by this session.",
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:00Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.law.cornell.edu/uscode/text/15/1666"
-      }
-    },
-    {
-      "id": "usc-15-295",
-      "tier": "A",
-      "publisher": "U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 295",
-      "title": "Standard of fineness of gold articles; deviation",
-      "url": "https://www.law.cornell.edu/uscode/text/15/295",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Actual fineness of the assayed part may not be more than 0.003 below the stamped fineness",
-        "Actual fineness of the entire article including solder may not be more than 0.007 below the stamped fineness (articles other than watchcases and flatware)"
-      ],
-      "caveat": "LII reproduces the U.S. Code; the official text is published by the U.S. House (uscode.house.gov) and GPO.",
-      "reverified_utc": "2026-10-23",
-      "reverification": "Re-read 2026-10-23: three one-thousandth parts tolerance for the part assayed, seven one-thousandth parts for the whole article including solder.",
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:01Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.law.cornell.edu/uscode/text/15/295"
-      }
-    },
-    {
-      "id": "usc-15-297",
-      "tier": "A",
-      "publisher": "U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 297",
-      "title": "15 U.S.C. § 297 — Stamping plated articles",
-      "url": "https://www.law.cornell.edu/uscode/text/15/297",
-      "retrieved_utc": "2026-10-23",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Subsection (b): a person applying a quality mark to a gold or silver article must also apply a trademark registered in the U.S. (or their name), in lettering at least as large as the quality mark and as close as possible to it.",
-        "Subsection (a): plated articles must not be stamped 'sterling' or 'coin'."
-      ],
-      "why_added": "standards.html cited 15 U.S.C. § 297 for the hallmark-plus-trademark rule, but no sources.json entry existed, so the citation had no registry backing. Added after reading the section on 2026-10-23.",
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:02Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.law.cornell.edu/uscode/text/15/297"
-      }
-    },
-    {
-      "id": "usc-15-ch8",
-      "tier": "A",
-      "publisher": "U.S. Code (Legal Information Institute) - 15 U.S.C. ch. 8",
-      "title": "Falsely stamped gold or silver or goods manufactured therefrom (sections 291-300)",
-      "url": "https://www.law.cornell.edu/uscode/text/15/chapter-8",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "There is a federal statutory scheme against falsely stamped gold and silver articles",
-        "§ 294 prohibits importation/transport of falsely marked gold or silver ware"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:03Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.law.cornell.edu/uscode/text/15/chapter-8"
-      }
-    },
-    {
-      "id": "bullionvault-spot",
-      "tier": "B",
-      "publisher": "BullionVault (bullionvault.com)",
-      "title": "Live Gold Price Chart ($4,026.25/oz t = $129.45/g on 2026-10-22)",
-      "url": "https://www.bullionvault.com/gold-price-chart.do",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Same-day independent spot gold cross-check ($4,026.25/oz t; $129,446.94/kg), within 0.06% of WGC benchmark"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:03Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.bullionvault.com/gold-price-chart.do"
-      }
-    },
-    {
-      "id": "gia-electroform-fraud-2024",
-      "tier": "B",
-      "publisher": "Gemological Institute of America (GIA Carlsbad Laboratory)",
-      "title": "Lab Notes: Electroformed Gold Piece with Adhered 14K Hallmark Fraud Case",
-      "url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Item submitted as 14K solid gold had a separate glued-on 14K hallmark disk over a wax/resin core coated with up to ~200 microns of electroformed gold",
-        "Surface XRF alone read 17.99K and 22.47K gold without detecting subsurface core; caught via suspiciously light gram mass and microscope examination"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:04Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
-      }
-    },
-    {
-      "id": "gia-xrf-winter2024",
-      "tier": "B",
-      "publisher": "Gemological Institute of America (GIA)",
-      "title": "Chemical Analysis in the Gemological Laboratory (EDXRF Principles & Depth Limits)",
-      "url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "EDXRF provides non-destructive elemental analysis across Na–U but excites only shallow near-surface metal layers",
-        "Thick gold plating or electroforming requires pairing XRF with calibrated mass/density and binocular microscope inspection"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:05Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis"
-      }
-    },
-    {
-      "id": "jmbullion-gold-spot",
-      "tier": "B",
-      "publisher": "JM Bullion",
-      "title": "Gold Price Charts — Live Ask / Bid Spot Quote",
-      "url": "https://www.jmbullion.com/charts/gold-price/",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Live spot quote read on 2026-10-22 (7:09 p.m. EDT): $4,039.76/oz Ask, $4,025.26/oz Bid ($129.88/g Ask)"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:06Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.jmbullion.com/charts/gold-price/"
-      }
-    },
-    {
-      "id": "kitco-gold-spot",
-      "tier": "B",
-      "publisher": "Kitco Metals Inc.",
-      "title": "Live Gold Spot Price & Unit Conversion Table",
-      "url": "https://www.kitco.com/charts/gold",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Live spot conversion table read on 2026-10-22 (7:10 p.m. EDT): $4,024.60 USD per troy ounce = $129.39 USD per gram ($201.23/dwt)",
-        "Intraday 24-hour range $4,020.20–$4,145.30/oz cross-confirms WGC spot benchmark ($4,028.53/oz = $129.52/g) within 0.10%"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:07Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.kitco.com/charts/gold"
-      }
-    },
-    {
-      "id": "lbma-prices",
-      "tier": "B",
-      "publisher": "London Bullion Market Association",
-      "title": "LBMA Precious Metal Prices",
-      "url": "https://www.lbma.org.uk/prices-and-data/precious-metal-prices",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "The LBMA Gold Price is set twice daily by ICE Benchmark Administration auction (10:30 and 15:00 London time)",
-        "Numerical historical LBMA tables require an IBA licence and were not captured here"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:07Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.lbma.org.uk/prices-and-data/lbma-precious-metal-prices"
-      }
-    },
-    {
-      "id": "wgc-gold-prices",
-      "tier": "B",
-      "publisher": "World Gold Council (Goldhub)",
-      "title": "Gold spot prices & market history",
-      "url": "https://www.gold.org/goldhub/data/gold-prices",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Gold spot price panel read twice on 22 October 2026: USD 4,028.53/oz on the second (Pass 2) read, USD 4,024.36/oz on the first; the page's date line read 'Data as of 21 October, 2026' both times",
-        "The panel is a live quote — the two reads differ by 0.10%, which is why the dataset stores the reading it actually saw and keeps the earlier one in prior_captures",
-        "The LBMA Gold Price is the key benchmark used throughout the gold market",
-        "Market data on the page is provided by ICE Data Services",
-        "2026-10-23 re-read: 'USD /oz 4,024.45' with 'Data as of 22 October, 2026'.",
-        "2026-10-23 Pass 17 re-read (twice): 'USD /oz 3,996.31' with 'Data as of 22 October, 2026'."
-      ],
-      "reverified_utc": "2026-10-23",
-      "reverification": "Pass 17 re-read the official panel twice on 2026-10-23: USD 3,996.31/oz with 'Data as of 22 October, 2026'. This is now the calculation benchmark; the earlier USD 4,024.45 capture and all older readings remain preserved as history in data/gold_spot.json.",
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:09Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.gold.org/goldhub/data/gold-prices"
-      }
-    },
-    {
-      "id": "allurez-returns",
-      "tier": "C",
-      "publisher": "Allurez",
-      "title": "Return Policy",
-      "url": "https://www.allurez.com/pages/return-policy",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Return must ARRIVE within 30 days of the original shipment",
-        "Items must not have been resized or altered",
-        "Engraved items, custom-made orders, clearance items, appraisals, gift cards and layaway deposits are non-refundable",
-        "Design Your Own engagement rings may be exchanged for equal-or-higher value, not for loose diamonds",
-        "Buyer pays return shipping; RMA required via service@allurez.com or 1-800-554-3509",
-        "$300 deduction per missing diamond certificate; refund within 7 business days of approval"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:10Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.allurez.com/pages/return-policy"
-      }
-    },
-    {
-      "id": "anjolee-ms354a",
-      "tier": "C",
-      "publisher": "Anjolee",
-      "title": "Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)",
-      "url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Price $870.76 for the configured 14K white gold, 0.50 ct lab-created FG/VS version (price includes the centre stone)",
-        "Product Details table: Metal Type 14K White Gold, 'Approx. Metal Weight: 2.90 Gr.', ring size 6.5, item width 2.82 mm",
-        "Center Diamond Color 'Lab Created FG', Clarity 'Lab Created VS', 0.50 ct",
-        "30-day returns, and the page states 'All customized orders can be returned for full refund within 30 days of receipt'",
-        "Lifetime warranty (prong tightening, re-polishing, rhodium plating, cleaning) plus one-year manufacturing-defect warranty",
-        "Phone 877-265-6533"
-      ],
-      "caveat": "The metal weight is the seller's own 'approx.' figure for the 0.50 ct model at ring size 6.5, and the price includes a lab-created centre stone, so the price ÷ gold multiple for this row is not a setting markup.",
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:11Z",
-        "http_status": 200,
-        "state": "EMPTY_OR_JS_SHELL",
-        "final_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx"
-      },
-      "manual_verification": "Re-read 2026-10-23 via a browser-rendered fetch: the product page loads (Six Curved Prongs Solitaire Diamond Engagement Ring). The runner receives a JavaScript shell with no product text, so its price could not be machine-checked on this pass."
-    },
-    {
-      "id": "bluenile-returns",
-      "tier": "C",
-      "publisher": "Blue Nile",
-      "title": "Return Policy - 30-day money back guarantee",
-      "url": "https://www.bluenile.com/policies/returns",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Returns within 30 days of the shipment date",
-        "Exclusions: personalized jewellery, custom orders, engraved items, items resized after purchase, Diamond Upgrade purchases, clearance and final sale",
-        "Two complimentary returns per customer per year; RMA number required",
-        "One free resize (up or down two sizes) within 6 months if the design permits",
-        "Missing diamond grading report: $150 replacement fee"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:11Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.bluenile.com/policies/returns"
-      }
-    },
-    {
-      "id": "brilliant-earth-returns",
-      "tier": "C",
-      "publisher": "Brilliant Earth, LLC",
-      "title": "Brilliant Earth Free 30-Day Returns & Resizing Exclusions Policy",
-      "url": "https://www.brilliantearth.com/30-Day-Returns/",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Free 30-day return shipping from delivery in unworn original condition",
-        "Custom-designed, modified, and resized items are ineligible for return; engraved items incur a $40 removal fee"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:12Z",
-        "http_status": 403,
-        "state": "REFUSED_403",
-        "final_url": "https://www.brilliantearth.com/30-Day-Returns/"
-      },
-      "manual_verification": "Brilliant Earth's bot protection refuses the automated check (HTTP 403), so this pass cannot re-confirm the 30-day return terms; the clause stays as captured and is flagged on the Flagged page."
-    },
-    {
-      "id": "brilliantearth-atelier",
-      "tier": "C",
-      "publisher": "Brilliant Earth",
-      "title": "Atelier Solitaire Ring in 18K Yellow Gold",
-      "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Setting price $1,390 for the 18K yellow gold version, labelled \"(Setting Only)\" (read 2026-10-22)",
-        "Offered in 14K white gold, 18K white gold, 14K yellow gold, 18K yellow gold, 14K rose gold and platinum (variant links listed on the page)",
-        "Style BE1D2444-18KY, metal 18K Yellow Gold, width 2 mm, claw-prong setting",
-        "Page badges: Free Shipping & Returns, Free Lifetime Warranty, Lifetime Diamond Upgrade, Free 1-Year Resizing",
-        "No gram weight and no hallmark are published on the page"
-      ],
-      "caveat": "The price is readable on this pass but the gram weight is not, so the product carries a price row and a blank weight. The page badge reads \"Free 1-Year Resizing\" while the earlier capture of the same page described one complimentary resize within 60 days, so the resize terms are recorded as inconsistent. The 30-day return window was read on the first capture and is not re-displayed in today's page text.",
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:13Z",
-        "http_status": 403,
-        "state": "REFUSED_403",
-        "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/"
-      },
-      "manual_verification": "Brilliant Earth's bot protection refuses the automated check (HTTP 403). The page was read by a browser-rendered session on 2026-10-23 (repo verification log, Pass 14), which is the only evidence for its price; this automated pass makes no claim about it."
-    },
-    {
-      "id": "brilliantearth-atelier-14k",
-      "tier": "C",
-      "publisher": "Brilliant Earth",
-      "title": "Atelier Solitaire Ring in 14K Yellow Gold",
-      "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Setting price $1,190 for the 14K yellow gold version, labelled \"(Setting Only)\" (read 2026-10-22)",
-        "Style BE1D2444-14KY, metal 14K Yellow Gold, width 2 mm, claw-prong setting",
-        "Page badges: Free Shipping & Returns, Free Lifetime Warranty, Lifetime Diamond Upgrade, Free 1-Year Resizing",
-        "No gram weight and no hallmark are published on the page"
-      ],
-      "caveat": "Price only; no weight and no hallmark published.",
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:13Z",
-        "http_status": 403,
-        "state": "REFUSED_403",
-        "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/"
-      },
-      "manual_verification": "Brilliant Earth's bot protection refuses the automated check (HTTP 403). The page was read by a browser-rendered session on 2026-10-23 (repo verification log, Pass 14); this automated pass makes no claim about it."
-    },
-    {
-      "id": "brilliantearth-returns-30d",
-      "tier": "C",
-      "publisher": "Brilliant Earth (brilliantearth.com)",
-      "title": "Brilliant Earth — Free 30-Day Returns & Resizing Exclusions (/30-Day-Returns/)",
-      "url": "https://www.brilliantearth.com/30-Day-Returns/",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "30-day return window from shipping date or pickup availability notification",
-        "Resized, repaired, modified, or previously exchanged items are non-returnable",
-        "Engraved rings incur a $40 engraving removal fee upon return; eternity/open-top/geometric rings cannot be resized"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:14Z",
-        "http_status": 403,
-        "state": "REFUSED_403",
-        "final_url": "https://www.brilliantearth.com/30-Day-Returns/"
-      },
-      "manual_verification": "Brilliant Earth's bot protection refuses the automated check (HTTP 403), so this pass cannot re-confirm the 30-day return terms; the clause stays as captured and is flagged on the Flagged page."
-    },
-    {
-      "id": "catbird-returns",
-      "tier": "C",
-      "publisher": "Catbird NYC",
-      "title": "Catbird Returns & Exchanges Policy",
-      "url": "https://www.catbirdnyc.com/returns",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "20-day return window from delivery ($9 return shipping fee deducted)",
-        "Engraved items, special orders, custom items, and all international orders are final sale"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:14Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.catbirdnyc.com/returns"
-      }
-    },
-    {
-      "id": "mejuri-returns",
-      "tier": "C",
-      "publisher": "Mejuri",
-      "title": "Returns Terms & Conditions",
-      "url": "https://mejuri.com/company/returns-terms",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Free 30-day returns in US, Canada, UK, Australia, Germany; window starts at delivery or in-store pickup",
-        "Engraved or monogrammed products are not eligible for return or refund at any time",
-        "No online exchanges; 30-day exchanges in retail locations",
-        "Lab-grown diamond items must include the SCS certification or they are returned to sender",
-        "Excessive-returns pattern may lead to account suspension"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:16Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://mejuri.com/company/returns-terms"
-      }
-    },
-    {
-      "id": "mene-returns",
-      "tier": "C",
-      "publisher": "Menē Inc.",
-      "title": "Menē 7-Day Returns & Lifetime Buyback Policy",
-      "url": "https://mene.com/customer-care/en-US/articles/returns-319505",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "Strict 7-day return window from receipt in unworn condition with original Certificate of Authenticity",
-        "Manufacturing weight variance +/-0.5g in-stock or +/-1.0g Crafted-on-Demand"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:17Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://mene.com/customer-care?hcUrl=en-US%2Farticles%2Freturns-319505"
-      }
-    },
-    {
-      "id": "ross-simons-returns",
-      "tier": "C",
-      "publisher": "Ross-Simons (ross-simons.com)",
-      "title": "Ross-Simons — Returns & Exchanges Policy",
-      "url": "https://www.ross-simons.com/pages/returns-exchanges",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "30-day return window from date received",
-        "$4.95 shipping fee deducted when using Ross-Simons prepaid Loop return label",
-        "Items resized, altered, or worked on by an outside jeweler are non-returnable",
-        "Contact 800-835-0919 · 9 Ross Simons Dr, Cranston, RI 02920"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:18Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.ross-simons.com/pages/returns-exchanges"
-      }
-    },
-    {
-      "id": "sarraf-returns",
-      "tier": "C",
-      "publisher": "Sarraf Jewelry Inc.",
-      "title": "Sarraf Return Policy & Lifetime Warranty Terms",
-      "url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "30-day return window from receipt in unused original condition with invoice to 650 South Hill St #728, Los Angeles, CA 90014",
-        "Buyer pays return shipping & signature insurance; third-party resizing immediately voids warranty; Lifetime Warranty replacement charges max($100, 10% of price)"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:19Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html"
-      }
-    },
-    {
-      "id": "vrai-returns",
-      "tier": "C",
-      "publisher": "VRAI",
-      "title": "Returns & Exchanges",
-      "url": "https://www.vrai.com/returns-exchanges",
-      "retrieved_utc": "2026-10-22",
-      "verification": "V1_direct_page_fetch",
-      "supports": [
-        "30-day return window; items below $15,000 refund to payment method minus a recycling fee, or full store credit with the fee waived",
-        "Engagement ring recycling fee: $300",
-        "Non-eligible: modified or resized rings, custom-designed items, engraved items, items altered by a third party",
-        "Free US return shipping; refund within 14 business days of receipt",
-        "One complimentary resize up to one full US size; infinity/eternity bands cannot be resized",
-        "EU/EEA 14-day statutory withdrawal excludes custom, engraved and resized items"
-      ],
-      "live_check": {
-        "checked_utc": "2026-10-23T20:23:20Z",
-        "http_status": 200,
-        "state": "OK",
-        "final_url": "https://www.vrai.com/returns-exchanges"
-      }
-    }
-  ]
+ "schema_version": "1.0.0",
+ "retrieved_default_utc": "2026-10-22",
+ "sources": [
+  {
+   "id": "cfpb-fcba-en61",
+   "tier": "A",
+   "publisher": "Consumer Financial Protection Bureau (CFPB)",
+   "title": "How do I dispute a charge on my credit card bill? (Fair Credit Billing Act)",
+   "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Consumers must send a written billing-error notice to the card company within 60 calendar days after the charge appears on the statement.",
+    "After receiving the notice, the company has 30 days to send a written letter confirming it received the dispute, unless it completes the required billing-error resolution procedures within that time.",
+    "The page does NOT state the two-billing-cycle / 90-day outer limit; that limit is in 12 CFR 1026.13(c)(2) and 15 U.S.C. § 1666(a)(B), registered separately.",
+    "The page also points readers to a separate process for goods or services that turn out to be defective."
+   ],
+   "reverified_utc": "2026-10-23",
+   "reverification": "Re-read 2026-10-23. The 60-day notice window and the 30-day acknowledgment are on the page; the 90-day outer limit is not, and the supports list was corrected so it is no longer attributed to this page.",
+   "live_check": {
+    "checked_utc": "2026-10-23T20:22:56Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/"
+   }
+  },
+  {
+   "id": "ecfr-12-1026-13",
+   "tier": "A",
+   "publisher": "Consumer Financial Protection Bureau / eCFR (National Archives) - Regulation Z",
+   "title": "12 CFR § 1026.13 — Billing error resolution",
+   "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1026/subpart-B/section-1026.13",
+   "retrieved_utc": "2026-10-23",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "(b)(1): the billing-error notice must reach the creditor no later than 60 days after the first periodic statement reflecting the error.",
+    "(c)(1): written acknowledgment within 30 days of receiving the notice.",
+    "(c)(2): resolution within 2 complete billing cycles and in no event later than 90 days."
+   ],
+   "why_added": "The 60-day / 30-day figures are on the CFPB consumer page, but the 2-billing-cycle / 90-day outer limit is not. That limit is in this section, so it is now cited to the section itself.",
+   "live_check": {
+    "checked_utc": "2026-10-23T20:22:57Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://unblock.federalregister.gov/"
+   }
+  },
+  {
+   "id": "ecfr-16-23",
+   "tier": "A",
+   "publisher": "U.S. Federal Trade Commission / eCFR (National Archives)",
+   "title": "16 CFR Part 23 - Guides for the Jewelry, Precious Metals, and Pewter Industries",
+   "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "§ 23.3(a): it is unfair or deceptive to misrepresent the presence, quantity or karat fineness of gold in a product, or the fineness, thickness, weight ratio or manner of application of any gold plating",
+    "§ 23.3(b): examples of misleading 'gold' usage for coated, plated, filled, overlay and electroplated products",
+    "§ 23.3(c)(1): using 'Gold' for a gold-alloy product with a hollow centre may mislead unless the hollow centre is disclosed immediately beside the word; such products 'should not be marked or described as solid'",
+    "§ 23.18: misrepresentation of weight and 'total weight' (section heading read in the part's table of contents)"
+   ],
+   "caveat": "The eCFR itself states the displayed content is 'authoritative but unofficial'; the official CFR print edition remains the legal reference.",
+   "reverified_utc": "2026-10-23",
+   "reverification": "Re-read 2026-10-23: eCFR shows title 16 up to date as of 10/21/2026; § 23.3, § 23.4, § 23.7, § 23.8, § 23.10 headings and text confirmed. § 23.9 is pewter content, not quality marks.",
+   "live_check": {
+    "checked_utc": "2026-10-23T20:22:57Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://unblock.federalregister.gov/"
+   }
+  },
+  {
+   "id": "ftc-credit-cards",
+   "tier": "A",
+   "publisher": "U.S. Federal Trade Commission (consumer.ftc.gov)",
+   "title": "Using Credit Cards and Disputing Charges",
+   "url": "https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Consumers have a legal right to dispute credit-card billing errors",
+    "The issuer must investigate and respond in defined ways",
+    "The article also covers complaints about the quality of something bought"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:22:58Z",
+    "http_status": 404,
+    "state": "HTTP_404",
+    "final_url": "https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges"
+   },
+   "manual_verification": "Re-read 2026-10-23 via a browser-rendered fetch: the article loads with its full text (billing-error dispute rights). The runner's plain GET returns 404 — bot filtering, not a dead source."
+  },
+  {
+   "id": "ftc-gold-jewelry",
+   "tier": "A",
+   "publisher": "U.S. Federal Trade Commission (consumer.ftc.gov)",
+   "title": "Buying Platinum, Gold, and Silver Jewelry",
+   "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Karat is parts of pure gold out of 24 (18K = 18 parts gold to 6 parts other metal; 14K = 14 to 10)",
+    "'Solid gold' means the item is not hollow and carries a karat mark",
+    "A karat mark should be accompanied by the name or U.S. registered trademark of the company behind it; if the trademark is missing, don't buy it",
+    "Definitions of gold plated, gold filled, gold overlay, rolled gold plate (RGP), gold electroplate, vermeil, gold flashed, gold washed",
+    "Check a seller's refund and return policy and get it in writing; search the seller's name with 'complaint' or 'review'"
+   ],
+   "reverified_utc": "2026-10-23",
+   "reverification": "Re-read 2026-10-23: karat-out-of-24 definition, quality-mark-plus-trademark rule, 'solid gold' = not hollow, and the plated/filled/overlay/RGP/electroplate/vermeil definitions all still present.",
+   "live_check": {
+    "checked_utc": "2026-10-23T20:22:59Z",
+    "http_status": 404,
+    "state": "HTTP_404",
+    "final_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry"
+   },
+   "manual_verification": "Re-read 2026-10-23 via a browser-rendered fetch: the article loads with its full text (karat marks, 'solid gold' definition, plated/filled/vermeil definitions). The runner's plain GET returns 404 — bot filtering, not a dead source."
+  },
+  {
+   "id": "nist-hb44-2026",
+   "tier": "A",
+   "publisher": "National Institute of Standards and Technology (nist.gov)",
+   "title": "NIST Handbook 44 — Current Edition (2026): Specifications, Tolerances, and Other Technical Requirements for Weighing and Measuring Devices",
+   "url": "https://www.nist.gov/pml/owm/nist-handbook-44-current-edition",
+   "retrieved_utc": "2026-10-23",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "The live 2026 Handbook 44 index page was read; it links every section (1.10 General Code, 2.20 Scales, 2.21 … 2.25, Section 3 device codes) as DOCX/PDF.",
+    "The index page itself does NOT print a troy-ounce or metric-carat conversion factor, so no numeric factor is attributed to it by this project."
+   ],
+   "reverified_utc": "2026-10-23",
+   "correction_2026_10_23": "The previously registered URL https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44 was re-opened on 2026-10-23 and returned NIST's own 'Page not found' (error 404). It also carried the invented-looking subtitle 'Appendix C: Units of Mass for Precious Metals & Metric Carat', which is not what the page says. Both were replaced.",
+   "previous_urls": [
+    "https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:22:59Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.nist.gov/pml/owm/nist-handbook-44-current-edition"
+   }
+  },
+  {
+   "id": "nist-sp811-pml",
+   "tier": "A",
+   "publisher": "National Institute of Standards and Technology (NIST)",
+   "title": "NIST Special Publication 811 — Guide for the Use of the International System of Units (SI)",
+   "url": "https://www.nist.gov/pml/special-publication-811",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "'carat, metric → gram' is listed as 2.0 E-01 in bold (= exact) in Appendix B.8, i.e. 0.200 g exactly.",
+    "'ounce (troy or apothecary) → gram' is listed as 3.110 348 E+01 and is NOT bold, i.e. 31.10348 g rounded, not an exact table value."
+   ],
+   "reverified_utc": "2026-10-23",
+   "correction_2026_10_23": "This project uses 31.1034768 g per troy ounce, which is the 480-grain definition (480 × 64.79891 mg) and agrees with NIST's rounded table entry. It must not be quoted as 'NIST's exact conversion factor'. The earlier supports text did exactly that and has been corrected; the constant itself is unchanged and still exact by definition.",
+   "verified_subpage": {
+    "url": "https://www.nist.gov/physical-measurement-laboratory/nist-guide-si-appendix-b8",
+    "title": "NIST Guide to the SI, Appendix B.8: Factors for Units Listed Alphabetically",
+    "retrieved_utc": "2026-10-23"
+   },
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:00Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.nist.gov/pml/special-publication-811"
+   }
+  },
+  {
+   "id": "usc-15-1666",
+   "tier": "A",
+   "publisher": "U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 1666",
+   "title": "15 U.S.C. § 1666 — Correction of billing errors (Fair Credit Billing Act)",
+   "url": "https://www.law.cornell.edu/uscode/text/15/1666",
+   "retrieved_utc": "2026-10-23",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "(a)(A): the creditor must send a written acknowledgment within 30 days of receiving the billing-error notice, unless it completes the correction in that period.",
+    "(a)(B): the creditor must correct the account or send a written explanation within two complete billing cycles and in no event later than 90 days.",
+    "(a)(B)(ii): where the goods were never delivered, the creditor cannot treat the amount as correctly shown unless it determines the goods were actually delivered."
+   ],
+   "why_added": "The two-billing-cycle / 90-day limit and the 30-day acknowledgment are statutory here. The catalog cites § 1666; this registry entry gives that citation a verified page. Read directly on 2026-10-23 by this session.",
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:00Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.law.cornell.edu/uscode/text/15/1666"
+   }
+  },
+  {
+   "id": "usc-15-295",
+   "tier": "A",
+   "publisher": "U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 295",
+   "title": "Standard of fineness of gold articles; deviation",
+   "url": "https://www.law.cornell.edu/uscode/text/15/295",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Actual fineness of the assayed part may not be more than 0.003 below the stamped fineness",
+    "Actual fineness of the entire article including solder may not be more than 0.007 below the stamped fineness (articles other than watchcases and flatware)"
+   ],
+   "caveat": "LII reproduces the U.S. Code; the official text is published by the U.S. House (uscode.house.gov) and GPO.",
+   "reverified_utc": "2026-10-23",
+   "reverification": "Re-read 2026-10-23: three one-thousandth parts tolerance for the part assayed, seven one-thousandth parts for the whole article including solder.",
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:01Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.law.cornell.edu/uscode/text/15/295"
+   }
+  },
+  {
+   "id": "usc-15-297",
+   "tier": "A",
+   "publisher": "U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 297",
+   "title": "15 U.S.C. § 297 — Stamping plated articles",
+   "url": "https://www.law.cornell.edu/uscode/text/15/297",
+   "retrieved_utc": "2026-10-23",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Subsection (b): a person applying a quality mark to a gold or silver article must also apply a trademark registered in the U.S. (or their name), in lettering at least as large as the quality mark and as close as possible to it.",
+    "Subsection (a): plated articles must not be stamped 'sterling' or 'coin'."
+   ],
+   "why_added": "standards.html cited 15 U.S.C. § 297 for the hallmark-plus-trademark rule, but no sources.json entry existed, so the citation had no registry backing. Added after reading the section on 2026-10-23.",
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:02Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.law.cornell.edu/uscode/text/15/297"
+   }
+  },
+  {
+   "id": "usc-15-ch8",
+   "tier": "A",
+   "publisher": "U.S. Code (Legal Information Institute) - 15 U.S.C. ch. 8",
+   "title": "Falsely stamped gold or silver or goods manufactured therefrom (sections 291-300)",
+   "url": "https://www.law.cornell.edu/uscode/text/15/chapter-8",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "There is a federal statutory scheme against falsely stamped gold and silver articles",
+    "§ 294 prohibits importation/transport of falsely marked gold or silver ware"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:03Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.law.cornell.edu/uscode/text/15/chapter-8"
+   }
+  },
+  {
+   "id": "bullionvault-spot",
+   "tier": "B",
+   "publisher": "BullionVault (bullionvault.com)",
+   "title": "Live Gold Price Chart ($4,026.25/oz t = $129.45/g on 2026-10-22)",
+   "url": "https://www.bullionvault.com/gold-price-chart.do",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Same-day independent spot gold cross-check ($4,026.25/oz t; $129,446.94/kg), within 0.06% of WGC benchmark"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:03Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.bullionvault.com/gold-price-chart.do"
+   }
+  },
+  {
+   "id": "gia-electroform-fraud-2024",
+   "tier": "B",
+   "publisher": "Gemological Institute of America (GIA Carlsbad Laboratory)",
+   "title": "Lab Notes: Electroformed Gold Piece with Adhered 14K Hallmark Fraud Case",
+   "url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Item submitted as 14K solid gold had a separate glued-on 14K hallmark disk over a wax/resin core coated with up to ~200 microns of electroformed gold",
+    "Surface XRF alone read 17.99K and 22.47K gold without detecting subsurface core; caught via suspiciously light gram mass and microscope examination"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:04Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+   }
+  },
+  {
+   "id": "gia-xrf-winter2024",
+   "tier": "B",
+   "publisher": "Gemological Institute of America (GIA)",
+   "title": "Chemical Analysis in the Gemological Laboratory (EDXRF Principles & Depth Limits)",
+   "url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "EDXRF provides non-destructive elemental analysis across Na–U but excites only shallow near-surface metal layers",
+    "Thick gold plating or electroforming requires pairing XRF with calibrated mass/density and binocular microscope inspection"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:05Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis"
+   }
+  },
+  {
+   "id": "jmbullion-gold-spot",
+   "tier": "B",
+   "publisher": "JM Bullion",
+   "title": "Gold Price Charts — Live Ask / Bid Spot Quote",
+   "url": "https://www.jmbullion.com/charts/gold-price/",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Live spot quote read on 2026-10-22 (7:09 p.m. EDT): $4,039.76/oz Ask, $4,025.26/oz Bid ($129.88/g Ask)"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:06Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.jmbullion.com/charts/gold-price/"
+   }
+  },
+  {
+   "id": "kitco-gold-spot",
+   "tier": "B",
+   "publisher": "Kitco Metals Inc.",
+   "title": "Live Gold Spot Price & Unit Conversion Table",
+   "url": "https://www.kitco.com/charts/gold",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Live spot conversion table read on 2026-10-22 (7:10 p.m. EDT): $4,024.60 USD per troy ounce = $129.39 USD per gram ($201.23/dwt)",
+    "Intraday 24-hour range $4,020.20–$4,145.30/oz cross-confirms WGC spot benchmark ($4,028.53/oz = $129.52/g) within 0.10%"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:07Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.kitco.com/charts/gold"
+   }
+  },
+  {
+   "id": "lbma-prices",
+   "tier": "B",
+   "publisher": "London Bullion Market Association",
+   "title": "LBMA Precious Metal Prices",
+   "url": "https://www.lbma.org.uk/prices-and-data/precious-metal-prices",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "The LBMA Gold Price is set twice daily by ICE Benchmark Administration auction (10:30 and 15:00 London time)",
+    "Numerical historical LBMA tables require an IBA licence and were not captured here"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:07Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.lbma.org.uk/prices-and-data/lbma-precious-metal-prices"
+   }
+  },
+  {
+   "id": "wgc-gold-prices",
+   "tier": "B",
+   "publisher": "World Gold Council (Goldhub)",
+   "title": "Gold spot prices & market history",
+   "url": "https://www.gold.org/goldhub/data/gold-prices",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Gold spot price panel read twice on 22 October 2026: USD 4,028.53/oz on the second (Pass 2) read, USD 4,024.36/oz on the first; the page's date line read 'Data as of 21 October, 2026' both times",
+    "The panel is a live quote — the two reads differ by 0.10%, which is why the dataset stores the reading it actually saw and keeps the earlier one in prior_captures",
+    "The LBMA Gold Price is the key benchmark used throughout the gold market",
+    "Market data on the page is provided by ICE Data Services",
+    "2026-10-23 re-read: 'USD /oz 4,024.45' with 'Data as of 22 October, 2026'.",
+    "2026-10-23 Pass 17 re-read (twice): 'USD /oz 3,996.31' with 'Data as of 22 October, 2026'."
+   ],
+   "reverified_utc": "2026-10-23",
+   "reverification": "Pass 17 re-read the official panel twice on 2026-10-23: USD 3,996.31/oz with 'Data as of 22 October, 2026'. This is now the calculation benchmark; the earlier USD 4,024.45 capture and all older readings remain preserved as history in data/gold_spot.json.",
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:09Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.gold.org/goldhub/data/gold-prices"
+   }
+  },
+  {
+   "id": "allurez-returns",
+   "tier": "C",
+   "publisher": "Allurez",
+   "title": "Return Policy",
+   "url": "https://www.allurez.com/pages/return-policy",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Return must ARRIVE within 30 days of the original shipment",
+    "Items must not have been resized or altered",
+    "Engraved items, custom-made orders, clearance items, appraisals, gift cards and layaway deposits are non-refundable",
+    "Design Your Own engagement rings may be exchanged for equal-or-higher value, not for loose diamonds",
+    "Buyer pays return shipping; RMA required via service@allurez.com or 1-800-554-3509",
+    "$300 deduction per missing diamond certificate; refund within 7 business days of approval"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:10Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.allurez.com/pages/return-policy"
+   }
+  },
+  {
+   "id": "anjolee-ms354a",
+   "tier": "C",
+   "publisher": "Anjolee",
+   "title": "Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)",
+   "url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Price $870.76 for the configured 14K white gold, 0.50 ct lab-created FG/VS version (price includes the centre stone)",
+    "Product Details table: Metal Type 14K White Gold, 'Approx. Metal Weight: 2.90 Gr.', ring size 6.5, item width 2.82 mm",
+    "Center Diamond Color 'Lab Created FG', Clarity 'Lab Created VS', 0.50 ct",
+    "30-day returns, and the page states 'All customized orders can be returned for full refund within 30 days of receipt'",
+    "Lifetime warranty (prong tightening, re-polishing, rhodium plating, cleaning) plus one-year manufacturing-defect warranty",
+    "Phone 877-265-6533"
+   ],
+   "caveat": "The metal weight is the seller's own 'approx.' figure for the 0.50 ct model at ring size 6.5, and the price includes a lab-created centre stone, so the price ÷ gold multiple for this row is not a setting markup.",
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:11Z",
+    "http_status": 200,
+    "state": "EMPTY_OR_JS_SHELL",
+    "final_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx"
+   },
+   "manual_verification": "Re-read 2026-10-23 via a browser-rendered fetch: the product page loads (Six Curved Prongs Solitaire Diamond Engagement Ring). The runner receives a JavaScript shell with no product text, so its price could not be machine-checked on this pass."
+  },
+  {
+   "id": "bluenile-returns",
+   "tier": "C",
+   "publisher": "Blue Nile",
+   "title": "Return Policy - 30-day money back guarantee",
+   "url": "https://www.bluenile.com/policies/returns",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Returns within 30 days of the shipment date",
+    "Exclusions: personalized jewellery, custom orders, engraved items, items resized after purchase, Diamond Upgrade purchases, clearance and final sale",
+    "Two complimentary returns per customer per year; RMA number required",
+    "One free resize (up or down two sizes) within 6 months if the design permits",
+    "Missing diamond grading report: $150 replacement fee"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:11Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.bluenile.com/policies/returns"
+   }
+  },
+  {
+   "id": "brilliant-earth-returns",
+   "tier": "C",
+   "publisher": "Brilliant Earth, LLC",
+   "title": "Brilliant Earth Free 30-Day Returns & Resizing Exclusions Policy",
+   "url": "https://www.brilliantearth.com/30-Day-Returns/",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Free 30-day return shipping from delivery in unworn original condition",
+    "Custom-designed, modified, and resized items are ineligible for return; engraved items incur a $40 removal fee"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:12Z",
+    "http_status": 403,
+    "state": "REFUSED_403",
+    "final_url": "https://www.brilliantearth.com/30-Day-Returns/"
+   },
+   "manual_verification": "Brilliant Earth's bot protection refuses the automated check (HTTP 403), so this pass cannot re-confirm the 30-day return terms; the clause stays as captured and is flagged on the Flagged page."
+  },
+  {
+   "id": "brilliantearth-atelier",
+   "tier": "C",
+   "publisher": "Brilliant Earth",
+   "title": "Atelier Solitaire Ring in 18K Yellow Gold",
+   "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Setting price $1,390 for the 18K yellow gold version, labelled \"(Setting Only)\" (read 2026-10-22)",
+    "Offered in 14K white gold, 18K white gold, 14K yellow gold, 18K yellow gold, 14K rose gold and platinum (variant links listed on the page)",
+    "Style BE1D2444-18KY, metal 18K Yellow Gold, width 2 mm, claw-prong setting",
+    "Page badges: Free Shipping & Returns, Free Lifetime Warranty, Lifetime Diamond Upgrade, Free 1-Year Resizing",
+    "No gram weight and no hallmark are published on the page"
+   ],
+   "caveat": "The price is readable on this pass but the gram weight is not, so the product carries a price row and a blank weight. The page badge reads \"Free 1-Year Resizing\" while the earlier capture of the same page described one complimentary resize within 60 days, so the resize terms are recorded as inconsistent. The 30-day return window was read on the first capture and is not re-displayed in today's page text.",
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:13Z",
+    "http_status": 403,
+    "state": "REFUSED_403",
+    "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/"
+   },
+   "manual_verification": "Brilliant Earth's bot protection refuses the automated check (HTTP 403). The page was read by a browser-rendered session on 2026-10-23 (repo verification log, Pass 14), which is the only evidence for its price; this automated pass makes no claim about it."
+  },
+  {
+   "id": "brilliantearth-atelier-14k",
+   "tier": "C",
+   "publisher": "Brilliant Earth",
+   "title": "Atelier Solitaire Ring in 14K Yellow Gold",
+   "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Setting price $1,190 for the 14K yellow gold version, labelled \"(Setting Only)\" (read 2026-10-22)",
+    "Style BE1D2444-14KY, metal 14K Yellow Gold, width 2 mm, claw-prong setting",
+    "Page badges: Free Shipping & Returns, Free Lifetime Warranty, Lifetime Diamond Upgrade, Free 1-Year Resizing",
+    "No gram weight and no hallmark are published on the page"
+   ],
+   "caveat": "Price only; no weight and no hallmark published.",
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:13Z",
+    "http_status": 403,
+    "state": "REFUSED_403",
+    "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/"
+   },
+   "manual_verification": "Brilliant Earth's bot protection refuses the automated check (HTTP 403). The page was read by a browser-rendered session on 2026-10-23 (repo verification log, Pass 14); this automated pass makes no claim about it."
+  },
+  {
+   "id": "brilliantearth-returns-30d",
+   "tier": "C",
+   "publisher": "Brilliant Earth (brilliantearth.com)",
+   "title": "Brilliant Earth — Free 30-Day Returns & Resizing Exclusions (/30-Day-Returns/)",
+   "url": "https://www.brilliantearth.com/30-Day-Returns/",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "30-day return window from shipping date or pickup availability notification",
+    "Resized, repaired, modified, or previously exchanged items are non-returnable",
+    "Engraved rings incur a $40 engraving removal fee upon return; eternity/open-top/geometric rings cannot be resized"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:14Z",
+    "http_status": 403,
+    "state": "REFUSED_403",
+    "final_url": "https://www.brilliantearth.com/30-Day-Returns/"
+   },
+   "manual_verification": "Brilliant Earth's bot protection refuses the automated check (HTTP 403), so this pass cannot re-confirm the 30-day return terms; the clause stays as captured and is flagged on the Flagged page."
+  },
+  {
+   "id": "catbird-returns",
+   "tier": "C",
+   "publisher": "Catbird NYC",
+   "title": "Catbird Returns & Exchanges Policy",
+   "url": "https://www.catbirdnyc.com/returns",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "20-day return window from delivery ($9 return shipping fee deducted)",
+    "Engraved items, special orders, custom items, and all international orders are final sale"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:14Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.catbirdnyc.com/returns"
+   }
+  },
+  {
+   "id": "mejuri-returns",
+   "tier": "C",
+   "publisher": "Mejuri",
+   "title": "Returns Terms & Conditions",
+   "url": "https://mejuri.com/company/returns-terms",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Free 30-day returns in US, Canada, UK, Australia, Germany; window starts at delivery or in-store pickup",
+    "Engraved or monogrammed products are not eligible for return or refund at any time",
+    "No online exchanges; 30-day exchanges in retail locations",
+    "Lab-grown diamond items must include the SCS certification or they are returned to sender",
+    "Excessive-returns pattern may lead to account suspension"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:16Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://mejuri.com/company/returns-terms"
+   }
+  },
+  {
+   "id": "mene-returns",
+   "tier": "C",
+   "publisher": "Menē Inc.",
+   "title": "Menē 7-Day Returns & Lifetime Buyback Policy",
+   "url": "https://mene.com/customer-care/en-US/articles/returns-319505",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Strict 7-day return window from receipt in unworn condition with original Certificate of Authenticity",
+    "Manufacturing weight variance +/-0.5g in-stock or +/-1.0g Crafted-on-Demand"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:17Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://mene.com/customer-care?hcUrl=en-US%2Farticles%2Freturns-319505"
+   }
+  },
+  {
+   "id": "ross-simons-returns",
+   "tier": "C",
+   "publisher": "Ross-Simons (ross-simons.com)",
+   "title": "Ross-Simons — Returns & Exchanges Policy",
+   "url": "https://www.ross-simons.com/pages/returns-exchanges",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "30-day return window from date received",
+    "$4.95 shipping fee deducted when using Ross-Simons prepaid Loop return label",
+    "Items resized, altered, or worked on by an outside jeweler are non-returnable",
+    "Contact 800-835-0919 · 9 Ross Simons Dr, Cranston, RI 02920"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:18Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.ross-simons.com/pages/returns-exchanges"
+   }
+  },
+  {
+   "id": "sarraf-returns",
+   "tier": "C",
+   "publisher": "Sarraf Jewelry Inc.",
+   "title": "Sarraf 30 Day Returns and Exchange Policy",
+   "url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
+   "retrieved_utc": "2026-10-23",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Return or exchange within 30 days of receipt; orders over 30 days do not qualify",
+    "Original-condition, engraving/custom/special-order, tag, packaging and insured-return requirements; wholesale terms are separately labelled"
+   ],
+   "previous_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+   "correction_note": "Final integration (arena/bc872fef-gold4): the prior product URL did contain return prose, as Pass 18 confirmed, but this dedicated official policy page is the narrower and more durable citation for the stored returns claims. The prior URL remains recorded here; no finding was concealed."
+  },
+  {
+   "id": "sarraf-warranty",
+   "tier": "C",
+   "publisher": "Sarraf Jewelry Inc.",
+   "title": "Lifetime Guarantee",
+   "url": "https://www.sarraf.com/lifetime-guarantee/",
+   "retrieved_utc": "2026-10-23",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "Lifetime Guarantee covers defects in materials and workmanship; all rings receive lifetime refinishing",
+    "Repair/replacement shipping and handling fee is $100 or 10% of current price, whichever is greater",
+    "Third-party alteration voids the Lifetime Guarantee; normal wear and chipped/missing stones are excluded; wholesale orders excluded"
+   ]
+  },
+  {
+   "id": "vrai-returns",
+   "tier": "C",
+   "publisher": "VRAI",
+   "title": "Returns & Exchanges",
+   "url": "https://www.vrai.com/returns-exchanges",
+   "retrieved_utc": "2026-10-22",
+   "verification": "V1_direct_page_fetch",
+   "supports": [
+    "30-day return window; items below $15,000 refund to payment method minus a recycling fee, or full store credit with the fee waived",
+    "Engagement ring recycling fee: $300",
+    "Non-eligible: modified or resized rings, custom-designed items, engraved items, items altered by a third party",
+    "Free US return shipping; refund within 14 business days of receipt",
+    "One complimentary resize up to one full US size; infinity/eternity bands cannot be resized",
+    "EU/EEA 14-day statutory withdrawal excludes custom, engraved and resized items"
+   ],
+   "live_check": {
+    "checked_utc": "2026-10-23T20:23:20Z",
+    "http_status": 200,
+    "state": "OK",
+    "final_url": "https://www.vrai.com/returns-exchanges"
+   }
+  }
+ ]
 }

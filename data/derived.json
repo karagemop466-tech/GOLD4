@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-23T20:34:06Z",
+  "generated_utc": "2026-10-23T20:39:57Z",
   "spot": {
     "value_usd_per_oz": 3996.31,
     "usd_per_gram": 128.48435,
@@ -3362,28 +3362,28 @@
       "solid_gold_statement": null,
       "solid_gold_status": "not_stated",
       "hallmark_published": false,
-      "price_usd": 1190.0,
-      "price_basis": "Setting only — page shows '$1,190 (Setting Only)'",
-      "price_captured_utc": "2026-10-22",
+      "price_usd": null,
+      "price_basis": null,
+      "price_captured_utc": "2026-10-23",
       "price_source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
-      "price_verification": "V2_official_page_snapshot_only",
+      "price_verification": "U_unverified",
       "weight_g": null,
       "weight_scope": null,
       "weight_source_url": null,
       "weight_verification": "U_unverified",
       "returns_source_id": "brilliantearth-atelier",
       "flags": [
+        "PRICE_UNVERIFIED",
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_V2_ONLY",
         "PRICE_CURRENCY_LOCALIZED",
         "SOURCE_BOT_BLOCKED"
       ],
-      "flag_detail": "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session. PASS 14 (2026-10-23): live re-fetch served 'EUR 1,350.00 (Setting Only)' on this page while BE-06 and BE-07 served USD in the same minute; the USD figure ($1,190) therefore remains snapshot-sourced and stays flagged. The EUR figure is not converted to USD here — a conversion would be a number this project computed, not a price the retailer published. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
+      "flag_detail": "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session. PASS 14 (2026-10-23): live re-fetch served 'EUR 1,350.00 (Setting Only)' on this page while BE-06 and BE-07 served USD in the same minute; the USD figure ($1,190) therefore remains snapshot-sourced and stays flagged. The EUR figure is not converted to USD here — a conversion would be a number this project computed, not a price the retailer published. | PASS 17 (2026-10-23): the live official page displayed '€1,350.00 (Setting Only)' and the currency selector showed EUR, not a USD price. Under the strict blank rule, the former snapshot-only USD $1,190 value was removed from price_usd rather than presented as verified or converted from EUR. The historical USD snapshot and today's EUR observation remain in this review note; no exchange-rate conversion or current USD price is claimed. | Pass 16 source check 2026-10-23 10:10Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price. Structured values were not changed; any stored value keeps its original provenance. | Pass 15 source check 2026-10-23 20:23Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "reverified_utc": "2026-10-23",
-      "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
-      "reverification": "2026-10-22T23:35Z: three dated snapshots of official Brilliant Earth pages agree on $1,190 (product page + two category JSON-LD records). Live re-fetch pending (fetch-service outage 23:20-23:47Z). PASS 14 (2026-10-23): official page re-fetched live. It served the geolocalized price 'EUR 1,350.00 (Setting Only)' for style BE1D3939-14KY (14K Yellow Gold, 'Width: 2-1.3 mm', 'Setting: Claw Prong', 14 shared-prong round diamonds totalling 0.05 ct) and published no USD figure, so the stored $1,190 was NOT re-confirmed and NOT changed. Provenance stays V2. In the same minutes the 18K variant (BE-06) and Fleur (BE-07) both rendered in USD, so the localization is per-page rather than per-session. No gram weight is published on any of the three pages.",
+      "reverified_by": "arena/bc872fef-gold4 (Pass 17)",
+      "reverification": "2026-10-22T23:35Z: three dated snapshots of official Brilliant Earth pages agree on $1,190 (product page + two category JSON-LD records). Live re-fetch pending (fetch-service outage 23:20-23:47Z). PASS 14 (2026-10-23): official page re-fetched live. It served the geolocalized price 'EUR 1,350.00 (Setting Only)' for style BE1D3939-14KY (14K Yellow Gold, 'Width: 2-1.3 mm', 'Setting: Claw Prong', 14 shared-prong round diamonds totalling 0.05 ct) and published no USD figure, so the stored $1,190 was NOT re-confirmed and NOT changed. Provenance stays V2. In the same minutes the 18K variant (BE-06) and Fleur (BE-07) both rendered in USD, so the localization is per-page rather than per-session. No gram weight is published on any of the three pages. Pass 17: live official page re-read; EUR 1,350.00 setting price displayed, no current USD price confirmed. USD price cell blanked and flagged PRICE_UNVERIFIED; no currency conversion performed.",
       "pair_id": "PAIR-BE-FREESIA",
       "source_check": {
         "checked_utc": "2026-10-23T20:23:21Z",
@@ -4113,12 +4113,12 @@
       "high_id": "BE-06",
       "low_karat": 14,
       "high_karat": 18,
-      "low_price": 1190.0,
+      "low_price": null,
       "high_price": 1390.0,
       "low_weight_g": null,
       "high_weight_g": null,
-      "price_gap_usd": 200.0,
-      "price_gap_pct": 16.81,
+      "price_gap_usd": null,
+      "price_gap_pct": null,
       "gold_gap_pct": null,
       "gold_value_gap_pct": null,
       "low_multiple": null,
@@ -4127,7 +4127,10 @@
   ],
   "stats": {
     "total_rows": 64,
-    "rows_with_verified_price": 62,
+    "rows_with_stored_price": 61,
+    "rows_with_verified_price": 61,
+    "rows_with_snapshot_only_price": 0,
+    "multiple_aggregate_basis": "setting_metal_only; gemstone-inclusive rows excluded",
     "rows_with_published_weight": 17,
     "rows_with_solid_gold_statement": 19,
     "rows_with_hallmark_published": 0,
@@ -4135,32 +4138,40 @@
     "by_karat": {
       "10": {
         "rows": 2,
+        "prices_stored": 2,
         "prices_verified": 2,
         "weights_published": 1,
+        "multiple_count": 1,
         "multiple_min": 1.37,
         "multiple_max": 1.37,
         "multiple_avg": 1.37
       },
       "14": {
         "rows": 42,
-        "prices_verified": 41,
+        "prices_stored": 40,
+        "prices_verified": 40,
         "weights_published": 9,
+        "multiple_count": 7,
         "multiple_min": 1.51,
-        "multiple_max": 4.77,
-        "multiple_avg": 3.2
+        "multiple_max": 3.99,
+        "multiple_avg": 2.86
       },
       "18": {
         "rows": 18,
+        "prices_stored": 17,
         "prices_verified": 17,
         "weights_published": 7,
+        "multiple_count": 5,
         "multiple_min": 1.34,
-        "multiple_max": 6.7,
-        "multiple_avg": 3.27
+        "multiple_max": 3.75,
+        "multiple_avg": 2.59
       },
       "24": {
         "rows": 2,
+        "prices_stored": 2,
         "prices_verified": 2,
         "weights_published": 0,
+        "multiple_count": 0,
         "multiple_min": null,
         "multiple_max": null,
         "multiple_avg": null
@@ -4169,106 +4180,132 @@
     "by_category": {
       "band": {
         "rows": 14,
+        "prices_stored": 14,
         "prices_verified": 14,
         "weights_published": 8,
+        "multiple_count": 8,
         "multiple_min": 1.34,
         "multiple_max": 3.99,
         "multiple_avg": 2.52
       },
       "pave": {
         "rows": 15,
-        "prices_verified": 15,
+        "prices_stored": 14,
+        "prices_verified": 14,
         "weights_published": 0,
+        "multiple_count": 0,
         "multiple_min": null,
         "multiple_max": null,
         "multiple_avg": null
       },
       "solitaire": {
         "rows": 35,
+        "prices_stored": 33,
         "prices_verified": 33,
         "weights_published": 9,
+        "multiple_count": 5,
         "multiple_min": 2.18,
-        "multiple_max": 6.7,
-        "multiple_avg": 3.7
+        "multiple_max": 3.75,
+        "multiple_avg": 2.83
       }
     },
     "by_retailer": {
       "allurez": {
         "rows": 4,
+        "prices_stored": 4,
         "prices_verified": 4,
         "weights_published": 4,
+        "multiple_count": 4,
         "multiple_min": 2.18,
         "multiple_max": 2.84,
         "multiple_avg": 2.6
       },
       "anjolee": {
         "rows": 1,
+        "prices_stored": 1,
         "prices_verified": 1,
         "weights_published": 1,
-        "multiple_min": 4.01,
-        "multiple_max": 4.01,
-        "multiple_avg": 4.01
+        "multiple_count": 0,
+        "multiple_min": null,
+        "multiple_max": null,
+        "multiple_avg": null
       },
       "blue-nile": {
         "rows": 26,
+        "prices_stored": 25,
         "prices_verified": 25,
         "weights_published": 0,
+        "multiple_count": 0,
         "multiple_min": null,
         "multiple_max": null,
         "multiple_avg": null
       },
       "brilliant-earth": {
         "rows": 7,
-        "prices_verified": 7,
+        "prices_stored": 6,
+        "prices_verified": 6,
         "weights_published": 0,
+        "multiple_count": 0,
         "multiple_min": null,
         "multiple_max": null,
         "multiple_avg": null
       },
       "catbird": {
         "rows": 2,
+        "prices_stored": 2,
         "prices_verified": 2,
         "weights_published": 0,
+        "multiple_count": 0,
         "multiple_min": null,
         "multiple_max": null,
         "multiple_avg": null
       },
       "mejuri": {
         "rows": 7,
+        "prices_stored": 7,
         "prices_verified": 7,
         "weights_published": 0,
+        "multiple_count": 0,
         "multiple_min": null,
         "multiple_max": null,
         "multiple_avg": null
       },
       "mene": {
         "rows": 2,
+        "prices_stored": 2,
         "prices_verified": 2,
         "weights_published": 0,
+        "multiple_count": 0,
         "multiple_min": null,
         "multiple_max": null,
         "multiple_avg": null
       },
       "ross-simons": {
         "rows": 5,
+        "prices_stored": 5,
         "prices_verified": 5,
         "weights_published": 4,
+        "multiple_count": 4,
         "multiple_min": 3.14,
         "multiple_max": 3.99,
         "multiple_avg": 3.65
       },
       "sarraf": {
         "rows": 8,
+        "prices_stored": 8,
         "prices_verified": 8,
         "weights_published": 6,
+        "multiple_count": 4,
         "multiple_min": 1.34,
-        "multiple_max": 6.7,
-        "multiple_avg": 2.84
+        "multiple_max": 1.51,
+        "multiple_avg": 1.39
       },
       "vrai": {
         "rows": 2,
+        "prices_stored": 1,
         "prices_verified": 1,
         "weights_published": 2,
+        "multiple_count": 1,
         "multiple_min": 3.75,
         "multiple_max": 3.75,
         "multiple_avg": 3.75
