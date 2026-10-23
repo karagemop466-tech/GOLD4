@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>R-b8c1f11d — Independent corroboration review · GOLD4</title>
+<style>
+  :root { --ink:#1a1a18; --muted:#6b6a60; --gold:#a87b00; --bg:#faf9f5; --card:#fff; --line:#e4e0d3; --ok:#1e7a34; --warn:#9a6200; --bad:#a12622; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:16px/1.55 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background:var(--bg); color:var(--ink); }
+  header { background:#141310; color:#f5f2e8; padding:28px 20px 22px; }
+  header .wrap { max-width:1020px; margin:0 auto; }
+  header h1 { font-size:1.5rem; margin:.2em 0 .3em; }
+  header p.sub { color:#cfc9b4; margin:.2em 0; }
+  .banner { background:#fff8e1; border:2px solid var(--gold); border-radius:10px; padding:14px 18px; max-width:1020px; margin:18px auto; }
+  .banner h2 { margin:.1em 0 .3em; color:var(--gold); font-size:1.05rem; letter-spacing:.02em; }
+  .banner p, .banner li { font-size:.95rem; }
+  .wrap { max-width:1020px; margin:0 auto; padding:0 20px 40px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:12px; margin:18px 0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px 14px; }
+  .card b { display:block; font-size:1.6rem; }
+  .card span { color:var(--muted); font-size:.85rem; }
+  table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; margin:10px 0 22px; font-size:.92rem; }
+  th, td { text-align:left; padding:9px 11px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { background:#f1eee2; font-size:.82rem; text-transform:uppercase; letter-spacing:.04em; color:#55513f; }
+  tr:last-child td { border-bottom:none; }
+  .ok { color:var(--ok); font-weight:600; }
+  .warn { color:var(--warn); font-weight:600; }
+  .bad { color:var(--bad); font-weight:600; }
+  h2 { margin:1.6em 0 .4em; font-size:1.2rem; }
+  h3 { margin:1.2em 0 .3em; font-size:1rem; }
+  code { background:#f1efe6; padding:0 .3em; border-radius:4px; }
+  a { color:#0b5cad; }
+  .note { color:var(--muted); font-size:.9rem; }
+  .tag { display:inline-block; background:#eee9d8; border-radius:20px; padding:1px 10px; font-size:.78rem; color:#6d6334; margin-right:6px; }
+  footer { color:var(--muted); font-size:.85rem; border-top:1px solid var(--line); margin-top:28px; padding-top:14px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <span class="tag">independent session review</span><span class="tag">read-only</span><span class="tag">2026-10-23 UTC</span>
+    <h1>R-b8c1f11d — independent corroboration &amp; tooling review</h1>
+    <p class="sub">Session <code>arena/b8c1f11d-gold4</code> · GOLD4 gold-ring verification desk · every line below was re-read by this session from the official source linked beside it, 2026-10-23 09:57–10:31 UTC.</p>
+  </div>
+</header>
+
+<div class="banner">
+  <h2>⚠ NO HALLUCINATIONS — read before using any number</h2>
+  <p><b>No hallucinations.</b> This review manufactures no values. A number appears here only if this session's own fetch of the official page displayed it; it is quoted with the retrieval time (UTC). Where a value could not be re-read, it says so. Nothing is estimated, averaged with other sources, inferred from pictures, or copied from a search snippet. When reviewing this page, ask of each value: <i>where is the official source, and what date was it read?</i> If a row cannot answer that, treat it as unverified — including anything added by a previous pass. Same rule as the <a href="https://karagemop466-tech.github.io/GOLD4/">main dashboard</a>, enforced there by <code>python3 scripts/audit.py</code> after every review; re-run the passes after every review and look actively for hallucinations.</p>
+</div>
+
+<div class="wrap">
+
+<h2>What this review is</h2>
+<p>Four other sessions were actively re-verifying data, refreshing prices and consolidating the site when this
+session started, so this session claimed the <b>non-overlapping</b> scope: an independent, read-only corroboration of
+the official sources, a hand re-derivation of every computable number, a review of the five CI audit gates, and a
+live-production-site check. It edits no data rows; every finding is a written, linked record for the humans and the
+owning sessions. Full records: <a href="corroboration_b8c1f11d.md"><code>corroboration_b8c1f11d.md</code></a> ·
+<a href="repo_review_b8c1f11d.md"><code>repo_review_b8c1f11d.md</code></a> ·
+<a href="live_site_check_b8c1f11d.md"><code>live_site_check_b8c1f11d.md</code></a>.</p>
+
+<div class="cards">
+  <div class="card"><b>15</b><span>official sources re-opened by this session (10/10 sellers covered)</span></div>
+  <div class="card"><b>17/17</b><span>weighted rows re-derived by hand — 0 mismatches</span></div>
+  <div class="card"><b>5/5</b><span>CI gates green on this session's own runs</span></div>
+  <div class="card"><b>8</b><span>findings flagged for review (R-01…R-05, R-07, R-08, D-1…D-5)</span></div>
+  <div class="card"><b>0</b><span>data values changed by this review</span></div>
+</div>
+
+<h2>Flagged for review — this session's findings</h2>
+<table>
+  <tr><th>ID</th><th>Severity</th><th>Finding (with source)</th><th>Action requested</th></tr>
+  <tr><td>R-01</td><td class="warn">MEDIUM</td>
+      <td><b>Published per-karat price÷gold multiples include diamond-inclusive rows.</b> 14K max shown as 4.73× is <a href="https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html">SR-05</a> (price includes a 0.50 ct diamond); 18K max 6.65× is <a href="https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html">SR-06</a> (includes a diamond). Hand recompute with only <code>setting_metal_only</code> rows: 14K max 3.96× / avg 2.84, 18K max 3.73× / avg 2.57 (published: 4.73/3.18, 6.65/3.25). Corroborates the standing request logged by <code>b2c018a8</code>.</td>
+      <td>Exclude <code>multiple_basis != setting_metal_only</code> from the by-karat/by-category aggregates in <code>scripts/compute.py</code></td></tr>
+  <tr><td>D-1</td><td class="warn">MEDIUM</td>
+      <td><b>Fetch-outcome variance on BN-22.</b> <code>03c0c10f</code>'s board records the URL as a 404 (09:53 UTC); this session was served the full page — <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321">$2,050 · SKU 501580y14 · 14K YG · 5.00mm</a> — with the "platinum solitaire setting" copy still present (09:57 UTC). Stored row is confirmed live either way.</td>
+      <td>Source-health checker (PR #26) should record redirect chain + served <code>&lt;title&gt;</code> + snippet, not just status</td></tr>
+  <tr><td>D-2</td><td class="warn">MEDIUM</td>
+      <td><b>MN-01 price moved in ~15 h.</b> Stored $1,465 (read 2026-10-22); live <a href="https://mene.com/products/knot-ring-gold">Menē Knot Ring</a> shows <b>$1,454</b> (2026-10-23 10:15 UTC). Menē prices by gram weight against daily metal value, so snapshots stale fastest here. Was accurate when read.</td>
+      <td>Data owner to re-read MN-01/MN-02; consider a per-seller volatility class for the freshness gate</td></tr>
+  <tr><td>R-05</td><td class="warn">MEDIUM</td>
+      <td><b>Menē gram weight exists as a concept but not in statically served content</b> ("sold by weight… weights can fluctuate by up to 0.5 g"; figure sits behind the dynamic "Price breakdown" panel) — <code>NO_WEIGHT_PUBLISHED</code> stays correct for the static page; manual panel check recommended on arrival.</td>
+      <td>Info for buyers; no data change</td></tr>
+  <tr><td>R-03</td><td>LOW</td><td><b><code>reports/</code> bloat:</b> 74 timestamped audit artifacts remain after cleanup commit <code>3fbed73</code>.</td><td>Prune historical one-shot artifacts; keep <code>audit_latest.txt</code></td></tr>
+  <tr><td>R-04</td><td>LOW</td><td><b>Four parallel site suites</b> (root Assay Lab, <code>pages/</code>, frozen legacy <code>docs/</code>, <code>categories/</code>) — consolidation is already claimed (<code>03c0c10f</code> task 22); preserve <code>docs/legacy/</code> + <code>data/preserved/</code> as the audit trail.</td><td>Supports the claimed consolidation; hands off</td></tr>
+  <tr><td>R-06</td><td>LOW</td><td><b>RS-01 source URL 301-redirects:</b> <a href="https://www.ross-simons.com/jewelry/rings/571221.html">/jewelry/rings/571221.html</a> → <code>/products/571221</code>. Values unchanged ($400, 1.7 g, 14kt YG).</td><td>Adopt canonical URL at next owner edit</td></tr>
+  <tr><td>R-07</td><td class="warn">MEDIUM</td><td><b>All five CI gates are offline gates</b> — they cannot see today's price moves (MN-01) or CDN variance (BN-22). PR #26's online checker is the right complement.</td><td>Reviewed PR #26 design (see D-1); no overlap</td></tr>
+  <tr><td>R-08</td><td>INFO</td><td><b>BE-05 is USD-unreproducible from non-US fetches:</b> live page served <a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/">€1,350.00 (Setting Only)</a> (Global-e EUR rendering, 10:07–10:12 UTC). V2 provenance + <code>PRICE_CURRENCY_LOCALIZED</code> flags are correct as-is.</td><td>None — do not "upgrade" from a EUR rendering</td></tr>
+  <tr><td>D-3</td><td>LOW</td><td><b>Pass-numbering collisions:</b> two "Pass 12"s (<code>d1586f6a</code>, <code>03c0c10f</code>), a "Pass 14" (<code>04f1f10d</code>), no "Pass 13". This review is numbered R-b8c1f11d instead.</td><td>Integration session to dedupe at close-out</td></tr>
+</table>
+
+<h2>Corroborated live — sample across all 10 sellers (2026-10-23, UTC)</h2>
+<table>
+  <tr><th>Row / source</th><th>Stored</th><th>This session's live read</th><th>Result</th></tr>
+  <tr><td><a href="https://www.gold.org/goldhub/data/gold-prices">WGC spot panel</a></td><td>$4,024.45/oz · 22 Oct 2026</td><td>"USD /oz <b>4,024.45</b>", "Data as of 22 October, 2026" (09:57)</td><td class="ok">✔ match</td></tr>
+  <tr><td><a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3">16 CFR § 23.3</a></td><td>9K acceptable; 10K = plating floor only</td><td>(c)(1) lists "<b>9 Karat Gold</b>"/"9 Kt. Gold" verbatim; ≥10K appears only in plating rules (c)(2)–(3); hollow ≠ "solid" (10:02)</td><td class="ok">✔ corroborated verbatim</td></tr>
+  <tr><td><a href="https://www.law.cornell.edu/uscode/text/15/295">15 U.S.C. § 295</a></td><td>0.003 / 0.007 tolerances</td><td>statute text matches exactly (10:02)</td><td class="ok">✔ match</td></tr>
+  <tr><td><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry">FTC gold-jewelry guidance</a></td><td>karat=parts of 24; trademark beside mark; solid=not hollow</td><td>article matches verbatim (10:02)</td><td class="ok">✔ match</td></tr>
+  <tr><td><a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold">AL-01 Allurez</a></td><td>$585 · 3.58 g · NG4426 · 14K YG</td><td>identical, incl. "Approximate Metal Weight 3.58 grams" (10:05)</td><td class="ok">✔ match</td></tr>
+  <tr><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321">BN-22 Blue Nile</a></td><td>$2,050 · 14K YG · 5.00mm · contradiction flag</td><td>identical; "platinum solitaire setting" copy still live (09:57)</td><td class="ok">✔ match (+D-1)</td></tr>
+  <tr><td><a href="https://mejuri.com/products/diamonds-team-ring?Material=Solid+Yellow+Gold+%2814k%29&Stone=Natural+Diamond">MJ-01 Mejuri</a></td><td>$548 · 14K yellow · weight blank</td><td>identical; specs list no gram weight (10:08)</td><td class="ok">✔ match</td></tr>
+  <tr><td><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html">SR-03 Sarraf</a></td><td>$871.00 · 18K Solid · 6.70 g · 18KY-LPBWB05</td><td>identical (10:09)</td><td class="ok">✔ match</td></tr>
+  <tr><td><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx">AN-01 Anjolee</a></td><td>$870.76 · 2.90 g · lab-created FG/VS · 14K white</td><td>Product Details table verbatim: "Approx. Metal Weight: 2.90 Gr."; "Lab Created FG/VS" (10:12)</td><td class="ok">✔ match</td></tr>
+  <tr><td><a href="https://www.ross-simons.com/jewelry/rings/571221.html">RS-01 Ross-Simons</a></td><td>$400 · 1.7 g · 14kt YG</td><td>identical; "Gold Weight 1.7 grams" (10:12); URL redirects (R-06)</td><td class="ok">✔ match</td></tr>
+  <tr><td><a href="https://www.catbirdnyc.com/the-swan-solitaire-2475.html">CB-01 Catbird</a></td><td>from $3,900</td><td>"from $3,900.00" (10:14)</td><td class="ok">✔ match</td></tr>
+  <tr><td><a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/">BE-05 Brilliant Earth</a></td><td>$1,190 USD (V2) · currency-localized</td><td style="min-width:220px">served <b>€1,350.00 (Setting Only)</b> — Global-e EUR rendering (10:07–10:12)</td><td class="warn">⚠ USD not reproducible (R-08)</td></tr>
+  <tr><td><a href="https://mene.com/products/knot-ring-gold">MN-01 Menē</a></td><td>$1,465 (22 Oct)</td><td><b>$1,454</b> live (10:15–10:18)</td><td class="warn">⚠ moved −$11 (D-2)</td></tr>
+  <tr><td><a href="https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861">VR-01 VRAI</a></td><td>2.86 g · width unverified · pavé-on-plain flag</td><td>"Metal weight: 2.86g (Ring size 6)"; "Band width: Standard"; "Pavé carat weight: 0.18ctw" on Plain band (10:19)</td><td class="ok">✔ match</td></tr>
+  <tr><td><a href="https://karagemop466-tech.github.io/GOLD4/">Live production site</a></td><td>—</td><td>no-hallucination banner on front + flagged + calculator pages; counts 64/10/62/17/234; benchmark $4,024.45; Pages API <code>status=built</code> on every merge today</td><td class="ok">✔ healthy</td></tr>
+</table>
+
+<h3>Arithmetic audit (summary)</h3>
+<p>All <b>17</b> rows that publish a gram weight were re-derived by hand:
+<code>pure gold = weight × karat÷24</code>, <code>value = pure × $129.389072/g</code> ($4,024.45/oz ÷ 31.1034768).
+17/17 match <code>data/derived.json</code>, including the melt-floor bands (SR-04 1.333×) and the
+<code>includes_centre_stone</code> rows (AN-01 3.978× — labelled, and the subject of finding R-01 at the aggregate level).
+The 47 rows without a weight carry no gold value at all ("phantom-math" invariant holds).</p>
+
+<h3>Gate runs (this session, 2026-10-23 10:01 UTC, tree 6256af9)</h3>
+<table>
+<tr><th>Gate</th><th>Script</th><th>Result</th></tr>
+<tr><td>1</td><td><code>scripts/audit.py</code></td><td class="ok">PASS — 128 passed · 1 warning (BE-05 V2, correct) · 0 failures</td></tr>
+<tr><td>2</td><td><code>scripts/check_site.py</code></td><td class="ok">PASS — 26 pages, 4 documented legacy warnings</td></tr>
+<tr><td>3</td><td><code>scripts/verify.py</code></td><td class="ok">PASS — 64 records, 0 hard failures, blanks all flagged</td></tr>
+<tr><td>4</td><td><code>scripts/verify_a0be79d4.py</code></td><td class="ok">PASS — 36 pages · 1,958 links · 0 dead · 0 failures</td></tr>
+<tr><td>5</td><td><code>scripts/audit_hallucinations.py</code></td><td class="ok">PASS — 879 checks · 0 failures</td></tr>
+</table>
+
+<footer>
+<p><b>Limits, stated not hidden:</b> this review sampled 15 of 61 registered sources + 15 of 64 rows (all 10 sellers).
+It does not verify seller reputation, does not inspect any physical ring, and does not treat any search snippet as a source.
+Fetches were made 2026-10-23 09:57–10:31 UTC; prices are snapshots and one of them (Menē) moved within a day.
+Everything uncertain is flagged rather than filled in. Main dashboard: <a href="https://karagemop466-tech.github.io/GOLD4/">karagemop466-tech.github.io/GOLD4</a> ·
+Flagged for Review: <a href="https://karagemop466-tech.github.io/GOLD4/pages/flagged.html">pages/flagged.html</a> ·
+Repo: <a href="https://github.com/karagemop466-tech/GOLD4">github.com/karagemop466-tech/GOLD4</a> · board: <a href="https://github.com/karagemop466-tech/GOLD4/blob/main/COORDINATION.md">COORDINATION.md</a>.</p>
+<p>Session <code>arena/b8c1f11d-gold4</code> · review R-b8c1f11d · published under <code>/reviews/</code> (no shared-nav edits).</p>
+</footer>
+</div>
+</body>
+</html>
