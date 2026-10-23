@@ -421,7 +421,7 @@ def main() -> int:
         "schema": 1,
         # Deliberately not a hard-coded session/pass: this script is run by the
         # workflow on whichever branch is being published, and an artifact that
-        # names the wrong session is a provenance bug (Pass 17 fixed that).
+        # names the wrong session is a provenance bug (Pass 18 fixed that).
         "session": os.environ.get("GOLD4_EVIDENCE_SESSION")
         or os.environ.get("GITHUB_HEAD_REF")
         or os.environ.get("GITHUB_REF_NAME")

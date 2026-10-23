@@ -338,7 +338,7 @@
    "outcome": "45 prices re-confirmed against the pages themselves; 5 dead source URLs, 7 bot-blocked sources, 4 differing prices and 1 unreadable price published as flags instead of being guessed. No value in the dataset changed on this pass."
   },
   {
-   "pass": "Pass 17 — fresh runner re-read of all 64 rows + 31 sources, benchmark refresh, documentation-drift repair (session arena/2189e10f-gold4)",
+   "pass": "Pass 18 — fresh runner re-read of all 64 rows + 31 sources, benchmark refresh, documentation-drift repair (session arena/2189e10f-gold4)",
    "when_utc": "2026-10-23T20:19Z",
    "scope": "An independent re-run of the online audit ten hours after Pass 16, plus the checks Pass 16 could not do: every page's own availability signal, an independent browser-rendered re-read of the gold benchmark, and a line-by-line comparison of the README against the data files.",
    "checked": [
@@ -348,7 +348,8 @@
     "New availability capture (scripts/live_source_check.py): the page's own schema.org availability, currency, price-validity and item-condition strings are now recorded for every answering page. This settled the one genuinely open question — BN-26 publishes availability=SoldOut and og:availability='out of stock' alongside an 858 USD price meta, so its blank price is confirmed correct rather than merely 'not captured'",
     "Documentation drift found and repaired: README quoted the superseded benchmark ($4,028.53/oz, 21 Oct), 'the 14 registered sources' (there are 31), 'five CI gates' (there are seven), provenance '60 V1 / 3 V2 / 1 U' (62 / 1 / 1) and 'Tier C: 20 product pages' (64). All corrected to the values in data/",
     "Provenance bug fixed in the evidence tool: every artifact used to be stamped 'session arena/03c0c10f-gold4, Pass 12' regardless of which session or pass produced it. Artifacts now record the branch/ref that actually ran the check",
-    "All seven CI gates re-run on the resulting tree: audit.py, check_site.py, verify.py, verify_a0be79d4.py, audit_hallucinations.py, citation integrity (6a self-test + 6b) and audit_freshness.py"
+    "All seven CI gates re-run on the resulting tree: audit.py, check_site.py, verify.py, verify_a0be79d4.py, audit_hallucinations.py, citation integrity (6a self-test + 6b) and audit_freshness.py",
+    "Cross-session corroboration: the independent Pass 17 (arena/0029d936-gold4) read the same World Gold Council panel at ~20:19Z and reported the identical figure, USD 3,996.31/oz, and its own browser read of Menē MN-01 showed $1,442 against the stored $1,465. Two sessions, two read paths, same numbers: the benchmark drift is corroborated, and MN-01 stays flagged PRICE_STRUCTURED_DIFFERS rather than being overwritten (it is a size/weight-variant ladder)"
    ],
    "found": [
     "The benchmark moved -0.70% intraday and is now refreshed with a dated read; no price, weight, karat, SKU, URL or policy clause was changed anywhere in the pass",
@@ -360,14 +361,15 @@
     "No new flags were needed: the states were identical to Pass 16. BN-26's availability evidence is recorded on the row and its existing SOLD_OUT_AT_CHECK flag is unchanged"
    ],
    "not_verified_this_pass": [
-    "Human/browser re-read of retailer product pages: not attempted. Pass 17's row evidence is machine-read structured data from the runner plus one browser-rendered benchmark read",
+    "Human/browser re-read of retailer product pages: not attempted. Pass 18's row evidence is machine-read structured data from the runner plus one browser-rendered benchmark read",
     "Brilliant Earth (7 rows, 4 policy pages): cannot be verified automatically at all (403)",
     "BN-09…BN-12 and RS-05: the pages are gone, so their stored prices remain the 2026-10-22 readings and are flagged SOURCE_URL_DEAD",
     "Hallmarks, maker's marks and actual purity: not visible on any page and not verifiable without the ring in hand (unchanged)"
    ],
    "result": "PASS — zero values overwritten, one benchmark refreshed with a dated and corroborated read, one documentation-drift class repaired, all seven gates green",
    "recommendation": "Re-run the hallucination auditor and every gate after any edit (python3 scripts/audit_hallucinations.py && python3 scripts/audit.py). When a page prints a number that contradicts a stored value, publish both and flag the row — never overwrite. Check availability before recording a price on a sold-out item.",
-   "outcome": "Published via PR to main and merged on 2026-10-23; the merged result is recorded in COORDINATION.md"
+   "outcome": "Published via PR to main and merged on 2026-10-23; the merged result is recorded in COORDINATION.md",
+   "note": "Renumbered from Pass 17 to Pass 18: session arena/0029d936-gold4 published and merged a Pass 17 while this pass was running. Their pass number stands; no other session's entry was renumbered."
   }
  ],
  "not_reverified_this_pass": [

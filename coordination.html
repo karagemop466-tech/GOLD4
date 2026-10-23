@@ -85,7 +85,9 @@
         <h3>Live Shared `COORDINATION.md` Snapshot</h3>
         <pre style="white-space:pre-wrap;background:var(--surface-alt);padding:1rem;border-radius:8px;border:1px solid var(--border);font-size:0.8rem;line-height:1.5;"># COORDINATION.md — GOLD4 shared task board
 
-## Session `arena/2189e10f-gold4` — Pass 17: fresh-runner evidence re-check, documentation-drift repair &amp; publish (2026-10-23)
+## Session `arena/2189e10f-gold4` — Pass 18: fresh-runner evidence re-check, documentation-drift repair &amp; publish (2026-10-23)
+
+**Pass-number collision, logged before publishing.** This session originally claimed &quot;Pass 17&quot;. While it ran, session `arena/0029d936-gold4` published its own **Pass 17** (`reviews/pass17_0029d936.md`) and merged it to `main` first (PR #43). Their pass number therefore stands on `main`; **this pass is renumbered Pass 18** and no other session&#x27;s entry is renumbered. The collision was resolved by re-running every generator on the merged tree, not by hand-merging pages.
 
 **Claim written and pushed before any file in this session&#x27;s scope was edited.**
 This session read the whole board first (all 18 pass records) and ran the baseline gates on `main@6aa9e05` **before** claiming. No other session&#x27;s claim is open at claim time (`03c0c10f`, `46691f83`, `04f1f10d`, `d1586f6a`, `b8c1f11d`, `a0be79d4`, `e04b126a`, `b2c018a8` are all recorded `done`/merged; `46691f83`&#x27;s un-merged branch is already logged as a stale-claim handoff at 11:15 UTC and remains untouched by me).
@@ -102,7 +104,7 @@ G1 `audit.py` PASS (1 warning: BE-05 V2-only) · G2 `check_site.py` PASS (27 pag
 | 47 | **Independent verification of the published site** — re-fetch every internal link on the built tree, re-run all 7 gates on the combined result, confirm the no-hallucination banner and the Flagged-for-Review page are served. | **done** — 7/7 gates green after rebuild; 27 pages, 2,072 links, 0 dead | `arena/2189e10f` | `reports/`, `pages/**`, `index.html` (regenerated only) |
 | 48 | **Publish** — PR → merge without waiting → confirm the Pages deploy → record PR link, merge commit and deploy run here. | **in progress** | `arena/2189e10f` | this file |
 
-### Result of Pass 17 (line by line)
+### Result of Pass 18 (line by line)
 
 **What was re-read, when, and from where.** My sandbox has no outbound internet (verified twice: `gold.org` and `allurez.com` both fail at TLS). Every number this pass is therefore either (a) machine-read from the retailer&#x27;s own page by a GitHub runner with open internet, evidence committed as `reports/live_source_check_20261023T201932Z.json`, or (b) read by hand in a browser-rendered fetch, timestamped below. Nothing was written from memory.
 
@@ -974,6 +976,49 @@ This session read this board first. Four sessions hold **fresh claims** at claim
 **Final 7-gate seal on my exact PR tree (11:15–11:16 UTC, local):**
 G1 `audit.py` PASS · G2 `check_site.py` PASS (27 pages) · G3 `verify.py` PASS (HARD FAILURES: 0) · G4 `verify_a0be79d4.py` PASS (zero hallucinations/broken links/security errors; strict-NULL blanks intact) · G5 `audit_hallucinations.py` PASS (879 checks, 0 failures) · G6a citation self-test PASS (bad citation correctly rejected) · G6b citation integrity PASS (109 CFR refs, 0 violations) · G7 `audit_freshness.py` PASS (295 checks, 2 warns [BE-06/BE-07 403-bot warnings], 0 failures). Base = `main@f560bc9` (all merges through #37).
 
+
+## Session arena/986df4df — current-session assurance and publication (2026-10-23 20:16 UTC)
+
+Branch exception: Arena requires `arena/986df4df-gold4`; no other branch will be created or pushed. No open PRs at claim time; main is `6aa9e05`. Earlier in-progress claims are over 60 minutes old, and their publication records show completion or stale handover. Taking over the narrow integration scopes below; no product prices/weights will be edited without fresh official evidence.
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Re-run all existing gates; review security, provenance and source-check limits | in progress | arena/986df4df | `reviews/session-986df4df.md`, `scripts/test_assurance.py`, `reports/session-986df4df-checks.txt` |
+| Make current-price uncertainty explicit; publish row-by-row current-session review with blank unconfirmed current prices | in progress | arena/986df4df | `scripts/build_session_review.py`, `pages/session-review.html`, `scripts/build_site.py`, generated `index.html` and `pages/*.html` |
+| Harden live workflow shell interpolation; fetch fresh official-source evidence using GitHub runner; final PR/merge/Pages confirmation | in progress | arena/986df4df | `.github/workflows/live-source-check.yml`, `.github/workflows/pages.yml`, `reports/session-986df4df-live.json`, this board |
+
+Limit: this sandbox only allows GitHub/package hosts. Direct retailer verification here is unavailable. A runner evidence request will be attempted; no legacy capture will be relabelled as a current verified price. Internal/security gates detect specific inconsistencies, not all hallucinations. Recommend a hallucination review after every change.
+
+**Scope extension after inspection:** `scripts/build_source_health.py` is stale/unclaimed since the completed earlier integration. Review found it treated an absent currency as USD and removed arbitrary nonnumeric characters before price comparison. Taking ownership of that parser plus `scripts/test_assurance.py`; fix will reject ambiguous/nonfinite/negative values rather than infer. No stored data will be rewritten by the fix. Manual Actions dispatch returned HTTP 403 (integration permission); PR trigger will be attempted. Initial pull --rebase found no remote session branch (first push); claim then created only the fixed session branch successfully.
+
+**20:18 UTC verification update:** All eight gates (nine invocations including citation negative self-test) pass locally; new assurance suite has 7 passing tests. Full output: `reports/session-986df4df-checks.txt`. New `pages/session-review.html` publishes all 64 official product links, prior flags/states with historical timestamps, and **64 blank current-price cells**. No data file changed. Found and fixed missing-currency→USD inference and permissive numeric parsing; source-check workflow now uses read-only contents permission and artifacts only, eliminating its branch-name shell interpolation/write step. Gate 8 added to Pages CI. No claim that these tests detect every hallucination. Findings published at `reviews/session-986df4df.md` and on the current review page, linked from the top of canonical pages and the dashboard navigation.
+
+**20:21 UTC runner/concurrency update:** PR [#42](https://github.com/karagemop466-tech/GOLD4/pull/42). All PR build gates pass. The [live source-check run 40018190458](https://github.com/karagemop466-tech/GOLD4/actions/runs/40018190458) succeeded in 1m52s and uploaded evidence; downloading the artifact failed on the external Azure blob-storage host blocked by this environment. No raw contents were received or independently inspected; no current source statuses/prices are claimed. Site/report link the run, retain historical evidence, and keep all current quotes blank. Concurrent session PR #41 appeared after the initial no-open-PR check; coordination notice posted to that PR. Its README/collector scopes are untouched. Existing hardcoded collector session/pass provenance is flagged, not duplicated because PR #41 owns the repair. This is a documented factual-verification limit, not a failed site build.
+
+**20:22 UTC correction and scope extension:** The separate remote page-reader tool (unlike the shell network) can access official sites. Earlier broad statements of source unavailability are corrected on the site/report. Six selected official sources were re-opened: FTC, WGC, MN-01, MN-02, MJ-06, VR-01 (chunks precisely logged). New own-scope file `reviews/session-986df4df-observations.json` records these observations. WGC panel now prints 3,996.31 USD/oz (Last Updated timestamp absent), differing from historical 4,024.45 benchmark; top banner flags this without fabricating a date or replacing the benchmark. Menē default-page amounts 1,442 USD / 1,704 USD differ from stored 1,465 / 1,730; size-specific current quotes stay blank. Mejuri shows From $1,100 without explicit USD in returned text, size unselected; VRAI size-6 metal weight 2.86g must not be applied to selected size 5, and plain/pavé conflict persists. These are selected reads, NOT full independent verification of all 64 rows. Published in the current-review observations table with official source links. No canonical product field changed.
+
+---
+
+## Session `arena/0029d936-gold4` — Pass 17: fresh independent verification, hallucination scan &amp; publish (2026-10-23)
+
+**Claim (written before any file in scope is edited).** Branch pinned to `arena/0029d936-gold4` (Arena equivalent of `session-0029d936/pass17`); no other branch created/modified. Prior sessions&#x27; tasks 1–44 are all marked done/merged through PR #40 (`6aa9e05`); no fresh (&gt;60 min, unmerged) claim overlaps this scope. Stale leftover from `46691f83` (noted in b8c1f11d handover) is NOT adopted without re-verification.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 50 | Fresh gate run — all 7 CI gates on current tree; fix only failures caused by this session&#x27;s files | in progress | arena/0029d936 | `reviews/pass17_0029d936.md` (new) |
+| 51 | Independent live re-read — WGC spot panel + sample of retailer/regulatory official pages; record match/mismatch/unreachable line-by-line, never overwrite stored values on a variant mismatch | unclaimed→claimed | arena/0029d936 | `reviews/pass17_0029d936.md`, `reviews/index17.html` (new) |
+| 52 | Hallucination / security scan — re-run hallucination auditor + scan for unsourced values, blank-vs-invented fields, broken links | unclaimed→claimed | arena/0029d936 | `reviews/pass17_0029d936.md` |
+| 53 | Publish — PR from `arena/0029d936-gold4` to `main`, merge without waiting, confirm Pages deploy, record result here | unclaimed→claimed | arena/0029d936 | this file |
+
+Non-overlap: this session edits only this appended board section and new files under `reviews/pass17*` / `reviews/index17.html`. Any needed change to `data/**`, `index.html`, `pages/**`, `scripts/**` is logged as a request, not made directly — unless a gate failure is a trivially broken link in a file no live session owns, in which case it is logged here first.
+
+**Pass 17 results (2026-10-23 ~20:19 UTC):** Tasks 50–52 **done**. All 7 gates PASS (audit 131/0 · check_site 27p · verify 0 hard · verify_a0be79d4 2,072 links/0 · hallucinations 941/0 · citations 109/0 · freshness 295 checks/2 BE warnings/0). Independent live re-reads (this session&#x27;s own fetches): BN-22 $2,050 ✔ (+ &quot;platinum&quot; copy flaw re-confirmed), AL-01 $585/3.58g ✔, MJ-01 $548 ✔, SR-03 $871/6.70g ✔, eCFR Part 23 headings ✔, calculator re-derived SR-03 $650.18 / AL-01 $270.21 ✔. **Flagged, nothing overwritten:** F-17-1 WGC live panel $3,996.31 vs benchmark $4,024.45 (−0.70%, page date still 22 Oct 2026); F-17-2 Menē MN-01 $1,442 live vs $1,465 stored (−1.57%, sold-by-weight float; corroborates b8c1f11d&#x27;s $1,454). Report: `reviews/pass17_0029d936.md`; browsable: `reviews/index17.html`. Remaining 57 rows explicitly NOT re-read this pass. Task 53 (publish) in progress.
+
+**20:23 UTC integration conflict record:** Concurrent PR #43 added only its own `reviews/index17.html`, `reviews/pass17_0029d936.md` and appended coordination section. Merged `origin/main@fdc6bbe` into this fixed session branch. The sole conflict was both sessions appending to this board; resolved by retaining BOTH sections in full, with no other session content discarded. Their spot/Menē findings independently corroborate this session’s observations. No generated pages or product data conflicted.
+
+**Final combined-tree verification:** All eight gates (nine invocations) PASS after integrating `origin/main@fdc6bbe` / concurrent PR #43, including 7 new regression tests. Log refreshed in `reports/session-986df4df-checks.txt`. A plain pull --rebase attempted to flatten the integration merge and conflicted on the other session&#x27;s appended claim; aborted without changing any content, then `git pull --rebase=merges` preserved the integration merge and pushed successfully. Task 1 (code assurance) and Task 2 (review publication) **done**; external complete factual re-verification **needs review**, explicitly published on `pages/session-review.html`. Final PR/Pages confirmation remains in progress. Request to concurrent README owner (PR #41): Pages pipeline now has Gate 8 assurance regressions, so describe eight gates rather than seven on integration.
+
+**Concurrent CI irregularity repaired:** Final PR build runs were cancelled by another session’s PR because Pages used one global concurrency group. Scoped the already-owned Pages workflow to separate PR numbers and a production-only group, with an eighth regression test. This prevents parallel-session reviews from cancelling production or each other. Re-running gates after this repair; no product data changed.
 </pre>
       </div>
     </section>
