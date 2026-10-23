@@ -406,7 +406,8 @@ def main() -> None:
   <span class="eyebrow">● live dataset · prices captured {C['captured']} · source URLs re-opened live {esc((health_doc or {}).get('evidence_checked_utc', reverif))}</span>
   <h1>Solid-gold engagement rings, with every number traceable to the seller's own page.</h1>
   <p class="lede">A small, deliberately boring dataset: {st['total_rows']} rings from {len(st['by_retailer'])} retailers, {st['rows_with_verified_price']} prices read
-  from the retailer's page today, {st['rows_with_published_weight']} published gram weights, and the gold-value arithmetic that follows from them.
+  from the retailer's page on {C['captured']}, {st['rows_with_published_weight']} published gram weights, and the gold-value arithmetic that follows from them.
+  The source URLs themselves were last re-opened live on {esc((health_doc or {}).get('evidence_checked_utc', reverif))}.
   Nothing is estimated. Everything uncertain is on the Flagged page.</p>
   <div class="pill-row">
     {badge('no hallucinated values', 'bad')}
