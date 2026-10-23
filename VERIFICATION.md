@@ -1,6 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-23 09:57 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-23 09:59 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
@@ -45,7 +45,7 @@ Generated 2026-10-23 09:57 UTC from `data/*.json` by `scripts/gen_verification.p
 | VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.54 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND, WIDTH_UNVERIFIED |
 | VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.60 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND, WIDTH_UNVERIFIED |
 | BE-03 | Brilliant Earth | [Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K Shank + 14K White Gold Prongs)](https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/) | 18K | $850 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, MIXED_METAL_UNCLEAR |
-| SR-01 | Sarraf | [10k White Gold 5mm High Polished Traditional Domed Wedding Band](https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 10K | $352 | V1 · 2026-10-22 | 4.80 g | V1 | $258.78 | stated: “Material: 10K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
+| SR-01 | Sarraf | [10k White Gold 5mm High Polished Traditional Domed Wedding Band](https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 10K | $352 | V1 · 2026-10-22 | 4.80 g | V1 | $258.78 | stated: “Material: 10K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED, WHITE_GOLD, SALE_MSRP_ANCHOR |
 | SR-02 | Sarraf | [14k Yellow Gold 6mm High Polished Comfort Fit Heavy Wedding Band](https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html) | 14K | $1,063 | V1 · 2026-10-22 | 9.40 g | V1 | $709.48 | stated: “Material: 14K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
 | SR-03 | Sarraf | [18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band](https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 18K | $871 | V1 · 2026-10-22 | 6.70 g | V1 | $650.18 | stated: “Material: 18K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
 | SR-04 | Sarraf | [18K Yellow Gold 6mm High Polished Flat Comfort Fit Heavy Band](https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html) | 18K | $1,436 | V1 · 2026-10-22 | 11.10 g | V1 | $1,077.16 | stated: “Material: 18K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
@@ -77,8 +77,8 @@ Generated 2026-10-23 09:57 UTC from `data/*.json` by `scripts/gen_verification.p
 | BN-26 | Blue Nile | [Comfort Fit Solitaire Engagement Ring In 14K Yellow Gold (James Allen style 17740y14)](https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515) | 14K | **blank** | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_UNVERIFIED, SOLD_OUT_AT_CHECK |
 | BE-04 | Brilliant Earth | [Fairmined Hollis Knife Edge Solitaire Engagement Ring](https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/) | 18K | $1,090 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, RESIZE_EXCLUDED_ON_PAGE |
 | BE-05 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/) | 14K | $1,190 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED |
-| BE-06 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/) | 18K | $1,390 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED |
-| BE-07 | Brilliant Earth | [Fleur Solitaire Ring](https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/) | 14K | $1,350 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED |
+| BE-06 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/) | 18K | $1,390 | V1 · 2026-10-23 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED |
+| BE-07 | Brilliant Earth | [Fleur Solitaire Ring](https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/) | 14K | $1,350 | V1 · 2026-10-23 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED |
 | RS-01 | Ross-Simons | [14kt Yellow Gold 2mm Wedding Band](https://www.ross-simons.com/jewelry/rings/571221.html) | 14K | $400 | V1 · 2026-10-22 | 1.70 g | V1 | $128.31 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | RS-02 | Ross-Simons | [Italian 18kt Yellow Gold 2mm Wedding Band](https://www.ross-simons.com/jewelry/rings/985230.html) | 18K | $249 | V1 · 2026-10-22 | 0.70 g | V1 | $67.93 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | RS-03 | Ross-Simons | [14kt Yellow Gold 3mm Comfort-Fit Wedding Band](https://www.ross-simons.com/jewelry/rings/820263.html) | 14K | $595 | V1 · 2026-10-22 | 2.10 g | V1 | $158.50 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
@@ -248,7 +248,7 @@ Generated 2026-10-23 09:57 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T09:56:39+00:00
+run_utc: 2026-10-23T09:58:22+00:00
 dataset rows: 64 | sellers: 10 | sources: 30
 spot benchmark: $4,024.45/oz (22 October, 2026) = $129.3891/g
 

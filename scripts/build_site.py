@@ -48,6 +48,7 @@ FLAG_HELP = {
     "PRICE_V2_ONLY": ("warn", "price read from a dated snapshot of the official page — live re-fetch pending"),
     "SOLD_OUT_AT_CHECK": ("info", "sold out at the live check — price deliberately blank"),
     "SALE_PRICE_VARIES_ACROSS_PAGES": ("bad", "same SKU showed different sale prices across official pages"),
+    "SALE_MSRP_ANCHOR": ("warn", "seller's 'MSRP' is several times the charged price"),
     "PRICE_FROM_CATEGORY_PAGE": ("info", "price read from a live official category-page fetch"),
     "SOLID_NOT_STATED": ("warn", "no 'solid gold' wording on page"),
     "HALLMARK_NOT_PUBLISHED": ("warn", "hallmark not published"),
@@ -734,6 +735,8 @@ def main() -> None:
         for r in unverified
     )
 
+    today_rows = sum(1 for r in rows if r.get("reverified_utc") == "2026-10-23")
+
     flagged_body = f"""
 <section class="hero">
   <span class="eyebrow">Needs review</span>
@@ -871,11 +874,12 @@ def main() -> None:
       conversion factor from NIST" — an overstatement that has been corrected. The constant itself is unchanged.</p>
     </div>
     <div class="card">
-      <h3>Coverage, stated plainly: 4 of 64 rows were re-read on 2026-10-23</h3>
-      <p>This pass re-opened AL-01, SR-01, RS-01 and MJ-01 and they matched their recorded values (MJ-01 only on a
-      different metal variant). AN-01 loaded but its Product Details table was not reached. The remaining 59 rows keep their
-      2026-10-22 captures and are <strong>not</strong> claimed as re-verified today. Retail prices and stock move; re-open
-      the linked official page before you buy.</p>
+      <h3>Coverage, stated plainly: {today_rows} of {len(rows)} rows were re-read on 2026-10-23</h3>
+      <p>Three sessions re-opened pages on 23 October. This pass re-opened AL-01, SR-01, RS-01 and MJ-01 and every recorded
+      value matched (MJ-01 only on a different metal variant). AN-01 loaded but its Product Details table was not reached.
+      A parallel session live-re-fetched BE-05, BE-06, BE-07 and re-read SR-01 and SR-02. The other {len(rows) - today_rows}
+      rows keep their earlier capture dates and are <strong>not</strong> claimed as re-verified today. Prices and stock move;
+      re-open the linked official page before you buy.</p>
     </div>
   </div>
 </section>

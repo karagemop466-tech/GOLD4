@@ -134,6 +134,16 @@
   "delta_pct_vs_prior_benchmark": -0.1013,
   "assessment": "Read live on 2026-10-23. The panel is a live quote and moved 0.10% from the 21-October reading recorded on 2026-10-22. Recorded so the benchmark's own date is never mistaken for today's date."
  },
+ "cross_check_2026_10_23": {
+  "publisher": "gold-api.com (metals price API)",
+  "source_url": "https://api.gold-api.com/price/XAU",
+  "value_usd_per_oz": 4025.6,
+  "timestamp_shown": "2026-10-23T09:51:43Z",
+  "retrieved_utc": "2026-10-23",
+  "spread_vs_active_benchmark_pct": 0.029,
+  "role": "cross-check only — not used in any derived number",
+  "corroboration_note": "Session arena/04f1f10d-gold4 read the same World Gold Council panel independently and also got 4,024.45 USD/oz at 'Data as of 22 October, 2026' (recorded by session arena/d1586f6a-gold4 as Pass 12). Two sessions, two reads, same figure; the gold-api.com quote is 0.029% away."
+ },
  "independent_recapture_2026_10_23": {
   "session": "arena/46691f83-gold4",
   "source_url": "https://www.gold.org/goldhub/data/gold-prices",
