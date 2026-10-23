@@ -107,23 +107,22 @@
       <p class="small">2026-10-23T00:35Z · The fetch-service outage that forced 9 rows to V2 snapshot provenance cleared briefly (00:20-00:33 UTC). Six Blue Nile product pages (BN-20..BN-25) were re-fetched live; the three Brilliant Earth pages (BE-05/06/07) were attempted but the outage returned mid-page before the product block.</p>
       <ul class="small"><li>BN-21/BN-22/BN-23/BN-24: live prices identical to the snapshots ($1,290 / $2,050 / $5,190 / $1,145); stock numbers, metals and widths re-read from the live pages - upgraded to V1_direct_page_fetch, PRICE_V2_ONLY removed.</li><li>BN-20: live page shows $965 (Setting Price) with NO discount - the 22 Oct sale ($772/-20%, and $724/$730/$728 on category pages) has ENDED. Price updated to the live $965; SALE_PRICE_VARIES_ACROSS_PAGES kept as a documented historical irregularity with the live resolution appended.</li><li>BN-25: live page shows $2,210 (Setting Price) with NO discount - the 22 Oct sale ($1,657/-25%) has ENDED. Price updated to the live $2,210.</li><li>BN-22: the metal-copy contradiction (&#x27;platinum solitaire setting&#x27; text vs 14K Yellow Gold specs) is STILL present on the live page - COPY_INCONSISTENT_METAL confirmed live.</li><li>BE-05/BE-06/BE-07: live re-fetch could not be completed (outage returned ~00:31-00:33Z); they keep V2 provenance and PRICE_V2_ONLY + PRICE_CURRENCY_LOCALIZED until a live read confirms them.</li></ul>
       <p class="small"><strong>Outcome:</strong> 6 of the 9 PRICE_V2_ONLY rows upgraded to V1 with live reads; 2 prices corrected to current live values (BN-20 $772-&gt;$965, BN-25 $1,657-&gt;$2,210 - both sales ended); dataset provenance now 60 V1 / 3 V2 / 1 U of 64 rows. No value was inferred: every change quotes the live page.</p>
+    </div><div class="card">
+      <h3>Pass 14 — fresh verification of the sources themselves (session arena/46691f83-gold4) <span class="badge b-ok">PASS — 5 pre-existing gates green, new Gate 6 green (84 CFR references, 0 violations), audit.py 130 checks / 0 failures, 0 broken local links.</span></h3>
+      <p class="small">2026-10-23T10:05Z · This pass re-opened the governing sources (FTC, eCFR 16 CFR Part 23, 15 U.S.C. 295 and 297, CFPB, 12 CFR 1026.13, NIST, World Gold Council) and four product pages, then re-captured the gold-spot benchmark. Its purpose was to find citations and source URLs that are wrong in a way arithmetic cannot detect.</p>
+      <ul class="small"><li>FTC &#x27;Buying Platinum, Gold, and Silver Jewelry&#x27; re-read: karat-out-of-24 definition, quality-mark-plus-trademark rule, &#x27;solid gold = not hollow&#x27;, and the plated/filled/overlay/RGP/electroplate/vermeil/flashed/washed definitions are all still on the page. No change to methodology.</li><li>16 CFR Part 23 re-read on eCFR (title 16 up to date as of 10/21/2026). Section headings confirmed section by section: 23.3 gold content, 23.4 vermeil, 23.7 rhodium disclosure, 23.8 multi-metal, 23.9 PEWTER, 23.10 quality marks. § 23.3(b)(1), 23.3(c)(1), 23.4(b), 23.7, 23.8(a) and 23.10 text read in full.</li><li>FINDING 1 (fixed): standards.html and data/catalog_a0be79d4.json cited &#x27;16 CFR § 23.9&#x27; for the trademark rule. § 23.9 is pewter content; the rule is § 23.10. Both the catalog and scripts/build_dataset.py were corrected and the page regenerated.</li><li>FINDING 2 (fixed): source nist-hb44-2026 pointed at a NIST URL that returns &#x27;Page not found&#x27; (404) and carried a subtitle the page never used (&#x27;Appendix C: Units of Mass for Precious Metals &amp; Metric Carat&#x27;). Replaced with https://www.nist.gov/pml/owm/nist-handbook-44-current-edition and the real title; the invented numeric attribution was removed.</li><li>FINDING 3 (fixed): the SP 811 registry entry called 31.1034768 g an &#x27;exact SI conversion factor from NIST&#x27;. NIST Appendix B.8 prints 3.110 348 E+01 g in non-bold type (rounded) and marks only the metric carat 2.0 E-01 bold (exact). The claim was rewritten; the constant itself (480 grains) is unchanged and remains exact by definition.</li><li>FINDING 4 (fixed): the site cited 15 U.S.C. § 297 (trademark stamping law) and the FCBA 90-day outer limit with no registry entry behind either. § 297 and 12 CFR 1026.13 were read and registered; the catalog&#x27;s CFPB wording now attributes the 2-billing-cycle/90-day limit to § 1026.13(c)(2) instead of to the CFPB FAQ page, which does not state it.</li><li>Gold spot re-captured: World Gold Council panel USD 4,024.45/oz with the page&#x27;s own date line &#x27;Data as of 22 October, 2026&#x27;. The 2026-10-22 reading (4,028.53/oz) moved to prior_captures unchanged; compute.py re-derived every melt value and audit.py re-checked them independently.</li><li>Rows re-read live: AL-01 ($585, 3.58 g, NG4426), SR-01 ($352, 4.80 g, SKU 10KW-LPBWB05), RS-01 ($400, 1.7 g) all matched their records exactly. MJ-01 opened on the white-gold/natural-diamond variant at $548, so its price matches but the yellow-gold variant was not re-confirmed; PRICE_VARIANT_DEPENDENT stands.</li><li>Rows not re-read today: AN-01 loaded but its Product Details table was not reached; the other 59 rows keep their 2026-10-22 captures and are not claimed as re-verified in this pass.</li><li>New Gate 6 (scripts/session_46691f83/verify_citations.py) added to CI: it carries the eCFR section headings read today, enforces a label rule and a single-citation sentence rule, requires a registry URL for every statute cited on the site, and ships a --self-test that must reject the exact § 23.9 error this pass found.</li></ul>
+      <p class="small"><strong>Outcome:</strong> Three real defects fixed (two wrong citations, one dead source URL with an invented subtitle) and one overstatement corrected. No price, weight or karat value was changed: the four rows re-read matched. Derived values were recomputed against the 2026-10-23 spot capture, which moved -0.10%.</p>
     </div></div></section>
 <section class="section">
   <h2>Latest integrity audit output</h2>
   <p class="sub">Produced by <span class="mono">scripts/audit.py</span>. Any FAIL fails the build; warnings must be published on the Flagged page.</p>
   <pre class="mono" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;white-space:pre-wrap">GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T00:16:13+00:00
-dataset rows: 64 | sellers: 10 | sources: 28
-spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
+run_utc: 2026-10-23T09:56:26+00:00
+dataset rows: 64 | sellers: 10 | sources: 30
+spot benchmark: $4,024.45/oz (22 October, 2026) = $129.3891/g
 
-RESULT: PASS  (128 passed, 9 warnings, 0 failures)
+RESULT: PASS  (130 passed, 3 warnings, 0 failures)
 
-[WARN] B-08 price verification: BN-20: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-21: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-22: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-23: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-24: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-25: price is only V2 evidence and must be flagged
 [WARN] B-08 price verification: BE-05: price is only V2 evidence and must be flagged
 [WARN] B-08 price verification: BE-06: price is only V2 evidence and must be flagged
 [WARN] B-08 price verification: BE-07: price is only V2 evidence and must be flagged
@@ -146,9 +145,9 @@ per-row source-link requirement, and render-text sanity.
 <footer class="wrap foot">
   <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
-  <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>Gold benchmark: $4,024.45/oz as of 22 October, 2026 (World Gold Council) = $129.3891/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-23 00:21 UTC · dataset 64 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-23 09:56 UTC · dataset 64 rows · 30 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

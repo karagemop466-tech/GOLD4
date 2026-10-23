@@ -70,10 +70,10 @@
       <div class="filter-bar">
         <label>Filter by Severity
           <select id="filter-flag-severity">
-            <option value="all">All Severities (12)</option>
+            <option value="all">All Severities (14)</option>
             <option value="CRITICAL">CRITICAL — Spec Conflicts, Vermeil &amp; 404 Catches (4)</option>
             <option value="HIGH">HIGH — XRF Spoofing, Multi-Metal &amp; Return Traps (5)</option>
-            <option value="MEDIUM">MEDIUM — Omitted Weights &amp; Sibling Repo Audit (3)</option>
+            <option value="MEDIUM">MEDIUM — Omitted Weights &amp; Sibling Repo Audit (5)</option>
           </select>
         </label>
       </div>
@@ -222,6 +222,30 @@
           <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">First automated pass of `scripts/verify_a0be79d4.py` flagged `docs/sources.html` from sibling PR #2. Live HTTP verification confirmed BOTH `ftc.gov/business-center/advertising-and-marketing` AND `nist.gov/publications/nist-special-publication-811` returned HTTP `404 Page Not Found`! Replaced with verified `200 OK` primary URLs (`consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry`, `ecfr.gov/.../part-23`, and `nist.gov/pml/special-publication-811`) and permanently blocklisted both 404 URLs in CI.</p>
           <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> Remediated across `/docs/sources.html` and permanently enforced in GitHub Actions Gate 3.</p>
           <a href="https://www.nist.gov/pml/special-publication-811" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
+        </article>
+        
+        <article class="flag-card sev-MEDIUM" data-flag-card="1" data-severity="MEDIUM">
+          <div style="display:flex;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.4rem;">
+            <span class="badge badge-warn">MEDIUM · FLG-MED-13</span>
+            <span class="mono cell-sub">Citation Integrity (fixed 2026-10-23) · Checked 2026-10-23</span>
+          </div>
+          <h3>Trademark/quality-mark rule was cited to the pewter section</h3>
+          <div class="cell-sub" style="margin-bottom:0.35rem;"><strong>Target:</strong> 16 CFR § 23.9 → § 23.10</div>
+          <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">The standards page and this catalog cited &#x27;16 CFR § 23.9&#x27; for the rule that a quality mark must carry the maker&#x27;s trademark. § 23.9 is &#x27;Misrepresentation as to content of pewter.&#x27; The rule is § 23.10 &#x27;Additional guidance for the use of quality marks&#x27;, which itself cites 15 U.S.C. § 297. Both sections were read on the eCFR page on 2026-10-23 and the citation was corrected. Nothing numeric changed.</p>
+          <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> No buyer action. Reading only: a regulation citation that looks convincing can still name the wrong section — check the section heading, not just the number.</p>
+          <a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
+        </article>
+        
+        <article class="flag-card sev-MEDIUM" data-flag-card="1" data-severity="MEDIUM">
+          <div style="display:flex;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.4rem;">
+            <span class="badge badge-warn">MEDIUM · FLG-MED-14</span>
+            <span class="mono cell-sub">Source Registry (fixed 2026-10-23) · Checked 2026-10-23</span>
+          </div>
+          <h3>Registered NIST source URL returned HTTP 404 and carried a subtitle the page never used</h3>
+          <div class="cell-sub" style="margin-bottom:0.35rem;"><strong>Target:</strong> nist-hb44-2026</div>
+          <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44 returns NIST&#x27;s &#x27;Page not found&#x27; (error 404). The entry also described it as &#x27;Appendix C: Units of Mass for Precious Metals &amp; Metric Carat&#x27;, wording the page does not use. It now points at the live Handbook 44 current-edition page with its actual title, and no numeric conversion is attributed to it. No price, weight or melt value ever depended on that URL.</p>
+          <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> No buyer action. The troy-ounce constant is a definition (480 grains), not a claim taken from this page.</p>
+          <a href="https://www.nist.gov/pml/owm/nist-handbook-44-current-edition" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
         </article>
         
       </div>

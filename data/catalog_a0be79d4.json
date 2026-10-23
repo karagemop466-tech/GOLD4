@@ -20,7 +20,8 @@
       "critical_spec_conflicts": 2,
       "flagged_register_entries": 12,
       "preserved_sibling_placeholders": 8
-    }
+    },
+    "calculation_basis_2026_10_23": "The melt figures in this catalog are the session-a0be79d4 cross-check columns computed from the two 2026-10-22 Kitco/JM Bullion quotes. The canonical calculation basis for the repository is data/gold_spot.json (World Gold Council), re-captured on 2026-10-23 at USD 4,024.45/oz. The two bases differ by 0.004% (4,024.45 vs 4,024.60), so no displayed melt value is materially affected; both are published rather than harmonised silently."
   },
   "spot_quotes": [
     {
@@ -128,15 +129,16 @@
       "id": "STD-ECFR-16CFR23",
       "title": "16 CFR Part 23 — Guides for the Jewelry, Precious Metals, and Pewter Industries",
       "authority": "Electronic Code of Federal Regulations (NARA / FTC)",
-      "citation": "16 CFR §§ 23.1–23.18 (incl. § 23.3 Gold, § 23.4 Vermeil, § 23.7 Rhodium, § 23.8 Multi-Metal, § 23.9 Quality Marks)",
+      "citation": "16 CFR Part 23 (incl. § 23.3 Gold, § 23.4 Vermeil, § 23.7 Rhodium, § 23.8 Multi-Metal, § 23.10 Quality Marks)",
       "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
-      "retrieved_date": "2026-10-22",
+      "retrieved_date": "2026-10-23",
       "key_takeaways": [
-        "16 CFR § 23.3: Unqualified 'Gold' means 24K through and through; <10K cannot be called karat gold; hollow centers must not be deceptively described.",
-        "16 CFR § 23.4: Vermeil requires sterling silver (>=92.5% Ag) coated with >=2.5 microns of >=10K gold — never solid gold.",
-        "16 CFR § 23.7 & § 23.8: White gold rhodium plating and multi-metal components (e.g., 18K shank + platinum/14K prongs) require non-deceptive disclosure in weight order.",
-        "16 CFR § 23.9 & 15 U.S.C. § 297 (National Stamping Act): Every quality stamp must be accompanied by the registered manufacturer/seller trademark."
-      ]
+        "16 CFR § 23.3: unqualified 'Gold' is reserved for 24-karat metal; the karat designation must immediately precede the word Gold; hollow articles must not be described as 'solid'.",
+        "16 CFR § 23.4: 'vermeil' requires a sterling-silver base (>=925/1000) coated with >=10K gold at least 2.5 microns thick — never solid gold.",
+        "16 CFR § 23.7 & § 23.8: a rhodium surface layer must be disclosed, and multi-precious-metal products must list the metals in order of relative weight.",
+        "16 CFR § 23.10 (with 15 U.S.C. § 297): a quality mark must be accompanied by the manufacturer's or dealer's registered trademark or name."
+      ],
+      "correction_2026_10_23": "The trademark rule was cited to § 23.9, which is the pewter section. It is § 23.10 ('Additional guidance for the use of quality marks'). Corrected after reading both sections on the eCFR page."
     },
     {
       "id": "STD-CFPB-FCBA",
@@ -144,11 +146,13 @@
       "authority": "Consumer Financial Protection Bureau (CFPB)",
       "citation": "15 U.S.C. § 1666 / Regulation Z (12 CFR § 1026.13)",
       "source_url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
-      "retrieved_date": "2026-10-22",
+      "retrieved_date": "2026-10-23",
       "key_takeaways": [
-        "Pay exclusively by credit card (never wire, Zelle, crypto, or debit): preserves statutory billing-error and goods-not-as-described chargeback protections.",
-        "Written dispute notice must reach card issuer within 60 days after the first statement showing the charge; creditor must acknowledge within 30 days and resolve within 2 billing cycles (max 90 days)."
-      ]
+        "The CFPB page states: send a written billing-error notice within 60 calendar days after the charge appears on your statement; the card company then has 30 days to confirm receipt in writing.",
+        "12 CFR § 1026.13(c)(2) — not the CFPB FAQ page — sets the outer resolution limit: two complete billing cycles, and in no case later than 90 days after the notice.",
+        "Project guidance (not a CFPB statement): pay with a credit card rather than wire transfer, a peer-to-peer app, crypto or a debit card, because only the credit-card route carries the statutory billing-error dispute right."
+      ],
+      "correction_2026_10_23": "The 90-day / two-billing-cycle limit was paraphrased as if the CFPB FAQ page said it; that page does not. It is now attributed to 12 CFR 1026.13(c)(2), and the card-only advice is labelled as this project's guidance."
     },
     {
       "id": "STD-GIA-XRF",
@@ -1335,6 +1339,28 @@
       "action": "Remediated across `/docs/sources.html` and permanently enforced in GitHub Actions Gate 3.",
       "source_url": "https://www.nist.gov/pml/special-publication-811",
       "date": "2026-10-22"
+    },
+    {
+      "flag_id": "FLG-MED-13",
+      "severity": "MEDIUM",
+      "category": "Citation Integrity (fixed 2026-10-23)",
+      "item_ref": "16 CFR § 23.9 → § 23.10",
+      "title": "Trademark/quality-mark rule was cited to the pewter section",
+      "detail": "The standards page and this catalog cited '16 CFR § 23.9' for the rule that a quality mark must carry the maker's trademark. § 23.9 is 'Misrepresentation as to content of pewter.' The rule is § 23.10 'Additional guidance for the use of quality marks', which itself cites 15 U.S.C. § 297. Both sections were read on the eCFR page on 2026-10-23 and the citation was corrected. Nothing numeric changed.",
+      "action": "No buyer action. Reading only: a regulation citation that looks convincing can still name the wrong section — check the section heading, not just the number.",
+      "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
+      "date": "2026-10-23"
+    },
+    {
+      "flag_id": "FLG-MED-14",
+      "severity": "MEDIUM",
+      "category": "Source Registry (fixed 2026-10-23)",
+      "item_ref": "nist-hb44-2026",
+      "title": "Registered NIST source URL returned HTTP 404 and carried a subtitle the page never used",
+      "detail": "https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44 returns NIST's 'Page not found' (error 404). The entry also described it as 'Appendix C: Units of Mass for Precious Metals & Metric Carat', wording the page does not use. It now points at the live Handbook 44 current-edition page with its actual title, and no numeric conversion is attributed to it. No price, weight or melt value ever depended on that URL.",
+      "action": "No buyer action. The troy-ounce constant is a definition (480 grains), not a claim taken from this page.",
+      "source_url": "https://www.nist.gov/pml/owm/nist-handbook-44-current-edition",
+      "date": "2026-10-23"
     }
   ]
 }

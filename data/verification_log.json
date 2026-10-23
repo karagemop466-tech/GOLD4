@@ -228,14 +228,31 @@
    ],
    "result": "PASS (pipeline + all five CI gates re-run after the upgrade; outputs in reports/ and AUDIT.md)",
    "outcome": "6 of the 9 PRICE_V2_ONLY rows upgraded to V1 with live reads; 2 prices corrected to current live values (BN-20 $772->$965, BN-25 $1,657->$2,210 - both sales ended); dataset provenance now 60 V1 / 3 V2 / 1 U of 64 rows. No value was inferred: every change quotes the live page."
+  },
+  {
+   "pass": "Pass 14 — fresh verification of the sources themselves (session arena/46691f83-gold4)",
+   "when_utc": "2026-10-23T10:05Z",
+   "scope": "This pass re-opened the governing sources (FTC, eCFR 16 CFR Part 23, 15 U.S.C. 295 and 297, CFPB, 12 CFR 1026.13, NIST, World Gold Council) and four product pages, then re-captured the gold-spot benchmark. Its purpose was to find citations and source URLs that are wrong in a way arithmetic cannot detect.",
+   "checked": [
+    "FTC 'Buying Platinum, Gold, and Silver Jewelry' re-read: karat-out-of-24 definition, quality-mark-plus-trademark rule, 'solid gold = not hollow', and the plated/filled/overlay/RGP/electroplate/vermeil/flashed/washed definitions are all still on the page. No change to methodology.",
+    "16 CFR Part 23 re-read on eCFR (title 16 up to date as of 10/21/2026). Section headings confirmed section by section: 23.3 gold content, 23.4 vermeil, 23.7 rhodium disclosure, 23.8 multi-metal, 23.9 PEWTER, 23.10 quality marks. § 23.3(b)(1), 23.3(c)(1), 23.4(b), 23.7, 23.8(a) and 23.10 text read in full.",
+    "FINDING 1 (fixed): standards.html and data/catalog_a0be79d4.json cited '16 CFR § 23.9' for the trademark rule. § 23.9 is pewter content; the rule is § 23.10. Both the catalog and scripts/build_dataset.py were corrected and the page regenerated.",
+    "FINDING 2 (fixed): source nist-hb44-2026 pointed at a NIST URL that returns 'Page not found' (404) and carried a subtitle the page never used ('Appendix C: Units of Mass for Precious Metals & Metric Carat'). Replaced with https://www.nist.gov/pml/owm/nist-handbook-44-current-edition and the real title; the invented numeric attribution was removed.",
+    "FINDING 3 (fixed): the SP 811 registry entry called 31.1034768 g an 'exact SI conversion factor from NIST'. NIST Appendix B.8 prints 3.110 348 E+01 g in non-bold type (rounded) and marks only the metric carat 2.0 E-01 bold (exact). The claim was rewritten; the constant itself (480 grains) is unchanged and remains exact by definition.",
+    "FINDING 4 (fixed): the site cited 15 U.S.C. § 297 (trademark stamping law) and the FCBA 90-day outer limit with no registry entry behind either. § 297 and 12 CFR 1026.13 were read and registered; the catalog's CFPB wording now attributes the 2-billing-cycle/90-day limit to § 1026.13(c)(2) instead of to the CFPB FAQ page, which does not state it.",
+    "Gold spot re-captured: World Gold Council panel USD 4,024.45/oz with the page's own date line 'Data as of 22 October, 2026'. The 2026-10-22 reading (4,028.53/oz) moved to prior_captures unchanged; compute.py re-derived every melt value and audit.py re-checked them independently.",
+    "Rows re-read live: AL-01 ($585, 3.58 g, NG4426), SR-01 ($352, 4.80 g, SKU 10KW-LPBWB05), RS-01 ($400, 1.7 g) all matched their records exactly. MJ-01 opened on the white-gold/natural-diamond variant at $548, so its price matches but the yellow-gold variant was not re-confirmed; PRICE_VARIANT_DEPENDENT stands.",
+    "Rows not re-read today: AN-01 loaded but its Product Details table was not reached; the other 59 rows keep their 2026-10-22 captures and are not claimed as re-verified in this pass.",
+    "New Gate 6 (scripts/session_46691f83/verify_citations.py) added to CI: it carries the eCFR section headings read today, enforces a label rule and a single-citation sentence rule, requires a registry URL for every statute cited on the site, and ships a --self-test that must reject the exact § 23.9 error this pass found."
+   ],
+   "result": "PASS — 5 pre-existing gates green, new Gate 6 green (84 CFR references, 0 violations), audit.py 130 checks / 0 failures, 0 broken local links.",
+   "outcome": "Three real defects fixed (two wrong citations, one dead source URL with an invented subtitle) and one overstatement corrected. No price, weight or karat value was changed: the four rows re-read matched. Derived values were recomputed against the 2026-10-23 spot capture, which moved -0.10%."
   }
  ],
  "not_reverified_this_pass": [
-  "Seller reputation and independent complaint history for all six sellers — no independent review corpus was consulted, so no row is marked reputation-verified.",
-  "Physical hallmark, XRF assay and actual as-delivered gram weight — these can only be established on the ring in hand, which is why the checklist requires an independent jeweller and XRF check on arrival.",
-  "Brilliant Earth's full return window and exclusions text, which the site would not serve to this fetcher (navigation and footer only, twice).",
-  "Anjolee's resize terms, which were not published on the captured product page.",
-  "Pass 9 did not re-fetch the 47 rows already published (they stand as the latest published passes verified them), and could not live-refetch its own 9 V2 rows or the Brilliant Earth generic returns-policy page because of the fetch-service outage (23:20-23:47Z); those rows carry PRICE_V2_ONLY and appear on the Flagged page until a live re-fetch confirms them.",
-  "Pass 11 could not complete the live re-fetch of BE-05/BE-06/BE-07 (Brilliant Earth Freesia 14K/18K, Fleur) - the fetch outage returned mid-page; they remain PRICE_V2_ONLY on the Flagged page until a live read confirms them."
+  "AN-01 (Anjolee MS354-A): page loaded 2026-10-23 but the Product Details table was not reached, so $870.76 and 2.90 g remain the 2026-10-22 readings.",
+  "59 of 64 rows: not re-opened on 2026-10-23. Their price/weight/policy values retain the 2026-10-22 capture date shown on each row.",
+  "BE-05, BE-06, BE-07: prices still rest on V2 (dated snapshot) evidence; audit.py keeps warning about them.",
+  "Mene, Catbird, VRAI and all 26 Blue Nile rows were not re-opened in this pass."
  ]
 }

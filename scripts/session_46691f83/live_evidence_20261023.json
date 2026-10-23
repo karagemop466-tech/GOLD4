@@ -1,0 +1,112 @@
+{
+ "session": "arena/46691f83-gold4",
+ "pass": "Pass 14 — fresh source verification (2026-10-23)",
+ "method": "Each URL below was opened directly (headless page fetch returning the rendered text) on 2026-10-23 between 09:50Z and 10:20Z. 'observed' quotes only what the returned page text actually showed. Nothing in this file is estimated.",
+ "checks": [
+  {
+   "id": "ftc-gold-jewelry",
+   "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+   "status": "LIVE",
+   "observed": "'A piece of jewelry marked 18K gold is 18 parts gold mixed with six parts of another metal. A piece marked 14K gold is 14 parts gold mixed with 10 parts of another metal.' / 'If you're thinking about buying a piece of gold jewelry but don't see a trademark along with the karat mark, don't buy it.' / 'The phrase \"solid gold\" means the gold item isn't hollow.' / defines gold filled, gold overlay, rolled gold plate (RGP), gold electroplate, vermeil, gold flashed, gold washed.",
+   "supports": "methodology karat_fineness, hallmark.requirement, solid_gold.definition, prohibited_terms"
+  },
+  {
+   "id": "ecfr-16-23",
+   "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
+   "status": "LIVE",
+   "observed": "eCFR states 'Displaying title 16, up to date as of 10/21/2026'. Section headings read: 23.3 Misrepresentation as to gold content; 23.4 Misuse of the word 'vermeil'; 23.7 Disclosure of surface-layer application of rhodium; 23.8 Misrepresentation as to products containing more than one precious metal; 23.9 Misrepresentation as to content of pewter; 23.10 Additional guidance for the use of quality marks. 23.3(b)(1) reserves unqualified 'Gold' for 24-karat; 23.3(c)(1) bars 'solid' wording for hollow articles; 23.4(b) requires sterling silver + >=10K gold at 2.5 microns for 'vermeil'; 23.10 contains the trademark/quality-mark paragraph citing 15 U.S.C. 297.",
+   "supports": "methodology legal_basis; CORRECTS catalog §23.9 attribution"
+  },
+  {
+   "id": "usc-15-295",
+   "url": "https://www.law.cornell.edu/uscode/text/15/295",
+   "status": "LIVE",
+   "observed": "'the actual fineness of such gold or alloy shall not be less by more than three one-thousandth parts than the fineness indicated by the mark' and '...shall not be less by more than three one-thousandth parts, in the case of a watchcase or flatware, or than seven one-thousandth parts, in the case of any other such article'.",
+   "supports": "methodology legal_allowable_deviation 0.003 / 0.007"
+  },
+  {
+   "id": "usc-15-297",
+   "url": "https://www.law.cornell.edu/uscode/text/15/297",
+   "status": "LIVE",
+   "observed": "Heading: 'Stamping plated articles.' (b) requires a trademark or name of the person applying any quality mark, in lettering at least as large as the quality mark and as close as possible to it. This section was cited on standards.html but had no sources.json entry before this pass.",
+   "supports": "NEW source registry entry for the trademark rule"
+  },
+  {
+   "id": "cfpb-fcba-en61",
+   "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
+   "status": "LIVE",
+   "observed": "'you must also send a written billing error notice to the card company within 60 calendar days after the charge appeared on your statement. After receiving the notice, the company has 30 days to send you a letter confirming they received your billing dispute...'. The page does NOT state the 2-billing-cycle / 90-day outer limit.",
+   "supports": "payment guidance; catalog wording corrected to attribute the 90-day limit to 12 CFR 1026.13"
+  },
+  {
+   "id": "ecfr-12-1026-13",
+   "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1026/subpart-B/section-1026.13",
+   "status": "LIVE",
+   "observed": "(b)(1) notice no later than 60 days after the first statement; (c)(1) written acknowledgment within 30 days; (c)(2) resolution within 2 complete billing cycles but in no event later than 90 days.",
+   "supports": "NEW source registry entry for the 90-day outer limit"
+  },
+  {
+   "id": "nist-sp811-pml",
+   "url": "https://www.nist.gov/pml/special-publication-811",
+   "status": "LIVE",
+   "observed": "SP 811 (2008) landing page. Its Appendix B.8 'Factors for Units Listed Alphabetically' (followed from the page's own table of contents, https://www.nist.gov/physical-measurement-laboratory/nist-guide-si-appendix-b8) lists 'carat, metric | gram (g) | 2.0 E-01' in bold (exact) and 'ounce (troy or apothecary) (oz) | gram (g) | 3.110 348 E+01' NOT in bold, i.e. 31.10348 g rounded, not the 31.1034768 g the project uses.",
+   "supports": "CORRECTION: the 31.1034768 g figure is the 480-grain definition, consistent with NIST's rounded table value; it must not be quoted as NIST's exact figure"
+  },
+  {
+   "id": "nist-hb44-2026",
+   "url": "https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44",
+   "status": "HTTP-404",
+   "observed": "NIST returns 'Page not found ... Error 404' for this URL. The live Handbook 44 page is https://www.nist.gov/pml/owm/nist-handbook-44-current-edition ('Current Version - 2026', Sections 1.10, 2.20, 2.21, ... links to DOCX/PDF per section).",
+   "supports": "CORRECTION: dead URL replaced with the live current-edition page"
+  },
+  {
+   "id": "nist-hb44-current-2026",
+   "url": "https://www.nist.gov/pml/owm/nist-handbook-44-current-edition",
+   "status": "LIVE",
+   "observed": "'NIST Handbook 44 - Current Edition ... Current Version - 2026 ... as adopted by the 109th National Conference on Weights and Measures' with per-section downloads. The page itself does not restate any troy-ounce or carat conversion, so this project will not attribute a numeric conversion factor to it.",
+   "supports": "replacement URL; corrected title and supports text"
+  },
+  {
+   "id": "wgc-gold-prices",
+   "url": "https://www.gold.org/goldhub/data/gold-prices",
+   "status": "LIVE",
+   "observed": "Spot panel reads 'USD /oz 4,024.45' with 'Last Updated'; the dataset block is dated 'Data as of 22 October, 2026' and 'Market Data: Provided by ICE Data Services'.",
+   "supports": "new dated benchmark capture for 2026-10-23"
+  },
+  {
+   "id": "AL-01",
+   "url": "https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold",
+   "status": "LIVE",
+   "observed": "$585 (was $1,194) · 'Setting only. Center stone sold separately.' · Style number NG4426 · Metal 14k Yellow Gold · 'Approximate Metal Weight 3.58 grams'.",
+   "supports": "price + weight re-confirmed unchanged"
+  },
+  {
+   "id": "SR-01",
+   "url": "https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+   "status": "LIVE",
+   "observed": "Now US$352.00 (-15% from US$412.00) · SKU 10KW-LPBWB05 · Material '10K Solid Gold' · 'Approximate Metal Weight: 4.80 grams' · page note 'The weight listed is an approximate weight of a ring in size 10'.",
+   "supports": "price + weight re-confirmed unchanged"
+  },
+  {
+   "id": "RS-01",
+   "url": "https://www.ross-simons.com/jewelry/rings/571221.html",
+   "status": "LIVE (redirected to /products/571221)",
+   "observed": "$400 · Item 571221 · Metal '14kt Yellow Gold' · 'Gold Weight 1.7 grams' · 'All weights and measurements are approximate.'",
+   "supports": "price + weight re-confirmed unchanged; canonical URL is /products/571221"
+  },
+  {
+   "id": "MJ-01",
+   "url": "https://mejuri.com/products/diamonds-team-ring",
+   "status": "LIVE",
+   "observed": "Opened on the default 'Solid White Gold (14k), Natural Diamond' variant at $548. The Materials block still says 'Solid Yellow Gold (14k)'. No gram weight is published.",
+   "supports": "price $548 confirmed on the page, but the variant shown differs from the row's yellow-gold basis -> PRICE_VARIANT_DEPENDENT stands"
+  },
+  {
+   "id": "AN-01",
+   "url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
+   "status": "LIVE",
+   "observed": "Page loaded; the first screen of returned text contains navigation only - the Product Details table with price and 'Approx. Metal Weight' was not reached in this pass, so the recorded $870.76 / 2.90 g were NOT re-confirmed today.",
+   "supports": "NOT re-verified in this pass - carried from 2026-10-22"
+  }
+ ]
+}

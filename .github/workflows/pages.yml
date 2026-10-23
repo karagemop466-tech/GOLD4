@@ -32,6 +32,10 @@ jobs:
         run: python3 scripts/verify_a0be79d4.py
       - name: Gate 5 — Gemstone-deduction, category subpage & 750-check hallucination auditor (audit_hallucinations.py)
         run: python3 scripts/audit_hallucinations.py
+      - name: Gate 6 — Citation-integrity self-test (must reject a known-bad CFR citation)
+        run: python3 scripts/session_46691f83/verify_citations.py --self-test
+      - name: Gate 6 — Citation-integrity check (every CFR citation vs its official section heading)
+        run: python3 scripts/session_46691f83/verify_citations.py
       - name: Configure Pages
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5

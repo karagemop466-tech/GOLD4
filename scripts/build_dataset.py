@@ -122,14 +122,14 @@ STANDARDS_SOURCES = [
         "id": "STD-ECFR-16CFR23",
         "title": "16 CFR Part 23 — Guides for the Jewelry, Precious Metals, and Pewter Industries",
         "authority": "Electronic Code of Federal Regulations (NARA / FTC)",
-        "citation": "16 CFR §§ 23.1–23.18 (incl. § 23.3 Gold, § 23.4 Vermeil, § 23.7 Rhodium, § 23.8 Multi-Metal, § 23.9 Quality Marks)",
+        "citation": "16 CFR Part 23 (incl. § 23.3 Gold, § 23.4 Vermeil, § 23.7 Rhodium, § 23.8 Multi-Metal, § 23.10 Quality Marks)",
         "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
         "retrieved_date": "2026-10-22",
         "key_takeaways": [
             "16 CFR § 23.3: Unqualified 'Gold' means 24K through and through; <10K cannot be called karat gold; hollow centers must not be deceptively described.",
             "16 CFR § 23.4: Vermeil requires sterling silver (>=92.5% Ag) coated with >=2.5 microns of >=10K gold — never solid gold.",
             "16 CFR § 23.7 & § 23.8: White gold rhodium plating and multi-metal components (e.g., 18K shank + platinum/14K prongs) require non-deceptive disclosure in weight order.",
-            "16 CFR § 23.9 & 15 U.S.C. § 297 (National Stamping Act): Every quality stamp must be accompanied by the registered manufacturer/seller trademark.",
+            "16 CFR § 23.10 & 15 U.S.C. § 297 (National Stamping Act): Every quality stamp must be accompanied by the registered manufacturer/seller trademark.",
         ],
     },
     {
