@@ -11,11 +11,13 @@
    "retrieved_utc": "2026-10-22",
    "verification": "V1_direct_page_fetch",
    "supports": [
-    "Written billing-error dispute notice must reach card issuer within 60 days after first statement showing the charge",
-    "Card issuer must acknowledge in writing within 30 days and resolve within two billing cycles (no more than 90 days)"
+    "Consumers must send a written billing-error notice to the card company within 60 calendar days after the charge appears on the statement.",
+    "After receiving the notice, the company has 30 days to send a written letter confirming it received the dispute, unless it completes the required billing-error resolution procedures within that time.",
+    "The page does NOT state the two-billing-cycle / 90-day outer limit; that limit is in 12 CFR 1026.13(c)(2) and 15 U.S.C. § 1666(a)(B), registered separately.",
+    "The page also points readers to a separate process for goods or services that turn out to be defective."
    ],
    "reverified_utc": "2026-10-23",
-   "reverification": "Re-read 2026-10-23: 60 calendar days for the written billing-error notice and 30 days for the acknowledgment. Page reviewed APR 15, 2024."
+   "reverification": "Re-read 2026-10-23. The 60-day notice window and the 30-day acknowledgment are on the page; the 90-day outer limit is not, and the supports list was corrected so it is no longer attributed to this page."
   },
   {
    "id": "ecfr-12-1026-13",
