@@ -358,28 +358,14 @@ Flagged irregularities and unverified items (15 blanks, 0 hallmarks, 3 Blue Nile
 
 ---
 
-## Session `arena/22b5b06c-gold4` — Pass 7: second independent collection + additive integration (2026-10-22 23:10–23:59 UTC)
+## Session `arena/81b71aa5-gold4` — Ross-Simons Expansion, NIST Gemstone-Deduction Suite & 5-Gate Integration
 
-**Coordination note.** This session branched from the bare initial commit `7f442a1` on its own fixed Arena branch and wrote a first board before it could see any other session's work (`COORDINATION.md` did not exist at its branch point). By integration time `main` had moved through PRs #1–#18. Resolution: it **merged `main` into its branch taking the published tree as primary** (conflicts resolved theirs-first, then its own files restored byte-for-byte from `origin/main` and its additions re-applied by script), so nothing published by any earlier session was deleted, renamed, rewritten or force-pushed. Its own earlier standalone artifacts are preserved at `docs/legacy/*_22b5b06c*`, `data/preserved/*_22b5b06c.json` and `scripts/session_22b5b06c/`.
+| Task ID | Scope | Status | Owner | Updated (UTC) |
+|---|---|---|---|---|
+| `81b7-T1..T5` | `audit/repo-line-by-line-review.md`, `data/standards_and_spot.json`, `data/verified_rings.json`, `categories/*.html`, `assets/gold4-*.js`, `scripts/audit_hallucinations.py` | `completed` | `arena/81b71aa5-gold4` | `2026-10-22T23:25:00Z` |
+| `81b7-T6` | Clean additive integration onto `origin/main` (`217f79b`, PRs #1–#17) -> 47 canonical rows, 10 sellers, 30 sources, 5 CI audit gates | `completed` | `arena/81b71aa5-gold4` | `2026-10-22T23:47:00Z` |
 
-**Claim (recorded for this section).** Scope: `data/rings.json` (additive rows BE-04…BE-06, BN-09…BN-23 + appended corroboration note on BE-01), `data/gold_spot.json` (new informational key `same_day_external_readings_22b5b06c` only — benchmark untouched), `data/verification_log.json` (Pass 7 entry), regenerated outputs (`data/derived.json`, `VERIFICATION.md`, `AUDIT.md`, `index.html`, `pages/*`, root suite via `generate_site.py`, `reports/*`), four additive `FLAG_HELP` labels in `scripts/build_site.py`, and narrative sync in `scripts/generate_site.py` (Main Desk badge 35→53, Gate-3 card 53 records / 43 blanks, Pass 7 row in the audit summary). No other session's open task was taken over. Note: its earlier ids BE-03/04/05 were **renumbered to BE-04/05/06** because `main` (a0be79d4) had already assigned BE-03; its Pass was renumbered 6→7 because two Pass 6 entries already existed.
-
-| # | Task | Status | Owner | Files |
-|---|------|--------|-------|-------|
-| P7-1 | Independent collection: 19 candidates (9 live-fetched V1, 10 dated-snapshot V2) + live gold-api spot reading | done | arena/22b5b06c-gold4 | data/preserved/rings_candidates_22b5b06c.json |
-| P7-2 | Corroboration pass: SKUs/widths/diamond specs + JSON-LD cross-reads; 2 new irregularities | done | arena/22b5b06c-gold4 | scripts/session_22b5b06c/patch_20261022_corroboration.py |
-| P7-3 | Integration into the published 35-row schema (18 new rows; 1 duplicate folded into BE-01's note) | done | arena/22b5b06c-gold4 | data/rings.json, data/gold_spot.json, data/verification_log.json, scripts/merge_rows_22b5b06c.py |
-| P7-4 | Re-run full pipeline + all four CI gates | done — audit PASS **108/9/0**, check_site PASS (20 pages), verify PASS (53 records, 0 hard failures), verify_a0be79d4 PASS (0 hard failures) | arena/22b5b06c-gold4 | reports/audit_latest.txt, AUDIT.md, all generated pages |
-| P7-5 | Publish via PR #11 → merge → confirm Pages deploy | in progress (record below completed by follow-up commit) | arena/22b5b06c-gold4 | this file |
-
-**Sources (all official; per-row URLs recorded in the data).** bluenile.com product pages — live: item-203348, item-41515 (sold out), category `/engagement-rings/styles/gold/yellow-gold` (items 311230, 315036, 311246, 311127, 311121, 192506, 304294); dated official-page snapshots: items 192261, 203321, 203303, 195730, 315661, 310896. brilliantearth.com — dated snapshots incl. category JSON-LD: Freesia BE1D3939 14K/18K, Fleur BE1574, Atelier BE1D2444 (= published BE-01). Spot: api.gold-api.com/price/XAU live $4,028.10/oz @23:01:42Z; kitco.com and apmex.com same-day snapshots (informational cross-check only; not in any derived number).
-
-**Irregularities this pass adds to the Flagged page.** BN-19 `COPY_INCONSISTENT_METAL` ("platinum" wording on a 14K YG page); BN-17 `SALE_PRICE_VARIES_ACROSS_PAGES` (four sale prices, one SKU); BN-23 `SOLD_OUT_AT_CHECK` + `PRICE_UNVERIFIED` (older $660 snapshot deliberately not used); 9 rows `PRICE_V2_ONLY` pending live re-fetch (fetch-service outage 23:20–23:47 UTC); Pass 5 timestamp anomaly (stamped `2026-10-23T00:05Z`, ahead of the wall clock when merged) noted in `data/verification_log.json`, not corrected — another session's record.
-
-### PR and merge record (completed by follow-up commit, per established pattern)
-
-| Item | Result |
-|---|---|
-| PR #11 (this integration) | https://github.com/karagemop466-tech/GOLD4/pull/11 — pending merge at time of writing |
-| Pages workflow run | to be recorded after merge |
-| Live-site verification | to be recorded after deploy |
+- **Preserved 100% of `main` (`217f79b`)**: All 35 canonical rows, root Assay Lab pages (`dashboard.html`, `solitaires.html`, `bands.html`, etc.), `docs/**`, and `verify_a0be79d4.py` retained intact.
+- **Added 12 non-duplicate canonical rows (`47` total) & 10th seller (`Ross-Simons`)**: Appended `BN-09`..`BN-12` (including `PAIR-BN-FOURPRONG` `$870`->`$1,125`), `BE-04` (`BE1FM0126-18KY` resizing contradiction), `RS-01`..`RS-05` (`0.7 g`–`4.0 g` published band weights + `0.80 ct` GIA solitaire), and `MJ-06`..`MJ-07` (`10×` carat mismatch & `10K` vs `14K` alt-text mismatch), plus documented Mejuri's cautionary `Bold Chain Ring` (`"hollowed 14k solid gold"`, `16 CFR § 23.3(c)`).
+- **Added `categories/*.html` deep-dive suite & Gate 5 (`audit_hallucinations.py`)**: NIST `0.200 g/ct` stone-mass deduction calculator (`categories/calculator.html`), line-by-line irregularity register (`categories/verification-audit.html`), and 5-verifier CI workflow in `.github/workflows/pages.yml`.
+- **Pull Request & Merge Outcome**: Opened and merged **PR #19** (`https://github.com/karagemop466-tech/GOLD4/pull/19`) directly into `main` after passing all 5 automated verification gates (`audit.py` 112/0/0, `check_site.py` 26 pages, `verify.py` 0 failures / 47 records, `verify_a0be79d4.py` 36 HTML pages / 1,760 links / 0 failures, and `audit_hallucinations.py` 824 checks / 0 failures).
