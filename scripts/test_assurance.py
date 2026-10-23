@@ -3,8 +3,10 @@
 import json
 import re
 import unittest
+import urllib.error
 from pathlib import Path
 from build_source_health import money, reconcile
+from live_source_check import AllowlistedRedirectHandler
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -36,6 +38,22 @@ class AssuranceTests(unittest.TestCase):
     def test_explicit_usd_can_match(self):
         self.assertEqual(reconcile(self.row(), self.record('USD'))['price_state'], 'CONFIRMED')
 
+    def test_multiple_variant_offers_are_not_exact_confirmation(self):
+        record = self.record('USD')
+        record['structured_prices'].append({'price': '398', 'currency': 'USD',
+                                            'source': 'json-ld', 'type': 'Offer'})
+        self.assertEqual(reconcile(self.row(), record)['price_state'],
+                         'MULTIPLE_OFFERS_INCLUDE_STORED')
+        # Repeated copies of one distinct amount are not multiple variants.
+        record['structured_prices'][1]['price'] = '585'
+        self.assertEqual(reconcile(self.row(), record)['price_state'], 'CONFIRMED')
+
+    def test_redirects_stay_https_and_on_allowlisted_hosts(self):
+        handler = AllowlistedRedirectHandler({'example.com'})
+        for target in ('http://example.com/next', 'https://evil.example/next'):
+            with self.subTest(target=target), self.assertRaises(urllib.error.URLError):
+                handler.redirect_request(object(), None, 302, 'Found', {}, target)
+
     def test_unreachable_never_confirms(self):
         for state in ('HTTP_404', 'REFUSED_403', 'ENVIRONMENT_BLOCKED', 'SOFT_404'):
             record = self.record('USD')
@@ -57,12 +75,31 @@ class AssuranceTests(unittest.TestCase):
         self.assertIn("github.event.pull_request.number || 'production'", workflow)
         self.assertNotIn('group: pages\n', workflow)
 
-    def test_read_only_workflow(self):
+    def test_evidence_return_is_isolated_and_ref_validated(self):
         workflow = (ROOT / '.github/workflows/live-source-check.yml').read_text()
-        self.assertIn('contents: read', workflow)
-        self.assertNotIn('git push', workflow)
-        # Expressions in YAML configuration are fine; none may enter run scripts.
+        self.assertIn('permissions:\n  contents: read', workflow)
+        self.assertIn('live-check:\n', workflow)
+        self.assertIn('publish-evidence:\n', workflow)
+        self.assertIn('github.event.pull_request.head.repo.full_name == github.repository', workflow)
+        self.assertIn('git check-ref-format --branch "$PR_BRANCH"', workflow)
+        self.assertIn('git push origin "HEAD:refs/heads/$PR_BRANCH"', workflow)
+        self.assertIn('git add -- "${artifacts[@]}"', workflow)
         self.assertNotIn('HEAD:${{ github.head_ref }}', workflow)
+        # GitHub expressions belong in action inputs/env, never in shell text.
+        in_run = False
+        run_indent = 0
+        for line in workflow.splitlines():
+            stripped = line.lstrip()
+            indent = len(line) - len(stripped)
+            if stripped.startswith('run:'):
+                self.assertNotIn('${{', line)
+                in_run = True
+                run_indent = indent
+                continue
+            if in_run and stripped and indent <= run_indent:
+                in_run = False
+            if in_run:
+                self.assertNotIn('${{', line)
 
 
 if __name__ == '__main__':

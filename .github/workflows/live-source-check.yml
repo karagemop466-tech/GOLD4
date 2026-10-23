@@ -1,16 +1,15 @@
-name: Live source health check (read-only, evidence only)
+name: Live source health check (read-only collection, isolated evidence return)
 
-# This workflow does NOT gate the site. It re-opens every official URL in the
-# dataset from a runner that has unrestricted outbound internet, and uploads the
-# raw evidence (HTTP status, soft-404 detection, page title, price snippets)
-# as an Actions artifact only. It never writes to a branch.
+# The network collection job is read-only and never writes product values. On a
+# same-repository pull request, a separate job downloads only its evidence
+# artifact and commits reports/live_source_check_*.json so reviewers in network-
+# restricted environments can inspect the raw observations. That second job is
+# the only job with contents:write. Branch metadata is passed through environment
+# variables and validated as a ref; it is never interpolated into shell code.
 #
-# The offline gates in pages.yml cannot see link rot; this one can. It is the
-# online half of the anti-hallucination posture: a stored price is only as good
-# as the page that still has to print it.
-#
-# It never writes a value into data/*.json — a human or a later pass reviews the
-# artifact and applies findings with provenance.
+# A raw-evidence-only commit can intentionally make Gate 7 fail until a reviewer
+# reconciles data/source_health.json and the canonical rows. The workflow never
+# performs that reconciliation or overwrites a price, weight, URL or policy.
 
 on:
   pull_request:
@@ -33,15 +32,19 @@ jobs:
   live-check:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref || github.ref_name }}
           fetch-depth: 0
       - name: Re-open every official source URL (read-only GET)
-        run: python3 scripts/live_source_check.py --timeout 30 --session "${{ github.head_ref || github.ref_name }}" --pass-label "Pull request live check"
+        env:
+          SOURCE_SESSION: ${{ github.head_ref || github.ref_name }}
+        run: python3 scripts/live_source_check.py --timeout 30 --session "$SOURCE_SESSION" --pass-label "Pull request live check"
         continue-on-error: true
-      - name: Publish evidence artifact (belt and braces)
+      - name: Publish evidence artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -49,3 +52,44 @@ jobs:
           path: reports/live_source_check_*.json
           retention-days: 30
           if-no-files-found: warn
+
+  publish-evidence:
+    # Fork PR tokens cannot and must not write to the base repository. Their
+    # evidence remains available as an artifact only.
+    if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository && always() }}
+    needs: live-check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - name: Download read-only collection evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: live-source-check
+          path: reports
+      - name: Commit only raw evidence to the validated PR branch
+        env:
+          PR_BRANCH: ${{ github.head_ref }}
+        run: |
+          set -euo pipefail
+          git check-ref-format --branch "$PR_BRANCH" >/dev/null
+          git config user.name "gold4-live-check"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          shopt -s nullglob
+          artifacts=(reports/live_source_check_*.json)
+          if ((${#artifacts[@]} == 0)); then
+            echo "no evidence artifact to commit"
+            exit 0
+          fi
+          git add -- "${artifacts[@]}"
+          if git diff --cached --quiet; then
+            echo "no evidence change to commit"
+            exit 0
+          fi
+          git commit -m "ci: live source-health evidence $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push origin "HEAD:refs/heads/$PR_BRANCH"
