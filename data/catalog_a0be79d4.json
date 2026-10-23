@@ -1379,6 +1379,28 @@
       "action": "Keep every hallmark cell UNVERIFIED; complete the stamp + trademark check and an XRF assay with an independent jeweller inside the return window.",
       "source_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
       "date": "2026-10-23"
+    },
+    {
+      "flag_id": "FLG-HIGH-13",
+      "severity": "HIGH",
+      "category": "Currency Localization / Reproducibility",
+      "item_ref": "BE-05 (Brilliant Earth Freesia Hidden Halo, style BE1D3939-14KY, recorded $1,190)",
+      "title": "Same Retailer Served EUR on One Product Page and USD on Two Others Within the Same Minutes",
+      "detail": "Pass 14 (2026-10-23) re-fetched three Brilliant Earth pages. The 14K Freesia page rendered 'EUR 1,350.00 (Setting Only)' and published no USD figure; the 18K Freesia page rendered '$1,390 (Setting Only)' and the Fleur 14K page '$1,350 (Setting Only)' in the same session. Localization is therefore per-page, not per-visitor. The stored $1,190 for BE-05 is a dated official-page snapshot and stays flagged PRICE_V2_ONLY + PRICE_CURRENCY_LOCALIZED rather than being converted from EUR.",
+      "action": "Confirm the currency in the site selector and refresh before comparing any Brilliant Earth price. Do not convert the EUR figure and treat it as the USD price.",
+      "source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
+      "date": "2026-10-23"
+    },
+    {
+      "flag_id": "FLG-MED-14",
+      "severity": "MEDIUM",
+      "category": "Price Anchoring",
+      "item_ref": "SR-01 (Sarraf 10K White Gold 5mm Domed Band, SKU 10KW-LPBWB05, $352.00)",
+      "title": "Seller's Own 'MSRP' Is 3.9x the Charged Price and Cannot Be Independently Verified",
+      "detail": "The live page shows 'MSRP: US$1,369.00', 'Was: US$412.00' and 'Now: US$352.00 -15% OFF' (automatic coupon) for one ring. Only $352.00 is a transaction price. At the 22-October benchmark the ring's 4.80 g of 10K gold holds 2.00 g fine gold worth about $258.78, so the charged price is 1.36x its gold value while the 'MSRP' would be 5.3x. This project has no independent source for the MSRP.",
+      "action": "Ignore the MSRP. Compare the $352.00 against the 4.80 g of 10K gold and other plain 10K domed bands, and get the weight for your size in writing (the page states the weight is approximate and quoted for a size 10 ring).",
+      "source_url": "https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+      "date": "2026-10-23"
     }
   ]
 }

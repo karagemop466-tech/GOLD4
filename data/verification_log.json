@@ -254,6 +254,31 @@
       ],
       "result": "PASS — 4 Tier A/B sources and 5 retailer pages re-read live; 1 incorrect legal claim found and corrected; 1 benchmark date drift found and refreshed; 2 confirmed-but-still-unresolved retailer irregularities re-published. No fabricated value was added.",
       "outcome": "All four corrections are published on the Flagged page with source links; every unconfirmable value remains blank."
+    },
+    {
+      "pass": "Pass 14 — independent live re-verification, V2 rows cleared (session arena/04f1f10d-gold4)",
+      "when_utc": "2026-10-23T10:05Z",
+      "scope": "Independent live pass from branch arena/04f1f10d-gold4, run concurrently with session arena/d1586f6a-gold4's Pass 12. Both sessions read the same World Gold Council panel and got the same 4,024.45 / '22 October, 2026' figure, so the benchmark is corroborated by two separate live reads. This pass concentrated on the last three PRICE_V2_ONLY rows and on rows that publish a gram weight.",
+      "checked": [
+        "World Gold Council spot panel: 4,024.45 USD/oz, 'Data as of 22 October, 2026' — identical to Pass 12's read. Independent cross-check gold-api.com $4,025.60/oz at 2026-10-23T09:51:43Z (0.029% apart).",
+        "BE-06 (Freesia 18K): live '$1,390 (Setting Only)' in USD — matches. Upgraded V2 -> V1; PRICE_V2_ONLY removed; style BE1D3939-18KY recorded from the live spec block; width left blank (2-1.3 mm taper).",
+        "BE-07 (Fleur 14K): live '$1,350 (Setting Only)' in USD — matches. Upgraded V2 -> V1; PRICE_V2_ONLY removed; width 1.8 mm recorded from the live spec block.",
+        "BE-05 (Freesia 14K): live page served 'EUR 1,350.00 (Setting Only)' and no USD figure. Stored $1,190 NOT changed, NOT converted; provenance stays V2 + PRICE_V2_ONLY. BE-06/BE-07 served USD in the same minutes, so localization is per-page.",
+        "AL-01 (Allurez): '$585', NG4426, 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams' — matches Pass 12's independent reading.",
+        "RS-01: '$400', Item 571221, 14kt Yellow Gold, 'Gold Weight 1.7 grams' — matches.",
+        "RS-02: '$249', Item 985230, 18kt Yellow Gold, 'Gold Weight 0.7 grams' — matches; the page is 18kt, not 14kt.",
+        "SR-01: 'Now: US$352.00', '10K Solid Gold', 'Approximate Metal Weight: 4.80 grams', size-10 caveat — matches. New flag SALE_MSRP_ANCHOR records MSRP $1,369 / Was $412 / Now $352."
+      ],
+      "result": "PASS (compute -> build_site + generate_site -> all five CI gates re-run after the edits)",
+      "outcome": "2 of the 3 remaining PRICE_V2_ONLY rows upgraded to V1 with matching live prices; the third stays V2 because the page would not serve a USD figure. Provenance now 62 V1 / 1 V2 / 1 U of 64. Gate 1 warnings fall 3 -> 1 (only BE-05).",
+      "flags_added": [
+        "SALE_MSRP_ANCHOR (SR-01): seller MSRP US$1,369 against a charged US$352 — unverifiable comparison figure.",
+        "BE-05 PRICE_CURRENCY_LOCALIZED re-confirmed live: EUR served instead of USD.",
+        "FLG-HIGH-13 (catalog): Brilliant Earth per-page currency localization.",
+        "FLG-MED-14 (catalog): Sarraf MSRP anchor."
+      ],
+      "recommendation": "LOOK FOR HALLUCINATIONS AFTER EVERY REVIEW. Run scripts/audit.py, check_site.py, verify.py, verify_a0be79d4.py and audit_hallucinations.py, then open the source link beside each number you intend to rely on. Prices on these pages move weekly, so an unopened source link is an unverified value.",
+      "note": "Pass 13 was not assigned; pass numbers follow the order in which sessions finished, not a strict sequence."
     }
   ],
   "not_reverified_this_pass": [

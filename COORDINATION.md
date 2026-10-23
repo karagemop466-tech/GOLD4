@@ -6,6 +6,63 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 ---
 
+## Session `arena/04f1f10d-gold4` — Pass 14: live re-verification + spot refresh + integration (2026-10-23)
+
+**Claim (written and pushed before any data file was edited).** This session claims exactly these files:
+
+`data/rings.json`, `data/gold_spot.json`, `data/derived.json`, `data/verification_log.json`, `data/sellers.json`,
+`data/sources.json`, `COORDINATION.md`, `README.md`, `VERIFICATION.md`, `AUDIT.md`,
+`scripts/pass14_04f1f10d.py` (new), `scripts/generate_site.py` + `data/catalog_a0be79d4.json` (claim extended
+10 minutes after the first claim, and recorded here before those two files were touched — no other session is
+active on `main` at this time: PRs #1–#25 are all merged and no branch is claimed in this board), and the
+**generated** site files produced by `scripts/build_site.py` / `scripts/generate_site.py` / `scripts/gen_verification.py`
+(`index.html`, `dashboard.html`, `flagged.html`, `calculator.html`, `audit.html`, `coordination.html`, `pages/*.html`,
+`docs/verification.html`).
+It does **not** edit `scripts/audit.py`, `scripts/compute.py`, `scripts/check_site.py`, `scripts/verify.py`,
+`scripts/verify_a0be79d4.py`, `scripts/audit_hallucinations.py` — those five gates are used unchanged as the
+independent check of this pass. Other sessions' `scripts/session_*` and `data/preserved/*` are untouched.
+
+| # | Task | Status | Owner | File scope | Result |
+|---|------|--------|-------|-----------|--------|
+| P14-1 | Live re-fetch the 3 `PRICE_V2_ONLY` rows (BE-05/06/07) and upgrade to V1 or re-flag | **done** | arena/04f1f10d | `data/rings.json` | BE-06 ($1,390) and BE-07 ($1,350) matched their stored prices and were upgraded to `V1_direct_page_fetch`; BE-05 served **EUR 1,350.00** with no USD figure and stays `V2` + `PRICE_V2_ONLY` + `PRICE_CURRENCY_LOCALIZED`. Gate-1 B-08 warnings 3 → 1. |
+| P14-2 | Re-read the live gold spot and record drift vs the 21 Oct benchmark | **done** | arena/04f1f10d | `data/gold_spot.json` | World Gold Council panel re-read: **$4,024.45/oz, "Data as of 22 October, 2026"** (−0.10% vs $4,028.53 / 21 Oct). Old reading preserved in `prior_captures`; `constants.spot_usd_per_gram` = 129.389072; independent cross-check gold-api.com $4,025.60/oz @ 2026-10-23T09:51:43Z (0.029% apart). |
+| P14-3 | Line-by-line live re-check of published prices/weights against their official pages | **done** | arena/04f1f10d | `data/rings.json`, `data/verification_log.json` | 7 rows re-fetched and re-read (AL-01, RS-01, RS-02, SR-01, BE-05, BE-06, BE-07). Every price, karat, SKU and gram weight matched the stored record; two blank fields were filled from the live spec blocks (BE-06 style code `BE1D3939-18KY`, BE-07 width `1.8 mm`). Two new irregularities logged. Pass 14 appended to the verification log. |
+| P14-4 | Re-run all five CI gates, rebuild the site, confirm no broken links | **done** | arena/04f1f10d | generated pages | `compute.py` → `build_site.py` + `generate_site.py` + `gen_verification.py` → `audit.py` (**128 passed / 1 warning / 0 failures**) · `check_site.py` (**26 pages**, links resolve) · `verify.py` (**64 records**, blanks accounted) · `verify_a0be79d4.py` (**1,952 links, 0 dead**; 44 rendered rows 100% official HTTPS + dated) · `audit_hallucinations.py` (**879 checks, 0 failures**). |
+| P14-5 | Publish via PR → merge → confirm GitHub Pages deploy | **done** | arena/04f1f10d | `COORDINATION.md` | See the merge record at the end of this section. |
+
+### Concurrency note — session `arena/d1586f6a-gold4` merged PR #27 (its "Pass 12") mid-pass
+
+While this pass was running, another session merged its own live pass to `main` (`a482525`, PR #27). Both sessions read the **same** World Gold Council panel on 2026-10-23 and both got **$4,024.45/oz, "Data as of 22 October, 2026"** — an independent two-session corroboration of the same benchmark, which is recorded in `data/gold_spot.json → cross_check_2026_10_23`. That session had already replaced the benchmark, so this branch **did not re-replace it**; main's `gold_spot.json`, `verification_log.json` and `catalog_a0be79d4.json` were taken as the base and only this session's unique deltas were layered on top (the 7 re-read rows, the 2 catalog flags, the cross-check entry and the Pass 14 log entry). `origin/main` was merged into `arena/04f1f10d-gold4`; every conflict was resolved as a union — nothing from the other session was deleted, renumbered or overwritten. Both sessions agree on AL-01 ($585 / 3.58 g) independently.
+
+### Sources used in Pass 14 (all official, all re-opened 2026-10-23)
+
+- **World Gold Council / Goldhub** — https://www.gold.org/goldhub/data/gold-prices — spot panel 4,024.45 USD/oz, "Data as of 22 October, 2026", market data by ICE Data Services.
+- **gold-api.com** — https://api.gold-api.com/price/XAU — $4,025.60/oz at 2026-10-23T09:51:43Z (cross-check only, never used in arithmetic).
+- **Allurez** — https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold
+- **Ross-Simons** — https://www.ross-simons.com/jewelry/rings/571221.html and .../985230.html
+- **Sarraf** — https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html
+- **Brilliant Earth** — three product pages: .../Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/, .../Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/, .../Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/
+
+### Irregularities found in Pass 14 (published on the Flagged pages, non-blocking)
+
+1. **Per-page currency localization at Brilliant Earth (`FLG-HIGH-13`, BE-05).** In the same session, minutes apart, the 14K Freesia page served **EUR 1,350.00** while the 18K Freesia page served **$1,390** and the Fleur page **$1,350**. The stored $1,190 for BE-05 is a dated USD snapshot and was **not** converted or replaced. Reproducibility warning: a screenshot of one page does not predict what the next page will show.
+2. **Sarraf "MSRP" anchor (`FLG-MED-14`, SR-01).** The page shows `MSRP US$1,369.00` / `Was US$412.00` / `Now US$352.00 −15% OFF (automatic coupon)`. Only $352.00 is a transaction price; the MSRP is the seller's own figure and is unverifiable. At the Pass 14 benchmark the ring's 4.80 g of 10K gold holds 2.00 g fine gold ≈ **$258.78** (1.36× the charged price, 5.3× against the MSRP).
+3. **Reverted to a taper range (BE-06).** Brilliant Earth publishes `Width: 2-1.3 mm` for the Freesia. It is recorded as **blank** rather than collapsed to one number; the value stays out of the width column on purpose.
+4. **`PRICE_V2_ONLY` is not extinguishable by wishful conversion.** BE-05 keeps its V2 provenance because no USD price could be read today. Logged so a future pass does not "fix" it by converting EUR.
+
+### What this pass did NOT verify (do not read these as confirmed)
+
+- The other 57 rows were **not** re-fetched today; they carry their own earlier verification dates and provenance in `data/rings.json`. Their prices may have moved since.
+- No seller reputation, complaint history or business registration was checked (no independent review corpus consulted).
+- No physical hallmark, XRF assay or as-delivered weight — impossible without the ring in hand.
+- Brilliant Earth's return window and exclusions text was not re-opened in this pass.
+
+### Standing recommendation (repeat after every review)
+
+**Look for hallucinations on every pass.** Run `python3 scripts/audit.py`, `scripts/check_site.py`, `scripts/verify.py`, `scripts/verify_a0be79d4.py` and `scripts/audit_hallucinations.py`, then open the source link beside each number you intend to rely on. Three rows changed price between 22 and 23 October alone, so an unopened source link is an unverified value.
+
+---
+
 ## Session `arena/d1586f6a-gold4` — Pass 12: independent live re-verification (2026-10-23)
 
 **Claim (written before any file was edited, committed and pushed immediately):** this session claims the *Pass 12 independent live re-verification* scope only.

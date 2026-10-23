@@ -48,7 +48,7 @@
     
         <div class="audit-banner" role="note">
           <div>
-            <strong>ZERO-HALLUCINATION POLICY ENFORCED:</strong> Every populated value links to an official primary page retrieved <code>2026-10-22</code>; unconfirmable or conflicting specs remain blank (<code>—</code>) and flagged. <strong>Always check for hallucinations</strong> on every review pass.
+            <strong>ZERO-HALLUCINATION POLICY ENFORCED:</strong> Every populated value links to an official primary page retrieved <code>2026-10-22</code> or later (latest verification pass <code>2026-10-23</code>); unconfirmable or conflicting specs remain blank (<code>—</code>) and flagged. <strong>Always check for hallucinations</strong> on every review pass.
           </div>
           <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
             <a class="btn btn-sm" href="dashboard.html#zero-hallucination-policy">Read Policy ↑</a>
@@ -70,10 +70,10 @@
       <div class="filter-bar">
         <label>Filter by Severity
           <select id="filter-flag-severity">
-            <option value="all">All Severities (16)</option>
+            <option value="all">All Severities (18)</option>
             <option value="CRITICAL">CRITICAL — Spec Conflicts, Vermeil &amp; 404 Catches (4)</option>
-            <option value="HIGH">HIGH — XRF Spoofing, Multi-Metal &amp; Return Traps (7)</option>
-            <option value="MEDIUM">MEDIUM — Omitted Weights &amp; Sibling Repo Audit (5)</option>
+            <option value="HIGH">HIGH — XRF Spoofing, Multi-Metal &amp; Return Traps (8)</option>
+            <option value="MEDIUM">MEDIUM — Omitted Weights &amp; Sibling Repo Audit (6)</option>
           </select>
         </label>
       </div>
@@ -270,6 +270,30 @@
           <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">Re-checked on the live pages opened this pass: Allurez, Sarraf, Blue Nile and Mejuri publish karat in their metal field but none publishes a photograph or description of the physical stamp plus the maker&#x27;s/registered trademark that 16 CFR 23.3 and the FTC consumer guidance require next to the karat mark. The FTC&#x27;s own guidance is explicit: if the trademark is not next to the karat mark, do not buy. This cannot be settled from a web page, so hallmark_published stays false for every row and the check belongs in the on-arrival XRF step.</p>
           <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> Keep every hallmark cell UNVERIFIED; complete the stamp + trademark check and an XRF assay with an independent jeweller inside the return window.</p>
           <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
+        </article>
+        
+        <article class="flag-card sev-HIGH" data-flag-card="1" data-severity="HIGH">
+          <div style="display:flex;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.4rem;">
+            <span class="badge badge-warn">HIGH · FLG-HIGH-13</span>
+            <span class="mono cell-sub">Currency Localization / Reproducibility · Checked 2026-10-23</span>
+          </div>
+          <h3>Same Retailer Served EUR on One Product Page and USD on Two Others Within the Same Minutes</h3>
+          <div class="cell-sub" style="margin-bottom:0.35rem;"><strong>Target:</strong> BE-05 (Brilliant Earth Freesia Hidden Halo, style BE1D3939-14KY, recorded $1,190)</div>
+          <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">Pass 14 (2026-10-23) re-fetched three Brilliant Earth pages. The 14K Freesia page rendered &#x27;EUR 1,350.00 (Setting Only)&#x27; and published no USD figure; the 18K Freesia page rendered &#x27;$1,390 (Setting Only)&#x27; and the Fleur 14K page &#x27;$1,350 (Setting Only)&#x27; in the same session. Localization is therefore per-page, not per-visitor. The stored $1,190 for BE-05 is a dated official-page snapshot and stays flagged PRICE_V2_ONLY + PRICE_CURRENCY_LOCALIZED rather than being converted from EUR.</p>
+          <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> Confirm the currency in the site selector and refresh before comparing any Brilliant Earth price. Do not convert the EUR figure and treat it as the USD price.</p>
+          <a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
+        </article>
+        
+        <article class="flag-card sev-MEDIUM" data-flag-card="1" data-severity="MEDIUM">
+          <div style="display:flex;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.4rem;">
+            <span class="badge badge-warn">MEDIUM · FLG-MED-14</span>
+            <span class="mono cell-sub">Price Anchoring · Checked 2026-10-23</span>
+          </div>
+          <h3>Seller&#x27;s Own &#x27;MSRP&#x27; Is 3.9x the Charged Price and Cannot Be Independently Verified</h3>
+          <div class="cell-sub" style="margin-bottom:0.35rem;"><strong>Target:</strong> SR-01 (Sarraf 10K White Gold 5mm Domed Band, SKU 10KW-LPBWB05, $352.00)</div>
+          <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">The live page shows &#x27;MSRP: US$1,369.00&#x27;, &#x27;Was: US$412.00&#x27; and &#x27;Now: US$352.00 -15% OFF&#x27; (automatic coupon) for one ring. Only $352.00 is a transaction price. At the 22-October benchmark the ring&#x27;s 4.80 g of 10K gold holds 2.00 g fine gold worth about $258.78, so the charged price is 1.36x its gold value while the &#x27;MSRP&#x27; would be 5.3x. This project has no independent source for the MSRP.</p>
+          <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> Ignore the MSRP. Compare the $352.00 against the 4.80 g of 10K gold and other plain 10K domed bands, and get the weight for your size in writing (the page states the weight is approximate and quoted for a size 10 ring).</p>
+          <a href="https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
         </article>
         
       </div>
@@ -531,7 +555,7 @@
           <td class="mono">10K</td>
           <td class="mono">4.80 g</td>
           <td class="mono">$352.00 (2026-10-22)</td>
-          <td><span class="badge badge-ok">WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED, WHITE_GOLD</span></td>
+          <td><span class="badge badge-ok">WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED, WHITE_GOLD, SALE_MSRP_ANCHOR</span></td>
         </tr>
         
         <tr>
@@ -850,8 +874,8 @@
           <td>Freesia Hidden Halo Diamond Ring</td>
           <td class="mono">18K</td>
           <td class="mono">— UNVERIFIED</td>
-          <td class="mono">$1,390.00 (2026-10-22)</td>
-          <td><span class="badge badge-warn">NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED</span></td>
+          <td class="mono">$1,390.00 (2026-10-23)</td>
+          <td><span class="badge badge-warn">NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED</span></td>
         </tr>
         
         <tr>
@@ -860,8 +884,8 @@
           <td>Fleur Solitaire Ring</td>
           <td class="mono">14K</td>
           <td class="mono">— UNVERIFIED</td>
-          <td class="mono">$1,350.00 (2026-10-22)</td>
-          <td><span class="badge badge-warn">NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED</span></td>
+          <td class="mono">$1,350.00 (2026-10-23)</td>
+          <td><span class="badge badge-warn">NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED</span></td>
         </tr>
         
         <tr>
