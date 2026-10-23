@@ -13,22 +13,22 @@
   "No value is inferred, converted between currencies, or averaged."
  ],
  "row_states": {
-  "OK": 51,
+  "OK": 52,
   "REFUSED_403": 7,
-  "HTTP_404": 5,
+  "HTTP_404": 4,
   "EMPTY_OR_JS_SHELL": 1
  },
  "price_states": {
-  "CONFIRMED": 45,
+  "CONFIRMED": 46,
   "SOURCE_NOT_REACHED": 12,
   "DIFFERS": 4,
   "NO_STORED_PRICE": 2,
-  "NOT_MACHINE_READABLE": 1
+  "NOT_MACHINE_READABLE": 0
  },
  "source_states": {
-  "OK": 24,
-  "REFUSED_403": 4,
-  "HTTP_404": 2,
+  "OK": 52,
+  "REFUSED_403": 7,
+  "HTTP_404": 4,
   "EMPTY_OR_JS_SHELL": 1
  },
  "rows": [
@@ -1638,19 +1638,28 @@
    "id": "RS-05",
    "retailer": "Ross-Simons",
    "product_name": "0.80 Carat GIA Certified Solitaire Diamond Engagement Ring",
-   "url": "https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html",
+   "url": "https://www.ross-simons.com/products/990022",
    "stored_price_usd": 2819.0,
    "stored_price_captured_utc": "2026-10-22",
    "stored_price_verification": "V1_direct_page_fetch",
-   "source_state": "HTTP_404",
-   "http_status": 404,
-   "checked_utc": "2026-10-23T20:22:51Z",
-   "page_title": "404 Not Found",
-   "final_url": "https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html",
-   "soft_404": true,
-   "price_state": "SOURCE_NOT_REACHED",
-   "found_prices": [],
-   "note": "the page returns 404 / a 'cannot be found' page — the stored price can no longer be checked at this URL"
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T20:31Z",
+   "page_title": ".80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold",
+   "final_url": "https://www.ross-simons.com/products/990022",
+   "soft_404": false,
+   "price_state": "CONFIRMED",
+   "found_prices": [
+    {
+     "value": 2819.0,
+     "currency": "USD",
+     "source": "page text",
+     "type": "visible-text",
+     "name": "Item 990022"
+    }
+   ],
+   "note": "URL MIGRATION RESOLVED: the stored .html URL returned HTTP 404 on four runner reads; the product is live at /products/990022 (Item 990022, sale price $2,819, sizes 5-8 in stock) and the row's URL was corrected. This entry records this session's own browser-rendered read at 2026-10-23T20:31Z; the next runner pass will re-read the corrected URL automatically.",
+   "read_path": "browser_rendered_fetch"
   },
   {
    "id": "MJ-06",

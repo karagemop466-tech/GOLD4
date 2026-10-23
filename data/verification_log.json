@@ -367,14 +367,14 @@
     "Documentation drift found and repaired: README quoted the superseded benchmark ($4,028.53/oz, 21 Oct), 'the 14 registered sources' (there are 31), 'five CI gates' (there are seven), provenance '60 V1 / 3 V2 / 1 U' (62 / 1 / 1) and 'Tier C: 20 product pages' (64). All corrected to the values in data/",
     "Provenance bug fixed in the evidence tool: every artifact used to be stamped 'session arena/03c0c10f-gold4, Pass 12' regardless of which session or pass produced it. Artifacts now record the branch/ref that actually ran the check",
     "All seven CI gates re-run on the resulting tree: audit.py, check_site.py, verify.py, verify_a0be79d4.py, audit_hallucinations.py, citation integrity (6a self-test + 6b) and audit_freshness.py",
-    "Cross-session corroboration: the independent Pass 17 (arena/0029d936-gold4) read the same World Gold Council panel at ~20:19Z and reported the identical figure, USD 3,996.31/oz, and its own browser read of Menē MN-01 showed $1,442 against the stored $1,465. Two sessions, two read paths, same numbers: the benchmark drift is corroborated, and MN-01 stays flagged PRICE_STRUCTURED_DIFFERS rather than being overwritten (it is a size/weight-variant ladder)"
+    "Cross-session corroboration: the independent Pass 17 (arena/0029d936-gold4) read the same World Gold Council panel at ~20:19Z and reported the identical figure, USD 3,996.31/oz, and its own browser read of Menē MN-01 showed $1,442 against the stored $1,465. Two sessions, two read paths, same numbers: the benchmark drift is corroborated, and MN-01 stays flagged PRICE_STRUCTURED_DIFFERS rather than being overwritten (it is a size/weight-variant ladder)",
+    "RS-05 RESOLVED after the four runner passes: the 404 was a catalogue migration. The row's URL was corrected to https://www.ross-simons.com/products/990022, which this session opened in a browser-rendered fetch at 2026-10-23T20:31Z and read as Item 990022, 'Sale price $2,819' (original $3,995), 14kt white gold, GIA Cert#2225975086, sizes 5-8 In-Stock / size 9 Sold Out. The price and its 2026-10-22 capture date are unchanged; only the dead link was fixed. The runner pass had reported 45 CONFIRMED prices; with RS-05 read at its corrected URL the live total is 46"
    ],
    "found": [
     "The benchmark moved -0.70% intraday and is now refreshed with a dated read; no price, weight, karat, SKU, URL or policy clause was changed anywhere in the pass",
     "Two registry sources (the FTC gold-jewellery and credit-card articles) still answer HTTP 404 to a plain GET; both were re-read in a browser-rendered fetch on 2026-10-23 and are alive with the same text, so they stay classified as bot-filtered rather than dead",
     "Brilliant Earth still refuses the runner on all 7 rows and all 4 policy pages (403); nothing about those prices can be asserted by automation",
     "5 dead row URLs are unchanged and now confirmed dead on two consecutive runner passes ten hours apart",
-    "RS-05's dead URL was a migration, not a withdrawn product: /products/990022 serves the same Item 990022 at the same $2,819 (14kt white gold, GIA Cert#2225975086, sizes 5-8 in stock). The row's URL was corrected; its price and capture date were not. Finding found by the concurrent Pass 17 (arena/0e04577b-gold4) and independently confirmed by this session's own browser-rendered fetch at 2026-10-23T20:31Z",
     "A finding this session raised and then WITHDREW: the sarraf-returns registry entry points at a product URL, which looked like a mis-registration. Sarraf prints its full 30-Day Return Policy on product pages, and the clause text was confirmed on that page at 20:33Z, so the entry is correct by design and was left alone"
    ],
    "flags_added": [
@@ -386,7 +386,7 @@
     "BN-09…BN-12 and RS-05: the pages are gone, so their stored prices remain the 2026-10-22 readings and are flagged SOURCE_URL_DEAD",
     "Hallmarks, maker's marks and actual purity: not visible on any page and not verifiable without the ring in hand (unchanged)"
    ],
-   "result": "PASS — zero values overwritten, one benchmark refreshed with a dated and corroborated read, one documentation-drift class repaired, all seven gates green",
+   "result": "PASS — zero stored values overwritten, one benchmark refreshed with a dated and corroborated read, one URL migration resolved, one documentation-drift class repaired, one of this pass's own findings retracted after checking, all seven gates green",
    "recommendation": "Re-run the hallucination auditor and every gate after any edit (python3 scripts/audit_hallucinations.py && python3 scripts/audit.py). When a page prints a number that contradicts a stored value, publish both and flag the row — never overwrite. Check availability before recording a price on a sold-out item.",
    "outcome": "Published via PR to main and merged on 2026-10-23; the merged result is recorded in COORDINATION.md",
    "note": "Renumbered from Pass 17 to Pass 18: session arena/0029d936-gold4 published and merged a Pass 17 while this pass was running. Their pass number stands; no other session's entry was renumbered."

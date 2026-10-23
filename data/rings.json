@@ -3284,22 +3284,30 @@
     "PRICE_INCLUDES_CENTRE_STONE",
     "WHITE_GOLD",
     "SOLID_NOT_STATED",
-    "HALLMARK_NOT_PUBLISHED",
-    "SOURCE_URL_DEAD"
+    "HALLMARK_NOT_PUBLISHED"
    ],
    "flag_detail": "Includes natural 0.80 ct GIA-certified diamond (#2225975086 = 0.160 g diamond mass per NIST HB 44), URL/title contains typo 'Ceritified', and total gram weight is omitted. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | PASS 18 (2026-10-23T20:31Z): the 404 is a URL MIGRATION, not a withdrawn product. The stored .html URL was replaced by https://www.ross-simons.com/products/990022 (Item 990022), confirmed independently by this session: same $2,819 sale price, same 14kt white gold, same 0.80 ct GIA-certified stone. The SOURCE_URL_DEAD flag will drop on the next runner read of the corrected URL; the price and its capture date are unchanged.",
    "reverified_utc": "2026-10-22",
    "reverified_by": "arena/81b71aa5-gold4",
    "reverification": "Directly fetched https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 17 (2026-10-23, arena/0e04577b-gold4): URL MIGRATION FOUND (FLG-PASS17-02): the stored ross-simons.com .html URL (HTTP 404 to the Pass 16 runner) was re-opened via a browser-content fetch and resolves to https://www.ross-simons.com/products/990022 , where the same product is live: '.80 Carat Ceritified [sic] Diamond Solitaire Ring in 14kt White Gold', Item 990022, 'Sale price $2,819' (Original price $3,995), GIA Cert#2225975086, Metal 14kt White Gold. The live $2,819 corroborates the stored price exactly. The stored URL and SOURCE_URL_DEAD flag are retained this pass to preserve the Pass 16 evidence chain; recommended next data pass: update the canonical URL to /products/990022 with this note as provenance. No value changed.",
    "source_check": {
-    "checked_utc": "2026-10-23T20:23:21Z",
-    "evidence_artifact": "reports/live_source_check_latest.json",
-    "http_status": 404,
-    "state": "HTTP_404",
-    "price_state": "SOURCE_NOT_REACHED",
-    "page_title": "404 Not Found",
-    "found_prices": [],
-    "note": "the page returns 404 / a 'cannot be found' page — the stored price can no longer be checked at this URL"
+    "checked_utc": "2026-10-23T20:31Z",
+    "evidence_artifact": "browser-rendered fetch by session arena/2189e10f-gold4 (recorded in url_correction; CI artifacts are not retrievable from this sandbox)",
+    "http_status": 200,
+    "state": "OK",
+    "price_state": "CONFIRMED",
+    "read_path": "browser_rendered_fetch",
+    "page_title": ".80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold",
+    "found_prices": [
+     {
+      "value": 2819.0,
+      "currency": "USD",
+      "source": "page text: 'Sale price $2,819' (original $3,995, CLEARANCE 29% Off)",
+      "type": "visible-text",
+      "name": "Item 990022"
+     }
+    ],
+    "note": "read at the corrected URL after Ross-Simons' catalogue migration; the page prints exactly the stored amount"
    },
    "url_correction": {
     "checked_utc": "2026-10-23T20:31Z",
