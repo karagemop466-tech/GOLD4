@@ -358,7 +358,7 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
         banner_html = """
         <div class="audit-banner" role="note">
           <div>
-            <strong>ZERO-HALLUCINATION POLICY ENFORCED:</strong> Every populated value links to an official primary page retrieved <code>2026-10-22</code>; unconfirmable or conflicting specs remain blank (<code>—</code>) and flagged. <strong>Always check for hallucinations</strong> on every review pass.
+            <strong>ZERO-HALLUCINATION POLICY ENFORCED:</strong> Every populated value links to an official primary page retrieved <code>2026-10-22</code> or later (latest verification pass <code>2026-10-23</code>); unconfirmable or conflicting specs remain blank (<code>—</code>) and flagged. <strong>Always check for hallucinations</strong> on every review pass.
           </div>
           <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
             <a class="btn btn-sm" href="dashboard.html#zero-hallucination-policy">Read Policy ↑</a>
@@ -488,7 +488,7 @@ def build_all_pages() -> None:
           <a class="btn btn-primary" href="#catalog">Explore 22 Live-Verified Listings ↓</a>
           <a class="btn" href="calculator.html">Open Full Melt &amp; Markup Calculator →</a>
           <a class="btn" href="checklist.html">Run 12-Point Buyer Checklist →</a>
-          <a class="btn" href="flagged.html">Inspect 11 Flagged Irregularities →</a>
+          <a class="btn" href="flagged.html">Inspect {len(catalog["flagged_items"])} Flagged Irregularities →</a>
         </div>
       </div>
 
@@ -496,7 +496,7 @@ def build_all_pages() -> None:
         <span class="policy-stamp">★ MANDATORY RESEARCH STANDARD · NO HALLUCINATIONS</span>
         <h2>Zero-Hallucination &amp; Verification Commitment</h2>
         <ul>
-          <li><strong>Zero Invented Data:</strong> Every price, karat purity, gram weight, spot rate, and return policy on this site was verified line by line from live official pages on <span class="mono">2026-10-22</span>.</li>
+          <li><strong>Zero Invented Data:</strong> Every price, karat purity, gram weight, spot rate, and return policy on this site was verified line by line from live official pages on <span class="mono">2026-10-22</span>, and re-checked in the <span class="mono">2026-10-23</span> Pass 14 review. The gold benchmark driving every derived value is the World Gold Council panel <span class="mono">$4,024.45/oz</span> read on <span class="mono">2026-10-23</span> ('Data as of 22 October, 2026'); the Kitco quotes shown in the calculator are a separate, independently dated cross-check, not the benchmark.</li>
           <li><strong>Strict Blank + Flag Rule:</strong> Wherever an official retailer omits gram weight, omits hallmark text, or contradicts its own karat spec, the field stays strictly blank (<span class="mono">—</span>) and is flagged <a href="flagged.html"><strong>UNVERIFIED</strong></a>.</li>
           <li><strong>Always Check for Hallucinations:</strong> Every review pass runs <strong>three independent security/hallucination scripts</strong> (<span class="mono">check_site.py</span>, <span class="mono">verify.py</span>, <span class="mono">verify_a0be79d4.py</span>). Readers and maintainers should always verify source links directly and check for hallucinations!</li>
         </ul>
@@ -1141,6 +1141,12 @@ Thank you!</pre>
                 <td>Post-Merge Live Re-Fetch of the <span class="mono">PRICE_V2_ONLY</span> Rows — session <span class="mono">arena/22b5b06c-gold4</span> (2026-10-23 00:20–00:35 UTC)</td>
                 <td>6 of 9 V2 rows upgraded to V1 from live Blue Nile fetches; every stock number / metal / width re-read exactly. Two prices corrected to current live values because the 22 Oct sales had ended: BN-20 $772→<strong>$965</strong>, BN-25 $1,657→<strong>$2,210</strong>. BN-22's "platinum" copy contradiction confirmed on the live page. BE-05/06/07 re-fetch blocked by the outage returning mid-page — they stay flagged <span class="mono">PRICE_V2_ONLY</span>. Provenance now 60 V1 / 3 V2 / 1 U of 64; audit warnings 9→3; all five gates green (128/3/0).</td>
                 <td><span class="badge badge-ok">PASS — 6 ROWS UPGRADED</span></td>
+              </tr>
+              <tr>
+                <td class="mono"><strong>Pass 14</strong> <span class="mono">(verification_log)</span></td>
+                <td>Live Re-Verification &amp; Official Spot Refresh — session <span class="mono">arena/04f1f10d-gold4</span> (2026-10-23)</td>
+                <td>The World Gold Council spot panel was re-read and showed <strong>$4,024.45/oz, &ldquo;Data as of 22 October, 2026&rdquo;</strong> against the $4,028.53 / 21 October benchmark in force since Pass 2; every derived gold value was recomputed at the new rate and the old reading is preserved in <span class="mono">prior_captures</span>. The last three <span class="mono">PRICE_V2_ONLY</span> rows were re-fetched live: BE-06 ($1,390) and BE-07 ($1,350) matched their stored prices and were upgraded to V1 (BE-07's 1.8&nbsp;mm width and BE-06's style code were recorded from the live spec blocks), while BE-05 served <strong>EUR 1,350</strong> and published no USD figure, so it stays V2 and flagged (new entry FLG-HIGH-13). Four rows with published gram weights were re-read and matched exactly: AL-01 ($585, 3.58&nbsp;g), RS-01 ($400, 1.7&nbsp;g), RS-02 ($249, 0.7&nbsp;g 18kt) and SR-01 ($352, 4.80&nbsp;g, &ldquo;10K Solid Gold&rdquo;) — SR-01's three-tier MSRP ladder added as FLG-MED-14. Gate 1 warnings fell 3&rarr;1; all five CI gates green (audit 128 passed / 1 warning / 0 failures).</td>
+                <td><span class="badge badge-ok">PASS — 2 ROWS UPGRADED, BENCHMARK REFRESHED</span></td>
               </tr>
             </tbody>
           </table>

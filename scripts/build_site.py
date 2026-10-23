@@ -48,6 +48,7 @@ FLAG_HELP = {
     "PRICE_V2_ONLY": ("warn", "price read from a dated snapshot of the official page — live re-fetch pending"),
     "SOLD_OUT_AT_CHECK": ("info", "sold out at the live check — price deliberately blank"),
     "SALE_PRICE_VARIES_ACROSS_PAGES": ("bad", "same SKU showed different sale prices across official pages"),
+    "SALE_MSRP_ANCHOR": ("warn", "seller's 'MSRP' is several times the charged price"),
     "PRICE_FROM_CATEGORY_PAGE": ("info", "price read from a live official category-page fetch"),
     "SOLID_NOT_STATED": ("warn", "no 'solid gold' wording on page"),
     "HALLMARK_NOT_PUBLISHED": ("warn", "hallmark not published"),
