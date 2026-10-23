@@ -173,6 +173,7 @@ LAYOUT = """<!doctype html>
   <strong>NO HALLUCINATIONS — dated research, not live offers.</strong>
   Historical captures below are not current verified quotes or a guarantee of purity.
   Unconfirmed current prices are blank in the <a href="{root}pages/session-review.html">current-session review / Flagged for Review</a>.
+  A new World Gold Council panel read differs from the stored historical benchmark; see Current review.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
   Re-check official sources and request independent testing before purchase.
 </aside>
