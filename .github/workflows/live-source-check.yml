@@ -1,0 +1,37 @@
+name: Live source health check (read-only, evidence only)
+
+# This workflow does NOT gate the site. It re-opens every official URL in the
+# dataset from a runner that has unrestricted outbound internet, and publishes
+# the raw evidence (HTTP status, page title, price snippets) as an artifact.
+# The offline gates in pages.yml cannot see link rot; this one can.
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/rings.json"
+      - "data/sources.json"
+      - "scripts/live_source_check.py"
+      - ".github/workflows/live-source-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Re-open every official source URL (read-only GET)
+        run: python3 scripts/live_source_check.py --timeout 30
+        continue-on-error: true
+      - name: Publish evidence artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-source-check
+          path: reports/live_source_check_*.json
+          retention-days: 30
+          if-no-files-found: error
