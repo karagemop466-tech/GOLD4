@@ -176,6 +176,22 @@ requests against other scopes are logged here instead.
 4. **No retailer publishes a hallmark image or maker&#x27;s mark (`FLG-PASS12-04`, HIGH, unchanged policy).** Every live page opened this pass gives karat in a metal field but never shows the physical stamp plus the registered trademark that the FTC says must sit beside the karat mark. `hallmark_published` therefore stays `false` on all 64 rows, and the check stays on the on-arrival XRF step.
 5. **Deliberately not repeated here:** the pre-existing Brilliant Earth `PRICE_V2_ONLY` warnings (BE-05/06/07) stand unchanged — those pages were not re-fetched this pass, so their provenance is untouched rather than silently upgraded.
 
+### Pass 12b — reading the published Standards page line by line (`FLG-PASS12-05`, HIGH)
+After Pass 12 merged and the live page was fetched back, the same 10K myth was found **again**, verbatim, in the eCFR summary bullet beneath the table that had just been corrected. A further line-by-line read against four more official pages produced two more fixes:
+
+| Claim on the site | What the source actually says | Action |
+|---|---|---|
+| &quot;§ 23.7 &amp; § 23.8: white gold rhodium plating and multi-metal components require non-deceptive disclosure in weight order&quot; | **§ 23.7** is *Disclosure of surface-layer application of rhodium* (failure to disclose rhodium on a precious-metal product is deceptive). **§ 23.8** is *products containing more than one precious metal* — relative quantities must not be misrepresented and metals should be listed greatest-to-least by weight. One bullet conflated two different rules. | Split into what each section requires. |
+| &quot;§ 23.9 &amp; 15 U.S.C. § 297: every quality stamp must be accompanied by the registered manufacturer/seller trademark&quot; | § 297 (read live, *Stamping plated articles*) says the maker&#x27;s registered trademark **or name** must be applied by the same means as the quality mark, in lettering at least as large, as close as possible to it; § 297(b)(B) adds matching marks on non-identical parts. § 23.9 was not re-read, so no requirement is attributed to it any more. | Rewritten to quote § 297(b) and the FTC consumer page. |
+| &quot;creditor must … resolve within 2 billing cycles (max 90 days)&quot; cited to the CFPB page | The CFPB page confirms the 60-day notice and 30-day acknowledgement but **does not state** the resolution deadline. That figure is in **15 U.S.C. § 1666(a)(B)** — &quot;two complete billing cycles … in no event later than ninety days&quot; (statute read live). | Figure re-attributed to the statute; § 1666 added as its own linked source card on the Standards page. |
+
+Also corrected: the site header advertised &quot;3 Automated Audit Gates Passing&quot; while CI runs **five** gates — now reads 5.
+
+**Lesson recorded for future passes:** correcting one instance of an error is not verification of the page. Both rounds of this session existed only because the page was re-read *after* it was already &quot;fixed&quot;. The board asks every future session to do the same — fetch the published page back and read it, do not trust that a data fix propagated into accurate prose.
+
+Sources added/read in Pass 12b: `ecfr.gov` § 23.7, § 23.8 · `law.cornell.edu/uscode/text/15/297` · `law.cornell.edu/uscode/text/15/1666` · `consumerfinance.gov` FCBA page.
+Result: audit PASS 128/3/0 · check_site PASS 26 pages · verify 64 records · verify_a0be79d4 PASS 0 failures · audit_hallucinations PASS 879 checks. Flagged page now carries **17 flags**.
+
 ---
 
 ## Session `arena/a0be79d4-gold4` — 35-Row Canonical Expansion, 11-Page Assay Lab Suite, 4-Gate CI Audit &amp; Live Pages Confirmation (2026-10-22)
