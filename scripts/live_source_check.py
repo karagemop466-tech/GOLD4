@@ -131,6 +131,76 @@ def title_of(html: str) -> str:
     return strip_html(m.group(1))[:160] if m else ""
 
 
+def meta_content(html: str, prop: str) -> str:
+    for pat in (
+        rf'<meta[^>]+(?:property|name)=["\']{re.escape(prop)}["\'][^>]*content=["\']([^"\']*)',
+        rf'<meta[^>]+content=["\']([^"\']*)["\'][^>]*(?:property|name)=["\']{re.escape(prop)}["\']',
+    ):
+        m = re.search(pat, html, re.I)
+        if m:
+            return m.group(1).strip()
+    return ""
+
+
+def structured_prices(html: str) -> list[dict]:
+    """Prices published by the page itself in schema.org JSON-LD or price meta tags.
+
+    This is the page's own machine-readable claim, not our guess. We keep the
+    currency, the schema.org type and the product name so the claim can be tied
+    to the exact item rather than to a "from" banner.
+    """
+    out: list[dict] = []
+    for m in re.finditer(r'(?is)<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>', html):
+        raw = m.group(1).strip()
+        try:
+            blob = json.loads(raw)
+        except Exception:
+            continue
+        stack = [blob]
+        while stack:
+            node = stack.pop()
+            if isinstance(node, list):
+                stack.extend(node)
+                continue
+            if not isinstance(node, dict):
+                continue
+            typ = node.get("@type")
+            types = typ if isinstance(typ, list) else [typ]
+            price = node.get("price")
+            if price is not None and any(t in ("Offer", "AggregateOffer", "Product") for t in types if t):
+                out.append(
+                    {
+                        "source": "json-ld",
+                        "type": ",".join(str(t) for t in types if t),
+                        "price": str(price),
+                        "currency": str(node.get("priceCurrency") or ""),
+                        "name": str(node.get("name") or "")[:120],
+                        "sku": str(node.get("sku") or node.get("mpn") or "")[:60],
+                        "low": str(node.get("lowPrice") or ""),
+                        "high": str(node.get("highPrice") or ""),
+                    }
+                )
+            for v in node.values():
+                if isinstance(v, (dict, list)):
+                    stack.append(v)
+    for prop in ("product:price:amount", "og:price:amount", "product:sale_price:amount"):
+        val = meta_content(html, prop)
+        if val:
+            out.append(
+                {
+                    "source": f"meta:{prop}",
+                    "type": "meta",
+                    "price": val,
+                    "currency": meta_content(html, "product:price:currency") or meta_content(html, "og:price:currency"),
+                    "name": meta_content(html, "og:title")[:120],
+                    "sku": "",
+                    "low": "",
+                    "high": "",
+                }
+            )
+    return out[:10]
+
+
 def context(text: str, m: re.Match, pad: int = 70) -> str:
     a = max(0, m.start() - pad)
     b = min(len(text), m.end() + pad)
@@ -223,6 +293,13 @@ def fetch(url: str, timeout: int) -> dict:
             break
     rec["weight_snippets"] = weights
 
+    rec["og_title"] = meta_content(html, "og:title")[:160]
+    rec["canonical"] = meta_content(html, "og:url") or (
+        (re.search(r'(?is)<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)', html) or [None, ""])[1]
+        if re.search(r'(?is)<link[^>]+rel=["\']canonical["\']', html)
+        else ""
+    )
+    rec["structured_prices"] = structured_prices(html)
     rec["karat_mentions"] = sorted({m.group(0) for m in KARAT_RE.finditer(text)})[:8]
     for phrase in ("solid gold", "gold plated", "gold-plated", "vermeil", "gold filled",
                    "gold-filled", "gold overlay", "gold tone", "gold-tone"):
