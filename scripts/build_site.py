@@ -32,6 +32,7 @@ NAV = [
     ("pages/sources.html", "Sources", "sources"),
     ("pages/freshness.html", "Freshness", "freshness"),
     ("pages/session-review.html", "Current review", "session-review"),
+    ("pages/pass19.html", "Pass 19", "pass19"),
     ("checklist.html", "Checklist", "checklist"),
     ("pages/log.html", "Log", "log"),
     ("dashboard.html", "Assay Lab+", "assay"),
@@ -58,6 +59,7 @@ FLAG_HELP = {
     "MIXED_METAL_UNCLEAR": ("bad", "mixed-metal / lower-karat prongs"),
     "RESIZE_EXCLUDED_ON_PAGE": ("bad", "resizing excluded despite banner"),
     "SHORT_RETURN_WINDOW_7D": ("bad", "7-day return window"),
+    "CLEARANCE_RETURN_TERMS_UNCLEAR": ("warn", "clearance price — return eligibility must be confirmed in writing"),
     "SHORT_RETURN_WINDOW_20D": ("warn", "20-day return window"),
     "RESTOCKING_FEE_10PCT": ("bad", "10% cash-refund restocking fee"),
     "SPECIAL_ORDERS_FINAL_SALE": ("bad", "special orders final sale"),
@@ -173,7 +175,7 @@ LAYOUT = """<!doctype html>
   <strong>NO HALLUCINATIONS — dated research, not live offers.</strong>
   Historical captures below are not current verified quotes or a guarantee of purity.
   Unconfirmed current prices are blank in the <a href="{root}pages/session-review.html">current-session review / Flagged for Review</a>.
-  A new World Gold Council panel read differs from the stored historical benchmark; see Current review.
+  A new World Gold Council panel read ($3,995.47/oz, 23:43Z) differs from the stored historical benchmark ($3,996.31/oz); both are published — see Pass 19.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
   Re-check official sources and request independent testing before purchase.
 </aside>

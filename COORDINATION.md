@@ -10,12 +10,33 @@
 
 | # | Task | Status | Owner | Files in scope |
 |---|------|--------|-------|----------------|
-| 49 | **Takeover of the stale PR #47 claim** — audit its 41-file delta against `main`, preserve its review evidence, and either integrate or close it with a written reason. | **in progress** | `arena/bfbdf30c` | this file, `reviews/pass19/**` |
-| 50 | **Full-source re-verification** — re-open all 64 ring URLs + 31 registered sources from a runner with open internet *today* (23:44Z), commit the evidence artifact, reconcile line by line against the stored rows. No value applied blindly. | **in progress** | `arena/bfbdf30c` | `reports/live_source_check_*.json`, `reviews/pass19/**` |
-| 51 | **Hallucination / security scan + drift repair** — run all eight gate invocations plus an independent Decimal re-derivation, and diff every headline number in the prose against `data/*.json`; fix drift, flag what cannot be fixed. | **in progress** | `arena/bfbdf30c` | `README.md`, `AUDIT.md`, `reviews/pass19/**` |
-| 52 | **Publish** — PR → merge without waiting → confirm the Pages deploy serves the new build → record the PR, merge commit and deploy run here. | **unclaimed** | `arena/bfbdf30c` | this file |
+| 49 | **Takeover of the stale PR #47 claim** — audit its 41-file delta against `main`, preserve its review evidence, and either integrate or close it with a written reason. | **done** — delta audited; its one substantive fix (Sarraf dedicated policy pages) re-verified from the pages and adopted; a note is posted on the PR and it is closed as superseded, not force-merged | `arena/bfbdf30c` | this file, `reviews/pass19/**` |
+| 50 | **Full-source re-verification** — re-open every ring URL and source from a runner with open internet *today*, commit the evidence artifact, reconcile line by line against the stored rows. No value applied blindly. | **done, narrower than planned and said so** — the runner was unavailable to this session (dispatch 403; run logs unreachable), so **11 of 64 rows + the benchmark + 2 policy pages were re-read by this session's own browser-rendered reader** and published in `reviews/pass19/observations.json`. **53 rows were not re-read** and keep their 22-10-2026 dates; the site states this explicitly | `arena/bfbdf30c` | `reports/live_source_check_*.json`, `reviews/pass19/**` |
+| 51 | **Hallucination / security scan + drift repair** — run all eight gates (nine invocations) and diff every headline number in the prose against `data/*.json`; fix drift, flag what cannot be fixed. | **done** — 9/9 invocations PASS (`reviews/pass19/gates.{json,txt}`); drift fixed in README (gate count 7→8 + Gate 8 listed, source count 31→32, "Latest pass — Pass 15" re-labelled, benchmark limitation updated); one new row flag and two additive data blocks | `arena/bfbdf30c` | `README.md`, `AUDIT.md`, `reviews/pass19/**` |
+| 52 | **Publish** — PR → merge without waiting → confirm the Pages deploy serves the new build → record the PR, merge commit and deploy run here. | **in progress** | `arena/bfbdf30c` | this file |
 
 **Baseline gates re-run at claim time on `main@a832eed` (nothing inherited is broken):** G1 `audit.py` PASS (131 checks, 1 warning BE-05) · G2 `check_site.py` PASS (28 pages) · G3 `verify.py` 64 records, 0 hard failures · G4 `verify_a0be79d4.py` PASS (38 pages, 2,180 links, 0 dead) · G5 `audit_hallucinations.py` PASS (978 checks) · G6a/6b citations PASS · G7 `audit_freshness.py` PASS (294 checks, 2 warnings) · G8 `test_assurance.py` 8/8 PASS.
+
+
+### Result of Pass 19 (line by line)
+
+**Read window:** 2026-10-23, 23:43–23:45Z (checked against the sandbox clock — an earlier draft of the evidence file carried timestamps in the future and was corrected before anything was published; that correction is part of this record).
+
+| Check | Method | Result |
+|---|---|---|
+| Gold benchmark | browser-rendered read of the WGC panel | **$3,995.47/oz**, page still dated "22 October, 2026"; −0.021% vs the stored $3,996.31 → **benchmark retained**, reading recorded (`data/gold_spot.json`) |
+| Rows fully corroborated (price + published weight) | own read of each page | **5**: AL-01 $585/3.58 g · SR-03 $871/6.70 g ("18K Solid Gold") · SR-05 $2,858/8.00 g ("14K Solid Gold") · RS-02 $249/0.7 g (18kt) · RS-05 $2,819 (Item 990022, the Pass-18 corrected URL) |
+| Row that still differs | own read | **1**: MN-01 prints **$1,442** vs stored **$1,465** (−1.57%) — third independent read; both published, nothing overwritten (F19-02) |
+| Variant trap | own read | **1**: MJ-01's stored URL renders **white** gold, so $548 corroborates the white-gold variant only (F19-05) |
+| Dead link confirmed by hand | own read | **1**: BN-09 serves Blue Nile's own "page cannot be found" copy (F19-03) |
+| Pages only partly readable | own read | **3**: BE-07 (title/spec live, price not returned), AN-01 (JavaScript shell), VR-01 (2.86 g is the seller's **size-6** figure while size 5 was selected; plain-band/pavé conflict persists) — no price claim made |
+| Rows **not** re-read this pass | — | **53 of 64**, stated on the site page and in the evidence file |
+| New consumer irregularity | own read + seller policy | **RS-05 is clearance-priced** ($3,995 → $2,819) while Ross-Simons excludes "Final sale items" from returns and the page never says *final sale* → new flag `CLEARANCE_RETURN_TERMS_UNCLEAR` (F19-04) |
+| Stale PR #47 takeover | delta review + own reads of both Sarraf pages | its one substantive fix adopted: `sarraf-returns` → the dedicated policy page (old URL kept in `url_history`), new `sarraf-warranty` source → **32 registered sources** (F19-08) |
+| Documentation drift | README vs `data/*.json` | **fixed**: "Seven CI gates" → eight gates / nine invocations with Gate 8 listed; 31 → 32 sources; a Pass-15 section introduced as "latest" re-labelled; benchmark limitation now carries the fourth same-day read and the retention policy (F19-07) |
+| Gates after every edit | `scripts/run_gates_pass19.py` | **9/9 invocations PASS** — audit 132/1 warning/0 failures · check_site 29 pages · verify 64 records 0 hard · verify_a0be79d4 0 dead/0 unsafe · hallucinations 0 failures · citations 110 refs 0 violations (+self-test) · freshness 295 checks/2 known warnings/0 failures · assurance 8/8 |
+
+**Not claimed.** No runner sweep happened this pass. No XRF or assay test exists for any ring. No seller's reputation was verified. No price on this site is a live quote.
 
 **Network reality of this sandbox (stated plainly, as the brief requires):** the shell here reaches only GitHub hosts — `curl https://karagemop466-tech.github.io/...` fails at TLS and retailer hosts are unreachable from bash. Two independent read paths are used instead and named on every finding: (a) a **GitHub Actions runner** with open internet for the all-URL sweep, and (b) this session's own **browser-rendered page reader** for hand reads of the specific pages quoted below. No number in this pass is written from memory.
 
