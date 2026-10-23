@@ -52,6 +52,11 @@ class AssuranceTests(unittest.TestCase):
             self.assertIn('href="' + row['url'].replace('&', '&amp;') + '"', page)
         self.assertNotRegex(page, r'<script|javascript:|\son\w+=')
 
+    def test_pr_checks_do_not_cancel_other_sessions_or_production(self):
+        workflow = (ROOT / '.github/workflows/pages.yml').read_text()
+        self.assertIn("github.event.pull_request.number || 'production'", workflow)
+        self.assertNotIn('group: pages\n', workflow)
+
     def test_read_only_workflow(self):
         workflow = (ROOT / '.github/workflows/live-source-check.yml').read_text()
         self.assertIn('contents: read', workflow)

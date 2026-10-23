@@ -60,3 +60,7 @@ The [observation record](session-986df4df-observations.json) lists exact URLs, i
 - VR-01: inspected chunks 0 and 1 show 18k yellow gold, selected size 5, but **2.86g metal weight applies to size 6**. Plain band selection still carries a pavé specification. Product total price was absent in inspected chunks; no value inferred. Chunk 2 was not reviewed.
 
 These new discrepancies are published as nonblocking findings with official links, not silently substituted into the canonical dataset. All 64 current configuration-specific price cells remain blank. No assertion of full line-by-line official re-verification is made.
+
+## Concurrent CI cancellation repaired
+
+The existing global `group: pages` let one session’s PR cancel another session’s checks or a production deploy. Observed latest build runs cancelled while the other PR started. Pages concurrency now isolates each PR number from other PRs and reserves a shared production group for actual publication. An additional regression test enforces that separation (8 tests total). This does not alter product data.
