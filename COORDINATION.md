@@ -6,6 +6,85 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 ---
 
+## Session `arena/46691f83-gold4` — Fresh-source verification pass + citation-integrity gate (2026-10-23)
+
+**Session ID:** `arena/46691f83-gold4` · **Branch:** `arena/46691f83-gold4` (branched from `main` @ `77e93b4`)
+**Claimed at:** 2026-10-23T09:52Z, before any data file was edited, committed and pushed immediately.
+
+**Scope actually edited:** `COORDINATION.md`, `data/{gold_spot,sources,rings,verification_log,catalog_a0be79d4}.json`,
+`scripts/session_46691f83/**` (new), `scripts/build_site.py`, `scripts/build_dataset.py`, `.github/workflows/pages.yml`,
+`README.md`, `reports/**`, and the generated site rebuilt from that data.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 20 | Re-open every Tier A governing source and confirm each cited clause at the cited URL | done | arena/46691f83 | `data/sources.json`, `scripts/session_46691f83/` |
+| 21 | Re-capture the gold-spot benchmark with a 2026-10-23 date; keep the older reads in `prior_captures`; re-derive every number | done | arena/46691f83 | `data/gold_spot.json`, `data/derived.json` |
+| 22 | Live re-verification of product rows (price/weight/karat drift, 404s) | done (4 rows re-read; coverage stated) | arena/46691f83 | `data/rings.json`, `data/verification_log.json` |
+| 23 | Run all five existing gates + the hallucination auditor and publish new irregularities on the Flagged page | done | arena/46691f83 | `reports/`, `pages/flagged.html`, `flagged.html` |
+| 24 | Add an offline citation-integrity gate (Gate 6) with a self-test, wire it into CI | done | arena/46691f83 | `scripts/session_46691f83/verify_citations.py`, `.github/workflows/pages.yml` |
+| 25 | Final integration: rebuild, confirm no broken links, PR → `main`, merge, confirm Pages deploy | in progress | arena/46691f83 | `index.html`, `pages/**`, PR |
+
+### Sources used (all opened directly on 2026-10-23; raw notes in `scripts/session_46691f83/live_evidence_20261023.json`)
+
+Tier A: FTC *Buying Platinum, Gold, and Silver Jewelry*; eCFR **16 CFR Part 23** (§ 23.3, 23.4, 23.7, 23.8, 23.9, 23.10 read in full);
+15 U.S.C. § 295 and § 297 (Cornell LII); CFPB billing-error FAQ; eCFR **12 CFR 1026.13**; NIST SP 811 (+ Appendix B.8); NIST Handbook 44 current edition.
+Tier B: World Gold Council gold-spot panel.
+Tier C: Allurez AL-01, Sarraf SR-01, Ross-Simons RS-01, Mejuri MJ-01, Anjolee AN-01 (loaded, details not reached).
+
+### Verification performed
+
+Every citation and every source URL was re-read, not just re-numbered. Four rows were re-opened and matched
+(AL-01 $585/3.58 g, SR-01 $352/4.80 g, RS-01 $400/1.7 g, MJ-01 $548 on a different metal variant). The benchmark was
+re-captured from the World Gold Council panel and every derived value recomputed; `audit.py` re-derived all of them
+independently (130 checks, 0 failures). All five pre-existing gates pass, and a sixth was added.
+
+### Irregularities found in this pass (all published on the Flagged for Review pages, none blocking)
+
+1. **`16 CFR § 23.9` was cited for the trademark rule — § 23.9 is pewter (`FLG-MED-13`, fixed).** The rule is
+   **§ 23.10** ("Additional guidance for the use of quality marks"), which cites 15 U.S.C. § 297. Corrected in
+   `data/catalog_a0be79d4.json`, `scripts/build_dataset.py` and the regenerated `standards.html`. This is exactly the
+   class of error the numeric audits cannot see, so **Gate 6** now compares every CFR citation against the official
+   section headings and fails on a mismatch (`--self-test` proves it still rejects `§ 23.9 Quality Marks`).
+2. **`nist-hb44-2026` pointed at a live 404 with an invented subtitle (`FLG-MED-16`, fixed).**
+   `nist.gov/pml/owm/metric-publications/nist-handbook-44` returns NIST's "Page not found (error 404)" and never carried
+   the subtitle "Appendix C: Units of Mass for Precious Metals & Metric Carat". Now
+   `…/owm/nist-handbook-44-current-edition` with its real title, and no numeric factor is attributed to it.
+3. **NIST SP 811 does not print 31.1034768 g as an exact troy ounce (`fixed`).** Appendix B.8 lists
+   `ounce (troy or apothecary) = 3.110 348 E+01 g` in **non-bold** type (rounded), while `carat, metric = 2.0 E-01 g` is
+   **bold** (exact). The registry called 31.1034768 g an "exact SI conversion factor from NIST"; that overstatement is
+   corrected. The constant itself is the 480-grain definition and is unchanged.
+4. **Two cited statutes had no registry entry (`fixed`).** The site cites 15 U.S.C. § 297 and the FCBA 90-day outer limit
+   but neither had a `sources.json` entry. Both were read and registered; the catalog's CFPB wording now attributes the
+   two-billing-cycle/90-day limit to 12 CFR 1026.13(c)(2) instead of to the CFPB FAQ page, which does not state it.
+5. **Coverage is bounded and stated:** 4 of 64 rows were re-read today. AN-01 loaded but its Product Details table was
+   not reached; the other 59 rows keep their 2026-10-22 capture dates and are **not** claimed as re-verified today.
+
+### Merge event — `main` moved while this pass was running (resolved, nothing discarded)
+
+`arena/d1586f6a-gold4` merged **PR #27** (Pass 12) into `main` between this branch's claim and its push, so the merge
+conflicted in 21 files. Resolution:
+
+- **Their work is kept in full.** Their Pass 12 verification notes on SR-03, SR-05 and BN-20, their 10K legal-claim
+  correction in `catalog_a0be79d4.json`/`karat_reference`, their four `FLG-PASS12-*` flags and their Pass 12 log entry
+  are all present. This session's Pass 15 notes are appended *after* theirs on AL-01, SR-01, RS-01 and MJ-01.
+- **Both sessions independently captured the same benchmark**, four minutes apart: WGC **USD 4,024.45/oz**, source date
+  line "22 October, 2026". Their `pass12_live_reading_2026_10_23` block is kept as the record of the benchmark, and this
+  session's read is recorded beside it as `independent_recapture_2026_10_23` — corroboration, not a competing number.
+  The older 4,028.53 and 4,024.36 readings stay in `prior_captures`.
+- **Generated artefacts were regenerated** from the merged data rather than hand-merged, so both sessions' findings
+  appear in the published pages.
+- No branch was force-pushed and no file from either session was deleted.
+
+### Gates after the merge
+
+`audit.py` 130 passed / 0 failures · `check_site.py` PASS (26 pages, no broken local links) · `verify.py` 0 hard failures ·
+`verify_a0be79d4.py` PASS (0 hard failures) · `audit_hallucinations.py` PASS (0 hard failures) ·
+**Gate 6 `verify_citations.py` PASS** (94 CFR references, 0 violations) plus its `--self-test`.
+
+---
+
+---
+
 ## Session `arena/04f1f10d-gold4` — Pass 14: live re-verification + spot refresh + integration (2026-10-23)
 
 **Claim (written and pushed before any data file was edited).** This session claims exactly these files:

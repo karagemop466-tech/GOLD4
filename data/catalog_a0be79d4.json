@@ -20,7 +20,8 @@
       "critical_spec_conflicts": 2,
       "flagged_register_entries": 12,
       "preserved_sibling_placeholders": 8
-    }
+    },
+    "calculation_basis_2026_10_23": "The melt figures in this catalog are the session-a0be79d4 cross-check columns computed from the two 2026-10-22 Kitco/JM Bullion quotes. The canonical calculation basis for the repository is data/gold_spot.json (World Gold Council), re-captured on 2026-10-23 at USD 4,024.45/oz. The two bases differ by 0.004% (4,024.45 vs 4,024.60), so no displayed melt value is materially affected; both are published rather than harmonised silently."
   },
   "spot_quotes": [
     {
@@ -128,15 +129,19 @@
       "id": "STD-ECFR-16CFR23",
       "title": "16 CFR Part 23 — Guides for the Jewelry, Precious Metals, and Pewter Industries",
       "authority": "Electronic Code of Federal Regulations (NARA / FTC)",
-      "citation": "16 CFR §§ 23.1–23.18 (incl. § 23.3 Gold, § 23.4 Vermeil, § 23.7 Rhodium, § 23.8 Multi-Metal, § 23.9 Quality Marks)",
+      "citation": "16 CFR Part 23 (incl. § 23.3 Gold, § 23.4 Vermeil, § 23.7 Rhodium, § 23.8 Multi-Metal, § 23.10 Quality Marks)",
       "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
-      "retrieved_date": "2026-10-22",
+      "retrieved_date": "2026-10-23",
       "key_takeaways": [
         "16 CFR § 23.3: unqualified 'Gold' means fine (24K) gold through and through; a gold alloy must carry its karat designation immediately before the word 'Gold' and with equal conspicuousness; hollow-centred articles should not be marked 'solid'. There is NO 10-karat floor for calling a gold alloy 'karat gold' — § 23.3(c)(1) itself gives '9 Karat Gold' as acceptable — 10 karat survives only as the minimum fineness for plating, gold-filled and vermeil (§ 23.3(c)(2)-(3), § 23.4(b)).",
         "16 CFR § 23.4: Vermeil requires sterling silver (>=92.5% Ag) coated with >=2.5 microns of >=10K gold — never solid gold.",
         "16 CFR § 23.7: it is unfair or deceptive to fail to disclose a surface-layer application of rhodium on a product marked or described as precious metal — the relevant rule for rhodium-plated white gold. 16 CFR § 23.8: where a product contains more than one precious metal, the relative quantity of each must not be misrepresented, and metals should be listed from greatest to least by weight (e.g., an 18K shank with platinum prongs).",
-        "15 U.S.C. § 297(b) (National Stamping Act): a quality mark indicating gold or silver must be accompanied by the maker's registered trademark (or the maker's name), applied by the same means, in lettering at least as large, and as close as possible to the quality mark. § 297(b)(B) adds that where a multi-part article has parts of different quality, each other part must carry a matching quality mark. The FTC's consumer page states the practical version: don't buy a gold piece if the trademark is missing beside the karat mark."
-      ]
+        "15 U.S.C. § 297(b) (National Stamping Act): a quality mark indicating gold or silver must be accompanied by the maker's registered trademark (or the maker's name), applied by the same means, in lettering at least as large, and as close as possible to the quality mark. § 297(b)(B) adds that where a multi-part article has parts of different quality, each other part must carry a matching quality mark. The FTC's consumer page states the practical version: don't buy a gold piece if the trademark is missing beside the karat mark.",
+        "16 CFR § 23.7: a surface-layer application of rhodium must be disclosed.",
+        "16 CFR § 23.10 (read 2026-10-23): a quality mark must be accompanied by the manufacturer's or dealer's registered trademark or name; § 23.9, by contrast, is the pewter section.",
+        "15 U.S.C. § 297(b) (read 2026-10-23): the trademark must be applied by the same means, in lettering at least as large as the quality mark and as close as possible to it."
+      ],
+      "correction_2026_10_23": "The trademark rule was cited to § 23.9, which is the pewter section. It is § 23.10 ('Additional guidance for the use of quality marks'). Corrected after reading both sections on the eCFR page."
     },
     {
       "id": "STD-CFPB-FCBA",
@@ -144,11 +149,13 @@
       "authority": "Consumer Financial Protection Bureau (CFPB)",
       "citation": "15 U.S.C. § 1666 / Regulation Z (12 CFR § 1026.13)",
       "source_url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
-      "retrieved_date": "2026-10-22",
+      "retrieved_date": "2026-10-23",
       "key_takeaways": [
-        "Pay exclusively by credit card (never wire, Zelle, crypto, or debit): preserves statutory billing-error and goods-not-as-described chargeback protections.",
-        "Written dispute notice must reach the card issuer within 60 calendar days after the charge appeared on the statement, and the issuer has 30 days to acknowledge it — both read directly from the CFPB page linked here. The resolution deadline (within two complete billing cycles, and in no event later than 90 days, after receiving the notice) is set by the statute, 15 U.S.C. § 1666(a)(B), which the CFPB page does not restate; the statute is linked separately above."
-      ]
+        "The CFPB page states: send a written billing-error notice within 60 calendar days after the charge appears on your statement; the card company then has 30 days to confirm receipt in writing.",
+        "12 CFR § 1026.13(c)(2) and 15 U.S.C. § 1666(a)(B) — not the CFPB FAQ page — set the outer resolution limit: two complete billing cycles, and in no case later than 90 days after the notice.",
+        "Project guidance (not a CFPB statement): pay with a credit card rather than wire transfer, a peer-to-peer app, crypto or a debit card, because only the credit-card route carries the statutory billing-error dispute right."
+      ],
+      "correction_2026_10_23": "The 90-day / two-billing-cycle limit was paraphrased as if the CFPB FAQ page said it; that page does not. It is now attributed to 12 CFR 1026.13(c)(2), and the card-only advice is labelled as this project's guidance."
     },
     {
       "id": "STD-GIA-XRF",
@@ -1423,6 +1430,17 @@
       "detail": "Reading the Standards page line by line after the karat table was corrected showed the '10K is the legal minimum' myth repeated verbatim in the eCFR summary bullet. It is now replaced with what § 23.3 actually requires. Two further statements were tightened: (a) the § 23.7/§ 23.8 bullet conflated two different rules — § 23.7 requires disclosure of a rhodium surface layer, while § 23.8 requires metals to be listed from greatest to least by weight; (b) the chargeback bullet attributed the 'two billing cycles / max 90 days' resolution deadline to the CFPB page, which does not state it — that deadline is in 15 U.S.C. § 1666(a)(B), which is now cited and linked. The 60-day notice period and the 30-day acknowledgement are confirmed on the CFPB page itself.",
       "action": "Both legal bullets rewritten to match the regulation text; 15 U.S.C. § 1666 added as its own linked source card so the deadline is traceable.",
       "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3",
+      "date": "2026-10-23"
+    },
+    {
+      "flag_id": "FLG-MED-13",
+      "severity": "MEDIUM",
+      "category": "Citation Integrity (fixed 2026-10-23)",
+      "item_ref": "16 CFR § 23.9 → § 23.10",
+      "title": "Trademark/quality-mark rule was cited to the pewter section",
+      "detail": "The standards page and this catalog cited '16 CFR § 23.9' for the rule that a quality mark must carry the maker's trademark. § 23.9 is 'Misrepresentation as to content of pewter.' The rule is § 23.10 'Additional guidance for the use of quality marks', which itself cites 15 U.S.C. § 297. Both sections were read on the eCFR page on 2026-10-23 and the citation was corrected. Nothing numeric changed.",
+      "action": "No buyer action. Reading only: a regulation citation that looks convincing can still name the wrong section — check the section heading, not just the number.",
+      "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
       "date": "2026-10-23"
     }
   ]

@@ -309,6 +309,22 @@ def main() -> None:
 
     spot_reobs = spot.get("same_day_reobservation") or {}
     reverif = rings.get("last_full_reverification_utc")
+
+    # Two most recent World Gold Council reads, straight out of gold_spot.json.
+    _cur = {"value": float(spot["benchmark"]["value_usd_per_oz"]),
+            "date": spot["benchmark"]["price_date_as_shown_on_source"],
+            "read": spot["benchmark"].get("retrieved_utc", "")}
+    _prev = next((p for p in spot.get("prior_captures", []) if p.get("value_usd_per_oz")), None)
+    if _prev:
+        _delta = (_cur["value"] - float(_prev["value_usd_per_oz"])) / float(_prev["value_usd_per_oz"]) * 100
+        spot_history_note = (
+            f"The benchmark is a live panel, not a fixed number. It was captured again on {esc(_cur['read'])} at "
+            f"${_cur['value']:,.2f}/oz (the page's own date line read \"Data as of {esc(_cur['date'])}\"), against "
+            f"${float(_prev['value_usd_per_oz']):,.2f}/oz on the previous capture ({_delta:+.2f}%). "
+            f"Every derived value on this site is recomputed from the newest capture, and the older reading is kept "
+            f"unchanged in <span class=\"mono\">prior_captures</span> so nothing is silently overwritten.")
+    else:
+        spot_history_note = ("Only one spot capture is recorded so far; it is the calculation basis for every derived value.")
     n_weight = st["rows_with_published_weight"]
     n_rows = st["total_rows"]
 
@@ -719,6 +735,8 @@ def main() -> None:
         for r in unverified
     )
 
+    today_rows = sum(1 for r in rows if r.get("reverified_utc") == "2026-10-23")
+
     flagged_body = f"""
 <section class="hero">
   <span class="eyebrow">Needs review</span>
@@ -782,12 +800,11 @@ def main() -> None:
       <p class="small">Recorded on the <a href="sellers.html">Sellers</a> page for Brilliant Earth, with the page linked.</p>
     </div>
     <div class="card">
-      <h3>The gold spot panel moved during the day while its date stayed put</h3>
-      <p>The World Gold Council page showed ${spot_reobs.get('value_usd_per_oz', 0):,.2f}/oz on a second read on {esc(reverif)}, against the frozen
-      ${C['spot_oz']:,.2f}/oz used for every calculation here, while the page's date line still read "Data as of {esc(C['spot_date'])}".
-      A live panel is not a fixed benchmark. This project keeps the first read so no derived number silently restates itself, and publishes the second
-      read beside it.</p>
-      <p class="small">Both reads are recorded in <span class="mono">data/gold_spot.json</span>; source: <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">World Gold Council</a>.</p>
+      <h3>The gold-spot panel keeps moving, and its date line lags the reading</h3>
+      <p>{spot_history_note}</p>
+      <p class="small">Both readings are recorded in <span class="mono">data/gold_spot.json</span> with their own retrieval dates; source:
+      <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">World Gold Council</a>.
+      A melt value computed weeks ago is not today's melt value — the <a href="calculator.html">calculator</a> lets you re-price at any spot you choose.</p>
     </div>
     <div class="card">
       <h3>No seller publishes a hallmark</h3>
@@ -826,6 +843,43 @@ def main() -> None:
       and the 18K figure re-confirmed exactly, but the 14K figure could not be reproduced in the non-USD rendering.
       Flagged on <a href="solitaire.html">BE-01</a> and <a href="solitaire.html">BE-02</a>: open the page with
       United States / USD selected and re-read the price before relying on it.</p>
+    </div>
+    <div class="card" style="border-color:#c0392b">
+      <h3>Fixed 2026-10-23 — a cited federal regulation pointed at the wrong section</h3>
+      <p>The standards page cited <em>"16 CFR § 23.9"</em> for the rule that a quality mark must be accompanied by the
+      maker's trademark. § 23.9 is <strong>pewter content</strong>; that rule is in
+      <a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23#23.10" target="_blank" rel="noopener">§ 23.10</a>
+      ("Additional guidance for the use of quality marks"), which in turn cites 15 U.S.C. § 297. Both sections were read
+      on the eCFR page on 2026-10-23 and the citation was corrected. This is the failure mode the numeric audits cannot
+      see: a citation that looks right, is plausible, and is wrong. A new offline gate
+      (<span class="mono">scripts/session_46691f83/verify_citations.py</span>) now compares every CFR citation on the site
+      against the official section headings and fails the build on a mismatch.</p>
+    </div>
+    <div class="card" style="border-color:#c0392b">
+      <h3>Fixed 2026-10-23 — a registered source URL was a 404 with an invented subtitle</h3>
+      <p><span class="mono">nist-hb44-2026</span> pointed at
+      <span class="mono">nist.gov/pml/owm/metric-publications/nist-handbook-44</span>, which returns NIST's own
+      "Page not found" (error 404), and carried the subtitle "Appendix C: Units of Mass for Precious Metals &amp; Metric
+      Carat" — wording the page never used. It now points at the live
+      <a href="https://www.nist.gov/pml/owm/nist-handbook-44-current-edition" target="_blank" rel="noopener">Handbook 44
+      current-edition page</a> with the title the page actually carries. No numeric value was ever taken from that URL:
+      the troy-ounce constant is a definition, not a citation.</p>
+    </div>
+    <div class="card">
+      <h3>Corrected 2026-10-23 — no federal page prints 31.1034768 g as an "exact" troy ounce</h3>
+      <p>NIST SP 811 Appendix B.8 lists the troy ounce as <span class="mono">3.110 348 E+01 g</span> and does
+      <em>not</em> mark it bold (exact); it does mark the metric carat <span class="mono">2.0 E-01 g</span> bold (exact).
+      The 31.1034768 g figure this calculator uses is the 480-grain definition (480 × 64.79891 mg), which is exact by
+      definition and agrees with NIST's rounded table value. The source registry previously described it as an "exact SI
+      conversion factor from NIST" — an overstatement that has been corrected. The constant itself is unchanged.</p>
+    </div>
+    <div class="card">
+      <h3>Coverage, stated plainly: {today_rows} of {len(rows)} rows were re-read on 2026-10-23</h3>
+      <p>Three sessions re-opened pages on 23 October. This pass re-opened AL-01, SR-01, RS-01 and MJ-01 and every recorded
+      value matched (MJ-01 only on a different metal variant). AN-01 loaded but its Product Details table was not reached.
+      A parallel session live-re-fetched BE-05, BE-06, BE-07 and re-read SR-01 and SR-02. The other {len(rows) - today_rows}
+      rows keep their earlier capture dates and are <strong>not</strong> claimed as re-verified today. Prices and stock move;
+      re-open the linked official page before you buy.</p>
     </div>
   </div>
 </section>

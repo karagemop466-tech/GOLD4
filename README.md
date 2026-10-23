@@ -164,6 +164,8 @@ python3 scripts/check_site.py           # Gate 2 — links + per-row source link
 python3 scripts/verify.py               # Gate 3 — schema-aware data audit, rewrites AUDIT.md
 python3 scripts/verify_a0be79d4.py      # Gate 4 — multi-page XSS / 404 blocklist / Assay-Lab scanner
 python3 scripts/audit_hallucinations.py # Gate 5 — gemstone-deduction, category-subpage & deep hallucination auditor
+python3 scripts/session_46691f83/verify_citations.py --self-test   # Gate 6 — proves the citation gate still bites
+python3 scripts/session_46691f83/verify_citations.py              # Gate 6 — CFR citation vs official section heading
 ```
 
 The earlier sessions' own records (including the note that their sandboxes had no outbound access, which is why their catalogs were empty) are preserved in `COORDINATION.md` and in the site's Log page.
