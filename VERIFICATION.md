@@ -140,36 +140,37 @@ Generated 2026-10-23 10:01 UTC from `data/*.json` by `scripts/gen_verification.p
 
 | ID | Tier | Publisher | Document | Retrieved |
 |---|---|---|---|---|
-| ftc-gold-jewelry | A | U.S. Federal Trade Commission (consumer.ftc.gov) | [Buying Platinum, Gold, and Silver Jewelry](https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry) | 2026-10-22 |
-| ecfr-16-23 | A | U.S. Federal Trade Commission / eCFR (National Archives) | [16 CFR Part 23 - Guides for the Jewelry, Precious Metals, and Pewter Industries](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23) | 2026-10-22 |
-| usc-15-295 | A | U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 295 | [Standard of fineness of gold articles; deviation](https://www.law.cornell.edu/uscode/text/15/295) | 2026-10-22 |
-| usc-15-ch8 | A | U.S. Code (Legal Information Institute) - 15 U.S.C. ch. 8 | [Falsely stamped gold or silver or goods manufactured therefrom (sections 291-300)](https://www.law.cornell.edu/uscode/text/15/chapter-8) | 2026-10-22 |
-| wgc-gold-prices | B | World Gold Council (Goldhub) | [Gold spot prices & market history](https://www.gold.org/goldhub/data/gold-prices) | 2026-10-22 |
-| lbma-prices | B | London Bullion Market Association | [LBMA Precious Metal Prices](https://www.lbma.org.uk/prices-and-data/precious-metal-prices) | 2026-10-22 |
-| ftc-credit-cards | A | U.S. Federal Trade Commission (consumer.ftc.gov) | [Using Credit Cards and Disputing Charges](https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges) | 2026-10-22 |
-| bluenile-returns | C | Blue Nile | [Return Policy - 30-day money back guarantee](https://www.bluenile.com/policies/returns) | 2026-10-22 |
-| allurez-returns | C | Allurez | [Return Policy](https://www.allurez.com/pages/return-policy) | 2026-10-22 |
-| vrai-returns | C | VRAI | [Returns & Exchanges](https://www.vrai.com/returns-exchanges) | 2026-10-22 |
-| mejuri-returns | C | Mejuri | [Returns Terms & Conditions](https://mejuri.com/company/returns-terms) | 2026-10-22 |
-| brilliantearth-atelier | C | Brilliant Earth | [Atelier Solitaire Ring in 18K Yellow Gold](https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/) | 2026-10-22 |
-| anjolee-ms354a | C | Anjolee | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) | 2026-10-22 |
-| brilliantearth-atelier-14k | C | Brilliant Earth | [Atelier Solitaire Ring in 14K Yellow Gold](https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/) | 2026-10-22 |
-| kitco-gold-spot | B | Kitco Metals Inc. | [Live Gold Spot Price & Unit Conversion Table](https://www.kitco.com/charts/gold) | 2026-10-22 |
-| jmbullion-gold-spot | B | JM Bullion | [Gold Price Charts — Live Ask / Bid Spot Quote](https://www.jmbullion.com/charts/gold-price/) | 2026-10-22 |
 | cfpb-fcba-en61 | A | Consumer Financial Protection Bureau (CFPB) | [How do I dispute a charge on my credit card bill? (Fair Credit Billing Act)](https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/) | 2026-10-22 |
-| gia-xrf-winter2024 | B | Gemological Institute of America (GIA) | [Chemical Analysis in the Gemological Laboratory (EDXRF Principles & Depth Limits)](https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis) | 2026-10-22 |
-| gia-electroform-fraud-2024 | B | Gemological Institute of America (GIA Carlsbad Laboratory) | [Lab Notes: Electroformed Gold Piece with Adhered 14K Hallmark Fraud Case](https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet) | 2026-10-22 |
-| nist-sp811-pml | A | National Institute of Standards and Technology (NIST) | [NIST Special Publication 811 — Guide for the Use of the International System of Units (SI)](https://www.nist.gov/pml/special-publication-811) | 2026-10-22 |
-| sarraf-returns | C | Sarraf Jewelry Inc. | [Sarraf Return Policy & Lifetime Warranty Terms](https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 2026-10-22 |
-| catbird-returns | C | Catbird NYC | [Catbird Returns & Exchanges Policy](https://www.catbirdnyc.com/returns) | 2026-10-22 |
-| mene-returns | C | Menē Inc. | [Menē 7-Day Returns & Lifetime Buyback Policy](https://mene.com/customer-care/en-US/articles/returns-319505) | 2026-10-22 |
-| brilliant-earth-returns | C | Brilliant Earth, LLC | [Brilliant Earth Free 30-Day Returns & Resizing Exclusions Policy](https://www.brilliantearth.com/30-Day-Returns/) | 2026-10-22 |
-| nist-hb44-2026 | A | National Institute of Standards and Technology (nist.gov) | [NIST Handbook 44 — Current Edition (2026): Specifications, Tolerances, and Other Technical Requirements for Weighing and Measuring Devices](https://www.nist.gov/pml/owm/nist-handbook-44-current-edition) | 2026-10-23 |
-| bullionvault-spot | B | BullionVault (bullionvault.com) | [Live Gold Price Chart ($4,026.25/oz t = $129.45/g on 2026-10-22)](https://www.bullionvault.com/gold-price-chart.do) | 2026-10-22 |
-| brilliantearth-returns-30d | C | Brilliant Earth (brilliantearth.com) | [Brilliant Earth — Free 30-Day Returns & Resizing Exclusions (/30-Day-Returns/)](https://www.brilliantearth.com/30-Day-Returns/) | 2026-10-22 |
-| ross-simons-returns | C | Ross-Simons (ross-simons.com) | [Ross-Simons — Returns & Exchanges Policy](https://www.ross-simons.com/pages/returns-exchanges) | 2026-10-22 |
-| usc-15-297 | A | U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 297 | [15 U.S.C. § 297 — Stamping plated articles](https://www.law.cornell.edu/uscode/text/15/297) | 2026-10-23 |
 | ecfr-12-1026-13 | A | Consumer Financial Protection Bureau / eCFR (National Archives) - Regulation Z | [12 CFR § 1026.13 — Billing error resolution](https://www.ecfr.gov/current/title-12/chapter-X/part-1026/subpart-B/section-1026.13) | 2026-10-23 |
+| ecfr-16-23 | A | U.S. Federal Trade Commission / eCFR (National Archives) | [16 CFR Part 23 - Guides for the Jewelry, Precious Metals, and Pewter Industries](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23) | 2026-10-22 |
+| ftc-credit-cards | A | U.S. Federal Trade Commission (consumer.ftc.gov) | [Using Credit Cards and Disputing Charges](https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges) | 2026-10-22 |
+| ftc-gold-jewelry | A | U.S. Federal Trade Commission (consumer.ftc.gov) | [Buying Platinum, Gold, and Silver Jewelry](https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry) | 2026-10-22 |
+| nist-hb44-2026 | A | National Institute of Standards and Technology (nist.gov) | [NIST Handbook 44 — Current Edition (2026): Specifications, Tolerances, and Other Technical Requirements for Weighing and Measuring Devices](https://www.nist.gov/pml/owm/nist-handbook-44-current-edition) | 2026-10-23 |
+| nist-sp811-pml | A | National Institute of Standards and Technology (NIST) | [NIST Special Publication 811 — Guide for the Use of the International System of Units (SI)](https://www.nist.gov/pml/special-publication-811) | 2026-10-22 |
+| usc-15-1666 | A | U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 1666 | [15 U.S.C. § 1666 — Correction of billing errors (Fair Credit Billing Act)](https://www.law.cornell.edu/uscode/text/15/1666) | 2026-10-23 |
+| usc-15-295 | A | U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 295 | [Standard of fineness of gold articles; deviation](https://www.law.cornell.edu/uscode/text/15/295) | 2026-10-22 |
+| usc-15-297 | A | U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 297 | [15 U.S.C. § 297 — Stamping plated articles](https://www.law.cornell.edu/uscode/text/15/297) | 2026-10-23 |
+| usc-15-ch8 | A | U.S. Code (Legal Information Institute) - 15 U.S.C. ch. 8 | [Falsely stamped gold or silver or goods manufactured therefrom (sections 291-300)](https://www.law.cornell.edu/uscode/text/15/chapter-8) | 2026-10-22 |
+| bullionvault-spot | B | BullionVault (bullionvault.com) | [Live Gold Price Chart ($4,026.25/oz t = $129.45/g on 2026-10-22)](https://www.bullionvault.com/gold-price-chart.do) | 2026-10-22 |
+| gia-electroform-fraud-2024 | B | Gemological Institute of America (GIA Carlsbad Laboratory) | [Lab Notes: Electroformed Gold Piece with Adhered 14K Hallmark Fraud Case](https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet) | 2026-10-22 |
+| gia-xrf-winter2024 | B | Gemological Institute of America (GIA) | [Chemical Analysis in the Gemological Laboratory (EDXRF Principles & Depth Limits)](https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis) | 2026-10-22 |
+| jmbullion-gold-spot | B | JM Bullion | [Gold Price Charts — Live Ask / Bid Spot Quote](https://www.jmbullion.com/charts/gold-price/) | 2026-10-22 |
+| kitco-gold-spot | B | Kitco Metals Inc. | [Live Gold Spot Price & Unit Conversion Table](https://www.kitco.com/charts/gold) | 2026-10-22 |
+| lbma-prices | B | London Bullion Market Association | [LBMA Precious Metal Prices](https://www.lbma.org.uk/prices-and-data/precious-metal-prices) | 2026-10-22 |
+| wgc-gold-prices | B | World Gold Council (Goldhub) | [Gold spot prices & market history](https://www.gold.org/goldhub/data/gold-prices) | 2026-10-22 |
+| allurez-returns | C | Allurez | [Return Policy](https://www.allurez.com/pages/return-policy) | 2026-10-22 |
+| anjolee-ms354a | C | Anjolee | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) | 2026-10-22 |
+| bluenile-returns | C | Blue Nile | [Return Policy - 30-day money back guarantee](https://www.bluenile.com/policies/returns) | 2026-10-22 |
+| brilliant-earth-returns | C | Brilliant Earth, LLC | [Brilliant Earth Free 30-Day Returns & Resizing Exclusions Policy](https://www.brilliantearth.com/30-Day-Returns/) | 2026-10-22 |
+| brilliantearth-atelier | C | Brilliant Earth | [Atelier Solitaire Ring in 18K Yellow Gold](https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/) | 2026-10-22 |
+| brilliantearth-atelier-14k | C | Brilliant Earth | [Atelier Solitaire Ring in 14K Yellow Gold](https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/) | 2026-10-22 |
+| brilliantearth-returns-30d | C | Brilliant Earth (brilliantearth.com) | [Brilliant Earth — Free 30-Day Returns & Resizing Exclusions (/30-Day-Returns/)](https://www.brilliantearth.com/30-Day-Returns/) | 2026-10-22 |
+| catbird-returns | C | Catbird NYC | [Catbird Returns & Exchanges Policy](https://www.catbirdnyc.com/returns) | 2026-10-22 |
+| mejuri-returns | C | Mejuri | [Returns Terms & Conditions](https://mejuri.com/company/returns-terms) | 2026-10-22 |
+| mene-returns | C | Menē Inc. | [Menē 7-Day Returns & Lifetime Buyback Policy](https://mene.com/customer-care/en-US/articles/returns-319505) | 2026-10-22 |
+| ross-simons-returns | C | Ross-Simons (ross-simons.com) | [Ross-Simons — Returns & Exchanges Policy](https://www.ross-simons.com/pages/returns-exchanges) | 2026-10-22 |
+| sarraf-returns | C | Sarraf Jewelry Inc. | [Sarraf Return Policy & Lifetime Warranty Terms](https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 2026-10-22 |
+| vrai-returns | C | VRAI | [Returns & Exchanges](https://www.vrai.com/returns-exchanges) | 2026-10-22 |
 
 ## Irregularities flagged for human review
 
@@ -248,7 +249,7 @@ Generated 2026-10-23 10:01 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T09:59:27+00:00
+run_utc: 2026-10-23T10:01:11+00:00
 dataset rows: 64 | sellers: 10 | sources: 30
 spot benchmark: $4,024.45/oz (22 October, 2026) = $129.3891/g
 

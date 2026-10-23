@@ -192,6 +192,7 @@ def main() -> int:
         ("usc-15-297", "15 U.S.C. \u00a7 297", "15/297"),
         ("usc-15-295", "15 U.S.C. \u00a7 295", "15/295"),
         ("ecfr-12-1026-13", "12 CFR \u00a7 1026.13", "1026.13"),
+        ("usc-15-1666", "15 U.S.C. \u00a7 1666", "15/1666"),
         ("cfpb-fcba-en61", "CFPB billing-error FAQ", "consumerfinance.gov"),
     ):
         entry = ids.get(needed)

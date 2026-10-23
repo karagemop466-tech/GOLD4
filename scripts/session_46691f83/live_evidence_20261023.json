@@ -107,6 +107,13 @@
    "status": "LIVE",
    "observed": "Page loaded; the first screen of returned text contains navigation only - the Product Details table with price and 'Approx. Metal Weight' was not reached in this pass, so the recorded $870.76 / 2.90 g were NOT re-confirmed today.",
    "supports": "NOT re-verified in this pass - carried from 2026-10-22"
+  },
+  {
+   "id": "usc-15-1666",
+   "url": "https://www.law.cornell.edu/uscode/text/15/1666",
+   "status": "LIVE",
+   "observed": "Heading 'Correction of billing errors'. (a)(A) written acknowledgment 'not later than thirty days after the receipt of the notice'; (a)(B) 'not later than two complete billing cycles of the creditor (in no event later than ninety days)'; (a)(B)(ii) covers goods not delivered.",
+   "supports": "NEW registry entry: the statutory basis for the 30-day / 90-day dispute clocks the CFPB page summarises but does not fully state"
   }
  ]
 }
