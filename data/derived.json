@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-23T10:02:41Z",
+  "generated_utc": "2026-10-23T10:08:10Z",
   "spot": {
     "value_usd_per_oz": 4024.45,
     "usd_per_gram": 129.389072,
@@ -58,6 +58,24 @@
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14) + arena/46691f83-gold4 (Pass 15)",
       "reverification": "Pass 12 (2026-10-23): price $585, 'Setting only. Center stone sold separately.', style number NG4426, metal 14k Yellow Gold and 'Approximate Metal Weight 3.58 grams' all re-read and match this record. Earlier: Pass 2: page re-fetched; $585 and 'Approximate Metal Weight 3.58 grams' re-read and match this record. PASS 14 (2026-10-23): official Allurez page re-fetched live a second time by this session and re-read: '$585', 'Setting only. Center stone sold separately.', Style number NG4426, Metal 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams'. Identical to the Pass 12 reading — two sessions, same values. Earlier: Independent Pass 15 read (arena/46691f83-gold4, 2026-10-23): $585, 'Setting only. Center stone sold separately.', style NG4426, 14k Yellow Gold and 'Approximate Metal Weight 3.58 grams' re-read and unchanged.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Engraved Floral Solitaire Engagement Ring Setting 14K Yellow Gold",
+        "found_prices": [
+          {
+            "value": 585.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 2.0883,
@@ -100,6 +118,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $724 and 'Approximate Metal Weight 3.4 grams' re-read and match this record.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Milgrain Trellis Solitaire Engagement Ring 14k Yellow Gold",
+        "found_prices": [
+          {
+            "value": 724.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 1.9833,
@@ -144,6 +180,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $848 and 'Approximate Metal Weight 4.4 grams' re-read and match this record.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Split Shank Solitaire Engagement Ring 14k Yellow Gold",
+        "found_prices": [
+          {
+            "value": 848.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 2.5667,
@@ -188,6 +242,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,425 and 'Approximate Metal Weight 5.3 grams' re-read and match this record.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Split Shank Solitaire Engagement Ring 18k Yellow Gold",
+        "found_prices": [
+          {
+            "value": 1425.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 3.975,
@@ -227,12 +299,23 @@
         "CENTRE_STONE_LAB_CREATED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "WHITE_GOLD"
+        "WHITE_GOLD",
+        "SOURCE_PRICE_NOT_MACHINE_READABLE"
       ],
-      "flag_detail": "The published configuration is 14K white gold with a 0.50 ct LAB-CREATED centre diamond, so this price must not be compared with setting-only prices, nor with natural-diamond prices: a large part of the total is the stone, not the gold. The metal weight (2.90 g, ring size 6.5) is the seller's own 'approx.' figure and includes only the mounting.",
+      "flag_detail": "The published configuration is 14K white gold with a 0.50 ct LAB-CREATED centre diamond, so this price must not be compared with setting-only prices, nor with natural-diamond prices: a large part of the total is the stone, not the gold. The metal weight (2.90 g, ring size 6.5) is the seller's own 'approx.' figure and includes only the mounting. | Pass 16 source check 2026-10-23 10:00Z: the page answered HTTP 200 but serves a JavaScript shell with no product text, so the price could not be read without a browser render. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the page answered HTTP 200 but serves a JavaScript shell with no product text, so the price could not be read without a browser render. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: $870.76 and 'Approx. Metal Weight: 2.90 Gr.' both re-read from the page's own Product Details table, so the weight is now recorded. The same table states the centre diamond colour and clarity as 'Lab Created FG' / 'Lab Created VS'.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "EMPTY_OR_JS_SHELL",
+        "price_state": "NOT_MACHINE_READABLE",
+        "page_title": "Anjolee",
+        "found_prices": [],
+        "note": "the page answered 200 but serves a JavaScript shell with no product text; the price cannot be read without a browser render"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 1.6917,
@@ -266,7 +349,8 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_CURRENCY_LOCALIZED"
+        "PRICE_CURRENCY_LOCALIZED",
+        "SOURCE_BOT_BLOCKED"
       ],
       "pair_id": "PAIR-BE-ATELIER",
       "id": "BE-01",
@@ -276,7 +360,17 @@
       "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
       "price_usd": 1190.0,
       "price_source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
-      "flag_detail": "Price \"$1,190 (Setting Only)\" read from the 14K yellow gold page on 2026-10-22. The page publishes no gram weight, no hallmark and no \"solid gold\" wording. Its badge reads \"Free 1-Year Resizing\", while the earlier capture of the same page described one complimentary resize within 60 days — recorded as inconsistent rather than silently overwritten. Pass 7 (arena/1372cb32-gold4, 2026-10-22): this page is currency-localized - the re-check fetches served a EUR rendering ('1,350.00 EUR (Setting Only)') with a Global-e checkout, so the recorded USD figure could not be reproduced in this pass and is retained only from the earlier same-day USD capture. Metal (14K Yellow Gold), style (BE1D2444-14KY) and 2mm width did re-confirm. Open the page with United States / USD selected to see the recorded figure. Cross-session corroboration (arena/22b5b06c-gold4, 2026-10-22T23:39Z): an independent dated snapshot of the same product page (2026-08-27) and schema.org JSON-LD on three official Brilliant Earth category pages (2026-08-25, 2026-09-14, 2026-09-23) all show $1,190 (Setting Only), style BE1D2444-14KY, 2 mm, claw prong — consistent with this record.",
+      "flag_detail": "Price \"$1,190 (Setting Only)\" read from the 14K yellow gold page on 2026-10-22. The page publishes no gram weight, no hallmark and no \"solid gold\" wording. Its badge reads \"Free 1-Year Resizing\", while the earlier capture of the same page described one complimentary resize within 60 days — recorded as inconsistent rather than silently overwritten. Pass 7 (arena/1372cb32-gold4, 2026-10-22): this page is currency-localized - the re-check fetches served a EUR rendering ('1,350.00 EUR (Setting Only)') with a Global-e checkout, so the recorded USD figure could not be reproduced in this pass and is retained only from the earlier same-day USD capture. Metal (14K Yellow Gold), style (BE1D2444-14KY) and 2mm width did re-confirm. Open the page with United States / USD selected to see the recorded figure. Cross-session corroboration (arena/22b5b06c-gold4, 2026-10-22T23:39Z): an independent dated snapshot of the same product page (2026-08-27) and schema.org JSON-LD on three official Brilliant Earth category pages (2026-08-25, 2026-09-14, 2026-09-23) all show $1,190 (Setting Only), style BE1D2444-14KY, 2 mm, claw prong — consistent with this record. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 403,
+        "state": "REFUSED_403",
+        "price_state": "SOURCE_NOT_REACHED",
+        "page_title": "Brilliant Earth - Verifying",
+        "found_prices": [],
+        "note": "the retailer's bot protection refused the runner (HTTP 403) — no statement about the price is possible"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -310,7 +404,8 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_CURRENCY_LOCALIZED"
+        "PRICE_CURRENCY_LOCALIZED",
+        "SOURCE_BOT_BLOCKED"
       ],
       "pair_id": "PAIR-BE-ATELIER",
       "id": "BE-02",
@@ -321,7 +416,17 @@
       "price_usd": 1390.0,
       "price_source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
       "pair_note": "Same design, width and prong style as BE-01; the only published difference is the karat.",
-      "flag_detail": "Price \"$1,390 (Setting Only)\" read from the 18K yellow gold page on 2026-10-22. No gram weight, hallmark or \"solid gold\" wording is published on the page. Pass 7 (arena/1372cb32-gold4, 2026-10-22): the USD 1,390 price, 18K metal and BE1D2444-18KY style re-confirmed on the live page. The same currency-localization behaviour seen on the 14K sibling page (BE-01) can serve a non-USD rendering depending on the visitor, so confirm the page is showing USD before relying on the figure.",
+      "flag_detail": "Price \"$1,390 (Setting Only)\" read from the 18K yellow gold page on 2026-10-22. No gram weight, hallmark or \"solid gold\" wording is published on the page. Pass 7 (arena/1372cb32-gold4, 2026-10-22): the USD 1,390 price, 18K metal and BE1D2444-18KY style re-confirmed on the live page. The same currency-localization behaviour seen on the 14K sibling page (BE-01) can serve a non-USD rendering depending on the visitor, so confirm the page is showing USD before relying on the figure. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 403,
+        "state": "REFUSED_403",
+        "price_state": "SOURCE_NOT_REACHED",
+        "page_title": "Brilliant Earth - Verifying",
+        "found_prices": [],
+        "note": "the retailer's bot protection refused the runner (HTTP 403) — no statement about the price is possible"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -365,6 +470,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,000 'Setting Price', 14K Yellow Gold, stock 501130y14 and 1.80mm width re-read and match this record.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Petite Solitaire Engagement Ring in 14k Yellow Gold",
+        "found_prices": [
+          {
+            "value": 1000.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -409,6 +532,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,155 'Setting Price', 18K Yellow Gold, stock 501130y and 1.80mm width re-read and match this record.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Petite Solitaire Engagement Ring in 18k Yellow Gold",
+        "found_prices": [
+          {
+            "value": 1155.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -451,6 +592,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,000 'Setting Price', 14K Yellow Gold, stock 501140y14 and 1.90mm width re-read and match this record.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
+        "found_prices": [
+          {
+            "value": 1000.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -497,6 +656,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $935 'Setting Price', 14K Yellow Gold, stock 501310y14 and 2.50mm width re-read and match. The description copy again reads 'crafted in 18k yellow gold' on this 14K page, so COPY_INCONSISTENT_METAL is re-confirmed.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)",
+        "found_prices": [
+          {
+            "value": 935.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -541,6 +718,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,310 'Setting Price', 18K Yellow Gold, stock 501310y and 2.50mm width re-read and match this record.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Classic Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2.5mm)",
+        "found_prices": [
+          {
+            "value": 1310.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -583,6 +778,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,295 'Setting Price', 18K Yellow Gold, stock 501760y and 2.00mm width re-read and match this record.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Six -Prong Low Dome Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2mm)",
+        "found_prices": [
+          {
+            "value": 1295.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -628,6 +841,24 @@
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $870 'Setting Price', 14K Yellow Gold, stock 500000y14 and 1.90mm width re-read and match. The description again says the ring has 'platinum prongs', so MIXED_METAL_UNCLEAR is re-confirmed.",
       "pair_id": "PAIR-BN-FOURPRONG",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Classic Four Prong Solitaire Engagement Ring in 14K Yellow Gold",
+        "found_prices": [
+          {
+            "value": 870.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -672,6 +903,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,500 'Setting Price', 14K Yellow Gold, stock 501590y14 and 2.00mm width re-read and match. The description again says the diamonds are 'set in 14k white gold' on this yellow-gold page, so COPY_INCONSISTENT_METAL is re-confirmed.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Riviera Pavé Diamond Engagement Ring in 14K Yellow Gold (1/6 ct. tw.)",
+        "found_prices": [
+          {
+            "value": 1500.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -717,6 +966,24 @@
       "reverified_by": "arena/d1586f6a-gold4 (Pass 12) + arena/46691f83-gold4 (Pass 15)",
       "reverification": "Pass 12 (2026-10-23): price $548 re-read, but the page opened on the 'Solid White Gold (14k), Natural Diamond' variant, not the 14k yellow gold recorded in this row; no gram weight is published on the page. Earlier: Pass 2: $548 re-read from the 14k Yellow Gold Rings collection card ('Solid Yellow Gold (14k), Natural Diamond') and matches. The product page itself opens on the white-gold variant, also $548. Earlier: Independent Pass 15 read (arena/46691f83-gold4, 2026-10-23): landed on the same Solid White Gold (14k) / Natural Diamond variant at $548 — price corroborated; yellow-gold variant still not re-confirmed.",
       "variant_note": "The product URL opens on the Solid White Gold (14k) variant by default; the yellow-gold variant was opened on the same URL on 2026-10-22 and displayed the same $548, so the price is not variant-specific on this product. The ring is sold as fine jewellery, not bridal.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Diamonds Team Ring | Mejuri",
+        "found_prices": [
+          {
+            "value": 548.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -759,6 +1026,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5)",
       "reverification": "Pass 2: $648 re-read from the 14k Yellow Gold Rings collection card and matches.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Diamond Band Ring | Mejuri",
+        "found_prices": [
+          {
+            "value": 648.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -805,6 +1090,24 @@
       "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5)",
       "reverification": "Pass 2: $548 re-read from the 14k Yellow Gold Rings collection card and matches.",
       "variant_note": "The product URL opens on the Solid White Gold (14k) variant by default; the yellow-gold variant was opened on the same URL on 2026-10-22 and also displayed $548. The ring is engravable, and Mejuri's returns terms make engraved products non-returnable at any time.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "14k Yellow Gold Handcrafted Pavé Diamond Signet Ring - Jewelry | Mejuri",
+        "found_prices": [
+          {
+            "value": 548.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -847,6 +1150,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5)",
       "reverification": "Pass 2: $798 re-read from the 14k Yellow Gold Rings collection card and matches.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "14k Solid Gold Pavé Diamond Thin Dôme Ring - Jewelry | Mejuri",
+        "found_prices": [
+          {
+            "value": 798.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -893,6 +1214,31 @@
       "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5)",
       "reverification": "Pass 2: $598 re-read from the 14k Yellow Gold Rings collection card ('Lab Grown Diamond, Solid Yellow Gold (14k)') and matches.",
       "variant_note": "The page opens on a Sterling Silver variant at \"From $398\"; the 14k yellow gold + lab-grown diamond variant in this row displays \"From $598\", which is a \"From\" figure rather than a fixed quote.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Ziggy Ring",
+        "found_prices": [
+          {
+            "value": 598.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          },
+          {
+            "value": 398.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -933,12 +1279,31 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "SPEC_LISTED_PAVE_ON_PLAIN_BAND",
-        "WIDTH_UNVERIFIED"
+        "WIDTH_UNVERIFIED",
+        "PRICE_STRUCTURED_DIFFERS"
       ],
-      "flag_detail": "The 'From $1,035' figure comes from the VRAI engagement-rings listing page for this design; the 2.86 g metal weight comes from the design's own configuration page. Both are VRAI pages for the same design, but they are not the same URL, so confirm the exact price for your ring size and carat in the cart before relying on it. SPEC_LISTED_PAVE_ON_PLAIN_BAND: on the re-fetched design page the selected band is a PLAIN band ('Band: Plain band'), yet the Setting Details block still lists 'Pave carat weight:0.18ctw'. The weight figure quoted in this row is the 'Metal weight' line, which is unambiguous, but the pavé line suggests the spec block is shared across band variants. Confirm which band you are buying before relying on any diamond-weight figure. Also re-checked 2026-10-22: the listing card that shows \"From $1,035\" links to configuration id ...-32797281484893, not to the configuration id in this row (...-40635875360861) from which the metal weight was read. Same design and metal, different configuration identifier — confirm the setting price for your exact ring size in the cart. WIDTH_UNVERIFIED: no numeric band width is published on the design page — its specs say only 'Band width: Standard' (the one millimetre figure shown is 'Band depth: 1.6mm', a different dimension). The 1.7 mm value carried by this row since the first capture could not be re-read from any official page, so the width is blanked (independent re-verification, arena/b2c018a8-gold4, 2026-10-22).",
+      "flag_detail": "The 'From $1,035' figure comes from the VRAI engagement-rings listing page for this design; the 2.86 g metal weight comes from the design's own configuration page. Both are VRAI pages for the same design, but they are not the same URL, so confirm the exact price for your ring size and carat in the cart before relying on it. SPEC_LISTED_PAVE_ON_PLAIN_BAND: on the re-fetched design page the selected band is a PLAIN band ('Band: Plain band'), yet the Setting Details block still lists 'Pave carat weight:0.18ctw'. The weight figure quoted in this row is the 'Metal weight' line, which is unambiguous, but the pavé line suggests the spec block is shared across band variants. Confirm which band you are buying before relying on any diamond-weight figure. Also re-checked 2026-10-22: the listing card that shows \"From $1,035\" links to configuration id ...-32797281484893, not to the configuration id in this row (...-40635875360861) from which the metal weight was read. Same design and metal, different configuration identifier — confirm the setting price for your exact ring size in the cart. WIDTH_UNVERIFIED: no numeric band width is published on the design page — its specs say only 'Band width: Standard' (the one millimetre figure shown is 'Band depth: 1.6mm', a different dimension). The 1.7 mm value carried by this row since the first capture could not be re-read from any official page, so the width is blanked (independent re-verification, arena/b2c018a8-gold4, 2026-10-22). | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 2,185.00 USD via json-ld against the stored $1,035.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 10:07Z: the page's own structured data currently prints 2,185.00 USD via json-ld against the stored $1,035.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5) + arena/b2c018a8-gold4 (independent re-verification, 2026-10-22)",
       "reverification": "Pass 2: 'Metal weight:2.86g (Ring size 6)' re-read on the design page, and 'From $1,035' re-read on the VRAI engagement-rings listing card; both match this record. Independent pass (arena/b2c018a8, 2026-10-22): 'From $1,035' on the listing page and 'Metal weight:2.86g (Ring size 6)' on the design page re-read and match; no numeric band width is published anywhere on the page ('Band width: Standard', 'Band depth: 1.6mm'), so the earlier 1.7 mm value is blanked and flagged WIDTH_UNVERIFIED.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "DIFFERS",
+        "page_title": "Your Privacy Choices",
+        "found_prices": [
+          {
+            "value": 2185.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 2.145,
@@ -984,6 +1349,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5) + arena/b2c018a8-gold4 (independent re-verification, 2026-10-22)",
       "reverification": "Pass 2: 'Metal weight:2.84g (Ring size 6)' re-read and matches. The design page again published no setting price (it offers 'Continue to diamond'), so the price stays blank. Independent pass (arena/b2c018a8, 2026-10-22): 'Metal weight:2.84g (Ring size 6)' re-read and matches; still no setting price published; no numeric band width published ('Band width: Standard', 'Band depth: 1.6mm'), so the earlier 1.6 mm value is blanked and flagged WIDTH_UNVERIFIED. Also removed from flag_detail a sentence copied from VR-01 that cited VR-01's configuration id.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "NO_STORED_PRICE",
+        "page_title": "Signature 6 Prong Round Brilliant Engagement Ring in 18k Yellow Gold with Plain Band",
+        "found_prices": [
+          {
+            "value": 1150.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the dataset deliberately stores no price for this row; the live page offered 1,150.00 USD"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 2.13,
@@ -1022,11 +1405,22 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "MIXED_METAL_UNCLEAR"
+        "MIXED_METAL_UNCLEAR",
+        "SOURCE_BOT_BLOCKED"
       ],
-      "flag_detail": "Title states 18K Yellow Gold while Ring Information specifies Prong metal: 14K White Gold (expect 14K XRF reading on head vs 18K on shank). Stale search cache showed $650 vs $850 live (+30.8%).",
+      "flag_detail": "Title states 18K Yellow Gold while Ring Information specifies Prong metal: 14K White Gold (expect 14K XRF reading on head vs 18K on shank). Stale search cache showed $650 vs $850 live (+30.8%). | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 403,
+        "state": "REFUSED_403",
+        "price_state": "SOURCE_NOT_REACHED",
+        "page_title": "Brilliant Earth - Verifying",
+        "found_prices": [],
+        "note": "the retailer's bot protection refused the runner (HTTP 403) — no statement about the price is possible"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -1073,6 +1467,24 @@
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14) + arena/46691f83-gold4 (Pass 15)",
       "reverification": "PASS 14 (2026-10-23): official Sarraf page re-fetched live and re-read: 'Now: US$352.00 -15% OFF', 'Was: US$412.00', 'MSRP: US$1,369.00', SKU 10KW-LPBWB05 / Stock 142707, Material '10K Solid Gold', 'Approximate Metal Weight: 4.80 grams', plus the size caveat 'The weight listed is an approximate weight of a ring in size 10'. Stored price, karat, weight and solid-gold wording all match. Earlier: Independent Pass 15 read (arena/46691f83-gold4, 2026-10-23): US$352.00, SKU 10KW-LPBWB05, 'Material: 10K Solid Gold' and 'Approximate Metal Weight: 4.80 grams' re-read and unchanged.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "10k White Gold 5mm High Polished Traditional Domed Wedding Band | SARRAF.COM",
+        "found_prices": [
+          {
+            "value": 352.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.4166667,
       "gold_pct": 41.6667,
       "pure_gold_g": 2.0,
@@ -1113,6 +1525,24 @@
       ],
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "14k Gold 6mm High Polished Comfort Fit Wedding Band | SARRAF.COM",
+        "found_prices": [
+          {
+            "value": 1063.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 5.4833,
@@ -1156,6 +1586,24 @@
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
       "reverification": "Pass 12 (2026-10-23): price US$871.00 ('Now'), SKU 18KY-LPBWB05, stock 140139, '18K Solid Gold' and 'Approximate Metal Weight: 6.70 grams' (page states the weight is for a size-10 ring) all re-read and match this record.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band | SARRAF.COM",
+        "found_prices": [
+          {
+            "value": 871.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 5.025,
@@ -1196,6 +1644,24 @@
       ],
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "18K Gold 6mm High Polished Flat Comfort Fit Wedding Band | SARRAF.COM",
+        "found_prices": [
+          {
+            "value": 1436.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 8.325,
@@ -1238,6 +1704,24 @@
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
       "reverification": "Pass 12 (2026-10-23): price US$2,858.00 ('Now'), SKU 9240-14ky, stock 145364, '14K Solid Gold', 'Approximate Metal Weight: 8.00 grams' and Diamond Weight 0.50 Ct all re-read and match this record; the price is stone-inclusive, as flagged.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "14k Yellow gold Mens Solitaire Diamond Ring 1/2 ct. | SARRAF.COM",
+        "found_prices": [
+          {
+            "value": 2858.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 4.6667,
@@ -1279,6 +1763,24 @@
       ],
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "18k Yellow gold Mens Solitaire Diamond Ring 3/4 ct. | SARRAF.COM",
+        "found_prices": [
+          {
+            "value": 4068.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 4.725,
@@ -1320,6 +1822,24 @@
       ],
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "14k Gold 1/2 Ctw Diamond Solitaire Engagement Diamond Ring | SARRAF.COM",
+        "found_prices": [
+          {
+            "value": 2183.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -1361,6 +1881,24 @@
       ],
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "18k Yellow gold 1/2 Carat Round Diamond Solitaire Engagement Ring | SARRAF.COM",
+        "found_prices": [
+          {
+            "value": 2461.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -1404,6 +1942,24 @@
       "flag_detail": "20-day return window ($9 fee; international & engraved sales final); ultra-thin 1.0mm shank requires durability care.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "The Swan Solitaire Brilliant Cut White Diamond Engagement Ring in 14K Gold & Platinum | Catbird",
+        "found_prices": [
+          {
+            "value": 3900.0,
+            "currency": "USD",
+            "source": "meta:product:price:amount",
+            "type": "meta",
+            "name": "The&#x20;Swan&#x20;Solitaire&#x20;Diamond&#x20;Engagement&#x20;Ring"
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -1444,6 +2000,24 @@
       ],
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Grand Painter&#039;s Ring, Solid 14k Yellow Gold | Catbird Jewelry",
+        "found_prices": [
+          {
+            "value": 313.5,
+            "currency": "USD",
+            "source": "meta:product:price:amount",
+            "type": "meta",
+            "name": "Grand&#x20;Painter&#x27;s&#x20;Gold&#x20;Stacking&#x20;Ring"
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -1480,11 +2054,51 @@
       "returns_source_id": "mene-returns",
       "flags": [
         "NO_WEIGHT_PUBLISHED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_STRUCTURED_DIFFERS"
       ],
-      "flag_detail": "Per-size gram weight renders inside client JS modal rather than initial static HTML — left strictly null (never back-solved). Strict 7-day return window.",
+      "flag_detail": "Per-size gram weight renders inside client JS modal rather than initial static HTML — left strictly null (never back-solved). Strict 7-day return window. | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 2,441.00 USD via json-ld, 1,908.00 USD via json-ld, 2,223.00 USD via json-ld, 1,800.00 USD via json-ld, 1,888.00 USD via json-ld, 1,770.00 USD via json-ld, 1,627.00 USD via json-ld, 1,530.00 USD via json-ld, 1,454.00 USD via json-ld against the stored $1,465.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 10:07Z: the page's own structured data currently prints 2,441.00 USD via json-ld, 1,908.00 USD via json-ld, 2,223.00 USD via json-ld, 1,800.00 USD via json-ld, 1,888.00 USD via json-ld, 1,770.00 USD via json-ld, 1,627.00 USD via json-ld, 1,530.00 USD via json-ld, 1,454.00 USD via json-ld against the stored $1,465.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "DIFFERS",
+        "page_title": "Knot ring - 24k Gold | Menē",
+        "found_prices": [
+          {
+            "value": 2441.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          },
+          {
+            "value": 1908.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          },
+          {
+            "value": 2223.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          },
+          {
+            "value": 1800.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
+      },
       "fineness": 1.0,
       "gold_pct": 100.0,
       "pure_gold_g": null,
@@ -1521,11 +2135,51 @@
       "returns_source_id": "mene-returns",
       "flags": [
         "NO_WEIGHT_PUBLISHED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_STRUCTURED_DIFFERS"
       ],
-      "flag_detail": "Per-size gram weight renders inside client JS modal rather than initial static HTML — left strictly null. Strict 7-day return window.",
+      "flag_detail": "Per-size gram weight renders inside client JS modal rather than initial static HTML — left strictly null. Strict 7-day return window. | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 2,565.00 USD via json-ld, 2,386.00 USD via json-ld, 2,378.00 USD via json-ld, 2,264.00 USD via json-ld, 2,189.00 USD via json-ld, 2,201.00 USD via json-ld, 1,961.00 USD via json-ld, 1,906.00 USD via json-ld against the stored $1,730.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 10:07Z: the page's own structured data currently prints 2,565.00 USD via json-ld, 2,386.00 USD via json-ld, 2,378.00 USD via json-ld, 2,264.00 USD via json-ld, 2,189.00 USD via json-ld, 2,201.00 USD via json-ld, 1,961.00 USD via json-ld, 1,906.00 USD via json-ld against the stored $1,730.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "DIFFERS",
+        "page_title": "Menē Etruscan Sun Band - 24k Gold | Menē",
+        "found_prices": [
+          {
+            "value": 2565.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          },
+          {
+            "value": 2386.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          },
+          {
+            "value": 2378.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          },
+          {
+            "value": 2264.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
+      },
       "fineness": 1.0,
       "gold_pct": 100.0,
       "pure_gold_g": null,
@@ -1564,13 +2218,24 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "MIXED_METAL_UNCLEAR"
+        "MIXED_METAL_UNCLEAR",
+        "SOURCE_URL_DEAD"
       ],
-      "flag_detail": "Matched 18K counterpart to BN-07 ($870 -> $1,125, +29.3%); combines 18K yellow gold shank with platinum prongs and publishes no gram weight.",
+      "flag_detail": "Matched 18K counterpart to BN-07 ($870 -> $1,125, +29.3%); combines 18K yellow gold shank with platinum prongs and publishes no gram weight. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y on 2026-10-22; price, metal spec, and flags verified verbatim.",
       "pair_id": "PAIR-BN-FOURPRONG",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 404,
+        "state": "HTTP_404",
+        "price_state": "SOURCE_NOT_REACHED",
+        "page_title": "",
+        "found_prices": [],
+        "note": "the page returns 404 / a 'cannot be found' page — the stored price can no longer be checked at this URL"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -1608,12 +2273,23 @@
       "flags": [
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "SOURCE_URL_DEAD"
       ],
-      "flag_detail": "Wider 2.4 mm comfort-fit solitaire setting; Blue Nile publishes no gram weight or hallmark. Cross-session corroboration (arena/22b5b06c-gold4, live fetch 2026-10-22T23:58Z): the official Blue Nile alias URL https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-yellow-gold-item-203348 was fetched live and shows the SAME Stock Number 502120y14, Metal 14K Yellow Gold, Width 2.40mm and price $1,145 '(Setting Price)' as this record — confirming sku/width/price independently. NAMING VARIANCE recorded, not resolved: that alias titles the ring 'Classic Simple Solitaire Engagement Ring in 14K Yellow Gold' while this record's URL (slug item-502120y14) titles it 'Low Dome Comfort Fit Solitaire Engagement Ring'; both are official Blue Nile pages for stock number 502120y14. The alias page also re-displays Free Shipping, Free Returns and the Limited Lifetime Warranty on gold jewelry priced $1,000 or more, and seller contact +1-800-242-2728 / service@bluenile.com.",
+      "flag_detail": "Wider 2.4 mm comfort-fit solitaire setting; Blue Nile publishes no gram weight or hallmark. Cross-session corroboration (arena/22b5b06c-gold4, live fetch 2026-10-22T23:58Z): the official Blue Nile alias URL https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-yellow-gold-item-203348 was fetched live and shows the SAME Stock Number 502120y14, Metal 14K Yellow Gold, Width 2.40mm and price $1,145 '(Setting Price)' as this record — confirming sku/width/price independently. NAMING VARIANCE recorded, not resolved: that alias titles the ring 'Classic Simple Solitaire Engagement Ring in 14K Yellow Gold' while this record's URL (slug item-502120y14) titles it 'Low Dome Comfort Fit Solitaire Engagement Ring'; both are official Blue Nile pages for stock number 502120y14. The alias page also re-displays Free Shipping, Free Returns and the Limited Lifetime Warranty on gold jewelry priced $1,000 or more, and seller contact +1-800-242-2728 / service@bluenile.com. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4 + arena/22b5b06c-gold4 (alias live re-fetch 23:58Z)",
       "reverification": "Directly fetched https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14 on 2026-10-22; price, metal spec, and flags verified verbatim.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 404,
+        "state": "HTTP_404",
+        "price_state": "SOURCE_NOT_REACHED",
+        "page_title": "",
+        "found_prices": [],
+        "note": "the page returns 404 / a 'cannot be found' page — the stored price can no longer be checked at this URL"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -1651,12 +2327,23 @@
       "flags": [
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "SOURCE_URL_DEAD"
       ],
-      "flag_detail": "Publishes side-stone count (12 natural round diamonds, 1/20 ctw = ~0.010 g stone mass) but omits metal gram weight.",
+      "flag_detail": "Publishes side-stone count (12 natural round diamonds, 1/20 ctw = ~0.010 g stone mass) but omits metal gram weight. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y on 2026-10-22; price, metal spec, and flags verified verbatim.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 404,
+        "state": "HTTP_404",
+        "price_state": "SOURCE_NOT_REACHED",
+        "page_title": "",
+        "found_prices": [],
+        "note": "the page returns 404 / a 'cannot be found' page — the stored price can no longer be checked at this URL"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -1696,12 +2383,23 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "COPY_INCONSISTENT_METAL",
-        "COPY_CARAT_MISMATCH"
+        "COPY_CARAT_MISMATCH",
+        "SOURCE_URL_DEAD"
       ],
-      "flag_detail": "Double contradiction on Blue Nile's live page: URL/title/Setting Information state '18k Yellow Gold' and '1/6 ct. tw.', whereas description prose says 'crafted in platinum' and Sidestone Details lists '1/8' ct. tw.",
+      "flag_detail": "Double contradiction on Blue Nile's live page: URL/title/Setting Information state '18k Yellow Gold' and '1/6 ct. tw.', whereas description prose says 'crafted in platinum' and Sidestone Details lists '1/8' ct. tw. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y on 2026-10-22; price, metal spec, and flags verified verbatim.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 404,
+        "state": "HTTP_404",
+        "price_state": "SOURCE_NOT_REACHED",
+        "page_title": "",
+        "found_prices": [],
+        "note": "the page returns 404 / a 'cannot be found' page — the stored price can no longer be checked at this URL"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -1746,6 +2444,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z + live product-page re-display 23:19Z.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Solitaire Engagement Ring With Pavé Basket In 14K Yellow Gold By James Allen",
+        "found_prices": [
+          {
+            "value": 2260.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -1790,6 +2506,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z + live product-page re-display 23:19Z.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Solitaire Engagement Ring With Intricate Basket In 14K Yellow Gold By James Allen",
+        "found_prices": [
+          {
+            "value": 1385.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -1834,6 +2568,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "East West Knife Edge Cathedral Solitaire Engagement Ring In 14K Yellow Gold By James Allen",
+        "found_prices": [
+          {
+            "value": 975.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -1878,6 +2630,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen",
+        "found_prices": [
+          {
+            "value": 1565.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -1922,6 +2692,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen",
+        "found_prices": [
+          {
+            "value": 1555.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -1966,6 +2754,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z + live product-page re-display 23:19Z.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Petite Hidden Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold",
+        "found_prices": [
+          {
+            "value": 1255.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2010,6 +2816,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Bow-Tie Engagement Ring With Channel Set Round Diamonds In 14K Yellow Gold By James Allen",
+        "found_prices": [
+          {
+            "value": 2350.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2054,6 +2878,24 @@
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
       "reverification": "Pass 12 (2026-10-23): price $965 '(Setting Price)' with no discount, Stock Number 505038y14, Metal 14K Yellow Gold and Width 1.80mm all re-read and match this record; the ended 22-October sale is confirmed absent from the live page. Earlier: 2026-10-22T23:38Z: five dated snapshots of official Blue Nile pages re-read; the price itself varies between them (see flag_detail) — recorded, not averaged. Live fetch 2026-10-23T00:20Z: $965 '(Setting Price)' with NO discount displayed; Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm re-read from the page. The 22 Oct sale display ('$965 $772 -20%') had ended by this re-fetch - the recorded price is updated to the live $965; the snapshot sale history and the four differing category-page sale prices remain documented under SALE_PRICE_VARIES_ACROSS_PAGES.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Woven Solitaire Engagement Ring In 14K Yellow Gold By James Allen",
+        "found_prices": [
+          {
+            "value": 965.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2097,6 +2939,24 @@
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "2026-10-22T23:35Z: two independent official-page reads agree ($1,290). Live re-fetch pending (outage). Live fetch 2026-10-23T00:22Z: $1,290 '(Setting Price)' - unchanged from the snapshot; Stock Number 502500y14, Metal 14K Yellow Gold, Width 1.80mm re-read from the page.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Knife Edge Solitaire Engagement Ring in 14k Yellow Gold",
+        "found_prices": [
+          {
+            "value": 1290.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2141,6 +3001,24 @@
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "2026-10-22T23:36Z: official-page snapshot re-read; metal-copy contradiction found and flagged. Live fetch 2026-10-23T00:24Z: $2,050 '(Setting Price)' - unchanged; Stock Number 501580y14, Metal 14K Yellow Gold, Width 5.00mm re-read. The live page's Product Details text STILL reads 'this platinum solitaire setting features a flat profile' against the 14K Yellow Gold spec - COPY_INCONSISTENT_METAL confirmed live, not only in snapshot.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm)",
+        "found_prices": [
+          {
+            "value": 2050.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2184,6 +3062,24 @@
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "2026-10-22T23:36Z: official-page snapshot re-read; price basis clarified from the same page. Live fetch 2026-10-23T00:26Z: $5,190 '(Setting Price)' - unchanged; Stock Number 501472y14, Metal 14K Yellow Gold, Width 4.00mm re-read; Natural Diamond Information re-read: Shape Emerald, Quantity 6, Total Carat 1, Color G-H, Clarity VS2-SI1, Not Enhanced, Setting Type Prong, with the same 1 ct centre-stone disclaimer.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Emerald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.)",
+        "found_prices": [
+          {
+            "value": 5190.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2228,6 +3124,24 @@
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "2026-10-22T23:37Z: two official-page reads agree ($1,145); yellow-gold sibling re-fetched live at 23:58Z via BN-10's alias. Live re-fetch of THIS page pending (outage). Live fetch 2026-10-23T00:28Z: $1,145 '(Setting Price)' - unchanged; Stock Number 502120w14, Metal 14K White Gold, Width 2.40mm, Rhodium Finish: Yes re-read from the page. Page title 'Classic Simple Solitaire Engagement Ring in 14k White Gold' (same 502120 style family as published BN-10).",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Classic Simple Solitaire Engagement Ring in 14k White Gold",
+        "found_prices": [
+          {
+            "value": 1145.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2272,6 +3186,24 @@
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "2026-10-22T23:37Z: official-page snapshot re-read; live re-fetch pending (outage). Live fetch 2026-10-23T00:30Z: $2,210 '(Setting Price)' with NO discount displayed; Stock Number 505094w14, Metal 14K White Gold, Width 1.75mm, Rhodium Finish: Yes re-read; diamond block re-read: Round, Quantity 26, Total Carat 1/5, Color F-G, Clarity VS1-VS2. The 22 Oct sale display ('$2,210 $1,657 -25%') had ended by this re-fetch - the recorded price is updated to the live $2,210.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen",
+        "found_prices": [
+          {
+            "value": 2210.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2317,6 +3249,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live fetch 2026-10-22T23:19Z: sold-out status and merger notice read directly from the page.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "NO_STORED_PRICE",
+        "page_title": "Comfort Fit Solitaire Engagement Ring In 14K Yellow Gold",
+        "found_prices": [
+          {
+            "value": 858.0,
+            "currency": "USD",
+            "source": "meta:og:price:amount",
+            "type": "meta",
+            "name": "Comfort Fit Solitaire Engagement Ring In 14K Yellow Gold"
+          }
+        ],
+        "note": "the dataset deliberately stores no price for this row; the live page offered 858.00 USD"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2355,12 +3305,23 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "RESIZE_EXCLUDED_ON_PAGE"
+        "RESIZE_EXCLUDED_ON_PAGE",
+        "SOURCE_BOT_BLOCKED"
       ],
-      "flag_detail": "Page banner advertises 'Free 1-Year Resizing', yet Ring Details states 'Due to the complexity of the Fairmined craftsmanship, we are unable to offer resizing on this ring design.' Gram weight not published.",
+      "flag_detail": "Page banner advertises 'Free 1-Year Resizing', yet Ring Details states 'Due to the complexity of the Fairmined craftsmanship, we are unable to offer resizing on this ring design.' Gram weight not published. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/ on 2026-10-22; price, metal spec, and flags verified verbatim.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 403,
+        "state": "REFUSED_403",
+        "price_state": "SOURCE_NOT_REACHED",
+        "page_title": "Brilliant Earth - Verifying",
+        "found_prices": [],
+        "note": "the retailer's bot protection refused the runner (HTTP 403) — no statement about the price is possible"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -2400,13 +3361,24 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_V2_ONLY",
-        "PRICE_CURRENCY_LOCALIZED"
+        "PRICE_CURRENCY_LOCALIZED",
+        "SOURCE_BOT_BLOCKED"
       ],
-      "flag_detail": "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session. PASS 14 (2026-10-23): live re-fetch served 'EUR 1,350.00 (Setting Only)' on this page while BE-06 and BE-07 served USD in the same minute; the USD figure ($1,190) therefore remains snapshot-sourced and stays flagged. The EUR figure is not converted to USD here — a conversion would be a number this project computed, not a price the retailer published.",
+      "flag_detail": "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session. PASS 14 (2026-10-23): live re-fetch served 'EUR 1,350.00 (Setting Only)' on this page while BE-06 and BE-07 served USD in the same minute; the USD figure ($1,190) therefore remains snapshot-sourced and stays flagged. The EUR figure is not converted to USD here — a conversion would be a number this project computed, not a price the retailer published. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
       "reverification": "2026-10-22T23:35Z: three dated snapshots of official Brilliant Earth pages agree on $1,190 (product page + two category JSON-LD records). Live re-fetch pending (fetch-service outage 23:20-23:47Z). PASS 14 (2026-10-23): official page re-fetched live. It served the geolocalized price 'EUR 1,350.00 (Setting Only)' for style BE1D3939-14KY (14K Yellow Gold, 'Width: 2-1.3 mm', 'Setting: Claw Prong', 14 shared-prong round diamonds totalling 0.05 ct) and published no USD figure, so the stored $1,190 was NOT re-confirmed and NOT changed. Provenance stays V2. In the same minutes the 18K variant (BE-06) and Fleur (BE-07) both rendered in USD, so the localization is per-page rather than per-session. No gram weight is published on any of the three pages.",
       "pair_id": "PAIR-BE-FREESIA",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 403,
+        "state": "REFUSED_403",
+        "price_state": "SOURCE_NOT_REACHED",
+        "page_title": "Brilliant Earth - Verifying",
+        "found_prices": [],
+        "note": "the retailer's bot protection refused the runner (HTTP 403) — no statement about the price is possible"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2445,13 +3417,24 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_CURRENCY_LOCALIZED"
+        "PRICE_CURRENCY_LOCALIZED",
+        "SOURCE_BOT_BLOCKED"
       ],
-      "flag_detail": "Snapshot of the official product page (dated 2026-09-28) showed: $1,390 (Setting Only), Metal 18K Yellow Gold. The 18K style code was not visible in the captured text, so sku stays blank rather than inferred from the 14K variant. PASS 14 (2026-10-23): live re-fetch confirmed '$1,390 (Setting Only)' in USD and style BE1D3939-18KY; the stored price is current, not only a snapshot. Currency can still flip to EUR depending on the session — check the selector before comparing against other rows on this site.",
+      "flag_detail": "Snapshot of the official product page (dated 2026-09-28) showed: $1,390 (Setting Only), Metal 18K Yellow Gold. The 18K style code was not visible in the captured text, so sku stays blank rather than inferred from the 14K variant. PASS 14 (2026-10-23): live re-fetch confirmed '$1,390 (Setting Only)' in USD and style BE1D3939-18KY; the stored price is current, not only a snapshot. Currency can still flip to EUR depending on the session — check the selector before comparing against other rows on this site. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
       "reverification": "2026-10-22T23:35Z: value re-read from the dated official-page snapshot; live re-fetch pending (outage). PASS 14 (2026-10-23): official page re-fetched live and re-read in USD: '$1,390 (Setting Only)', 'Style: BE1D3939-18KY', 'Metal: 18K Yellow Gold', 'Width: 2-1.3 mm', 'Setting: Claw Prong', 'Free Shipping & Returns', 'Free 1-Year Resizing'. Price matches the stored $1,390, so provenance is upgraded from V2 snapshot to V1 direct fetch and PRICE_V2_ONLY is removed. The style code, previously blank, is now recorded from the live spec block. Width stays blank because the page publishes a taper range (2-1.3 mm), not a single figure.",
       "pair_id": "PAIR-BE-FREESIA",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 403,
+        "state": "REFUSED_403",
+        "price_state": "SOURCE_NOT_REACHED",
+        "page_title": "Brilliant Earth - Verifying",
+        "found_prices": [],
+        "note": "the retailer's bot protection refused the runner (HTTP 403) — no statement about the price is possible"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -2490,12 +3473,23 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_CURRENCY_LOCALIZED"
+        "PRICE_CURRENCY_LOCALIZED",
+        "SOURCE_BOT_BLOCKED"
       ],
-      "flag_detail": "Snapshot of the official product page (dated 2026-08-07) showed: $1,350 (Setting Only), Style BE1574-14KY, Metal 14K Yellow Gold, Width 1.8 mm, Setting Four-Prong.",
+      "flag_detail": "Snapshot of the official product page (dated 2026-08-07) showed: $1,350 (Setting Only), Style BE1574-14KY, Metal 14K Yellow Gold, Width 1.8 mm, Setting Four-Prong. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
       "reverification": "2026-10-22T23:39Z: value re-read from the dated official-page snapshot; live re-fetch pending (outage). PASS 14 (2026-10-23): official page re-fetched live and re-read in USD: '$1,350 (Setting Only)', 'Style: BE1574-14KY', 'Metal: 14K Yellow Gold', 'Width: 1.8 mm', 'Setting: Four-Prong', 'Free Shipping & Returns', 'Free 1-Year Resizing'. Price matches the stored $1,350, so provenance is upgraded from V2 snapshot to V1 direct fetch and PRICE_V2_ONLY is removed. The 1.8 mm width, previously blank, is recorded from the live spec block because this page states a single width rather than a taper range.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 403,
+        "state": "REFUSED_403",
+        "price_state": "SOURCE_NOT_REACHED",
+        "page_title": "Brilliant Earth - Verifying",
+        "found_prices": [],
+        "note": "the retailer's bot protection refused the runner (HTTP 403) — no statement about the price is possible"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2539,6 +3533,25 @@
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14) + arena/46691f83-gold4 (Pass 15)",
       "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/571221.html on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 14 (2026-10-23): official Ross-Simons page re-fetched live and re-read: '$400', Item 571221, '2mm 14kt Yellow Gold Band', 'Metal 14kt Yellow Gold', 'Gold Weight 1.7 grams', with the page's 'All weights and measurements are approximate.' Stored price, metal, width and weight all match. Earlier: Independent Pass 15 read (arena/46691f83-gold4, 2026-10-23): the /jewelry/rings/571221.html URL now resolves to /products/571221; $400, Item 571221 and 'Gold Weight 1.7 grams' re-read and unchanged.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Women's 2mm 14kt Yellow Gold Band",
+        "found_prices": [
+          {
+            "value": 400.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": "Women's 2mm 14kt Yellow Gold Band — Size 9"
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount",
+        "final_url": "https://www.ross-simons.com/products/571221"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 0.9917,
@@ -2582,6 +3595,25 @@
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
       "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/985230.html on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 14 (2026-10-23): official Ross-Simons page re-fetched live and re-read: '$249', Item 985230, '2mm 18kt Yellow Gold Polished Ring', 'Metal 18kt Yellow Gold', 'Gold Weight 0.7 grams', sizes 5-10 all In-Stock at '$249.00'. Stored karat (18), price and weight all match.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "2mm 18kt Yellow Gold Polished Ring",
+        "found_prices": [
+          {
+            "value": 249.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": "2mm 18kt Yellow Gold Polished Ring — Size 10"
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount",
+        "final_url": "https://www.ross-simons.com/products/985230"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 0.525,
@@ -2625,6 +3657,25 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/820263.html on 2026-10-22; price, metal spec, and flags verified verbatim.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Italian 14kt Yellow Gold Double Love Knot Ring",
+        "found_prices": [
+          {
+            "value": 595.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": "Italian 14kt Yellow Gold Double Love Knot Ring — Size 10"
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount",
+        "final_url": "https://www.ross-simons.com/products/820263"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 1.225,
@@ -2668,6 +3719,25 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/823796.html on 2026-10-22; price, metal spec, and flags verified verbatim.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Italian 14kt Yellow Gold Diamond-Cut Dome Ring",
+        "found_prices": [
+          {
+            "value": 1195.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": "Italian 14kt Yellow Gold Diamond-Cut Dome Ring — Size 10"
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount",
+        "final_url": "https://www.ross-simons.com/products/823796"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 2.3333,
@@ -2707,12 +3777,23 @@
         "PRICE_INCLUDES_CENTRE_STONE",
         "WHITE_GOLD",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "SOURCE_URL_DEAD"
       ],
-      "flag_detail": "Includes natural 0.80 ct GIA-certified diamond (#2225975086 = 0.160 g diamond mass per NIST HB 44), URL/title contains typo 'Ceritified', and total gram weight is omitted.",
+      "flag_detail": "Includes natural 0.80 ct GIA-certified diamond (#2225975086 = 0.160 g diamond mass per NIST HB 44), URL/title contains typo 'Ceritified', and total gram weight is omitted. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 10:07Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html on 2026-10-22; price, metal spec, and flags verified verbatim.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 404,
+        "state": "HTTP_404",
+        "price_state": "SOURCE_NOT_REACHED",
+        "page_title": "404 Not Found",
+        "found_prices": [],
+        "note": "the page returns 404 / a 'cannot be found' page — the stored price can no longer be checked at this URL"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2752,12 +3833,52 @@
         "PRICE_IS_FROM_PRICE",
         "HALLMARK_NOT_PUBLISHED",
         "ENGRAVING_NON_RETURNABLE",
-        "COPY_CARAT_MISMATCH"
+        "COPY_CARAT_MISMATCH",
+        "PRICE_STRUCTURED_DIFFERS"
       ],
-      "flag_detail": "10x diamond carat contradiction on live Mejuri page: marketing prose claims '0.532ct' while Specifications block states '0.044-0.056ct' across sizes 4-10. Gram weight omitted.",
+      "flag_detail": "10x diamond carat contradiction on live Mejuri page: marketing prose claims '0.532ct' while Specifications block states '0.044-0.056ct' across sizes 4-10. Gram weight omitted. | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 1,200.00 USD via json-ld, 1,600.00 USD via json-ld, 1,500.00 USD via json-ld, 1,400.00 USD via json-ld, 1,300.00 USD via json-ld, 1,700.00 USD via json-ld against the stored $1,100.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 10:07Z: the page's own structured data currently prints 1,200.00 USD via json-ld, 1,600.00 USD via json-ld, 1,500.00 USD via json-ld, 1,400.00 USD via json-ld, 1,300.00 USD via json-ld, 1,700.00 USD via json-ld against the stored $1,100.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&Stone=Natural+Diamond on 2026-10-22; price, metal spec, and flags verified verbatim.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "DIFFERS",
+        "page_title": "Diamond Eternity Band | Mejuri",
+        "found_prices": [
+          {
+            "value": 1200.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          },
+          {
+            "value": 1600.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          },
+          {
+            "value": 1500.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          },
+          {
+            "value": 1400.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2803,6 +3924,24 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://mejuri.com/us/en/products/diamonds-line-ring on 2026-10-22; price, metal spec, and flags verified verbatim.",
+      "source_check": {
+        "checked_utc": "2026-10-23T10:07:40Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "page_title": "Diamonds Line Ring | Mejuri",
+        "found_prices": [
+          {
+            "value": 348.0,
+            "currency": "USD",
+            "source": "json-ld",
+            "type": "Offer",
+            "name": ""
+          }
+        ],
+        "note": "the page's own structured data prints the stored amount"
+      },
       "fineness": 0.4166667,
       "gold_pct": 41.6667,
       "pure_gold_g": null,
