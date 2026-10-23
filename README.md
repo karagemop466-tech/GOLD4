@@ -27,13 +27,13 @@ When reviewing anything in this repo, **ask of each value: where is the official
 |---|---|
 | `index.html`, `pages/*.html` | The published dashboard and its subpages (generated — do not hand-edit) |
 | `assets/style.css`, `assets/app.js` | Styling and the client-side gold calculator / table filter |
-| `data/rings.json` | The dataset: 22 rings, each with price, weight, sources, verification level, re-verification date and flags |
+| `data/rings.json` | The dataset: 47 rings, each with price, weight, sources, verification level, re-verification date and flags |
 | `data/sellers.json` | Seller-level facts: return window, exclusions, resize terms, warranty, contact |
 | `data/sources.json` | The 14 registered sources with tier, retrieval date and what each one supports |
 | `data/methodology.json` | Karat table, 15 U.S.C. § 295 tolerances, formulas, assumptions, verification levels |
 | `data/gold_spot.json` | The gold benchmark: **$4,028.53/oz, data as of 21 Oct 2026** (World Gold Council, read 22 Oct 2026). The earlier same-day reading of $4,024.36/oz is kept in `prior_captures` |
 | `data/derived.json` | Computed gold content / value / multiples (generated) |
-| `data/verification_log.json` | The verification passes (0–6) rendered on the site's Log page |
+| `data/verification_log.json` | The verification passes (0–8, incl. Pass 7) rendered on the site's Log page |
 | `VERIFICATION.md` | Line-by-line verification record (generated from the JSON) |
 | `reports/audit_latest.txt` | Latest integrity-audit output |
 | `COORDINATION.md` | Shared task board for the agent sessions working in this repo |
@@ -50,9 +50,9 @@ python3 scripts/audit.py          # hallucination + integrity audit; non-zero ex
 
 No third-party dependencies, no network access required to build. Python 3.10+.
 
-## Independent re-verification passes on the same tree
+## Four independent re-verification passes on the same tree
 
-The published tree was **not taken on trust**: it was re-fetched row by row three times on the same day — twice by two separate agent sessions before the merge, and once more against the merged `main` afterwards. Later sessions extended the tree rather than re-reading it: `arena/a0be79d4-gold4` added the Sarraf / Catbird / Menē rows and the root research suite, `arena/81b71aa5-gold4` added Ross-Simons and the 5-gate CI (Pass 8), and `arena/22b5b06c-gold4` (Pass 9, below) collected a fresh dataset from scratch and merged 17 new rows additively. All are recorded in `COORDINATION.md` and `data/verification_log.json`.
+The published tree was **not taken on trust**: it was re-fetched row by row several times on the same day — by separate agent sessions before and after the merges (below).
 
 **Pass 2 — session `arena/fd51d093-gold4`**
 
@@ -89,19 +89,26 @@ The published tree was **not taken on trust**: it was re-fetched row by row thre
 
 Every re-read is recorded per row in `data/rings.json` (`reverified_utc`, `reverified_by`, `reverification`) and per seller in `data/sellers.json`, and summarised on the site's Log page.
 
+**Pass 7 — session `arena/1372cb32-gold4`, run concurrently and then merged** (this branch)
+
+- Ran its own row-by-row re-fetch before it saw the passes above, and **independently reached the same two findings**: the Anjolee Product Details table publishes `Approx. Metal Weight: 2.90 Gr.`, and both VRAI plain-band pages list `Pavé carat weight: 0.18ctw` in their spec block. Two sessions finding the same behaviour on separate fetches is corroboration, not duplication.
+- All prices, weights, SKUs and widths of the then-published 20 rows matched exactly; all seller policies and all Tier A/B sources matched their registry entries.
+- **After merging `main` (PRs #7–#15) it re-checked the two new Brilliant Earth rows:** the 18K Atelier row re-confirmed exactly (**$1,390**, `BE1D2444-18KY`); the 14K page served a **EUR** rendering ("1,350.00 EUR (Setting Only)") to this session — Brilliant Earth prices are currency-localized — so its USD $1,190 is kept from the same-day USD capture and flagged `PRICE_CURRENCY_LOCALIZED` on both BE rows for manual re-check in USD.
+- **Two unique outputs kept:** every Mejuri `price_source_url` now points at the exact product-variant URL where the price is displayed (the collection page was one click away from where the value was read), and `data/methodology.json` now states the derivation basis of the 15 U.S.C. § 295 floors (karat ÷ 24 basis vs the 585‰ millesimal convention — 57.63% vs 57.8% floor for a 14K stamp), published on the Flagged page rather than left implicit.
+- Merge resolution: when `main` moved mid-pass, every merged file from PRs #7–#15 was kept as-is and this session's overlapping pre-merge edits were superseded — nothing from another session was discarded. The full record is in `COORDINATION.md`.
+
 ## What the data currently shows
 
 | Metric | Value |
 |---|---|
-| Rings tracked | 64 |
-| Retailers with product rows | 10 (Blue Nile — including the James Allen line, Allurez, VRAI, Mejuri, Brilliant Earth, Anjolee, Sarraf, Catbird NYC, Menē, Ross-Simons) |
-| Prices read from the retailer's own page | 62 of 64 (2 deliberately blank: VRAI VR-02 publishes no price; Blue Nile BN-26 was sold out at the live check) |
-| Price provenance | 54 rows V1 (live page fetch) · 9 rows V2 (dated snapshot of the official page, each corroborated by ≥2 official reads, flagged `PRICE_V2_ONLY` pending live re-fetch) · 1 row with no published price (`U_unverified`) |
-| Gram weights published by the retailer | 17 of 64 — only these rows have a computable gold value |
-| Rows with explicit *solid gold* wording | 19 of 64 (Mejuri, Sarraf, Catbird NYC, Menē) |
-| Rows publishing a hallmark / maker's mark | **0 of 64** — it can only be checked in your hand |
-| Rows re-read from their own source page | all rows published through Pass 8 were re-read on 2026-10-22 by independent sessions; the 17 rows added by Pass 9 were each read from their official page at collection (8 live-fetched, 9 from dated official-page snapshots with corroboration) |
-| Gold benchmark used | $4,028.53/oz = $129.5202/g, data as of 21 Oct 2026 (prior same-day capture $4,024.36/oz; an independent live reading of $4,028.10/oz at 23:01 UTC on 22 Oct plus same-day Kitco/APMEX snapshots are recorded informationally in `data/gold_spot.json` — derived arithmetic uses only the benchmark) |
+| Rings tracked | 47 |
+| Retailers with product rows | 10 (Blue Nile, Allurez, VRAI, Mejuri, Brilliant Earth, Anjolee, Ross-Simons, Sarraf, Catbird, Mene) |
+| Prices read from the retailer's own page | 46 of 47 (1 deliberately blank) |
+| Gram weights published by the retailer | 17 of 47 — only these rows have a computable gold value |
+| Rows with explicit *solid gold* wording | 19 of 47 |
+| Rows publishing a hallmark / maker's mark | **0 of 47** — it can only be checked in your hand |
+| Rows re-read from their own source page | the original 20 rows were re-read by up to four independent sessions on 2026-10-22; every row carries its re-verification record |
+| Gold benchmark used | $4,028.53/oz = $129.5202/g, data as of 21 Oct 2026 (earlier same-day reading $4,024.36/oz kept in `prior_captures`) |
 | Flags raised for review | published on the Flagged page, with sources |
 
 **Headline findings**
