@@ -49,6 +49,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import os
 import re
 import socket
 import ssl
@@ -140,6 +141,29 @@ def meta_content(html: str, prop: str) -> str:
         if m:
             return m.group(1).strip()
     return ""
+
+
+def offer_signals(html: str) -> dict:
+    """Availability / currency / validity signals the page itself publishes.
+
+    Why this exists: several rows are stored price-blank because the item was
+    sold out when it was captured (for example BN-26). A price string alone
+    cannot tell you whether the item is buyable, so the runner also records the
+    *page's own* availability wording. It never decides anything by itself and
+    it never rewrites a stored value — it is the evidence a later pass needs
+    before it may record a price at all.
+    """
+    sig: dict[str, list[str]] = {}
+    for m in re.finditer(r'(?is)<script[^>]+type=[\"\']application/ld\+json[\"\'][^>]*>(.*?)</script>', html):
+        raw = m.group(1)
+        for key in ("availability", "priceCurrency", "priceValidUntil", "itemCondition"):
+            for v in re.findall(r'\"%s\"\s*:\s*\"([^\"]{1,120})\"' % key, raw):
+                sig.setdefault(key, []).append(v)
+    for prop in ("product:availability", "og:availability", "product:price:currency"):
+        v = meta_content(html, prop)
+        if v:
+            sig.setdefault(prop, []).append(v)
+    return {k: sorted(set(v))[:6] for k, v in sig.items()}
 
 
 def structured_prices(html: str) -> list[dict]:
@@ -300,6 +324,7 @@ def fetch(url: str, timeout: int) -> dict:
         else ""
     )
     rec["structured_prices"] = structured_prices(html)
+    rec["offer_signals"] = offer_signals(html)
     rec["karat_mentions"] = sorted({m.group(0) for m in KARAT_RE.finditer(text)})[:8]
     for phrase in ("solid gold", "gold plated", "gold-plated", "vermeil", "gold filled",
                    "gold-filled", "gold overlay", "gold tone", "gold-tone"):
@@ -394,8 +419,14 @@ def main() -> int:
     artifact = {
         "artifact": "GOLD4 live source health check",
         "schema": 1,
-        "session": "arena/03c0c10f-gold4",
-        "pass": "Pass 12",
+        # Deliberately not a hard-coded session/pass: this script is run by the
+        # workflow on whichever branch is being published, and an artifact that
+        # names the wrong session is a provenance bug (Pass 17 fixed that).
+        "session": os.environ.get("GOLD4_EVIDENCE_SESSION")
+        or os.environ.get("GITHUB_HEAD_REF")
+        or os.environ.get("GITHUB_REF_NAME")
+        or "local-run",
+        "pass": "auto (recorded in data/verification_log.json by the reviewing pass)",
         "checked_utc": utcnow(),
         "method": "read-only HTTPS GET of each URL, HTML stripped to text, raw price/weight snippets retained with context",
         "network_environment_blocked": env_blocked,
