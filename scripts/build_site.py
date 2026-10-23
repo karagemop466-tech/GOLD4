@@ -40,6 +40,7 @@ FLAG_HELP = {
     "NO_WEIGHT_PUBLISHED": ("warn", "seller publishes no gram weight"),
     "WEIGHT_UNVERIFIED": ("bad", "weight not verified"),
     "WEIGHT_APPROXIMATE": ("warn", "weight is the seller's approximation"),
+    "WIDTH_UNVERIFIED": ("warn", "numeric band width not published"),
     "PRICE_UNVERIFIED": ("bad", "price deliberately blank"),
     "PRICE_IS_FROM_PRICE": ("info", "'from' price, not a fixed quote"),
     "PRICE_INCLUDES_CENTRE_STONE": ("info", "price includes a diamond"),
@@ -683,7 +684,7 @@ def main() -> None:
     <tbody>{''.join(f'''<tr data-row-id="{esc(r['id'])}" data-search="{esc((r['id']+' '+r['product_name']+' '+r['retailer']).lower())}">
       <td class="id">{esc(r['id'])}</td><td>{esc(r['product_name'])}<span class="sub">{esc(r['retailer'])}</span></td>
       <td class="num">{r['karat']}K</td><td class="num">{num(r['weight_g'])} g</td><td class="num">{num(r['pure_gold_g'],3)} g</td>
-      <td class="num">{money(r['gold_value_usd'])}</td><td class="num">{money(r['price_usd'])}</td><td class="num">{num(r['price_to_gold_multiple'])}</td>
+      <td class="num">{money(r['gold_value_usd'])}</td><td class="num">{money(r['price_usd'])}<span class="sub">{esc(short_basis(r))}</span></td><td class="num">{num(r['price_to_gold_multiple'])}</td>
       <td class="src"><a href="{esc(r['weight_source_url'] or r['url'])}" target="_blank" rel="noopener">source</a></td></tr>'''
       for r in rows if r['weight_g'])}</tbody>
   </table></div>
@@ -762,7 +763,7 @@ def main() -> None:
     </div>
     <div class="card">
       <h3>Weights labelled "approximate"</h3>
-      <p>Allurez publishes "Approximate Metal Weight" and VRAI publishes a metal weight for ring size 6. Neither is a measurement of the ring you will receive;
+      <p>Allurez publishes "Approximate Metal Weight", Anjolee publishes "Approx. Metal Weight", and VRAI publishes a metal weight for ring size 6. None is a measurement of the ring you will receive;
       a size change moves the weight. Every derived gold value inherits that uncertainty.</p>
     </div>
     <div class="card">
