@@ -266,9 +266,11 @@
     "Gold spot price panel read twice on 22 October 2026: USD 4,028.53/oz on the second (Pass 2) read, USD 4,024.36/oz on the first; the page's date line read 'Data as of 21 October, 2026' both times",
     "The panel is a live quote — the two reads differ by 0.10%, which is why the dataset stores the reading it actually saw and keeps the earlier one in prior_captures",
     "The LBMA Gold Price is the key benchmark used throughout the gold market",
-    "Market data on the page is provided by ICE Data Services"
+    "Market data on the page is provided by ICE Data Services",
+    "2026-10-23 re-read: 'USD /oz 4,024.45' with 'Data as of 22 October, 2026'."
    ],
-   "reverified_utc": "2026-10-22"
+   "reverified_utc": "2026-10-23",
+   "reverification": "Re-read 2026-10-23: the panel displayed USD 4,024.45/oz with the page date line 'Data as of 22 October, 2026'. That reading is now the calculation benchmark in data/gold_spot.json (three sessions captured the same figure independently). The 2026-10-22 readings in this entry ($4,028.53 and $4,024.36) are kept as history, not as the current basis."
   },
   {
    "id": "allurez-returns",
