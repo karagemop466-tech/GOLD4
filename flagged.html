@@ -20,7 +20,7 @@
         </span>
       </div>
       <div>
-        <strong>NO HALLUCINATIONS:</strong> Unconfirmed specs stay blank (<span class="mono">—</span>) · <a href="audit.html">3 Automated Audit Gates Passing ✓</a>
+        <strong>NO HALLUCINATIONS:</strong> Unconfirmed specs stay blank (<span class="mono">—</span>) · <a href="audit.html">5 Automated Audit Gates Passing ✓</a>
       </div>
     </div>
   </div>
@@ -70,9 +70,9 @@
       <div class="filter-bar">
         <label>Filter by Severity
           <select id="filter-flag-severity">
-            <option value="all">All Severities (16)</option>
+            <option value="all">All Severities (17)</option>
             <option value="CRITICAL">CRITICAL — Spec Conflicts, Vermeil &amp; 404 Catches (4)</option>
-            <option value="HIGH">HIGH — XRF Spoofing, Multi-Metal &amp; Return Traps (7)</option>
+            <option value="HIGH">HIGH — XRF Spoofing, Multi-Metal &amp; Return Traps (8)</option>
             <option value="MEDIUM">MEDIUM — Omitted Weights &amp; Sibling Repo Audit (5)</option>
           </select>
         </label>
@@ -270,6 +270,18 @@
           <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">Re-checked on the live pages opened this pass: Allurez, Sarraf, Blue Nile and Mejuri publish karat in their metal field but none publishes a photograph or description of the physical stamp plus the maker&#x27;s/registered trademark that 16 CFR 23.3 and the FTC consumer guidance require next to the karat mark. The FTC&#x27;s own guidance is explicit: if the trademark is not next to the karat mark, do not buy. This cannot be settled from a web page, so hallmark_published stays false for every row and the check belongs in the on-arrival XRF step.</p>
           <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> Keep every hallmark cell UNVERIFIED; complete the stamp + trademark check and an XRF assay with an independent jeweller inside the return window.</p>
           <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
+        </article>
+        
+        <article class="flag-card sev-HIGH" data-flag-card="1" data-severity="HIGH">
+          <div style="display:flex;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.4rem;">
+            <span class="badge badge-warn">HIGH · FLG-PASS12-05</span>
+            <span class="mono cell-sub">Anti-Hallucination Correction (same error, second location) · Checked 2026-10-23</span>
+          </div>
+          <h3>Same 10K Myth Found In A Second Place After The Table Was Fixed — Plus Two Wording Fixes To § 23.7/§ 23.8 And The Chargeback Deadline</h3>
+          <div class="cell-sub" style="margin-bottom:0.35rem;"><strong>Target:</strong> standards.html — eCFR summary bullets (16 CFR § 23.3 line)</div>
+          <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">Reading the Standards page line by line after the karat table was corrected showed the &#x27;10K is the legal minimum&#x27; myth repeated verbatim in the eCFR summary bullet. It is now replaced with what § 23.3 actually requires. Two further statements were tightened: (a) the § 23.7/§ 23.8 bullet conflated two different rules — § 23.7 requires disclosure of a rhodium surface layer, while § 23.8 requires metals to be listed from greatest to least by weight; (b) the chargeback bullet attributed the &#x27;two billing cycles / max 90 days&#x27; resolution deadline to the CFPB page, which does not state it — that deadline is in 15 U.S.C. § 1666(a)(B), which is now cited and linked. The 60-day notice period and the 30-day acknowledgement are confirmed on the CFPB page itself.</p>
+          <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> Both legal bullets rewritten to match the regulation text; 15 U.S.C. § 1666 added as its own linked source card so the deadline is traceable.</p>
+          <a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
         </article>
         
       </div>

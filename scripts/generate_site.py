@@ -390,7 +390,7 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
         </span>
       </div>
       <div>
-        <strong>NO HALLUCINATIONS:</strong> Unconfirmed specs stay blank (<span class="mono">—</span>) · <a href="audit.html">3 Automated Audit Gates Passing ✓</a>
+        <strong>NO HALLUCINATIONS:</strong> Unconfirmed specs stay blank (<span class="mono">—</span>) · <a href="audit.html">5 Automated Audit Gates Passing ✓</a>
       </div>
     </div>
   </div>
