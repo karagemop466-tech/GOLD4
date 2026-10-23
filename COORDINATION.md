@@ -1,5 +1,27 @@
 # COORDINATION.md — GOLD4 shared task board
 
+## Session `arena/03c0c10f-gold4` — Pass 12: live source-health audit, price-freshness refresh & landing-page consolidation (2026-10-23)
+
+**Claim (written before any file in scope was edited; committed and pushed immediately).**
+This session owns the *freshness and publication* scope only:
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 20 | **Source-health audit of all 64 row URLs + 28 registered sources** — re-open every official page, record HTTP status / reachability, flag every URL that no longer resolves as `SOURCE_URL_UNREACHABLE` with the date checked | `in progress` | `arena/03c0c10f` | `data/rings.json`, `data/sources.json`, `reports/live_source_check_*.json`, `scripts/live_source_check.py` |
+| 21 | **Price-freshness refresh** — re-read every reachable product page; correct any price that moved, stamp `price_captured_utc`, never fill a blank without a source | `in progress` | `arena/03c0c10f` | `data/rings.json`, `data/verification_log.json` |
+| 22 | **Landing-page consolidation** — one clean landing page + category subpages, no duplicate/legacy shadow pages, no dead nav targets | `in progress` | `arena/03c0c10f` | `index.html`, `pages/*.html`, `docs/*.html`, `scripts/build_site.py`, `assets/*` |
+| 23 | **Freshness gate** — extend the automated audit so a row whose source is unreachable, or whose price is older than the freshness window, is flagged instead of passing silently | `in progress` | `arena/03c0c10f` | `scripts/audit_hallucinations.py`, `scripts/audit.py`, `.github/workflows/pages.yml` |
+| 24 | **Publish** — PR → merge → confirm GitHub Pages deploy → record result here | `unclaimed` | — | this file |
+
+**Branch note (deviation, logged deliberately):** the board's convention is `session-<id>/<task>`. This session is executed by Arena Agent Mode, which is pinned to the branch **`arena/03c0c10f-gold4`** and may not create or push any other branch. All work is therefore committed to `arena/03c0c10f-gold4`, which is functionally equivalent to `session-03c0c10f/pass12`. No other branch is modified and nothing is force-pushed.
+
+**Non-overlap declaration:** this session does **not** rewrite the ring values owned by earlier passes into new estimates — it only (a) re-reads them and records the re-read, (b) flags what could not be re-read, and (c) changes a stored value **only** when the live official page prints a different number, in which case the old value is preserved in the row's `reverification` / `flag_detail` text. It does not edit `data/sellers.json`, `data/standards_and_spot.json`, `data/catalog_a0be79d4.json` or `data/verified_rings.json` (owned by earlier sessions; read-only here).
+
+**Pass 12 early evidence (recorded before any edit):**
+- `python3 scripts/audit.py` → PASS 128 passed / 3 warnings / 0 failures; `check_site.py` → PASS 26 pages (4 legacy `docs/` warnings); `verify.py` → PASS 64 records; `verify_a0be79d4.py` → PASS 36 pages / 1953 links; `audit_hallucinations.py` → PASS 879 checks.
+- **New irregularity found on first contact:** the source URL stored on row **BN-22** (`https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321`) now returns Blue Nile's **"We're sorry, the page you're looking for cannot be found"** 404 page, while the row still carries `price_verification: V1_direct_page_fetch`. The stored price is therefore no longer checkable at the URL published beside it. This class of defect — *price was verified once, the link has since rotted* — is exactly what the existing five gates cannot see, because they are offline. Task 20 exists to measure it across all 64 rows.
+
+
 Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold engagement-ring data (with a live GitHub Pages dashboard).
 
 **NO-HALLUCINATION RULE (applies to every task):** every price, weight, purity, policy and link must be read from an official source page at collection time and recorded with the URL + retrieval date. If a value cannot be confirmed from an official source it is left **blank** and flagged **UNVERIFIED** on the "Flagged for Review" page. No value is ever estimated, interpolated, or copied from a secondary blog. Derived numbers (melt value, gold content) are computed by a script from verified inputs and are re-checked by the automated audit on every pass.
