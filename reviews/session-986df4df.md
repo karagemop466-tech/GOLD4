@@ -64,3 +64,7 @@ These new discrepancies are published as nonblocking findings with official link
 ## Concurrent CI cancellation repaired
 
 The existing global `group: pages` let one session’s PR cancel another session’s checks or a production deploy. Observed latest build runs cancelled while the other PR started. Pages concurrency now isolates each PR number from other PRs and reserves a shared production group for actual publication. An additional regression test enforces that separation (8 tests total). This does not alter product data.
+
+## Published outcome
+
+[PR #42](https://github.com/karagemop466-tech/GOLD4/pull/42) merged at **2026-10-23T20:25:07Z**, commit `e1e41de0883cf661244f4127e58f61462eb78fcb`. [Production build/deploy 40019057850](https://github.com/karagemop466-tech/GOLD4/actions/runs/40019057850) succeeded with all eight gates. Pages API: built, matching commit, no error, updated 20:25:43Z. Live remote-reader reads confirmed [the review page](https://karagemop466-tech.github.io/GOLD4/pages/session-review.html) with official observation links and blank current quotes; the initial root read was cached, but [the revision-tagged index](https://karagemop466-tech.github.io/GOLD4/index.html?revision=e1e41de) returned the new dated-research / not-recertified introduction. No full browser interaction test is claimed. The eight regression tests and all existing local gates pass on the combined tree. Remaining independent factual review is published and does not block the working site.
