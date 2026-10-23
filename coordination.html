@@ -339,11 +339,11 @@ The published dataset was treated as **untrusted input** and re-fetched page by 
 2. **Blue Nile BN-04 / BN-07 / BN-08** — three pages whose own copy contradicts their own specification block. Nothing has been inferred about which side is right; that is a question for Blue Nile in writing.
 3. **VRAI VR-02** — weight published, price not. The blank is correct, not a gap to fill.
 4. **Every seller&#x27;s reputation** — still unverified for all ten. The FTC&#x27;s own advice is to search the seller&#x27;s name with &quot;complaint&quot; or &quot;review&quot;; this dataset does not do that for you and does not pretend to.
-5. **Blue Nile BN-22 (Wide Band Solitaire, added by Pass 9)** — the page&#x27;s own description says &quot;platinum solitaire setting&quot; while every spec says 14K Yellow Gold. Third row carrying `COPY_INCONSISTENT_METAL` (after BN-04 and BN-08); ask the seller in writing which is true.
-6. **Blue Nile BN-20 (Woven Solitaire, added by Pass 9)** — four official Blue Nile pages showed four different sale prices for the same SKU at snapshot time ($772/−20%, $724/−25%, $730, $728). Sale prices are volatile; never treat a snapshot sale price as *the* price.
+5. **Blue Nile BN-22 (Wide Band Solitaire, added by Pass 9)** — the page&#x27;s own description says &quot;platinum solitaire setting&quot; while every spec says 14K Yellow Gold. Third row carrying `COPY_INCONSISTENT_METAL` (after BN-04 and BN-08); **confirmed on the live page at the 2026-10-23 re-fetch (Pass 11)** — ask the seller in writing which is true.
+6. **Blue Nile BN-20 (Woven Solitaire, added by Pass 9)** — four official Blue Nile pages showed four different sale prices for the same SKU at snapshot time ($772/−20%, $724/−25%, $730, $728). At the live re-fetch (Pass 11, 2026-10-23) the sale had **ended** and the page showed **$965** undiscounted — now the recorded price. Sale prices are volatile; never treat a snapshot sale price as *the* price. Same for BN-25: snapshot sale $1,657/−25% → live **$2,210** undiscounted.
 7. **Blue Nile BN-10 naming variance** — stock number 502120y14 ($1,145) is titled &quot;Low Dome Comfort Fit Solitaire&quot; on its published URL and &quot;Classic Simple Solitaire&quot; on the official alias `item-203348` (live re-fetched 23:58Z by Pass 9: same stock number, width, price). Both names are recorded; neither was chosen as &quot;right&quot;.
 8. **BN-26 (James Allen Comfort Fit line)** — sold out at the live check; its price cell is blank *by design*. The row also documents the live-confirmed James Allen → Blue Nile merger redirect.
-9. **The 9 `PRICE_V2_ONLY` rows (BE-05/06/07, BN-20…BN-25)** — prices read from dated snapshots of the official pages during a fetch-service outage (each corroborated by ≥2 official reads, most with the seller&#x27;s own JSON-LD). They are provisional until a live re-fetch; the Flagged page lists every one. The three Brilliant Earth rows also carry `PRICE_CURRENCY_LOCALIZED` (Pass 7&#x27;s finding that BE serves currency-localized renderings).
+9. **The remaining 3 `PRICE_V2_ONLY` rows (BE-05/06/07 — Brilliant Earth Freesia 14K/18K, Fleur)** — prices read from dated snapshots of the official pages during a fetch-service outage (each corroborated by ≥2 official reads incl. the seller&#x27;s own JSON-LD). The six Blue Nile V2 rows were upgraded to V1 by live re-fetch in Pass 11 (2026-10-23 00:20–00:33 UTC); the BE re-fetch could not be completed because the outage returned mid-page, so these three stay provisional and listed on the Flagged page. They also carry `PRICE_CURRENCY_LOCALIZED` (Pass 7&#x27;s finding that BE serves currency-localized renderings).
 
 ---
 
@@ -514,6 +514,21 @@ the merges were kept as merges. This session&#x27;s own pre-merge edits to share
 
 **Irregularities this pass adds to the Flagged page.** BN-22 `COPY_INCONSISTENT_METAL` (&quot;platinum&quot; wording on a 14K YG page); BN-20 `SALE_PRICE_VARIES_ACROSS_PAGES` (four sale prices, one SKU 505038y14); BN-26 `SOLD_OUT_AT_CHECK` + `PRICE_UNVERIFIED` (older $660 snapshot deliberately not used); BN-10 naming variance between two official aliases (same stock number 502120y14 — recorded in its flag_detail); 9 rows `PRICE_V2_ONLY` pending live re-fetch (fetch-service outage 23:20–23:47 UTC), the three BE rows additionally `PRICE_CURRENCY_LOCALIZED`; Pass 5 timestamp anomaly (stamped `2026-10-23T00:05Z`, ahead of the wall clock when merged) noted in `data/verification_log.json`, not corrected — another session&#x27;s record.
 
+### Pass 11 — post-merge live re-fetch of the V2 rows (2026-10-23 00:20–00:35 UTC)
+
+The fetch-service outage that had forced 9 rows to V2 snapshot provenance cleared briefly after PR #11 merged. Six Blue Nile pages were re-fetched **live** and upgraded (`scripts/session_22b5b06c/upgrade_v2_live_20261023.py`, recorded as Pass 11 in `data/verification_log.json`):
+
+| Row | Live read (2026-10-23) | Change |
+|---|---|---|
+| BN-20 (item-310896) | **$965** (Setting Price), no discount; SKU 505038y14, 14K YG, 1.80mm | V2→V1; price $772→**$965** (22 Oct sale ended); `SALE_PRICE_VARIES_ACROSS_PAGES` kept with live resolution appended |
+| BN-21 (item-192261) | $1,290; SKU 502500y14, 1.80mm | V2→V1, price unchanged |
+| BN-22 (item-203321) | $2,050; SKU 501580y14, 5.00mm; &quot;platinum solitaire setting&quot; copy **still on the live page** | V2→V1, price unchanged; `COPY_INCONSISTENT_METAL` confirmed live |
+| BN-23 (item-203303) | $5,190; SKU 501472y14, 4.00mm; 6× emerald-cut, 1 ct, G-H, VS2-SI1, prong | V2→V1, all specs unchanged |
+| BN-24 (item-195730) | $1,145; SKU 502120w14, 14K WG, 2.40mm, rhodium | V2→V1, price unchanged |
+| BN-25 (item-315661) | **$2,210**, no discount; SKU 505094w14, 1.75mm, rhodium; 26× round, 1/5 ct, F-G, VS1-VS2 | V2→V1; price $1,657→**$2,210** (22 Oct sale ended) |
+
+BE-05/BE-06/BE-07 (Brilliant Earth): re-fetch **attempted** ~00:31–00:33Z; the outage returned mid-page (only navigation chunks retrievable), so they keep `PRICE_V2_ONLY` + `PRICE_CURRENCY_LOCALIZED` and remain on the Flagged page. Provenance now **60 V1 / 3 V2 / 1 U** of 64 rows; `audit.py` warnings fell 9 → 3 (B-08 informational listings of the remaining V2 rows). All five gates re-run green (audit PASS 128/3/0).
+
 ### PR and merge record (completed 2026-10-23 00:10–00:17 UTC)
 
 | Item | Result |
@@ -524,7 +539,8 @@ the merges were kept as merges. This session&#x27;s own pre-merge edits to share
 | Pages workflow (push run `39876458851`) | **completed / success** (24 s) |
 | Pages build | `built` for commit `34b8c5f` (Pages API `status=built`) |
 | Live-site verification | https://karagemop466-tech.github.io/GOLD4/ fetched 2026-10-23 ~00:16 UTC: front page serves **64 rings / 10 retailers / 62 prices / 17 weights / 238 flags**, the NO HALLUCINATIONS banner, and links to the Flagged, Log and category pages (first post-deploy fetch showed a stale 47-row CDN cache; re-fetch after ~2 min served the new build) |
-| Follow-up record PR | #23 (this commit) — merged after main absorbed PR #22 (Pass 10) |
+| Follow-up record PR | #23 — merged (record of PR #11 merge + deploy verification) |
+| Pass 11 upgrade PR | see row added by the Pass 11 commit (V2→V1 upgrades + price corrections BN-20 $965, BN-25 $2,210) |
 
 ---
 

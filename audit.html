@@ -135,6 +135,12 @@
                 <td>8 rows live-fetched from official Blue Nile pages (incl. the live James Allen → Blue Nile merger redirect and one sold-out ring left deliberately price-blank); 9 rows from dated official-page snapshots, each corroborated by ≥2 official reads and flagged <span class="mono">PRICE_V2_ONLY</span>. Two cross-session duplicates resolved as appended corroboration notes instead of rows (BE-01 Atelier; BN-10 — same stock number <span class="mono">502120y14</span> re-fetched live via alias <span class="mono">item-203348</span> at 23:58Z, with the product-NAME variance between the two official aliases recorded). Two new Blue Nile contradictions found (BN-22 "platinum" copy on a 14K YG page; BN-20 four sale prices for one SKU). Independent live spot reading $4,028.10/oz vs benchmark $4,028.53/oz — 0.01% apart. Full pipeline + all five CI gates re-run: audit 128 passed / 9 informational warnings / 0 failures; Gate-5 hallucination auditor 0 failures.</td>
                 <td><span class="badge badge-ok">PASS — MERGED ADDITIVELY</span></td>
               </tr>
+              <tr>
+                <td class="mono"><strong>Pass 11</strong> <span class="mono">(verification_log)</span></td>
+                <td>Post-Merge Live Re-Fetch of the <span class="mono">PRICE_V2_ONLY</span> Rows — session <span class="mono">arena/22b5b06c-gold4</span> (2026-10-23 00:20–00:35 UTC)</td>
+                <td>6 of 9 V2 rows upgraded to V1 from live Blue Nile fetches; every stock number / metal / width re-read exactly. Two prices corrected to current live values because the 22 Oct sales had ended: BN-20 $772→<strong>$965</strong>, BN-25 $1,657→<strong>$2,210</strong>. BN-22's "platinum" copy contradiction confirmed on the live page. BE-05/06/07 re-fetch blocked by the outage returning mid-page — they stay flagged <span class="mono">PRICE_V2_ONLY</span>. Provenance now 60 V1 / 3 V2 / 1 U of 64; audit warnings 9→3; all five gates green (128/3/0).</td>
+                <td><span class="badge badge-ok">PASS — 6 ROWS UPGRADED</span></td>
+              </tr>
             </tbody>
           </table>
         </div>
