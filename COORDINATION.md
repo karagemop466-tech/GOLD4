@@ -59,6 +59,21 @@ G1 `audit.py` PASS (1 warning: BE-05 V2-only) · G2 `check_site.py` PASS (27 pag
 1. `scripts/audit_freshness.py` owner — BE-06/BE-07 still warn because the runner is 403-walled by Brilliant Earth while the row is dated on the evidence day. The warning is *correct and should stay*; this session only records it, again, on the Freshness page.
 2. Any future session — the 5 dead row URLs (BN-09…BN-12, RS-05) have now been dead across two consecutive runner passes (10:10 UTC and this pass). They need a human to find the retailer's current product URL; automated guessing of URL forms would itself be a hallucination risk and is not attempted.
 
+### PR and merge record — Pass 18
+
+| Item | Result |
+|---|---|
+| PR | **#41** — https://github.com/karagemop466-tech/GOLD4/pull/41 — **MERGED** 2026-10-23T20:37:40Z without waiting for review (per the standing instruction; flagged items did not block) |
+| Merge commit | `ad3eaa6` on `main` |
+| PR CI (head `1ab7cb9`) | `Deploy GOLD research site` run `40020267215` — **success**, all 7 gates + `test_assurance.py` (8 tests) |
+| Live source check on the PR | run `40020267229` — **success** (the workflow now uploads evidence only; main's owner removed the commit-back step, so the branch keeps the last committed artifact, `reports/live_source_check_20261023T202547Z.json`) |
+| Pages deploy after merge | `pages build and deployment` run `40020687045` — **success**; `Deploy GOLD research site` run `40020688433` — **success**; Pages API `status=built` for `ad3eaa6` (built 20:37:41Z) |
+| Live verification after deploy | https://karagemop466-tech.github.io/GOLD4/ fetched: NO-HALLUCINATIONS banner present; **$3,996.31/oz · $128.48/g**; counts 64 rings / 10 retailers / 62 prices / 17 weights / **249 flags**; source-health block reads **46 prices re-confirmed · 4 dead URLs · 7 bot-blocked · 4 differing**, evidence 2026-10-23T20:23:21Z |
+| Gates on the merged tree | all 7 green: audit **131/1/0** · check_site **28 pages** · verify **0 hard failures** · verify_a0be79d4 **2,072 links, 0 dead** · audit_hallucinations **941 checks, 0 failures** · citations **6a self-test + 6b, 0 violations** · freshness **294 checks, 2 warnings (BE-05/06/07), 0 failures** |
+
+**Merge history during this pass (three concurrent sessions merged while it ran):** PR #42 + #43 (`arena/986df4df`, `arena/0029d936`), PR #44/#45 (`arena/0e04577b`), PR #46 (`arena/0029d936` again). Every conflict was resolved by a field-level three-way JSON merge plus a full re-run of the generators — never by picking a side. No other session's file, value, note or review was deleted; the two `reviews/` reports from those sessions are on `main` unchanged.
+
+
 ## Session `arena/0e04577b-gold4` — Pass 17: final integration, line-by-line re-verification & GitHub Pages re-publication (2026-10-23)
 
 **Claim (written and pushed before any file in scope was edited).** No other session branch or open PR exists (`origin/main` only, checked 2026-10-23), so this session acts as the *final integration session*: it may touch shared outputs (front-page summary, navigation, verification log) after re-verifying the combined data line by line. **Branch note (deviation, logged deliberately):** the board's convention is `session-<id>/<task>`. Arena Agent Mode pins this session to branch **`arena/0e04577b-gold4`** and forbids creating or pushing any other branch, so all work is committed there (functionally `session-0e04577b/pass17-integration`). No other branch will be modified; nothing will be force-pushed. **No-hallucination rule (governing this pass):** every price, weight, karat, policy and link must be readable on the official page linked beside it, with a read date. Anything that cannot be so read stays **blank** and is flagged `UNVERIFIED` on the Flagged for Review page. Nothing is estimated, converted between currencies, or copied from a blog/marketplace. The hallucination/security gates (`scripts/audit.py`, `audit_hallucinations.py`, `audit_freshness.py`, `check_site.py`, `verify.py`, `verify_a0be79d4.py`, citation gate) are re-run after every review step in this pass.
