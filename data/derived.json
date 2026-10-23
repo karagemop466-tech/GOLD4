@@ -1,8 +1,8 @@
 {
-  "generated_utc": "2026-10-23T10:10:39Z",
+  "generated_utc": "2026-10-23T20:20:26Z",
   "spot": {
-    "value_usd_per_oz": 4024.45,
-    "usd_per_gram": 129.389072,
+    "value_usd_per_oz": 3996.31,
+    "usd_per_gram": 128.48435,
     "price_date": "22 October, 2026",
     "captured_utc": "2026-10-23",
     "source_url": "https://www.gold.org/goldhub/data/gold-prices"
@@ -79,9 +79,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 2.0883,
-      "gold_value_usd": 270.21,
-      "legal_min_gold_value_usd": 266.97,
-      "price_to_gold_multiple": 2.165,
+      "gold_value_usd": 268.32,
+      "legal_min_gold_value_usd": 265.1,
+      "price_to_gold_multiple": 2.18,
       "price_per_gold_gram_usd": 280.13,
       "multiple_basis": "setting_metal_only"
     },
@@ -139,9 +139,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 1.9833,
-      "gold_value_usd": 256.62,
-      "legal_min_gold_value_usd": 253.54,
-      "price_to_gold_multiple": 2.821,
+      "gold_value_usd": 254.83,
+      "legal_min_gold_value_usd": 251.77,
+      "price_to_gold_multiple": 2.841,
       "price_per_gold_gram_usd": 365.04,
       "multiple_basis": "setting_metal_only"
     },
@@ -201,9 +201,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 2.5667,
-      "gold_value_usd": 332.1,
-      "legal_min_gold_value_usd": 328.11,
-      "price_to_gold_multiple": 2.553,
+      "gold_value_usd": 329.78,
+      "legal_min_gold_value_usd": 325.82,
+      "price_to_gold_multiple": 2.571,
       "price_per_gold_gram_usd": 330.39,
       "multiple_basis": "setting_metal_only"
     },
@@ -263,9 +263,9 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 3.975,
-      "gold_value_usd": 514.32,
-      "legal_min_gold_value_usd": 509.52,
-      "price_to_gold_multiple": 2.771,
+      "gold_value_usd": 510.73,
+      "legal_min_gold_value_usd": 505.96,
+      "price_to_gold_multiple": 2.79,
       "price_per_gold_gram_usd": 358.49,
       "multiple_basis": "setting_metal_only"
     },
@@ -319,9 +319,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 1.6917,
-      "gold_value_usd": 218.88,
-      "legal_min_gold_value_usd": 216.26,
-      "price_to_gold_multiple": 3.978,
+      "gold_value_usd": 217.35,
+      "legal_min_gold_value_usd": 214.74,
+      "price_to_gold_multiple": 4.006,
       "price_per_gold_gram_usd": 514.74,
       "multiple_basis": "includes_centre_stone"
     },
@@ -1307,9 +1307,9 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 2.145,
-      "gold_value_usd": 277.54,
-      "legal_min_gold_value_usd": 274.95,
-      "price_to_gold_multiple": 3.729,
+      "gold_value_usd": 275.6,
+      "legal_min_gold_value_usd": 273.03,
+      "price_to_gold_multiple": 3.755,
       "price_per_gold_gram_usd": 482.52,
       "multiple_basis": "setting_metal_only"
     },
@@ -1370,8 +1370,8 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 2.13,
-      "gold_value_usd": 275.6,
-      "legal_min_gold_value_usd": 273.03,
+      "gold_value_usd": 273.67,
+      "legal_min_gold_value_usd": 271.12,
       "price_to_gold_multiple": null,
       "price_per_gold_gram_usd": null,
       "multiple_basis": "setting_metal_only"
@@ -1488,9 +1488,9 @@
       "fineness": 0.4166667,
       "gold_pct": 41.6667,
       "pure_gold_g": 2.0,
-      "gold_value_usd": 258.78,
-      "legal_min_gold_value_usd": 254.43,
-      "price_to_gold_multiple": 1.36,
+      "gold_value_usd": 256.97,
+      "legal_min_gold_value_usd": 252.65,
+      "price_to_gold_multiple": 1.37,
       "price_per_gold_gram_usd": 176.0,
       "multiple_basis": "setting_metal_only"
     },
@@ -1546,9 +1546,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 5.4833,
-      "gold_value_usd": 709.48,
-      "legal_min_gold_value_usd": 700.97,
-      "price_to_gold_multiple": 1.498,
+      "gold_value_usd": 704.52,
+      "legal_min_gold_value_usd": 696.07,
+      "price_to_gold_multiple": 1.509,
       "price_per_gold_gram_usd": 193.86,
       "multiple_basis": "setting_metal_only"
     },
@@ -1607,9 +1607,9 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 5.025,
-      "gold_value_usd": 650.18,
-      "legal_min_gold_value_usd": 644.11,
-      "price_to_gold_multiple": 1.34,
+      "gold_value_usd": 645.63,
+      "legal_min_gold_value_usd": 639.61,
+      "price_to_gold_multiple": 1.349,
       "price_per_gold_gram_usd": 173.33,
       "multiple_basis": "setting_metal_only"
     },
@@ -1665,9 +1665,9 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 8.325,
-      "gold_value_usd": 1077.16,
-      "legal_min_gold_value_usd": 1067.11,
-      "price_to_gold_multiple": 1.333,
+      "gold_value_usd": 1069.63,
+      "legal_min_gold_value_usd": 1059.65,
+      "price_to_gold_multiple": 1.343,
       "price_per_gold_gram_usd": 172.49,
       "multiple_basis": "setting_metal_only"
     },
@@ -1725,9 +1725,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 4.6667,
-      "gold_value_usd": 603.82,
-      "legal_min_gold_value_usd": 596.57,
-      "price_to_gold_multiple": 4.733,
+      "gold_value_usd": 599.59,
+      "legal_min_gold_value_usd": 592.4,
+      "price_to_gold_multiple": 4.767,
       "price_per_gold_gram_usd": 612.43,
       "multiple_basis": "includes_centre_stone"
     },
@@ -1784,9 +1784,9 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 4.725,
-      "gold_value_usd": 611.36,
-      "legal_min_gold_value_usd": 605.66,
-      "price_to_gold_multiple": 6.654,
+      "gold_value_usd": 607.09,
+      "legal_min_gold_value_usd": 601.42,
+      "price_to_gold_multiple": 6.701,
       "price_per_gold_gram_usd": 860.95,
       "multiple_basis": "includes_centre_stone"
     },
@@ -3555,9 +3555,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 0.9917,
-      "gold_value_usd": 128.31,
-      "legal_min_gold_value_usd": 126.77,
-      "price_to_gold_multiple": 3.117,
+      "gold_value_usd": 127.41,
+      "legal_min_gold_value_usd": 125.88,
+      "price_to_gold_multiple": 3.139,
       "price_per_gold_gram_usd": 403.36,
       "multiple_basis": "setting_metal_only"
     },
@@ -3617,9 +3617,9 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 0.525,
-      "gold_value_usd": 67.93,
-      "legal_min_gold_value_usd": 67.3,
-      "price_to_gold_multiple": 3.666,
+      "gold_value_usd": 67.45,
+      "legal_min_gold_value_usd": 66.82,
+      "price_to_gold_multiple": 3.691,
       "price_per_gold_gram_usd": 474.29,
       "multiple_basis": "setting_metal_only"
     },
@@ -3679,9 +3679,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 1.225,
-      "gold_value_usd": 158.5,
-      "legal_min_gold_value_usd": 156.6,
-      "price_to_gold_multiple": 3.754,
+      "gold_value_usd": 157.39,
+      "legal_min_gold_value_usd": 155.5,
+      "price_to_gold_multiple": 3.78,
       "price_per_gold_gram_usd": 485.71,
       "multiple_basis": "setting_metal_only"
     },
@@ -3741,9 +3741,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 2.3333,
-      "gold_value_usd": 301.91,
-      "legal_min_gold_value_usd": 298.28,
-      "price_to_gold_multiple": 3.958,
+      "gold_value_usd": 299.8,
+      "legal_min_gold_value_usd": 296.2,
+      "price_to_gold_multiple": 3.986,
       "price_per_gold_gram_usd": 512.14,
       "multiple_basis": "setting_metal_only"
     },
@@ -3969,8 +3969,8 @@
       "price_gap_pct": 68.04,
       "gold_gap_pct": 54.87,
       "gold_value_gap_pct": 54.87,
-      "low_multiple": 2.553,
-      "high_multiple": 2.771,
+      "low_multiple": 2.571,
+      "high_multiple": 2.79,
       "low_pure_gold_g": 2.567,
       "high_pure_gold_g": 3.975
     },
@@ -4066,8 +4066,8 @@
       "price_gap_pct": 147.44,
       "gold_gap_pct": 151.25,
       "gold_value_gap_pct": 151.25,
-      "low_multiple": 1.36,
-      "high_multiple": 1.34,
+      "low_multiple": 1.37,
+      "high_multiple": 1.349,
       "low_pure_gold_g": 2.0,
       "high_pure_gold_g": 5.025
     },
@@ -4103,25 +4103,25 @@
         "rows": 2,
         "prices_verified": 2,
         "weights_published": 1,
-        "multiple_min": 1.36,
-        "multiple_max": 1.36,
-        "multiple_avg": 1.36
+        "multiple_min": 1.37,
+        "multiple_max": 1.37,
+        "multiple_avg": 1.37
       },
       "14": {
         "rows": 42,
         "prices_verified": 41,
         "weights_published": 9,
-        "multiple_min": 1.5,
-        "multiple_max": 4.73,
-        "multiple_avg": 3.18
+        "multiple_min": 1.51,
+        "multiple_max": 4.77,
+        "multiple_avg": 3.2
       },
       "18": {
         "rows": 18,
         "prices_verified": 17,
         "weights_published": 7,
-        "multiple_min": 1.33,
-        "multiple_max": 6.65,
-        "multiple_avg": 3.25
+        "multiple_min": 1.34,
+        "multiple_max": 6.7,
+        "multiple_avg": 3.27
       },
       "24": {
         "rows": 2,
@@ -4137,9 +4137,9 @@
         "rows": 14,
         "prices_verified": 14,
         "weights_published": 8,
-        "multiple_min": 1.33,
-        "multiple_max": 3.96,
-        "multiple_avg": 2.5
+        "multiple_min": 1.34,
+        "multiple_max": 3.99,
+        "multiple_avg": 2.52
       },
       "pave": {
         "rows": 15,
@@ -4153,9 +4153,9 @@
         "rows": 35,
         "prices_verified": 33,
         "weights_published": 9,
-        "multiple_min": 2.17,
-        "multiple_max": 6.65,
-        "multiple_avg": 3.68
+        "multiple_min": 2.18,
+        "multiple_max": 6.7,
+        "multiple_avg": 3.7
       }
     },
     "by_retailer": {
@@ -4163,17 +4163,17 @@
         "rows": 4,
         "prices_verified": 4,
         "weights_published": 4,
-        "multiple_min": 2.17,
-        "multiple_max": 2.82,
-        "multiple_avg": 2.58
+        "multiple_min": 2.18,
+        "multiple_max": 2.84,
+        "multiple_avg": 2.6
       },
       "anjolee": {
         "rows": 1,
         "prices_verified": 1,
         "weights_published": 1,
-        "multiple_min": 3.98,
-        "multiple_max": 3.98,
-        "multiple_avg": 3.98
+        "multiple_min": 4.01,
+        "multiple_max": 4.01,
+        "multiple_avg": 4.01
       },
       "blue-nile": {
         "rows": 26,
@@ -4219,25 +4219,25 @@
         "rows": 5,
         "prices_verified": 5,
         "weights_published": 4,
-        "multiple_min": 3.12,
-        "multiple_max": 3.96,
-        "multiple_avg": 3.62
+        "multiple_min": 3.14,
+        "multiple_max": 3.99,
+        "multiple_avg": 3.65
       },
       "sarraf": {
         "rows": 8,
         "prices_verified": 8,
         "weights_published": 6,
-        "multiple_min": 1.33,
-        "multiple_max": 6.65,
-        "multiple_avg": 2.82
+        "multiple_min": 1.34,
+        "multiple_max": 6.7,
+        "multiple_avg": 2.84
       },
       "vrai": {
         "rows": 2,
         "prices_verified": 1,
         "weights_published": 2,
-        "multiple_min": 3.73,
-        "multiple_max": 3.73,
-        "multiple_avg": 3.73
+        "multiple_min": 3.75,
+        "multiple_max": 3.75,
+        "multiple_avg": 3.75
       }
     }
   }

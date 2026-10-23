@@ -19,7 +19,7 @@
       "reverified_utc": "2026-10-23",
       "reverification": "Re-read 2026-10-23. The 60-day notice window and the 30-day acknowledgment are on the page; the 90-day outer limit is not, and the supports list was corrected so it is no longer attributed to this page.",
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:01Z",
+        "checked_utc": "2026-10-23T20:19:11Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/"
@@ -40,7 +40,7 @@
       ],
       "why_added": "The 60-day / 30-day figures are on the CFPB consumer page, but the 2-billing-cycle / 90-day outer limit is not. That limit is in this section, so it is now cited to the section itself.",
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:02Z",
+        "checked_utc": "2026-10-23T20:19:12Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1026/subpart-B/section-1026.13"
@@ -64,7 +64,7 @@
       "reverified_utc": "2026-10-23",
       "reverification": "Re-read 2026-10-23: eCFR shows title 16 up to date as of 10/21/2026; § 23.3, § 23.4, § 23.7, § 23.8, § 23.10 headings and text confirmed. § 23.9 is pewter content, not quality marks.",
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:02Z",
+        "checked_utc": "2026-10-23T20:19:12Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
@@ -84,7 +84,7 @@
         "The article also covers complaints about the quality of something bought"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:03Z",
+        "checked_utc": "2026-10-23T20:19:13Z",
         "http_status": 404,
         "state": "HTTP_404",
         "final_url": "https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges"
@@ -109,7 +109,7 @@
       "reverified_utc": "2026-10-23",
       "reverification": "Re-read 2026-10-23: karat-out-of-24 definition, quality-mark-plus-trademark rule, 'solid gold' = not hollow, and the plated/filled/overlay/RGP/electroplate/vermeil definitions all still present.",
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:04Z",
+        "checked_utc": "2026-10-23T20:19:13Z",
         "http_status": 404,
         "state": "HTTP_404",
         "final_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry"
@@ -134,7 +134,7 @@
         "https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:04Z",
+        "checked_utc": "2026-10-23T20:19:14Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.nist.gov/pml/owm/nist-handbook-44-current-edition"
@@ -160,7 +160,7 @@
         "retrieved_utc": "2026-10-23"
       },
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:05Z",
+        "checked_utc": "2026-10-23T20:19:14Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.nist.gov/pml/special-publication-811"
@@ -181,7 +181,7 @@
       ],
       "why_added": "The two-billing-cycle / 90-day limit and the 30-day acknowledgment are statutory here. The catalog cites § 1666; this registry entry gives that citation a verified page. Read directly on 2026-10-23 by this session.",
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:05Z",
+        "checked_utc": "2026-10-23T20:19:15Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.law.cornell.edu/uscode/text/15/1666"
@@ -203,7 +203,7 @@
       "reverified_utc": "2026-10-23",
       "reverification": "Re-read 2026-10-23: three one-thousandth parts tolerance for the part assayed, seven one-thousandth parts for the whole article including solder.",
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:06Z",
+        "checked_utc": "2026-10-23T20:19:15Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.law.cornell.edu/uscode/text/15/295"
@@ -223,7 +223,7 @@
       ],
       "why_added": "standards.html cited 15 U.S.C. § 297 for the hallmark-plus-trademark rule, but no sources.json entry existed, so the citation had no registry backing. Added after reading the section on 2026-10-23.",
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:06Z",
+        "checked_utc": "2026-10-23T20:19:16Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.law.cornell.edu/uscode/text/15/297"
@@ -242,7 +242,7 @@
         "§ 294 prohibits importation/transport of falsely marked gold or silver ware"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:07Z",
+        "checked_utc": "2026-10-23T20:19:16Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.law.cornell.edu/uscode/text/15/chapter-8"
@@ -260,7 +260,7 @@
         "Same-day independent spot gold cross-check ($4,026.25/oz t; $129,446.94/kg), within 0.06% of WGC benchmark"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:08Z",
+        "checked_utc": "2026-10-23T20:19:17Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.bullionvault.com/gold-price-chart.do"
@@ -279,7 +279,7 @@
         "Surface XRF alone read 17.99K and 22.47K gold without detecting subsurface core; caught via suspiciously light gram mass and microscope examination"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:09Z",
+        "checked_utc": "2026-10-23T20:19:17Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
@@ -298,7 +298,7 @@
         "Thick gold plating or electroforming requires pairing XRF with calibrated mass/density and binocular microscope inspection"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:09Z",
+        "checked_utc": "2026-10-23T20:19:18Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis"
@@ -316,7 +316,7 @@
         "Live spot quote read on 2026-10-22 (7:09 p.m. EDT): $4,039.76/oz Ask, $4,025.26/oz Bid ($129.88/g Ask)"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:10Z",
+        "checked_utc": "2026-10-23T20:19:18Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.jmbullion.com/charts/gold-price/"
@@ -335,7 +335,7 @@
         "Intraday 24-hour range $4,020.20–$4,145.30/oz cross-confirms WGC spot benchmark ($4,028.53/oz = $129.52/g) within 0.10%"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:11Z",
+        "checked_utc": "2026-10-23T20:19:19Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.kitco.com/charts/gold"
@@ -354,7 +354,7 @@
         "Numerical historical LBMA tables require an IBA licence and were not captured here"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:12Z",
+        "checked_utc": "2026-10-23T20:19:20Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.lbma.org.uk/prices-and-data/lbma-precious-metal-prices"
@@ -378,7 +378,7 @@
       "reverified_utc": "2026-10-23",
       "reverification": "Re-read 2026-10-23: the panel displayed USD 4,024.45/oz with the page date line 'Data as of 22 October, 2026'. That reading is now the calculation benchmark in data/gold_spot.json (three sessions captured the same figure independently). The 2026-10-22 readings in this entry ($4,028.53 and $4,024.36) are kept as history, not as the current basis.",
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:13Z",
+        "checked_utc": "2026-10-23T20:19:21Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.gold.org/goldhub/data/gold-prices"
@@ -401,7 +401,7 @@
         "$300 deduction per missing diamond certificate; refund within 7 business days of approval"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:14Z",
+        "checked_utc": "2026-10-23T20:19:22Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.allurez.com/pages/return-policy"
@@ -425,7 +425,7 @@
       ],
       "caveat": "The metal weight is the seller's own 'approx.' figure for the 0.50 ct model at ring size 6.5, and the price includes a lab-created centre stone, so the price ÷ gold multiple for this row is not a setting markup.",
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:15Z",
+        "checked_utc": "2026-10-23T20:19:23Z",
         "http_status": 200,
         "state": "EMPTY_OR_JS_SHELL",
         "final_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx"
@@ -448,7 +448,7 @@
         "Missing diamond grading report: $150 replacement fee"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:15Z",
+        "checked_utc": "2026-10-23T20:19:23Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.bluenile.com/policies/returns"
@@ -467,7 +467,7 @@
         "Custom-designed, modified, and resized items are ineligible for return; engraved items incur a $40 removal fee"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:16Z",
+        "checked_utc": "2026-10-23T20:19:24Z",
         "http_status": 403,
         "state": "REFUSED_403",
         "final_url": "https://www.brilliantearth.com/30-Day-Returns/"
@@ -491,7 +491,7 @@
       ],
       "caveat": "The price is readable on this pass but the gram weight is not, so the product carries a price row and a blank weight. The page badge reads \"Free 1-Year Resizing\" while the earlier capture of the same page described one complimentary resize within 60 days, so the resize terms are recorded as inconsistent. The 30-day return window was read on the first capture and is not re-displayed in today's page text.",
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:17Z",
+        "checked_utc": "2026-10-23T20:19:25Z",
         "http_status": 403,
         "state": "REFUSED_403",
         "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/"
@@ -514,7 +514,7 @@
       ],
       "caveat": "Price only; no weight and no hallmark published.",
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:17Z",
+        "checked_utc": "2026-10-23T20:19:25Z",
         "http_status": 403,
         "state": "REFUSED_403",
         "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/"
@@ -535,7 +535,7 @@
         "Engraved rings incur a $40 engraving removal fee upon return; eternity/open-top/geometric rings cannot be resized"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:18Z",
+        "checked_utc": "2026-10-23T20:19:26Z",
         "http_status": 403,
         "state": "REFUSED_403",
         "final_url": "https://www.brilliantearth.com/30-Day-Returns/"
@@ -555,7 +555,7 @@
         "Engraved items, special orders, custom items, and all international orders are final sale"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:18Z",
+        "checked_utc": "2026-10-23T20:19:26Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.catbirdnyc.com/returns"
@@ -577,7 +577,7 @@
         "Excessive-returns pattern may lead to account suspension"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:19Z",
+        "checked_utc": "2026-10-23T20:19:27Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://mejuri.com/company/returns-terms"
@@ -596,7 +596,7 @@
         "Manufacturing weight variance +/-0.5g in-stock or +/-1.0g Crafted-on-Demand"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:20Z",
+        "checked_utc": "2026-10-23T20:19:29Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://mene.com/customer-care?hcUrl=en-US%2Farticles%2Freturns-319505"
@@ -617,7 +617,7 @@
         "Contact 800-835-0919 · 9 Ross Simons Dr, Cranston, RI 02920"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:21Z",
+        "checked_utc": "2026-10-23T20:19:29Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.ross-simons.com/pages/returns-exchanges"
@@ -636,7 +636,7 @@
         "Buyer pays return shipping & signature insurance; third-party resizing immediately voids warranty; Lifetime Warranty replacement charges max($100, 10% of price)"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:22Z",
+        "checked_utc": "2026-10-23T20:19:31Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html"
@@ -659,7 +659,7 @@
         "EU/EEA 14-day statutory withdrawal excludes custom, engraved and resized items"
       ],
       "live_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:19:32Z",
         "http_status": 200,
         "state": "OK",
         "final_url": "https://www.vrai.com/returns-exchanges"

@@ -12,10 +12,44 @@ G1 `audit.py` PASS (1 warning: BE-05 V2-only) · G2 `check_site.py` PASS (27 pag
 
 | # | Task | Status | Owner | Files in scope |
 |---|------|--------|-------|----------------|
-| 45 | **Fresh 24-hour runner evidence.** Re-open every row URL and registered source from a GitHub runner *today* (Pass 16's evidence is from 10:10 UTC; this pass re-takes it), commit the artifact, then reconcile it line by line against all 64 stored rows + 31 sources. No stored value overwritten; drift is flagged, never silently applied. | **in progress** | `arena/2189e10f` | `scripts/live_source_check.py` (read-only use), `reports/live_source_check_*.json`, `data/source_health.json`, `data/rings.json` (additive `source_check` blocks + flags only) |
-| 46 | **Documentation-drift repair.** `README.md` still prints the *superseded* benchmark "$4,028.53/oz, data as of 21 Oct 2026" in its file table and says "14 registered sources" when `data/sources.json` holds 31, and says "all five CI gates" when the pipeline now runs seven. Find every such stale claim in `README.md` / `AUDIT.md` / `VERIFICATION.md` / `checklist` copy and correct it to what the data actually says — no new numbers, only the numbers already in `data/`. | **in progress** | `arena/2189e10f` | `README.md`, `AUDIT_AND_REPO_REVIEW.md` (read-only review notes only) |
-| 47 | **Independent verification of the published site** — re-fetch every internal link on the built tree, re-run all 7 gates on the combined result, confirm the no-hallucination banner and the Flagged-for-Review page are served. | unclaimed | `arena/2189e10f` | `reports/`, `pages/**`, `index.html` (regenerated only) |
-| 48 | **Publish** — PR → merge without waiting → confirm the Pages deploy → record PR link, merge commit and deploy run here. | unclaimed | `arena/2189e10f` | this file |
+| 45 | **Fresh runner evidence (20:19:32Z).** Re-open every row URL and registered source from a GitHub runner *today* (Pass 16's evidence is from 10:10 UTC; this pass re-takes it), commit the artifact, then reconcile it line by line against all 64 stored rows + 31 sources. No stored value overwritten; drift is flagged, never silently applied. | **done** — evidence `reports/live_source_check_20261023T201932Z.json`; 51 rows answered / 7 × 403 / 5 × 404 / 1 JS shell; **zero state change vs the 10:10Z pass** (same 45 CONFIRMED, same 4 DIFFERS, same 5 dead). Benchmark re-read separately: **moved to $3,996.31/oz** | `arena/2189e10f` | `scripts/live_source_check.py` (read-only use), `reports/live_source_check_*.json`, `data/source_health.json`, `data/rings.json` (additive `source_check` blocks + flags only) |
+| 46 | **Documentation-drift repair.** `README.md` still prints the *superseded* benchmark "$4,028.53/oz, data as of 21 Oct 2026" in its file table and says "14 registered sources" when `data/sources.json` holds 31, and says "all five CI gates" when the pipeline now runs seven. Find every such stale claim in `README.md` / `AUDIT.md` / `VERIFICATION.md` / `checklist` copy and correct it to what the data actually says — no new numbers, only the numbers already in `data/`. | **done** — 6 stale claims corrected in `README.md` (benchmark, source count, gate count, provenance, product-page count, pass range) + regenerated site | `arena/2189e10f` | `README.md`, `AUDIT_AND_REPO_REVIEW.md` (read-only review notes only) |
+| 47 | **Independent verification of the published site** — re-fetch every internal link on the built tree, re-run all 7 gates on the combined result, confirm the no-hallucination banner and the Flagged-for-Review page are served. | **done** — 7/7 gates green after rebuild; 27 pages, 2,072 links, 0 dead | `arena/2189e10f` | `reports/`, `pages/**`, `index.html` (regenerated only) |
+| 48 | **Publish** — PR → merge without waiting → confirm the Pages deploy → record PR link, merge commit and deploy run here. | **in progress** | `arena/2189e10f` | this file |
+
+### Result of Pass 17 (line by line)
+
+**What was re-read, when, and from where.** My sandbox has no outbound internet (verified twice: `gold.org` and `allurez.com` both fail at TLS). Every number this pass is therefore either (a) machine-read from the retailer's own page by a GitHub runner with open internet, evidence committed as `reports/live_source_check_20261023T201932Z.json`, or (b) read by hand in a browser-rendered fetch, timestamped below. Nothing was written from memory.
+
+| Check | Method | Result |
+|---|---|---|
+| 64 row URLs + 31 sources | runner GET, 2026-10-23T20:19:32Z | 51 answered · 7 refused (403, all Brilliant Earth) · 5 dead (404) · 1 JS shell (AN-01) |
+| Price reconciliation vs the 10:10Z pass | row-by-row diff of `source_health` | **zero change** — 45 CONFIRMED, 4 DIFFERS, 2 no stored price, 1 not machine-readable, 12 source-not-reached, identical in both passes |
+| Gold benchmark | browser-rendered read of the WGC panel, 20:23Z | **moved to $3,996.31/oz** (was $4,024.45 at 10:02Z, −0.70%). Corroborated 20:19Z by Kitco $3,996.30, BullionVault $3,996.62, JM Bullion ask $4,010.61. All 17 weighted rows recomputed at $128.48435/g; the superseded reading kept in `prior_captures` |
+| Derived arithmetic | independent `Decimal` re-derivation (not `compute.py`) | 17/17 weighted rows match to the cent at the new benchmark; 47 weight-blank rows have genuinely null derived fields |
+| Page availability (new) | runner, page's own schema.org markup | **BN-26 publishes `availability=SoldOut` and `og:availability="out of stock"` beside an `$858` price meta** — the blank price is confirmed correct, and the observation is now recorded rather than assumed |
+| FTC sources that 404 to the runner | browser-rendered read, 20:24Z | both articles load in full and are unchanged — bot-filtering, not link rot. No flag change needed; the existing `manual_verification` note stands |
+| Row integrity | all 64 rows, own script | 0 non-official hosts, 0 missing source links, 0 missing capture dates, 0 blanks without a flag |
+| Deployed site | fetch of https://karagemop466-tech.github.io/GOLD4/ | banner, counts (64/10/62/17/250) and benchmark matched `main` before this pass |
+
+**Documentation drift repaired (found by comparing the README line by line with `data/*.json`).** This is the class of irregularity the brief's "no hallucinations" rule is about: a correct number left in place after it stopped being true.
+
+| Stale claim | Correct value (from `data/`) |
+|---|---|
+| "benchmark $4,028.53/oz, data as of 21 Oct 2026" | $4,024.45 → now $3,996.31/oz with timestamp; $4,024.45 and $4,028.53 kept in `prior_captures` |
+| "The 14 registered sources" | 31 sources in `data/sources.json` |
+| "Five CI gates" (and Gate 7 missing from the list) | seven gates: 1 audit · 2 check_site · 3 verify · 4 verify_a0be79d4 · 5 audit_hallucinations · 6a/6b citations · 7 freshness |
+| provenance "60 V1 · 3 V2 · 1 U" | 62 V1 · 1 V2 (BE-05) · 1 U (BN-26) |
+| "Tier C: 20 product pages" | 64 product pages across 10 retailers |
+| "passes (0–15)" | 0–17 |
+
+**Provenance bug fixed in the tooling.** `scripts/live_source_check.py` stamped every artifact it produced with `"session": "arena/03c0c10f-gold4", "pass": "Pass 12"` — so evidence collected *today by another session* would have been labelled with the wrong author and pass. It now records the branch/ref that actually ran it (verified in the 20:19Z artifact: `"session": "arena/2189e10f-gold4"`).
+
+**Flagged, not fixed (published on the Flagged/Freshness pages; none blocks the merge).**
+1. Five row URLs return 404 on two consecutive runner passes ten hours apart: `BN-09`, `BN-10`, `BN-11`, `BN-12` (Blue Nile) and `RS-05` (Ross-Simons). Their stored prices remain the 2026-10-22 readings. Finding the current product URL needs a human; guessing URL forms would itself manufacture evidence, so it is not attempted.
+2. Brilliant Earth refuses every automated check (403) on all 7 rows and all 4 policy pages. No price claim is made about them; BE-05 remains V2-only.
+3. Four rows print a different structured price from the stored one (VR-01, MN-01, MN-02, MJ-06) — variant/configuration effects. Both numbers are published; nothing overwritten.
+4. `sarraf-returns` in `data/sources.json` points at a **product** URL, not Sarraf's returns page. Logged as a request, not edited (it is a registered source used by 8 rows' `returns_source_id`, so changing it needs a verified replacement URL first).
 
 **Non-overlap declaration.** This session edits: this board section, `data/rings.json` (additive `source_check`/reverification fields + flags only — no existing value, date or note is changed or deleted), `data/source_health.json`, `reports/live_source_check_*.json`, `README.md`, the generated site (`index.html`, `pages/**`, `docs/**` regenerated by `scripts/build_site.py` / `generate_site.py`), `VERIFICATION.md` (regenerated) and `data/verification_log.json` (append one pass record). It does **not** edit `scripts/audit.py`, `scripts/verify.py`, `scripts/check_site.py`, `scripts/audit_freshness.py`, `scripts/audit_hallucinations.py`, `scripts/verify_a0be79d4.py`, `scripts/session_*/**`, `.github/**`, `data/preserved/**`, `docs/legacy/**`, `reviews/**` or `assets/**`. Anything in those files that appears to need a change is **logged as a request below**, not edited.
 

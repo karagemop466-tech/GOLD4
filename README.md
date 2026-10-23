@@ -2,7 +2,7 @@
 
 A small, auditable dataset of **solid-gold engagement rings** with retailer prices, published gram weights, computed gold content and every unverified value published as *blank* instead of guessed.
 
-**Latest review pass:** 23 October 2026 (**Pass 17**) — every ring URL and every registered source was re-opened from a GitHub runner with open internet, each page's own structured price compared with the stored value, and the winner of each comparison published rather than applied. Nothing in `data/` was overwritten to make a row look current; where a page and the stored value disagree, both numbers are shown and the row is flagged. This pass also repaired documentation drift: the README's file table still quoted the **superseded** 21-October benchmark ($4,028.53/oz) and "14 registered sources", and advertised five CI gates when the pipeline runs seven.
+**Latest review pass:** 23 October 2026 (**Pass 17**) — every ring URL and every registered source was re-opened from a GitHub runner with open internet, each page's own structured price compared with the stored value, and the winner of each comparison published rather than applied. Nothing in `data/` was overwritten to make a row look current; where a page and the stored value disagree, both numbers are shown and the row is flagged. The gold benchmark was re-read in a browser-rendered fetch and **moved to $3,996.31/oz (−0.70% on the 10:02Z reading)** — corroborated within four minutes by Kitco and BullionVault — so every derived gold value was recomputed at $128.48435/g. This pass also added capture of each page's own *availability* markup, which settled the one open question: BN-26 publishes `availability=SoldOut` beside an `$858` price meta, so its blank price is confirmed correct rather than merely uncaptured. Finally it repaired documentation drift: the README's file table still quoted the **superseded** 21-October benchmark ($4,028.53/oz) and "14 registered sources", and advertised five CI gates when the pipeline runs seven.
 
 **Previous pass:** 22 October 2026 — every row was re-opened on its own source page three times, by two independent sessions and once more against merged `main`. Pass 2 corrected Anjolee's weight and centre-stone origin; Pass 5 re-checked all rows again and added two Brilliant Earth rows; Pass 6 re-checked the merged site and found no discrepancy. Two Brilliant Earth rows (BE-01 14K, BE-02 18K yellow gold) were added because their setting price became readable on this pass; three new flags were raised for Mejuri variant pricing, Brilliant Earth resize wording and the gold-spot drift. Nothing was filled in to make a row look complete. See the [Verification log](https://karagemop466-tech.github.io/GOLD4/pages/log.html).
 
@@ -45,7 +45,7 @@ When reviewing anything in this repo, **ask of each value: where is the official
 | `data/sellers.json` | Seller-level facts: return window, exclusions, resize terms, warranty, contact |
 | `data/sources.json` | The 31 registered sources (law/regulator, market benchmark and each retailer's own policy pages) with tier, retrieval date and what each one supports |
 | `data/methodology.json` | Karat table, 15 U.S.C. § 295 tolerances, formulas, assumptions, verification levels |
-| `data/gold_spot.json` | The gold benchmark in force: **$4,024.45/oz, "Data as of 22 October, 2026"** = **$129.389072/g** (World Gold Council Goldhub, read 23 Oct 2026 at 10:02Z). Every earlier reading is kept in `prior_captures` / `secondary_reference` — superseded values are never deleted |
+| `data/gold_spot.json` | The gold benchmark in force: **$3,996.31/oz** = **$128.48435/g**, read from the World Gold Council Goldhub panel on **23 Oct 2026 at 20:23Z** (the panel's own "Data as of" line reads 22 October, 2026). Corroborated within four minutes by Kitco ($3,996.30), BullionVault ($3,996.62) and JM Bullion's gold ask ($4,010.61). Every earlier reading is kept in `prior_captures` / `secondary_reference` — superseded values are never deleted |
 | `data/derived.json` | Computed gold content / value / multiples (generated) |
 | `data/verification_log.json` | Every verification pass, 0 through 17, rendered on the site's Log page |
 | `VERIFICATION.md` | Line-by-line verification record (generated from the JSON) |
@@ -144,7 +144,7 @@ Every re-read is recorded per row in `data/rings.json` (`reverified_utc`, `rever
 | Rows with explicit *solid gold* wording | 19 of 64 |
 | Rows publishing a hallmark / maker's mark | **0 of 64** — it can only be checked in your hand |
 | Rows re-read from their own source page | the original 20 rows were re-read by up to four independent sessions on 2026-10-22; the 17 rows added by Pass 9 were each read from their official page at collection (8 live-fetched, 9 from dated official-page snapshots with corroboration); every row carries its re-verification record |
-| Gold benchmark used | **$4,024.45/oz = $129.389072/g**, source date **22 October 2026**, read 23 Oct 2026 at 10:02Z (earlier readings kept in `prior_captures`; same-day Kitco/APMEX snapshots remain recorded informationally in `data/gold_spot.json` — derived arithmetic uses only the benchmark) |
+| Gold benchmark used | **$3,996.31/oz = $128.48435/g**, read 23 Oct 2026 at 20:23Z (panel's "Data as of" line: 22 October 2026). The 10:02Z reading of $4,024.45 is preserved in `prior_captures`; the same-day Kitco/BullionVault/JM Bullion cross-checks are recorded informationally in `data/gold_spot.json` — derived arithmetic uses only the benchmark |
 | Flags raised for review | published on the Flagged page, with sources |
 
 **Headline findings**
@@ -199,7 +199,7 @@ The earlier sessions' own records (including the note that their sandboxes had n
 
 ## Limitations (stated, not hidden)
 
-- The gold benchmark is a live quote. Two reads on the same day differed by 0.10%; the dataset stores the reading it actually saw and never silently refreshes it.
+- The gold benchmark is a live quote. Three reads on 2026-10-23 gave $4,024.45 (10:02Z), $3,996.31 (20:23Z) and earlier $4,028.53 — a 0.80% spread across the day. The dataset stores the reading it actually saw, with its timestamp, and never silently refreshes it.
 - Prices are a snapshot, not a feed: each row carries its own capture date (22–23 October 2026). Retail prices move; re-check the source link before buying.
 - Weights are the seller's own numbers, sometimes labelled "approximate", and are quoted for a single ring size.
 - Gold value is melt-value arithmetic, not an appraisal and not a resale offer.
