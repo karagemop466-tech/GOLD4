@@ -148,11 +148,27 @@ conflicted in 21 files. Resolution:
 
 ### Gates after the merge
 
-`audit.py` 130 passed / 0 failures · `check_site.py` PASS (26 pages, no broken local links) · `verify.py` 0 hard failures ·
+`audit.py` **130 passed / 0 failures** · `check_site.py` PASS (26 pages, no broken local links) · `verify.py` 0 hard failures ·
 `verify_a0be79d4.py` PASS (0 hard failures) · `audit_hallucinations.py` PASS (0 hard failures) ·
-**Gate 6 `verify_citations.py` PASS** (94 CFR references, 0 violations) plus its `--self-test`.
+**Gate 6 `verify_citations.py` PASS** (123 CFR references, 0 violations) plus its `--self-test`.
 
----
+### Merge and deploy record
+
+| Item | Result |
+|---|---|
+| Pull request | **PR #31** — https://github.com/karagemop466-tech/GOLD4/pull/31 (branch `arena/46691f83-gold4` → `main`) |
+| Merge | **MERGED** 2026-10-23T10:04:37Z, merge commit `cb91df525477afb29aba38bb9292384331316a80` |
+| CI run on `main` | `Deploy GOLD research site` run **39936497150** — `conclusion: success`; all six gates green, including the new Gate 6 self-test and full check |
+| Pages deploy | `deploy` job `success` (`Deploy to GitHub Pages`), `pages-build-deployment` run followed |
+| Live site | https://karagemop466-tech.github.io/GOLD4/ — `pages/flagged.html` and `pages/sources.html` re-fetched after the deploy and show this pass&#x27;s content |
+
+### Concurrency note (honest)
+
+`main` advanced four times while this pass ran (PR #27 Pass 12, PR #28 Pass 14, PR #29 Pass 12b, PR #30 and #32 site/board
+commits). Every one was merged into this branch with both sides kept; generated artefacts were rebuilt from the merged data
+each time. The workflow&#x27;s shared `concurrency: group: pages, cancel-in-progress: true` cancelled this branch&#x27;s
+`pull_request` runs within seconds on each push, so the gate results recorded above are from the **merge-to-main** run
+(39936497150), which is the run that actually publishes. No branch was force-pushed and no file from another session was deleted.
 
 ---
 
