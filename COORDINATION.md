@@ -34,6 +34,18 @@
 
 At claim time (09:52Z) `origin/main` was `77e93b4`. While this pass ran, `arena/d1586f6a-gold4` and `arena/04f1f10d-gold4` merged **PRs #27, #28, #29 and #30** (Pass 12, 12b, 14). `origin/main` was merged into this branch **twice** (`8cbbf40`, `af92a01`). Every conflict was in a *generated* file; those were resolved by taking `main`'s rendered pages and re-running `generate_site.py` → `build_site.py` → `gen_verification.py` on the merged data, so nothing was hand-merged and no session's data file was overwritten. `data/rings.json`, `data/sources.json` and `data/verification_log.json` only ever received *additive* changes from this session (a `source_check` block per row, new flags, live-check fields) — every pre-existing value, date and note is intact.
 
+### PR and merge record
+
+| Item | Result |
+|---|---|
+| PR | **#26** — https://github.com/karagemop466-tech/GOLD4/pull/26 — **MERGED** without waiting for review (per the standing instruction; flagged items did not block) |
+| Merge commit | `fc266c8` on `main` (2026-10-23) |
+| PR CI | `Deploy GOLD research site` run `39937311039` on the PR head — **success** (all gates incl. Gate 6a/6b citation integrity and Gate 7 freshness) |
+| Live source check on the PR | run `39937016586` — success; committed `reports/live_source_check_20261023T1024Z`-series evidence back to the branch |
+| Pages deploy after merge | `pages build and deployment` run `39937309959` — **success**; `Deploy GOLD research site` run `39937311039` — **success**; Pages API `status=built` for `fc266c8` |
+| Live site verification | https://karagemop466-tech.github.io/GOLD4/pages/freshness.html fetched after deploy: renders the 2026-10-23T10:10:23Z check, 64 rows, 31 sources, 45 prices re-confirmed, 5 dead URLs, 7 bot-blocked, 4 differing prices — with the NO HALLUCINATIONS banner intact |
+| Live URL | https://karagemop466-tech.github.io/GOLD4/ (HTTPS enforced) |
+
 **Checks on the merged tree:** all six gates green — `audit.py` PASS (128/1/0) · `check_site.py` PASS (27 pages; the four legacy `docs/` warnings are now cleared) · `verify.py` PASS (64 records, 49 blanks accounted) · `verify_a0be79d4.py` PASS (2,024 links, 0 dead) · `audit_hallucinations.py` PASS (940 checks) · `audit_freshness.py` PASS (292 checks, 2 warnings).
 
 ## Session `arena/46691f83-gold4` — Fresh-source verification pass + citation-integrity gate (2026-10-23)
