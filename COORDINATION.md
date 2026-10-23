@@ -36,6 +36,18 @@
 | Documentation drift | README vs `data/*.json` | **fixed**: "Seven CI gates" → eight gates / nine invocations with Gate 8 listed; 31 → 32 sources; a Pass-15 section introduced as "latest" re-labelled; benchmark limitation now carries the fourth same-day read and the retention policy (F19-07) |
 | Gates after every edit | `scripts/run_gates_pass19.py` | **9/9 invocations PASS** — audit 132/1 warning/0 failures · check_site 29 pages · verify 64 records 0 hard · verify_a0be79d4 0 dead/0 unsafe · hallucinations 0 failures · citations 110 refs 0 violations (+self-test) · freshness 295 checks/2 known warnings/0 failures · assurance 8/8 |
 
+**Concurrent runner sweep (not readable by me, and not claimed as evidence).** Opening PR #51 triggered
+`.github/workflows/live-source-check.yml` on this branch; [run 40041699748](https://github.com/karagemop466-tech/GOLD4/actions/runs/40041699748)
+completed **successfully in 2m06s** at ~00:02Z, which means the runner could open the URLs and upload its
+artifact. The artifact and the run log are served from `results-receiver.actions.githubusercontent.com`,
+which this sandbox cannot reach (`gh run view --log` fails with EOF), so **no per-URL result from that run is
+read, quoted or applied here.** Gate 7 still describes the 20:23:21Z sweep, which is the most recent evidence
+whose contents have actually been inspected.
+
+**Publish record (in progress).** PR [#51](https://github.com/karagemop466-tech/GOLD4/pull/51) opened from
+`arena/bfbdf30c-gold4`; the PR build (all eight gates / nine invocations) passed. PR #47 was closed as
+superseded with its handover comment after its Sarraf fix was re-verified and integrated.
+
 **Not claimed.** No runner sweep happened this pass. No XRF or assay test exists for any ring. No seller's reputation was verified. No price on this site is a live quote.
 
 **Network reality of this sandbox (stated plainly, as the brief requires):** the shell here reaches only GitHub hosts — `curl https://karagemop466-tech.github.io/...` fails at TLS and retailer hosts are unreachable from bash. Two independent read paths are used instead and named on every finding: (a) a **GitHub Actions runner** with open internet for the all-URL sweep, and (b) this session's own **browser-rendered page reader** for hand reads of the specific pages quoted below. No number in this pass is written from memory.
