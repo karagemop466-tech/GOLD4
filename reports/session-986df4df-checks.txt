@@ -1,9 +1,9 @@
-Executed UTC: 2026-10-23T20:22:57.220244+00:00
-Offline gate results are not independent factual verification.
+Combined tree including origin/main@fdc6bbe; executed UTC 2026-10-23T20:23:49.047183+00:00
+Offline passes do not prove absence of hallucinations or factual correctness.
 
 $ python3 scripts/audit.py
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T20:22:57+00:00
+run_utc: 2026-10-23T20:23:49+00:00
 dataset rows: 64 | sellers: 10 | sources: 31
 spot benchmark: $4,024.45/oz (22 October, 2026) = $129.3891/g
 
@@ -152,7 +152,7 @@ test_review_has_exactly_all_rows_and_blank_current_prices (__main__.AssuranceTes
 test_unreachable_never_confirms (__main__.AssuranceTests.test_unreachable_never_confirms) ... ok
 
 ----------------------------------------------------------------------
-Ran 7 tests in 0.004s
+Ran 7 tests in 0.003s
 
 OK
 
