@@ -72,6 +72,7 @@ FLAG_HELP = {
     "RETURN_EXCLUSIONS_NOT_ITEMISED": ("warn", "exclusions not itemised on the page"),
     "WARRANTY_VOID_ON_THIRD_PARTY_RESIZE": ("warn", "warranty voids on third-party resize"),
     "PRICE_CURRENCY_LOCALIZED": ("warn", "page price is rendered in visitor currency"),
+    "PRICE_CONDITIONAL_DISCOUNT": ("warn", "list price only - a conditional in-cart code cuts it further"),
 }
 
 
@@ -875,10 +876,12 @@ def main() -> None:
     </div>
     <div class="card">
       <h3>Coverage, stated plainly: {today_rows} of {len(rows)} rows were re-read on 2026-10-23</h3>
-      <p>Three sessions re-opened pages on 23 October. This pass re-opened AL-01, SR-01, RS-01 and MJ-01 and every recorded
-      value matched (MJ-01 only on a different metal variant). AN-01 loaded but its Product Details table was not reached.
-      A parallel session live-re-fetched BE-05, BE-06, BE-07 and re-read SR-01 and SR-02. The other {len(rows) - today_rows}
-      rows keep their earlier capture dates and are <strong>not</strong> claimed as re-verified today. Prices and stock move;
+      <p>Pass 16 re-opened AN-01, AL-02, AL-03, AL-04, RS-03, RS-04, SR-02 and SR-04, and every stored price and weight
+      matched the live page exactly. AN-01's <em>Product Details</em> table &mdash; which Pass 15 recorded as loaded but not
+      reached &mdash; is now read in full: $870.76, style MS354-A, 14K white gold, <span class="mono">Approx. Metal Weight:
+      2.90 Gr.</span> Passes 14/15 and a parallel session re-read AL-01, SR-01, RS-01, MJ-01, BE-05, BE-06 and BE-07. The
+      other {len(rows) - today_rows} rows keep their 2026-10-22 capture dates and are <strong>not</strong> claimed as
+      re-verified today. Prices and stock move; re-open the linked official page before you buy.</p>
       re-open the linked official page before you buy.</p>
     </div>
   </div>

@@ -23,6 +23,60 @@ Branch `arena/46691f83-gold4`, based on `main` @ `7f59a6c`.
 
 Taking stale claims: none — no other claim block is open on this board.
 
+### Pass 16 results — what was actually read (2026-10-23T10:20Z)
+
+**Claim outcome: all three claimed tasks done.** Eight further product pages were opened live and read to the end;
+`AN-01`'s Product Details table — the one gap Pass 15 had to declare — is now read in full.
+
+| Row | Live reading on 2026-10-23 | Stored | Verdict |
+|---|---|---|---|
+| AN-01 Anjolee MS354-A | $870.76 (twice on page) · MS354-A · 14K White Gold · *Approx. Metal Weight 2.90 Gr.* · 0.50 ct lab-created FG/VS · ring size 6.5 · 6.31×2.82 mm · 30-day returns · lifetime warranty | $870.76 / 2.9 g | **confirmed — gap closed** |
+| AL-02 Allurez AZ21211 | $724 (38% off a $1,174 comparison price) · 3.4 g · setting only | $724 / 3.4 g | confirmed, no drift |
+| AL-03 Allurez AZ21223 | $848 (43% off $1,486) · 4.4 g · setting only | $848 / 4.4 g | confirmed, no drift |
+| AL-04 Allurez AZ21229 | $1,425 (51% off $2,903) · 5.3 g · 18k | $1,425 / 5.3 g | confirmed, no drift |
+| RS-03 Ross-Simons 820263 | $595 · *Gold Weight 2.1 grams* · 1/2" · Made in Italy | $595 / 2.1 g | confirmed, no drift |
+| RS-04 Ross-Simons 823796 | $1,195 · *Gold Weight 4.0 grams* · 3/4" · **plus "25% OFF IN CART WITH CODE GOLD25"** | $1,195 / 4.0 g | confirmed + **new conditional-price finding** |
+| SR-02 Sarraf 14KY-PBWB06 | US$1,063 (Was $1,243 · MSRP $4,134 · −14% · automatic code) · *14K Solid Gold* · 9.40 g (size 10) | $1,063 / 9.4 g | confirmed + MSRP anchor |
+| SR-04 Sarraf IB-FPBWB06-18KY | US$1,436 (Was $1,680 · MSRP $5,586 · −15%) · *18K Solid Gold* · 11.10 g (size 10) | $1,436 / 11.1 g | confirmed + MSRP anchor |
+
+**Zero price or weight drift across all eight rows.** Nothing was "corrected" — that is the point: the stored
+values were re-read, not re-typed. Coverage of rows carrying a 2026-10-23 re-read rises from **16 to 24 of 64**;
+the other 40 rows still carry 2026-10-22 captures and are **not** claimed as re-verified today.
+
+### New irregularities published this pass (none blocking)
+
+1. **`FLG-MED-17` — RS-04's published price is a list price with a conditional 25% in-cart code (MEDIUM).**
+   The page shows `$1,195` and `25% OFF IN CART WITH CODE GOLD25`. Both figures are the seller's, but a buyer using
+   the code pays ≈ `$896.25`, which moves the gold-value multiple from ×3.96 to ≈×2.97 at the 2026-10-23 spot.
+   The row publishes the list price, records the code in `promo_note`, and carries `PRICE_CONDITIONAL_DISCOUNT`
+   (new code, added to `FLAG_HELP` in `scripts/build_site.py`). Root `flagged.html` now lists **21** irregularities.
+2. **`FLG-MED-14` extended — the Sarraf "MSRP" anchor is on three rows, not one (MEDIUM).**
+   SR-01 already carried it; SR-02 (MSRP $4,134 vs $1,063 charged) and SR-04 (MSRP $5,586 vs $1,436 charged) show
+   the same ≈3.9× anchor, both flagged `SALE_MSRP_ANCHOR`. Only the charged "Now" price is used in any derived figure.
+
+### Gates after this pass (all exit 0)
+
+`audit.py` **131 passed / 1 warning / 0 failures** (the single warning is the long-standing informational BE-05
+V2-vs-V1 comment) · `check_site.py` **PASS**, 26 pages, every populated row carries an official source link
+(one pre-existing WARN about the legacy `docs/verification.html` page) · `verify.py` 0 hard failures ·
+`verify_a0be79d4.py` PASS · `audit_hallucinations.py` PASS · Gate 6 **PASS**, 123 CFR references across 36 files,
+`label=0 sentence=0`, plus `--self-test`.
+
+### What this pass did NOT establish (say it plainly)
+
+- 40 of 64 rows were **not** re-opened today. Their prices may have moved since 2026-10-22.
+- **No retailer publishes a photograph of a hallmark or a maker's mark (unchanged).** Every row still leaves
+  `hallmark_published` false; the keystone check remains the buyer's own loupe/XRF inspection on arrival.
+- The Anjolee spec-sheet PDF linked from AN-01 was **not** re-opened; the weight rests on the Product Details
+  table, which is the stronger source anyway.
+- Nothing here verifies that a seller will accept a return, or that a card issuer will honour a dispute —
+  the policy text was read, the outcome was not tested.
+
+**Standing recommendation, repeated after this review: re-run all six gates after every future pass
+(`audit.py`, `check_site.py`, `verify.py`, `verify_a0be79d4.py`, `audit_hallucinations.py`,
+`session_46691f83/verify_citations.py`), and re-fetch the live pages — the gates are offline and cannot tell you
+that a page changed today.**
+
 ---
 
 ## Session `arena/46691f83-gold4` — Fresh-source verification pass + citation-integrity gate (2026-10-23)
@@ -110,6 +164,7 @@ conflicted in 21 files. Resolution:
 | Pages deploy | `deploy` job `success` (`Deploy to GitHub Pages`), `pages-build-deployment` run followed |
 | Live site | https://karagemop466-tech.github.io/GOLD4/ — `pages/flagged.html` and `pages/sources.html` re-fetched after the deploy and show this pass's content: 31 registered sources, the corrected NIST Handbook 44 link, `usc-15-297`, `ecfr-12-1026-13` and `usc-15-1666` present with 2026-10-23 retrieval dates |
 | Follow-up PR | **PR #34** — https://github.com/karagemop466-tech/GOLD4/pull/34 — **MERGED** 2026-10-23T10:06:37Z (`c21dbb99`); `main` run `39936747371` `success` + `pages-build-deployment` `success`. It records the merge/deploy above, syncs the WGC source row to the fresh reading, and (on review of the live page) corrects the `cfpb-fcba-en61` supports text, which still attributed the 90-day outer limit to the CFPB FAQ page |
+| Follow-up PR | **PR #35** — https://github.com/karagemop466-tech/GOLD4/pull/35 — **MERGED** 2026-10-23T10:07:57Z (`7f59a6c0`); `main` run `39936908921` `success` + `pages-build-deployment` `success`. Found by reading the deployed Sources page: `cfpb-fcba-en61` still attributed the two-billing-cycle/90-day limit to the CFPB FAQ, which does not state it; the supports text now says so explicitly and points to 12 CFR 1026.13(c)(2) and 15 U.S.C. § 1666(a)(B) |
 
 ### Concurrency note (honest)
 

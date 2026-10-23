@@ -317,6 +317,22 @@
    ],
    "result": "PASS — 5 pre-existing gates green, new Gate 6 green (84 CFR references, 0 violations), audit.py 130 checks / 0 failures, 0 broken local links.",
    "outcome": "Three real defects fixed (two wrong citations, one dead source URL with an invented subtitle) and one overstatement corrected. No price, weight or karat value was changed: the four rows re-read matched. Derived values were recomputed against the 2026-10-23 spot capture, which moved -0.10%."
+  },
+  {
+   "pass": "Pass 16 — closing the AN-01 gap and re-reading eight more product rows (session arena/46691f83-gold4)",
+   "when_utc": "2026-10-23T10:20Z",
+   "scope": "Pass 15 recorded that the Anjolee AN-01 page had loaded but its Product Details table was not reached, and it re-read four rows. This pass (a) reads that table to completion, and (b) re-opens seven more Tier-C rows that until now carried only 2026-10-22 captures: Allurez AL-02/AL-03/AL-04, Ross-Simons RS-03/RS-04, Sarraf SR-02/SR-04.",
+   "checked": [
+    "AN-01 Anjolee MS354-A: Product Details table read in full. Price $870.76 (appears twice), Style No. MS354-A, Metal Type 14K White Gold, 'Approx. Metal Weight: 2.90 Gr.', 0.50 ct model, centre stone 'Lab Created FG' / 'Lab Created VS', Ring Size 6.5, item height 6.31 mm, width 2.82 mm, 'Anjolee Certificate of Authenticity', '30-Day Returns', lifetime warranty plus 1-year manufacturing-defect warranty. Stored price $870.76 and weight 2.9 g CONFIRMED, no change.",
+    "AL-02 $724 / AZ21211 / 14k Yellow Gold / 3.4 g - confirmed, no drift. AL-03 $848 / AZ21223 / 4.4 g - confirmed. AL-04 $1,425 / AZ21229 / 18k Yellow Gold / 5.3 g - confirmed. All three are setting-only, 30-day returns, free 1-year warranty, size surcharges from 10.25.",
+    "RS-03 $595 / Item 820263 / 14kt yellow gold / 'Gold Weight 2.1 grams' - confirmed. RS-04 $1,195 / Item 823796 / 'Gold Weight 4.0 grams' - confirmed.",
+    "SR-02 US$1,063 (Was $1,243, MSRP $4,134, -14%, automatic code) / SKU 14KY-PBWB06 / '14K Solid Gold' / 9.40 g - confirmed. SR-04 US$1,436 (Was $1,680, MSRP $5,586, -15%) / SKU IB-FPBWB06-18KY / '18K Solid Gold' / 11.10 g - confirmed.",
+    "FINDING 1 (new, published): RS-04 carries a conditional in-cart promotion, '25% OFF IN CART WITH CODE GOLD25'. $1,195 is the list price; applying the code would make it about $896.25. The row publishes the list price (the code is cart- and time-conditional) and is now flagged PRICE_CONDITIONAL_DISCOUNT so no analysis silently assumes the discounted number.",
+    "FINDING 2 (new, published): SR-02 and SR-04 display MSRP anchors ($4,134 and $5,586) roughly 3.3x their own 'Was' prices. This is the same anchoring pattern already recorded on SR-01. Only the 'Now' price is used in any derived figure; both rows are flagged SALE_MSRP_ANCHOR.",
+    "Cross-check: independently recomputed melt values at the 2026-10-23 spot of $4,024.45/ozt ($129.3891 per pure gram). AL-01 $270.21 (x2.17), AL-02 $256.62 (x2.82), AL-03 $332.10 (x2.55), AL-04 $514.32 (x2.77), RS-03 $158.50 (x3.75), RS-04 $301.91 (x3.96), SR-02 $709.48 (x1.50), SR-04 $1,077.16 (x1.33), AN-01 $218.88 (x3.98 - but that price includes a 0.50 ct lab-created diamond, so the multiple is not a gold-only comparison)."
+   ],
+   "result": "Eight further rows re-read live; every stored price and weight matched the page exactly, so no value needed changing and none was changed. Two conditional-price irregularities found and flagged. Coverage of rows re-read on 2026-10-23 rises from 16 to 24 of 64. The remaining 40 rows still carry 2026-10-22 captures and are not claimed as re-verified today.",
+   "outcome": "PASS - no drift, no fabricated values, AN-01 gap closed and the earlier 'loaded but table not reached' caveat can be retired."
   }
  ],
  "not_reverified_this_pass": [
