@@ -92,6 +92,23 @@ G1 `audit.py` PASS (1 warning: BE-05 V2-only) · G2 `check_site.py` PASS (27 pag
 
 ---
 
+## Session `arena/bc872fef-gold4` — Pass 17: final integration, independent re-verification and publication (2026-10-23)
+
+**Claimed at:** 2026-10-23T20:15Z, before editing any file in scope. This claim will be committed and pushed immediately.
+
+**Stale-claim handoff:** the latest prior session closed at 11:25Z; all older claims are more than 60 minutes old, no pull requests are open, and `main` is at `6aa9e05`. Under the shared-board handoff rule, this session takes over final integration. No other session's unmerged branch is adopted or modified.
+
+**Branch note (required deviation):** Arena pins this session to `arena/bc872fef-gold4` and forbids creating or pushing any other branch. That fixed branch is the functional equivalent of `session-bc872fef/final-integration`; the PR will be opened from it to `main`.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 45 | Final integration: line-by-line repository/data review; fresh read-only official-source evidence; reconcile and flag every mismatch without silently overwriting facts; regenerate the canonical site; run all security/hallucination/link/calculation gates after every review; publish a dated review; PR → merge → verify Pages deployment and record evidence | **in progress** | `arena/bc872fef` | `COORDINATION.md`; `data/**`; `scripts/**`; `reports/**`; `reviews/**`; generated root/category/docs/pages HTML and assets as required by verified fixes; `.github/workflows/**` only if a checked defect requires it |
+
+**Scope and evidence rules:** existing rows and captured values are preserved unless an accessible official source directly supports a correction. Unsupported values remain null/blank and flagged. Automated 403/404/JavaScript-shell results are source-health findings, not proof that a product fact is false. Stored and newly observed prices are never blended or inferred. Every review ends with the full local gate suite and an explicit recommendation to repeat hallucination review. Shared generated outputs are changed only by this final integration session.
+
+**Concurrency handoff (20:30Z):** after this claim, PRs #42, #43 and #44 merged independent assurance, current-review and line-by-line-review work; PR #41 is actively owned by `arena/2189e10f`. This session is preserving all merged sections and will rebase onto PR #41 rather than overwrite its README/collector/data artifacts. Coordination notices were posted to PRs #41 and #46. This session's remaining distinct scope is strict aggregate/variant-confirmation auditing, isolated evidence return, combined regeneration and final publication. No concurrent entry is renumbered or discarded.
+
+---
 
 ## Session `arena/03c0c10f-gold4` — Pass 16: the first ONLINE source-health audit, price reconciliation & landing-page consolidation (2026-10-23)
 
