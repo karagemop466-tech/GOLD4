@@ -507,19 +507,22 @@ the merges were kept as merges. This session&#x27;s own pre-merge edits to share
 | P9-3 | Duplicate resolution: 2 of 19 candidates matched published rows (BE-01 same URL; BN-10 same stock number 502120y14 via alias item-203348, live re-fetch 23:58Z) — folded into appended corroboration notes, incl. the BN-10 product-name variance between official aliases | done | arena/22b5b06c-gold4 | data/rings.json (BE-01, BN-10 notes) |
 | P9-4 | Integration into the published 47-row schema (17 new rows, 47 → 64; BE rows also carry Pass 7&#x27;s PRICE_CURRENCY_LOCALIZED for consistency) | done | arena/22b5b06c-gold4 | data/rings.json, data/gold_spot.json, data/verification_log.json, scripts/merge_rows_22b5b06c.py |
 | P9-5 | Re-run full pipeline + all five CI gates | done — audit **PASS 128/9/0** · check_site **PASS 26 pages** · verify **PASS 64 records / 0 hard failures / 50 blanks accounted** · verify_a0be79d4 **PASS 0 hard failures** · audit_hallucinations **PASS (0 failures)** | arena/22b5b06c-gold4 | reports/audit_latest.txt, AUDIT.md, all generated pages |
-| P9-6 | Publish via PR #11 → merge → confirm Pages deploy | in progress (record below completed by follow-up commit) | arena/22b5b06c-gold4 | this file |
+| P9-6 | Publish via PR #11 → merge → confirm Pages deploy | **done** — merged `34b8c5f`, Pages run `39876458851` success, build `built`, live site verified | arena/22b5b06c-gold4 | this file |
 
 **Sources (all official; per-row URLs recorded in the data).** bluenile.com — live fetches: item-203348 (23:13Z and again 23:58Z), item-41515 (23:19Z, sold out), category `/engagement-rings/styles/gold/yellow-gold` (23:15Z: items 311230, 315036, 311246, 311127, 311121, 192506, 304294); dated official-page snapshots: items 192261, 203321, 203303, 195730, 315661, 310896. brilliantearth.com — dated snapshots incl. category JSON-LD: Freesia BE1D3939 14K/18K, Fleur BE1574, Atelier BE1D2444 (= published BE-01). Spot: api.gold-api.com/price/XAU live $4,028.10/oz @23:01:42Z; kitco.com and apmex.com same-day snapshots (informational cross-check only; not used in any derived number).
 
 **Irregularities this pass adds to the Flagged page.** BN-22 `COPY_INCONSISTENT_METAL` (&quot;platinum&quot; wording on a 14K YG page); BN-20 `SALE_PRICE_VARIES_ACROSS_PAGES` (four sale prices, one SKU 505038y14); BN-26 `SOLD_OUT_AT_CHECK` + `PRICE_UNVERIFIED` (older $660 snapshot deliberately not used); BN-10 naming variance between two official aliases (same stock number 502120y14 — recorded in its flag_detail); 9 rows `PRICE_V2_ONLY` pending live re-fetch (fetch-service outage 23:20–23:47 UTC), the three BE rows additionally `PRICE_CURRENCY_LOCALIZED`; Pass 5 timestamp anomaly (stamped `2026-10-23T00:05Z`, ahead of the wall clock when merged) noted in `data/verification_log.json`, not corrected — another session&#x27;s record.
 
-### PR and merge record (completed by follow-up commit, per established pattern)
+### PR and merge record (completed 2026-10-23 00:10–00:17 UTC)
 
 | Item | Result |
 |---|---|
-| PR #11 (this integration) | https://github.com/karagemop466-tech/GOLD4/pull/11 — pending merge at time of writing |
-| Pages workflow run | to be recorded after merge |
-| Live-site verification | to be recorded after deploy |
+| PR #11 (this integration) | https://github.com/karagemop466-tech/GOLD4/pull/11 — **MERGED** without waiting for review (per standing instruction; flagged items did not block) |
+| Merge commit | `34b8c5fb781b67ecd84f569079daeccca9eda721` on `main` (2026-10-23 00:10:03 UTC) |
+| PR CI (pull_request run `39876334329`) | **success** — all five gates on the exact merged tree |
+| Pages workflow (push run `39876458851`) | **completed / success** (24 s) |
+| Pages build | `built` for commit `34b8c5f` (Pages API `status=built`) |
+| Live-site verification | https://karagemop466-tech.github.io/GOLD4/ fetched 2026-10-23 ~00:16 UTC: front page serves **64 rings / 10 retailers / 62 prices / 17 weights / 238 flags**, the NO HALLUCINATIONS banner, and links to the Flagged, Log and category pages (first post-deploy fetch showed a stale 47-row CDN cache; re-fetch after ~2 min served the new build) |
 </pre>
       </div>
     </section>
