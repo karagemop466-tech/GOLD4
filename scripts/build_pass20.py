@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Build pages/pass19.html — the Pass 19 verification record.
+"""Build pages/pass20.html — the Pass 20 verification record.
 
 Every number and every quoted page string on this page is read from
-`reviews/pass19/observations.json`, which this session wrote from its own
+`reviews/pass20/observations.json`, which this session wrote from its own
 browser-rendered page reads. Nothing is typed into the HTML by hand, so the page
 cannot drift from the evidence file. The gate results come from
-`reviews/pass19/gates.json`, written by `scripts/run_gates_pass19.sh`.
+`reviews/pass20/gates.json`, written by `scripts/run_gates_pass20.sh`.
 
 Run after `scripts/build_site.py` (it needs the layout constants that builder
 sets up) and before the gates.
@@ -37,8 +37,8 @@ def prime_layout() -> None:
         "n_rows": len(derived["rows"]),
         "n_sources": len(sources["sources"]),
     }
-OBS = ROOT / "reviews" / "pass19" / "observations.json"
-GATES = ROOT / "reviews" / "pass19" / "gates.json"
+OBS = ROOT / "reviews" / "pass20" / "observations.json"
+GATES = ROOT / "reviews" / "pass20" / "gates.json"
 
 VERDICT_KIND = {
     "MATCH": ("ok", "matches the stored value"),
@@ -142,10 +142,10 @@ def main() -> None:
     )
 
     body = f"""
-<h1>Pass 19 — what was actually re-read, and what still is not</h1>
+<h1>Pass 20 — what was actually re-read, and what still is not</h1>
 <p class="lede">Session <span class="mono">{esc(obs['session'])}</span> · evidence window
 <span class="mono">{esc(obs['read_window_utc'])}</span> · evidence file
-<span class="mono">reviews/pass19/observations.json</span></p>
+<span class="mono">reviews/pass20/observations.json</span></p>
 
 {no_hallucination_block('../')}
 
@@ -178,7 +178,7 @@ flags, or recorded in the evidence file with its source link.</p>
 <p>The gates are the same ones CI runs before a merge. They recompute every derived number,
 re-check every link, and fail on an unsourced value. A passing gate proves internal consistency —
 it cannot prove a retailer is honest or that a price is still live.</p>
-{gate_table(gates) if gates else '<p class="small">Gate results are written by <span class="mono">scripts/run_gates_pass19.sh</span>.</p>'}
+{gate_table(gates) if gates else '<p class="small">Gate results are written by <span class="mono">scripts/run_gates_pass20.sh</span>.</p>'}
 
 <h2>What this pass could not do — stated plainly</h2>
 <ul>
@@ -203,15 +203,15 @@ it cannot prove a retailer is honest or that a price is still live.</p>
 <p class="small">Related: <a href="freshness.html">Freshness (last all-URL runner sweep, 20:23Z)</a> ·
 <a href="flagged.html">Flagged for Review</a> ·
 <a href="log.html">Verification log</a> ·
-<a href="../reviews/index19.html">Plain-text copy of this pass</a></p>
+<a href="../reviews/index20.html">Plain-text copy of this pass</a></p>
 """
-    out = ROOT / "pages" / "pass19.html"
-    out.write_text(render("Pass 19 verification record", body, "pass19", root="../"), encoding="utf-8")
+    out = ROOT / "pages" / "pass20.html"
+    out.write_text(render("Pass 20 verification record", body, "pass20", root="../"), encoding="utf-8")
     print(f"wrote {out.relative_to(ROOT)} ({len(body)} chars of body)")
 
     # A plain, dependency-free copy for anyone reading the repo (and for the
     # reviewers who follow a link from the site). Same evidence file, same words.
-    plain = ROOT / "reviews" / "index19.html"
+    plain = ROOT / "reviews" / "index20.html"
     plain_rows = "".join(
         f"<tr><td>{esc(r['id'])}</td><td>{esc(r.get('row_id') or r.get('target',''))}</td>"
         f"<td><a href=\"{esc(r['url'])}\">{esc(r['url'])}</a></td>"
@@ -225,18 +225,18 @@ it cannot prove a retailer is honest or that a price is still live.</p>
     plain.write_text(f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pass 19 verification record (plain copy) · GOLD4</title>
+<title>Pass 20 verification record (plain copy) · GOLD4</title>
 <link rel="stylesheet" href="../assets/style.css"></head>
 <body><main class="wrap">
 <div class="nohall"><h2>⚠ No hallucinations</h2>
 <p>Every value below was read from the official page linked beside it by session
 <span class="mono">{esc(obs['session'])}</span> during {esc(obs['read_window_utc'])}.
 Where a page could not be read, the row says so and no value is given.</p></div>
-<h1>Pass 19 — line-by-line readings</h1>
-<p><a href="../pages/pass19.html">Dashboard version</a> ·
-<a href="pass19/observations.json">raw evidence JSON</a> ·
-<a href="pass19/report.md">session report</a> ·
-<a href="pass19/gates.txt">gate output</a></p>
+<h1>Pass 20 — line-by-line readings</h1>
+<p><a href="../pages/pass20.html">Dashboard version</a> ·
+<a href="pass20/observations.json">raw evidence JSON</a> ·
+<a href="pass20/report.md">session report</a> ·
+<a href="pass20/gates.txt">gate output</a></p>
 <p>{esc(obs['coverage']['statement'])}</p>
 <table><thead><tr><th>Ref</th><th>Row</th><th>Source</th><th>Page printed</th><th>Verdict</th><th>Note</th></tr></thead>
 <tbody>{plain_rows}</tbody></table>

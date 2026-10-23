@@ -1,7 +1,7 @@
 {
  "schema_version": "1.0.0",
  "session": "arena/bfbdf30c-gold4",
- "pass": "Pass 19",
+ "pass": "Pass 20",
  "generated_utc": "2026-10-23T23:45Z",
  "read_path": "browser-rendered page reader used by this session (NOT a GitHub runner; no runner evidence could be collected this pass — workflow_dispatch returned HTTP 403 and run logs/artifacts are not reachable from this sandbox)",
  "coverage": {
@@ -12,12 +12,12 @@
   "rows_dead_link_confirmed": 1,
   "rows_partial_spec_or_existence_only": 3,
   "rows_not_re_read_this_pass": 53,
-  "statement": "53 of 64 rows were NOT re-read in Pass 19. Their stored values keep their original 2026-10-22 capture dates and are not claimed to be current.",
+  "statement": "53 of 64 rows were NOT re-read in Pass 20. Their stored values keep their original 2026-10-22 capture dates and are not claimed to be current.",
   "sources_registered": 32
  },
  "readings": [
   {
-   "id": "P19-R01",
+   "id": "P20-R01",
    "target": "gold benchmark",
    "source_id": "wgc-gold-prices",
    "url": "https://www.gold.org/goldhub/data/gold-prices",
@@ -33,7 +33,7 @@
    "action": "Benchmark RETAINED at 3,996.31/oz for this pass. Reading recorded as a dated cross-check in data/gold_spot.json; no derived value changed."
   },
   {
-   "id": "P19-R02",
+   "id": "P20-R02",
    "row_id": "AL-01",
    "retailer": "Allurez",
    "url": "https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold",
@@ -49,7 +49,7 @@
    "note": "Price, basis, style number, metal, karat and the seller's approximate weight all match the stored record."
   },
   {
-   "id": "P19-R03",
+   "id": "P20-R03",
    "row_id": "SR-03",
    "retailer": "Sarraf",
    "url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
@@ -64,7 +64,7 @@
    "note": "Price, '18K Solid Gold' wording and 6.70 g all match. The page itself states the weight is for a size-10 ring; the stored weight_scope already records the approximation but not the size - published here as an observation."
   },
   {
-   "id": "P19-R04",
+   "id": "P20-R04",
    "row_id": "SR-05",
    "retailer": "Sarraf",
    "url": "https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html",
@@ -79,7 +79,7 @@
    "note": "Price, solid-gold wording, 8.00 g and the diamond specification all match the stored record."
   },
   {
-   "id": "P19-R05",
+   "id": "P20-R05",
    "row_id": "RS-02",
    "retailer": "Ross-Simons",
    "url": "https://www.ross-simons.com/jewelry/rings/985230.html",
@@ -94,7 +94,7 @@
    "note": "Price, 18kt metal and 0.7 g gold weight match. The legacy URL redirects to /products/985230 and still resolves."
   },
   {
-   "id": "P19-R06",
+   "id": "P20-R06",
    "row_id": "RS-05",
    "retailer": "Ross-Simons",
    "url": "https://www.ross-simons.com/products/990022",
@@ -109,7 +109,7 @@
    "note": "The corrected URL (fixed in Pass 18) is live and the price still prints $2,819; the blank weight is confirmed correct. New observation: the price is a clearance price, and Ross-Simons excludes 'Final sale items' from its 30-day returns while the page does not say 'final sale'."
   },
   {
-   "id": "P19-R07",
+   "id": "P20-R07",
    "row_id": "MJ-01",
    "retailer": "Mejuri",
    "url": "https://mejuri.com/products/diamonds-team-ring",
@@ -124,7 +124,7 @@
    "note": "The $548 price is confirmed for the white-gold variant that the stored URL actually renders. The yellow-gold variant price was NOT read this pass, so this is not a confirmation of the stored yellow-gold listing. No gram weight is published, which confirms the blank weight cell."
   },
   {
-   "id": "P19-R08",
+   "id": "P20-R08",
    "row_id": "MN-01",
    "retailer": "Mene",
    "url": "https://mene.com/products/knot-ring-gold",
@@ -140,7 +140,7 @@
    "note": "Third independent read of this page showing $1,442 against the stored $1,465. Nothing overwritten; PRICE_STRUCTURED_DIFFERS stays and both numbers are published."
   },
   {
-   "id": "P19-R09",
+   "id": "P20-R09",
    "row_id": "VR-01",
    "retailer": "VRAI",
    "url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
@@ -155,7 +155,7 @@
    "note": "The 2.86 g weight is confirmed but is the seller's ring-size-6 figure while the page had size 5 selected - it must not be applied to a size-5 ring. The plain-band/pave specification conflict is confirmed to persist. The price was not readable in the returned page content, so no price claim is made."
   },
   {
-   "id": "P19-R10",
+   "id": "P20-R10",
    "row_id": "BE-07",
    "retailer": "Brilliant Earth",
    "url": "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
@@ -170,7 +170,7 @@
    "note": "The page is live and its title still states 14K yellow gold, but the price sits deep in a JavaScript-heavy page and was not read this pass. No price claim is made."
   },
   {
-   "id": "P19-R11",
+   "id": "P20-R11",
    "row_id": "AN-01",
    "retailer": "Anjolee",
    "url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
@@ -185,7 +185,7 @@
    "note": "Consistent with the existing JavaScript-shell finding; no value could be read and none was inferred."
   },
   {
-   "id": "P19-R12",
+   "id": "P20-R12",
    "row_id": "BN-09",
    "retailer": "Blue Nile",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y",
@@ -200,7 +200,7 @@
    "note": "Independent browser-rendered confirmation of the SOURCE_URL_DEAD flag (previously established by runner reads). The stored price keeps its 2026-10-22 date and is not claimed current."
   },
   {
-   "id": "P19-S01",
+   "id": "P20-S01",
    "target": "source registry (seller policy)",
    "retailer": "Sarraf",
    "url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
@@ -213,7 +213,7 @@
    "note": "The registry cited a product page for the policy; the dedicated policy page was read and the registry updated to cite it."
   },
   {
-   "id": "P19-S02",
+   "id": "P20-S02",
    "target": "source registry (warranty)",
    "retailer": "Sarraf",
    "url": "https://www.sarraf.com/lifetime-guarantee/",
@@ -228,67 +228,67 @@
  ],
  "findings": [
   {
-   "id": "F19-01",
+   "id": "F20-01",
    "severity": "INFO",
    "row": null,
    "title": "Live gold panel prints 3,995.47/oz against the stored 3,996.31/oz benchmark",
-   "evidence": "P19-R01",
+   "evidence": "P20-R01",
    "source": "https://www.gold.org/goldhub/data/gold-prices",
    "detail": "Same source date line ('22 October, 2026') on both reads; the difference is -0.84 USD/oz (-0.021%), an intraday tick. The benchmark is retained, the reading recorded. No derived value was recomputed because nothing material changed.",
    "action": "Recorded in data/gold_spot.json as a dated cross-check; no stored value replaced."
   },
   {
-   "id": "F19-02",
+   "id": "F20-02",
    "severity": "MEDIUM",
    "row": "MN-01",
    "title": "Mene prints $1,442 against the stored $1,465",
-   "evidence": "P19-R08",
+   "evidence": "P20-R08",
    "source": "https://mene.com/products/knot-ring-gold",
    "detail": "Third independent read of the same discrepancy (Passes 17 and 18 saw it too). Mene sells by gram weight and states weights can fluctuate by up to 0.5 g, so the displayed price moves with the gold price. Both numbers stay published.",
    "action": "No overwrite. Existing PRICE_STRUCTURED_DIFFERS flag stands."
   },
   {
-   "id": "F19-03",
+   "id": "F20-03",
    "severity": "MEDIUM",
    "row": "BN-09",
    "title": "Blue Nile item 500000y is confirmed dead from an ordinary browser session",
-   "evidence": "P19-R12",
+   "evidence": "P20-R12",
    "source": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y",
    "detail": "The retailer's own 404 copy is served. BN-10, BN-11 and BN-12 were not re-read this pass and keep the earlier runner findings.",
    "action": "SOURCE_URL_DEAD stands. No replacement URL was guessed."
   },
   {
-   "id": "F19-04",
+   "id": "F20-04",
    "severity": "MEDIUM",
    "row": "RS-05",
    "title": "RS-05 is priced as a clearance item while the return policy excludes 'final sale' items",
-   "evidence": "P19-R06",
+   "evidence": "P20-R06",
    "source": "https://www.ross-simons.com/products/990022",
    "detail": "The page shows 'CLEARANCE 29% Off', original $3,995, sale $2,819, and does not state 'final sale'. Ross-Simons' 30-day policy lists 'Final sale items' as a return exclusion. Whether this clearance item is returnable must be confirmed in writing before paying - this is exactly the return-policy trap in the buying checklist.",
    "action": "New row flag CLEARANCE_RETURN_TERMS_UNCLEAR added; price and date untouched."
   },
   {
-   "id": "F19-05",
+   "id": "F20-05",
    "severity": "LOW",
    "row": "MJ-01",
    "title": "The stored Mejuri URL renders a different metal variant from the stored metal",
-   "evidence": "P19-R07",
+   "evidence": "P20-R07",
    "source": "https://mejuri.com/products/diamonds-team-ring",
    "detail": "The row records Solid Yellow Gold (14k) but the bare URL opens 'Solid White Gold (14k), Natural Diamond' at $548. A $548 reading therefore corroborates the white-gold variant, not the yellow-gold one.",
    "action": "Existing PRICE_VARIANT_DEPENDENT flag is accurate; no value changed. Yellow-gold price remains unconfirmed."
   },
   {
-   "id": "F19-06",
+   "id": "F20-06",
    "severity": "LOW",
    "row": null,
    "title": "Flag vocabulary is applied inconsistently to 'compare-at' price anchors",
-   "evidence": "P19-R02 / P19-R03",
+   "evidence": "P20-R02 / P20-R03",
    "source": "https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold",
    "detail": "AL-01 prints '$1,194 Everyone Else' (2.04x the $585 charged) and Allurez advertises 'up to 55% below retail', yet only the Sarraf rows carry SALE_MSRP_ANCHOR. The rows are not wrong - the flagging is inconsistent.",
    "action": "Published, not silently patched: adding flags to rows not re-read this pass would assert unverified facts about those pages."
   },
   {
-   "id": "F19-07",
+   "id": "F20-07",
    "severity": "LOW",
    "row": null,
    "title": "Documentation drift in README.md",
@@ -298,11 +298,11 @@
    "action": "Corrected in this pass; the historical figures are kept and labelled as of that pass."
   },
   {
-   "id": "F19-08",
+   "id": "F20-08",
    "severity": "INFO",
    "row": null,
    "title": "Stale PR #47 taken over; its Sarraf source fix re-verified and adopted",
-   "evidence": "P19-S01/P19-S02",
+   "evidence": "P20-S01/P20-S02",
    "source": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
    "detail": "PR #47 (arena/bc872fef-gold4) had no commits for three hours when this pass started, so the task was taken over and the handover recorded. Reviewing its delta showed one substantive change not already on main: cite Sarraf's dedicated returns page rather than a product page, and register the Lifetime Guarantee separately. Both pages were opened by this session before adoption; the returns page printed the 30-day window, the $25 non-refundable engraving fee, the special-order and third-party-resize exclusions and the Los Angeles return address, and the guarantee page printed the $100-or-10% handling fee and the third-party-alteration void.",
    "action": "data/sources.json: sarraf-returns now points at the policy page with the old URL kept in url_history; new source sarraf-warranty registered (32 sources). No row price, weight, karat or date changed."

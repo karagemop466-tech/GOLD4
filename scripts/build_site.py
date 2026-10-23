@@ -32,7 +32,7 @@ NAV = [
     ("pages/sources.html", "Sources", "sources"),
     ("pages/freshness.html", "Freshness", "freshness"),
     ("pages/session-review.html", "Current review", "session-review"),
-    ("pages/pass19.html", "Pass 19", "pass19"),
+    ("pages/pass20.html", "Pass 20", "pass20"),
     ("checklist.html", "Checklist", "checklist"),
     ("pages/log.html", "Log", "log"),
     ("dashboard.html", "Assay Lab+", "assay"),
@@ -175,7 +175,7 @@ LAYOUT = """<!doctype html>
   <strong>NO HALLUCINATIONS — dated research, not live offers.</strong>
   Historical captures below are not current verified quotes or a guarantee of purity.
   Unconfirmed current prices are blank in the <a href="{root}pages/session-review.html">current-session review / Flagged for Review</a>.
-  A new World Gold Council panel read ($3,995.47/oz, 23:43Z) differs from the stored historical benchmark ($3,996.31/oz); both are published — see Pass 19.
+  A new World Gold Council panel read ($3,995.47/oz, 23:43Z) differs from the stored historical benchmark ($3,996.31/oz); both are published — see Pass 20.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
   Re-check official sources and request independent testing before purchase.
 </aside>

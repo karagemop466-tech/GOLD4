@@ -1,4 +1,4 @@
-# Pass 19 — session `arena/bfbdf30c-gold4`
+# Pass 20 — session `arena/bfbdf30c-gold4`
 
 **Date:** 2026-10-23, evidence window 23:43–23:45Z · **Branch:** `arena/bfbdf30c-gold4`
 **Evidence:** [`observations.json`](observations.json) (machine-readable) · [`gates.txt`](gates.txt) / [`gates.json`](gates.json) (gate output)
@@ -56,20 +56,20 @@ re-used or implied. Passes 15–18's runner evidence remains the most recent all
 
 **Coverage:** 11 of 64 product rows touched, of which **5 fully corroborated** (price and, where published,
 weight). **53 rows were not re-read this pass** and keep their 2026-10-22 capture dates. The site says this
-on the Pass 19 page; it is not implied anywhere that a full sweep happened.
+on the Pass 20 page; it is not implied anywhere that a full sweep happened.
 
 ## 4. Findings (published, not "fixed" by overwriting)
 
 | ID | Severity | Finding | Action |
 |---|---|---|---|
-| F19-01 | info | Gold panel prints $3,995.47 vs stored $3,996.31 on the same source date (−0.021%) | benchmark retained; reading recorded in `data/gold_spot.json` |
-| F19-02 | medium | Menē MN-01 prints $1,442 vs stored $1,465 (−1.57%), third independent read | both published; no overwrite; `PRICE_STRUCTURED_DIFFERS` stands |
-| F19-03 | medium | Blue Nile BN-09 serves its own 404 copy to a normal browser | `SOURCE_URL_DEAD` stands; no URL guessed |
-| F19-04 | medium | RS-05 is priced as **clearance** ($3,995 → $2,819) while Ross-Simons excludes "Final sale items" from returns and the page never says *final sale* | new flag `CLEARANCE_RETURN_TERMS_UNCLEAR`; price/date untouched |
-| F19-05 | low | Mejuri MJ-01's stored URL renders a different metal variant (white gold) from the stored metal (yellow gold) | `PRICE_VARIANT_DEPENDENT` confirmed accurate; yellow-gold price unconfirmed |
-| F19-06 | low | Compare-at price anchors are flagged inconsistently: Allurez shows `$1,194 Everyone Else` (2.04×) and "up to 55% below retail" without `SALE_MSRP_ANCHOR` | published; not patched, because adding flags to rows not re-read would assert unverified facts |
-| F19-07 | low | README drift: "Seven CI gates" (pipeline runs eight / nine invocations); a Pass 15 section introduced as "latest" | corrected in this pass |
-| F19-08 | info | Stale PR #47's one still-valuable fix (cite Sarraf's dedicated policy pages) re-verified and adopted | `sarraf-returns` URL corrected with `url_history`; `sarraf-warranty` registered → 32 sources |
+| F20-01 | info | Gold panel prints $3,995.47 vs stored $3,996.31 on the same source date (−0.021%) | benchmark retained; reading recorded in `data/gold_spot.json` |
+| F20-02 | medium | Menē MN-01 prints $1,442 vs stored $1,465 (−1.57%), third independent read | both published; no overwrite; `PRICE_STRUCTURED_DIFFERS` stands |
+| F20-03 | medium | Blue Nile BN-09 serves its own 404 copy to a normal browser | `SOURCE_URL_DEAD` stands; no URL guessed |
+| F20-04 | medium | RS-05 is priced as **clearance** ($3,995 → $2,819) while Ross-Simons excludes "Final sale items" from returns and the page never says *final sale* | new flag `CLEARANCE_RETURN_TERMS_UNCLEAR`; price/date untouched |
+| F20-05 | low | Mejuri MJ-01's stored URL renders a different metal variant (white gold) from the stored metal (yellow gold) | `PRICE_VARIANT_DEPENDENT` confirmed accurate; yellow-gold price unconfirmed |
+| F20-06 | low | Compare-at price anchors are flagged inconsistently: Allurez shows `$1,194 Everyone Else` (2.04×) and "up to 55% below retail" without `SALE_MSRP_ANCHOR` | published; not patched, because adding flags to rows not re-read would assert unverified facts |
+| F20-07 | low | README drift: "Seven CI gates" (pipeline runs eight / nine invocations); a Pass 15 section introduced as "latest" | corrected in this pass |
+| F20-08 | info | Stale PR #47's one still-valuable fix (cite Sarraf's dedicated policy pages) re-verified and adopted | `sarraf-returns` URL corrected with `url_history`; `sarraf-warranty` registered → 32 sources |
 
 ## 5. Security / anti-hallucination checks (all nine invocations, after the edits)
 
@@ -90,24 +90,24 @@ Gate 1's single warning and Gate 7's two warnings are pre-existing and published
 ## 6. What this pass changed
 
 - `COORDINATION.md` — claim, handover of the stale PR #47 task, results, PR/merge record.
-- `README.md` — Pass 19 record; gate count corrected to eight (nine invocations) with Gate 8 listed;
+- `README.md` — Pass 20 record; gate count corrected to eight (nine invocations) with Gate 8 listed;
   source count 32; "Latest pass — Pass 15" re-labelled as the historical record it is; benchmark
   limitation now records the fourth same-day read and the retention policy.
 - `data/rings.json` — **additive only**: RS-05 gains `CLEARANCE_RETURN_TERMS_UNCLEAR` and a
-  `pass19_observation` note. No price, weight, karat, SKU, URL or date changed.
-- `data/gold_spot.json` — **additive only**: `pass19_live_crosscheck_2026_10_23`.
+  `pass20_observation` note. No price, weight, karat, SKU, URL or date changed.
+- `data/gold_spot.json` — **additive only**: `pass20_live_crosscheck_2026_10_23`.
 - `data/sources.json` — `sarraf-returns` now cites the policy page (old URL kept in `url_history`),
   new `sarraf-warranty` source → 32 registered sources.
-- `scripts/build_pass19.py`, `scripts/run_gates_pass19.py` (new); `scripts/build_site.py` (nav entry and
+- `scripts/build_pass20.py`, `scripts/run_gates_pass20.py` (new); `scripts/build_site.py` (nav entry and
   a flag label for the new flag).
-- Generated: `index.html`, `pages/**` (incl. new `pages/pass19.html`), `reviews/index19.html`,
-  `reviews/pass19/{observations.json,gates.json,gates.txt}`.
+- Generated: `index.html`, `pages/**` (incl. new `pages/pass20.html`), `reviews/index20.html`,
+  `reviews/pass20/{observations.json,gates.json,gates.txt}`.
 
 ## 7. What a human should still do
 
 1. **Treat every price as a dated reading.** 53 rows were not re-read in this pass.
-2. **Before paying for RS-05**, get the return terms for a clearance item in writing (F19-04).
-3. **For MJ-01**, select the yellow-gold variant and confirm the price in the cart (F19-05).
+2. **Before paying for RS-05**, get the return terms for a clearance item in writing (F20-04).
+3. **For MJ-01**, select the yellow-gold variant and confirm the price in the cart (F20-05).
 4. **After delivery**, take the ring to an independent jeweller for XRF purity testing *and* a gram-weight
    check, before resizing. A stamp is a claim; XRF is the check.
 5. **Next review pass: look for hallucinations again** — source link, read date, read path, and whether
