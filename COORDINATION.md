@@ -1,5 +1,64 @@
 # COORDINATION.md — GOLD4 shared task board
 
+## Session `arena/2189e10f-gold4` — Pass 18: fresh-runner evidence re-check, documentation-drift repair & publish (2026-10-23)
+
+**Pass-number collision, logged before publishing.** This session originally claimed "Pass 17". While it ran, session `arena/0029d936-gold4` published its own **Pass 17** (`reviews/pass17_0029d936.md`) and merged it to `main` first (PR #43). Their pass number therefore stands on `main`; **this pass is renumbered Pass 18** and no other session's entry is renumbered. The collision was resolved by re-running every generator on the merged tree, not by hand-merging pages.
+
+**Claim written and pushed before any file in this session's scope was edited.**
+This session read the whole board first (all 18 pass records) and ran the baseline gates on `main@6aa9e05` **before** claiming. No other session's claim is open at claim time (`03c0c10f`, `46691f83`, `04f1f10d`, `d1586f6a`, `b8c1f11d`, `a0be79d4`, `e04b126a`, `b2c018a8` are all recorded `done`/merged; `46691f83`'s un-merged branch is already logged as a stale-claim handoff at 11:15 UTC and remains untouched by me).
+
+**Baseline gates re-run on `main@6aa9e05` at claim time (all green, nothing inherited is broken):**
+G1 `audit.py` PASS (1 warning: BE-05 V2-only) · G2 `check_site.py` PASS (27 pages) · G3 `verify.py` PASS (64 records) · G4 `verify_a0be79d4.py` PASS (37 pages, 2,072 links, 0 dead) · G5 `audit_hallucinations.py` PASS (941 checks) · G6b citation integrity PASS · G7 `audit_freshness.py` PASS (295 checks, 2 warnings BE-06/BE-07).
+
+**Branch note (deviation, logged deliberately, same as every prior session):** the board's convention is `session-<id>/<task>`; Arena Agent Mode pins this session to `arena/2189e10f-gold4` and forbids creating or pushing any other branch. All work is committed there. No other branch is created, modified or force-pushed. This sandbox has **no outbound internet** (verified: `gold.org` and `allurez.com` both fail to connect), so every live reading this pass is taken from a GitHub-hosted runner that does, exactly as Pass 16 did — no value is written from memory or inference.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 45 | **Fresh runner evidence (20:19:32Z).** Re-open every row URL and registered source from a GitHub runner *today* (Pass 16's evidence is from 10:10 UTC; this pass re-takes it), commit the artifact, then reconcile it line by line against all 64 stored rows + 31 sources. No stored value overwritten; drift is flagged, never silently applied. | **done** — evidence `reports/live_source_check_20261023T201932Z.json`; 51 rows answered / 7 × 403 / 5 × 404 / 1 JS shell; **zero state change vs the 10:10Z pass** (same 45 CONFIRMED, same 4 DIFFERS, same 5 dead at that moment; RS-05 was then fixed — see below). Benchmark re-read separately: **moved to $3,996.31/oz** | `arena/2189e10f` | `scripts/live_source_check.py` (read-only use), `reports/live_source_check_*.json`, `data/source_health.json`, `data/rings.json` (additive `source_check` blocks + flags only) |
+| 46 | **Documentation-drift repair.** `README.md` still prints the *superseded* benchmark "$4,028.53/oz, data as of 21 Oct 2026" in its file table and says "14 registered sources" when `data/sources.json` holds 31, and says "all five CI gates" when the pipeline now runs seven. Find every such stale claim in `README.md` / `AUDIT.md` / `VERIFICATION.md` / `checklist` copy and correct it to what the data actually says — no new numbers, only the numbers already in `data/`. | **done** — 6 stale claims corrected in `README.md` (benchmark, source count, gate count, provenance, product-page count, pass range) + regenerated site | `arena/2189e10f` | `README.md`, `AUDIT_AND_REPO_REVIEW.md` (read-only review notes only) |
+| 47 | **Independent verification of the published site** — re-fetch every internal link on the built tree, re-run all 7 gates on the combined result, confirm the no-hallucination banner and the Flagged-for-Review page are served. | **done** — 7/7 gates green after rebuild; 27 pages, 2,072 links, 0 dead | `arena/2189e10f` | `reports/`, `pages/**`, `index.html` (regenerated only) |
+| 48 | **Publish** — PR → merge without waiting → confirm the Pages deploy → record PR link, merge commit and deploy run here. | **in progress** | `arena/2189e10f` | this file |
+
+### Result of Pass 18 (line by line)
+
+**What was re-read, when, and from where.** My sandbox has no outbound internet (verified twice: `gold.org` and `allurez.com` both fail at TLS). Every number this pass is therefore either (a) machine-read from the retailer's own page by a GitHub runner with open internet, evidence committed as `reports/live_source_check_20261023T201932Z.json`, or (b) read by hand in a browser-rendered fetch, timestamped below. Nothing was written from memory.
+
+| Check | Method | Result |
+|---|---|---|
+| 64 row URLs + 31 sources | runner GET, **20:19:32Z and again 20:23:21Z** | 51 answered · 7 refused (403, all Brilliant Earth) · 5 dead (404, **one of which — RS-05 — was then resolved and its URL corrected**) · 1 JS shell (AN-01) — **identical both runs, and identical to the 10:10Z pass: three independent reads, zero drift** |
+| Price reconciliation vs the 10:10Z pass | row-by-row diff of `source_health` | **zero change** — 45 CONFIRMED, 4 DIFFERS, 2 no stored price, 1 not machine-readable, 12 source-not-reached, identical in both passes |
+| Gold benchmark | browser-rendered read of the WGC panel, 20:23Z | **moved to $3,996.31/oz** (was $4,024.45 at 10:02Z, −0.70%). Corroborated 20:19Z by Kitco $3,996.30, BullionVault $3,996.62, JM Bullion ask $4,010.61. All 17 weighted rows recomputed at $128.48435/g; the superseded reading kept in `prior_captures` |
+| Derived arithmetic | independent `Decimal` re-derivation (not `compute.py`) | 17/17 weighted rows match to the cent at the new benchmark; 47 weight-blank rows have genuinely null derived fields |
+| Page availability (new) | runner, page's own schema.org markup | **BN-26 publishes `availability=SoldOut` and `og:availability="out of stock"` beside an `$858` price meta** — the blank price is confirmed correct, and the observation is now recorded rather than assumed |
+| FTC sources that 404 to the runner | browser-rendered read, 20:24Z | both articles load in full and are unchanged — bot-filtering, not link rot. No flag change needed; the existing `manual_verification` note stands |
+| Row integrity | all 64 rows, own script | 0 non-official hosts, 0 missing source links, 0 missing capture dates, 0 blanks without a flag |
+| Deployed site | fetch of https://karagemop466-tech.github.io/GOLD4/ | banner, counts (64/10/62/17/250) and benchmark matched `main` before this pass |
+
+**Documentation drift repaired (found by comparing the README line by line with `data/*.json`).** This is the class of irregularity the brief's "no hallucinations" rule is about: a correct number left in place after it stopped being true.
+
+| Stale claim | Correct value (from `data/`) |
+|---|---|
+| "benchmark $4,028.53/oz, data as of 21 Oct 2026" | $4,024.45 → now $3,996.31/oz with timestamp; $4,024.45 and $4,028.53 kept in `prior_captures` |
+| "The 14 registered sources" | 31 sources in `data/sources.json` |
+| "Five CI gates" (and Gate 7 missing from the list) | seven gates: 1 audit · 2 check_site · 3 verify · 4 verify_a0be79d4 · 5 audit_hallucinations · 6a/6b citations · 7 freshness |
+| provenance "60 V1 · 3 V2 · 1 U" | 62 V1 · 1 V2 (BE-05) · 1 U (BN-26) |
+| "Tier C: 20 product pages" | 64 product pages across 10 retailers |
+| "passes (0–15)" | 0–17 |
+
+**Provenance bug fixed in the tooling.** `scripts/live_source_check.py` stamped every artifact it produced with `"session": "arena/03c0c10f-gold4", "pass": "Pass 12"` — so evidence collected *today by another session* would have been labelled with the wrong author and pass. It now records the branch/ref that actually ran it (verified in the 20:19Z artifact: `"session": "arena/2189e10f-gold4"`).
+
+**Flagged, not fixed (published on the Flagged/Freshness pages; none blocks the merge).**
+1. **RS-05 — RESOLVED this pass.** The 404 was a URL migration: the product is live at `https://www.ross-simons.com/products/990022` (Item 990022, **$2,819**, sizes 5–8 in stock), found by the concurrent Pass 17 (`arena/0e04577b-gold4`) and independently confirmed here by my own browser-rendered fetch at 20:31Z. The row's URL was corrected; **its price and 2026-10-22 capture date were not touched**. `BN-09`, `BN-10`, `BN-11`, `BN-12` (Blue Nile) remain dead on four consecutive runner reads and stay flagged `SOURCE_URL_DEAD` — finding their current URLs still needs a human, and guessing URL forms would manufacture evidence.
+2. Brilliant Earth refuses every automated check (403) on all 7 rows and all 4 policy pages. No price claim is made about them; BE-05 remains V2-only.
+3. Four rows print a different structured price from the stored one (VR-01, MN-01, MN-02, MJ-06) — variant/configuration effects. Both numbers are published; nothing overwritten.
+4. **`sarraf-returns` — investigated and WITHDRAWN as a finding.** It is registered against a *product* URL, which looked wrong. It is not: Sarraf prints its full "30-Day Return Policy" on its product pages, and this session confirmed the clause text on that exact page at 2026-10-23T20:33Z (return window, the $25 non-refundable engraving fee, "special ordered items … cannot be accepted for return", the Los Angeles return address). The registry entry is correct by design and nothing was changed. Recorded here because a retracted flag is part of the audit trail.
+
+**Non-overlap declaration.** This session edits: this board section, `data/rings.json` (additive `source_check`/reverification fields + flags only — no existing value, date or note is changed or deleted), `data/source_health.json`, `reports/live_source_check_*.json`, `README.md`, the generated site (`index.html`, `pages/**`, `docs/**` regenerated by `scripts/build_site.py` / `generate_site.py`), `VERIFICATION.md` (regenerated) and `data/verification_log.json` (append one pass record). It does **not** edit `scripts/audit.py`, `scripts/verify.py`, `scripts/check_site.py`, `scripts/audit_freshness.py`, `scripts/audit_hallucinations.py`, `scripts/verify_a0be79d4.py`, `scripts/session_*/**`, `.github/**`, `data/preserved/**`, `docs/legacy/**`, `reviews/**` or `assets/**`. Anything in those files that appears to need a change is **logged as a request below**, not edited.
+
+**Requests to note (logged, not acted on):**
+1. `scripts/audit_freshness.py` owner — BE-06/BE-07 still warn because the runner is 403-walled by Brilliant Earth while the row is dated on the evidence day. The warning is *correct and should stay*; this session only records it, again, on the Freshness page.
+2. Any future session — the 5 dead row URLs (BN-09…BN-12, RS-05) have now been dead across two consecutive runner passes (10:10 UTC and this pass). They need a human to find the retailer's current product URL; automated guessing of URL forms would itself be a hallucination risk and is not attempted.
+
 ## Session `arena/0e04577b-gold4` — Pass 17: final integration, line-by-line re-verification & GitHub Pages re-publication (2026-10-23)
 
 **Claim (written and pushed before any file in scope was edited).** No other session branch or open PR exists (`origin/main` only, checked 2026-10-23), so this session acts as the *final integration session*: it may touch shared outputs (front-page summary, navigation, verification log) after re-verifying the combined data line by line. **Branch note (deviation, logged deliberately):** the board's convention is `session-<id>/<task>`. Arena Agent Mode pins this session to branch **`arena/0e04577b-gold4`** and forbids creating or pushing any other branch, so all work is committed there (functionally `session-0e04577b/pass17-integration`). No other branch will be modified; nothing will be force-pushed. **No-hallucination rule (governing this pass):** every price, weight, karat, policy and link must be readable on the official page linked beside it, with a read date. Anything that cannot be so read stays **blank** and is flagged `UNVERIFIED` on the Flagged for Review page. Nothing is estimated, converted between currencies, or copied from a blog/marketplace. The hallucination/security gates (`scripts/audit.py`, `audit_hallucinations.py`, `audit_freshness.py`, `check_site.py`, `verify.py`, `verify_a0be79d4.py`, citation gate) are re-run after every review step in this pass.
@@ -17,6 +76,7 @@
 **Baseline at claim time (re-run fresh 2026-10-23 on the branched tree, before any edit):** `compute.py` 64 rows · 17 with published weight · 62 with verified price · spot $129.3891/g ($4,024.45/oz, WGC "Data as of 22 October, 2026"); Gate 1 `audit.py` **PASS 131 / 1 warning (BE-05 V2-only) / 0 failures**; Gate 2 `check_site.py` **PASS 27 pages**; Gate 3 `verify.py` **PASS 64 records**; Gate 4 `verify_a0be79d4.py` **PASS** (2,072 links, 0 dead); Gate 5 `audit_hallucinations.py` **PASS 941 checks**; Gate 6 `audit_freshness.py` **PASS 295 checks, 2 warnings (BE-06/BE-07)**; citation gate **PASS** (109 CFR refs, self-test rejects the known-bad § 23.9 citation). Independent re-derivation by this session: **0 mismatches** across all 17 weighted rows, **0 phantom values** (no weight ⇒ no gold value). Flag inventory: 250 flag instances across 64 rows (top: `HALLMARK_NOT_PUBLISHED` 64, `NO_WEIGHT_PUBLISHED` 47, `SOLID_NOT_STATED` 45). Categories: solitaire 35 · pavé/accent 15 · band 14. Retailers (10): Blue Nile 26, Sarraf 8, Brilliant Earth 7, Mejuri 7, Ross-Simons 5, Allurez 4, VRAI 2, Catbird NYC 2, Menē 2, Anjolee 1.
 
 ---
+
 
 ## Session `arena/03c0c10f-gold4` — Pass 16: the first ONLINE source-health audit, price reconciliation & landing-page consolidation (2026-10-23)
 

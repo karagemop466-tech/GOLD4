@@ -1,8 +1,8 @@
 {
-  "generated_utc": "2026-10-23T20:27:07Z",
+  "generated_utc": "2026-10-23T20:34:06Z",
   "spot": {
-    "value_usd_per_oz": 4024.45,
-    "usd_per_gram": 129.389072,
+    "value_usd_per_oz": 3996.31,
+    "usd_per_gram": 128.48435,
     "price_date": "22 October, 2026",
     "captured_utc": "2026-10-23",
     "source_url": "https://www.gold.org/goldhub/data/gold-prices"
@@ -59,7 +59,7 @@
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14) + arena/46691f83-gold4 (Pass 15)",
       "reverification": "Pass 12 (2026-10-23): price $585, 'Setting only. Center stone sold separately.', style number NG4426, metal 14k Yellow Gold and 'Approximate Metal Weight 3.58 grams' all re-read and match this record. Earlier: Pass 2: page re-fetched; $585 and 'Approximate Metal Weight 3.58 grams' re-read and match this record. PASS 14 (2026-10-23): official Allurez page re-fetched live a second time by this session and re-read: '$585', 'Setting only. Center stone sold separately.', Style number NG4426, Metal 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams'. Identical to the Pass 12 reading — two sessions, same values. Earlier: Independent Pass 15 read (arena/46691f83-gold4, 2026-10-23): $585, 'Setting only. Center stone sold separately.', style NG4426, 14k Yellow Gold and 'Approximate Metal Weight 3.58 grams' re-read and unchanged. PASS 17 (2026-10-23, arena/0e04577b-gold4): official Allurez page re-fetched live and re-read: '$585', 'Setting only. Center stone sold separately.', Style number NG4426, Metal 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams'. Identical to the stored record — a further independent corroboration. No value changed.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -79,9 +79,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 2.0883,
-      "gold_value_usd": 270.21,
-      "legal_min_gold_value_usd": 266.97,
-      "price_to_gold_multiple": 2.165,
+      "gold_value_usd": 268.32,
+      "legal_min_gold_value_usd": 265.1,
+      "price_to_gold_multiple": 2.18,
       "price_per_gold_gram_usd": 280.13,
       "multiple_basis": "setting_metal_only"
     },
@@ -119,7 +119,7 @@
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $724 and 'Approximate Metal Weight 3.4 grams' re-read and match this record.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -139,9 +139,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 1.9833,
-      "gold_value_usd": 256.62,
-      "legal_min_gold_value_usd": 253.54,
-      "price_to_gold_multiple": 2.821,
+      "gold_value_usd": 254.83,
+      "legal_min_gold_value_usd": 251.77,
+      "price_to_gold_multiple": 2.841,
       "price_per_gold_gram_usd": 365.04,
       "multiple_basis": "setting_metal_only"
     },
@@ -181,7 +181,7 @@
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $848 and 'Approximate Metal Weight 4.4 grams' re-read and match this record.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -201,9 +201,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 2.5667,
-      "gold_value_usd": 332.1,
-      "legal_min_gold_value_usd": 328.11,
-      "price_to_gold_multiple": 2.553,
+      "gold_value_usd": 329.78,
+      "legal_min_gold_value_usd": 325.82,
+      "price_to_gold_multiple": 2.571,
       "price_per_gold_gram_usd": 330.39,
       "multiple_basis": "setting_metal_only"
     },
@@ -243,7 +243,7 @@
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,425 and 'Approximate Metal Weight 5.3 grams' re-read and match this record.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -263,9 +263,9 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 3.975,
-      "gold_value_usd": 514.32,
-      "legal_min_gold_value_usd": 509.52,
-      "price_to_gold_multiple": 2.771,
+      "gold_value_usd": 510.73,
+      "legal_min_gold_value_usd": 505.96,
+      "price_to_gold_multiple": 2.79,
       "price_per_gold_gram_usd": 358.49,
       "multiple_basis": "setting_metal_only"
     },
@@ -302,12 +302,12 @@
         "WHITE_GOLD",
         "SOURCE_PRICE_NOT_MACHINE_READABLE"
       ],
-      "flag_detail": "The published configuration is 14K white gold with a 0.50 ct LAB-CREATED centre diamond, so this price must not be compared with setting-only prices, nor with natural-diamond prices: a large part of the total is the stone, not the gold. The metal weight (2.90 g, ring size 6.5) is the seller's own 'approx.' figure and includes only the mounting. | Pass 16 source check 2026-10-23 10:00Z: the page answered HTTP 200 but serves a JavaScript shell with no product text, so the price could not be read without a browser render. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the page answered HTTP 200 but serves a JavaScript shell with no product text, so the price could not be read without a browser render. No value was changed.",
+      "flag_detail": "The published configuration is 14K white gold with a 0.50 ct LAB-CREATED centre diamond, so this price must not be compared with setting-only prices, nor with natural-diamond prices: a large part of the total is the stone, not the gold. The metal weight (2.90 g, ring size 6.5) is the seller's own 'approx.' figure and includes only the mounting. | Pass 16 source check 2026-10-23 10:00Z: the page answered HTTP 200 but serves a JavaScript shell with no product text, so the price could not be read without a browser render. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the page answered HTTP 200 but serves a JavaScript shell with no product text, so the price could not be read without a browser render. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: $870.76 and 'Approx. Metal Weight: 2.90 Gr.' both re-read from the page's own Product Details table, so the weight is now recorded. The same table states the centre diamond colour and clarity as 'Lab Created FG' / 'Lab Created VS'.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "EMPTY_OR_JS_SHELL",
@@ -319,9 +319,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 1.6917,
-      "gold_value_usd": 218.88,
-      "legal_min_gold_value_usd": 216.26,
-      "price_to_gold_multiple": 3.978,
+      "gold_value_usd": 217.35,
+      "legal_min_gold_value_usd": 214.74,
+      "price_to_gold_multiple": 4.006,
       "price_per_gold_gram_usd": 514.74,
       "multiple_basis": "includes_centre_stone"
     },
@@ -360,9 +360,9 @@
       "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
       "price_usd": 1190.0,
       "price_source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
-      "flag_detail": "Price \"$1,190 (Setting Only)\" read from the 14K yellow gold page on 2026-10-22. The page publishes no gram weight, no hallmark and no \"solid gold\" wording. Its badge reads \"Free 1-Year Resizing\", while the earlier capture of the same page described one complimentary resize within 60 days — recorded as inconsistent rather than silently overwritten. Pass 7 (arena/1372cb32-gold4, 2026-10-22): this page is currency-localized - the re-check fetches served a EUR rendering ('1,350.00 EUR (Setting Only)') with a Global-e checkout, so the recorded USD figure could not be reproduced in this pass and is retained only from the earlier same-day USD capture. Metal (14K Yellow Gold), style (BE1D2444-14KY) and 2mm width did re-confirm. Open the page with United States / USD selected to see the recorded figure. Cross-session corroboration (arena/22b5b06c-gold4, 2026-10-22T23:39Z): an independent dated snapshot of the same product page (2026-08-27) and schema.org JSON-LD on three official Brilliant Earth category pages (2026-08-25, 2026-09-14, 2026-09-23) all show $1,190 (Setting Only), style BE1D2444-14KY, 2 mm, claw prong — consistent with this record. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
+      "flag_detail": "Price \"$1,190 (Setting Only)\" read from the 14K yellow gold page on 2026-10-22. The page publishes no gram weight, no hallmark and no \"solid gold\" wording. Its badge reads \"Free 1-Year Resizing\", while the earlier capture of the same page described one complimentary resize within 60 days — recorded as inconsistent rather than silently overwritten. Pass 7 (arena/1372cb32-gold4, 2026-10-22): this page is currency-localized - the re-check fetches served a EUR rendering ('1,350.00 EUR (Setting Only)') with a Global-e checkout, so the recorded USD figure could not be reproduced in this pass and is retained only from the earlier same-day USD capture. Metal (14K Yellow Gold), style (BE1D2444-14KY) and 2mm width did re-confirm. Open the page with United States / USD selected to see the recorded figure. Cross-session corroboration (arena/22b5b06c-gold4, 2026-10-22T23:39Z): an independent dated snapshot of the same product page (2026-08-27) and schema.org JSON-LD on three official Brilliant Earth category pages (2026-08-25, 2026-09-14, 2026-09-23) all show $1,190 (Setting Only), style BE1D2444-14KY, 2 mm, claw prong — consistent with this record. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 403,
         "state": "REFUSED_403",
@@ -416,9 +416,9 @@
       "price_usd": 1390.0,
       "price_source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
       "pair_note": "Same design, width and prong style as BE-01; the only published difference is the karat.",
-      "flag_detail": "Price \"$1,390 (Setting Only)\" read from the 18K yellow gold page on 2026-10-22. No gram weight, hallmark or \"solid gold\" wording is published on the page. Pass 7 (arena/1372cb32-gold4, 2026-10-22): the USD 1,390 price, 18K metal and BE1D2444-18KY style re-confirmed on the live page. The same currency-localization behaviour seen on the 14K sibling page (BE-01) can serve a non-USD rendering depending on the visitor, so confirm the page is showing USD before relying on the figure. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
+      "flag_detail": "Price \"$1,390 (Setting Only)\" read from the 18K yellow gold page on 2026-10-22. No gram weight, hallmark or \"solid gold\" wording is published on the page. Pass 7 (arena/1372cb32-gold4, 2026-10-22): the USD 1,390 price, 18K metal and BE1D2444-18KY style re-confirmed on the live page. The same currency-localization behaviour seen on the 14K sibling page (BE-01) can serve a non-USD rendering depending on the visitor, so confirm the page is showing USD before relying on the figure. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 403,
         "state": "REFUSED_403",
@@ -471,7 +471,7 @@
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,000 'Setting Price', 14K Yellow Gold, stock 501130y14 and 1.80mm width re-read and match this record.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -533,7 +533,7 @@
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,155 'Setting Price', 18K Yellow Gold, stock 501130y and 1.80mm width re-read and match this record.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -593,7 +593,7 @@
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,000 'Setting Price', 14K Yellow Gold, stock 501140y14 and 1.90mm width re-read and match this record.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -657,7 +657,7 @@
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $935 'Setting Price', 14K Yellow Gold, stock 501310y14 and 2.50mm width re-read and match. The description copy again reads 'crafted in 18k yellow gold' on this 14K page, so COPY_INCONSISTENT_METAL is re-confirmed.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -719,7 +719,7 @@
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,310 'Setting Price', 18K Yellow Gold, stock 501310y and 2.50mm width re-read and match this record.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -779,7 +779,7 @@
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,295 'Setting Price', 18K Yellow Gold, stock 501760y and 2.00mm width re-read and match this record.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -842,7 +842,7 @@
       "reverification": "Pass 2: page re-fetched; $870 'Setting Price', 14K Yellow Gold, stock 500000y14 and 1.90mm width re-read and match. The description again says the ring has 'platinum prongs', so MIXED_METAL_UNCLEAR is re-confirmed.",
       "pair_id": "PAIR-BN-FOURPRONG",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -904,7 +904,7 @@
       "reverified_by": "arena/fd51d093-gold4 (Pass 2)",
       "reverification": "Pass 2: page re-fetched; $1,500 'Setting Price', 14K Yellow Gold, stock 501590y14 and 2.00mm width re-read and match. The description again says the diamonds are 'set in 14k white gold' on this yellow-gold page, so COPY_INCONSISTENT_METAL is re-confirmed.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -967,7 +967,7 @@
       "reverification": "Pass 12 (2026-10-23): price $548 re-read, but the page opened on the 'Solid White Gold (14k), Natural Diamond' variant, not the 14k yellow gold recorded in this row; no gram weight is published on the page. Earlier: Pass 2: $548 re-read from the 14k Yellow Gold Rings collection card ('Solid Yellow Gold (14k), Natural Diamond') and matches. The product page itself opens on the white-gold variant, also $548. Earlier: Independent Pass 15 read (arena/46691f83-gold4, 2026-10-23): landed on the same Solid White Gold (14k) / Natural Diamond variant at $548 — price corroborated; yellow-gold variant still not re-confirmed. PASS 17 (2026-10-23, arena/0e04577b-gold4): official Mejuri page re-fetched live: the URL again resolves to the 'Solid White Gold (14k), Natural Diamond' variant at $548 (price matches the stored record; metal variant still differs from this row's yellow-gold basis — PRICE_VARIANT_DEPENDENT stands). The same page's Materials blurb is headed 'Solid Yellow Gold (14k)' while describing white-gold rhodium finishing, and states a two-year warranty and free 30-day returns from delivery. No gram weight published. No value changed.",
       "variant_note": "The product URL opens on the Solid White Gold (14k) variant by default; the yellow-gold variant was opened on the same URL on 2026-10-22 and displayed the same $548, so the price is not variant-specific on this product. The ring is sold as fine jewellery, not bridal.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1027,7 +1027,7 @@
       "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5)",
       "reverification": "Pass 2: $648 re-read from the 14k Yellow Gold Rings collection card and matches.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1091,7 +1091,7 @@
       "reverification": "Pass 2: $548 re-read from the 14k Yellow Gold Rings collection card and matches.",
       "variant_note": "The product URL opens on the Solid White Gold (14k) variant by default; the yellow-gold variant was opened on the same URL on 2026-10-22 and also displayed $548. The ring is engravable, and Mejuri's returns terms make engraved products non-returnable at any time.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1151,7 +1151,7 @@
       "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5)",
       "reverification": "Pass 2: $798 re-read from the 14k Yellow Gold Rings collection card and matches.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1215,7 +1215,7 @@
       "reverification": "Pass 2: $598 re-read from the 14k Yellow Gold Rings collection card ('Lab Grown Diamond, Solid Yellow Gold (14k)') and matches.",
       "variant_note": "The page opens on a Sterling Silver variant at \"From $398\"; the 14k yellow gold + lab-grown diamond variant in this row displays \"From $598\", which is a \"From\" figure rather than a fixed quote.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1282,17 +1282,17 @@
         "WIDTH_UNVERIFIED",
         "PRICE_STRUCTURED_DIFFERS"
       ],
-      "flag_detail": "The 'From $1,035' figure comes from the VRAI engagement-rings listing page for this design; the 2.86 g metal weight comes from the design's own configuration page. Both are VRAI pages for the same design, but they are not the same URL, so confirm the exact price for your ring size and carat in the cart before relying on it. SPEC_LISTED_PAVE_ON_PLAIN_BAND: on the re-fetched design page the selected band is a PLAIN band ('Band: Plain band'), yet the Setting Details block still lists 'Pave carat weight:0.18ctw'. The weight figure quoted in this row is the 'Metal weight' line, which is unambiguous, but the pavé line suggests the spec block is shared across band variants. Confirm which band you are buying before relying on any diamond-weight figure. Also re-checked 2026-10-22: the listing card that shows \"From $1,035\" links to configuration id ...-32797281484893, not to the configuration id in this row (...-40635875360861) from which the metal weight was read. Same design and metal, different configuration identifier — confirm the setting price for your exact ring size in the cart. WIDTH_UNVERIFIED: no numeric band width is published on the design page — its specs say only 'Band width: Standard' (the one millimetre figure shown is 'Band depth: 1.6mm', a different dimension). The 1.7 mm value carried by this row since the first capture could not be re-read from any official page, so the width is blanked (independent re-verification, arena/b2c018a8-gold4, 2026-10-22). | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 2,185.00 USD via json-ld against the stored $1,035.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 10:10Z: the page's own structured data currently prints 2,185.00 USD via json-ld against the stored $1,035.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
+      "flag_detail": "The 'From $1,035' figure comes from the VRAI engagement-rings listing page for this design; the 2.86 g metal weight comes from the design's own configuration page. Both are VRAI pages for the same design, but they are not the same URL, so confirm the exact price for your ring size and carat in the cart before relying on it. SPEC_LISTED_PAVE_ON_PLAIN_BAND: on the re-fetched design page the selected band is a PLAIN band ('Band: Plain band'), yet the Setting Details block still lists 'Pave carat weight:0.18ctw'. The weight figure quoted in this row is the 'Metal weight' line, which is unambiguous, but the pavé line suggests the spec block is shared across band variants. Confirm which band you are buying before relying on any diamond-weight figure. Also re-checked 2026-10-22: the listing card that shows \"From $1,035\" links to configuration id ...-32797281484893, not to the configuration id in this row (...-40635875360861) from which the metal weight was read. Same design and metal, different configuration identifier — confirm the setting price for your exact ring size in the cart. WIDTH_UNVERIFIED: no numeric band width is published on the design page — its specs say only 'Band width: Standard' (the one millimetre figure shown is 'Band depth: 1.6mm', a different dimension). The 1.7 mm value carried by this row since the first capture could not be re-read from any official page, so the width is blanked (independent re-verification, arena/b2c018a8-gold4, 2026-10-22). | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 2,185.00 USD via json-ld against the stored $1,035.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 20:23Z: the page's own structured data currently prints 2,185.00 USD via json-ld against the stored $1,035.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5) + arena/b2c018a8-gold4 (independent re-verification, 2026-10-22)",
       "reverification": "Pass 2: 'Metal weight:2.86g (Ring size 6)' re-read on the design page, and 'From $1,035' re-read on the VRAI engagement-rings listing card; both match this record. Independent pass (arena/b2c018a8, 2026-10-22): 'From $1,035' on the listing page and 'Metal weight:2.86g (Ring size 6)' on the design page re-read and match; no numeric band width is published anywhere on the page ('Band width: Standard', 'Band depth: 1.6mm'), so the earlier 1.7 mm value is blanked and flagged WIDTH_UNVERIFIED.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
         "price_state": "DIFFERS",
-        "page_title": "Classic Round Brilliant Engagement Ring | Plain Band | 18k Yellow Gold",
+        "page_title": "Your Privacy Choices",
         "found_prices": [
           {
             "value": 2185.0,
@@ -1307,9 +1307,9 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 2.145,
-      "gold_value_usd": 277.54,
-      "legal_min_gold_value_usd": 274.95,
-      "price_to_gold_multiple": 3.729,
+      "gold_value_usd": 275.6,
+      "legal_min_gold_value_usd": 273.03,
+      "price_to_gold_multiple": 3.755,
       "price_per_gold_gram_usd": 482.52,
       "multiple_basis": "setting_metal_only"
     },
@@ -1350,7 +1350,7 @@
       "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5) + arena/b2c018a8-gold4 (independent re-verification, 2026-10-22)",
       "reverification": "Pass 2: 'Metal weight:2.84g (Ring size 6)' re-read and matches. The design page again published no setting price (it offers 'Continue to diamond'), so the price stays blank. Independent pass (arena/b2c018a8, 2026-10-22): 'Metal weight:2.84g (Ring size 6)' re-read and matches; still no setting price published; no numeric band width published ('Band width: Standard', 'Band depth: 1.6mm'), so the earlier 1.6 mm value is blanked and flagged WIDTH_UNVERIFIED. Also removed from flag_detail a sentence copied from VR-01 that cited VR-01's configuration id.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1370,8 +1370,8 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 2.13,
-      "gold_value_usd": 275.6,
-      "legal_min_gold_value_usd": 273.03,
+      "gold_value_usd": 273.67,
+      "legal_min_gold_value_usd": 271.12,
       "price_to_gold_multiple": null,
       "price_per_gold_gram_usd": null,
       "multiple_basis": "setting_metal_only"
@@ -1408,11 +1408,11 @@
         "MIXED_METAL_UNCLEAR",
         "SOURCE_BOT_BLOCKED"
       ],
-      "flag_detail": "Title states 18K Yellow Gold while Ring Information specifies Prong metal: 14K White Gold (expect 14K XRF reading on head vs 18K on shank). Stale search cache showed $650 vs $850 live (+30.8%). | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
+      "flag_detail": "Title states 18K Yellow Gold while Ring Information specifies Prong metal: 14K White Gold (expect 14K XRF reading on head vs 18K on shank). Stale search cache showed $650 vs $850 live (+30.8%). | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 403,
         "state": "REFUSED_403",
@@ -1468,7 +1468,7 @@
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14) + arena/46691f83-gold4 (Pass 15)",
       "reverification": "PASS 14 (2026-10-23): official Sarraf page re-fetched live and re-read: 'Now: US$352.00 -15% OFF', 'Was: US$412.00', 'MSRP: US$1,369.00', SKU 10KW-LPBWB05 / Stock 142707, Material '10K Solid Gold', 'Approximate Metal Weight: 4.80 grams', plus the size caveat 'The weight listed is an approximate weight of a ring in size 10'. Stored price, karat, weight and solid-gold wording all match. Earlier: Independent Pass 15 read (arena/46691f83-gold4, 2026-10-23): US$352.00, SKU 10KW-LPBWB05, 'Material: 10K Solid Gold' and 'Approximate Metal Weight: 4.80 grams' re-read and unchanged.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1488,9 +1488,9 @@
       "fineness": 0.4166667,
       "gold_pct": 41.6667,
       "pure_gold_g": 2.0,
-      "gold_value_usd": 258.78,
-      "legal_min_gold_value_usd": 254.43,
-      "price_to_gold_multiple": 1.36,
+      "gold_value_usd": 256.97,
+      "legal_min_gold_value_usd": 252.65,
+      "price_to_gold_multiple": 1.37,
       "price_per_gold_gram_usd": 176.0,
       "multiple_basis": "setting_metal_only"
     },
@@ -1526,7 +1526,7 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1546,9 +1546,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 5.4833,
-      "gold_value_usd": 709.48,
-      "legal_min_gold_value_usd": 700.97,
-      "price_to_gold_multiple": 1.498,
+      "gold_value_usd": 704.52,
+      "legal_min_gold_value_usd": 696.07,
+      "price_to_gold_multiple": 1.509,
       "price_per_gold_gram_usd": 193.86,
       "multiple_basis": "setting_metal_only"
     },
@@ -1587,7 +1587,7 @@
       "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
       "reverification": "Pass 12 (2026-10-23): price US$871.00 ('Now'), SKU 18KY-LPBWB05, stock 140139, '18K Solid Gold' and 'Approximate Metal Weight: 6.70 grams' (page states the weight is for a size-10 ring) all re-read and match this record. PASS 17 (2026-10-23, arena/0e04577b-gold4): official Sarraf page re-fetched live and re-read: 'Now: US$871.00' (MSRP US$3,388.00, Was US$1,019.00), SKU 18KY-LPBWB05, Stock Number 140139, Material '18K Solid Gold', 'Approximate Metal Weight 6.70 grams' (size-10 basis). Identical to the stored record; the 3.9x MSRP anchor (FLG-MED-14) reproduces live. No value changed.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1607,9 +1607,9 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 5.025,
-      "gold_value_usd": 650.18,
-      "legal_min_gold_value_usd": 644.11,
-      "price_to_gold_multiple": 1.34,
+      "gold_value_usd": 645.63,
+      "legal_min_gold_value_usd": 639.61,
+      "price_to_gold_multiple": 1.349,
       "price_per_gold_gram_usd": 173.33,
       "multiple_basis": "setting_metal_only"
     },
@@ -1645,7 +1645,7 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1665,9 +1665,9 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 8.325,
-      "gold_value_usd": 1077.16,
-      "legal_min_gold_value_usd": 1067.11,
-      "price_to_gold_multiple": 1.333,
+      "gold_value_usd": 1069.63,
+      "legal_min_gold_value_usd": 1059.65,
+      "price_to_gold_multiple": 1.343,
       "price_per_gold_gram_usd": 172.49,
       "multiple_basis": "setting_metal_only"
     },
@@ -1705,7 +1705,7 @@
       "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
       "reverification": "Pass 12 (2026-10-23): price US$2,858.00 ('Now'), SKU 9240-14ky, stock 145364, '14K Solid Gold', 'Approximate Metal Weight: 8.00 grams' and Diamond Weight 0.50 Ct all re-read and match this record; the price is stone-inclusive, as flagged.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1725,9 +1725,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 4.6667,
-      "gold_value_usd": 603.82,
-      "legal_min_gold_value_usd": 596.57,
-      "price_to_gold_multiple": 4.733,
+      "gold_value_usd": 599.59,
+      "legal_min_gold_value_usd": 592.4,
+      "price_to_gold_multiple": 4.767,
       "price_per_gold_gram_usd": 612.43,
       "multiple_basis": "includes_centre_stone"
     },
@@ -1764,7 +1764,7 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1784,9 +1784,9 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 4.725,
-      "gold_value_usd": 611.36,
-      "legal_min_gold_value_usd": 605.66,
-      "price_to_gold_multiple": 6.654,
+      "gold_value_usd": 607.09,
+      "legal_min_gold_value_usd": 601.42,
+      "price_to_gold_multiple": 6.701,
       "price_per_gold_gram_usd": 860.95,
       "multiple_basis": "includes_centre_stone"
     },
@@ -1823,7 +1823,7 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1882,7 +1882,7 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -1943,7 +1943,7 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -2001,7 +2001,7 @@
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -2057,11 +2057,11 @@
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_STRUCTURED_DIFFERS"
       ],
-      "flag_detail": "Per-size gram weight renders inside client JS modal rather than initial static HTML — left strictly null (never back-solved). Strict 7-day return window. | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 2,441.00 USD via json-ld, 1,908.00 USD via json-ld, 2,223.00 USD via json-ld, 1,800.00 USD via json-ld, 1,888.00 USD via json-ld, 1,770.00 USD via json-ld, 1,627.00 USD via json-ld, 1,530.00 USD via json-ld, 1,454.00 USD via json-ld against the stored $1,465.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 10:10Z: the page's own structured data currently prints 2,441.00 USD via json-ld, 1,908.00 USD via json-ld, 2,223.00 USD via json-ld, 1,800.00 USD via json-ld, 1,888.00 USD via json-ld, 1,770.00 USD via json-ld, 1,627.00 USD via json-ld, 1,530.00 USD via json-ld, 1,454.00 USD via json-ld against the stored $1,465.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
+      "flag_detail": "Per-size gram weight renders inside client JS modal rather than initial static HTML — left strictly null (never back-solved). Strict 7-day return window. | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 2,441.00 USD via json-ld, 1,908.00 USD via json-ld, 2,223.00 USD via json-ld, 1,800.00 USD via json-ld, 1,888.00 USD via json-ld, 1,770.00 USD via json-ld, 1,627.00 USD via json-ld, 1,530.00 USD via json-ld, 1,454.00 USD via json-ld against the stored $1,465.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 20:23Z: the page's own structured data currently prints 2,422.00 USD via json-ld, 1,893.00 USD via json-ld, 2,205.00 USD via json-ld, 1,785.00 USD via json-ld, 1,873.00 USD via json-ld, 1,756.00 USD via json-ld, 1,614.00 USD via json-ld, 1,518.00 USD via json-ld, 1,442.00 USD via json-ld against the stored $1,465.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -2069,28 +2069,28 @@
         "page_title": "Knot ring - 24k Gold | Menē",
         "found_prices": [
           {
-            "value": 2441.0,
+            "value": 2422.0,
             "currency": "USD",
             "source": "json-ld",
             "type": "Offer",
             "name": ""
           },
           {
-            "value": 1908.0,
+            "value": 1893.0,
             "currency": "USD",
             "source": "json-ld",
             "type": "Offer",
             "name": ""
           },
           {
-            "value": 2223.0,
+            "value": 2205.0,
             "currency": "USD",
             "source": "json-ld",
             "type": "Offer",
             "name": ""
           },
           {
-            "value": 1800.0,
+            "value": 1785.0,
             "currency": "USD",
             "source": "json-ld",
             "type": "Offer",
@@ -2139,11 +2139,11 @@
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_STRUCTURED_DIFFERS"
       ],
-      "flag_detail": "Per-size gram weight renders inside client JS modal rather than initial static HTML — left strictly null. Strict 7-day return window. | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 2,565.00 USD via json-ld, 2,386.00 USD via json-ld, 2,378.00 USD via json-ld, 2,264.00 USD via json-ld, 2,189.00 USD via json-ld, 2,201.00 USD via json-ld, 1,961.00 USD via json-ld, 1,906.00 USD via json-ld against the stored $1,730.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 10:10Z: the page's own structured data currently prints 2,565.00 USD via json-ld, 2,386.00 USD via json-ld, 2,378.00 USD via json-ld, 2,264.00 USD via json-ld, 2,189.00 USD via json-ld, 2,201.00 USD via json-ld, 1,961.00 USD via json-ld, 1,906.00 USD via json-ld against the stored $1,730.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
+      "flag_detail": "Per-size gram weight renders inside client JS modal rather than initial static HTML — left strictly null. Strict 7-day return window. | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 2,565.00 USD via json-ld, 2,386.00 USD via json-ld, 2,378.00 USD via json-ld, 2,264.00 USD via json-ld, 2,189.00 USD via json-ld, 2,201.00 USD via json-ld, 1,961.00 USD via json-ld, 1,906.00 USD via json-ld against the stored $1,730.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 20:23Z: the page's own structured data currently prints 2,545.00 USD via json-ld, 2,367.00 USD via json-ld, 2,359.00 USD via json-ld, 2,246.00 USD via json-ld, 2,172.00 USD via json-ld, 2,184.00 USD via json-ld, 1,946.00 USD via json-ld, 1,891.00 USD via json-ld against the stored $1,730.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/a0be79d4-gold4 (Pass 6)",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -2151,28 +2151,28 @@
         "page_title": "Menē Etruscan Sun Band - 24k Gold | Menē",
         "found_prices": [
           {
-            "value": 2565.0,
+            "value": 2545.0,
             "currency": "USD",
             "source": "json-ld",
             "type": "Offer",
             "name": ""
           },
           {
-            "value": 2386.0,
+            "value": 2367.0,
             "currency": "USD",
             "source": "json-ld",
             "type": "Offer",
             "name": ""
           },
           {
-            "value": 2378.0,
+            "value": 2359.0,
             "currency": "USD",
             "source": "json-ld",
             "type": "Offer",
             "name": ""
           },
           {
-            "value": 2264.0,
+            "value": 2246.0,
             "currency": "USD",
             "source": "json-ld",
             "type": "Offer",
@@ -2222,13 +2222,13 @@
         "MIXED_METAL_UNCLEAR",
         "SOURCE_URL_DEAD"
       ],
-      "flag_detail": "Matched 18K counterpart to BN-07 ($870 -> $1,125, +29.3%); combines 18K yellow gold shank with platinum prongs and publishes no gram weight. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
+      "flag_detail": "Matched 18K counterpart to BN-07 ($870 -> $1,125, +29.3%); combines 18K yellow gold shank with platinum prongs and publishes no gram weight. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 17 (2026-10-23, arena/0e04577b-gold4): stored Blue Nile URL re-opened via a browser-content fetch (not the CI runner): Blue Nile serves 'We're sorry, the page you're looking for cannot be found.' SOURCE_URL_DEAD is therefore corroborated on a second, independent read path. The stored $1,125 keeps its 2026-10-22 capture date: not re-confirmed, not deleted, not replaced with a guess.",
       "pair_id": "PAIR-BN-FOURPRONG",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 404,
         "state": "HTTP_404",
@@ -2277,12 +2277,12 @@
         "HALLMARK_NOT_PUBLISHED",
         "SOURCE_URL_DEAD"
       ],
-      "flag_detail": "Wider 2.4 mm comfort-fit solitaire setting; Blue Nile publishes no gram weight or hallmark. Cross-session corroboration (arena/22b5b06c-gold4, live fetch 2026-10-22T23:58Z): the official Blue Nile alias URL https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-yellow-gold-item-203348 was fetched live and shows the SAME Stock Number 502120y14, Metal 14K Yellow Gold, Width 2.40mm and price $1,145 '(Setting Price)' as this record — confirming sku/width/price independently. NAMING VARIANCE recorded, not resolved: that alias titles the ring 'Classic Simple Solitaire Engagement Ring in 14K Yellow Gold' while this record's URL (slug item-502120y14) titles it 'Low Dome Comfort Fit Solitaire Engagement Ring'; both are official Blue Nile pages for stock number 502120y14. The alias page also re-displays Free Shipping, Free Returns and the Limited Lifetime Warranty on gold jewelry priced $1,000 or more, and seller contact +1-800-242-2728 / service@bluenile.com. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
+      "flag_detail": "Wider 2.4 mm comfort-fit solitaire setting; Blue Nile publishes no gram weight or hallmark. Cross-session corroboration (arena/22b5b06c-gold4, live fetch 2026-10-22T23:58Z): the official Blue Nile alias URL https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-yellow-gold-item-203348 was fetched live and shows the SAME Stock Number 502120y14, Metal 14K Yellow Gold, Width 2.40mm and price $1,145 '(Setting Price)' as this record — confirming sku/width/price independently. NAMING VARIANCE recorded, not resolved: that alias titles the ring 'Classic Simple Solitaire Engagement Ring in 14K Yellow Gold' while this record's URL (slug item-502120y14) titles it 'Low Dome Comfort Fit Solitaire Engagement Ring'; both are official Blue Nile pages for stock number 502120y14. The alias page also re-displays Free Shipping, Free Returns and the Limited Lifetime Warranty on gold jewelry priced $1,000 or more, and seller contact +1-800-242-2728 / service@bluenile.com. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4 + arena/22b5b06c-gold4 (alias live re-fetch 23:58Z)",
       "reverification": "Directly fetched https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14 on 2026-10-22; price, metal spec, and flags verified verbatim.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 404,
         "state": "HTTP_404",
@@ -2331,12 +2331,12 @@
         "HALLMARK_NOT_PUBLISHED",
         "SOURCE_URL_DEAD"
       ],
-      "flag_detail": "Publishes side-stone count (12 natural round diamonds, 1/20 ctw = ~0.010 g stone mass) but omits metal gram weight. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
+      "flag_detail": "Publishes side-stone count (12 natural round diamonds, 1/20 ctw = ~0.010 g stone mass) but omits metal gram weight. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y on 2026-10-22; price, metal spec, and flags verified verbatim.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 404,
         "state": "HTTP_404",
@@ -2387,12 +2387,12 @@
         "COPY_CARAT_MISMATCH",
         "SOURCE_URL_DEAD"
       ],
-      "flag_detail": "Double contradiction on Blue Nile's live page: URL/title/Setting Information state '18k Yellow Gold' and '1/6 ct. tw.', whereas description prose says 'crafted in platinum' and Sidestone Details lists '1/8' ct. tw. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
+      "flag_detail": "Double contradiction on Blue Nile's live page: URL/title/Setting Information state '18k Yellow Gold' and '1/6 ct. tw.', whereas description prose says 'crafted in platinum' and Sidestone Details lists '1/8' ct. tw. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y on 2026-10-22; price, metal spec, and flags verified verbatim.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 404,
         "state": "HTTP_404",
@@ -2446,7 +2446,7 @@
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z + live product-page re-display 23:19Z.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -2508,7 +2508,7 @@
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z + live product-page re-display 23:19Z.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -2570,7 +2570,7 @@
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -2632,7 +2632,7 @@
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -2694,7 +2694,7 @@
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -2756,7 +2756,7 @@
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z + live product-page re-display 23:19Z.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -2818,7 +2818,7 @@
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "Live category-page fetch 2026-10-22T23:15Z.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -2880,7 +2880,7 @@
       "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
       "reverification": "Pass 12 (2026-10-23): price $965 '(Setting Price)' with no discount, Stock Number 505038y14, Metal 14K Yellow Gold and Width 1.80mm all re-read and match this record; the ended 22-October sale is confirmed absent from the live page. Earlier: 2026-10-22T23:38Z: five dated snapshots of official Blue Nile pages re-read; the price itself varies between them (see flag_detail) — recorded, not averaged. Live fetch 2026-10-23T00:20Z: $965 '(Setting Price)' with NO discount displayed; Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm re-read from the page. The 22 Oct sale display ('$965 $772 -20%') had ended by this re-fetch - the recorded price is updated to the live $965; the snapshot sale history and the four differing category-page sale prices remain documented under SALE_PRICE_VARIES_ACROSS_PAGES. PASS 17 (2026-10-23, arena/0e04577b-gold4): official Blue Nile page re-fetched live and re-read: '$965 (Setting Price)', Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm; contact panel '+1-800-242-2728' / 'service@bluenile.com'. Identical to the stored record. No gram weight published. No value changed.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -2941,7 +2941,7 @@
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "2026-10-22T23:35Z: two independent official-page reads agree ($1,290). Live re-fetch pending (outage). Live fetch 2026-10-23T00:22Z: $1,290 '(Setting Price)' - unchanged from the snapshot; Stock Number 502500y14, Metal 14K Yellow Gold, Width 1.80mm re-read from the page.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -3003,7 +3003,7 @@
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "2026-10-22T23:36Z: official-page snapshot re-read; metal-copy contradiction found and flagged. Live fetch 2026-10-23T00:24Z: $2,050 '(Setting Price)' - unchanged; Stock Number 501580y14, Metal 14K Yellow Gold, Width 5.00mm re-read. The live page's Product Details text STILL reads 'this platinum solitaire setting features a flat profile' against the 14K Yellow Gold spec - COPY_INCONSISTENT_METAL confirmed live, not only in snapshot.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -3064,7 +3064,7 @@
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "2026-10-22T23:36Z: official-page snapshot re-read; price basis clarified from the same page. Live fetch 2026-10-23T00:26Z: $5,190 '(Setting Price)' - unchanged; Stock Number 501472y14, Metal 14K Yellow Gold, Width 4.00mm re-read; Natural Diamond Information re-read: Shape Emerald, Quantity 6, Total Carat 1, Color G-H, Clarity VS2-SI1, Not Enhanced, Setting Type Prong, with the same 1 ct centre-stone disclaimer.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -3126,7 +3126,7 @@
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "2026-10-22T23:37Z: two official-page reads agree ($1,145); yellow-gold sibling re-fetched live at 23:58Z via BN-10's alias. Live re-fetch of THIS page pending (outage). Live fetch 2026-10-23T00:28Z: $1,145 '(Setting Price)' - unchanged; Stock Number 502120w14, Metal 14K White Gold, Width 2.40mm, Rhodium Finish: Yes re-read from the page. Page title 'Classic Simple Solitaire Engagement Ring in 14k White Gold' (same 502120 style family as published BN-10).",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -3188,7 +3188,7 @@
       "reverified_by": "arena/22b5b06c-gold4",
       "reverification": "2026-10-22T23:37Z: official-page snapshot re-read; live re-fetch pending (outage). Live fetch 2026-10-23T00:30Z: $2,210 '(Setting Price)' with NO discount displayed; Stock Number 505094w14, Metal 14K White Gold, Width 1.75mm, Rhodium Finish: Yes re-read; diamond block re-read: Round, Quantity 26, Total Carat 1/5, Color F-G, Clarity VS1-VS2. The 22 Oct sale display ('$2,210 $1,657 -25%') had ended by this re-fetch - the recorded price is updated to the live $2,210.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -3246,12 +3246,12 @@
         "PRICE_UNVERIFIED",
         "SOLD_OUT_AT_CHECK"
       ],
-      "flag_detail": "Product page fetched LIVE 2026-10-22T23:19Z (the original jamesallen.com item URL redirected here): sold-out notice displayed, plus the on-page announcement 'James Allen is Now Part of Blue Nile'. An older $660 '(Setting Price)' seen in a search snapshot was deliberately NOT recorded because it could not be confirmed live. SKU 17740y14 was read from the official page's own title snapshot ('…In 14K Yellow Gold-17740y14'). Width left blank: the URL slug reads '15mm' while the James Allen naming convention for this style family uses decimals (e.g. 2.5mm slugs appear as '25mm') — resolving that would be inference, so it stays unrecorded.",
+      "flag_detail": "Product page fetched LIVE 2026-10-22T23:19Z (the original jamesallen.com item URL redirected here): sold-out notice displayed, plus the on-page announcement 'James Allen is Now Part of Blue Nile'. An older $660 '(Setting Price)' seen in a search snapshot was deliberately NOT recorded because it could not be confirmed live. SKU 17740y14 was read from the official page's own title snapshot ('…In 14K Yellow Gold-17740y14'). Width left blank: the URL slug reads '15mm' while the James Allen naming convention for this style family uses decimals (e.g. 2.5mm slugs appear as '25mm') — resolving that would be inference, so it stays unrecorded. | PASS 18 (2026-10-23T20:19:32Z): the page's own schema.org markup now records availability=SoldOut and og:availability='out of stock', while an og:price:amount of 858 USD is present. The blank price is therefore confirmed correct, and the 858 figure is recorded as evidence (availability_evidence) rather than written in as a price.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/22b5b06c-gold4",
-      "reverification": "Live fetch 2026-10-22T23:19Z: sold-out status and merger notice read directly from the page.",
+      "reverification": "Live fetch 2026-10-22T23:19Z: sold-out status and merger notice read directly from the page. Pass 18 (2026-10-23): runner re-opened the URL (HTTP 200) and read availability=SoldOut from the page's own markup; no value changed.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -3267,6 +3267,21 @@
           }
         ],
         "note": "the dataset deliberately stores no price for this row; the live page offered 858.00 USD"
+      },
+      "availability_evidence": {
+        "captured_utc": "2026-10-23T20:19:32Z",
+        "evidence_artifact": "reports/live_source_check_latest.json",
+        "http_status": 200,
+        "what_the_page_publishes": {
+          "schema.org availability": "https://schema.org/SoldOut",
+          "og:availability": "out of stock",
+          "og:price:amount": "858 USD",
+          "itemCondition": "https://schema.org/NewCondition"
+        },
+        "conclusion": "The page's own machine-readable markup states SoldOut / 'out of stock' while carrying an 858 USD price meta. The stored price therefore stays blank: an item the retailer marks sold out has no purchasable price to record.",
+        "why_this_matters": "Pass 16 saw the 858 USD meta and could only say 'the live page offered 858.00 USD'. Adding the availability signal settles it with the page's own words instead of an assumption, and it is why this row is not 'fixed' by writing 858 in.",
+        "flag": "SOLD_OUT_AT_CHECK (already present; unchanged)",
+        "checked_by": "GitHub runner, read-only GET from arena/2189e10f-gold4 (Pass 18)"
       },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
@@ -3309,12 +3324,12 @@
         "RESIZE_EXCLUDED_ON_PAGE",
         "SOURCE_BOT_BLOCKED"
       ],
-      "flag_detail": "Page banner advertises 'Free 1-Year Resizing', yet Ring Details states 'Due to the complexity of the Fairmined craftsmanship, we are unable to offer resizing on this ring design.' Gram weight not published. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
+      "flag_detail": "Page banner advertises 'Free 1-Year Resizing', yet Ring Details states 'Due to the complexity of the Fairmined craftsmanship, we are unable to offer resizing on this ring design.' Gram weight not published. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/ on 2026-10-22; price, metal spec, and flags verified verbatim.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 403,
         "state": "REFUSED_403",
@@ -3365,13 +3380,13 @@
         "PRICE_CURRENCY_LOCALIZED",
         "SOURCE_BOT_BLOCKED"
       ],
-      "flag_detail": "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session. PASS 14 (2026-10-23): live re-fetch served 'EUR 1,350.00 (Setting Only)' on this page while BE-06 and BE-07 served USD in the same minute; the USD figure ($1,190) therefore remains snapshot-sourced and stays flagged. The EUR figure is not converted to USD here — a conversion would be a number this project computed, not a price the retailer published. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
+      "flag_detail": "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session. PASS 14 (2026-10-23): live re-fetch served 'EUR 1,350.00 (Setting Only)' on this page while BE-06 and BE-07 served USD in the same minute; the USD figure ($1,190) therefore remains snapshot-sourced and stays flagged. The EUR figure is not converted to USD here — a conversion would be a number this project computed, not a price the retailer published. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
       "reverification": "2026-10-22T23:35Z: three dated snapshots of official Brilliant Earth pages agree on $1,190 (product page + two category JSON-LD records). Live re-fetch pending (fetch-service outage 23:20-23:47Z). PASS 14 (2026-10-23): official page re-fetched live. It served the geolocalized price 'EUR 1,350.00 (Setting Only)' for style BE1D3939-14KY (14K Yellow Gold, 'Width: 2-1.3 mm', 'Setting: Claw Prong', 14 shared-prong round diamonds totalling 0.05 ct) and published no USD figure, so the stored $1,190 was NOT re-confirmed and NOT changed. Provenance stays V2. In the same minutes the 18K variant (BE-06) and Fleur (BE-07) both rendered in USD, so the localization is per-page rather than per-session. No gram weight is published on any of the three pages.",
       "pair_id": "PAIR-BE-FREESIA",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 403,
         "state": "REFUSED_403",
@@ -3421,13 +3436,13 @@
         "PRICE_CURRENCY_LOCALIZED",
         "SOURCE_BOT_BLOCKED"
       ],
-      "flag_detail": "Snapshot of the official product page (dated 2026-09-28) showed: $1,390 (Setting Only), Metal 18K Yellow Gold. The 18K style code was not visible in the captured text, so sku stays blank rather than inferred from the 14K variant. PASS 14 (2026-10-23): live re-fetch confirmed '$1,390 (Setting Only)' in USD and style BE1D3939-18KY; the stored price is current, not only a snapshot. Currency can still flip to EUR depending on the session — check the selector before comparing against other rows on this site. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
+      "flag_detail": "Snapshot of the official product page (dated 2026-09-28) showed: $1,390 (Setting Only), Metal 18K Yellow Gold. The 18K style code was not visible in the captured text, so sku stays blank rather than inferred from the 14K variant. PASS 14 (2026-10-23): live re-fetch confirmed '$1,390 (Setting Only)' in USD and style BE1D3939-18KY; the stored price is current, not only a snapshot. Currency can still flip to EUR depending on the session — check the selector before comparing against other rows on this site. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
       "reverification": "2026-10-22T23:35Z: value re-read from the dated official-page snapshot; live re-fetch pending (outage). PASS 14 (2026-10-23): official page re-fetched live and re-read in USD: '$1,390 (Setting Only)', 'Style: BE1D3939-18KY', 'Metal: 18K Yellow Gold', 'Width: 2-1.3 mm', 'Setting: Claw Prong', 'Free Shipping & Returns', 'Free 1-Year Resizing'. Price matches the stored $1,390, so provenance is upgraded from V2 snapshot to V1 direct fetch and PRICE_V2_ONLY is removed. The style code, previously blank, is now recorded from the live spec block. Width stays blank because the page publishes a taper range (2-1.3 mm), not a single figure.",
       "pair_id": "PAIR-BE-FREESIA",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 403,
         "state": "REFUSED_403",
@@ -3477,12 +3492,12 @@
         "PRICE_CURRENCY_LOCALIZED",
         "SOURCE_BOT_BLOCKED"
       ],
-      "flag_detail": "Snapshot of the official product page (dated 2026-08-07) showed: $1,350 (Setting Only), Style BE1574-14KY, Metal 14K Yellow Gold, Width 1.8 mm, Setting Four-Prong. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
+      "flag_detail": "Snapshot of the official product page (dated 2026-08-07) showed: $1,350 (Setting Only), Style BE1574-14KY, Metal 14K Yellow Gold, Width 1.8 mm, Setting Four-Prong. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
       "reverification": "2026-10-22T23:39Z: value re-read from the dated official-page snapshot; live re-fetch pending (outage). PASS 14 (2026-10-23): official page re-fetched live and re-read in USD: '$1,350 (Setting Only)', 'Style: BE1574-14KY', 'Metal: 14K Yellow Gold', 'Width: 1.8 mm', 'Setting: Four-Prong', 'Free Shipping & Returns', 'Free 1-Year Resizing'. Price matches the stored $1,350, so provenance is upgraded from V2 snapshot to V1 direct fetch and PRICE_V2_ONLY is removed. The 1.8 mm width, previously blank, is recorded from the live spec block because this page states a single width rather than a taper range.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 403,
         "state": "REFUSED_403",
@@ -3535,7 +3550,7 @@
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14) + arena/46691f83-gold4 (Pass 15)",
       "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/571221.html on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 14 (2026-10-23): official Ross-Simons page re-fetched live and re-read: '$400', Item 571221, '2mm 14kt Yellow Gold Band', 'Metal 14kt Yellow Gold', 'Gold Weight 1.7 grams', with the page's 'All weights and measurements are approximate.' Stored price, metal, width and weight all match. Earlier: Independent Pass 15 read (arena/46691f83-gold4, 2026-10-23): the /jewelry/rings/571221.html URL now resolves to /products/571221; $400, Item 571221 and 'Gold Weight 1.7 grams' re-read and unchanged.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -3556,9 +3571,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 0.9917,
-      "gold_value_usd": 128.31,
-      "legal_min_gold_value_usd": 126.77,
-      "price_to_gold_multiple": 3.117,
+      "gold_value_usd": 127.41,
+      "legal_min_gold_value_usd": 125.88,
+      "price_to_gold_multiple": 3.139,
       "price_per_gold_gram_usd": 403.36,
       "multiple_basis": "setting_metal_only"
     },
@@ -3597,7 +3612,7 @@
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
       "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/985230.html on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 14 (2026-10-23): official Ross-Simons page re-fetched live and re-read: '$249', Item 985230, '2mm 18kt Yellow Gold Polished Ring', 'Metal 18kt Yellow Gold', 'Gold Weight 0.7 grams', sizes 5-10 all In-Stock at '$249.00'. Stored karat (18), price and weight all match.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -3618,9 +3633,9 @@
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 0.525,
-      "gold_value_usd": 67.93,
-      "legal_min_gold_value_usd": 67.3,
-      "price_to_gold_multiple": 3.666,
+      "gold_value_usd": 67.45,
+      "legal_min_gold_value_usd": 66.82,
+      "price_to_gold_multiple": 3.691,
       "price_per_gold_gram_usd": 474.29,
       "multiple_basis": "setting_metal_only"
     },
@@ -3659,7 +3674,7 @@
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/820263.html on 2026-10-22; price, metal spec, and flags verified verbatim.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -3680,9 +3695,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 1.225,
-      "gold_value_usd": 158.5,
-      "legal_min_gold_value_usd": 156.6,
-      "price_to_gold_multiple": 3.754,
+      "gold_value_usd": 157.39,
+      "legal_min_gold_value_usd": 155.5,
+      "price_to_gold_multiple": 3.78,
       "price_per_gold_gram_usd": 485.71,
       "multiple_basis": "setting_metal_only"
     },
@@ -3721,7 +3736,7 @@
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/823796.html on 2026-10-22; price, metal spec, and flags verified verbatim.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -3742,9 +3757,9 @@
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 2.3333,
-      "gold_value_usd": 301.91,
-      "legal_min_gold_value_usd": 298.28,
-      "price_to_gold_multiple": 3.958,
+      "gold_value_usd": 299.8,
+      "legal_min_gold_value_usd": 296.2,
+      "price_to_gold_multiple": 3.986,
       "price_per_gold_gram_usd": 512.14,
       "multiple_basis": "setting_metal_only"
     },
@@ -3759,14 +3774,14 @@
       "karat": 14,
       "sku": "990022",
       "width_mm": 1.6,
-      "url": "https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html",
+      "url": "https://www.ross-simons.com/products/990022",
       "solid_gold_statement": null,
       "solid_gold_status": "not_stated",
       "hallmark_published": false,
       "price_usd": 2819.0,
       "price_basis": "Sale price ($3,995 reg.) including 0.80 ct natural round diamond (I/VS1, GIA #2225975086)",
       "price_captured_utc": "2026-10-22",
-      "price_source_url": "https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html",
+      "price_source_url": "https://www.ross-simons.com/products/990022",
       "price_verification": "V1_direct_page_fetch",
       "weight_g": null,
       "weight_scope": null,
@@ -3778,22 +3793,40 @@
         "PRICE_INCLUDES_CENTRE_STONE",
         "WHITE_GOLD",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED",
-        "SOURCE_URL_DEAD"
+        "HALLMARK_NOT_PUBLISHED"
       ],
-      "flag_detail": "Includes natural 0.80 ct GIA-certified diamond (#2225975086 = 0.160 g diamond mass per NIST HB 44), URL/title contains typo 'Ceritified', and total gram weight is omitted. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 10:10Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed.",
+      "flag_detail": "Includes natural 0.80 ct GIA-certified diamond (#2225975086 = 0.160 g diamond mass per NIST HB 44), URL/title contains typo 'Ceritified', and total gram weight is omitted. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | PASS 18 (2026-10-23T20:31Z): the 404 is a URL MIGRATION, not a withdrawn product. The stored .html URL was replaced by https://www.ross-simons.com/products/990022 (Item 990022), confirmed independently by this session: same $2,819 sale price, same 14kt white gold, same 0.80 ct GIA-certified stone. The SOURCE_URL_DEAD flag will drop on the next runner read of the corrected URL; the price and its capture date are unchanged.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 17 (2026-10-23, arena/0e04577b-gold4): URL MIGRATION FOUND (FLG-PASS17-02): the stored ross-simons.com .html URL (HTTP 404 to the Pass 16 runner) was re-opened via a browser-content fetch and resolves to https://www.ross-simons.com/products/990022 , where the same product is live: '.80 Carat Ceritified [sic] Diamond Solitaire Ring in 14kt White Gold', Item 990022, 'Sale price $2,819' (Original price $3,995), GIA Cert#2225975086, Metal 14kt White Gold. The live $2,819 corroborates the stored price exactly. The stored URL and SOURCE_URL_DEAD flag are retained this pass to preserve the Pass 16 evidence chain; recommended next data pass: update the canonical URL to /products/990022 with this note as provenance. No value changed.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
-        "evidence_artifact": "reports/live_source_check_latest.json",
-        "http_status": 404,
-        "state": "HTTP_404",
-        "price_state": "SOURCE_NOT_REACHED",
-        "page_title": "404 Not Found",
-        "found_prices": [],
-        "note": "the page returns 404 / a 'cannot be found' page — the stored price can no longer be checked at this URL"
+        "checked_utc": "2026-10-23T20:31Z",
+        "evidence_artifact": "browser-rendered fetch by session arena/2189e10f-gold4 (recorded in url_correction; CI artifacts are not retrievable from this sandbox)",
+        "http_status": 200,
+        "state": "OK",
+        "price_state": "CONFIRMED",
+        "read_path": "browser_rendered_fetch",
+        "page_title": ".80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold",
+        "found_prices": [
+          {
+            "value": 2819.0,
+            "currency": "USD",
+            "source": "page text: 'Sale price $2,819' (original $3,995, CLEARANCE 29% Off)",
+            "type": "visible-text",
+            "name": "Item 990022"
+          }
+        ],
+        "note": "read at the corrected URL after Ross-Simons' catalogue migration; the page prints exactly the stored amount"
+      },
+      "url_correction": {
+        "checked_utc": "2026-10-23T20:31Z",
+        "old_url": "https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html",
+        "new_url": "https://www.ross-simons.com/products/990022",
+        "found_by": "session arena/0e04577b-gold4 (Pass 17) via browser-content fetch — recorded in its `reverification` note",
+        "independently_confirmed_by": "session arena/2189e10f-gold4 (Pass 18) with its own browser-rendered fetch at 2026-10-23T20:31Z",
+        "what_the_live_page_shows": "Title '.80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold'; 'Item 990022'; 'CLEARANCE 29% Off'; 'Original price $3,995'; 'Sale price $2,819'; sizes 5-8 'In-Stock', size 9 'Sold Out'; Metal 14kt White Gold; GIA Cert#2225975086; diamond 0.80 ct round brilliant, I / VS1",
+        "why_the_url_changed": "Ross-Simons migrated its catalogue to /products/<item> URLs; the stored .html URL now returns HTTP 404 (four consecutive runner reads). The price, metal, karat and item number on the live page match the stored row exactly, so this is the same product at a moved address.",
+        "what_was_NOT_changed": "price_usd stays $2,819 with its original 2026-10-22 capture date. The live page posting the same number is corroboration, not a new price claim."
       },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
@@ -3837,12 +3870,12 @@
         "COPY_CARAT_MISMATCH",
         "PRICE_STRUCTURED_DIFFERS"
       ],
-      "flag_detail": "10x diamond carat contradiction on live Mejuri page: marketing prose claims '0.532ct' while Specifications block states '0.044-0.056ct' across sizes 4-10. Gram weight omitted. | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 1,200.00 USD via json-ld, 1,600.00 USD via json-ld, 1,500.00 USD via json-ld, 1,400.00 USD via json-ld, 1,300.00 USD via json-ld, 1,700.00 USD via json-ld against the stored $1,100.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 10:10Z: the page's own structured data currently prints 1,200.00 USD via json-ld, 1,600.00 USD via json-ld, 1,500.00 USD via json-ld, 1,400.00 USD via json-ld, 1,300.00 USD via json-ld, 1,700.00 USD via json-ld against the stored $1,100.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
+      "flag_detail": "10x diamond carat contradiction on live Mejuri page: marketing prose claims '0.532ct' while Specifications block states '0.044-0.056ct' across sizes 4-10. Gram weight omitted. | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 1,200.00 USD via json-ld, 1,600.00 USD via json-ld, 1,500.00 USD via json-ld, 1,400.00 USD via json-ld, 1,300.00 USD via json-ld, 1,700.00 USD via json-ld against the stored $1,100.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 20:23Z: the page's own structured data currently prints 1,200.00 USD via json-ld, 1,600.00 USD via json-ld, 1,500.00 USD via json-ld, 1,400.00 USD via json-ld, 1,300.00 USD via json-ld, 1,700.00 USD via json-ld against the stored $1,100.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
       "reverified_utc": "2026-10-22",
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&Stone=Natural+Diamond on 2026-10-22; price, metal spec, and flags verified verbatim.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -3926,7 +3959,7 @@
       "reverified_by": "arena/81b71aa5-gold4",
       "reverification": "Directly fetched https://mejuri.com/us/en/products/diamonds-line-ring on 2026-10-22; price, metal spec, and flags verified verbatim.",
       "source_check": {
-        "checked_utc": "2026-10-23T10:10:23Z",
+        "checked_utc": "2026-10-23T20:23:21Z",
         "evidence_artifact": "reports/live_source_check_latest.json",
         "http_status": 200,
         "state": "OK",
@@ -3970,8 +4003,8 @@
       "price_gap_pct": 68.04,
       "gold_gap_pct": 54.87,
       "gold_value_gap_pct": 54.87,
-      "low_multiple": 2.553,
-      "high_multiple": 2.771,
+      "low_multiple": 2.571,
+      "high_multiple": 2.79,
       "low_pure_gold_g": 2.567,
       "high_pure_gold_g": 3.975
     },
@@ -4067,8 +4100,8 @@
       "price_gap_pct": 147.44,
       "gold_gap_pct": 151.25,
       "gold_value_gap_pct": 151.25,
-      "low_multiple": 1.36,
-      "high_multiple": 1.34,
+      "low_multiple": 1.37,
+      "high_multiple": 1.349,
       "low_pure_gold_g": 2.0,
       "high_pure_gold_g": 5.025
     },
@@ -4104,25 +4137,25 @@
         "rows": 2,
         "prices_verified": 2,
         "weights_published": 1,
-        "multiple_min": 1.36,
-        "multiple_max": 1.36,
-        "multiple_avg": 1.36
+        "multiple_min": 1.37,
+        "multiple_max": 1.37,
+        "multiple_avg": 1.37
       },
       "14": {
         "rows": 42,
         "prices_verified": 41,
         "weights_published": 9,
-        "multiple_min": 1.5,
-        "multiple_max": 4.73,
-        "multiple_avg": 3.18
+        "multiple_min": 1.51,
+        "multiple_max": 4.77,
+        "multiple_avg": 3.2
       },
       "18": {
         "rows": 18,
         "prices_verified": 17,
         "weights_published": 7,
-        "multiple_min": 1.33,
-        "multiple_max": 6.65,
-        "multiple_avg": 3.25
+        "multiple_min": 1.34,
+        "multiple_max": 6.7,
+        "multiple_avg": 3.27
       },
       "24": {
         "rows": 2,
@@ -4138,9 +4171,9 @@
         "rows": 14,
         "prices_verified": 14,
         "weights_published": 8,
-        "multiple_min": 1.33,
-        "multiple_max": 3.96,
-        "multiple_avg": 2.5
+        "multiple_min": 1.34,
+        "multiple_max": 3.99,
+        "multiple_avg": 2.52
       },
       "pave": {
         "rows": 15,
@@ -4154,9 +4187,9 @@
         "rows": 35,
         "prices_verified": 33,
         "weights_published": 9,
-        "multiple_min": 2.17,
-        "multiple_max": 6.65,
-        "multiple_avg": 3.68
+        "multiple_min": 2.18,
+        "multiple_max": 6.7,
+        "multiple_avg": 3.7
       }
     },
     "by_retailer": {
@@ -4164,17 +4197,17 @@
         "rows": 4,
         "prices_verified": 4,
         "weights_published": 4,
-        "multiple_min": 2.17,
-        "multiple_max": 2.82,
-        "multiple_avg": 2.58
+        "multiple_min": 2.18,
+        "multiple_max": 2.84,
+        "multiple_avg": 2.6
       },
       "anjolee": {
         "rows": 1,
         "prices_verified": 1,
         "weights_published": 1,
-        "multiple_min": 3.98,
-        "multiple_max": 3.98,
-        "multiple_avg": 3.98
+        "multiple_min": 4.01,
+        "multiple_max": 4.01,
+        "multiple_avg": 4.01
       },
       "blue-nile": {
         "rows": 26,
@@ -4220,25 +4253,25 @@
         "rows": 5,
         "prices_verified": 5,
         "weights_published": 4,
-        "multiple_min": 3.12,
-        "multiple_max": 3.96,
-        "multiple_avg": 3.62
+        "multiple_min": 3.14,
+        "multiple_max": 3.99,
+        "multiple_avg": 3.65
       },
       "sarraf": {
         "rows": 8,
         "prices_verified": 8,
         "weights_published": 6,
-        "multiple_min": 1.33,
-        "multiple_max": 6.65,
-        "multiple_avg": 2.82
+        "multiple_min": 1.34,
+        "multiple_max": 6.7,
+        "multiple_avg": 2.84
       },
       "vrai": {
         "rows": 2,
         "prices_verified": 1,
         "weights_published": 2,
-        "multiple_min": 3.73,
-        "multiple_max": 3.73,
-        "multiple_avg": 3.73
+        "multiple_min": 3.75,
+        "multiple_max": 3.75,
+        "multiple_avg": 3.75
       }
     }
   }
