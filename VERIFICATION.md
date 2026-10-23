@@ -1,6 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-23 09:59 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-23 10:01 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
@@ -248,15 +248,13 @@ Generated 2026-10-23 09:59 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T09:58:22+00:00
+run_utc: 2026-10-23T09:59:27+00:00
 dataset rows: 64 | sellers: 10 | sources: 30
 spot benchmark: $4,024.45/oz (22 October, 2026) = $129.3891/g
 
-RESULT: PASS  (130 passed, 3 warnings, 0 failures)
+RESULT: PASS  (130 passed, 1 warnings, 0 failures)
 
 [WARN] B-08 price verification: BE-05: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BE-06: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BE-07: price is only V2 evidence and must be flagged
 
 Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
 price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,

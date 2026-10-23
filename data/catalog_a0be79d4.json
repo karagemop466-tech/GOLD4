@@ -133,10 +133,13 @@
       "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
       "retrieved_date": "2026-10-23",
       "key_takeaways": [
-        "16 CFR § 23.3: unqualified 'Gold' is reserved for 24-karat metal; the karat designation must immediately precede the word Gold; hollow articles must not be described as 'solid'.",
-        "16 CFR § 23.4: 'vermeil' requires a sterling-silver base (>=925/1000) coated with >=10K gold at least 2.5 microns thick — never solid gold.",
-        "16 CFR § 23.7 & § 23.8: a rhodium surface layer must be disclosed, and multi-precious-metal products must list the metals in order of relative weight.",
-        "16 CFR § 23.10 (with 15 U.S.C. § 297): a quality mark must be accompanied by the manufacturer's or dealer's registered trademark or name."
+        "16 CFR § 23.3: unqualified 'Gold' means fine (24K) gold through and through; a gold alloy must carry its karat designation immediately before the word 'Gold' and with equal conspicuousness; hollow-centred articles should not be marked 'solid'. There is NO 10-karat floor for calling a gold alloy 'karat gold' — § 23.3(c)(1) itself gives '9 Karat Gold' as acceptable — 10 karat survives only as the minimum fineness for plating, gold-filled and vermeil (§ 23.3(c)(2)-(3), § 23.4(b)).",
+        "16 CFR § 23.4: Vermeil requires sterling silver (>=92.5% Ag) coated with >=2.5 microns of >=10K gold — never solid gold.",
+        "16 CFR § 23.7: it is unfair or deceptive to fail to disclose a surface-layer application of rhodium on a product marked or described as precious metal — the relevant rule for rhodium-plated white gold. 16 CFR § 23.8: where a product contains more than one precious metal, the relative quantity of each must not be misrepresented, and metals should be listed from greatest to least by weight (e.g., an 18K shank with platinum prongs).",
+        "15 U.S.C. § 297(b) (National Stamping Act): a quality mark indicating gold or silver must be accompanied by the maker's registered trademark (or the maker's name), applied by the same means, in lettering at least as large, and as close as possible to the quality mark. § 297(b)(B) adds that where a multi-part article has parts of different quality, each other part must carry a matching quality mark. The FTC's consumer page states the practical version: don't buy a gold piece if the trademark is missing beside the karat mark.",
+        "16 CFR § 23.7: a surface-layer application of rhodium must be disclosed.",
+        "16 CFR § 23.10 (read 2026-10-23): a quality mark must be accompanied by the manufacturer's or dealer's registered trademark or name; § 23.9, by contrast, is the pewter section.",
+        "15 U.S.C. § 297(b) (read 2026-10-23): the trademark must be applied by the same means, in lettering at least as large as the quality mark and as close as possible to it."
       ],
       "correction_2026_10_23": "The trademark rule was cited to § 23.9, which is the pewter section. It is § 23.10 ('Additional guidance for the use of quality marks'). Corrected after reading both sections on the eCFR page."
     },
@@ -149,7 +152,7 @@
       "retrieved_date": "2026-10-23",
       "key_takeaways": [
         "The CFPB page states: send a written billing-error notice within 60 calendar days after the charge appears on your statement; the card company then has 30 days to confirm receipt in writing.",
-        "12 CFR § 1026.13(c)(2) — not the CFPB FAQ page — sets the outer resolution limit: two complete billing cycles, and in no case later than 90 days after the notice.",
+        "12 CFR § 1026.13(c)(2) and 15 U.S.C. § 1666(a)(B) — not the CFPB FAQ page — set the outer resolution limit: two complete billing cycles, and in no case later than 90 days after the notice.",
         "Project guidance (not a CFPB statement): pay with a credit card rather than wire transfer, a peer-to-peer app, crypto or a debit card, because only the credit-card route carries the statutory billing-error dispute right."
       ],
       "correction_2026_10_23": "The 90-day / two-billing-cycle limit was paraphrased as if the CFPB FAQ page said it; that page does not. It is now attributed to 12 CFR 1026.13(c)(2), and the card-only advice is labelled as this project's guidance."
@@ -178,6 +181,18 @@
         "Standalone surface XRF read 17.99K and 22.47K gold without detecting subsurface core! Fraud was caught by suspiciously low weight-in-hand + binocular microscope examination.",
         "Proves why buyers MUST combine calibrated gram scale weight + microscopic hallmark/seam inspection + multi-spot XRF."
       ]
+    },
+    {
+      "authority": "U.S. Code (Legal Information Institute, Cornell Law School)",
+      "citation": "15 U.S.C. § 1666 — Correction of billing errors",
+      "title": "15 U.S.C. § 1666 — Correction of billing errors (Fair Credit Billing Act)",
+      "source_url": "https://www.law.cornell.edu/uscode/text/15/1666",
+      "key_takeaways": [
+        "§ 1666(a): on receiving a written billing-error notice within 60 days of the statement, the creditor must send a written acknowledgement within 30 days (unless it resolves the dispute in that time).",
+        "§ 1666(a)(B): the creditor must correct the account or send a written explanation within two complete billing cycles, and in no event later than 90 days, after receiving the notice.",
+        "§ 1666(b)(3): a 'billing error' includes goods or services not accepted by, or not delivered in accordance with the agreement to, the cardholder."
+      ],
+      "retrieved_date": "2026-10-23"
     }
   ],
   "checklist": [
@@ -1404,6 +1419,17 @@
       "detail": "The live page shows 'MSRP: US$1,369.00', 'Was: US$412.00' and 'Now: US$352.00 -15% OFF' (automatic coupon) for one ring. Only $352.00 is a transaction price. At the 22-October benchmark the ring's 4.80 g of 10K gold holds 2.00 g fine gold worth about $258.78, so the charged price is 1.36x its gold value while the 'MSRP' would be 5.3x. This project has no independent source for the MSRP.",
       "action": "Ignore the MSRP. Compare the $352.00 against the 4.80 g of 10K gold and other plain 10K domed bands, and get the weight for your size in writing (the page states the weight is approximate and quoted for a size 10 ring).",
       "source_url": "https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+      "date": "2026-10-23"
+    },
+    {
+      "flag_id": "FLG-PASS12-05",
+      "severity": "HIGH",
+      "category": "Anti-Hallucination Correction (same error, second location)",
+      "item_ref": "standards.html — eCFR summary bullets (16 CFR § 23.3 line)",
+      "title": "Same 10K Myth Found In A Second Place After The Table Was Fixed — Plus Two Wording Fixes To § 23.7/§ 23.8 And The Chargeback Deadline",
+      "detail": "Reading the Standards page line by line after the karat table was corrected showed the '10K is the legal minimum' myth repeated verbatim in the eCFR summary bullet. It is now replaced with what § 23.3 actually requires. Two further statements were tightened: (a) the § 23.7/§ 23.8 bullet conflated two different rules — § 23.7 requires disclosure of a rhodium surface layer, while § 23.8 requires metals to be listed from greatest to least by weight; (b) the chargeback bullet attributed the 'two billing cycles / max 90 days' resolution deadline to the CFPB page, which does not state it — that deadline is in 15 U.S.C. § 1666(a)(B), which is now cited and linked. The 60-day notice period and the 30-day acknowledgement are confirmed on the CFPB page itself.",
+      "action": "Both legal bullets rewritten to match the regulation text; 15 U.S.C. § 1666 added as its own linked source card so the deadline is traceable.",
+      "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3",
       "date": "2026-10-23"
     },
     {
