@@ -1,0 +1,25 @@
+{
+  "scope": "all git-tracked files at the reviewed tree; static syntax/conflict scan, not a factual certification",
+  "stats": {
+    "files": 150,
+    "text_files": 150,
+    "binary_files": 0,
+    "lines": 70823,
+    "json": 22,
+    "python": 28,
+    "html": 41,
+    "markdown": 19
+  },
+  "by_extension": {
+    ".css": 4,
+    ".html": 41,
+    ".js": 5,
+    ".json": 22,
+    ".md": 19,
+    ".py": 28,
+    ".txt": 27,
+    ".yml": 2,
+    "[none]": 2
+  },
+  "errors": []
+}
