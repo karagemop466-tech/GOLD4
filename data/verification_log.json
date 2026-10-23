@@ -279,6 +279,25 @@
       ],
       "recommendation": "LOOK FOR HALLUCINATIONS AFTER EVERY REVIEW. Run scripts/audit.py, check_site.py, verify.py, verify_a0be79d4.py and audit_hallucinations.py, then open the source link beside each number you intend to rely on. Prices on these pages move weekly, so an unopened source link is an unverified value.",
       "note": "Pass 13 was not assigned; pass numbers follow the order in which sessions finished, not a strict sequence."
+    },
+    {
+      "pass": "Pass 12b — Standards-page line-by-line legal re-read (session arena/d1586f6a-gold4)",
+      "when_utc": "2026-10-23T10:25Z",
+      "scope": "Reading the published Standards page line by line against the regulation text, after Pass 12 corrected the karat table.",
+      "checked": [
+        "16 CFR § 23.7 (read live): titled 'Disclosure of surface-layer application of rhodium' — failure to disclose rhodium on a product described as precious metal is unfair or deceptive. The site's combined § 23.7/§ 23.8 bullet was rewritten to separate it from § 23.8.",
+        "16 CFR § 23.8 (read live): 'Misrepresentation as to products containing more than one precious metal' — mark relative quantity correctly; list metals in order of relative weight, greatest to least, unless context makes clear the first-listed metal is not predominant. Site wording updated to match.",
+        "15 U.S.C. § 297 (read live): 'Stamping plated articles' — § 297(b)(A) requires the maker's registered trademark or name, applied by the same means as the quality mark, in lettering at least as large, as close as possible to it; § 297(b)(B) requires matching quality marks on non-identical parts. The site's trademark bullet now quotes this instead of paraphrasing § 23.9.",
+        "CFPB billing-error page (read live): confirms the 60-calendar-day written notice and the creditor's 30-day acknowledgement. It does NOT state a two-billing-cycle/90-day resolution deadline, so that figure was re-attributed to the statute.",
+        "15 U.S.C. § 1666 (read live): § 1666(a)(A) 30-day acknowledgement; § 1666(a)(B) resolution within two complete billing cycles and in no event later than 90 days; § 1666(b)(3) goods not delivered per the agreement counts as a billing error.",
+        "IRREGULARITY FOUND AND CORRECTED: the 10K-is-the-legal-minimum myth appeared a SECOND time, in the eCFR summary bullet, after Pass 12 fixed the karat table. Replaced. Published as FLG-PASS12-05 — evidence that fixing one instance is not verification of the page."
+      ],
+      "not_verified_this_pass": [
+        "The two GIA Gems & Gemology citations (EDXRF depth limits; electroformed-gold lab note) were not re-opened in this round; their retrieved date remains 2026-10-22.",
+        "16 CFR § 23.9 was not re-read this round; the site no longer attributes any specific requirement to it."
+      ],
+      "result": "PASS — 5 further official pages read live; 3 statements corrected (10K myth repeat, § 23.7/§ 23.8 conflation, chargeback deadline attribution); 1 new linked source card (15 U.S.C. § 1666).",
+      "outcome": "Standards page now states only what the cited text says; every correction is on the Flagged page."
     }
   ],
   "not_reverified_this_pass": [

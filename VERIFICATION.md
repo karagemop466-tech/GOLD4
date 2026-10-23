@@ -1,6 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-23 09:56 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-23 10:03 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
@@ -164,7 +164,7 @@ Generated 2026-10-23 09:56 UTC from `data/*.json` by `scripts/gen_verification.p
 | catbird-returns | C | Catbird NYC | [Catbird Returns & Exchanges Policy](https://www.catbirdnyc.com/returns) | 2026-10-22 |
 | mene-returns | C | Menē Inc. | [Menē 7-Day Returns & Lifetime Buyback Policy](https://mene.com/customer-care/en-US/articles/returns-319505) | 2026-10-22 |
 | brilliant-earth-returns | C | Brilliant Earth, LLC | [Brilliant Earth Free 30-Day Returns & Resizing Exclusions Policy](https://www.brilliantearth.com/30-Day-Returns/) | 2026-10-22 |
-| nist-hb44-2026 | A | National Institute of Standards and Technology (nist.gov) | [NIST Handbook 44 (2026 Edition) — Appendix C: Units of Mass for Precious Metals & Metric Carat](https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44) | 2026-10-22 |
+| nist-hb44-2026 | A | National Institute of Standards and Technology (nist.gov) | [NIST Handbook series — Handbook 44 (specifications, tolerances and other technical requirements for weighing and measuring devices)](https://www.nist.gov/nist-pub-series/handbook-nist-hb) | 2026-10-23 |
 | bullionvault-spot | B | BullionVault (bullionvault.com) | [Live Gold Price Chart ($4,026.25/oz t = $129.45/g on 2026-10-22)](https://www.bullionvault.com/gold-price-chart.do) | 2026-10-22 |
 | brilliantearth-returns-30d | C | Brilliant Earth (brilliantearth.com) | [Brilliant Earth — Free 30-Day Returns & Resizing Exclusions (/30-Day-Returns/)](https://www.brilliantearth.com/30-Day-Returns/) | 2026-10-22 |
 | ross-simons-returns | C | Ross-Simons (ross-simons.com) | [Ross-Simons — Returns & Exchanges Policy](https://www.ross-simons.com/pages/returns-exchanges) | 2026-10-22 |
@@ -246,11 +246,7 @@ Generated 2026-10-23 09:56 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-<<<<<<< HEAD
-run_utc: 2026-10-23T09:55:48+00:00
-=======
-run_utc: 2026-10-23T09:54:44+00:00
->>>>>>> origin/main
+run_utc: 2026-10-23T10:00:34+00:00
 dataset rows: 64 | sellers: 10 | sources: 28
 spot benchmark: $4,024.45/oz (22 October, 2026) = $129.3891/g
 
