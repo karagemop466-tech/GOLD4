@@ -383,7 +383,7 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
   <div class="spot-ribbon">
     <div class="spot-ribbon-inner">
       <div>
-        <span class="spot-pill">LIVE SPOT GOLD · 2026-10-22</span>
+        <span class="spot-pill">CROSS-CHECK QUOTES · 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct)</span>
         <span class="mono" style="margin-left:0.45rem;">
           Kitco: <strong>$4,024.60/oz</strong> (<strong>$129.39/g</strong>) <a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener noreferrer">[Source ↗]</a>
           · JM Bullion: <strong>$4,039.76/oz</strong> (<strong>$129.88/g</strong>) <a href="https://www.jmbullion.com/charts/gold-price/" target="_blank" rel="noopener noreferrer">[Source ↗]</a>
