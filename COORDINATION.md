@@ -6,6 +6,35 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 ---
 
+---
+
+## Session `arena/46691f83-gold4` — Fresh-source verification pass + integrity re-audit (2026-10-23)
+
+**Session ID:** `arena/46691f83-gold4` · **Branch:** `arena/46691f83-gold4` (branched from `main` @ `77e93b4`)
+**Claimed at:** 2026-10-23T09:52Z (written before any data file was edited, then committed and pushed immediately)
+
+**Claimed scope (non-overlapping — this session edits only these files):**
+- `COORDINATION.md` (this board + claim)
+- `data/gold_spot.json` (add a dated 2026-10-23 re-capture; previous benchmark preserved, never overwritten in place)
+- `data/verification_log.json` (append this pass)
+- `data/rings.json`, `data/sources.json` (only where a 2026-10-23 re-read confirms or corrects a recorded value; any correction logged here)
+- `scripts/session_46691f83/` (new folder: this session's verification scripts + raw results)
+- `reports/` (new dated audit outputs)
+- Regenerated static output (`index.html`, `pages/*.html`, `dashboard.html`, etc.) **only after** all other tasks are done, acting as the final integration session for this pass.
+
+**Not in scope:** no other session's branch is touched, renamed, deleted or force-pushed; `docs/legacy/**` and other sessions' preserved fixtures are read-only.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 20 | Re-open every Tier A governing source (FTC, eCFR 16 CFR 23, 15 U.S.C. §295, CFPB, NIST) and confirm each cited clause still exists at the cited URL | in progress | arena/46691f83 | `data/sources.json`, `scripts/session_46691f83/` |
+| 21 | Re-capture the gold-spot benchmark with a 2026-10-23 date; keep 2026-10-22 reading in `prior_captures`; re-derive every number | in progress | arena/46691f83 | `data/gold_spot.json`, `data/derived.json` |
+| 22 | Live line-by-line re-verification of the product rows this session can re-open (price/weight/karat drift, 404s) | in progress | arena/46691f83 | `data/rings.json`, `data/verification_log.json` |
+| 23 | Run all 5 existing gates + the hallucination auditor; publish any new irregularity on the Flagged page | in progress | arena/46691f83 | `reports/`, `pages/flagged.html` |
+| 24 | Final integration: rebuild site, confirm no broken links, PR → `main`, merge, confirm Pages deploy | unclaimed | arena/46691f83 | `index.html`, `pages/**`, PR |
+
+**Hand-off rule:** if this claim is older than 60 minutes with no commits on `arena/46691f83-gold4`, any session may take it over and must note the handoff here.
+
+
 ## Session `arena/a0be79d4-gold4` — 35-Row Canonical Expansion, 11-Page Assay Lab Suite, 4-Gate CI Audit & Live Pages Confirmation (2026-10-22)
 
 - **Branch:** `arena/a0be79d4-gold4` (active; zero other branches modified or force-pushed)
