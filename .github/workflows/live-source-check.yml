@@ -1,9 +1,16 @@
 name: Live source health check (read-only, evidence only)
 
 # This workflow does NOT gate the site. It re-opens every official URL in the
-# dataset from a runner that has unrestricted outbound internet, and publishes
-# the raw evidence (HTTP status, page title, price snippets) as an artifact.
-# The offline gates in pages.yml cannot see link rot; this one can.
+# dataset from a runner that has unrestricted outbound internet, and commits the
+# raw evidence (HTTP status, soft-404 detection, page title, price snippets) to
+# the branch as reports/live_source_check_<UTC>.json.
+#
+# The offline gates in pages.yml cannot see link rot; this one can. It is the
+# online half of the anti-hallucination posture: a stored price is only as good
+# as the page that still has to print it.
+#
+# It never writes a value into data/*.json — a human or a later pass reviews the
+# artifact and applies findings with provenance.
 
 on:
   pull_request:
@@ -16,7 +23,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
+
+concurrency:
+  group: live-source-check-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   live-check:
@@ -24,14 +35,29 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: 0
       - name: Re-open every official source URL (read-only GET)
         run: python3 scripts/live_source_check.py --timeout 30
         continue-on-error: true
-      - name: Publish evidence artifact
+      - name: Commit the evidence artifact to this branch
+        if: github.event_name == 'pull_request'
+        run: |
+          git config user.name "gold4-live-check"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/live_source_check_*.json
+          if git diff --cached --quiet; then
+            echo "no evidence artifact to commit"
+          else
+            git commit -m "ci: live source-health evidence $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push origin HEAD:${{ github.head_ref }}
+          fi
+      - name: Publish evidence artifact (belt and braces)
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: live-source-check
           path: reports/live_source_check_*.json
           retention-days: 30
-          if-no-files-found: error
+          if-no-files-found: warn
