@@ -6,6 +6,22 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 ---
 
+## Session `arena/d1586f6a-gold4` — Pass 12: independent live re-verification (2026-10-23)
+
+**Claim (written before any file was edited, committed and pushed immediately):** this session claims the *Pass 12 independent live re-verification* scope only.
+Files in scope: `data/verification_log.json`, `data/gold_spot.json`, `data/rings.json` (row-level corrections only, no row additions/removals),
+`data/sellers.json` (policy/contact re-reads only), `COORDINATION.md`, `reports/**`, and the generated site pages rebuilt from those files.
+It does **not** rewrite `scripts/audit.py`, `scripts/check_site.py`, `scripts/verify.py`, `scripts/verify_a0be79d4.py` or
+`scripts/audit_hallucinations.py` — those five gates are used unchanged as the independent check of this pass. No other session's claim or file is edited;
+requests against other scopes are logged here instead.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 20 | Pass 12 — re-open the Tier A legal sources, the Tier B spot benchmark and a live sample of retailer rows/policies; record every discrepancy; keep every unconfirmed value blank and flagged | `in progress` | arena/d1586f6a | `data/verification_log.json`, `data/gold_spot.json`, `data/rings.json`, `data/sellers.json` |
+| 21 | Re-run all five gates, rebuild the site, publish via PR to `main`, confirm the Pages deploy, record the PR + run ids | `unclaimed` | — | generated HTML, this file |
+
+---
+
 ## Session `arena/a0be79d4-gold4` — 35-Row Canonical Expansion, 11-Page Assay Lab Suite, 4-Gate CI Audit & Live Pages Confirmation (2026-10-22)
 
 - **Branch:** `arena/a0be79d4-gold4` (active; zero other branches modified or force-pushed)
