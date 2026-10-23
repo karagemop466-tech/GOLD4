@@ -36,7 +36,7 @@
       ],
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
-      "reverification": "Pass 2: page re-fetched; $585 and 'Approximate Metal Weight 3.58 grams' re-read and match this record. PASS 14 (2026-10-23): official Allurez page re-fetched live and re-read: '$585' (with the page's own '$1,194 Everyone Else' comparison), 'Setting only. Center stone sold separately.', Style number NG4426, Metal 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams'. Stored price, SKU, karat and weight match the page exactly."
+      "reverification": "Pass 12 (2026-10-23): price $585, 'Setting only. Center stone sold separately.', style number NG4426, metal 14k Yellow Gold and 'Approximate Metal Weight 3.58 grams' all re-read and match this record. Earlier: Pass 2: page re-fetched; $585 and 'Approximate Metal Weight 3.58 grams' re-read and match this record. PASS 14 (2026-10-23): official Allurez page re-fetched live a second time by this session and re-read: '$585', 'Setting only. Center stone sold separately.', Style number NG4426, Metal 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams'. Identical to the Pass 12 reading — two sessions, same values."
     },
     {
       "id": "AL-02",
@@ -571,10 +571,10 @@
         "NOT_MARKETED_AS_BRIDAL",
         "PRICE_VARIANT_DEPENDENT"
       ],
-      "flag_detail": "Mejuri lists this as a fine-jewellery ring rather than a bridal/engagement ring. It is included because it is 14k solid gold with a stated material, but it is not sold as an engagement setting.",
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5)",
-      "reverification": "Pass 2: $548 re-read from the 14k Yellow Gold Rings collection card ('Solid Yellow Gold (14k), Natural Diamond') and matches. The product page itself opens on the white-gold variant, also $548.",
+      "flag_detail": "Mejuri lists this as a fine-jewellery ring rather than a bridal/engagement ring. It is included because it is 14k solid gold with a stated material, but it is not sold as an engagement setting. Pass 12 live re-read (2026-10-23): the page resolved to the Solid White Gold (14k) variant at $548, so the recorded price is variant-dependent and the metal shown at that price differed from this row's yellow-gold label.",
+      "reverified_utc": "2026-10-23",
+      "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
+      "reverification": "Pass 12 (2026-10-23): price $548 re-read, but the page opened on the 'Solid White Gold (14k), Natural Diamond' variant, not the 14k yellow gold recorded in this row; no gram weight is published on the page. Earlier: Pass 2: $548 re-read from the 14k Yellow Gold Rings collection card ('Solid Yellow Gold (14k), Natural Diamond') and matches. The product page itself opens on the white-gold variant, also $548.",
       "variant_note": "The product URL opens on the Solid White Gold (14k) variant by default; the yellow-gold variant was opened on the same URL on 2026-10-22 and displayed the same $548, so the price is not variant-specific on this product. The ring is sold as fine jewellery, not bridal."
     },
     {
@@ -864,10 +864,10 @@
         "WHITE_GOLD",
         "SALE_MSRP_ANCHOR"
       ],
-      "flag_detail": "Published 4.80g is standard Size 10 reference weight; smaller finger sizes contain proportionally less gold. PASS 14 (2026-10-23): the live page presents three different reference numbers for the same ring — 'MSRP: US$1,369.00', 'Was: US$412.00' and 'Now: US$352.00 -15% OFF' (an automatic coupon). The US$352.00 charged price is what is recorded in this dataset. The US$1,369.00 'MSRP' is the seller's own comparison figure and is not a market price this project can verify; it equals 3.9x the charged price. Judge the ring against its 4.80 g of 10K gold, not against the MSRP.",
+      "flag_detail": "Published 4.80g is standard Size 10 reference weight; smaller finger sizes contain proportionally less gold. PASS 14 (2026-10-23): the live page presents three reference numbers for one ring — 'MSRP: US$1,369.00', 'Was: US$412.00' and 'Now: US$352.00 -15% OFF' with an automatic coupon. Only the US$352.00 charged price is recorded here. The US$1,369.00 'MSRP' is the seller's own comparison figure, is not verifiable from any independent source, and equals 3.9x the charged price.",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
-      "reverification": "PASS 14 (2026-10-23): official Sarraf page re-fetched live and re-read: title '10k White Gold 5mm High Polished Traditional Domed Wedding Band', 'Now: US$352.00 -15% OFF', 'Was: US$412.00', 'MSRP: US$1,369.00', SKU 10KW-LPBWB05 / Stock Number 142707, Material '10K Solid Gold', 'Approximate Metal Weight: 4.80 grams', and the ring-size caveat 'The weight listed is an approximate weight of a ring in size 10'. Stored price, karat, weight and solid-gold wording all match; the price ladder is now recorded as a flag."
+      "reverification": "PASS 14 (2026-10-23): official Sarraf page re-fetched live and re-read: 'Now: US$352.00 -15% OFF', 'Was: US$412.00', 'MSRP: US$1,369.00', SKU 10KW-LPBWB05 / Stock 142707, Material '10K Solid Gold', 'Approximate Metal Weight: 4.80 grams', plus the size caveat 'The weight listed is an approximate weight of a ring in size 10'. Stored price, karat, weight and solid-gold wording all match."
     },
     {
       "id": "SR-02",
@@ -932,8 +932,9 @@
         "WEIGHT_APPROXIMATE",
         "HALLMARK_NOT_PUBLISHED"
       ],
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/a0be79d4-gold4 (Pass 6)"
+      "reverified_utc": "2026-10-23",
+      "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
+      "reverification": "Pass 12 (2026-10-23): price US$871.00 ('Now'), SKU 18KY-LPBWB05, stock 140139, '18K Solid Gold' and 'Approximate Metal Weight: 6.70 grams' (page states the weight is for a size-10 ring) all re-read and match this record."
     },
     {
       "id": "SR-04",
@@ -997,8 +998,9 @@
         "PRICE_INCLUDES_CENTRE_STONE",
         "HALLMARK_NOT_PUBLISHED"
       ],
-      "reverified_utc": "2026-10-22",
-      "reverified_by": "arena/a0be79d4-gold4 (Pass 6)"
+      "reverified_utc": "2026-10-23",
+      "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
+      "reverification": "Pass 12 (2026-10-23): price US$2,858.00 ('Now'), SKU 9240-14ky, stock 145364, '14K Solid Gold', 'Approximate Metal Weight: 8.00 grams' and Diamond Weight 0.50 Ct all re-read and match this record; the price is stone-inclusive, as flagged."
     },
     {
       "id": "SR-06",
@@ -1661,8 +1663,8 @@
       ],
       "flag_detail": "Product-page snapshot showed Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm, '$965 $772 (Setting Price) −20%'. IRREGULARITY: other official Blue Nile category snapshots show different current sale prices for this same SKU — $724 (−25%) on /engagement-rings/affordable, $730 on /engagement-rings/engravable-engagement-rings/all, $728 on /engagement-rings/designer/all. Sale prices are time-sensitive and vary by page; confirm the live price before purchase. LIVE UPDATE 2026-10-23T00:20Z: the product page now shows $965 (Setting Price) with no strike-through - the sale seen on 22 Oct ($772/$724/$730/$728 across pages) has ended. This confirms the flag's point: sale prices are volatile and page-dependent; the current live price is the recorded one.",
       "reverified_utc": "2026-10-23",
-      "reverified_by": "arena/22b5b06c-gold4",
-      "reverification": "2026-10-22T23:38Z: five dated snapshots of official Blue Nile pages re-read; the price itself varies between them (see flag_detail) — recorded, not averaged. Live fetch 2026-10-23T00:20Z: $965 '(Setting Price)' with NO discount displayed; Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm re-read from the page. The 22 Oct sale display ('$965 $772 -20%') had ended by this re-fetch - the recorded price is updated to the live $965; the snapshot sale history and the four differing category-page sale prices remain documented under SALE_PRICE_VARIES_ACROSS_PAGES."
+      "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
+      "reverification": "Pass 12 (2026-10-23): price $965 '(Setting Price)' with no discount, Stock Number 505038y14, Metal 14K Yellow Gold and Width 1.80mm all re-read and match this record; the ended 22-October sale is confirmed absent from the live page. Earlier: 2026-10-22T23:38Z: five dated snapshots of official Blue Nile pages re-read; the price itself varies between them (see flag_detail) — recorded, not averaged. Live fetch 2026-10-23T00:20Z: $965 '(Setting Price)' with NO discount displayed; Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm re-read from the page. The 22 Oct sale display ('$965 $772 -20%') had ended by this re-fetch - the recorded price is updated to the live $965; the snapshot sale history and the four differing category-page sale prices remain documented under SALE_PRICE_VARIES_ACROSS_PAGES."
     },
     {
       "id": "BN-21",
@@ -1947,10 +1949,10 @@
         "PRICE_V2_ONLY",
         "PRICE_CURRENCY_LOCALIZED"
       ],
-      "flag_detail": "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session. PASS 14 (2026-10-23): live re-fetch served 'EUR 1,350.00 (Setting Only)' for this page while BE-06 and BE-07 served USD in the same minute; the USD figure ($1,190) is therefore still only snapshot-sourced and stays flagged. Converted, EUR 1,350 is well above the recorded USD figure, so the two are not interchangeable — this project publishes the USD snapshot and tells you the live page may show a different currency and number.",
+      "flag_detail": "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session. PASS 14 (2026-10-23): live re-fetch served 'EUR 1,350.00 (Setting Only)' on this page while BE-06 and BE-07 served USD in the same minute; the USD figure ($1,190) therefore remains snapshot-sourced and stays flagged. The EUR figure is not converted to USD here — a conversion would be a number this project computed, not a price the retailer published.",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
-      "reverification": "2026-10-22T23:35Z: three dated snapshots of official Brilliant Earth pages agree on $1,190 (product page + two category JSON-LD records). Live re-fetch pending (fetch-service outage 23:20-23:47Z). PASS 14 (2026-10-23): official page re-fetched live. It served the GEOLOCALIZED price 'EUR 1,350.00 (Setting Only)' for style BE1D3939-14KY, 14K Yellow Gold, 'Width: 2-1.3 mm', 'Setting: Claw Prong', 14 shared-prong round diamonds, 0.05 ct total — but no USD figure, so the stored $1,190 could not be re-confirmed today and is NOT updated. Provenance stays V2. Irregularity: in the same session, minutes apart, the 18K variant (BE-06) and Fleur (BE-07) on the same site both rendered in USD while this page rendered in EUR — the localization is per-page, not per-session. No gram weight is published on any of the three pages.",
+      "reverification": "2026-10-22T23:35Z: three dated snapshots of official Brilliant Earth pages agree on $1,190 (product page + two category JSON-LD records). Live re-fetch pending (fetch-service outage 23:20-23:47Z). PASS 14 (2026-10-23): official page re-fetched live. It served the geolocalized price 'EUR 1,350.00 (Setting Only)' for style BE1D3939-14KY (14K Yellow Gold, 'Width: 2-1.3 mm', 'Setting: Claw Prong', 14 shared-prong round diamonds totalling 0.05 ct) and published no USD figure, so the stored $1,190 was NOT re-confirmed and NOT changed. Provenance stays V2. In the same minutes the 18K variant (BE-06) and Fleur (BE-07) both rendered in USD, so the localization is per-page rather than per-session. No gram weight is published on any of the three pages.",
       "pair_id": "PAIR-BE-FREESIA"
     },
     {
@@ -1984,10 +1986,10 @@
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED"
       ],
-      "flag_detail": "Snapshot of the official product page (dated 2026-09-28) showed: $1,390 (Setting Only), Metal 18K Yellow Gold. The 18K style code was not visible in the captured text, so sku stays blank rather than inferred from the 14K variant. PASS 14 (2026-10-23): live re-fetch confirmed '$1,390 (Setting Only)' in USD and style BE1D3939-18KY; the stored price is current, not just a snapshot. Currency can still flip to EUR depending on the visitor's session — check the currency selector before comparing against any other price on this site.",
+      "flag_detail": "Snapshot of the official product page (dated 2026-09-28) showed: $1,390 (Setting Only), Metal 18K Yellow Gold. The 18K style code was not visible in the captured text, so sku stays blank rather than inferred from the 14K variant. PASS 14 (2026-10-23): live re-fetch confirmed '$1,390 (Setting Only)' in USD and style BE1D3939-18KY; the stored price is current, not only a snapshot. Currency can still flip to EUR depending on the session — check the selector before comparing against other rows on this site.",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
-      "reverification": "2026-10-22T23:35Z: value re-read from the dated official-page snapshot; live re-fetch pending (outage). PASS 14 (2026-10-23): official page re-fetched live and re-read in USD: '$1,390 (Setting Only)', 'Style: BE1D3939-18KY', 'Metal: 18K Yellow Gold', 'Width: 2-1.3 mm', 'Setting: Claw Prong', 'Free Shipping & Returns', 'Free 1-Year Resizing'. Price matches the stored $1,390, so provenance is upgraded from V2 snapshot to V1 direct fetch and PRICE_V2_ONLY is removed. The SKU, previously blank, is now recorded from the live spec block. Width stays blank because the page publishes a taper range (2-1.3 mm), not one figure.",
+      "reverification": "2026-10-22T23:35Z: value re-read from the dated official-page snapshot; live re-fetch pending (outage). PASS 14 (2026-10-23): official page re-fetched live and re-read in USD: '$1,390 (Setting Only)', 'Style: BE1D3939-18KY', 'Metal: 18K Yellow Gold', 'Width: 2-1.3 mm', 'Setting: Claw Prong', 'Free Shipping & Returns', 'Free 1-Year Resizing'. Price matches the stored $1,390, so provenance is upgraded from V2 snapshot to V1 direct fetch and PRICE_V2_ONLY is removed. The style code, previously blank, is now recorded from the live spec block. Width stays blank because the page publishes a taper range (2-1.3 mm), not a single figure.",
       "pair_id": "PAIR-BE-FREESIA"
     },
     {
@@ -2024,7 +2026,7 @@
       "flag_detail": "Snapshot of the official product page (dated 2026-08-07) showed: $1,350 (Setting Only), Style BE1574-14KY, Metal 14K Yellow Gold, Width 1.8 mm, Setting Four-Prong.",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
-      "reverification": "2026-10-22T23:39Z: value re-read from the dated official-page snapshot; live re-fetch pending (outage). PASS 14 (2026-10-23): official page re-fetched live and re-read in USD: '$1,350 (Setting Only)', 'Style: BE1574-14KY', 'Metal: 14K Yellow Gold', 'Width: 1.8 mm', 'Setting: Four-Prong', 'Free Shipping & Returns', 'Free 1-Year Resizing'. Price matches the stored $1,350, so provenance is upgraded from V2 snapshot to V1 direct fetch and PRICE_V2_ONLY is removed. The 1.8 mm width, previously blank, is now recorded from the live spec block because this page states a single width rather than a taper range."
+      "reverification": "2026-10-22T23:39Z: value re-read from the dated official-page snapshot; live re-fetch pending (outage). PASS 14 (2026-10-23): official page re-fetched live and re-read in USD: '$1,350 (Setting Only)', 'Style: BE1574-14KY', 'Metal: 14K Yellow Gold', 'Width: 1.8 mm', 'Setting: Four-Prong', 'Free Shipping & Returns', 'Free 1-Year Resizing'. Price matches the stored $1,350, so provenance is upgraded from V2 snapshot to V1 direct fetch and PRICE_V2_ONLY is removed. The 1.8 mm width, previously blank, is recorded from the live spec block because this page states a single width rather than a taper range."
     },
     {
       "id": "RS-01",
@@ -2059,7 +2061,7 @@
       "flag_detail": "Publishes explicit 1.7 g metal weight on product page ($400 vs ~0.992 g pure Au).",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
-      "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/571221.html on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 14 (2026-10-23): official Ross-Simons page re-fetched live and re-read: '$400', title \"Women's 2mm 14kt Yellow Gold Band\", Item 571221, 'Metal 14kt Yellow Gold', 'Gold Weight 1.7 grams'. Stored price, metal, width and weight match. The page adds 'All weights and measurements are approximate.' and shows alternating sizes sold out."
+      "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/571221.html on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 14 (2026-10-23): official Ross-Simons page re-fetched live and re-read: '$400', Item 571221, '2mm 14kt Yellow Gold Band', 'Metal 14kt Yellow Gold', 'Gold Weight 1.7 grams', with the page's 'All weights and measurements are approximate.' Stored price, metal, width and weight all match."
     },
     {
       "id": "RS-02",
@@ -2094,7 +2096,7 @@
       "flag_detail": "Illustrates why karat alone misleads without gram weight: despite being 18kt, its 0.7 g mass holds only 0.525 g pure gold (47% less fine gold than RS-01's 14kt 1.7 g band); title says 2mm while bullet says 1/16 in (~1.6 mm).",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
-      "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/985230.html on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 14 (2026-10-23): official Ross-Simons page re-fetched live and re-read: '$249', title '2mm 18kt Yellow Gold Polished Ring', Item 985230, 'Metal 18kt Yellow Gold', 'Gold Weight 0.7 grams', sizes 5-10 all listed In-Stock at '$249.00'. Stored price, karat (18) and weight match."
+      "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/985230.html on 2026-10-22; price, metal spec, and flags verified verbatim. PASS 14 (2026-10-23): official Ross-Simons page re-fetched live and re-read: '$249', Item 985230, '2mm 18kt Yellow Gold Polished Ring', 'Metal 18kt Yellow Gold', 'Gold Weight 0.7 grams', sizes 5-10 all In-Stock at '$249.00'. Stored karat (18), price and weight all match."
     },
     {
       "id": "RS-03",

@@ -12,7 +12,14 @@
         "email": "service@bluenile.com",
         "contact_page": "https://www.bluenile.com/contact-us",
         "verified_from": "https://www.bluenile.com/policies/returns",
-        "verification": "V1_direct_page_fetch"
+        "verification": "V1_direct_page_fetch",
+        "pass12_live_check": {
+          "retrieved_utc": "2026-10-23",
+          "verified_from": "https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896",
+          "what_the_page_shows": "Contact panel lists '+1-800-242-2728', 'service@bluenile.com', a WhatsApp number and a Contact Us page link.",
+          "phone_matches_record": true,
+          "email_matches_record": true
+        }
       },
       "return_window_days": 30,
       "return_window_basis": "30 days from the shipment date",
@@ -401,5 +408,5 @@
       "reverification": "Returns policy and 5 solid-gold ring product pages directly fetched and verified on 2026-10-22."
     }
   ],
-  "reverified_utc": "2026-10-22"
+  "reverified_utc": "2026-10-23"
 }

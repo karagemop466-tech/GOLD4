@@ -230,27 +230,55 @@
       "outcome": "6 of the 9 PRICE_V2_ONLY rows upgraded to V1 with live reads; 2 prices corrected to current live values (BN-20 $772->$965, BN-25 $1,657->$2,210 - both sales ended); dataset provenance now 60 V1 / 3 V2 / 1 U of 64 rows. No value was inferred: every change quotes the live page."
     },
     {
-      "pass": "Pass 14 — live re-verification, official spot refresh (session arena/04f1f10d-gold4)",
+      "pass": "Pass 12 — independent live re-verification (session arena/d1586f6a-gold4)",
       "when_utc": "2026-10-23T10:05Z",
-      "scope": "Independent live pass over the published 64-row tree from branch arena/04f1f10d-gold4. The three rows still carrying PRICE_V2_ONLY plus four rows with published gram weights were re-fetched directly from their official pages, and the gold benchmark was re-read from the World Gold Council. No value was copied from an earlier pass without being re-read, and no value was written that the page did not show.",
+      "scope": "Live re-open of the Tier A legal sources, the Tier B spot benchmark and a sample of retailer rows/policies, done from a fresh sandbox to test whether the stored claims still hold on the pages as served today.",
       "checked": [
-        "World Gold Council spot panel (https://www.gold.org/goldhub/data/gold-prices): 4,024.45 USD/oz, 'Data as of 22 October, 2026'. Replaces the 4,028.53 / 21 October benchmark that had been in force since Pass 2; the old reading is preserved in prior_captures and every derived number was recomputed at the new rate.",
-        "gold-api.com XAU live quote as an independent cross-check: $4,025.60/oz at 2026-10-23T09:51:43Z, 0.029% from the WGC benchmark. Not used in any calculation.",
-        "BE-06 (Freesia 18K): live USD '$1,390 (Setting Only)' — matches the stored price. Upgraded V2 -> V1, PRICE_V2_ONLY removed, SKU BE1D3939-18KY recorded from the live spec block, width left blank (page publishes a 2-1.3 mm taper).",
-        "BE-07 (Fleur 14K): live USD '$1,350 (Setting Only)' — matches the stored price. Upgraded V2 -> V1, PRICE_V2_ONLY removed, width 1.8 mm recorded from the live spec block.",
-        "BE-05 (Freesia 14K): the live page served 'EUR 1,350.00 (Setting Only)' and published no USD figure, so the stored $1,190 was NOT updated and provenance stays V2. BE-06 and BE-07 served USD within the same minutes, so the localization is per-page.",
-        "AL-01 (Allurez): '$585', NG4426, 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams', 'Setting only. Center stone sold separately.' — all match the stored record.",
-        "RS-01 (Ross-Simons): '$400', Item 571221, 14kt Yellow Gold, 'Gold Weight 1.7 grams' — matches.",
-        "RS-02 (Ross-Simons): '$249', Item 985230, '2mm 18kt Yellow Gold Polished Ring', 18kt Yellow Gold, 'Gold Weight 0.7 grams' — matches; the stored karat (18) is correct and the page is 18kt, not 14kt.",
-        "SR-01 (Sarraf): 'Now: US$352.00', SKU 10KW-LPBWB05, '10K Solid Gold', 'Approximate Metal Weight: 4.80 grams', size-10 weight caveat — all match. New flag SALE_MSRP_ANCHOR records the page's three price references (MSRP $1,369 / Was $412 / Now $352)."
+        "FTC 'Buying Platinum, Gold, and Silver Jewelry' (consumer.ftc.gov) — still live at the recorded URL. Re-confirmed verbatim: the karat mark must sit beside the name or U.S. registered trademark of the company standing behind the mark ('If you're thinking about buying a piece of gold jewelry but don't see a trademark along with the karat mark, don't buy it.'); 'solid gold' means the item is not hollow; vermeil is a sterling-silver base coated or plated with gold; gold filled / gold overlay / RGP are mechanically applied layers; the article also tells shoppers to look up complaints and get the return policy in writing. The checklist's items 2, 3, 5 and 7 are supported by this page.",
+        "15 U.S.C. § 295 (law.cornell.edu) — text unchanged: actual fineness may not be less than the stamped fineness by more than three one-thousandths, and for the whole article including solder, seven one-thousandths (other than watchcases/flatware). This is the source of the 'a stamp is not proof' arithmetic used by the calculator's legal-minimum column.",
+        "16 CFR 23.3 and 23.4 (ecfr.gov, title up to date as of 10/21/2026) — text read in full. 23.3(a) prohibits misrepresenting karat fineness; 23.3(c)(1) requires the karat designation immediately before the word gold and states hollow-centred articles 'should not be marked or described as solid'; 23.4(b) defines vermeil as sterling silver plated with gold of not less than 10 karat fineness and a minimum thickness equivalent to 2.5 microns.",
+        "IRREGULARITY FOUND AND CORRECTED: the site's 14K karat row claimed 10K is the 'lowest fine-gold content legally sellable as karat gold under 16 CFR § 23.3'. That is not the current rule — 23.3(c)(1) itself lists '9 Karat Gold' as an acceptable description and the 2018 revision removed the old 10-karat threshold. The remaining 10-karat figures in Part 23 are plating-fineness floors (23.3(c)(2)-(3), 23.4(b)). The cell was corrected and the correction published as FLG-PASS12-01. No dataset row was affected.",
+        "World Gold Council spot panel — re-read live. The stored benchmark carried the source's own date line '21 October, 2026' at $4,028.53/oz; today the same panel shows $4,024.45/oz with 'Data as of 22 October, 2026'. Benchmark advanced by one data day (-0.10%) and every derived melt value recomputed; prior reading kept in prior_captures. Published as FLG-PASS12-02.",
+        "AL-01 Allurez — live page matches every stored field ($585, 'Setting only. Center stone sold separately.', NG4426, 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams'). No solid-gold wording and no hallmark image on the page, as flagged.",
+        "SR-03 Sarraf 18K 5mm domed band — live page matches ($871.00 Now, SKU 18KY-LPBWB05, stock 140139, 18K Solid Gold, 6.70 grams for a size-10 ring).",
+        "SR-05 Sarraf 14K men's solitaire — live page matches ($2,858.00 Now, SKU 9240-14ky, stock 145364, 14K Solid Gold, 8.00 grams, 0.50 ct H/SI1 natural diamond). Stone-inclusive pricing flag stands.",
+        "BN-20 Blue Nile Woven Solitaire — live page matches ($965 Setting Price, no discount, stock 505038y14, 14K Yellow Gold, 1.80mm). Confirms the Pass 11 resolution and that the 22-October sale has ended. Blue Nile's contact panel (+1-800-242-2728, service@bluenile.com) also re-read live.",
+        "MJ-01 Mejuri Diamonds Team Ring — $548 re-read, BUT the page opened on the 'Solid White Gold (14k), Natural Diamond' variant while the row records yellow gold; gram weight still not published. PRICE_VARIANT_DEPENDENT re-confirmed and FLG-PASS12-03 published.",
+        "Hallmark check on every live page opened this pass: none publishes the physical stamp plus maker's mark, so hallmark_published stays false for all 64 rows and the check stays on the on-arrival list (FLG-PASS12-04)."
+      ],
+      "not_verified_this_pass": [
+        "The 59 rows not listed above were not re-opened in this pass; their last verification date remains 2026-10-22 and is recorded per row.",
+        "Brilliant Earth BE-05/BE-06/BE-07 still carry V2 snapshot provenance; they were not re-fetched this pass.",
+        "Seller reputation and independent complaint history remains unverified for every seller (no independent review corpus was consulted).",
+        "Physical hallmark, XRF assay and as-delivered weight can only be established on the ring in hand."
+      ],
+      "result": "PASS — 4 Tier A/B sources and 5 retailer pages re-read live; 1 incorrect legal claim found and corrected; 1 benchmark date drift found and refreshed; 2 confirmed-but-still-unresolved retailer irregularities re-published. No fabricated value was added.",
+      "outcome": "All four corrections are published on the Flagged page with source links; every unconfirmable value remains blank."
+    },
+    {
+      "pass": "Pass 14 — independent live re-verification, V2 rows cleared (session arena/04f1f10d-gold4)",
+      "when_utc": "2026-10-23T10:05Z",
+      "scope": "Independent live pass from branch arena/04f1f10d-gold4, run concurrently with session arena/d1586f6a-gold4's Pass 12. Both sessions read the same World Gold Council panel and got the same 4,024.45 / '22 October, 2026' figure, so the benchmark is corroborated by two separate live reads. This pass concentrated on the last three PRICE_V2_ONLY rows and on rows that publish a gram weight.",
+      "checked": [
+        "World Gold Council spot panel: 4,024.45 USD/oz, 'Data as of 22 October, 2026' — identical to Pass 12's read. Independent cross-check gold-api.com $4,025.60/oz at 2026-10-23T09:51:43Z (0.029% apart).",
+        "BE-06 (Freesia 18K): live '$1,390 (Setting Only)' in USD — matches. Upgraded V2 -> V1; PRICE_V2_ONLY removed; style BE1D3939-18KY recorded from the live spec block; width left blank (2-1.3 mm taper).",
+        "BE-07 (Fleur 14K): live '$1,350 (Setting Only)' in USD — matches. Upgraded V2 -> V1; PRICE_V2_ONLY removed; width 1.8 mm recorded from the live spec block.",
+        "BE-05 (Freesia 14K): live page served 'EUR 1,350.00 (Setting Only)' and no USD figure. Stored $1,190 NOT changed, NOT converted; provenance stays V2 + PRICE_V2_ONLY. BE-06/BE-07 served USD in the same minutes, so localization is per-page.",
+        "AL-01 (Allurez): '$585', NG4426, 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams' — matches Pass 12's independent reading.",
+        "RS-01: '$400', Item 571221, 14kt Yellow Gold, 'Gold Weight 1.7 grams' — matches.",
+        "RS-02: '$249', Item 985230, 18kt Yellow Gold, 'Gold Weight 0.7 grams' — matches; the page is 18kt, not 14kt.",
+        "SR-01: 'Now: US$352.00', '10K Solid Gold', 'Approximate Metal Weight: 4.80 grams', size-10 caveat — matches. New flag SALE_MSRP_ANCHOR records MSRP $1,369 / Was $412 / Now $352."
       ],
       "result": "PASS (compute -> build_site + generate_site -> all five CI gates re-run after the edits)",
-      "outcome": "All 3 remaining PRICE_V2_ONLY rows were re-examined live: 2 upgraded to V1 with matching prices and the third left V2 because the page would not serve a USD figure. The dataset benchmark is now the 22 October World Gold Council reading, so every derived gold value is current to the day of this pass. The 3 standing Gate-1 warnings (B-08, BE-05/06/07) drop to 1.",
+      "outcome": "2 of the 3 remaining PRICE_V2_ONLY rows upgraded to V1 with matching live prices; the third stays V2 because the page would not serve a USD figure. Provenance now 62 V1 / 1 V2 / 1 U of 64. Gate 1 warnings fall 3 -> 1 (only BE-05).",
       "flags_added": [
-        "SALE_MSRP_ANCHOR (SR-01): seller-published MSRP of US$1,369 against a charged price of US$352 — a comparison figure this project cannot verify.",
-        "BE-05 PRICE_CURRENCY_LOCALIZED re-confirmed live: EUR served instead of USD."
+        "SALE_MSRP_ANCHOR (SR-01): seller MSRP US$1,369 against a charged US$352 — unverifiable comparison figure.",
+        "BE-05 PRICE_CURRENCY_LOCALIZED re-confirmed live: EUR served instead of USD.",
+        "FLG-HIGH-13 (catalog): Brilliant Earth per-page currency localization.",
+        "FLG-MED-14 (catalog): Sarraf MSRP anchor."
       ],
-      "recommendation": "RE-RUN THE HALLUCINATION CHECKS AFTER EVERY REVIEW. Before trusting any row: run scripts/audit.py, scripts/verify.py and scripts/audit_hallucinations.py, then open the source link beside the value and confirm it is still there. Prices on these pages move weekly (three rows changed between 22 and 23 October), so an unopened source link is an unverified value."
+      "recommendation": "LOOK FOR HALLUCINATIONS AFTER EVERY REVIEW. Run scripts/audit.py, check_site.py, verify.py, verify_a0be79d4.py and audit_hallucinations.py, then open the source link beside each number you intend to rely on. Prices on these pages move weekly, so an unopened source link is an unverified value.",
+      "note": "Pass 13 was not assigned; pass numbers follow the order in which sessions finished, not a strict sequence."
     }
   ],
   "not_reverified_this_pass": [
