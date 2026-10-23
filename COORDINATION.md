@@ -6,6 +6,29 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 ---
 
+## Session `arena/04f1f10d-gold4` — Pass 14: live re-verification + spot refresh + integration (2026-10-23)
+
+**Claim (written and pushed before any data file was edited).** This session claims exactly these files:
+
+`data/rings.json`, `data/gold_spot.json`, `data/derived.json`, `data/verification_log.json`, `data/sellers.json`,
+`data/sources.json`, `COORDINATION.md`, `README.md`, `VERIFICATION.md`, `AUDIT.md`,
+`scripts/pass14_04f1f10d.py` (new), and the **generated** site files produced by `scripts/build_site.py` /
+`scripts/generate_site.py` / `scripts/gen_verification.py` (`index.html`, `dashboard.html`, `flagged.html`,
+`calculator.html`, `audit.html`, `coordination.html`, `pages/*.html`, `docs/verification.html`).
+It does **not** edit `scripts/audit.py`, `scripts/compute.py`, `scripts/check_site.py`, `scripts/verify.py`,
+`scripts/verify_a0be79d4.py`, `scripts/audit_hallucinations.py` — those five gates are used unchanged as the
+independent check of this pass. Other sessions' `scripts/session_*` and `data/preserved/*` are untouched.
+
+| # | Task | Status | Owner | File scope |
+|---|------|--------|-------|-----------|
+| P14-1 | Live re-fetch the 3 `PRICE_V2_ONLY` rows (BE-05/06/07) and upgrade to V1 or re-flag | in progress | arena/04f1f10d | `data/rings.json` |
+| P14-2 | Re-read live gold spot for 2026-10-23 and record drift vs the 21 Oct benchmark | in progress | arena/04f1f10d | `data/gold_spot.json` |
+| P14-3 | Line-by-line live re-check of a sample of published prices/weights against their official pages | in progress | arena/04f1f10d | `data/rings.json`, `data/verification_log.json` |
+| P14-4 | Re-run all five CI gates, rebuild site, confirm no broken links | unclaimed | — | generated pages |
+| P14-5 | Publish via PR → merge → confirm GitHub Pages deploy | unclaimed | — | `COORDINATION.md` |
+
+---
+
 ## Session `arena/a0be79d4-gold4` — 35-Row Canonical Expansion, 11-Page Assay Lab Suite, 4-Gate CI Audit & Live Pages Confirmation (2026-10-22)
 
 - **Branch:** `arena/a0be79d4-gold4` (active; zero other branches modified or force-pushed)
