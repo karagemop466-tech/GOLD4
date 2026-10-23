@@ -97,6 +97,13 @@ Every re-read is recorded per row in `data/rings.json` (`reverified_utc`, `rever
 - **Benchmark cross-check:** an independent live API reading of **$4,028.10/oz** (23:01:42 UTC) sits 0.01% from the WGC benchmark $4,028.53/oz; same-day Kitco/APMEX snapshots are recorded informationally in `data/gold_spot.json`. The benchmark itself was left untouched.
 - Full pipeline re-run after integration, all five CI gates green: `audit.py` **PASS (128 checks, 9 informational warnings, 0 failures)**, `check_site.py` PASS (26 pages), `verify.py` 0 hard failures (64 records), `verify_a0be79d4.py` 0 hard failures, `audit_hallucinations.py` **PASS (0 failures)**.
 
+**Pass 11 — same session, post-merge** (live re-fetch of the V2 rows, 2026-10-23 00:20–00:35 UTC)
+
+- The fetch-service outage cleared briefly: **6 of the 9 `PRICE_V2_ONLY` rows were re-fetched live and upgraded to V1** (BN-20…BN-25). Every stock number, metal and width re-read exactly.
+- **Two prices corrected to current live values:** BN-20 $772 → **$965** and BN-25 $1,657 → **$2,210** — both 22 Oct sales had *ended* and the live pages showed the undiscounted setting prices. This is the volatility the `SALE_PRICE_VARIES_ACROSS_PAGES` flag warned about, observed in real time.
+- BN-22's "platinum solitaire setting" copy contradiction was **confirmed on the live page**, not just the snapshot.
+- The three Brilliant Earth rows (BE-05/06/07) could **not** be completed — the outage returned mid-page — so they keep `PRICE_V2_ONLY` (and `PRICE_CURRENCY_LOCALIZED`) and stay listed on the Flagged page until a live read confirms them. `audit.py` warnings fell 9 → 3 accordingly.
+
 ## What the data currently shows
 
 | Metric | Value |
@@ -104,7 +111,7 @@ Every re-read is recorded per row in `data/rings.json` (`reverified_utc`, `rever
 | Rings tracked | 64 |
 | Retailers with product rows | 10 (Blue Nile — including the James Allen line, Allurez, VRAI, Mejuri, Brilliant Earth, Anjolee, Ross-Simons, Sarraf, Catbird, Mene) |
 | Prices read from the retailer's own page | 62 of 64 (2 deliberately blank: VRAI VR-02 publishes no price; Blue Nile BN-26 was sold out at the live check) |
-| Price provenance | 54 rows V1 (live page fetch) · 9 rows V2 (dated snapshot of the official page, each corroborated by ≥2 official reads, flagged `PRICE_V2_ONLY` pending live re-fetch) · 1 row with no published price (`U_unverified`) |
+| Price provenance | 60 rows V1 (live page fetch) · 3 rows V2 (BE-05/06/07 — dated snapshots of the official pages, each corroborated by ≥2 official reads, flagged `PRICE_V2_ONLY` pending live re-fetch) · 1 row with no published price (`U_unverified`) |
 | Gram weights published by the retailer | 17 of 64 — only these rows have a computable gold value |
 | Rows with explicit *solid gold* wording | 19 of 64 |
 | Rows publishing a hallmark / maker's mark | **0 of 64** — it can only be checked in your hand |
@@ -118,7 +125,7 @@ Every re-read is recorded per row in `data/rings.json` (`reverified_utc`, `rever
 2. Most major retailers do not publish a gram weight, so their rings cannot be priced against their own gold. Only Allurez, VRAI, Anjolee, Sarraf and Ross-Simons did (17 of 64 rows). Anjolee's price includes a lab-created centre stone, so even that multiple is not a setting markup. Blue Nile and Brilliant Earth publish none at all.
 3. The 18K premium is inconsistent: +15.5% (Blue Nile Petite Solitaire), +16.8% (Brilliant Earth Atelier), +16.8% (Brilliant Earth Freesia, added by Pass 9), +40.1% (Blue Nile Comfort Fit), +68.0% (Allurez Split Shank) — and for the one pair with both weights published, 54.9% of that premium is simply more gold.
 4. Return windows all look like "30 days", but exclusions differ sharply (resized, engraved, custom). One seller (Anjolee) explicitly accepts returns on customised orders; another (Allurez) makes custom orders non-refundable.
-5. Several retailer pages contradict their own specification blocks; each case is listed on the Flagged page. Pass 9 found two more on Blue Nile: a 14K yellow-gold page whose copy says "platinum solitaire setting" (BN-22), and one SKU showing four different sale prices across four official category pages (BN-20). It also recorded a naming variance: stock number 502120y14 is titled "Low Dome Comfort Fit Solitaire" on one official URL and "Classic Simple Solitaire" on its alias (BN-10's record).
+5. Several retailer pages contradict their own specification blocks; each case is listed on the Flagged page. Pass 9 found two more on Blue Nile: a 14K yellow-gold page whose copy says "platinum solitaire setting" (BN-22 — **confirmed on the live page** at the 2026-10-23 re-fetch), and one SKU showing four different sale prices across four official category pages (BN-20 — at the live re-fetch the sale had *ended* and the page showed $965 undiscounted; the live price is the recorded one). It also recorded a naming variance: stock number 502120y14 is titled "Low Dome Comfort Fit Solitaire" on one official URL and "Classic Simple Solitaire" on its alias (BN-10's record).
 6. James Allen now redirects into Blue Nile: jamesallen.com product URLs land on bluenile.com, which states "James Allen is Now Part of Blue Nile" (live-verified 2026-10-22, recorded on BN-26). "By James Allen" collection rings are Blue Nile listings and carry Blue Nile's policies.
 
 ## Sources

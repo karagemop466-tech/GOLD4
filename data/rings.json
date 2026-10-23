@@ -1641,11 +1641,11 @@
    "solid_gold_statement": null,
    "solid_gold_status": "not_stated",
    "hallmark_published": false,
-   "price_usd": 772.0,
-   "price_basis": "Sale '(Setting Price)' — snapshot showed '$965 $772 (Setting Price) −20%'; the $965 list figure is the seller's own struck-through price",
-   "price_captured_utc": "2026-10-22",
+   "price_usd": 965.0,
+   "price_basis": "Setting only - live page shows '$965 (Setting Price)', no discount displayed at the 2026-10-23 re-fetch (the 22 Oct '-20% to $772' sale had ended)",
+   "price_captured_utc": "2026-10-23",
    "price_source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896",
-   "price_verification": "V2_official_page_snapshot_only",
+   "price_verification": "V1_direct_page_fetch",
    "weight_g": null,
    "weight_scope": null,
    "weight_source_url": null,
@@ -1655,13 +1655,12 @@
     "NO_WEIGHT_PUBLISHED",
     "SOLID_NOT_STATED",
     "HALLMARK_NOT_PUBLISHED",
-    "PRICE_V2_ONLY",
     "SALE_PRICE_VARIES_ACROSS_PAGES"
    ],
-   "flag_detail": "Product-page snapshot showed Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm, '$965 $772 (Setting Price) −20%'. IRREGULARITY: other official Blue Nile category snapshots show different current sale prices for this same SKU — $724 (−25%) on /engagement-rings/affordable, $730 on /engagement-rings/engravable-engagement-rings/all, $728 on /engagement-rings/designer/all. Sale prices are time-sensitive and vary by page; confirm the live price before purchase.",
-   "reverified_utc": "2026-10-22",
+   "flag_detail": "Product-page snapshot showed Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm, '$965 $772 (Setting Price) −20%'. IRREGULARITY: other official Blue Nile category snapshots show different current sale prices for this same SKU — $724 (−25%) on /engagement-rings/affordable, $730 on /engagement-rings/engravable-engagement-rings/all, $728 on /engagement-rings/designer/all. Sale prices are time-sensitive and vary by page; confirm the live price before purchase. LIVE UPDATE 2026-10-23T00:20Z: the product page now shows $965 (Setting Price) with no strike-through - the sale seen on 22 Oct ($772/$724/$730/$728 across pages) has ended. This confirms the flag's point: sale prices are volatile and page-dependent; the current live price is the recorded one.",
+   "reverified_utc": "2026-10-23",
    "reverified_by": "arena/22b5b06c-gold4",
-   "reverification": "2026-10-22T23:38Z: five dated snapshots of official Blue Nile pages re-read; the price itself varies between them (see flag_detail) — recorded, not averaged."
+   "reverification": "2026-10-22T23:38Z: five dated snapshots of official Blue Nile pages re-read; the price itself varies between them (see flag_detail) — recorded, not averaged. Live fetch 2026-10-23T00:20Z: $965 '(Setting Price)' with NO discount displayed; Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm re-read from the page. The 22 Oct sale display ('$965 $772 -20%') had ended by this re-fetch - the recorded price is updated to the live $965; the snapshot sale history and the four differing category-page sale prices remain documented under SALE_PRICE_VARIES_ACROSS_PAGES."
   },
   {
    "id": "BN-21",
@@ -1680,9 +1679,9 @@
    "hallmark_published": false,
    "price_usd": 1290.0,
    "price_basis": "Setting only — page shows '(Setting Price)'; centre diamond sold separately",
-   "price_captured_utc": "2026-10-22",
+   "price_captured_utc": "2026-10-23",
    "price_source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261",
-   "price_verification": "V2_official_page_snapshot_only",
+   "price_verification": "V1_direct_page_fetch",
    "weight_g": null,
    "weight_scope": null,
    "weight_source_url": null,
@@ -1691,13 +1690,12 @@
    "flags": [
     "NO_WEIGHT_PUBLISHED",
     "SOLID_NOT_STATED",
-    "HALLMARK_NOT_PUBLISHED",
-    "PRICE_V2_ONLY"
+    "HALLMARK_NOT_PUBLISHED"
    ],
    "flag_detail": "Product-page snapshot showed Stock Number 502500y14, Metal 14K Yellow Gold, Width 1.80mm, $1,290 '(Setting Price)'. Corroborated by schema.org JSON-LD embedded in the official category page bluenile.com/engagement-rings/styles/simple (sku 502500y14, availability InStock, price 1290).",
-   "reverified_utc": "2026-10-22",
+   "reverified_utc": "2026-10-23",
    "reverified_by": "arena/22b5b06c-gold4",
-   "reverification": "2026-10-22T23:35Z: two independent official-page reads agree ($1,290). Live re-fetch pending (outage)."
+   "reverification": "2026-10-22T23:35Z: two independent official-page reads agree ($1,290). Live re-fetch pending (outage). Live fetch 2026-10-23T00:22Z: $1,290 '(Setting Price)' - unchanged from the snapshot; Stock Number 502500y14, Metal 14K Yellow Gold, Width 1.80mm re-read from the page."
   },
   {
    "id": "BN-22",
@@ -1716,9 +1714,9 @@
    "hallmark_published": false,
    "price_usd": 2050.0,
    "price_basis": "Setting only — page shows '(Setting Price)'; centre diamond sold separately",
-   "price_captured_utc": "2026-10-22",
+   "price_captured_utc": "2026-10-23",
    "price_source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321",
-   "price_verification": "V2_official_page_snapshot_only",
+   "price_verification": "V1_direct_page_fetch",
    "weight_g": null,
    "weight_scope": null,
    "weight_source_url": null,
@@ -1728,13 +1726,12 @@
     "NO_WEIGHT_PUBLISHED",
     "SOLID_NOT_STATED",
     "HALLMARK_NOT_PUBLISHED",
-    "PRICE_V2_ONLY",
     "COPY_INCONSISTENT_METAL"
    ],
-   "flag_detail": "Product-page snapshot showed Stock Number 501580y14, Metal 14K Yellow Gold, Width 5.00mm, $2,050 '(Setting Price)'. COPY_INCONSISTENT_METAL: the same page's Product Details text says 'this platinum solitaire setting features a flat profile' while every spec field says 14K Yellow Gold — the contradiction is recorded, not resolved; confirm the metal with the seller.",
-   "reverified_utc": "2026-10-22",
+   "flag_detail": "Product-page snapshot showed Stock Number 501580y14, Metal 14K Yellow Gold, Width 5.00mm, $2,050 '(Setting Price)'. COPY_INCONSISTENT_METAL: the same page's Product Details text says 'this platinum solitaire setting features a flat profile' while every spec field says 14K Yellow Gold — the contradiction is recorded, not resolved; confirm the metal with the seller. LIVE UPDATE 2026-10-23T00:24Z: price re-confirmed on the live page and the metal-copy contradiction ('platinum solitaire setting' text vs 14K Yellow Gold specs) is still present on the live page.",
+   "reverified_utc": "2026-10-23",
    "reverified_by": "arena/22b5b06c-gold4",
-   "reverification": "2026-10-22T23:36Z: official-page snapshot re-read; metal-copy contradiction found and flagged."
+   "reverification": "2026-10-22T23:36Z: official-page snapshot re-read; metal-copy contradiction found and flagged. Live fetch 2026-10-23T00:24Z: $2,050 '(Setting Price)' - unchanged; Stock Number 501580y14, Metal 14K Yellow Gold, Width 5.00mm re-read. The live page's Product Details text STILL reads 'this platinum solitaire setting features a flat profile' against the 14K Yellow Gold spec - COPY_INCONSISTENT_METAL confirmed live, not only in snapshot."
   },
   {
    "id": "BN-23",
@@ -1753,9 +1750,9 @@
    "hallmark_published": false,
    "price_usd": 5190.0,
    "price_basis": "Setting price includes six prong-set emerald-cut side diamonds totalling 1 ct (side-diamond counts are stated by the page to be based on a 1 ct centre stone); centre diamond sold separately",
-   "price_captured_utc": "2026-10-22",
+   "price_captured_utc": "2026-10-23",
    "price_source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303",
-   "price_verification": "V2_official_page_snapshot_only",
+   "price_verification": "V1_direct_page_fetch",
    "weight_g": null,
    "weight_scope": null,
    "weight_source_url": null,
@@ -1764,13 +1761,12 @@
    "flags": [
     "NO_WEIGHT_PUBLISHED",
     "SOLID_NOT_STATED",
-    "HALLMARK_NOT_PUBLISHED",
-    "PRICE_V2_ONLY"
+    "HALLMARK_NOT_PUBLISHED"
    ],
    "flag_detail": "Product-page snapshot showed Stock Number 501472y14, Metal 14K Yellow Gold, Width 4.00mm, $5,190 '(Setting Price)', Natural Diamond Information: Shape Emerald, Quantity 6, Total Carat 1, Color G-H, Clarity VS2-SI1, Setting Type Prong, with the page's own disclaimer that diamond counts/weights are based on a 1 ct centre stone.",
-   "reverified_utc": "2026-10-22",
+   "reverified_utc": "2026-10-23",
    "reverified_by": "arena/22b5b06c-gold4",
-   "reverification": "2026-10-22T23:36Z: official-page snapshot re-read; price basis clarified from the same page."
+   "reverification": "2026-10-22T23:36Z: official-page snapshot re-read; price basis clarified from the same page. Live fetch 2026-10-23T00:26Z: $5,190 '(Setting Price)' - unchanged; Stock Number 501472y14, Metal 14K Yellow Gold, Width 4.00mm re-read; Natural Diamond Information re-read: Shape Emerald, Quantity 6, Total Carat 1, Color G-H, Clarity VS2-SI1, Not Enhanced, Setting Type Prong, with the same 1 ct centre-stone disclaimer."
   },
   {
    "id": "BN-24",
@@ -1789,9 +1785,9 @@
    "hallmark_published": false,
    "price_usd": 1145.0,
    "price_basis": "Setting only — page shows '(Setting Price)'; centre diamond sold separately",
-   "price_captured_utc": "2026-10-22",
+   "price_captured_utc": "2026-10-23",
    "price_source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730",
-   "price_verification": "V2_official_page_snapshot_only",
+   "price_verification": "V1_direct_page_fetch",
    "weight_g": null,
    "weight_scope": null,
    "weight_source_url": null,
@@ -1801,13 +1797,12 @@
     "NO_WEIGHT_PUBLISHED",
     "SOLID_NOT_STATED",
     "HALLMARK_NOT_PUBLISHED",
-    "PRICE_V2_ONLY",
     "WHITE_GOLD"
    ],
    "flag_detail": "Product-page snapshot showed Stock Number 502120w14, 14K White Gold, 2.40mm, Rhodium Finish: Yes, $1,145 '(Setting Price)'. Corroborated by the official category page bluenile.com/engagement-rings/styles/gold/white-gold (JSON-LD sku 502120w14, InStock) and by the published yellow-gold sibling BN-10 (same 502120 style family, same $1,145), whose alias URL item-203348 this session re-fetched live at 2026-10-22T23:58Z.",
-   "reverified_utc": "2026-10-22",
+   "reverified_utc": "2026-10-23",
    "reverified_by": "arena/22b5b06c-gold4",
-   "reverification": "2026-10-22T23:37Z: two official-page reads agree ($1,145); yellow-gold sibling re-fetched live at 23:58Z via BN-10's alias. Live re-fetch of THIS page pending (outage)."
+   "reverification": "2026-10-22T23:37Z: two official-page reads agree ($1,145); yellow-gold sibling re-fetched live at 23:58Z via BN-10's alias. Live re-fetch of THIS page pending (outage). Live fetch 2026-10-23T00:28Z: $1,145 '(Setting Price)' - unchanged; Stock Number 502120w14, Metal 14K White Gold, Width 2.40mm, Rhodium Finish: Yes re-read from the page. Page title 'Classic Simple Solitaire Engagement Ring in 14k White Gold' (same 502120 style family as published BN-10)."
   },
   {
    "id": "BN-25",
@@ -1824,11 +1819,11 @@
    "solid_gold_statement": null,
    "solid_gold_status": "not_stated",
    "hallmark_published": false,
-   "price_usd": 1657.0,
-   "price_basis": "Sale '(Setting Price)' — snapshot showed '$2,210 $1,657 (Setting Price) −25%'; includes 26 pavé-set round diamonds, 1/5 ct total, F-G colour, VS1-VS2 clarity",
-   "price_captured_utc": "2026-10-22",
+   "price_usd": 2210.0,
+   "price_basis": "Setting only - live page shows '$2,210 (Setting Price)', no discount displayed at the 2026-10-23 re-fetch (the 22 Oct '-25% to $1,657' sale had ended); includes 26 pave-set round diamonds, 1/5 ct total, F-G colour, VS1-VS2 clarity",
+   "price_captured_utc": "2026-10-23",
    "price_source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661",
-   "price_verification": "V2_official_page_snapshot_only",
+   "price_verification": "V1_direct_page_fetch",
    "weight_g": null,
    "weight_scope": null,
    "weight_source_url": null,
@@ -1838,13 +1833,12 @@
     "NO_WEIGHT_PUBLISHED",
     "SOLID_NOT_STATED",
     "HALLMARK_NOT_PUBLISHED",
-    "PRICE_V2_ONLY",
     "WHITE_GOLD"
    ],
-   "flag_detail": "Product-page snapshot showed Stock Number 505094w14, Metal 14K White Gold, Width 1.75mm, Rhodium Finish: Yes, diamond spec as in price_basis, and the sale display '$2,210 $1,657 −25%'. Sale prices are time-sensitive; confirm live before purchase.",
-   "reverified_utc": "2026-10-22",
+   "flag_detail": "Product-page snapshot showed Stock Number 505094w14, Metal 14K White Gold, Width 1.75mm, Rhodium Finish: Yes, diamond spec as in price_basis, and the sale display '$2,210 $1,657 −25%'. Sale prices are time-sensitive; confirm live before purchase. LIVE UPDATE 2026-10-23T00:30Z: the product page now shows $2,210 (Setting Price) with no strike-through - the 22 Oct sale ($1,657, -25%) has ended; the recorded price is the current live one.",
+   "reverified_utc": "2026-10-23",
    "reverified_by": "arena/22b5b06c-gold4",
-   "reverification": "2026-10-22T23:37Z: official-page snapshot re-read; live re-fetch pending (outage)."
+   "reverification": "2026-10-22T23:37Z: official-page snapshot re-read; live re-fetch pending (outage). Live fetch 2026-10-23T00:30Z: $2,210 '(Setting Price)' with NO discount displayed; Stock Number 505094w14, Metal 14K White Gold, Width 1.75mm, Rhodium Finish: Yes re-read; diamond block re-read: Round, Quantity 26, Total Carat 1/5, Color F-G, Clarity VS1-VS2. The 22 Oct sale display ('$2,210 $1,657 -25%') had ended by this re-fetch - the recorded price is updated to the live $2,210."
   },
   {
    "id": "BN-26",

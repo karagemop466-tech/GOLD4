@@ -214,6 +214,20 @@
    ],
    "result": "PASS with corrections",
    "outcome": "Two unique corrections carried onto main's tree; everything else resolved in favour of main. (1) VR-01 width 1.7 mm and VR-02 width 1.6 mm blanked and flagged WIDTH_UNVERIFIED: neither design page publishes a numeric band width (both say 'Band width: Standard'; the only millimetre figure is 'Band depth: 1.6mm', a different dimension), so no official source could be re-read for those values. (2) VR-02's flag_detail contained VR-01's 'From $1,035' configuration-id sentence verbatim (citing VR-01's configuration id ...-40635875360861); removed from VR-02 with a correction note. This session's earlier standalone fixes (AN-01 weight recovery, Brilliant Earth row, multiple suppression for stone-inclusive prices) were already on main in evolved form (AN-01 weight + CENTRE_STONE_LAB_CREATED, BE product rows, multiple_basis labelling) and were superseded by design; one observation is logged in COORDINATION.md for a future pass: compute.py bucket() still mixes AN-01's stone-inclusive multiple into min/max/avg stats. No file of any other session was rewritten or deleted."
+  },
+  {
+   "pass": "Pass 11 — live re-fetch of the PRICE_V2_ONLY rows (session arena/22b5b06c-gold4)",
+   "when_utc": "2026-10-23T00:35Z",
+   "scope": "The fetch-service outage that forced 9 rows to V2 snapshot provenance cleared briefly (00:20-00:33 UTC). Six Blue Nile product pages (BN-20..BN-25) were re-fetched live; the three Brilliant Earth pages (BE-05/06/07) were attempted but the outage returned mid-page before the product block.",
+   "checked": [
+    "BN-21/BN-22/BN-23/BN-24: live prices identical to the snapshots ($1,290 / $2,050 / $5,190 / $1,145); stock numbers, metals and widths re-read from the live pages - upgraded to V1_direct_page_fetch, PRICE_V2_ONLY removed.",
+    "BN-20: live page shows $965 (Setting Price) with NO discount - the 22 Oct sale ($772/-20%, and $724/$730/$728 on category pages) has ENDED. Price updated to the live $965; SALE_PRICE_VARIES_ACROSS_PAGES kept as a documented historical irregularity with the live resolution appended.",
+    "BN-25: live page shows $2,210 (Setting Price) with NO discount - the 22 Oct sale ($1,657/-25%) has ENDED. Price updated to the live $2,210.",
+    "BN-22: the metal-copy contradiction ('platinum solitaire setting' text vs 14K Yellow Gold specs) is STILL present on the live page - COPY_INCONSISTENT_METAL confirmed live.",
+    "BE-05/BE-06/BE-07: live re-fetch could not be completed (outage returned ~00:31-00:33Z); they keep V2 provenance and PRICE_V2_ONLY + PRICE_CURRENCY_LOCALIZED until a live read confirms them."
+   ],
+   "result": "PASS (pipeline + all five CI gates re-run after the upgrade; outputs in reports/ and AUDIT.md)",
+   "outcome": "6 of the 9 PRICE_V2_ONLY rows upgraded to V1 with live reads; 2 prices corrected to current live values (BN-20 $772->$965, BN-25 $1,657->$2,210 - both sales ended); dataset provenance now 60 V1 / 3 V2 / 1 U of 64 rows. No value was inferred: every change quotes the live page."
   }
  ],
  "not_reverified_this_pass": [
@@ -221,6 +235,7 @@
   "Physical hallmark, XRF assay and actual as-delivered gram weight — these can only be established on the ring in hand, which is why the checklist requires an independent jeweller and XRF check on arrival.",
   "Brilliant Earth's full return window and exclusions text, which the site would not serve to this fetcher (navigation and footer only, twice).",
   "Anjolee's resize terms, which were not published on the captured product page.",
-  "Pass 9 did not re-fetch the 47 rows already published (they stand as the latest published passes verified them), and could not live-refetch its own 9 V2 rows or the Brilliant Earth generic returns-policy page because of the fetch-service outage (23:20-23:47Z); those rows carry PRICE_V2_ONLY and appear on the Flagged page until a live re-fetch confirms them."
+  "Pass 9 did not re-fetch the 47 rows already published (they stand as the latest published passes verified them), and could not live-refetch its own 9 V2 rows or the Brilliant Earth generic returns-policy page because of the fetch-service outage (23:20-23:47Z); those rows carry PRICE_V2_ONLY and appear on the Flagged page until a live re-fetch confirms them.",
+  "Pass 11 could not complete the live re-fetch of BE-05/BE-06/BE-07 (Brilliant Earth Freesia 14K/18K, Fleur) - the fetch outage returned mid-page; they remain PRICE_V2_ONLY on the Flagged page until a live read confirms them."
  ]
 }
