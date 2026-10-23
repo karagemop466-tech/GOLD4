@@ -23,7 +23,7 @@ G1 `audit.py` PASS (1 warning: BE-05 V2-only) · G2 `check_site.py` PASS (27 pag
 
 | Check | Method | Result |
 |---|---|---|
-| 64 row URLs + 31 sources | runner GET, 2026-10-23T20:19:32Z | 51 answered · 7 refused (403, all Brilliant Earth) · 5 dead (404) · 1 JS shell (AN-01) |
+| 64 row URLs + 31 sources | runner GET, **20:19:32Z and again 20:23:21Z** | 51 answered · 7 refused (403, all Brilliant Earth) · 5 dead (404) · 1 JS shell (AN-01) — **identical both runs, and identical to the 10:10Z pass: three independent reads, zero drift** |
 | Price reconciliation vs the 10:10Z pass | row-by-row diff of `source_health` | **zero change** — 45 CONFIRMED, 4 DIFFERS, 2 no stored price, 1 not machine-readable, 12 source-not-reached, identical in both passes |
 | Gold benchmark | browser-rendered read of the WGC panel, 20:23Z | **moved to $3,996.31/oz** (was $4,024.45 at 10:02Z, −0.70%). Corroborated 20:19Z by Kitco $3,996.30, BullionVault $3,996.62, JM Bullion ask $4,010.61. All 17 weighted rows recomputed at $128.48435/g; the superseded reading kept in `prior_captures` |
 | Derived arithmetic | independent `Decimal` re-derivation (not `compute.py`) | 17/17 weighted rows match to the cent at the new benchmark; 47 weight-blank rows have genuinely null derived fields |
