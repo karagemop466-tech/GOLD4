@@ -15,7 +15,7 @@
       <span>GOLD4<small>gold-ring verification desk</small></span>
     </a>
     <nav class="main">
-      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="active">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="log.html" class="">Log</a>
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="active">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="log.html" class="">Log</a><a href="../dashboard.html" class="">Assay Lab+</a><a href="../categories/calculator.html" class="">Stone-Deduction Calc</a><a href="../categories/verification-audit.html" class="">Deep Audit</a>
     </nav>
   </div>
 </header>
@@ -38,6 +38,7 @@
     <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
     <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
     <li><strong>Anything uncertain is published on <a href="../pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
   </ul>
 </div>
 
@@ -79,16 +80,40 @@
       <td class="small">not captured</td>
       <td><span class="badge b-ok">yes</span></td></tr><tr><td><a href="#brilliant-earth">Brilliant Earth</a></td>
       <td>30 days</td>
-      <td><span class="badge b-ok">not excluded</span></td>
-      <td><span class="badge b-mute">no exclusion captured</span></td>
-      <td class="small">One complimentary resizing within 60 days of purchase, or up to 1 year if the si</td>
+      <td><span class="badge b-bad">no</span></td>
+      <td><span class="badge b-warn">excluded</span></td>
+      <td class="small">Page badge reads &quot;Free 1-Year Resizing&quot; (Pass 5, 2026-10-22). The earlier captur</td>
       <td class="small">800.691.0952</td>
       <td><span class="badge b-warn">no</span></td></tr><tr><td><a href="#anjolee">Anjolee</a></td>
       <td>30 days</td>
-      <td><span class="badge b-ok">not excluded</span></td>
+      <td><span class="badge b-mute">not itemised</span></td>
       <td><span class="badge b-mute">no exclusion captured</span></td>
       <td class="small">Not captured on the page</td>
       <td class="small">877-265-6533</td>
+      <td><span class="badge b-warn">no</span></td></tr><tr><td><a href="#sarraf">Sarraf</a></td>
+      <td>30 days</td>
+      <td><span class="badge b-bad">no</span></td>
+      <td><span class="badge b-warn">excluded</span></td>
+      <td class="small">Third-party resizing immediately voids warranty; Lifetime Warranty replacement c</td>
+      <td class="small">+1-888-472-7723</td>
+      <td><span class="badge b-ok">yes</span></td></tr><tr><td><a href="#catbird">Catbird NYC</a></td>
+      <td>20 days</td>
+      <td><span class="badge b-ok">not excluded</span></td>
+      <td><span class="badge b-warn">excluded</span></td>
+      <td class="small">Must inspect unengraved before return window closes (20 days)</td>
+      <td class="small">not captured</td>
+      <td><span class="badge b-ok">yes</span></td></tr><tr><td><a href="#mene">Menē</a></td>
+      <td>7 days</td>
+      <td><span class="badge b-bad">no</span></td>
+      <td><span class="badge b-mute">no exclusion captured</span></td>
+      <td class="small">Pure 24K bands cannot be traditionally torch-resized without specialized 24K gol</td>
+      <td class="small">not captured</td>
+      <td><span class="badge b-ok">yes</span></td></tr><tr><td><a href="#ross-simons">Ross-Simons</a></td>
+      <td>30 days</td>
+      <td><span class="badge b-bad">no</span></td>
+      <td><span class="badge b-warn">excluded</span></td>
+      <td class="small">Outside jeweler resizing or alteration voids the 30-day return right</td>
+      <td class="small">800-835-0919</td>
       <td><span class="badge b-warn">no</span></td></tr>
     </tbody>
   </table></div>
@@ -99,7 +124,7 @@
   <p class="sub">Everything below is a quotation or close paraphrase of the seller's own page, linked at the bottom of each card.</p>
   <div class="grid two">
 <article class="card" id="blue-nile">
-  <h3>Blue Nile <span class="badge b-gold">8 rows</span></h3>
+  <h3>Blue Nile <span class="badge b-gold">12 rows</span></h3>
   <p class="small">Contact: <a href="tel:+1-800-242-2728">+1-800-242-2728</a> · <a href="mailto:service@bluenile.com">service@bluenile.com</a> · <a href="https://www.bluenile.com/contact-us" target="_blank" rel="noopener">contact page</a></p>
   <p><strong>30-day return window.</strong> 30 days from the shipment date.</p>
   <p class="small"><strong>Exclusions:</strong></p>
@@ -135,28 +160,28 @@
   <div class="flaglist"><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="RESIZED_RINGS_NOT_RETURNABLE">resized rings not returnable</span><span class="flag" title="REFUND_RECYCLING_FEE">refund recycling fee</span><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span></div>
 </article>
 <article class="card" id="mejuri">
-  <h3>Mejuri <span class="badge b-gold">5 rows</span></h3>
+  <h3>Mejuri <span class="badge b-gold">7 rows</span></h3>
   <p class="small">Contact: <a href="https://mejuri.com/faq/top-faqs" target="_blank" rel="noopener">contact page</a></p>
   <p><strong>30-day return window.</strong> Free 30-day returns in the US, Canada, UK, Australia and Germany, counted from delivery or in-store pickup.</p>
   <p class="small"><strong>Exclusions:</strong></p>
   <ul class="small"><li>Engraved and monogrammed products (not eligible at any time)</li><li>Final sale items</li><li>Gift cards</li><li>Earrings used during a piercing appointment</li><li>Lab-grown diamond items returned without their SCS certificate</li></ul>
   <p class="small"><strong>Resize:</strong> Not published as a standard free service on the captured returns page</p>
-  <p class="small"><strong>Warranty:</strong> not captured on the fetched page</p>
+  <p class="small"><strong>Warranty:</strong> Two-year warranty from the date of receipt for defects or issues resulting from workmanship (stated on each Mejuri product page read on 2026-10-22)</p>
   <p class="small"><strong>Solid-gold wording:</strong> explicit "solid" wording found</p>
   <p class="small">Policy source: <a href="https://mejuri.com/company/returns-terms" target="_blank" rel="noopener">open the seller's own policy page</a></p>
-  <div class="flaglist"><span class="flag" title="CONTACT_NOT_CAPTURED">contact not captured</span><span class="flag" title="WARRANTY_NOT_CAPTURED">warranty not captured</span><span class="flag" title="ENGRAVING_NON_RETURNABLE">engraving kills the return right</span><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span></div>
+  <div class="flaglist"><span class="flag" title="CONTACT_NOT_CAPTURED">contact not captured</span><span class="flag" title="ENGRAVING_NON_RETURNABLE">engraving kills the return right</span><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span></div>
 </article>
 <article class="card" id="brilliant-earth">
-  <h3>Brilliant Earth <span class="badge b-gold">1 rows</span></h3>
+  <h3>Brilliant Earth <span class="badge b-gold">4 rows</span></h3>
   <p class="small">Contact: <a href="tel:800.691.0952">800.691.0952</a> · <a href="https://www.brilliantearth.com/contact/" target="_blank" rel="noopener">contact page</a></p>
-  <p><strong>30-day return window.</strong> Free 30-day returns; free shipping both ways (site footer and product page).</p>
+  <p><strong>30-day return window.</strong> 30 days — read on the first capture of this seller&#x27;s product page on 2026-10-22; the Pass 5 re-read of the same page displays the &quot;Free Shipping &amp; Returns&quot; badge but not a day count, so the 30-day figure is carried from that same-day capture instead of being re-displayed.</p>
   <p class="small"><strong>Exclusions:</strong></p>
-  <ul class="small"><li class="small">No exclusions itemised on the captured page — not the same as none existing.</li></ul>
-  <p class="small"><strong>Resize:</strong> One complimentary resizing within 60 days of purchase, or up to 1 year if the size is within the recommended range, with free shipping both ways</p>
-  <p class="small"><strong>Warranty:</strong> Free lifetime warranty; each order includes a professional appraisal</p>
+  <ul class="small"><li>Resized, repaired, modified, or previously exchanged items are non-returnable (per /30-Day-Returns/)</li><li>Custom-designed items are non-returnable</li><li>Engraved rings incur a $40 engraving removal fee on return (engraved gemstones non-returnable)</li><li>Eternity rings, open-top rings, and Fairmined complexity rings cannot be resized</li></ul>
+  <p class="small"><strong>Resize:</strong> Page badge reads &quot;Free 1-Year Resizing&quot; (Pass 5, 2026-10-22). The earlier capture of the same page described one complimentary resize within 60 days of purchase. The two captures disagree, so ask the seller which applies to your ring before ordering.</p>
+  <p class="small"><strong>Warranty:</strong> Free Lifetime Warranty (product page badge)</p>
   <p class="small"><strong>Solid-gold wording:</strong> no explicit "solid" wording found on the captured pages</p>
   <p class="small">Policy source: <a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">open the seller's own policy page</a></p>
-  <div class="flaglist"><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span></div>
+  <div class="flaglist"><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span><span class="flag" title="RESIZE_TERMS_INCONSISTENT">resize terms differ between captures</span><span class="flag" title="RETURN_WINDOW_NOT_REDISPLAYED">return window not re-displayed on re-read</span><span class="flag" title="RETURN_EXCLUSIONS_NOT_ITEMISED">exclusions not itemised on the page</span></div>
 </article>
 <article class="card" id="anjolee">
   <h3>Anjolee <span class="badge b-gold">1 rows</span></h3>
@@ -168,7 +193,55 @@
   <p class="small"><strong>Warranty:</strong> Lifetime warranty (prong tightening, re-polishing, rhodium plating, cleaning) plus a one-year manufacturing-defect warranty covering diamond quality, metal, total carat weight, gemstones and craftsmanship</p>
   <p class="small"><strong>Solid-gold wording:</strong> no explicit "solid" wording found on the captured pages</p>
   <p class="small">Policy source: <a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">open the seller's own policy page</a></p>
-  <div class="flaglist"><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="WEIGHT_NOT_PUBLISHED">weight not published</span><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span></div>
+  <div class="flaglist"><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="PRICE_INCLUDES_CENTRE_STONE">price includes a diamond</span><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span></div>
+</article>
+<article class="card" id="sarraf">
+  <h3>Sarraf <span class="badge b-gold">8 rows</span></h3>
+  <p class="small">Contact: <a href="tel:+1-888-472-7723">+1-888-472-7723</a> · <a href="mailto:info@sarraf.com">info@sarraf.com</a> · <a href="https://www.sarraf.com/" target="_blank" rel="noopener">contact page</a></p>
+  <p><strong>30-day return window.</strong> 30 days from receipt (unworn, original packaging &amp; invoice; buyer pays insured shipping to 650 S Hill St #728, Los Angeles, CA 90014).</p>
+  <p class="small"><strong>Exclusions:</strong></p>
+  <ul class="small"><li>Used, worn, or altered items</li><li>Third-party resizing or repair immediately voids Lifetime Warranty</li><li>Special/custom orders non-refundable</li></ul>
+  <p class="small"><strong>Resize:</strong> Third-party resizing immediately voids warranty; Lifetime Warranty replacement charges max($100, 10% of purchase price)</p>
+  <p class="small"><strong>Warranty:</strong> Lifetime Warranty subject to seller inspection and max($100, 10% of purchase price) replacement fee</p>
+  <p class="small"><strong>Solid-gold wording:</strong> explicit "solid" wording found</p>
+  <p class="small">Policy source: <a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">open the seller's own policy page</a></p>
+  <div class="flaglist"><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span><span class="flag" title="WARRANTY_VOID_ON_THIRD_PARTY_RESIZE">warranty voids on third-party resize</span></div>
+</article>
+<article class="card" id="catbird">
+  <h3>Catbird NYC <span class="badge b-gold">2 rows</span></h3>
+  <p class="small">Contact: <a href="https://www.catbirdnyc.com/returns" target="_blank" rel="noopener">contact page</a></p>
+  <p><strong>20-day return window.</strong> Short 20-day return window from delivery ($9 return shipping fee deducted).</p>
+  <p class="small"><strong>Exclusions:</strong></p>
+  <ul class="small"><li>Engraved items (final sale)</li><li>Special orders and custom rings (final sale)</li><li>All international sales (final sale)</li></ul>
+  <p class="small"><strong>Resize:</strong> Must inspect unengraved before return window closes (20 days)</p>
+  <p class="small"><strong>Warranty:</strong> Standard studio craftsmanship support</p>
+  <p class="small"><strong>Solid-gold wording:</strong> explicit "solid" wording found</p>
+  <p class="small">Policy source: <a href="https://www.catbirdnyc.com/returns" target="_blank" rel="noopener">open the seller's own policy page</a></p>
+  <div class="flaglist"><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span><span class="flag" title="ENGRAVING_NON_RETURNABLE">engraving kills the return right</span></div>
+</article>
+<article class="card" id="mene">
+  <h3>Menē <span class="badge b-gold">2 rows</span></h3>
+  <p class="small">Contact: <a href="https://mene.com/customer-care/en-US/articles/returns-319505" target="_blank" rel="noopener">contact page</a></p>
+  <p><strong>7-day return window.</strong> Strict 7-day return window from receipt with Certificate of Authenticity.</p>
+  <p class="small"><strong>Exclusions:</strong></p>
+  <ul class="small"><li>Items missing original Certificate of Authenticity or packaging</li><li>Worn, altered, or damaged items</li></ul>
+  <p class="small"><strong>Resize:</strong> Pure 24K bands cannot be traditionally torch-resized without specialized 24K goldsmithing</p>
+  <p class="small"><strong>Warranty:</strong> Signed Certificate of Authenticity assaying pure 24K gold weight (+/-0.5g to +/-1.0g tolerance)</p>
+  <p class="small"><strong>Solid-gold wording:</strong> explicit "solid" wording found</p>
+  <p class="small">Policy source: <a href="https://mene.com/customer-care/en-US/articles/returns-319505" target="_blank" rel="noopener">open the seller's own policy page</a></p>
+  <div class="flaglist"><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span></div>
+</article>
+<article class="card" id="ross-simons">
+  <h3>Ross-Simons <span class="badge b-gold">5 rows</span></h3>
+  <p class="small">Contact: <a href="tel:800-835-0919">800-835-0919</a> · <a href="https://www.ross-simons.com/pages/returns-exchanges" target="_blank" rel="noopener">contact page</a></p>
+  <p><strong>30-day return window.</strong> 30 days from date received for refund or exchange.</p>
+  <p class="small"><strong>Exclusions:</strong></p>
+  <ul class="small"><li>Items resized, altered, damaged, or worked on by an outside jeweler</li><li>Custom or personalized/engraved items</li><li>Final sale items</li></ul>
+  <p class="small"><strong>Resize:</strong> Outside jeweler resizing or alteration voids the 30-day return right</p>
+  <p class="small"><strong>Warranty:</strong> 100% satisfaction guarantee within 30 days of receipt</p>
+  <p class="small"><strong>Solid-gold wording:</strong> no explicit "solid" wording found on the captured pages</p>
+  <p class="small">Policy source: <a href="https://www.ross-simons.com/pages/returns-exchanges" target="_blank" rel="noopener">open the seller's own policy page</a></p>
+  <div class="flaglist"><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="REPUTATION_NOT_VERIFIED">reputation not verified</span></div>
 </article></div>
 </section>
 
@@ -186,9 +259,9 @@
 <footer class="wrap foot">
   <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
-  <p>Gold benchmark: $4,024.36/oz as of 21 October, 2026 (World Gold Council) = $129.3862/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:53 UTC · dataset 21 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:56 UTC · dataset 47 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

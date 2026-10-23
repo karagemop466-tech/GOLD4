@@ -1,0 +1,14 @@
+GOLD4 integrity audit (hallucination / security check)
+run_utc: 2026-10-22T23:27:07+00:00
+dataset rows: 20 | sellers: 6 | sources: 13
+spot benchmark: $4,024.36/oz (21 October, 2026) = $129.3862/g
+
+RESULT: PASS  (55 passed, 0 warnings, 0 failures)
+
+No warnings, no failures.
+
+Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
+price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,
+independent recomputation of every derived number, phantom-math detection (no weight => no value),
+seller contact/return provenance, speculation-language scan, site link check,
+per-row source-link requirement, and render-text sanity.

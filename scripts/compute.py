@@ -67,6 +67,11 @@ def main() -> None:
             out["legal_min_gold_value_usd"] = None
             out["price_to_gold_multiple"] = None
             out["price_per_gold_gram_usd"] = None
+        # Make it explicit when a price is not setting-only, so a price/gold
+        # multiple is never read as a metal markup on its own.
+        out["multiple_basis"] = ("includes_centre_stone"
+                                 if "PRICE_INCLUDES_CENTRE_STONE" in row.get("flags", [])
+                                 else "setting_metal_only")
         rows.append(out)
 
     # pair analysis: same design, different karat

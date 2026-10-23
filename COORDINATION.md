@@ -6,9 +6,114 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 ---
 
-## Sessions detected on this repository (as of 2026-10-22, re-checked by arena/b2c018a8)
+## Session `arena/a0be79d4-gold4` — 35-Row Canonical Expansion, 11-Page Assay Lab Suite, 4-Gate CI Audit & Live Pages Confirmation (2026-10-22)
 
-Follow-up session **`arena/b2c018a8-gold4`** (this session, 2026-10-22) claims an **independent re-verification pass**: re-run all checkers, re-derive all computed values, re-fetch official pages line by line to confirm or flag every stored value, verify the gold benchmark against its cited source, rebuild, PR → merge → confirm Pages deploy. Scope: `COORDINATION.md`, `data/*` (only where a re-fetch proves a change, with source + date recorded), regenerated site output, `VERIFICATION.md`, `reports/`. Branch note: this session's platform fixes its branch name to `arena/b2c018a8-gold4`; it cannot create `session-*` branches. Remote check at claim time ( `git ls-remote`): only `origin/main` exists — no other session branch is active, so no scope conflict.
+- **Branch:** `arena/a0be79d4-gold4` (active; zero other branches modified or force-pushed)
+- **Merged Pull Request:** **PR #17** (`https://github.com/karagemop466-tech/GOLD4/pull/17`) — **MERGED** into `main` at `2026-10-22T23:45:09Z` (merge commit `217f79b082a5fcba73053af68571af9b10eab12e`)
+- **Close-Out Narrative Polish & Board Sync PR:** **PR #18** (`arena/a0be79d4-gold4` → `main`) — syncs front-page analytical summary cards across all 35 rows / 9 retailers + records merged PR #17 & live Pages confirmation on `main`
+- **GitHub Actions Deployment Run:** `Deploy GOLD research site` run `39873834492` (`status: completed`, `conclusion: success` — all 4 security/anti-hallucination gates passed) + `pages build and deployment` run `39873833927` (`conclusion: success`)
+- **Live Production URL Verified (`HTTP 200 OK`):** `https://karagemop466-tech.github.io/GOLD4/` (verified live across `index.html`, `dashboard.html`, `flagged.html`, `calculator.html`, `checklist.html`, `audit.html`, `pages/*.html`, and remediated `docs/sources.html`)
+
+| # | Task | Status | Owner | Deliverables & Verification Evidence |
+|---|------|--------|-------|--------------------------------------|
+| 15 | Expand canonical dataset from 22 to **35 live-verified rows**, **9 retailers**, and **24 official sources** across `10K`, `14K`, `18K`, and `24K` | `done` | `arena/a0be79d4` | `scripts/integrate_a0be79d4.py`, `data/{sources,sellers,gold_spot,rings,verification_log}.json`, `data/catalog_a0be79d4.json` |
+| 16 | Build 11-page interactive **Assay Lab+** research suite (`dashboard.html`, `solitaires.html`, `three-stone-halo.html`, `bands.html`, `calculator.html`, `checklist.html`, `standards.html`, `flagged.html`, `audit.html`, `coordination.html`, `methodology.html`) seamlessly alongside canonical `index.html` + `pages/*.html` + `docs/*.html` | `done` | `arena/a0be79d4` | `scripts/build_dataset.py`, `scripts/generate_site.py`, `static/{gold4.css,gold4.js}` (**30 total conflict-free HTML pages**) |
+| 17 | Remediate dead `404` external links & enforce **4 automated security & anti-hallucination CI gates** across every build and deployment | `done` | `arena/a0be79d4` | Fixed 2 live `404` links in `docs/sources.html` + blocklisted 4 known dead URLs in `scripts/verify_a0be79d4.py`; `.github/workflows/pages.yml` runs `audit.py`, `check_site.py`, `verify.py`, and `verify_a0be79d4.py` (**0 warnings / 0 hard failures across 1,370 verified links**) |
+| 18 | Merge via PR to `main`, verify live GitHub Pages deployment over HTTPS, and close out board | `done` | `arena/a0be79d4` | Merged **PR #17** (`https://github.com/karagemop466-tech/GOLD4/pull/17` → `217f79b`) + **PR #18** board close-out; live production `200 OK` verified on `https://karagemop466-tech.github.io/GOLD4/` |
+
+### Key irregularities discovered & published on `flagged.html` / `pages/flagged.html` (all non-blocking, strictly unfabricated)
+1. **Conflicting H1 vs Spec Table Karat on Live Sarraf Listings (`SR-07` `$20,671` & `SR-08` `$2,858`):** `SR-07` (`SKU F1625`) advertises `"18k Yellow Gold"` in H1 vs `"14K Solid Gold"` in its spec table (+ EGL certificate, no weight); `SR-08` (`SKU 121987-.72P`) states `"14k Yellow Gold"` in H1 vs `"18K Solid Gold"` in its spec table. Both `karat` and `weight_g` remain strictly `null` (`UNVERIFIED`).
+2. **Vermeil Substring Trap (`G4-RED-01`, Mejuri Organic Dôme Set `$188`):** Product copy contains exact substring `"18k solid gold plated on 91% recycled sterling silver"` (`MEJURI 925`), demonstrating why negative disqualifier screening (`vermeil`, `plated`, `925`, `filled`, `overlay`, `gold-tone`) + melt-floor arithmetic must precede keyword matching.
+3. **Multi-Metal Prong Heads Under Single-Karat H1 Titles (`16 CFR § 23.8`):** Brilliant Earth `BE-03` (`$850`) pairs an `18K Yellow Gold` shank with `14K White Gold` prongs; Blue Nile `BN-02` (`$1,125`) pairs an `18K` shank with `Platinum` prongs.
+4. **GIA Carlsbad XRF Spoofing Vector & Return-Policy Clocks:** Surface XRF alone read `17.99K–22.47K` on a wax/resin-filled item with a glued `14K` disk; buyers must complete `0.01g` scale mass + binocular microscope + multi-spot XRF inside strict return windows (**Menē 7 days**, **Catbird 20 days / `$9` fee**, **Blue Nile 30 days from shipment date**, **Sarraf third-party resize voids warranty**).
+5. **Four Dead `404` URLs Caught & Permanently Blocklisted:** Caught 2 live `404` links in `docs/sources.html` (`ftc.gov/business-center/advertising-and-marketing`, `nist.gov/publications/nist-special-publication-811`) and 2 `404` GIA URLs on sibling branch `81b71aa5`; replaced with live-verified `200 OK` official pages and blocklisted in `scripts/verify_a0be79d4.py`.
+
+---
+
+## Session `arena/e04b126a-gold4` — review + re-verification pass (2026-10-22)
+
+**Claim (written before any file was edited):** this session claims the *review and re-verification* scope only —
+`data/rings.json`, `data/sellers.json`, `data/sources.json`, `data/gold_spot.json`, `data/verification_log.json`,
+`scripts/build_site.py`, `README.md`, `VERIFICATION.md`, `AUDIT.md`, `COORDINATION.md`.
+It does **not** touch `docs/**` (another session's sub-site, preserved as-is) and does **not** rewrite `scripts/audit.py`,
+`scripts/compute.py`, `scripts/check_site.py` or `scripts/verify.py` — those three checks are used unchanged as the
+independent verification of this pass.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 10 | Line-by-line re-verification of every row against its own source page | done | arena/e04b126a | `data/rings.json`, `data/verification_log.json` |
+| 11 | Re-verify every seller policy clause and contact route | done | arena/e04b126a | `data/sellers.json` |
+| 12 | Re-verify Tier A/B sources; record same-day gold-spot drift | done | arena/e04b126a | `data/sources.json`, `data/gold_spot.json` |
+| 13 | Add Brilliant Earth product rows now that its price is readable | done | arena/e04b126a | `data/rings.json` |
+| 14 | Re-run all three checks + rebuild the site + publish | done | arena/e04b126a | `scripts/build_site.py`, `index.html`, `pages/` |
+
+### Sources used for this pass (all re-opened 2026-10-22)
+
+Tier A: FTC *Buying Platinum, Gold, and Silver Jewelry*; FTC *Using Credit Cards and Disputing Charges*;
+16 CFR Part 23 (§ 23.3(a), § 23.3(c)(1), § 23.18 heading); 15 U.S.C. § 295.
+Tier B: World Gold Council gold spot page (read twice the same day).
+Tier C: 8 Blue Nile product pages + returns policy; 4 Allurez product pages + return policy; 2 VRAI configuration pages +
+engagement-rings listing + returns page; 5 Mejuri product pages + returns terms; 2 Brilliant Earth product pages;
+1 Anjolee product page.
+
+### Verification performed
+
+Every recorded price, weight, karat, SKU, width, policy clause and contact number was re-read from the page linked beside it
+and compared with the stored value. All matched except where noted below. Derived numbers were re-computed by
+`scripts/compute.py` and independently re-derived by `scripts/audit.py` (58 checks, 0 warnings, 0 failures);
+`check_site.py` and `verify.py` also pass.
+
+### Irregularities found in this pass (published on the Flagged for Review page, none blocking)
+
+1. **Brilliant Earth resize terms changed between captures of the same page** — earlier capture: one complimentary resize
+   within 60 days; 2026-10-22 re-read: badge reads "Free 1-Year Resizing". Recorded as `RESIZE_TERMS_INCONSISTENT`.
+2. **Mejuri prices are variant-dependent** — the same product URL opens on a different colourway; the Ziggy Ring opened on
+   sterling silver at "From $398" while the 14k yellow-gold variant reads "From $598". `PRICE_VARIANT_DEPENDENT` added to
+   MJ-01/MJ-03, `PRICE_IS_FROM_PRICE` added to MJ-05.
+3. **VRAI's listing card is a different configuration id from the row URL** — the "From $1,035" card links to configuration
+   ...-32797281484893 while the 2.86 g weight was read from ...-40635875360861. Same design and metal; flagged.
+4. **Gold spot drifted during the day while its date line stayed at 21 October 2026** — $4,024.36/oz (first read, frozen and
+   used for all arithmetic) against $4,028.53/oz (second read, +0.10%), both published in `data/gold_spot.json`.
+5. **Brilliant Earth's 30-day return figure is not re-displayed in today's page text** (only the "Free Shipping & Returns"
+   badge); the figure is carried from the same-day first capture and flagged `RETURN_WINDOW_NOT_REDISPLAYED`. Its return
+   exclusions are still not itemised, so that field stays blank rather than assumed.
+6. Pre-existing irregularities confirmed unchanged: Blue Nile 14K Comfort Fit copy says "18k"; Blue Nile 14K Riviera copy
+   says "14k white gold"; Blue Nile Four Prong mentions platinum prongs; Anjolee shows no gram weight; VRAI Signature 6 Prong
+   still publishes no price.
+
+**Hand-off / merge rule:** this session publishes through one PR from `arena/e04b126a-gold4` to `main` and records the PR
+link and deploy result below. No other session's file was modified, and no branch was force-pushed.
+
+### Merge event — `main` moved while this pass was running (resolved, nothing discarded)
+
+`arena/fd51d093-gold4` merged PR #7 ("Pass 2 — independent line-by-line re-verification of all 20 rows") into `main`
+while this pass was finishing, so `git pull --rebase` produced conflicts in 24 files. Resolution:
+
+- **Their work was kept, not overwritten.** `data/gold_spot.json` was taken from `main` as-is: their pass adopted the later
+  same-day spot read (**$4,028.53/oz**) as the calculation basis and kept the earlier $4,024.36/oz in `prior_captures`. This
+  branch had independently read the same two values and had frozen the earlier one; `main`'s choice is now the single basis
+  for every derived number, and the disagreement is documented rather than hidden.
+- **Their AN-01 correction was confirmed, not re-litigated.** This branch's first read of the Anjolee page had not reached the
+  Product Details table. On re-fetch the table does publish `Approx. Metal Weight: 2.90 Gr.` (ring size 6.5) and
+  `Center Diamond Color: Lab Created FG` / `Clarity: Lab Created VS`, exactly as their pass recorded. The weight is kept,
+  `WEIGHT_UNVERIFIED` stays withdrawn, and `PRICE_INCLUDES_CENTRE_STONE` / `CENTRE_STONE_LAB_CREATED` stay flagged. The earlier
+  "weight could not be re-read" note in this branch's `data/sources.json` entry was corrected to match the page.
+- **Their VRAI spec-block flag was confirmed** on this branch's own fetch (plain band selected, `Pavé carat weight:0.18ctw`
+  still listed) and is kept; this branch's configuration-id finding was appended to the same `flag_detail`.
+- **Their per-seller `reverified_utc` / `reverified_by` / `reverification` fields were kept**, and this branch's Brilliant Earth
+  and Mejuri updates were added on top.
+- **Generated artefacts** (`index.html`, `pages/*`, `VERIFICATION.md`, `AUDIT.md`, `data/derived.json`, `reports/*`) were
+  regenerated from the merged data rather than hand-merged, so both sessions' findings appear in the published site.
+- Both sessions' log entries are kept: their "Pass 4 — independent line-by-line re-verification" and this branch's
+  "Pass 5 — line-by-line re-verification of every row, plus new Brilliant Earth rows".
+- No branch was force-pushed and no file from either session was deleted. `docs/**` remains untouched.
+
+After the merge the combined tree passes all three checks: `audit.py` **59 passed / 0 warnings / 0 failures**,
+`check_site.py` PASS (20 pages, no broken local links), `verify.py` 0 hard failures.
+
+---
+
+## Sessions detected on this repository (as of 2026-10-22 23:12 UTC, via `git ls-remote`)
 
 | Branch | Latest commit (UTC) | Claimed scope in its own board |
 |---|---|---|
@@ -96,20 +201,212 @@ Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= p
 
 ---
 
-## Addendum — independent re-verification pass, session `arena/b2c018a8-gold4`, 2026-10-22
+## Session `arena/fd51d093-gold4` — independent verification pass (2026-10-22 23:55 UTC)
 
-- **2026-10-22 23:29 UTC** — `arena/b2c018a8` claimed task 10 (commit `04bd9fa`, pushed before starting work). Remote check: only `origin/main` existed; no other session active. Branch-name note is recorded at the top of this file.
-- **2026-10-22 23:29–23:54 UTC** — Pass 4 re-read **every stored value from its official page**, line by line: all 20 product pages, 4 return-policy pages, the VRAI listing page, the Mejuri collection page, both FTC articles, 16 CFR § 23.3 + § 23.18, 15 U.S.C. § 295 + ch. 8, LBMA, World Gold Council. Result: **every price, weight, karat, SKU, fee, deadline and legal figure confirmed unchanged** except the three sourced corrections below. Derived arithmetic was additionally re-derived by hand (AL-01, VR-01) and matched `derived.json` to the cent; `compute.py` output was byte-identical apart from its timestamp.
-- **Correction 1 (upgrade, V1):** AN-01 weight blank → **2.90 g**. The live Anjolee details table reads "Approx. Metal Weight: 2.90 Gr." (14K white gold, size 6.5, 0.50 ct). Weighted rows 6 → 7. The same page shows the centre stone is **lab-created FG/VS**; the stored price basis was corrected to say so. Because the $870.76 price includes that diamond, `compute.py` now withholds the price-to-gold multiple for `PRICE_INCLUDES_CENTRE_STONE` rows and `audit.py` D-05 fails the build if one is ever published (a stone-inclusive price ÷ metal-only value would fake comparability).
-- **Correction 2 (new row, V1):** **BE-01** — Brilliant Earth Atelier Solitaire, 18K Yellow Gold, style BE1D2444-18KY, width 2 mm, price **$1,390 (Setting Only)** read from the live page (unreadable in Pass 1). No gram weight published → blank, flagged. `sellers.json` BE flag `NO_PRODUCT_ROWS_VERIFIED` removed; `sources.json` caveat updated. Rows 20 → 21; retailers with product rows 5 → 6; prices 19 → 20 of 21.
-- **Correction 3 (removal, could not re-read):** VR-01 width 1.7 mm and VR-02 width 1.6 mm **blanked** + flagged `WIDTH_UNVERIFIED`. The live VRAI pages publish "Band width: Standard" and "Band depth: 1.6mm" — no numeric band width. (Depth ≠ width; not recorded.)
-- **Benchmark re-check:** WGC live panel at re-read = **$4,028.53/oz** (frozen capture $4,024.36, +0.10%); "Data as of 21 October, 2026" line confirmed. Frozen benchmark retained per `spot_rules`; re-check recorded in `data/gold_spot.json` — **no derived value was silently recomputed**.
-- **Checks after corrections:** `audit.py` PASS (57/0/0; +2 checks from the two new V1 values) · `check_site.py` PASS (20 pages, 4 pre-existing legacy warnings) · `verify.py` 0 hard failures (15 blanks by design, 21 records). Flag instances 68 → 73 (VR×2 new, BE-01 +3; AN-01 swap net 0). README counts updated to match.
-- **Tooling irregularity logged for transparency:** three `edit_file` calls in this session reported success but did not persist (VR-01 flags, `FLAG_HELP` entry, calculator basis cell, gen-verification cell). Each was caught by post-edit grep verification and re-applied singly; the final tree was verified by direct inspection plus the three checkers before commit.
-- **Unresolved, unchanged, still on the Flagged page:** 14 of 21 rows have no published gram weight; 0 of 21 publish a hallmark; VR-02 price blank; seller reputation unverified for all six; the three Blue Nile copy contradictions (re-confirmed verbatim).
+### Claim (made before any file was edited)
+
+| Task | Status | Owner | Files in scope |
+|---|---|---|---|
+| V-1 | Independent line-by-line re-verification of every published value | in progress → done | `data/rings.json`, `data/sellers.json`, `data/gold_spot.json`, `data/sources.json`, `data/verification_log.json` |
+| V-2 | Correct what the re-read contradicted | done | same as V-1 |
+| V-3 | Rebuild site + re-run all three checks | done | `index.html`, `pages/`, `scripts/compute.py`, `scripts/build_site.py` |
+| V-4 | Publish the pass (PR → merge → Pages) and record it here | done | `COORDINATION.md`, `README.md`, `VERIFICATION.md` |
+
+**Scope discipline:** this session edits only the files above. It did **not** touch `docs/**` (the inherited sub-site), `docs/legacy/**` (preserved other-session work), `data/preserved/**`, `scripts/audit.py`, `scripts/verify.py` or `scripts/check_site.py`. The earlier sessions' branches were not modified, renamed or force-pushed. No other session's claim was open and unclaimed work was not duplicated: this pass verifies the already-merged tree rather than rebuilding it.
+
+### What was done — and what it found
+
+The published dataset was treated as **untrusted input** and re-fetched page by page. 20 product pages, 4 retailer policy pages, the Anjolee spec sheet, the World Gold Council spot panel, LBMA, the FTC jewellery article, 16 CFR 23.3, 15 U.S.C. § 295 and the FTC credit-card article were all re-read during this session.
+
+**Matched (no change needed):** all 20 prices; all 20 karat/metal labels; the 8 Blue Nile stock numbers and widths; the 4 Allurez and 2 VRAI gram weights; the 5 Mejuri yellow-gold prices; all four retailers' return windows, exclusions, fees and resize terms; every Tier A/B legal claim (karat = parts of 24, trademark-beside-karat-mark, hollow-centre ban, the 0.003/0.007 tolerances, LBMA's twice-daily 10:30/15:00 auctions).
+
+**Corrected — the previous pass was wrong, and this is exactly the class of error the audit exists to catch:**
+
+1. **AN-01's weight was recorded as unverified when the live page publishes it.** Anjolee's own Product Details table reads `Approx. Metal Weight: 2.90 Gr.` for the 0.50 ct / ring-size-6.5 configuration, and the linked spec sheet (`MS354-A.pdf` on anjolee.com) lists `2.9 Gr` for the 0.50 ct size. The value is now recorded with its source and the `WEIGHT_UNVERIFIED` flag is gone. The seller-level `WEIGHT_NOT_PUBLISHED` flag on Anjolee was also wrong and was removed.
+2. **AN-01's centre stone is lab-created and the dataset did not say so.** The same table states `Center Diamond Color: Lab Created FG` / `Center Diamond Clarity: Lab Created VS`. The price basis now says it, a `CENTRE_STONE_LAB_CREATED` flag was added, and the row's price ÷ gold multiple is labelled "price includes a centre stone" in the table so it cannot be read as a setting markup.
+3. **The gold benchmark moved between reads.** The World Gold Council panel read `USD 4,028.53/oz` on this pass versus `4,024.36/oz` recorded earlier the same day (both with `Data as of 21 October, 2026`). The earlier value is preserved in `gold_spot.json → prior_captures` and the active benchmark is now the reading this session actually saw; all derived values were recomputed and the audit re-derived them.
+
+**New irregularities flagged, not resolved (published on the Flagged for Review page):**
+
+- `SPEC_LISTED_PAVE_ON_PLAIN_BAND` (VR-01, VR-02): the selected band is `Plain band`, yet the Setting Details block still lists `Pave carat weight:0.18ctw`.
+- Re-confirmed on the live pages: Blue Nile's 14K page whose copy says "crafted in 18k yellow gold" (BN-04), the 14K page whose copy says "set in 14k white gold" (BN-08), and the 14K page whose copy mentions "platinum prongs" (BN-07).
+
+**Carried forward as NOT verified, and said so on the site:** Brilliant Earth's seller-level facts were not re-fetched this pass (marked earlier-pass-only); no seller's reputation was verified; no item was assayed or XRF-tested; the blank price on VR-02 is correct because the design page genuinely shows no setting price.
+
+### Result
+
+| Check | Result |
+|---|---|
+| `scripts/compute.py` | 20 rows; 7 with published weight; 19 with verified price; spot $129.5202/g |
+| `scripts/audit.py` | **PASS** — 56 passed, 0 warnings, 0 failures |
+| `scripts/check_site.py` | PASS — 20 pages, local links resolve, every populated row carries its own official source link |
+| `scripts/verify.py` | 0 hard failures; 15 deliberately blank values flagged |
+| Dataset | 20 rows · 5 retailers · 19 prices · 7 weights · 0 hallmarks · all sellers' reputations unverified |
+
+### PR and merge record
 
 | Item | Result |
 |---|---|
-| Pass 4 PR (arena/b2c018a8 → main) | recorded below after merge |
-| Checks on the final tree | `audit.py` PASS 57/0/0 · `check_site.py` PASS · `verify.py` 0 hard failures |
-| Dataset after Pass 4 | 21 rows · 20 prices (1 blank) · 7 weights · 73 flag instances · benchmark frozen at $4,024.36/oz (21 Oct 2026) |
+| PR #7 (this pass) | **merged** into `main` — https://github.com/karagemop466-tech/GOLD4/pull/7 · merge commit `66a99e8` · merged 2026-10-22 23:30:59 UTC, no review waited for |
+| Pages workflow run | `39872297863` ("Deploy GOLD research site") = **success** |
+| Pages API | `status=built`, latest build commit `66a99e8`, built 23:31:20 UTC |
+| Live site re-fetched after deploy | `https://karagemop466-tech.github.io/GOLD4/` serves the new build: **7 published gram weights**, benchmark **$4,028.53/oz = $129.52/g**, **70 flag instances**, and the "7 of 20 rows" analysis with the AN-01 lab-created caveat. The Flagged page serves the new `CENTRE_STONE_LAB_CREATED` and `SPEC_LISTED_PAVE_ON_PLAIN_BAND` entries with their sources. |
+| Follow-up record commit | PR #9 — this table, the log entry and the two new flag labels on the Flagged page |
+
+### Event log additions
+
+- **2026-10-22 23:26 UTC** — `arena/fd51d093-gold4` created, branched from `main` at `815bb97`. Read this board first; no task was open and unclaimed, so nothing was taken over. Claimed V-1…V-4 above and pushed the claim.
+- **2026-10-22 23:55 UTC** — Pass 2 completed: 20 product pages + 4 policy pages + spec sheet + 6 reference sources re-fetched. 3 corrections, 2 new flags, 0 unexplained mismatches. Logged in `data/verification_log.json` as "Pass 4 — independent line-by-line re-verification of the published tree".
+
+- **2026-10-22 23:31 UTC** — **PR #7 opened and merged without waiting for review**: https://github.com/karagemop466-tech/GOLD4/pull/7 → merge commit `66a99e8`. Merge state was `CLEAN`/`MERGEABLE`; Pages workflow `39872297863` succeeded and the Pages API reported `status=built` for that commit.
+- **2026-10-22 23:32 UTC** — Live-site verification after deploy (not just "the workflow went green"): the dashboard and the Flagged page were fetched over HTTPS and confirmed to serve the corrected dataset — 7 weights, $4,028.53/oz, 70 flags, the AN-01 lab-created caveat, and both new flags. An earlier fetch returned the pre-merge build from cache; the re-fetch with a cache-buster returned the new build, which is why the check was repeated rather than assumed.
+- **2026-10-22 23:33 UTC** — Cosmetic fix found *because* the live page was read: the two new flags rendered with a raw lowercase name instead of a human-readable label. Labels added in `scripts/build_site.py`, site rebuilt, all checks re-run (audit PASS 56/0/0, check_site PASS). Shipped as PR #9.
+
+## What a human should look at first
+
+1. **Anjolee AN-01** — the only row whose price includes a diamond, and that diamond is **lab-created**. It is the cheapest-looking solitaire in the table for that reason. Do not read it as "gold cheaper than Blue Nile".
+2. **Blue Nile BN-04 / BN-07 / BN-08** — three pages whose own copy contradicts their own specification block. Nothing has been inferred about which side is right; that is a question for Blue Nile in writing.
+3. **VRAI VR-02** — weight published, price not. The blank is correct, not a gap to fill.
+4. **Every seller's reputation** — still unverified for all six. The FTC's own advice is to search the seller's name with "complaint" or "review"; this dataset does not do that for you and does not pretend to.
+
+---
+
+## Pass 6 — post-merge review of `main` (session `arena/e04b126a-gold4`)
+
+Task claimed: re-verify the **merged** tree (the published site), not a working copy, and record the result.
+
+- Scope: all 22 rows on their own source pages, 4 returns pages, 2 policy-level Brilliant Earth pages, the World Gold Council
+  spot panel, 16 CFR 23.3, the FTC gold article and 15 U.S.C. § 295.
+- Result: **no price, weight, karat, stock number or policy clause changed.** Nothing was corrected because nothing was wrong.
+- Re-confirmed limits: Brilliant Earth's `/returns/` page again served only nav/footer text (30-day window cannot be
+  re-displayed, stays flagged); no VRAI configuration page exposes a setting price in page text (VR-02 stays `PRICE_UNVERIFIED`).
+- Benchmark left at **$4,028.53/oz, data as of 21 October 2026** after a third read of the panel returned the same figure.
+- Pass recorded in `data/verification_log.json` (now Passes 0–6), rendered on the site's Log page, and summarised in `README.md`.
+- Checks after the pass: `audit.py` PASS 59/0/0 · `check_site.py` PASS 20 pages · `verify.py` 0 hard failures.
+
+### Publish record (session `arena/e04b126a-gold4`, 2026-10-22)
+
+| # | PR | What it shipped | Merge commit | Pages deploy | Site state confirmed |
+|---|---|---|---|---|---|
+| 1 | **#10** — https://github.com/karagemop466-tech/GOLD4/pull/10 | Pass 5: all 22 rows re-verified, Brilliant Earth rows added, PR #7 conflicts resolved | `e7f4d36` (23:34:06 UTC) | workflow `39872647868` **success**, pages build `39872646820` **success**, API `status=built` | live dashboard read back: 22 rings · 6 retailers · 21 prices · 7 weights · 79 flags · \$4,028.53/oz |
+| 2 | **#12** — https://github.com/karagemop466-tech/GOLD4/pull/12 | Board record of the PR #10 merge, both workflow runs and the live re-verification | `a7258b8` (23:35:41 UTC) | workflow `39872820799` **success**, pages build `39872819821` **success** | Pages API `status=built` |
+| 3 | **#13** — https://github.com/karagemop466-tech/GOLD4/pull/13 | **Pass 6:** line-by-line re-verification of merged `main`; no discrepancy found; Pass 6 + `not_reverified_this_pass` published on the Log page | `563ef0f` (23:38:19 UTC) | workflow `39873104987` **success**, pages build `39873104269` **success** | live Log page read back: Pass 6 present with the full checked list |
+| 4 | **#14** — https://github.com/karagemop466-tech/GOLD4/pull/14 | Two cosmetic fixes found by reading the deployed Log page: a missing space, and a stale "Five agent sessions / this pass is fd51d093" paragraph | `66877c7` (23:39:49 UTC) | workflow `39873263536` **success**, pages build `39873263053` **success** | live Log page re-read: typo gone, six sessions named, both passes credited |
+
+Every PR was merged **without waiting for review**, as the brief requires, and each was merged only after
+`audit.py` PASS (59/0/0), `check_site.py` PASS (20 pages) and `verify.py` 0 hard failures. No branch was force-pushed
+after the one rebase; no other session's file was deleted.
+
+**Live site:** https://karagemop466-tech.github.io/GOLD4/ — dashboard, 10 category pages and the Flagged page are current as of `66877c7`.
+---
+
+## Session `arena/58140cd4-gold4` — final record on current main `bb9f54e` (2026-10-22 23:59 UTC)
+
+**Status:** this session's offline re-verification at 23:28 UTC (20 rows, 6 weights, spot $4,024.36, PR #8 `e6033a8`) was superseded by live re-verifications at `66a99e8` (PR #7, 7 weights, spot $4,028.53) and `a7258b8`/`bb9f54e` (PR #12/14/15, 22 rows, Brilliant Earth, Pass 6, audit 59/0/0). This commit adds only this section to `COORDINATION.md` — no data is changed.
+
+**History preserved in git:**
+- `e6033a8` — offline pass 23:28 UTC, board update, site rebuild 23:28
+- `85a5b0d` — merge of `origin/main` (PR #7) into this branch, keeping PR #7 data
+- `b937d40` — timestamp sync to `66a99e8` (23:30 UTC)
+- `e2264f2`/`49af5a6` — board update on `a7258b8`, audit reports
+- `080a6ad` — board update on `66877c7`
+- This commit (`HEAD`) — board update on `bb9f54e` (current `main`)
+
+**Verification on current `main` (`bb9f54e`, PR #15 merged):**
+- `compute` — 22 rows, 7 weights, 21 prices, spot $129.5202/g
+- `audit.py` — **PASS 59/0/0**
+- `check_site.py` — PASS 20 pages (4 legacy warnings)
+- `verify.py` — 0 hard failures; 16 blanks flagged
+- Live site https://karagemop466-tech.github.io/GOLD4/ serves 22 rows, 7 weights, $4,028.53/oz, no-hallucination banner, flagged page with all irregularities.
+
+No hallucinated values introduced by this session; all data is as verified by `e04b126a` at `bb9f54e` and `fd51d093` at `66a99e8`. The authoritative board is `main`'s board; this section is kept for audit completeness.
+
+---
+
+## PR #8 merge record — `arena/58140cd4-gold4` → `main` (2026-10-22 23:42 UTC)
+
+| Item | Result |
+|---|---|
+| PR | **#8** — https://github.com/karagemop466-tech/GOLD4/pull/8 |
+| Title | Record 58140cd4 offline re-verification history on top of current main (66877c7) |
+| Branch | `arena/58140cd4-gold4` at `e53a618` → `main` at `ff76840` |
+| Merge commit | `ff76840` (2026-10-22 23:42:02 UTC) — **merged without waiting for review** |
+| Merge state before merge | `CLEAN`/`MERGEABLE` (1 file, 22 lines, no data change) |
+| Checks before merge | `audit.py` PASS 59/0/0 · `check_site.py` PASS 20 pages · `verify.py` PASS (0 hard failures) on `e53a618` |
+| Pages deploy after merge | Workflow run `398733...` for `ff76840` — **building** at 23:42 UTC (previous run `bb9f54e` was `success`), Pages API `status=building` → to be re-checked until `built` |
+| Live site after deploy | https://karagemop466-tech.github.io/GOLD4/ — to be re-fetched to confirm 22 rows / 7 weights / $4,028.53/oz still served |
+
+**What this PR shipped:** only `COORDINATION.md` (this section) documenting the offline pass at 23:28, the two main-moved conflicts (PR #7 at 66a99e8 and PR #12 at a7258b8/bb9f54e), and the final adoption of `bb9f54e` as canonical. No `data/*.json`, `index.html`, `pages/*` or `data/verification_log.json` was changed — the dataset remains as verified by `e04b126a` at `bb9f54e` (22 rows, 7 weights, 21 prices, audit 59/0/0).
+
+Flagged irregularities and unverified items (15 blanks, 0 hallmarks, 3 Blue Nile copy contradictions, etc.) remain published on the **Flagged for Review** page with source links and do not block the merge.
+
+---
+
+## Session `arena/a0be79d4-gold4` — Pass 6 Grand Unified Integration, `404` Remediation & 10K–24K Expansion
+
+### Tasks Claimed & Completed (`2026-10-22`)
+
+| Task ID | Task Description | Status | Owner | Files Preserved / Added |
+|---|---|---|---|---|
+| `A0-1` | Forensic line-by-line repo & cross-branch audit (`main` + active `arena/*` branches); catch dead `404` links and stale search-cache drift | **done** | `arena/a0be79d4-gold4` | `AUDIT_AND_REPO_REVIEW.md`, `docs/sources.html` (`404` fixes), `COORDINATION.md` |
+| `A0-2` | Expand canonical dataset from **22 → 35 live-verified rows across 9 retailers** (`10K`, `14K`, `18K`, `24K`), adding **Sarraf** plain-band melt floor (`1.33×–1.50×`), **10K vs 18K 5mm density pair** (`SR-01` vs `SR-03`), **Brilliant Earth** mixed-karat prong setting (`BE-03`), **Catbird NYC** (`CB-01..02`), **Menē** pure 24K (`MN-01..02`), **Kitco / JM Bullion** `2026-10-22` spot quotes, **CFPB FCBA**, & **GIA Carlsbad XRF fraud lab studies** | **done** | `arena/a0be79d4-gold4` | `data/rings.json`, `data/sellers.json`, `data/sources.json`, `data/gold_spot.json`, `data/derived.json`, `data/verification_log.json`, `data/catalog_a0be79d4.json` |
+| `A0-3` | Build 11-page standalone Assay Lab suite (`dashboard.html`, `solitaires.html`, `three-stone-halo.html`, `bands.html`, `calculator.html`, `checklist.html`, `sellers.html`, `standards.html`, `flagged.html`, `audit.html`, `coordination.html`) cross-linked non-destructively with `index.html`, `pages/*.html`, & `docs/*.html` (**30 verified HTML pages total**) | **done** | `arena/a0be79d4-gold4` | `static/gold4.css`, `static/gold4.js`, `scripts/generate_site.py`, root HTML pages |
+| `A0-4` | 4-Gate automated anti-hallucination & security verification pipeline (`audit.py` + `check_site.py` + `verify.py` + `verify_a0be79d4.py`) wired into `.github/workflows/pages.yml` + PR merge to `main` + live GitHub Pages check | **done / merging** | `arena/a0be79d4-gold4` | `scripts/verify_a0be79d4.py`, `scripts/audit.py`, `.github/workflows/pages.yml` |
+
+---
+
+## Session `arena/81b71aa5-gold4` — Ross-Simons Expansion, NIST Gemstone-Deduction Suite & 5-Gate Integration
+
+| Task ID | Scope | Status | Owner | Updated (UTC) |
+|---|---|---|---|---|
+| `81b7-T1..T5` | `audit/repo-line-by-line-review.md`, `data/standards_and_spot.json`, `data/verified_rings.json`, `categories/*.html`, `assets/gold4-*.js`, `scripts/audit_hallucinations.py` | `completed` | `arena/81b71aa5-gold4` | `2026-10-22T23:25:00Z` |
+| `81b7-T6` | Clean additive integration onto `origin/main` (`217f79b`, PRs #1–#17) -> 47 canonical rows, 10 sellers, 30 sources, 5 CI audit gates | `completed` | `arena/81b71aa5-gold4` | `2026-10-22T23:47:00Z` |
+
+- **Preserved 100% of `main` (`217f79b`)**: All 35 canonical rows, root Assay Lab pages (`dashboard.html`, `solitaires.html`, `bands.html`, etc.), `docs/**`, and `verify_a0be79d4.py` retained intact.
+- **Added 12 non-duplicate canonical rows (`47` total) & 10th seller (`Ross-Simons`)**: Appended `BN-09`..`BN-12` (including `PAIR-BN-FOURPRONG` `$870`->`$1,125`), `BE-04` (`BE1FM0126-18KY` resizing contradiction), `RS-01`..`RS-05` (`0.7 g`–`4.0 g` published band weights + `0.80 ct` GIA solitaire), and `MJ-06`..`MJ-07` (`10×` carat mismatch & `10K` vs `14K` alt-text mismatch), plus documented Mejuri's cautionary `Bold Chain Ring` (`"hollowed 14k solid gold"`, `16 CFR § 23.3(c)`).
+- **Added `categories/*.html` deep-dive suite & Gate 5 (`audit_hallucinations.py`)**: NIST `0.200 g/ct` stone-mass deduction calculator (`categories/calculator.html`), line-by-line irregularity register (`categories/verification-audit.html`), and 5-verifier CI workflow in `.github/workflows/pages.yml`.
+- **Pull Request & Merge Outcome**: Opened and merged **PR #19** (`https://github.com/karagemop466-tech/GOLD4/pull/19`) directly into `main` after passing all 5 automated verification gates (`audit.py` 112/0/0, `check_site.py` 26 pages, `verify.py` 0 failures / 47 records, `verify_a0be79d4.py` 36 HTML pages / 1,760 links / 0 failures, and `audit_hallucinations.py` 824 checks / 0 failures).
+
+---
+
+## Pass 7 — independent concurrent re-verification + two clean merges (session `arena/1372cb32-gold4`)
+
+Claimed as task 15 on this board (renumbered after `arena/e04b126a-gold4`'s board arrived with its own task 10).
+This pass ran **concurrently** with `arena/fd51d093-gold4`, `arena/e04b126a-gold4`, `arena/58140cd4-gold4`,
+`arena/a0be79d4-gold4` and `arena/81b71aa5-gold4`, before this session could see their work.
+
+### Verification performed (all sources re-opened 2026-10-22 by this session's own fetches)
+
+- Every row that existed when the pass started (BN-01..BN-08, AL-01..AL-04, VR-01, VR-02, MJ-01..MJ-05, AN-01) was
+  re-fetched from its own official page: **all prices, karats, SKUs, widths and weights matched exactly.**
+- **Independent corroboration** of two behaviours other sessions also found: the Anjolee Product Details table publishes
+  `Approx. Metal Weight: 2.90 Gr.`, and both VRAI plain-band pages list `Pavé carat weight: 0.18ctw`.
+- Gold spot live panel read **4,028.53/oz** — the same second reading the other sessions recorded.
+- Seller policies and all Tier A/B registry sources re-read field-for-field: all matched.
+- After the first merge, the two Brilliant Earth Atelier rows were re-checked: **BE-02 re-confirmed exactly**
+  ($1,390, `BE1D2444-18KY`); **BE-01's page served a EUR rendering** ("1,350.00 EUR (Setting Only)", Global-e
+  checkout) so its USD figure could not be reproduced in this pass — kept from the earlier same-day USD capture and
+  flagged `PRICE_CURRENCY_LOCALIZED` on both BE rows for manual USD re-check.
+
+### Irregularities found in this pass (published on the Flagged page, none blocking)
+
+1. **Brilliant Earth currency localization** (above).
+2. **Mejuri bare product links open a different default metal variant** (also found by `arena/e04b126a` as
+   `PRICE_VARIANT_DEPENDENT`). Unique fix: every Mejuri `price_source_url` now points at the exact product-variant URL
+   where the price is displayed.
+3. **The § 295 "legal minimum" floor has two defensible readings** (57.63% on the karat÷24 basis vs 57.8% on the 585‰
+   millesimal convention). The derivation basis is now stated in `data/methodology.json` and on the Flagged page.
+
+### Merge events — `main` advanced twice while this pass ran (resolved both times, nothing discarded)
+
+1. First merge (`815bb97` → `bb9f54e`, PRs #7–#15 by `arena/fd51d093-gold4` and `arena/e04b126a-gold4`): 20 conflicted
+   files resolved **in favour of the merged `main` work** (their AN-01 weight recovery, flag names, gold-spot basis
+   choice and widened dataset), then this session's unique deltas re-applied on top.
+2. Second merge (`bb9f54e` → `6b0c458`, PRs #17–#19 by `arena/a0be79d4-gold4` and `arena/81b71aa5-gold4`, growing the
+   dataset to 47 rows / 10 sellers and adding the 5-gate CI): 19 conflicted files resolved **in favour of `main`**
+   again, unique deltas re-applied again (derivation-basis note, Mejuri variant URLs, `PRICE_CURRENCY_LOCALIZED`,
+   Pass 7 log entry, three Flagged-page cards).
+
+**No file of any other session was rewritten or deleted; no branch was force-pushed.** A `git pull --rebase` that tried
+to linearize this branch's merge commits was aborted intact (it would have replayed other sessions' commits as ours);
+the merges were kept as merges. This session's own pre-merge edits to shared files were superseded twice — by design.

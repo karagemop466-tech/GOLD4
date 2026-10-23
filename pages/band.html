@@ -15,7 +15,7 @@
       <span>GOLD4<small>gold-ring verification desk</small></span>
     </a>
     <nav class="main">
-      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="active">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="log.html" class="">Log</a>
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="active">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="log.html" class="">Log</a><a href="../dashboard.html" class="">Assay Lab+</a><a href="../categories/calculator.html" class="">Stone-Deduction Calc</a><a href="../categories/verification-audit.html" class="">Deep Audit</a>
     </nav>
   </div>
 </header>
@@ -25,7 +25,7 @@
   <span class="eyebrow">Category</span>
   <h1>Diamond bands and solid-gold rings</h1>
   <p class="lede">Bands and signets. Useful for comparing gold content per dollar, less useful as an engagement setting.</p>
-  <p class="meta-line">3 entries · 3 prices verified · 0 published weights</p>
+  <p class="meta-line">14 entries · 14 prices verified · 8 published weights</p>
 </section>
 
 <div class="nohall">
@@ -39,13 +39,14 @@
     <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
     <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
     <li><strong>Anything uncertain is published on <a href="../pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
   </ul>
 </div>
 
 
 <div class="toolbar">
   <input type="search" id="filter" placeholder="Filter by retailer, ring, SKU, flag…" aria-label="Filter rows">
-  <span class="count" id="filterCount">3 rows</span>
+  <span class="count" id="filterCount">14 rows</span>
 </div>
 <div class="table-wrap"><table>
   <thead><tr>
@@ -54,7 +55,7 @@
     <th class="num">Gold content</th><th class="num">Gold value</th><th class="num">Price ÷ gold</th>
     <th>Returns</th><th>Solid / hallmark</th><th>Source</th><th>Flags</th>
   </tr></thead><tbody>
-  <tr data-row-id="MJ-01" data-search="mj-01 mejuri diamonds team ring half-eternity diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal">
+  <tr data-row-id="MJ-01" data-search="mj-01 mejuri diamonds team ring half-eternity diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal price_variant_dependent">
     <td class="id">MJ-01</td>
     <td>Mejuri</td>
     <td class="prod"><a href="https://mejuri.com/products/diamonds-team-ring" target="_blank" rel="noopener">Diamonds Team Ring</a>
@@ -69,8 +70,8 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://mejuri.com/products/diamonds-team-ring" target="_blank" rel="noopener">mejuri.com/products/diamonds-team-ring</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span></div></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span><span class="flag" title="PRICE_VARIANT_DEPENDENT">price depends on the metal variant selected</span></div></td>
   </tr>
   <tr data-row-id="MJ-02" data-search="mj-02 mejuri diamonds band diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal">
     <td class="id">MJ-02</td>
@@ -87,10 +88,10 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://mejuri.com/products/diamonds-band" target="_blank" rel="noopener">mejuri.com/products/diamonds-band</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span></div></td>
   </tr>
-  <tr data-row-id="MJ-05" data-search="mj-05 mejuri ziggy ring (bezel lab grown diamond zig-zag ring) bezel-set zig-zag diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal scs_cert_required_for_return">
+  <tr data-row-id="MJ-05" data-search="mj-05 mejuri ziggy ring (bezel lab grown diamond zig-zag ring) bezel-set zig-zag diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal scs_cert_required_for_return price_is_from_price">
     <td class="id">MJ-05</td>
     <td>Mejuri</td>
     <td class="prod"><a href="https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring" target="_blank" rel="noopener">Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)</a>
@@ -105,8 +106,206 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring" target="_blank" rel="noopener">mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span><span class="flag" title="SCS_CERT_REQUIRED_FOR_RETURN">return needs the SCS certificate</span></div></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span><span class="flag" title="SCS_CERT_REQUIRED_FOR_RETURN">return needs the SCS certificate</span><span class="flag" title="PRICE_IS_FROM_PRICE">&#x27;from&#x27; price, not a fixed quote</span></div></td>
+  </tr>
+  <tr data-row-id="SR-01" data-search="sr-01 sarraf 10k white gold 5mm high polished traditional domed wedding band traditional domed solid band (5mm) 10k solid white gold 10kw-lpbwb05 band weight_approximate hallmark_not_published white_gold">
+    <td class="id">SR-01</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">10k White Gold 5mm High Polished Traditional Domed Wedding Band</a>
+        <span class="sub">Traditional domed solid band (5mm)</span></td>
+    <td>10K Solid White Gold<span class="sub">10K · 41.6667% gold</span></td>
+    <td class="num">$352<span class="sub">ring as sold</span></td>
+    <td class="num">4.80
+        <span class="sub">published</span></td>
+    <td class="num">2.000<span class="sub">derived</span></td>
+    <td class="num">$259.04<span class="sub">derived</span></td>
+    <td class="num">1.36</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">sarraf.com/products/10k-White-Gold-5mm-High-Polished-Tradit…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="WHITE_GOLD">white gold, not yellow</span></div></td>
+  </tr>
+  <tr data-row-id="SR-02" data-search="sr-02 sarraf 14k yellow gold 6mm high polished comfort fit heavy wedding band heavy comfort-fit solid band (6mm x 2.2mm) 14k solid yellow gold 14ky-pbwb06 band weight_approximate hallmark_not_published">
+    <td class="id">SR-02</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html" target="_blank" rel="noopener">14k Yellow Gold 6mm High Polished Comfort Fit Heavy Wedding Band</a>
+        <span class="sub">Heavy comfort-fit solid band (6mm x 2.2mm)</span></td>
+    <td>14K Solid Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,063<span class="sub">ring as sold</span></td>
+    <td class="num">9.40
+        <span class="sub">published</span></td>
+    <td class="num">5.483<span class="sub">derived</span></td>
+    <td class="num">$710.20<span class="sub">derived</span></td>
+    <td class="num">1.50</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html" target="_blank" rel="noopener">sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="SR-03" data-search="sr-03 sarraf 18k yellow gold 5mm high polished traditional domed wedding band traditional domed solid band (5mm) 18k solid yellow gold 18ky-lpbwb05 band weight_approximate hallmark_not_published">
+    <td class="id">SR-03</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band</a>
+        <span class="sub">Traditional domed solid band (5mm)</span></td>
+    <td>18K Solid Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$871<span class="sub">ring as sold</span></td>
+    <td class="num">6.70
+        <span class="sub">published</span></td>
+    <td class="num">5.025<span class="sub">derived</span></td>
+    <td class="num">$650.84<span class="sub">derived</span></td>
+    <td class="num">1.34</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Tradi…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="SR-04" data-search="sr-04 sarraf 18k yellow gold 6mm high polished flat comfort fit heavy band flat comfort-fit heavy band (6mm x 1.9mm) 18k solid yellow gold ib-fpbwb06-18ky band weight_approximate hallmark_not_published">
+    <td class="id">SR-04</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html" target="_blank" rel="noopener">18K Yellow Gold 6mm High Polished Flat Comfort Fit Heavy Band</a>
+        <span class="sub">Flat comfort-fit heavy band (6mm x 1.9mm)</span></td>
+    <td>18K Solid Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$1,436<span class="sub">ring as sold</span></td>
+    <td class="num">11.10
+        <span class="sub">published</span></td>
+    <td class="num">8.325<span class="sub">derived</span></td>
+    <td class="num">$1,078.26<span class="sub">derived</span></td>
+    <td class="num">1.33</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html" target="_blank" rel="noopener">sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="CB-02" data-search="cb-02 catbird nyc grand painter&#x27;s solid 14k yellow gold band plain solid gold band solid 14k yellow gold grand-painters-ring band no_weight_published hallmark_not_published">
+    <td class="id">CB-02</td>
+    <td>Catbird NYC</td>
+    <td class="prod"><a href="https://www.catbirdnyc.com/grand-painters-ring.html" target="_blank" rel="noopener">Grand Painter&#x27;s Solid 14k Yellow Gold Band</a>
+        <span class="sub">Plain solid gold band</span></td>
+    <td>Solid 14k Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$313.50<span class="sub">ring as sold</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">20-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.catbirdnyc.com/grand-painters-ring.html" target="_blank" rel="noopener">catbirdnyc.com/grand-painters-ring.html</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="MN-01" data-search="mn-01 menē menē 24k pure solid gold knot ring sculpted pure 24k solid gold ring pure 24k gold (99.99% au) knot-ring-gold band no_weight_published hallmark_not_published">
+    <td class="id">MN-01</td>
+    <td>Menē</td>
+    <td class="prod"><a href="https://mene.com/products/knot-ring-gold" target="_blank" rel="noopener">Menē 24k Pure Solid Gold Knot Ring</a>
+        <span class="sub">Sculpted pure 24K solid gold ring</span></td>
+    <td>Pure 24K Gold (99.99% Au)<span class="sub">24K · 100.0% gold</span></td>
+    <td class="num">$1,465<span class="sub">ring as sold</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">7-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://mene.com/products/knot-ring-gold" target="_blank" rel="noopener">mene.com/products/knot-ring-gold</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="MN-02" data-search="mn-02 menē menē 24k pure solid gold etruscan sun band (4.5mm) pure 24k gold band (4.5mm x 2.0mm) pure 24k gold (99.99% au) etruscan-sun-band-gold band no_weight_published hallmark_not_published">
+    <td class="id">MN-02</td>
+    <td>Menē</td>
+    <td class="prod"><a href="https://mene.com/products/etruscan-sun-band-gold" target="_blank" rel="noopener">Menē 24k Pure Solid Gold Etruscan Sun Band (4.5mm)</a>
+        <span class="sub">Pure 24K gold band (4.5mm x 2.0mm)</span></td>
+    <td>Pure 24K Gold (99.99% Au)<span class="sub">24K · 100.0% gold</span></td>
+    <td class="num">$1,730<span class="sub">ring as sold</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">7-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://mene.com/products/etruscan-sun-band-gold" target="_blank" rel="noopener">mene.com/products/etruscan-sun-band-gold</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="RS-01" data-search="rs-01 ross-simons 14kt yellow gold 2mm wedding band plain polished wedding band 14kt yellow gold 571221 band weight_approximate solid_not_stated hallmark_not_published">
+    <td class="id">RS-01</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/jewelry/rings/571221.html" target="_blank" rel="noopener">14kt Yellow Gold 2mm Wedding Band</a>
+        <span class="sub">Plain polished wedding band</span></td>
+    <td>14kt Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$400<span class="sub">ring as sold</span></td>
+    <td class="num">1.70
+        <span class="sub">published</span></td>
+    <td class="num">0.992<span class="sub">derived</span></td>
+    <td class="num">$128.44<span class="sub">derived</span></td>
+    <td class="num">3.11</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/571221.html" target="_blank" rel="noopener">ross-simons.com/jewelry/rings/571221.html</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="RS-02" data-search="rs-02 ross-simons italian 18kt yellow gold 2mm wedding band ultra-light plain wedding band 18kt yellow gold 985230 band weight_approximate solid_not_stated hallmark_not_published">
+    <td class="id">RS-02</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/jewelry/rings/985230.html" target="_blank" rel="noopener">Italian 18kt Yellow Gold 2mm Wedding Band</a>
+        <span class="sub">Ultra-light plain wedding band</span></td>
+    <td>18kt Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$249<span class="sub">ring as sold</span></td>
+    <td class="num">0.70
+        <span class="sub">published</span></td>
+    <td class="num">0.525<span class="sub">derived</span></td>
+    <td class="num">$68<span class="sub">derived</span></td>
+    <td class="num">3.66</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/985230.html" target="_blank" rel="noopener">ross-simons.com/jewelry/rings/985230.html</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="RS-03" data-search="rs-03 ross-simons 14kt yellow gold 3mm comfort-fit wedding band comfort-fit plain wedding band 14kt yellow gold 820263 band weight_approximate solid_not_stated hallmark_not_published">
+    <td class="id">RS-03</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/jewelry/rings/820263.html" target="_blank" rel="noopener">14kt Yellow Gold 3mm Comfort-Fit Wedding Band</a>
+        <span class="sub">Comfort-fit plain wedding band</span></td>
+    <td>14kt Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$595<span class="sub">ring as sold</span></td>
+    <td class="num">2.10
+        <span class="sub">published</span></td>
+    <td class="num">1.225<span class="sub">derived</span></td>
+    <td class="num">$158.66<span class="sub">derived</span></td>
+    <td class="num">3.75</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/820263.html" target="_blank" rel="noopener">ross-simons.com/jewelry/rings/820263.html</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="RS-04" data-search="rs-04 ross-simons 14kt yellow gold 4mm flat wedding band ring flat profile 4mm wedding band 14kt yellow gold 823796 band weight_approximate solid_not_stated hallmark_not_published">
+    <td class="id">RS-04</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/jewelry/rings/823796.html" target="_blank" rel="noopener">14kt Yellow Gold 4mm Flat Wedding Band Ring</a>
+        <span class="sub">Flat profile 4mm wedding band</span></td>
+    <td>14kt Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,195<span class="sub">ring as sold</span></td>
+    <td class="num">4.00
+        <span class="sub">published</span></td>
+    <td class="num">2.333<span class="sub">derived</span></td>
+    <td class="num">$302.21<span class="sub">derived</span></td>
+    <td class="num">3.95</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/823796.html" target="_blank" rel="noopener">ross-simons.com/jewelry/rings/823796.html</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
   </tr></tbody></table></div>
 <p class="small" style="margin-top:12px">Blank weight cells mean the retailer publishes no gram weight for that item. See the <a href="flagged.html">Flagged</a> page for the full list.</p>
 
@@ -114,9 +313,9 @@
 <footer class="wrap foot">
   <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
-  <p>Gold benchmark: $4,024.36/oz as of 21 October, 2026 (World Gold Council) = $129.3862/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:53 UTC · dataset 21 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:56 UTC · dataset 47 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

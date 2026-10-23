@@ -15,23 +15,24 @@
       <span>GOLD4<small>gold-ring verification desk</small></span>
     </a>
     <nav class="main">
-      <a href="index.html" class="active">Dashboard</a><a href="pages/solitaire.html" class="">Solitaire</a><a href="pages/pave.html" class="">Pavé</a><a href="pages/band.html" class="">Bands</a><a href="pages/purity.html" class="">14K vs 18K</a><a href="pages/sellers.html" class="">Sellers</a><a href="pages/calculator.html" class="">Calculator</a><a href="pages/flagged.html" class="">Flagged</a><a href="pages/methodology.html" class="">Method</a><a href="pages/sources.html" class="">Sources</a><a href="pages/log.html" class="">Log</a>
+      <a href="index.html" class="active">Dashboard</a><a href="pages/solitaire.html" class="">Solitaire</a><a href="pages/pave.html" class="">Pavé</a><a href="pages/band.html" class="">Bands</a><a href="pages/purity.html" class="">14K vs 18K</a><a href="pages/sellers.html" class="">Sellers</a><a href="pages/calculator.html" class="">Calculator</a><a href="pages/flagged.html" class="">Flagged</a><a href="pages/methodology.html" class="">Method</a><a href="pages/sources.html" class="">Sources</a><a href="pages/log.html" class="">Log</a><a href="dashboard.html" class="">Assay Lab+</a><a href="categories/calculator.html" class="">Stone-Deduction Calc</a><a href="categories/verification-audit.html" class="">Deep Audit</a>
     </nav>
   </div>
 </header>
 <main class="wrap">
 
 <section class="hero">
-  <span class="eyebrow">● live dataset · captured 22 October 2026</span>
+  <span class="eyebrow">● live dataset · captured 22 October 2026 · every row re-read from its source on 2026-10-22</span>
   <h1>Solid-gold engagement rings, with every number traceable to the seller's own page.</h1>
-  <p class="lede">A small, deliberately boring dataset: 21 rings from 6 retailers, 20 prices read
-  from the retailer's page today, 7 published gram weights, and the gold-value arithmetic that follows from them.
+  <p class="lede">A small, deliberately boring dataset: 47 rings from 10 retailers, 46 prices read
+  from the retailer's page today, 17 published gram weights, and the gold-value arithmetic that follows from them.
   Nothing is estimated. Everything uncertain is on the Flagged page.</p>
   <div class="pill-row">
     <span class="badge b-bad">no hallucinated values</span>
     <span class="badge b-ok">source link on every row</span>
-    <span class="badge b-warn">73 flags published</span>
+    <span class="badge b-warn">162 flags published</span>
     <span class="badge b-info">spot benchmark dated</span>
+    <span class="badge b-ok">full re-verification pass 2026-10-22</span>
   </div>
 </section>
 
@@ -46,16 +47,17 @@
     <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
     <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
     <li><strong>Anything uncertain is published on <a href="pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
   </ul>
 </div>
 
 
 <div class="kpis">
-  <div class="kpi"><div class="n">21</div><div class="l">rings tracked</div><div class="s">across 6 retailers</div></div>
-  <div class="kpi"><div class="n">20</div><div class="l">prices read from source</div><div class="s">captured 22 October 2026</div></div>
-  <div class="kpi"><div class="n">7</div><div class="l">gram weights published</div><div class="s">the rest stay blank</div></div>
-  <div class="kpi gold"><div class="n">$129.39</div><div class="l">gold per gram</div><div class="s">$4,024.36/oz · 21 October, 2026</div></div>
-  <div class="kpi"><div class="n">73</div><div class="l">flags raised</div><div class="s">all published for review</div></div>
+  <div class="kpi"><div class="n">47</div><div class="l">rings tracked</div><div class="s">across 10 retailers</div></div>
+  <div class="kpi"><div class="n">46</div><div class="l">prices read from source</div><div class="s">captured 22 October 2026</div></div>
+  <div class="kpi"><div class="n">17</div><div class="l">gram weights published</div><div class="s">the rest stay blank</div></div>
+  <div class="kpi gold"><div class="n">$129.52</div><div class="l">gold per gram</div><div class="s">$4,028.53/oz · 21 October, 2026</div></div>
+  <div class="kpi"><div class="n">162</div><div class="l">flags raised</div><div class="s">all published for review</div></div>
 </div>
 
 <section class="section">
@@ -63,9 +65,9 @@
   <p class="sub">Each item in the brief, what this dataset can prove, and where to look.</p>
   <div class="checklist"><div class="check"><div class="t"><span class="i">01</span>Gold purity</div>
         <p>Confirm 10K / 14K / 18K and compare the stamp with the listing&#x27;s metal field.</p><div class="ev">Karat reference + legal tolerance · <a href="pages/purity.html">open</a></div></div><div class="check"><div class="t"><span class="i">02</span>Solid gold</div>
-        <p>The listing must say solid gold — not plated, vermeil, filled, overlay or gold-tone.</p><div class="ev">5 of 21 rows use explicit solid wording · <a href="pages/flagged.html">open</a></div></div><div class="check"><div class="t"><span class="i">03</span>Hallmark</div>
+        <p>The listing must say solid gold — not plated, vermeil, filled, overlay or gold-tone.</p><div class="ev">19 of 47 rows use explicit solid wording · <a href="pages/flagged.html">open</a></div></div><div class="check"><div class="t"><span class="i">03</span>Hallmark</div>
         <p>Look for the karat stamp plus a maker&#x27;s / registered trademark.</p><div class="ev">0 rows publish a hallmark — check on arrival · <a href="pages/methodology.html">open</a></div></div><div class="check"><div class="t"><span class="i">04</span>Weight in grams</div>
-        <p>A legitimate seller should be able to tell you the weight.</p><div class="ev">7 of 21 rows publish it · <a href="pages/calculator.html">open</a></div></div><div class="check"><div class="t"><span class="i">05</span>Seller reputation</div>
+        <p>A legitimate seller should be able to tell you the weight.</p><div class="ev">17 of 47 rows publish it · <a href="pages/calculator.html">open</a></div></div><div class="check"><div class="t"><span class="i">05</span>Seller reputation</div>
         <p>Independent reviews and complaints, plus real contact details.</p><div class="ev">contact routes captured; reputation not verified · <a href="pages/sellers.html">open</a></div></div><div class="check"><div class="t"><span class="i">06</span>Price vs gold value</div>
         <p>Compare the price with the ring&#x27;s gold weight and current gold value.</p><div class="ev">computed per row where weight exists · <a href="pages/calculator.html">open</a></div></div><div class="check"><div class="t"><span class="i">07</span>Return policy</div>
         <p>Check the window and the exclusions for resized / custom / engraved rings.</p><div class="ev">clauses quoted per seller · <a href="pages/sellers.html">open</a></div></div><div class="check"><div class="t"><span class="i">08</span>Payment</div>
@@ -78,29 +80,41 @@
   <h2>What the data actually shows</h2>
   <div class="grid two">
     <div class="card">
-      <h3>Only 7 of 21 rows publish a gram weight at all</h3>
-      <p>Four Allurez settings, two VRAI settings and one Anjolee ring publish a gram weight, so only those rows have a computable gold content.
-      Blue Nile, Mejuri and Brilliant Earth publish a price but no weight, so their gold content is <em>blank</em> — not guessed.</p>
-      <p class="small">Price ÷ gold-value multiple across the 5 rows with a comparable price: 2.17× to 3.73×.
-      AN-01's price includes a diamond, so its multiple is deliberately not published; VR-02 has a weight but no published price.</p>
+      <h3>Only 17 of 47 rows can be priced against their gold at all</h3>
+      <p>Four Allurez settings, six Sarraf bands/solitaires, four Ross-Simons bands, two VRAI settings and one Anjolee ring publish a gram weight (17 rows total; Sarraf plain bands set a 1.33×–1.50× melt floor, while AN-01/SR-05/SR-06 include centre diamonds).
+      Blue Nile, Brilliant Earth, Catbird and Mejuri publish prices without gram weights, so their gold content stays <em>blank</em> — not guessed.</p>
+      <p class="small">Price ÷ gold-value multiple across rows with both a price and a published weight: 1.33× to 6.65×.
+      Compare Ross-Simons 18K 0.7 g band (RS-02, 0.525 g pure Au) vs 14K 1.7 g band (RS-01, 0.992 g pure Au): higher karat with lower gram weight yields 47% less fine gold. Also see <a href="dashboard.html"><strong>Assay Lab+ →</strong></a> and <a href="categories/calculator.html"><strong>Stone-Deduction Calculator →</strong></a></p>
     </div>
     <div class="card">
       <h3>18K costs more than its extra gold — and by an inconsistent amount</h3>
-      <p>Same design, same retailer, only the karat changed: Petite Solitaire is +15.5% going 14K→18K, the Comfort Fit is +40.1%, and the Allurez Split Shank is +68.0%.</p>
+      <p>Same design, same retailer, only the karat changed: Petite Solitaire is +15.5% going 14K→18K, Brilliant Earth Atelier is +16.8%, Classic Four-Prong is +29.3%, Comfort Fit is +40.1%, and Allurez Split Shank is +68.0%.</p>
       <p>For the Allurez pair both prices and weights are published, so the 18K premium can be split: +54.9% of it is simply more gold, and the rest is labour and margin.</p>
       <p class="small"><a href="pages/purity.html">See the full karat analysis →</a></p>
     </div>
     <div class="card">
-      <h3>Zero retailers publish the hallmark</h3>
-      <p>Not one product page in this dataset shows the physical stamp or the maker's mark, which is exactly why the checklist says to verify on arrival.
-      The legal requirement (karat mark <em>plus</em> a registered trademark) is quoted on the Method page.</p>
+      <h3>Zero retailers publish the physical hallmark</h3>
+      <p>Not one product page in this dataset shows the inner-shank stamp or registered maker's mark, which is why the checklist requires post-delivery inspection.
+      Under 15 U.S.C. § 297(b) a karat mark must be accompanied by a registered trademark or legal company name, and GIA Lab Notes advise pairing XRF with gram-weight checks.</p>
     </div>
     <div class="card">
-      <h3>Return windows all say 30 days — the exclusions differ</h3>
-      <p>Every seller here offers ~30 days, but Blue Nile, VRAI and Allurez exclude resized or altered rings, Mejuri excludes engraving outright,
-      and Allurez excludes custom orders while Anjolee explicitly allows returns on customised orders. Read the clause, not the badge.</p>
-      <p class="small"><a href="pages/sellers.html">Compare the clauses →</a></p>
+      <h3>Return windows range from 7 to 30 days — and resizing kills returns</h3>
+      <p>Menē allows <strong>7 days</strong> (10% cash-refund restocking fee), Catbird allows <strong>14–20 days</strong> ($9 fee; special orders final sale), and Blue Nile's 30-day clock starts at <strong>shipment</strong>. Brilliant Earth, Blue Nile, Ross-Simons, VRAI and Allurez exclude resized rings — verify purity <em>before</em> resizing.</p>
+      <p class="small"><a href="pages/sellers.html">Compare all 10 sellers' clauses →</a></p>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Deep-Dive Category Subpages &amp; Gemstone-Carat Deduction Suite</h2>
+  <p class="sub">Specialized category audits, NIST 0.200 g/ct stone-mass deduction math, GIA XRF surface-depth limits, and our line-by-line irregularity register.</p>
+  <div class="grid three">
+    <div class="card"><h3><a href="categories/solitaires.html">Solitaire Audit</a></h3><p>Mixed-karat prong alerts (18K band + 14K or Platinum head) and Brilliant Earth resizing contradictions.</p></div>
+    <div class="card"><h3><a href="categories/accent-rings.html">Pavé &amp; Accent Audit</a></h3><p>Live-caught copy contradictions on Blue Nile (18K vs platinum; 1/6 vs 1/8 ct) and Mejuri (0.532 ct vs 0.044 ct).</p></div>
+    <div class="card"><h3><a href="categories/gold-bands.html">Solid &amp; 24K Bands + Hollow Alert</a></h3><p>Ross-Simons 0.7 g–4.0 g melt benchmarks, Menē 24K, plus Mejuri's cautionary FTC 16 CFR § 23.3(c) "hollowed 14k solid gold" listing.</p></div>
+    <div class="card"><h3><a href="categories/calculator.html">Stone-Deduction Calculator</a></h3><p>Subtracts 0.200 g per diamond carat (NIST HB 44), checks 15 U.S.C. § 295 tolerances, and compares 3 dated spot feeds.</p></div>
+    <div class="card"><h3><a href="categories/checklist-standards.html">12-Point Statutory Checklist</a></h3><p>Complete FTC 16 CFR 23, 15 U.S.C. §§ 295/297, GIA XRF Lab Notes, FCBA 15 U.S.C. § 1666, and seller return trap matrix.</p></div>
+    <div class="card"><h3><a href="categories/verification-audit.html">Line-by-Line Irregularities</a></h3><p>Every retailer discrepancy (IRR-CAT-01..11) and repository audit finding (IRR-REPO-01..08) with direct review links.</p></div>
   </div>
 </section>
 
@@ -110,7 +124,7 @@
   
 <div class="toolbar">
   <input type="search" id="filter" placeholder="Filter by retailer, ring, SKU, flag…" aria-label="Filter rows">
-  <span class="count" id="filterCount">21 rows</span>
+  <span class="count" id="filterCount">47 rows</span>
 </div>
   <div class="table-wrap"><table>
   <thead><tr>
@@ -119,6 +133,132 @@
     <th class="num">Gold content</th><th class="num">Gold value</th><th class="num">Price ÷ gold</th>
     <th>Returns</th><th>Solid / hallmark</th><th>Source</th><th>Flags</th>
   </tr></thead><tbody>
+  <tr data-row-id="AL-01" data-search="al-01 allurez engraved floral solitaire engagement ring setting solitaire with milgrain floral detail 14k yellow gold ng4426 solitaire weight_approximate solid_not_stated hallmark_not_published">
+    <td class="id">AL-01</td>
+    <td>Allurez</td>
+    <td class="prod"><a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">Engraved Floral Solitaire Engagement Ring Setting</a>
+        <span class="sub">Solitaire with milgrain floral detail</span></td>
+    <td>14k Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$585<span class="sub">setting only</span></td>
+    <td class="num">3.58
+        <span class="sub">published</span></td>
+    <td class="num">2.088<span class="sub">derived</span></td>
+    <td class="num">$270.48<span class="sub">derived</span></td>
+    <td class="num">2.16</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">allurez.com/products/floral-solitaire-engagement-ring-14k-y…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="AL-02" data-search="al-02 allurez milgrain trellis solitaire engagement ring solitaire with milgrain trellis gallery 14k yellow gold az21211 solitaire weight_approximate solid_not_stated hallmark_not_published">
+    <td class="id">AL-02</td>
+    <td>Allurez</td>
+    <td class="prod"><a href="https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">Milgrain Trellis Solitaire Engagement Ring</a>
+        <span class="sub">Solitaire with milgrain trellis gallery</span></td>
+    <td>14k Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$724<span class="sub">setting only</span></td>
+    <td class="num">3.40
+        <span class="sub">published</span></td>
+    <td class="num">1.983<span class="sub">derived</span></td>
+    <td class="num">$256.88<span class="sub">derived</span></td>
+    <td class="num">2.82</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">allurez.com/products/milgrain-trellis-solitaire-engagement-…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="AL-03" data-search="al-03 allurez split shank solitaire engagement ring solitaire, split shank 14k yellow gold az21223 solitaire weight_approximate solid_not_stated hallmark_not_published">
+    <td class="id">AL-03</td>
+    <td>Allurez</td>
+    <td class="prod"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">Split Shank Solitaire Engagement Ring</a>
+        <span class="sub">Solitaire, split shank</span></td>
+    <td>14k Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$848<span class="sub">setting only</span></td>
+    <td class="num">4.40
+        <span class="sub">published</span></td>
+    <td class="num">2.567<span class="sub">derived</span></td>
+    <td class="num">$332.44<span class="sub">derived</span></td>
+    <td class="num">2.55</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">allurez.com/products/split-shank-solitaire-engagement-ring-…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="AL-04" data-search="al-04 allurez split shank solitaire engagement ring solitaire, split shank 18k yellow gold az21229 solitaire weight_approximate solid_not_stated hallmark_not_published">
+    <td class="id">AL-04</td>
+    <td>Allurez</td>
+    <td class="prod"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold" target="_blank" rel="noopener">Split Shank Solitaire Engagement Ring</a>
+        <span class="sub">Solitaire, split shank</span></td>
+    <td>18k Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$1,425<span class="sub">setting only</span></td>
+    <td class="num">5.30
+        <span class="sub">published</span></td>
+    <td class="num">3.975<span class="sub">derived</span></td>
+    <td class="num">$514.84<span class="sub">derived</span></td>
+    <td class="num">2.77</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold" target="_blank" rel="noopener">allurez.com/products/split-shank-solitaire-engagement-ring-…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="AN-01" data-search="an-01 anjolee six curved prongs solitaire diamond engagement ring (ms354-a) solitaire, 6 curved prongs 14k white gold ms354-a solitaire price_includes_centre_stone centre_stone_lab_created solid_not_stated hallmark_not_published white_gold">
+    <td class="id">AN-01</td>
+    <td>Anjolee</td>
+    <td class="prod"><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)</a>
+        <span class="sub">Solitaire, 6 curved prongs</span></td>
+    <td>14k White Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$870.76<span class="sub">incl. centre stone</span></td>
+    <td class="num">2.90
+        <span class="sub">published</span></td>
+    <td class="num">1.692<span class="sub">derived</span></td>
+    <td class="num">$219.11<span class="sub">derived</span></td>
+    <td class="num">3.97<span class="sub">price includes a centre stone</span></td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Cu…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="PRICE_INCLUDES_CENTRE_STONE">price includes a diamond</span><span class="flag" title="CENTRE_STONE_LAB_CREATED">price includes a lab-created diamond</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="WHITE_GOLD">white gold, not yellow</span></div></td>
+  </tr>
+  <tr data-row-id="BE-01" data-search="be-01 brilliant earth atelier solitaire ring (2 mm, claw-prong bypass) solitaire, claw-prong bypass 14k yellow gold be1d2444-14ky solitaire no_weight_published solid_not_stated hallmark_not_published price_currency_localized">
+    <td class="id">BE-01</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/" target="_blank" rel="noopener">Atelier Solitaire Ring (2 mm, claw-prong bypass)</a>
+        <span class="sub">Solitaire, claw-prong bypass</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,190<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_CURRENCY_LOCALIZED">page price is rendered in visitor currency</span></div></td>
+  </tr>
+  <tr data-row-id="BE-02" data-search="be-02 brilliant earth atelier solitaire ring (2 mm, claw-prong bypass) solitaire, claw-prong bypass 18k yellow gold be1d2444-18ky solitaire no_weight_published solid_not_stated hallmark_not_published price_currency_localized">
+    <td class="id">BE-02</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">Atelier Solitaire Ring (2 mm, claw-prong bypass)</a>
+        <span class="sub">Solitaire, claw-prong bypass</span></td>
+    <td>18K Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$1,390<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-420…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="PRICE_CURRENCY_LOCALIZED">page price is rendered in visitor currency</span></div></td>
+  </tr>
   <tr data-row-id="BN-01" data-search="bn-01 blue nile petite solitaire engagement ring solitaire, 4-prong 14k yellow gold 501130y14 solitaire no_weight_published solid_not_stated hallmark_not_published">
     <td class="id">BN-01</td>
     <td>Blue Nile</td>
@@ -134,7 +274,7 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/petite-s…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
   </tr>
   <tr data-row-id="BN-02" data-search="bn-02 blue nile petite solitaire engagement ring solitaire, 4-prong 18k yellow gold 501130y solitaire no_weight_published solid_not_stated hallmark_not_published">
@@ -152,7 +292,7 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/petite-s…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
   </tr>
   <tr data-row-id="BN-03" data-search="bn-03 blue nile classic six-prong solitaire engagement ring solitaire, 6-prong 14k yellow gold 501140y14 solitaire no_weight_published solid_not_stated hallmark_not_published">
@@ -170,7 +310,7 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
   </tr>
   <tr data-row-id="BN-04" data-search="bn-04 blue nile classic comfort fit solitaire engagement ring (2.5mm) solitaire, 4-prong, comfort fit 14k yellow gold 501310y14 solitaire no_weight_published solid_not_stated hallmark_not_published copy_inconsistent_metal">
@@ -188,7 +328,7 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="COPY_INCONSISTENT_METAL">page copy contradicts the metal spec</span></div></td>
   </tr>
   <tr data-row-id="BN-05" data-search="bn-05 blue nile classic comfort fit solitaire engagement ring (2.5mm) solitaire, 4-prong, comfort fit 18k yellow gold 501310y solitaire no_weight_published solid_not_stated hallmark_not_published">
@@ -206,7 +346,7 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
   </tr>
   <tr data-row-id="BN-06" data-search="bn-06 blue nile six-prong low dome comfort fit solitaire engagement ring (2mm) solitaire, 6-prong, low dome 18k yellow gold 501760y solitaire no_weight_published solid_not_stated hallmark_not_published">
@@ -224,7 +364,7 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/six-prong-low-dome-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-2mm-item-195379" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/six-pron…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
   </tr>
   <tr data-row-id="BN-07" data-search="bn-07 blue nile classic four prong solitaire engagement ring solitaire, 4-prong 14k yellow gold 500000y14 solitaire no_weight_published solid_not_stated hallmark_not_published mixed_metal_unclear">
@@ -242,8 +382,8 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="MIXED_METAL_UNCLEAR">mixed-metal wording unclear</span></div></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="MIXED_METAL_UNCLEAR">mixed-metal / lower-karat prongs</span></div></td>
   </tr>
   <tr data-row-id="BN-08" data-search="bn-08 blue nile riviera pave diamond engagement ring (1/6 ct. tw.) pave solitaire 14k yellow gold 501590y14 pave no_weight_published solid_not_stated hallmark_not_published copy_inconsistent_metal">
     <td class="id">BN-08</td>
@@ -260,118 +400,10 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/riviera-…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="COPY_INCONSISTENT_METAL">page copy contradicts the metal spec</span></div></td>
   </tr>
-  <tr data-row-id="AL-01" data-search="al-01 allurez engraved floral solitaire engagement ring setting solitaire with milgrain floral detail 14k yellow gold ng4426 solitaire weight_approximate solid_not_stated hallmark_not_published">
-    <td class="id">AL-01</td>
-    <td>Allurez</td>
-    <td class="prod"><a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">Engraved Floral Solitaire Engagement Ring Setting</a>
-        <span class="sub">Solitaire with milgrain floral detail</span></td>
-    <td>14k Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
-    <td class="num">$585<span class="sub">setting only</span></td>
-    <td class="num">3.58
-        <span class="sub">published</span></td>
-    <td class="num">2.088<span class="sub">derived</span></td>
-    <td class="num">$270.20<span class="sub">derived</span></td>
-    <td class="num">2.17</td>
-    <td><span class="badge b-ok">30-day returns</span></td>
-    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
-    <td class="src"><a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">allurez.com/products/floral-solitaire-engagement-ring-14k-y…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
-  </tr>
-  <tr data-row-id="AL-02" data-search="al-02 allurez milgrain trellis solitaire engagement ring solitaire with milgrain trellis gallery 14k yellow gold az21211 solitaire weight_approximate solid_not_stated hallmark_not_published">
-    <td class="id">AL-02</td>
-    <td>Allurez</td>
-    <td class="prod"><a href="https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">Milgrain Trellis Solitaire Engagement Ring</a>
-        <span class="sub">Solitaire with milgrain trellis gallery</span></td>
-    <td>14k Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
-    <td class="num">$724<span class="sub">setting only</span></td>
-    <td class="num">3.40
-        <span class="sub">published</span></td>
-    <td class="num">1.983<span class="sub">derived</span></td>
-    <td class="num">$256.62<span class="sub">derived</span></td>
-    <td class="num">2.82</td>
-    <td><span class="badge b-ok">30-day returns</span></td>
-    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
-    <td class="src"><a href="https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">allurez.com/products/milgrain-trellis-solitaire-engagement-…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
-  </tr>
-  <tr data-row-id="AL-03" data-search="al-03 allurez split shank solitaire engagement ring solitaire, split shank 14k yellow gold az21223 solitaire weight_approximate solid_not_stated hallmark_not_published">
-    <td class="id">AL-03</td>
-    <td>Allurez</td>
-    <td class="prod"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">Split Shank Solitaire Engagement Ring</a>
-        <span class="sub">Solitaire, split shank</span></td>
-    <td>14k Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
-    <td class="num">$848<span class="sub">setting only</span></td>
-    <td class="num">4.40
-        <span class="sub">published</span></td>
-    <td class="num">2.567<span class="sub">derived</span></td>
-    <td class="num">$332.09<span class="sub">derived</span></td>
-    <td class="num">2.55</td>
-    <td><span class="badge b-ok">30-day returns</span></td>
-    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
-    <td class="src"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">allurez.com/products/split-shank-solitaire-engagement-ring-…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
-  </tr>
-  <tr data-row-id="AL-04" data-search="al-04 allurez split shank solitaire engagement ring solitaire, split shank 18k yellow gold az21229 solitaire weight_approximate solid_not_stated hallmark_not_published">
-    <td class="id">AL-04</td>
-    <td>Allurez</td>
-    <td class="prod"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold" target="_blank" rel="noopener">Split Shank Solitaire Engagement Ring</a>
-        <span class="sub">Solitaire, split shank</span></td>
-    <td>18k Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
-    <td class="num">$1,425<span class="sub">setting only</span></td>
-    <td class="num">5.30
-        <span class="sub">published</span></td>
-    <td class="num">3.975<span class="sub">derived</span></td>
-    <td class="num">$514.31<span class="sub">derived</span></td>
-    <td class="num">2.77</td>
-    <td><span class="badge b-ok">30-day returns</span></td>
-    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
-    <td class="src"><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold" target="_blank" rel="noopener">allurez.com/products/split-shank-solitaire-engagement-ring-…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
-  </tr>
-  <tr data-row-id="VR-01" data-search="vr-01 vrai the classic engagement ring (4-prong dome, plain band) solitaire, 4-prong dome 18k yellow gold none solitaire price_is_from_price price_and_weight_different_urls width_unverified solid_not_stated hallmark_not_published">
-    <td class="id">VR-01</td>
-    <td>VRAI</td>
-    <td class="prod"><a href="https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861" target="_blank" rel="noopener">The Classic Engagement Ring (4-prong dome, plain band)</a>
-        <span class="sub">Solitaire, 4-prong dome</span></td>
-    <td>18k Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
-    <td class="num">$1,035<span class="sub">setting only</span></td>
-    <td class="num">2.86
-        <span class="sub">published</span></td>
-    <td class="num">2.145<span class="sub">derived</span></td>
-    <td class="num">$277.53<span class="sub">derived</span></td>
-    <td class="num">3.73</td>
-    <td><span class="badge b-ok">30-day returns</span></td>
-    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
-    <td class="src"><a href="https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861" target="_blank" rel="noopener">vrai.com/configure/setting-to-diamond/classic-4-prong-dome/…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="PRICE_IS_FROM_PRICE">&#x27;from&#x27; price, not a fixed quote</span><span class="flag" title="PRICE_AND_WEIGHT_DIFFERENT_URLS">price and weight from different pages</span><span class="flag" title="WIDTH_UNVERIFIED">numeric band width not published</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
-  </tr>
-  <tr data-row-id="VR-02" data-search="vr-02 vrai signature 6 prong engagement ring (plain band) solitaire, 6-prong 18k yellow gold none solitaire price_unverified width_unverified solid_not_stated hallmark_not_published">
-    <td class="id">VR-02</td>
-    <td>VRAI</td>
-    <td class="prod"><a href="https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301" target="_blank" rel="noopener">Signature 6 Prong Engagement Ring (plain band)</a>
-        <span class="sub">Solitaire, 6-prong</span></td>
-    <td>18k Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
-    <td class="num"><span class="blank" title="not published by the retailer">—</span><span class="sub">price not published</span></td>
-    <td class="num">2.84
-        <span class="sub">published</span></td>
-    <td class="num">2.130<span class="sub">derived</span></td>
-    <td class="num">$275.59<span class="sub">derived</span></td>
-    <td class="num">—</td>
-    <td><span class="badge b-ok">30-day returns</span></td>
-    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
-    <td class="src"><a href="https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301" target="_blank" rel="noopener">vrai.com/configure/setting-to-diamond/signature-6-prong/rou…</a>
-        <span class="sub">U · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="PRICE_UNVERIFIED">price deliberately blank</span><span class="flag" title="WIDTH_UNVERIFIED">numeric band width not published</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
-  </tr>
-  <tr data-row-id="MJ-01" data-search="mj-01 mejuri diamonds team ring half-eternity diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal">
+  <tr data-row-id="MJ-01" data-search="mj-01 mejuri diamonds team ring half-eternity diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal price_variant_dependent">
     <td class="id">MJ-01</td>
     <td>Mejuri</td>
     <td class="prod"><a href="https://mejuri.com/products/diamonds-team-ring" target="_blank" rel="noopener">Diamonds Team Ring</a>
@@ -386,8 +418,8 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://mejuri.com/products/diamonds-team-ring" target="_blank" rel="noopener">mejuri.com/products/diamonds-team-ring</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span></div></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span><span class="flag" title="PRICE_VARIANT_DEPENDENT">price depends on the metal variant selected</span></div></td>
   </tr>
   <tr data-row-id="MJ-02" data-search="mj-02 mejuri diamonds band diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal">
     <td class="id">MJ-02</td>
@@ -404,10 +436,10 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://mejuri.com/products/diamonds-band" target="_blank" rel="noopener">mejuri.com/products/diamonds-band</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span></div></td>
   </tr>
-  <tr data-row-id="MJ-03" data-search="mj-03 mejuri pave diamond slim signet pave signet solid yellow gold (14k) none pave no_weight_published hallmark_not_published not_marketed_as_bridal engraving_non_returnable">
+  <tr data-row-id="MJ-03" data-search="mj-03 mejuri pave diamond slim signet pave signet solid yellow gold (14k) none pave no_weight_published hallmark_not_published not_marketed_as_bridal engraving_non_returnable price_variant_dependent">
     <td class="id">MJ-03</td>
     <td>Mejuri</td>
     <td class="prod"><a href="https://mejuri.com/products/pave-diamond-slim-signet-ring" target="_blank" rel="noopener">Pave Diamond Slim Signet</a>
@@ -422,8 +454,8 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://mejuri.com/products/pave-diamond-slim-signet-ring" target="_blank" rel="noopener">mejuri.com/products/pave-diamond-slim-signet-ring</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span><span class="flag" title="ENGRAVING_NON_RETURNABLE">engraving kills the return right</span></div></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span><span class="flag" title="ENGRAVING_NON_RETURNABLE">engraving kills the return right</span><span class="flag" title="PRICE_VARIANT_DEPENDENT">price depends on the metal variant selected</span></div></td>
   </tr>
   <tr data-row-id="MJ-04" data-search="mj-04 mejuri pave diamond thin dome ring pave dome band solid yellow gold (14k) none pave no_weight_published hallmark_not_published not_marketed_as_bridal">
     <td class="id">MJ-04</td>
@@ -440,10 +472,10 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://mejuri.com/products/pave-diamond-thin-dome-ring" target="_blank" rel="noopener">mejuri.com/products/pave-diamond-thin-dome-ring</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span></div></td>
   </tr>
-  <tr data-row-id="MJ-05" data-search="mj-05 mejuri ziggy ring (bezel lab grown diamond zig-zag ring) bezel-set zig-zag diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal scs_cert_required_for_return">
+  <tr data-row-id="MJ-05" data-search="mj-05 mejuri ziggy ring (bezel lab grown diamond zig-zag ring) bezel-set zig-zag diamond band solid yellow gold (14k) none band no_weight_published hallmark_not_published not_marketed_as_bridal scs_cert_required_for_return price_is_from_price">
     <td class="id">MJ-05</td>
     <td>Mejuri</td>
     <td class="prod"><a href="https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring" target="_blank" rel="noopener">Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)</a>
@@ -458,34 +490,52 @@
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
     <td class="src"><a href="https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring" target="_blank" rel="noopener">mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span><span class="flag" title="SCS_CERT_REQUIRED_FOR_RETURN">return needs the SCS certificate</span></div></td>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span><span class="flag" title="SCS_CERT_REQUIRED_FOR_RETURN">return needs the SCS certificate</span><span class="flag" title="PRICE_IS_FROM_PRICE">&#x27;from&#x27; price, not a fixed quote</span></div></td>
   </tr>
-  <tr data-row-id="AN-01" data-search="an-01 anjolee six curved prongs solitaire diamond engagement ring (ms354-a) solitaire, 6 curved prongs 14k white gold ms354-a solitaire price_includes_centre_stone weight_approximate solid_not_stated hallmark_not_published white_gold">
-    <td class="id">AN-01</td>
-    <td>Anjolee</td>
-    <td class="prod"><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)</a>
-        <span class="sub">Solitaire, 6 curved prongs</span></td>
-    <td>14k White Gold<span class="sub">14K · 58.3333% gold</span></td>
-    <td class="num">$870.76<span class="sub">incl. centre stone</span></td>
-    <td class="num">2.90
+  <tr data-row-id="VR-01" data-search="vr-01 vrai the classic engagement ring (4-prong dome, plain band) solitaire, 4-prong dome 18k yellow gold none solitaire price_is_from_price price_and_weight_different_urls solid_not_stated hallmark_not_published spec_listed_pave_on_plain_band">
+    <td class="id">VR-01</td>
+    <td>VRAI</td>
+    <td class="prod"><a href="https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861" target="_blank" rel="noopener">The Classic Engagement Ring (4-prong dome, plain band)</a>
+        <span class="sub">Solitaire, 4-prong dome</span></td>
+    <td>18k Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$1,035<span class="sub">setting only</span></td>
+    <td class="num">2.86
         <span class="sub">published</span></td>
-    <td class="num">1.692<span class="sub">derived</span></td>
-    <td class="num">$218.88<span class="sub">derived</span></td>
+    <td class="num">2.145<span class="sub">derived</span></td>
+    <td class="num">$277.82<span class="sub">derived</span></td>
+    <td class="num">3.73</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861" target="_blank" rel="noopener">vrai.com/configure/setting-to-diamond/classic-4-prong-dome/…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="PRICE_IS_FROM_PRICE">&#x27;from&#x27; price, not a fixed quote</span><span class="flag" title="PRICE_AND_WEIGHT_DIFFERENT_URLS">price and weight from different pages</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="SPEC_LISTED_PAVE_ON_PLAIN_BAND">spec lists pavé on a plain-band page</span></div></td>
+  </tr>
+  <tr data-row-id="VR-02" data-search="vr-02 vrai signature 6 prong engagement ring (plain band) solitaire, 6-prong 18k yellow gold none solitaire price_unverified solid_not_stated hallmark_not_published spec_listed_pave_on_plain_band">
+    <td class="id">VR-02</td>
+    <td>VRAI</td>
+    <td class="prod"><a href="https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301" target="_blank" rel="noopener">Signature 6 Prong Engagement Ring (plain band)</a>
+        <span class="sub">Solitaire, 6-prong</span></td>
+    <td>18k Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num"><span class="blank" title="not published by the retailer">—</span><span class="sub">price not published</span></td>
+    <td class="num">2.84
+        <span class="sub">published</span></td>
+    <td class="num">2.130<span class="sub">derived</span></td>
+    <td class="num">$275.88<span class="sub">derived</span></td>
     <td class="num">—</td>
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
-    <td class="src"><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Cu…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
-    <td><div class="flaglist"><span class="flag" title="PRICE_INCLUDES_CENTRE_STONE">price includes a diamond</span><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="WHITE_GOLD">white gold, not yellow</span></div></td>
+    <td class="src"><a href="https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301" target="_blank" rel="noopener">vrai.com/configure/setting-to-diamond/signature-6-prong/rou…</a>
+        <span class="sub">U · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="PRICE_UNVERIFIED">price deliberately blank</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="SPEC_LISTED_PAVE_ON_PLAIN_BAND">spec lists pavé on a plain-band page</span></div></td>
   </tr>
-  <tr data-row-id="BE-01" data-search="be-01 brilliant earth atelier solitaire ring solitaire, compass claw prong, sculptural bypass 18k yellow gold be1d2444-18ky solitaire no_weight_published solid_not_stated hallmark_not_published">
-    <td class="id">BE-01</td>
+  <tr data-row-id="BE-03" data-search="be-03 brilliant earth six-prong petite comfort fit 1.5mm solitaire setting (18k shank + 14k white gold prongs) solitaire, 6-prong petite comfort fit 18k yellow gold (14k white gold prongs) be1199h6-18ky solitaire no_weight_published solid_not_stated hallmark_not_published mixed_metal_unclear">
+    <td class="id">BE-03</td>
     <td>Brilliant Earth</td>
-    <td class="prod"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">Atelier Solitaire Ring</a>
-        <span class="sub">Solitaire, compass claw prong, sculptural bypass</span></td>
-    <td>18K Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
-    <td class="num">$1,390<span class="sub">setting only</span></td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/" target="_blank" rel="noopener">Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K Shank + 14K White Gold Prongs)</a>
+        <span class="sub">Solitaire, 6-prong petite comfort fit</span></td>
+    <td>18K Yellow Gold (14K White Gold Prongs)<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$850<span class="sub">setting only</span></td>
     <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
         <span class="sub">not published</span></td>
     <td class="num">—<span class="sub">derived</span></td>
@@ -493,9 +543,441 @@
     <td class="num">—</td>
     <td><span class="badge b-ok">30-day returns</span></td>
     <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
-    <td class="src"><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-420…</a>
-        <span class="sub">V1 · 2026-10-22</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/" target="_blank" rel="noopener">brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solit…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="MIXED_METAL_UNCLEAR">mixed-metal / lower-karat prongs</span></div></td>
+  </tr>
+  <tr data-row-id="SR-01" data-search="sr-01 sarraf 10k white gold 5mm high polished traditional domed wedding band traditional domed solid band (5mm) 10k solid white gold 10kw-lpbwb05 band weight_approximate hallmark_not_published white_gold">
+    <td class="id">SR-01</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">10k White Gold 5mm High Polished Traditional Domed Wedding Band</a>
+        <span class="sub">Traditional domed solid band (5mm)</span></td>
+    <td>10K Solid White Gold<span class="sub">10K · 41.6667% gold</span></td>
+    <td class="num">$352<span class="sub">ring as sold</span></td>
+    <td class="num">4.80
+        <span class="sub">published</span></td>
+    <td class="num">2.000<span class="sub">derived</span></td>
+    <td class="num">$259.04<span class="sub">derived</span></td>
+    <td class="num">1.36</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">sarraf.com/products/10k-White-Gold-5mm-High-Polished-Tradit…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="WHITE_GOLD">white gold, not yellow</span></div></td>
+  </tr>
+  <tr data-row-id="SR-02" data-search="sr-02 sarraf 14k yellow gold 6mm high polished comfort fit heavy wedding band heavy comfort-fit solid band (6mm x 2.2mm) 14k solid yellow gold 14ky-pbwb06 band weight_approximate hallmark_not_published">
+    <td class="id">SR-02</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html" target="_blank" rel="noopener">14k Yellow Gold 6mm High Polished Comfort Fit Heavy Wedding Band</a>
+        <span class="sub">Heavy comfort-fit solid band (6mm x 2.2mm)</span></td>
+    <td>14K Solid Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,063<span class="sub">ring as sold</span></td>
+    <td class="num">9.40
+        <span class="sub">published</span></td>
+    <td class="num">5.483<span class="sub">derived</span></td>
+    <td class="num">$710.20<span class="sub">derived</span></td>
+    <td class="num">1.50</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html" target="_blank" rel="noopener">sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="SR-03" data-search="sr-03 sarraf 18k yellow gold 5mm high polished traditional domed wedding band traditional domed solid band (5mm) 18k solid yellow gold 18ky-lpbwb05 band weight_approximate hallmark_not_published">
+    <td class="id">SR-03</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band</a>
+        <span class="sub">Traditional domed solid band (5mm)</span></td>
+    <td>18K Solid Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$871<span class="sub">ring as sold</span></td>
+    <td class="num">6.70
+        <span class="sub">published</span></td>
+    <td class="num">5.025<span class="sub">derived</span></td>
+    <td class="num">$650.84<span class="sub">derived</span></td>
+    <td class="num">1.34</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Tradi…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="SR-04" data-search="sr-04 sarraf 18k yellow gold 6mm high polished flat comfort fit heavy band flat comfort-fit heavy band (6mm x 1.9mm) 18k solid yellow gold ib-fpbwb06-18ky band weight_approximate hallmark_not_published">
+    <td class="id">SR-04</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html" target="_blank" rel="noopener">18K Yellow Gold 6mm High Polished Flat Comfort Fit Heavy Band</a>
+        <span class="sub">Flat comfort-fit heavy band (6mm x 1.9mm)</span></td>
+    <td>18K Solid Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$1,436<span class="sub">ring as sold</span></td>
+    <td class="num">11.10
+        <span class="sub">published</span></td>
+    <td class="num">8.325<span class="sub">derived</span></td>
+    <td class="num">$1,078.26<span class="sub">derived</span></td>
+    <td class="num">1.33</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html" target="_blank" rel="noopener">sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="SR-05" data-search="sr-05 sarraf 14k yellow gold men&#x27;s solitaire natural diamond ring (0.50 ct h/si1) heavy bezel/gypsy solitaire diamond ring 14k solid yellow gold 9240-14ky solitaire weight_approximate price_includes_centre_stone hallmark_not_published">
+    <td class="id">SR-05</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html" target="_blank" rel="noopener">14k Yellow Gold Men&#x27;s Solitaire Natural Diamond Ring (0.50 ct H/SI1)</a>
+        <span class="sub">Heavy bezel/gypsy solitaire diamond ring</span></td>
+    <td>14K Solid Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$2,858<span class="sub">incl. centre stone</span></td>
+    <td class="num">8.00
+        <span class="sub">published</span></td>
+    <td class="num">4.667<span class="sub">derived</span></td>
+    <td class="num">$604.43<span class="sub">derived</span></td>
+    <td class="num">4.73<span class="sub">price includes a centre stone</span></td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html" target="_blank" rel="noopener">sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="PRICE_INCLUDES_CENTRE_STONE">price includes a diamond</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="SR-06" data-search="sr-06 sarraf 18k yellow gold men&#x27;s solitaire natural diamond ring (0.74 ct j/si1) heavy solitaire diamond ring 18k solid yellow gold 9422-75-18ky solitaire weight_approximate price_includes_centre_stone hallmark_not_published">
+    <td class="id">SR-06</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html" target="_blank" rel="noopener">18k Yellow Gold Men&#x27;s Solitaire Natural Diamond Ring (0.74 ct J/SI1)</a>
+        <span class="sub">Heavy solitaire diamond ring</span></td>
+    <td>18K Solid Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$4,068<span class="sub">incl. centre stone</span></td>
+    <td class="num">6.30
+        <span class="sub">published</span></td>
+    <td class="num">4.725<span class="sub">derived</span></td>
+    <td class="num">$611.98<span class="sub">derived</span></td>
+    <td class="num">6.65<span class="sub">price includes a centre stone</span></td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html" target="_blank" rel="noopener">sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="PRICE_INCLUDES_CENTRE_STONE">price includes a diamond</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="SR-07" data-search="sr-07 sarraf 14k gold 1/2 ctw natural diamond solitaire engagement ring (g/si1) solitaire engagement ring 14k solid yellow gold 84844 solitaire no_weight_published price_includes_centre_stone hallmark_not_published">
+    <td class="id">SR-07</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-engagement-diamond-ring.html" target="_blank" rel="noopener">14k Gold 1/2 Ctw Natural Diamond Solitaire Engagement Ring (G/SI1)</a>
+        <span class="sub">Solitaire engagement ring</span></td>
+    <td>14K Solid Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$2,183<span class="sub">incl. centre stone</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-engagement-diamond-ring.html" target="_blank" rel="noopener">sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-enga…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="PRICE_INCLUDES_CENTRE_STONE">price includes a diamond</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="SR-08" data-search="sr-08 sarraf 18k yellow gold 1/2 carat round diamond solitaire engagement ring solitaire engagement ring 18k solid yellow gold 122048-5-18ky solitaire no_weight_published price_includes_centre_stone hallmark_not_published">
+    <td class="id">SR-08</td>
+    <td>Sarraf</td>
+    <td class="prod"><a href="https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html" target="_blank" rel="noopener">18k Yellow Gold 1/2 Carat Round Diamond Solitaire Engagement Ring</a>
+        <span class="sub">Solitaire engagement ring</span></td>
+    <td>18K Solid Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$2,461<span class="sub">incl. centre stone</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html" target="_blank" rel="noopener">sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="PRICE_INCLUDES_CENTRE_STONE">price includes a diamond</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="CB-01" data-search="cb-01 catbird nyc the swan solitaire diamond engagement ring (1.0mm recycled 14k band) ultra-thin solitaire engagement ring recycled solid 14k gold the-swan-solitaire-2475 solitaire no_weight_published price_is_from_price price_includes_centre_stone hallmark_not_published">
+    <td class="id">CB-01</td>
+    <td>Catbird NYC</td>
+    <td class="prod"><a href="https://www.catbirdnyc.com/the-swan-solitaire-2475.html" target="_blank" rel="noopener">The Swan Solitaire Diamond Engagement Ring (1.0mm Recycled 14K Band)</a>
+        <span class="sub">Ultra-thin solitaire engagement ring</span></td>
+    <td>Recycled Solid 14K Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$3,900<span class="sub">incl. centre stone</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">20-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.catbirdnyc.com/the-swan-solitaire-2475.html" target="_blank" rel="noopener">catbirdnyc.com/the-swan-solitaire-2475.html</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="PRICE_IS_FROM_PRICE">&#x27;from&#x27; price, not a fixed quote</span><span class="flag" title="PRICE_INCLUDES_CENTRE_STONE">price includes a diamond</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="CB-02" data-search="cb-02 catbird nyc grand painter&#x27;s solid 14k yellow gold band plain solid gold band solid 14k yellow gold grand-painters-ring band no_weight_published hallmark_not_published">
+    <td class="id">CB-02</td>
+    <td>Catbird NYC</td>
+    <td class="prod"><a href="https://www.catbirdnyc.com/grand-painters-ring.html" target="_blank" rel="noopener">Grand Painter&#x27;s Solid 14k Yellow Gold Band</a>
+        <span class="sub">Plain solid gold band</span></td>
+    <td>Solid 14k Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$313.50<span class="sub">ring as sold</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">20-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.catbirdnyc.com/grand-painters-ring.html" target="_blank" rel="noopener">catbirdnyc.com/grand-painters-ring.html</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="MN-01" data-search="mn-01 menē menē 24k pure solid gold knot ring sculpted pure 24k solid gold ring pure 24k gold (99.99% au) knot-ring-gold band no_weight_published hallmark_not_published">
+    <td class="id">MN-01</td>
+    <td>Menē</td>
+    <td class="prod"><a href="https://mene.com/products/knot-ring-gold" target="_blank" rel="noopener">Menē 24k Pure Solid Gold Knot Ring</a>
+        <span class="sub">Sculpted pure 24K solid gold ring</span></td>
+    <td>Pure 24K Gold (99.99% Au)<span class="sub">24K · 100.0% gold</span></td>
+    <td class="num">$1,465<span class="sub">ring as sold</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">7-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://mene.com/products/knot-ring-gold" target="_blank" rel="noopener">mene.com/products/knot-ring-gold</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="MN-02" data-search="mn-02 menē menē 24k pure solid gold etruscan sun band (4.5mm) pure 24k gold band (4.5mm x 2.0mm) pure 24k gold (99.99% au) etruscan-sun-band-gold band no_weight_published hallmark_not_published">
+    <td class="id">MN-02</td>
+    <td>Menē</td>
+    <td class="prod"><a href="https://mene.com/products/etruscan-sun-band-gold" target="_blank" rel="noopener">Menē 24k Pure Solid Gold Etruscan Sun Band (4.5mm)</a>
+        <span class="sub">Pure 24K gold band (4.5mm x 2.0mm)</span></td>
+    <td>Pure 24K Gold (99.99% Au)<span class="sub">24K · 100.0% gold</span></td>
+    <td class="num">$1,730<span class="sub">ring as sold</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">7-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://mene.com/products/etruscan-sun-band-gold" target="_blank" rel="noopener">mene.com/products/etruscan-sun-band-gold</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="BN-09" data-search="bn-09 blue nile classic four-prong solitaire engagement ring (platinum prongs) solitaire, 4-prong platinum head 18k yellow gold 500000y solitaire no_weight_published solid_not_stated hallmark_not_published mixed_metal_unclear">
+    <td class="id">BN-09</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y" target="_blank" rel="noopener">Classic Four-Prong Solitaire Engagement Ring (Platinum Prongs)</a>
+        <span class="sub">Solitaire, 4-prong platinum head</span></td>
+    <td>18K Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$1,125<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/classic-…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="MIXED_METAL_UNCLEAR">mixed-metal / lower-karat prongs</span></div></td>
+  </tr>
+  <tr data-row-id="BN-10" data-search="bn-10 blue nile low dome comfort fit solitaire engagement ring solitaire, low-dome comfort-fit 14k yellow gold 502120y14 solitaire no_weight_published solid_not_stated hallmark_not_published">
+    <td class="id">BN-10</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14" target="_blank" rel="noopener">Low Dome Comfort Fit Solitaire Engagement Ring</a>
+        <span class="sub">Solitaire, low-dome comfort-fit</span></td>
+    <td>14K Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,145<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/low-dome…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
     <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="BN-11" data-search="bn-11 blue nile french pavé diamond engagement ring (1/20 ct. tw.) french pavé diamond solitaire setting 18k yellow gold 502520y pave no_weight_published solid_not_stated hallmark_not_published">
+    <td class="id">BN-11</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y" target="_blank" rel="noopener">French Pavé Diamond Engagement Ring (1/20 ct. tw.)</a>
+        <span class="sub">French pavé diamond solitaire setting</span></td>
+    <td>18K Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$1,805<span class="sub">ring as sold</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/french-p…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="BN-12" data-search="bn-12 blue nile tapered baguette diamond engagement ring (1/6 ct. tw.) three-stone tapered baguette setting 18k yellow gold 501670y pave no_weight_published solid_not_stated hallmark_not_published copy_inconsistent_metal copy_carat_mismatch">
+    <td class="id">BN-12</td>
+    <td>Blue Nile</td>
+    <td class="prod"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y" target="_blank" rel="noopener">Tapered Baguette Diamond Engagement Ring (1/6 ct. tw.)</a>
+        <span class="sub">Three-stone tapered baguette setting</span></td>
+    <td>18K Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$2,515<span class="sub">ring as sold</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y" target="_blank" rel="noopener">bluenile.com/engagement-rings/design-your-own-ring/tapered-…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="COPY_INCONSISTENT_METAL">page copy contradicts the metal spec</span><span class="flag" title="COPY_CARAT_MISMATCH">prose vs spec diamond carat mismatch</span></div></td>
+  </tr>
+  <tr data-row-id="BE-04" data-search="be-04 brilliant earth fairmined hollis knife edge solitaire engagement ring knife-edge solitaire (fairmined) 18k yellow gold (fairmined) be1fm0126-18ky solitaire no_weight_published solid_not_stated hallmark_not_published resize_excluded_on_page">
+    <td class="id">BE-04</td>
+    <td>Brilliant Earth</td>
+    <td class="prod"><a href="https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/" target="_blank" rel="noopener">Fairmined Hollis Knife Edge Solitaire Engagement Ring</a>
+        <span class="sub">Knife-edge solitaire (Fairmined)</span></td>
+    <td>18K Yellow Gold (Fairmined)<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$1,090<span class="sub">setting only</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/" target="_blank" rel="noopener">brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-En…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="RESIZE_EXCLUDED_ON_PAGE">resizing excluded despite banner</span></div></td>
+  </tr>
+  <tr data-row-id="RS-01" data-search="rs-01 ross-simons 14kt yellow gold 2mm wedding band plain polished wedding band 14kt yellow gold 571221 band weight_approximate solid_not_stated hallmark_not_published">
+    <td class="id">RS-01</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/jewelry/rings/571221.html" target="_blank" rel="noopener">14kt Yellow Gold 2mm Wedding Band</a>
+        <span class="sub">Plain polished wedding band</span></td>
+    <td>14kt Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$400<span class="sub">ring as sold</span></td>
+    <td class="num">1.70
+        <span class="sub">published</span></td>
+    <td class="num">0.992<span class="sub">derived</span></td>
+    <td class="num">$128.44<span class="sub">derived</span></td>
+    <td class="num">3.11</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/571221.html" target="_blank" rel="noopener">ross-simons.com/jewelry/rings/571221.html</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="RS-02" data-search="rs-02 ross-simons italian 18kt yellow gold 2mm wedding band ultra-light plain wedding band 18kt yellow gold 985230 band weight_approximate solid_not_stated hallmark_not_published">
+    <td class="id">RS-02</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/jewelry/rings/985230.html" target="_blank" rel="noopener">Italian 18kt Yellow Gold 2mm Wedding Band</a>
+        <span class="sub">Ultra-light plain wedding band</span></td>
+    <td>18kt Yellow Gold<span class="sub">18K · 75.0% gold</span></td>
+    <td class="num">$249<span class="sub">ring as sold</span></td>
+    <td class="num">0.70
+        <span class="sub">published</span></td>
+    <td class="num">0.525<span class="sub">derived</span></td>
+    <td class="num">$68<span class="sub">derived</span></td>
+    <td class="num">3.66</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/985230.html" target="_blank" rel="noopener">ross-simons.com/jewelry/rings/985230.html</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="RS-03" data-search="rs-03 ross-simons 14kt yellow gold 3mm comfort-fit wedding band comfort-fit plain wedding band 14kt yellow gold 820263 band weight_approximate solid_not_stated hallmark_not_published">
+    <td class="id">RS-03</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/jewelry/rings/820263.html" target="_blank" rel="noopener">14kt Yellow Gold 3mm Comfort-Fit Wedding Band</a>
+        <span class="sub">Comfort-fit plain wedding band</span></td>
+    <td>14kt Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$595<span class="sub">ring as sold</span></td>
+    <td class="num">2.10
+        <span class="sub">published</span></td>
+    <td class="num">1.225<span class="sub">derived</span></td>
+    <td class="num">$158.66<span class="sub">derived</span></td>
+    <td class="num">3.75</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/820263.html" target="_blank" rel="noopener">ross-simons.com/jewelry/rings/820263.html</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="RS-04" data-search="rs-04 ross-simons 14kt yellow gold 4mm flat wedding band ring flat profile 4mm wedding band 14kt yellow gold 823796 band weight_approximate solid_not_stated hallmark_not_published">
+    <td class="id">RS-04</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/jewelry/rings/823796.html" target="_blank" rel="noopener">14kt Yellow Gold 4mm Flat Wedding Band Ring</a>
+        <span class="sub">Flat profile 4mm wedding band</span></td>
+    <td>14kt Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,195<span class="sub">ring as sold</span></td>
+    <td class="num">4.00
+        <span class="sub">published</span></td>
+    <td class="num">2.333<span class="sub">derived</span></td>
+    <td class="num">$302.21<span class="sub">derived</span></td>
+    <td class="num">3.95</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/823796.html" target="_blank" rel="noopener">ross-simons.com/jewelry/rings/823796.html</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="WEIGHT_APPROXIMATE">weight is the seller&#x27;s approximation</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="RS-05" data-search="rs-05 ross-simons 0.80 carat gia certified solitaire diamond engagement ring complete diamond solitaire ring 14kt white gold 990022 solitaire no_weight_published price_includes_centre_stone white_gold solid_not_stated hallmark_not_published">
+    <td class="id">RS-05</td>
+    <td>Ross-Simons</td>
+    <td class="prod"><a href="https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html" target="_blank" rel="noopener">0.80 Carat GIA Certified Solitaire Diamond Engagement Ring</a>
+        <span class="sub">Complete diamond solitaire ring</span></td>
+    <td>14kt White Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$2,819<span class="sub">incl. centre stone</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-warn">solid not stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html" target="_blank" rel="noopener">ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="PRICE_INCLUDES_CENTRE_STONE">price includes a diamond</span><span class="flag" title="WHITE_GOLD">white gold, not yellow</span><span class="flag" title="SOLID_NOT_STATED">no &#x27;solid gold&#x27; wording on page</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span></div></td>
+  </tr>
+  <tr data-row-id="MJ-06" data-search="mj-06 mejuri pavé diamond slim eternity band full eternity micro-pavé diamond band 14k yellow gold diamond-eternity-band pave no_weight_published price_is_from_price hallmark_not_published engraving_non_returnable copy_carat_mismatch">
+    <td class="id">MJ-06</td>
+    <td>Mejuri</td>
+    <td class="prod"><a href="https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&amp;Stone=Natural+Diamond" target="_blank" rel="noopener">Pavé Diamond Slim Eternity Band</a>
+        <span class="sub">Full eternity micro-pavé diamond band</span></td>
+    <td>14k Yellow Gold<span class="sub">14K · 58.3333% gold</span></td>
+    <td class="num">$1,100<span class="sub">&#x27;from&#x27; price</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&amp;Stone=Natural+Diamond" target="_blank" rel="noopener">mejuri.com/us/en/products/diamond-eternity-band?Material=14…</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="PRICE_IS_FROM_PRICE">&#x27;from&#x27; price, not a fixed quote</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="ENGRAVING_NON_RETURNABLE">engraving kills the return right</span><span class="flag" title="COPY_CARAT_MISMATCH">prose vs spec diamond carat mismatch</span></div></td>
+  </tr>
+  <tr data-row-id="MJ-07" data-search="mj-07 mejuri diamonds line ring minimalist 10-diamond line band 10k yellow gold diamonds-line-ring pave no_weight_published hallmark_not_published copy_inconsistent_metal engraving_non_returnable not_marketed_as_bridal">
+    <td class="id">MJ-07</td>
+    <td>Mejuri</td>
+    <td class="prod"><a href="https://mejuri.com/us/en/products/diamonds-line-ring" target="_blank" rel="noopener">Diamonds Line Ring</a>
+        <span class="sub">Minimalist 10-diamond line band</span></td>
+    <td>10k Yellow Gold<span class="sub">10K · 41.6667% gold</span></td>
+    <td class="num">$348<span class="sub">ring as sold</span></td>
+    <td class="num"><span class="blank" title="retailer publishes no gram weight">—</span>
+        <span class="sub">not published</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—<span class="sub">derived</span></td>
+    <td class="num">—</td>
+    <td><span class="badge b-ok">30-day returns</span></td>
+    <td><span class="badge b-ok">solid stated</span> <span class="badge b-mute">hallmark n/p</span></td>
+    <td class="src"><a href="https://mejuri.com/us/en/products/diamonds-line-ring" target="_blank" rel="noopener">mejuri.com/us/en/products/diamonds-line-ring</a>
+        <span class="sub">V1 · 2026-10-22 · re-checked 2026-10-22</span></td>
+    <td><div class="flaglist"><span class="flag" title="NO_WEIGHT_PUBLISHED">seller publishes no gram weight</span><span class="flag" title="HALLMARK_NOT_PUBLISHED">hallmark not published</span><span class="flag" title="COPY_INCONSISTENT_METAL">page copy contradicts the metal spec</span><span class="flag" title="ENGRAVING_NON_RETURNABLE">engraving kills the return right</span><span class="flag" title="NOT_MARKETED_AS_BRIDAL">not sold as a bridal ring</span></div></td>
   </tr></tbody></table></div>
   <p class="small" style="margin-top:10px">Sources: each ring links to its own retailer page. Seller-level policy sources are on <a href="pages/sellers.html">Sellers</a>;
   the full registry is on <a href="pages/sources.html">Sources</a>.</p>
@@ -510,15 +992,27 @@
         <td class="num">$848 → $1,425</td>
         <td class="num">+68.0%</td>
         <td class="num">+54.9%</td>
-        <td class="num">2.55 → 2.77</td></tr><tr><td>Blue Nile</td><td>Classic Comfort Fit Solitaire Engagement Ring (2.5mm)<span class="sub">BN-04 → BN-05</span></td>
+        <td class="num">2.55 → 2.77</td></tr><tr><td>Brilliant Earth</td><td>Atelier Solitaire Ring (2 mm, claw-prong bypass)<span class="sub">BE-01 → BE-02</span></td>
+        <td class="num">$1,190 → $1,390</td>
+        <td class="num">+16.8%</td>
+        <td class="num"><span class="badge b-warn">no weight</span></td>
+        <td class="num">— → —</td></tr><tr><td>Blue Nile</td><td>Classic Comfort Fit Solitaire Engagement Ring (2.5mm)<span class="sub">BN-04 → BN-05</span></td>
         <td class="num">$935 → $1,310</td>
         <td class="num">+40.1%</td>
+        <td class="num"><span class="badge b-warn">no weight</span></td>
+        <td class="num">— → —</td></tr><tr><td>Blue Nile</td><td>Classic Four Prong Solitaire Engagement Ring<span class="sub">BN-07 → BN-09</span></td>
+        <td class="num">$870 → $1,125</td>
+        <td class="num">+29.3%</td>
         <td class="num"><span class="badge b-warn">no weight</span></td>
         <td class="num">— → —</td></tr><tr><td>Blue Nile</td><td>Petite Solitaire Engagement Ring<span class="sub">BN-01 → BN-02</span></td>
         <td class="num">$1,000 → $1,155</td>
         <td class="num">+15.5%</td>
         <td class="num"><span class="badge b-warn">no weight</span></td>
-        <td class="num">— → —</td></tr></tbody>
+        <td class="num">— → —</td></tr><tr><td>Sarraf</td><td>10k White Gold 5mm High Polished Traditional Domed Wedding Band<span class="sub">SR-01 → SR-03</span></td>
+        <td class="num">$352 → $871</td>
+        <td class="num">+147.4%</td>
+        <td class="num">+151.2%</td>
+        <td class="num">1.36 → 1.34</td></tr></tbody>
   </table></div>
 </section>
 
@@ -535,9 +1029,9 @@
 <footer class="wrap foot">
   <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="pages/flagged.html">Flagged for Review</a> page.</p>
-  <p>Gold benchmark: $4,024.36/oz as of 21 October, 2026 (World Gold Council) = $129.3862/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-22 23:53 UTC · dataset 21 rows · 13 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-22 23:56 UTC · dataset 47 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

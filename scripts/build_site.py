@@ -31,6 +31,9 @@ NAV = [
     ("pages/methodology.html", "Method", "method"),
     ("pages/sources.html", "Sources", "sources"),
     ("pages/log.html", "Log", "log"),
+    ("dashboard.html", "Assay Lab+", "assay"),
+    ("categories/calculator.html", "Stone-Deduction Calc", "stonecalc"),
+    ("categories/verification-audit.html", "Deep Audit", "deepaudit"),
 ]
 
 FLAG_HELP = {
@@ -45,11 +48,25 @@ FLAG_HELP = {
     "SOLID_NOT_STATED": ("warn", "no 'solid gold' wording on page"),
     "HALLMARK_NOT_PUBLISHED": ("warn", "hallmark not published"),
     "COPY_INCONSISTENT_METAL": ("bad", "page copy contradicts the metal spec"),
-    "MIXED_METAL_UNCLEAR": ("bad", "mixed-metal wording unclear"),
+    "COPY_CARAT_MISMATCH": ("bad", "prose vs spec diamond carat mismatch"),
+    "MIXED_METAL_UNCLEAR": ("bad", "mixed-metal / lower-karat prongs"),
+    "RESIZE_EXCLUDED_ON_PAGE": ("bad", "resizing excluded despite banner"),
+    "SHORT_RETURN_WINDOW_7D": ("bad", "7-day return window"),
+    "SHORT_RETURN_WINDOW_20D": ("warn", "20-day return window"),
+    "RESTOCKING_FEE_10PCT": ("bad", "10% cash-refund restocking fee"),
+    "SPECIAL_ORDERS_FINAL_SALE": ("bad", "special orders final sale"),
     "NOT_MARKETED_AS_BRIDAL": ("info", "not sold as a bridal ring"),
     "ENGRAVING_NON_RETURNABLE": ("warn", "engraving kills the return right"),
     "SCS_CERT_REQUIRED_FOR_RETURN": ("warn", "return needs the SCS certificate"),
     "WHITE_GOLD": ("info", "white gold, not yellow"),
+    "CENTRE_STONE_LAB_CREATED": ("bad", "price includes a lab-created diamond"),
+    "SPEC_LISTED_PAVE_ON_PLAIN_BAND": ("warn", "spec lists pavé on a plain-band page"),
+    "PRICE_VARIANT_DEPENDENT": ("info", "price depends on the metal variant selected"),
+    "RESIZE_TERMS_INCONSISTENT": ("bad", "resize terms differ between captures"),
+    "RETURN_WINDOW_NOT_REDISPLAYED": ("warn", "return window not re-displayed on re-read"),
+    "RETURN_EXCLUSIONS_NOT_ITEMISED": ("warn", "exclusions not itemised on the page"),
+    "WARRANTY_VOID_ON_THIRD_PARTY_RESIZE": ("warn", "warranty voids on third-party resize"),
+    "PRICE_CURRENCY_LOCALIZED": ("warn", "page price is rendered in visitor currency"),
 }
 
 
@@ -67,7 +84,7 @@ def short_basis(row) -> str:
 
 
 def build_flag_item(r) -> str:
-    detail = r.get("flag_detail")
+    detail = r.get("flag_detail") or r.get("variant_note")
     extra = f'<br><span class="small">{esc(detail)}</span>' if detail else ""
     return (
         f'<li><strong>{esc(r["id"])}</strong> · {esc(r["product_name"])} · {esc(r["retailer"])} — '
@@ -191,6 +208,7 @@ def no_hallucination_block(prefix: str = "") -> str:
     <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
     <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
     <li><strong>Anything uncertain is published on <a href="{prefix}pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
   </ul>
 </div>
 """
@@ -226,11 +244,11 @@ def table(rows, root: str, show_category: bool = False) -> str:
         <span class="sub">{'published' if r['weight_g'] else 'not published'}</span></td>
     <td class="num">{num(r['pure_gold_g'], 3) if r['pure_gold_g'] else '—'}<span class="sub">derived</span></td>
     <td class="num">{money(r['gold_value_usd']) if r['gold_value_usd'] else '—'}<span class="sub">derived</span></td>
-    <td class="num">{num(r['price_to_gold_multiple']) if r['price_to_gold_multiple'] else '—'}</td>
+    <td class="num">{num(r['price_to_gold_multiple']) if r['price_to_gold_multiple'] else '—'}{'<span class="sub">price includes a centre stone</span>' if r.get('multiple_basis') == 'includes_centre_stone' and r['price_to_gold_multiple'] else ''}</td>
     <td>{ret_cell}</td>
     <td>{solid_cell}</td>
     <td class="src"><a href="{esc(r['url'])}" target="_blank" rel="noopener">{esc(short_url(r['url']))}</a>
-        <span class="sub">{esc(r['price_verification'].split('_')[0])} · {esc(r['price_captured_utc'])}</span></td>
+        <span class="sub">{esc(r['price_verification'].split('_')[0])} · {esc(r['price_captured_utc'])}{' · re-checked ' + esc(r['reverified_utc']) if r.get('reverified_utc') else ''}</span></td>
     <td>{flag_chips(r)}</td>
   </tr>""")
     return f'<div class="table-wrap"><table>{head}<tbody>{"".join(body_rows)}</tbody></table></div>'
@@ -271,6 +289,23 @@ def main() -> None:
         "n_rows": len(rows),
         "n_sources": len(sources_doc["sources"]),
     }
+
+    pairs_by_id = {pr["pair_id"]: pr for pr in d["pairs"]}
+
+    def pair_gap(pid):
+        pr = pairs_by_id.get(pid) or {}
+        return pr.get("price_gap_pct")
+
+    def pct(v):
+        return f"{v:+.1f}%" if v is not None else "not computable"
+
+    def pair_card(pid, title, body):
+        return f'<div class="card"><h3>{esc(title)} — {pct(pair_gap(pid))}</h3><p>{body}</p></div>'
+
+    spot_reobs = spot.get("same_day_reobservation") or {}
+    reverif = rings.get("last_full_reverification_utc")
+    n_weight = st["rows_with_published_weight"]
+    n_rows = st["total_rows"]
 
     PAGES.mkdir(exist_ok=True)
 
@@ -314,7 +349,7 @@ def main() -> None:
 
     index_body = f"""
 <section class="hero">
-  <span class="eyebrow">● live dataset · captured {C['captured']}</span>
+  <span class="eyebrow">● live dataset · captured {C['captured']} · every row re-read from its source on {esc(reverif)}</span>
   <h1>Solid-gold engagement rings, with every number traceable to the seller's own page.</h1>
   <p class="lede">A small, deliberately boring dataset: {st['total_rows']} rings from {len(st['by_retailer'])} retailers, {st['rows_with_verified_price']} prices read
   from the retailer's page today, {st['rows_with_published_weight']} published gram weights, and the gold-value arithmetic that follows from them.
@@ -324,6 +359,7 @@ def main() -> None:
     {badge('source link on every row', 'ok')}
     {badge(f'{flags_total} flags published', 'warn')}
     {badge('spot benchmark dated', 'info')}
+    {badge('full re-verification pass ' + esc(reverif), 'ok')}
   </div>
 </section>
 {no_hallucination_block()}
@@ -339,29 +375,41 @@ def main() -> None:
   <h2>What the data actually shows</h2>
   <div class="grid two">
     <div class="card">
-      <h3>Only {st['rows_with_published_weight']} of {st['total_rows']} rows publish a gram weight at all</h3>
-      <p>Four Allurez settings, two VRAI settings and one Anjolee ring publish a gram weight, so only those rows have a computable gold content.
-      Blue Nile, Mejuri and Brilliant Earth publish a price but no weight, so their gold content is <em>blank</em> — not guessed.</p>
-      <p class="small">Price ÷ gold-value multiple across the {sum(1 for r in rows if r['price_to_gold_multiple'])} rows with a comparable price: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.
-      AN-01's price includes a diamond, so its multiple is deliberately not published; VR-02 has a weight but no published price.</p>
+      <h3>Only {n_weight} of {n_rows} rows can be priced against their gold at all</h3>
+      <p>Four Allurez settings, six Sarraf bands/solitaires, four Ross-Simons bands, two VRAI settings and one Anjolee ring publish a gram weight ({n_weight} rows total; Sarraf plain bands set a 1.33×–1.50× melt floor, while AN-01/SR-05/SR-06 include centre diamonds).
+      Blue Nile, Brilliant Earth, Catbird and Mejuri publish prices without gram weights, so their gold content stays <em>blank</em> — not guessed.</p>
+      <p class="small">Price ÷ gold-value multiple across rows with both a price and a published weight: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.
+      Compare Ross-Simons 18K 0.7 g band (RS-02, 0.525 g pure Au) vs 14K 1.7 g band (RS-01, 0.992 g pure Au): higher karat with lower gram weight yields 47% less fine gold. Also see <a href="dashboard.html"><strong>Assay Lab+ →</strong></a> and <a href="categories/calculator.html"><strong>Stone-Deduction Calculator →</strong></a></p>
     </div>
     <div class="card">
       <h3>18K costs more than its extra gold — and by an inconsistent amount</h3>
-      <p>Same design, same retailer, only the karat changed: Petite Solitaire is +15.5% going 14K→18K, the Comfort Fit is +40.1%, and the Allurez Split Shank is +68.0%.</p>
-      <p>For the Allurez pair both prices and weights are published, so the 18K premium can be split: +54.9% of it is simply more gold, and the rest is labour and margin.</p>
+      <p>Same design, same retailer, only the karat changed: Petite Solitaire is {pct(pair_gap('PAIR-BN-PETITE'))} going 14K→18K, Brilliant Earth Atelier is {pct(pair_gap('PAIR-BE-ATELIER'))}, Classic Four-Prong is {pct(pair_gap('PAIR-BN-FOURPRONG'))}, Comfort Fit is {pct(pair_gap('PAIR-BN-COMFORT'))}, and Allurez Split Shank is {pct(pair_gap('PAIR-AL-SPLIT'))}.</p>
+      <p>For the Allurez pair both prices and weights are published, so the 18K premium can be split: {pct(pairs_by_id.get('PAIR-AL-SPLIT', {}).get('gold_gap_pct'))} of it is simply more gold, and the rest is labour and margin.</p>
       <p class="small"><a href="pages/purity.html">See the full karat analysis →</a></p>
     </div>
     <div class="card">
-      <h3>Zero retailers publish the hallmark</h3>
-      <p>Not one product page in this dataset shows the physical stamp or the maker's mark, which is exactly why the checklist says to verify on arrival.
-      The legal requirement (karat mark <em>plus</em> a registered trademark) is quoted on the Method page.</p>
+      <h3>Zero retailers publish the physical hallmark</h3>
+      <p>Not one product page in this dataset shows the inner-shank stamp or registered maker's mark, which is why the checklist requires post-delivery inspection.
+      Under 15 U.S.C. § 297(b) a karat mark must be accompanied by a registered trademark or legal company name, and GIA Lab Notes advise pairing XRF with gram-weight checks.</p>
     </div>
     <div class="card">
-      <h3>Return windows all say 30 days — the exclusions differ</h3>
-      <p>Every seller here offers ~30 days, but Blue Nile, VRAI and Allurez exclude resized or altered rings, Mejuri excludes engraving outright,
-      and Allurez excludes custom orders while Anjolee explicitly allows returns on customised orders. Read the clause, not the badge.</p>
-      <p class="small"><a href="pages/sellers.html">Compare the clauses →</a></p>
+      <h3>Return windows range from 7 to 30 days — and resizing kills returns</h3>
+      <p>Menē allows <strong>7 days</strong> (10% cash-refund restocking fee), Catbird allows <strong>14–20 days</strong> ($9 fee; special orders final sale), and Blue Nile's 30-day clock starts at <strong>shipment</strong>. Brilliant Earth, Blue Nile, Ross-Simons, VRAI and Allurez exclude resized rings — verify purity <em>before</em> resizing.</p>
+      <p class="small"><a href="pages/sellers.html">Compare all 10 sellers' clauses →</a></p>
     </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Deep-Dive Category Subpages &amp; Gemstone-Carat Deduction Suite</h2>
+  <p class="sub">Specialized category audits, NIST 0.200 g/ct stone-mass deduction math, GIA XRF surface-depth limits, and our line-by-line irregularity register.</p>
+  <div class="grid three">
+    <div class="card"><h3><a href="categories/solitaires.html">Solitaire Audit</a></h3><p>Mixed-karat prong alerts (18K band + 14K or Platinum head) and Brilliant Earth resizing contradictions.</p></div>
+    <div class="card"><h3><a href="categories/accent-rings.html">Pavé &amp; Accent Audit</a></h3><p>Live-caught copy contradictions on Blue Nile (18K vs platinum; 1/6 vs 1/8 ct) and Mejuri (0.532 ct vs 0.044 ct).</p></div>
+    <div class="card"><h3><a href="categories/gold-bands.html">Solid &amp; 24K Bands + Hollow Alert</a></h3><p>Ross-Simons 0.7 g–4.0 g melt benchmarks, Menē 24K, plus Mejuri's cautionary FTC 16 CFR § 23.3(c) "hollowed 14k solid gold" listing.</p></div>
+    <div class="card"><h3><a href="categories/calculator.html">Stone-Deduction Calculator</a></h3><p>Subtracts 0.200 g per diamond carat (NIST HB 44), checks 15 U.S.C. § 295 tolerances, and compares 3 dated spot feeds.</p></div>
+    <div class="card"><h3><a href="categories/checklist-standards.html">12-Point Statutory Checklist</a></h3><p>Complete FTC 16 CFR 23, 15 U.S.C. §§ 295/297, GIA XRF Lab Notes, FCBA 15 U.S.C. § 1666, and seller return trap matrix.</p></div>
+    <div class="card"><h3><a href="categories/verification-audit.html">Line-by-Line Irregularities</a></h3><p>Every retailer discrepancy (IRR-CAT-01..11) and repository audit finding (IRR-REPO-01..08) with direct review links.</p></div>
   </div>
 </section>
 
@@ -450,7 +498,7 @@ def main() -> None:
     <thead><tr><th>Karat</th><th class="num">Gold %</th><th class="num">Fineness</th><th class="num">Gold value / g</th><th class="num">Legal min fineness</th><th class="num">Legal min value / g</th><th>Typical stamps</th></tr></thead>
     <tbody>{kt_rows}</tbody>
   </table></div>
-  <p class="small" style="margin-top:10px">24K is listed for completeness; a 24K ring is too soft for daily wear and none of the rings in this dataset is 24K. Sources: <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC consumer guidance on gold karats</a> ·
+  <p class="small" style="margin-top:10px">Dataset spans 10K, 14K, 18K, and 24K (Menē 24K bands; note 24K is malleable and requires thick shanks rather than delicate prongs). Sources: <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC consumer guidance on gold karats</a> ·
   <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a> ·
   <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">World Gold Council spot</a>.</p>
 </section>
@@ -463,9 +511,14 @@ def main() -> None:
     <tbody>{pairs_html}</tbody>
   </table></div>
   <div class="grid two" style="margin-top:16px">
-    <div class="card"><h3>Petite Solitaire — +15.5%</h3><p>Blue Nile's 14K is $1,000 and the 18K is $1,155 for the identical 1.80 mm design. That is close to the gold-cost difference you would expect, and it is the cheapest karat upgrade in the dataset.</p></div>
-    <div class="card"><h3>Comfort Fit 2.5 mm — +40.1%</h3><p>The same retailer charges 40% more for 18K on this design. Without published weights there is no way to prove how much of that is gold, which is exactly why the weight column matters.</p></div>
-    <div class="card"><h3>Allurez Split Shank — +68.0%</h3><p>Here both weights are published: 4.4 g in 14K becomes 5.3 g in 18K. Gold content rises 54.9%, so most of the premium is more metal rather than a purer alloy — and the price-to-gold multiple still rises, from 2.55× to 2.77×.</p></div>
+    {pair_card('PAIR-BN-PETITE', 'Blue Nile Petite Solitaire',
+      f"14K is {money(pairs_by_id['PAIR-BN-PETITE']['low_price'])} and 18K is {money(pairs_by_id['PAIR-BN-PETITE']['high_price'])} for the identical 1.80 mm design. Blue Nile publishes no gram weight for either, so the gold-cost share of that gap cannot be measured.") if 'PAIR-BN-PETITE' in pairs_by_id else ''}
+    {pair_card('PAIR-BN-COMFORT', 'Blue Nile Comfort Fit 2.5 mm',
+      f"14K is {money(pairs_by_id['PAIR-BN-COMFORT']['low_price'])} and 18K is {money(pairs_by_id['PAIR-BN-COMFORT']['high_price'])}. Without published weights there is no way to prove how much of that gap is gold, which is exactly why the weight column matters.") if 'PAIR-BN-COMFORT' in pairs_by_id else ''}
+    {pair_card('PAIR-BE-ATELIER', 'Brilliant Earth Atelier Solitaire',
+      f"14K is {money(pairs_by_id['PAIR-BE-ATELIER']['low_price'])} and 18K is {money(pairs_by_id['PAIR-BE-ATELIER']['high_price'])} setting-only, same 2 mm design. Brilliant Earth publishes no gram weight for either row, so again the metal share of the gap is unmeasurable.") if 'PAIR-BE-ATELIER' in pairs_by_id else ''}
+    {pair_card('PAIR-AL-SPLIT', 'Allurez Split Shank',
+      f"Here both weights are published: {num(pairs_by_id['PAIR-AL-SPLIT']['low_weight_g'])} g in 14K becomes {num(pairs_by_id['PAIR-AL-SPLIT']['high_weight_g'])} g in 18K. Gold content rises {pct(pairs_by_id['PAIR-AL-SPLIT']['gold_gap_pct'])}, so much of the premium is more metal rather than a purer alloy — and the price-to-gold multiple still moves, from {num(pairs_by_id['PAIR-AL-SPLIT']['low_multiple'])}× to {num(pairs_by_id['PAIR-AL-SPLIT']['high_multiple'])}×.") if 'PAIR-AL-SPLIT' in pairs_by_id else ''}
     <div class="card"><h3>What this means for shopping</h3><p>Ask for the weight <em>and</em> the karat. A karat upgrade with no weight disclosure is a price increase you cannot audit.</p></div>
   </div>
 </section>
@@ -518,7 +571,7 @@ def main() -> None:
     <tbody>
     {''.join(f'''<tr><td><a href="#{esc(s['id'])}">{esc(s['name'])}</a></td>
       <td>{s['return_window_days']} days</td>
-      <td>{badge('no', 'bad') if any('resized' in x.lower() or 'altered' in x.lower() for x in s['return_exclusions']) else badge('not excluded', 'ok')}</td>
+      <td>{badge('no', 'bad') if any('resized' in x.lower() or 'altered' in x.lower() for x in s['return_exclusions']) else (badge('not itemised', 'mute') if not s['return_exclusions'] else badge('not excluded', 'ok'))}</td>
       <td>{badge('excluded', 'warn') if any(('custom' in x.lower() or 'engrav' in x.lower()) for x in s['return_exclusions']) else badge('no exclusion captured', 'mute')}</td>
       <td class="small">{esc((s.get('resize_policy') or 'not captured')[:80])}</td>
       <td class="small">{esc(s['contact'].get('phone') or s['contact'].get('email') or 'not captured')}</td>
@@ -710,21 +763,64 @@ def main() -> None:
       a size change moves the weight. Every derived gold value inherits that uncertainty.</p>
     </div>
     <div class="card">
+      <h3>Mejuri's price depends on which colourway the page opens on</h3>
+      <p>The same Mejuri product URL opens on whichever metal the site selects. The Diamonds Team Ring and the Pavé Diamond Slim Signet opened on
+      white gold, and the Ziggy Ring opened on sterling silver at "From $398" — the 14k yellow gold variant in this dataset reads "From $598".
+      A saved link can therefore show a different price than the row you are comparing. Select the metal and stone explicitly before you read the price.</p>
+      <p class="small">Recorded on MJ-01, MJ-03 and MJ-05. The yellow-gold variants were opened separately on 2026-10-22 to confirm the recorded prices.</p>
+    </div>
+    <div class="card">
+      <h3>Brilliant Earth's resize terms changed between captures of the same page</h3>
+      <p>The Atelier Solitaire page showed "Free 1-Year Resizing" on the re-read of 2026-10-22, while the earlier capture of the same page described
+      one complimentary resize within 60 days of purchase. Both were read from Brilliant Earth's own page, so the seller is the only source that can
+      settle which applies to your order — and it matters, because the resize has to happen without destroying the return right.</p>
+      <p class="small">Recorded on the <a href="sellers.html">Sellers</a> page for Brilliant Earth, with the page linked.</p>
+    </div>
+    <div class="card">
+      <h3>The gold spot panel moved during the day while its date stayed put</h3>
+      <p>The World Gold Council page showed ${spot_reobs.get('value_usd_per_oz', 0):,.2f}/oz on a second read on {esc(reverif)}, against the frozen
+      ${C['spot_oz']:,.2f}/oz used for every calculation here, while the page's date line still read "Data as of {esc(C['spot_date'])}".
+      A live panel is not a fixed benchmark. This project keeps the first read so no derived number silently restates itself, and publishes the second
+      read beside it.</p>
+      <p class="small">Both reads are recorded in <span class="mono">data/gold_spot.json</span>; source: <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">World Gold Council</a>.</p>
+    </div>
+    <div class="card">
       <h3>No seller publishes a hallmark</h3>
       <p>Zero of {len(rows)} rows show the physical stamp or the maker's mark, which is the one item on the checklist that can only be verified in your hand.
       The FTC guidance is blunt: if the karat mark has no trademark beside it, don't buy it.</p>
     </div>
     <div class="card">
-      <h3>A price that includes the diamond (AN-01)</h3>
-      <p>Anjolee's $870.76 is the price of a configured ring <em>with</em> a 0.50 ct lab-created centre diamond, and its page publishes an approximate metal weight of 2.90 g.
-      The gold content and gold value of the metal are shown, but no price ÷ gold multiple is published for this row: dividing a diamond-inclusive price by a metal-only value would produce a number that looks comparable and is not.</p>
-      <p class="small">Recorded on <a href="solitaire.html">AN-01</a>. Compare like with like: setting-only prices against setting-only prices.</p>
+      <h3>FTC 16 CFR § 23.3(c) cautionary case: "hollowed 14k solid gold"</h3>
+      <p>Mejuri's <a href="https://mejuri.com/us/en/products/bold-chain-ring?Material=10k+Yellow+Gold" target="_blank" rel="noopener">Bold Chain Ring</a> gallery alt-text states <em>"handcrafted in hollowed 14k solid gold"</em> while the variant selector says 10k Yellow Gold ($348) and Specifications lists <em>"Hollowed 14K gold"</em>. Under 16 CFR § 23.3(c), hollow items must not be described as "solid". Excluded from canonical solid rows and documented in <a href="../categories/verification-audit.html#IRR-CAT-10">IRR-CAT-10</a>.</p>
     </div>
     <div class="card">
-      <h3>VRAI band widths removed on re-verification</h3>
-      <p>The first capture recorded numeric band widths for VR-01 and VR-02. Re-reading the live configuration pages on 2026-10-22 showed only "Band width: Standard"
-      and a 1.6 mm band <em>depth</em> — no numeric band width. Both cells are now blank and flagged <span class="mono">WIDTH_UNVERIFIED</span>.</p>
-      <p class="small">A value that cannot be re-read from the official page does not stay in the dataset.</p>
+      <h3>Brilliant Earth, Blue Nile &amp; Mejuri spec vs prose conflicts</h3>
+      <p>Brilliant Earth's <a href="solitaire.html">BE-04</a> displays a "Free 1-Year Resizing" badge above copy stating resizing is unavailable, while <a href="solitaire.html">BE-03</a> pairs an 18K shank with 14K white gold prongs. Blue Nile's <a href="pave.html">BN-12</a> says 18K Yellow Gold (1/6 ct) in the title vs "platinum" and "1/8 ct" in details. Mejuri's <a href="pave.html">MJ-06</a> states 0.532 ct in prose vs 0.044–0.056 ct in specs. Full audit: <a href="../categories/verification-audit.html">Line-by-Line Irregularities</a>.</p>
+    </div>
+    <div class="card">
+      <h3>VRAI's spec block lists pavé weight on plain-band settings</h3>
+      <p>Both captured VRAI configurations are plain-band designs (the page title and the band selector say Plain), yet their
+      Setting Details both list "Pavé carat weight: 0.18ctw". Either the spec block is generic copy or the setting contains
+      pavé the selector does not describe. Recorded on <a href="solitaire.html">VR-01</a> and
+      <a href="solitaire.html">VR-02</a>; ask VRAI in writing which it is before paying, because pavé weight is diamond
+      weight, not gold weight. Found independently by two sessions (pass 2 and pass 7).</p>
+    </div>
+    <div class="card">
+      <h3>Basis of the "legal minimum" arithmetic (for review)</h3>
+      <p>The legal-floor column computes karat ÷ 24 minus the 0.007 whole-article tolerance of
+      <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.
+      Under the millesimal convention a 14K article is often assayed against 585 parts per 1000 instead of 583.3; the same
+      tolerance on 585 would give 57.8% rather than 57.63%. Both readings are published in
+      <code>data/methodology.json</code> so the basis is explicit. Neither figure measures a particular ring — only an
+      assay does.</p>
+    </div>
+    <div class="card">
+      <h3>Brilliant Earth prices render in the visitor's currency</h3>
+      <p>During the pass-7 re-check the 14K Atelier page served a EUR rendering ("1,350.00 EUR (Setting Only)") with a
+      Global-e checkout while the sibling 18K page served USD. The recorded USD figures come from same-day USD captures,
+      and the 18K figure re-confirmed exactly, but the 14K figure could not be reproduced in the non-USD rendering.
+      Flagged on <a href="solitaire.html">BE-01</a> and <a href="solitaire.html">BE-02</a>: open the page with
+      United States / USD selected and re-read the price before relying on it.</p>
     </div>
   </div>
 </section>

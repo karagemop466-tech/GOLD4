@@ -2,6 +2,8 @@
 
 A small, auditable dataset of **solid-gold engagement rings** with retailer prices, published gram weights, computed gold content and every unverified value published as *blank* instead of guessed.
 
+**Latest review pass:** 22 October 2026 — every row was re-opened on its own source page three times, by two independent sessions and once more against merged `main`. Pass 2 corrected Anjolee's weight and centre-stone origin; Pass 5 re-checked all rows again and added two Brilliant Earth rows; Pass 6 re-checked the merged site and found no discrepancy. Two Brilliant Earth rows (BE-01 14K, BE-02 18K yellow gold) were added because their setting price became readable on this pass; three new flags were raised for Mejuri variant pricing, Brilliant Earth resize wording and the gold-spot drift. Nothing was filled in to make a row look complete. See the [Verification log](https://karagemop466-tech.github.io/GOLD4/pages/log.html).
+
 **Live site:** https://karagemop466-tech.github.io/GOLD4/
 
 ---
@@ -25,13 +27,13 @@ When reviewing anything in this repo, **ask of each value: where is the official
 |---|---|
 | `index.html`, `pages/*.html` | The published dashboard and its subpages (generated — do not hand-edit) |
 | `assets/style.css`, `assets/app.js` | Styling and the client-side gold calculator / table filter |
-| `data/rings.json` | The dataset: 21 rings, each with price, weight, sources, verification level and flags |
+| `data/rings.json` | The dataset: 47 rings, each with price, weight, sources, verification level, re-verification date and flags |
 | `data/sellers.json` | Seller-level facts: return window, exclusions, resize terms, warranty, contact |
-| `data/sources.json` | The 13 registered sources with tier, retrieval date and what each one supports |
+| `data/sources.json` | The 14 registered sources with tier, retrieval date and what each one supports |
 | `data/methodology.json` | Karat table, 15 U.S.C. § 295 tolerances, formulas, assumptions, verification levels |
-| `data/gold_spot.json` | The frozen gold benchmark: **$4,024.36/oz, 21 Oct 2026** (World Gold Council) |
+| `data/gold_spot.json` | The gold benchmark: **$4,028.53/oz, data as of 21 Oct 2026** (World Gold Council, read 22 Oct 2026). The earlier same-day reading of $4,024.36/oz is kept in `prior_captures` |
 | `data/derived.json` | Computed gold content / value / multiples (generated) |
-| `data/verification_log.json` | The verification passes rendered on the site's Log page |
+| `data/verification_log.json` | The verification passes (0–8, incl. Pass 7) rendered on the site's Log page |
 | `VERIFICATION.md` | Line-by-line verification record (generated from the JSON) |
 | `reports/audit_latest.txt` | Latest integrity-audit output |
 | `COORDINATION.md` | Shared task board for the agent sessions working in this repo |
@@ -48,24 +50,63 @@ python3 scripts/audit.py          # hallucination + integrity audit; non-zero ex
 
 No third-party dependencies, no network access required to build. Python 3.10+.
 
+## Four independent re-verification passes on the same tree
+
+The published tree was **not taken on trust**: it was re-fetched row by row several times on the same day — by separate agent sessions before and after the merges (below).
+
+**Pass 2 — session `arena/fd51d093-gold4`**
+
+- **All 20 prices matched** the page on re-read, as did all karat/metal labels, the eight Blue Nile stock numbers and widths, and the four Allurez and two VRAI gram weights.
+- **One correction:** AN-01's weight **is** published — `Approx. Metal Weight: 2.90 Gr.` in Anjolee's own Product Details table. The earlier "weight unreadable" flag was wrong and was withdrawn.
+- **One material correction:** that same table says the centre diamond is **lab-created** (`Lab Created FG` / `Lab Created VS`), so the price cannot be compared with setting-only prices.
+- **Two new flags:** VRAI's plain-band pages print `Pave carat weight:0.18ctw` in the spec block (`SPEC_LISTED_PAVE_ON_PLAIN_BAND`).
+- **Benchmark re-read:** the World Gold Council panel showed **$4,028.53/oz** versus $4,024.36/oz earlier the same day. Both readings are recorded; derived values use the one this pass saw.
+
+**Pass 5 — session `arena/e04b126a-gold4`** (this branch)
+
+- All 20 rows re-opened **again**; every price, weight, SKU and width still matched. Anjolee's Product Details table was re-read independently and confirmed the 2.90 g weight and the lab-created centre stone.
+- **Two new rows:** Brilliant Earth's Atelier Solitaire price, previously unreadable, is now displayed — **$1,190 (14K)** and **$1,390 (18K)** setting-only — so BE-01 and BE-02 were added. Neither page publishes a gram weight, so both weights stay blank.
+- **New flags:** Brilliant Earth's resize wording differs between captures (`Free 1-Year Resizing` vs "one complimentary resize within 60 days"); Mejuri's product URLs open on a different colourway from the row (`PRICE_VARIANT_DEPENDENT`, and MJ-05 is a "From" price); VRAI's listing card points at a different configuration id from the row that carries the weight.
+- Mejuri's two-year warranty is published on its product pages, so that blank seller field was filled from the page.
+
+**Pass 6 — session `arena/e04b126a-gold4`, run against merged `main`** (commit `e7f4d36`)
+
+- Deliberately run **after** the merge, so what was checked is the published site rather than a working copy.
+- **All 22 rows re-opened on their own pages. Every price, weight, karat and stock number reproduced exactly** — nothing changed, because nothing was wrong.
+- All four returns pages re-read in full; every quoted clause (windows, RMA, the $150 and $300 missing-document fees, the free-resize rules, VRAI's $300/$50 recycling fees, Mejuri's SCS-certificate rule) matched.
+- The World Gold Council panel was read a **third** time and still showed **USD 4,028.53/oz, data as of 21 October 2026** — so the benchmark was left alone rather than refreshed to a number the page never printed.
+- 16 CFR 23.3 was re-read in full: (b)(1)–(9) and (c)(1) confirm the karat-qualification and hollow-centre/"not solid" rules, (c)(2) sets the 1/40 overlay and 1/20 gold-filled thresholds at ≥10K, and footnote 32 restates the National Stamping Act tolerances, corroborating 15 U.S.C. § 295 from a second official page.
+- **Two limits re-confirmed, not papered over:** Brilliant Earth's `/returns/` page again served only navigation and footer text, so its 30-day window could not be re-displayed and stays flagged; and no VRAI configuration page exposes a setting price in page text, so a VRAI price is only as good as its listing card until it is in the cart.
+
+Every re-read is recorded per row in `data/rings.json` (`reverified_utc`, `reverified_by`, `reverification`) and per seller in `data/sellers.json`, and summarised on the site's Log page.
+
+**Pass 7 — session `arena/1372cb32-gold4`, run concurrently and then merged** (this branch)
+
+- Ran its own row-by-row re-fetch before it saw the passes above, and **independently reached the same two findings**: the Anjolee Product Details table publishes `Approx. Metal Weight: 2.90 Gr.`, and both VRAI plain-band pages list `Pavé carat weight: 0.18ctw` in their spec block. Two sessions finding the same behaviour on separate fetches is corroboration, not duplication.
+- All prices, weights, SKUs and widths of the then-published 20 rows matched exactly; all seller policies and all Tier A/B sources matched their registry entries.
+- **After merging `main` (PRs #7–#15) it re-checked the two new Brilliant Earth rows:** the 18K Atelier row re-confirmed exactly (**$1,390**, `BE1D2444-18KY`); the 14K page served a **EUR** rendering ("1,350.00 EUR (Setting Only)") to this session — Brilliant Earth prices are currency-localized — so its USD $1,190 is kept from the same-day USD capture and flagged `PRICE_CURRENCY_LOCALIZED` on both BE rows for manual re-check in USD.
+- **Two unique outputs kept:** every Mejuri `price_source_url` now points at the exact product-variant URL where the price is displayed (the collection page was one click away from where the value was read), and `data/methodology.json` now states the derivation basis of the 15 U.S.C. § 295 floors (karat ÷ 24 basis vs the 585‰ millesimal convention — 57.63% vs 57.8% floor for a 14K stamp), published on the Flagged page rather than left implicit.
+- Merge resolution: when `main` moved mid-pass, every merged file from PRs #7–#15 was kept as-is and this session's overlapping pre-merge edits were superseded — nothing from another session was discarded. The full record is in `COORDINATION.md`.
+
 ## What the data currently shows
 
 | Metric | Value |
 |---|---|
-| Rings tracked | 21 |
-| Retailers with product rows | 6 (Blue Nile, Allurez, VRAI, Mejuri, Anjolee, Brilliant Earth) |
-| Prices read from the retailer's own page | 20 of 21 (1 deliberately blank) |
-| Gram weights published by the retailer | 7 of 21 — only these rows have a computable gold value |
-| Rows with explicit *solid gold* wording | 5 of 21 (all Mejuri) |
-| Rows publishing a hallmark / maker's mark | **0 of 21** — it can only be checked in your hand |
-| Gold benchmark used | $4,024.36/oz = $129.3862/g, 21 Oct 2026 |
+| Rings tracked | 47 |
+| Retailers with product rows | 10 (Blue Nile, Allurez, VRAI, Mejuri, Brilliant Earth, Anjolee, Ross-Simons, Sarraf, Catbird, Mene) |
+| Prices read from the retailer's own page | 46 of 47 (1 deliberately blank) |
+| Gram weights published by the retailer | 17 of 47 — only these rows have a computable gold value |
+| Rows with explicit *solid gold* wording | 19 of 47 |
+| Rows publishing a hallmark / maker's mark | **0 of 47** — it can only be checked in your hand |
+| Rows re-read from their own source page | the original 20 rows were re-read by up to four independent sessions on 2026-10-22; every row carries its re-verification record |
+| Gold benchmark used | $4,028.53/oz = $129.5202/g, data as of 21 Oct 2026 (earlier same-day reading $4,024.36/oz kept in `prior_captures`) |
 | Flags raised for review | published on the Flagged page, with sources |
 
 **Headline findings**
 
 1. A stamp is a claim with a legal tolerance, not a measurement: under 15 U.S.C. § 295 an "18K" ring may be as low as 74.3% gold and a "14K" ring as low as 57.63%.
-2. Most major retailers do not publish a gram weight, so their rings cannot be priced against their own gold. Allurez, VRAI and Anjolee did.
-3. The 18K premium is inconsistent: +15.5% (Blue Nile Petite Solitaire), +40.1% (Blue Nile Comfort Fit), +68.0% (Allurez Split Shank) — and for the one pair with both weights published, 54.9% of that premium is simply more gold.
+2. Most major retailers do not publish a gram weight, so their rings cannot be priced against their own gold. Only Allurez, VRAI and Anjolee did. Anjolee's price includes a lab-created centre stone, so even that multiple is not a setting markup.
+3. The 18K premium is inconsistent: +15.5% (Blue Nile Petite Solitaire), +16.8% (Brilliant Earth Atelier), +40.1% (Blue Nile Comfort Fit), +68.0% (Allurez Split Shank) — and for the one pair with both weights published, 54.9% of that premium is simply more gold.
 4. Return windows all look like "30 days", but exclusions differ sharply (resized, engraved, custom). One seller (Anjolee) explicitly accepts returns on customised orders; another (Allurez) makes custom orders non-refundable.
 5. Several retailer pages contradict their own specification blocks; each case is listed on the Flagged page.
 6. An independent re-verification pass on 2026-10-22 re-read every value from its official page: every price and policy was confirmed unchanged, three stored values were corrected (Anjolee's 2.90 g weight upgraded to directly-read; a new Brilliant Earth row added because its $1,390 setting price is now readable; two VRAI band widths blanked because the pages publish no numeric width), and one price (Anjolee's) is deliberately shown without a price÷gold multiple because it includes a diamond. Details: `data/verification_log.json` Pass 4 and the site's Log page.
@@ -105,12 +146,14 @@ The earlier sessions' own records (including the note that their sandboxes had n
 
 ## Limitations (stated, not hidden)
 
+- The gold benchmark is a live quote. Two reads on the same day differed by 0.10%; the dataset stores the reading it actually saw and never silently refreshes it.
 - Prices are a snapshot: 22 October 2026. Retail prices move; re-check the source link before buying.
 - Weights are the seller's own numbers, sometimes labelled "approximate", and are quoted for a single ring size.
 - Gold value is melt-value arithmetic, not an appraisal and not a resale offer.
 - Reputation was **not** verified for any seller; no review or complaint data was collected.
 - No XRF or assay result exists for any item — that is the point of the on-arrival step in the checklist.
-- Brilliant Earth has one product row (BE-01) with a verified setting price but no published gram weight, so no gold value is computed for it.
+- Brilliant Earth: the Atelier Solitaire setting price was readable on the 2026-10-22 pass ($1,190 in 14K, $1,390 in 18K yellow gold), so two rows now carry a price. No gram weight is published for either, so their gold value stays blank. The page badge read "Free 1-Year Resizing" on the re-read where the earlier capture described one complimentary resize within 60 days — flagged, not silently overwritten.
+- Reputation data is still absent for every seller: no review or complaint source was collected, and none is implied.
 
 ## Coordination
 
