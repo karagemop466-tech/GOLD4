@@ -1,0 +1,48 @@
+{
+  "review_date_utc": "2026-10-23",
+  "method": "Remote page-reader tool; selected returned chunks inspected, not a full re-verification of all 64 products. Text observations are not checkout quotes or a physical assay.",
+  "observations": [
+    {
+      "id": "FTC",
+      "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+      "chunks_read": [0],
+      "observed_text": "Near the karat quality mark, look for the name or the U.S. registered trademark of the company that will stand behind the mark. The phrase solid gold means the gold item isn't hollow.",
+      "finding": "Consumer guidance corroborates karat plus maker/trademark checks. Plated, vermeil and filled descriptions must be distinguished. This is guidance, not verification of any individual ring."
+    },
+    {
+      "id": "WGC",
+      "url": "https://www.gold.org/goldhub/data/gold-prices",
+      "chunks_read": [0],
+      "observed_text": "Gold Spot price: USD /oz 3,996.31. Main content: Data as of 22 October, 2026. The panel's Last Updated field contains no timestamp in the returned text.",
+      "finding": "SPOT_PANEL_DIFFERS: panel amount differs from historical stored benchmark 4,024.45 USD/oz. Do not attribute the live panel number to the main chart's date or silently overwrite the historical benchmark. Calculator remains a dated illustration, not a current bullion quote."
+    },
+    {
+      "id": "MN-01",
+      "url": "https://mene.com/products/knot-ring-gold",
+      "chunks_read": [0],
+      "observed_text": "Knot Ring: $1,442 USD; 24k Gold; Width 6mm; Thickness 6.5mm. Dimensions are approximate. Products are sold by weight, not size.",
+      "finding": "OBSERVED_PRICE_DIFFERS: returned default-page amount differs from stored 1,465 USD. No numeric gram weight or unambiguous selected size in inspected chunk. Record as an observation, not a configuration-specific current quote."
+    },
+    {
+      "id": "MN-02",
+      "url": "https://mene.com/products/etruscan-sun-band-gold",
+      "chunks_read": [0],
+      "observed_text": "Etruscan Sun Band: $1,704 USD; 24k Gold; Width 4.5mm; Thickness 2mm. Dimensions are approximate. Products are sold by weight, not size.",
+      "finding": "OBSERVED_PRICE_DIFFERS: returned default-page amount differs from stored 1,730 USD. No numeric gram weight or unambiguous selected size in inspected chunk. Do not infer weight from price."
+    },
+    {
+      "id": "MJ-06",
+      "url": "https://mejuri.com/us/en/products/diamond-eternity-band?Material=Solid+Yellow+Gold+%2814k%29&Stone=Natural+Diamond",
+      "chunks_read": [0],
+      "observed_text": "Diamond Eternity Band: From$1,100; Solid Yellow Gold (14k), Natural Diamond; Select a size to see availability. Band Width: 1.5 mm. Free 30-day returns & exchanges with some exclusions.",
+      "finding": "The starting amount matches the historical numeral, but this is a from price, size not selected, and the returned text does not explicitly state USD. No USD current quote inferred. Natural diamond specifications conflict between 0.532ct prose and 0.044-0.056 ct minimum in specifications; keep for review rather than resolve by guessing."
+    },
+    {
+      "id": "VR-01",
+      "url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
+      "chunks_read": [0, 1],
+      "observed_text": "Round Brilliant, 18k Yellow Gold; 1.0 ct I-J VS+; Ring size 5; Metal weight 2.86g (Ring size 6); Band depth 1.6mm; plain band selection but Pavé carat weight 0.18ctw listed; returns accepted within 30 days, unworn with original packaging.",
+      "finding": "Weight scope is explicitly size 6 while selected ring size is 5; do not apply it to size 5 without confirmation. Plain-band/pavé specification conflict persists. No product total price was printed in the two inspected chunks; leave current quote blank. Chunk 2 was not inspected."
+    }
+  ]
+}

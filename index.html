@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dashboard · GOLD4 gold-ring verification desk</title>
-<meta name="description" content="Verified solid-gold engagement-ring data: retailer prices, published gram weights, computed gold content and flagged irregularities. No hallucinated values.">
+<meta name="description" content="Dated gold-ring candidate research: source-linked historical prices, published gram weights, derived gold content and verification limits.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -15,19 +15,27 @@
       <span>GOLD4<small>gold-ring verification desk</small></span>
     </a>
     <nav class="main">
-      <a href="index.html" class="active">Dashboard</a><a href="pages/solitaire.html" class="">Solitaire</a><a href="pages/pave.html" class="">Pavé</a><a href="pages/band.html" class="">Bands</a><a href="pages/purity.html" class="">14K vs 18K</a><a href="pages/sellers.html" class="">Sellers</a><a href="pages/calculator.html" class="">Calculator</a><a href="pages/flagged.html" class="">Flagged</a><a href="pages/methodology.html" class="">Method</a><a href="pages/sources.html" class="">Sources</a><a href="pages/freshness.html" class="">Freshness</a><a href="checklist.html" class="">Checklist</a><a href="pages/log.html" class="">Log</a><a href="dashboard.html" class="">Assay Lab+</a>
+      <a href="index.html" class="active">Dashboard</a><a href="pages/solitaire.html" class="">Solitaire</a><a href="pages/pave.html" class="">Pavé</a><a href="pages/band.html" class="">Bands</a><a href="pages/purity.html" class="">14K vs 18K</a><a href="pages/sellers.html" class="">Sellers</a><a href="pages/calculator.html" class="">Calculator</a><a href="pages/flagged.html" class="">Flagged</a><a href="pages/methodology.html" class="">Method</a><a href="pages/sources.html" class="">Sources</a><a href="pages/freshness.html" class="">Freshness</a><a href="pages/session-review.html" class="">Current review</a><a href="checklist.html" class="">Checklist</a><a href="pages/log.html" class="">Log</a><a href="dashboard.html" class="">Assay Lab+</a>
     </nav>
   </div>
 </header>
 <main class="wrap">
+<aside class="nohall" aria-label="Current verification limits">
+  <strong>NO HALLUCINATIONS — dated research, not live offers.</strong>
+  Historical captures below are not current verified quotes or a guarantee of purity.
+  Unconfirmed current prices are blank in the <a href="pages/session-review.html">current-session review / Flagged for Review</a>.
+  A new World Gold Council panel read differs from the stored historical benchmark; see Current review.
+  Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
+  Re-check official sources and request independent testing before purchase.
+</aside>
 
 <section class="hero">
-  <span class="eyebrow">● live dataset · prices captured 22 October 2026 · source URLs re-opened live 2026-10-23T10:10:23Z</span>
+  <span class="eyebrow">● dated research dataset · prices captured 22 October 2026 · source URLs re-opened live 2026-10-23T10:10:23Z</span>
   <h1>Solid-gold engagement rings, with every number traceable to the seller's own page.</h1>
-  <p class="lede">A small, deliberately boring dataset: 64 rings from 10 retailers, 62 prices read
+  <p class="lede">A dated candidate dataset (not a purchase-approved shortlist): 64 rings from 10 retailers, 62 prices read
   from the retailer's page on 22 October 2026, 17 published gram weights, and the gold-value arithmetic that follows from them.
   The source URLs themselves were last re-opened live on 2026-10-23T10:10:23Z.
-  Nothing is estimated. Everything uncertain is on the Flagged page.</p>
+  Historical source claims are preserved, not independently re-certified by this session. See Current review for blank unconfirmed current quotes and the Flagged page for known issues.</p>
   <div class="pill-row">
     <span class="badge b-bad">no hallucinated values</span>
     <span class="badge b-ok">source link on every row</span>
@@ -1360,7 +1368,7 @@
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="pages/flagged.html">Flagged for Review</a> page.</p>
   <p>Gold benchmark: $4,024.45/oz as of 22 October, 2026 (World Gold Council) = $129.3891/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-23 10:13 UTC · dataset 64 rows · 31 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-23 20:27 UTC · dataset 64 rows · 31 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

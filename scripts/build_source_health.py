@@ -25,6 +25,7 @@ Exit codes: 0 written; 4 inputs missing.
 from __future__ import annotations
 
 import json
+import math
 import re
 import sys
 from datetime import datetime, timezone
@@ -40,15 +41,19 @@ def load(p: Path) -> dict:
 
 
 def money(v) -> float | None:
-    if v is None:
+    """Accept nonnegative finite numeric claims; never strip currency/sign text."""
+    if v is None or isinstance(v, bool):
         return None
-    if isinstance(v, (int, float)):
-        return float(v)
-    s = re.sub(r"[^0-9.]", "", str(v))
+    if isinstance(v, str):
+        v = v.strip()
+        if not re.fullmatch(r"(?:[0-9]+|[0-9]{1,3}(?:,[0-9]{3})+)(?:\.[0-9]+)?", v):
+            return None
+        v = v.replace(",", "")
     try:
-        return float(s)
-    except ValueError:
+        value = float(v)
+    except (TypeError, ValueError, OverflowError):
         return None
+    return value if math.isfinite(value) and value >= 0 else None
 
 
 def paginated_prices(rec: dict) -> list[dict]:
@@ -140,7 +145,7 @@ def reconcile(row: dict, rec: dict | None) -> dict:
         )
         return state
 
-    usd = [p for p in prices if p["currency"] in ("USD", "")]
+    usd = [p for p in prices if p["currency"] == "USD"]
     if not usd:
         state.update(
             price_state="NOT_MACHINE_READABLE",
