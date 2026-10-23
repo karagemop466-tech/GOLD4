@@ -107,7 +107,21 @@ independent check of this pass. Other sessions' `scripts/session_*` and `data/pr
 | P14-2 | Re-read the live gold spot and record drift vs the 21 Oct benchmark | **done** | arena/04f1f10d | `data/gold_spot.json` | World Gold Council panel re-read: **$4,024.45/oz, "Data as of 22 October, 2026"** (−0.10% vs $4,028.53 / 21 Oct). Old reading preserved in `prior_captures`; `constants.spot_usd_per_gram` = 129.389072; independent cross-check gold-api.com $4,025.60/oz @ 2026-10-23T09:51:43Z (0.029% apart). |
 | P14-3 | Line-by-line live re-check of published prices/weights against their official pages | **done** | arena/04f1f10d | `data/rings.json`, `data/verification_log.json` | 7 rows re-fetched and re-read (AL-01, RS-01, RS-02, SR-01, BE-05, BE-06, BE-07). Every price, karat, SKU and gram weight matched the stored record; two blank fields were filled from the live spec blocks (BE-06 style code `BE1D3939-18KY`, BE-07 width `1.8 mm`). Two new irregularities logged. Pass 14 appended to the verification log. |
 | P14-4 | Re-run all five CI gates, rebuild the site, confirm no broken links | **done** | arena/04f1f10d | generated pages | `compute.py` → `build_site.py` + `generate_site.py` + `gen_verification.py` → `audit.py` (**128 passed / 1 warning / 0 failures**) · `check_site.py` (**26 pages**, links resolve) · `verify.py` (**64 records**, blanks accounted) · `verify_a0be79d4.py` (**1,952 links, 0 dead**; 44 rendered rows 100% official HTTPS + dated) · `audit_hallucinations.py` (**879 checks, 0 failures**). |
-| P14-5 | Publish via PR → merge → confirm GitHub Pages deploy | **done** | arena/04f1f10d | `COORDINATION.md` | See the merge record at the end of this section. |
+| P14-5 | Publish via PR → merge → confirm GitHub Pages deploy | **done** | arena/04f1f10d | `COORDINATION.md` | PR #28 → merged `6256af9`; PR #30 (header-label fix) → merged `2b29e8b`. Both deploy runs **success**; live site re-fetched and verified. Details below. |
+
+### Merge record (2026-10-23)
+
+| Item | Result |
+|---|---|
+| PR #28 — Pass 14 live re-verification | https://github.com/karagemop466-tech/GOLD4/pull/28 — **MERGED** at 2026-10-23T09:57:59Z, merge commit `6256af9af0ff91f3c43378b214c6a075570476c9` |
+| CI on PR #28 (`build` job = all five gates) | **pass** (8 s) — deploy job correctly skipped on `pull_request` |
+| Pages deploy after #28 (run `39935684937`) | **completed / success** (26 s); `pages build and deployment` run `39935684106` **success** |
+| PR #30 — header-label corrections found while checking the live site | https://github.com/karagemop466-tech/GOLD4/pull/30 — **MERGED** at 2026-10-23T10:01:31Z, merge commit `2b29e8b11404a285ba062445ff9d3a11ef62ed16` |
+| CI on PR #30 | **pass** (5 s) |
+| Pages deploy after #30 (run `39936119497`) | **completed / success** (40 s); `pages build and deployment` run `39936120002` **success** |
+| Live verification, https://karagemop466-tech.github.io/GOLD4/ | fetched after deploy: front page serves **64 rings / 10 retailers / 62 prices / 17 weights**, the **⚠ NO HALLUCINATIONS** block, and the benchmark card **$4,024.45/oz · 22 October, 2026**; `flagged.html` lists **18** irregularities including the new **FLG-HIGH-13** and **FLG-MED-14**; `audit.html` carries the **Pass 14** row; the header ribbon now reads **"CROSS-CHECK QUOTES · 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct)"** and **"5 Automated Audit Gates Passing"** |
+| Second concurrent session | `arena/d1586f6a-gold4` merged **PR #27** (its Pass 12) and **PR #29** (Pass 12b) during this pass. Main was merged into this branch twice; every conflict was resolved as a **union** — that session's 10K legal corrections, `FLG-PASS12-01..05` and its benchmark record are all preserved, and its benchmark was kept rather than replaced |
+
 
 ### Concurrency note — session `arena/d1586f6a-gold4` merged PR #27 (its "Pass 12") mid-pass
 
