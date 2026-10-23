@@ -831,3 +831,20 @@ This session read this board first. Four sessions hold **fresh claims** at claim
 **Final 7-gate seal on my exact PR tree (11:15–11:16 UTC, local):**
 G1 `audit.py` PASS · G2 `check_site.py` PASS (27 pages) · G3 `verify.py` PASS (HARD FAILURES: 0) · G4 `verify_a0be79d4.py` PASS (zero hallucinations/broken links/security errors; strict-NULL blanks intact) · G5 `audit_hallucinations.py` PASS (879 checks, 0 failures) · G6a citation self-test PASS (bad citation correctly rejected) · G6b citation integrity PASS (109 CFR refs, 0 violations) · G7 `audit_freshness.py` PASS (295 checks, 2 warns [BE-06/BE-07 403-bot warnings], 0 failures). Base = `main@f560bc9` (all merges through #37).
 
+
+---
+
+## Session `arena/0029d936-gold4` — Pass 17: fresh independent verification, hallucination scan & publish (2026-10-23)
+
+**Claim (written before any file in scope is edited).** Branch pinned to `arena/0029d936-gold4` (Arena equivalent of `session-0029d936/pass17`); no other branch created/modified. Prior sessions' tasks 1–44 are all marked done/merged through PR #40 (`6aa9e05`); no fresh (>60 min, unmerged) claim overlaps this scope. Stale leftover from `46691f83` (noted in b8c1f11d handover) is NOT adopted without re-verification.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 50 | Fresh gate run — all 7 CI gates on current tree; fix only failures caused by this session's files | in progress | arena/0029d936 | `reviews/pass17_0029d936.md` (new) |
+| 51 | Independent live re-read — WGC spot panel + sample of retailer/regulatory official pages; record match/mismatch/unreachable line-by-line, never overwrite stored values on a variant mismatch | unclaimed→claimed | arena/0029d936 | `reviews/pass17_0029d936.md`, `reviews/index17.html` (new) |
+| 52 | Hallucination / security scan — re-run hallucination auditor + scan for unsourced values, blank-vs-invented fields, broken links | unclaimed→claimed | arena/0029d936 | `reviews/pass17_0029d936.md` |
+| 53 | Publish — PR from `arena/0029d936-gold4` to `main`, merge without waiting, confirm Pages deploy, record result here | unclaimed→claimed | arena/0029d936 | this file |
+
+Non-overlap: this session edits only this appended board section and new files under `reviews/pass17*` / `reviews/index17.html`. Any needed change to `data/**`, `index.html`, `pages/**`, `scripts/**` is logged as a request, not made directly — unless a gate failure is a trivially broken link in a file no live session owns, in which case it is logged here first.
+
+**Pass 17 results (2026-10-23 ~20:19 UTC):** Tasks 50–52 **done**. All 7 gates PASS (audit 131/0 · check_site 27p · verify 0 hard · verify_a0be79d4 2,072 links/0 · hallucinations 941/0 · citations 109/0 · freshness 295 checks/2 BE warnings/0). Independent live re-reads (this session's own fetches): BN-22 $2,050 ✔ (+ "platinum" copy flaw re-confirmed), AL-01 $585/3.58g ✔, MJ-01 $548 ✔, SR-03 $871/6.70g ✔, eCFR Part 23 headings ✔, calculator re-derived SR-03 $650.18 / AL-01 $270.21 ✔. **Flagged, nothing overwritten:** F-17-1 WGC live panel $3,996.31 vs benchmark $4,024.45 (−0.70%, page date still 22 Oct 2026); F-17-2 Menē MN-01 $1,442 live vs $1,465 stored (−1.57%, sold-by-weight float; corroborates b8c1f11d's $1,454). Report: `reviews/pass17_0029d936.md`; browsable: `reviews/index17.html`. Remaining 57 rows explicitly NOT re-read this pass. Task 53 (publish) in progress.

@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pass 17 — Flagged for Review (0029d936) · GOLD4</title>
+<style>body{font-family:system-ui,Arial,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem;line-height:1.55;color:#1a1a1a}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccc;padding:.45rem .6rem;text-align:left;vertical-align:top}.warn{background:#fff4e0}.ok{background:#eef7ee}.banner{background:#b00020;color:#fff;padding:.8rem 1rem;border-radius:.4rem;font-weight:700}a{color:#0b57d0}</style></head><body>
+<h1>Pass 17 — Independent verification &amp; Flagged for Review</h1>
+<p class="banner">NO HALLUCINATIONS — every number below was read from the official page linked in its row on 2026-10-23, or is shown as arithmetic from such a reading. Stored values were never overwritten; mismatches are flagged with both numbers.</p>
+<p><a href="../index.html">← Main dashboard (64 rings)</a> · <a href="../pages/flagged.html">Canonical Flagged page</a> · <a href="../pages/calculator.html">Gold-weight calculator</a> · Full report: <a href="pass17_0029d936.md">pass17_0029d936.md</a></p>
+
+<h2>Security / hallucination gates (re-run 2026-10-23)</h2>
+<table><tr><th>Gate</th><th>Result</th></tr>
+<tr><td>audit.py</td><td class="ok">PASS — 131 passed, 0 failures</td></tr>
+<tr><td>check_site.py</td><td class="ok">PASS — 27 pages, every populated row has an official source link</td></tr>
+<tr><td>verify.py</td><td class="ok">PASS — 0 hard failures, 64 records</td></tr>
+<tr><td>verify_a0be79d4.py</td><td class="ok">PASS — 2,072 links, 0 failures; blanks stay NULL</td></tr>
+<tr><td>audit_hallucinations.py</td><td class="ok">PASS — 941 checks, 0 failures</td></tr>
+<tr><td>verify_citations.py (+self-test)</td><td class="ok">PASS — 109 CFR refs, 0 violations</td></tr>
+<tr><td>audit_freshness.py</td><td class="warn">PASS — 295 checks, 2 warnings (BE-06/BE-07, see F-17-3), 0 failures</td></tr></table>
+
+<h2>Live re-reads (official sources only)</h2>
+<table><tr><th>Row</th><th>Official source</th><th>Live reading 2026-10-23</th><th>Stored</th><th>Verdict</th></tr>
+<tr><td>Benchmark</td><td><a href="https://www.gold.org/goldhub/data/gold-prices">World Gold Council</a></td><td>$3,996.31/oz; page still “Data as of 22 October, 2026”</td><td>$4,024.45/oz (22 Oct reading)</td><td class="warn">⚠️ F-17-1 drift −0.70% — not overwritten</td></tr>
+<tr><td>BN-22</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321">Blue Nile</a></td><td>$2,050, 501580y14, 14K, 5mm; copy says “platinum solitaire”</td><td>$2,050</td><td class="ok">✔ match; copy flaw re-confirmed</td></tr>
+<tr><td>AL-01</td><td><a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold">Allurez</a></td><td>$585, 3.58 g, 14K</td><td>$585, 3.58 g</td><td class="ok">✔ match</td></tr>
+<tr><td>MJ-01</td><td><a href="https://mejuri.com/products/diamonds-team-ring">Mejuri</a></td><td>$548, Solid 14k</td><td>$548</td><td class="ok">✔ match</td></tr>
+<tr><td>SR-03</td><td><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html">Sarraf</a></td><td>$871, 6.70 g, 18K Solid Gold</td><td>$871, 6.70 g</td><td class="ok">✔ match</td></tr>
+<tr><td>MN-01</td><td><a href="https://mene.com/products/knot-ring-gold">Menē</a></td><td>$1,442 (sold by weight)</td><td>$1,465</td><td class="warn">⚠️ F-17-2 moved −1.57% — not overwritten</td></tr>
+<tr><td>16 CFR 23</td><td><a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23">eCFR</a></td><td>§23.3 gold content; §23.10 quality marks; §23.9 pewter</td><td>as cited</td><td class="ok">✔ match</td></tr></table>
+<p>Remaining 57 rows: NOT re-read this pass — they stand on their dated Pass 12–16 reads and Gate&nbsp;7 freshness evidence. Not claimed as checked today.</p>
+
+<h2>Calculator spot-check</h2>
+<p>$4,024.45 ÷ 31.1034768 = $129.389072/g. SR-03: 6.70 g × 0.750 × $129.389072 = <b>$650.18</b> raw gold (site stores $650.18 ✔), price $871 = 1.34×. AL-01: 3.58 g × 0.5833 × $129.389072 = <b>$270.21</b> ✔, 2.17×. Only 17/64 rows publish a weight — the rest correctly show blank.</p>
+
+<h2>Flagged for review (non-blocking)</h2>
+<ul>
+<li><b>F-17-1</b> WGC live panel drift (−0.70%) vs dated benchmark — re-read <a href="https://www.gold.org/goldhub/data/gold-prices">gold.org</a> before relying on $/g; re-benchmark only when the data-as-of date advances.</li>
+<li><b>F-17-2</b> Menē MN-01 $1,442 live vs $1,465 stored — metal-linked, sold-by-weight pricing floats; re-capture with variant recorded.</li>
+<li><b>F-17-3</b> (carried) BE-06/BE-07 rest on a browser read; Brilliant Earth 403s automated checks.</li>
+<li><b>F-17-4</b> (carried) 0/64 listings publish a hallmark — a stamp alone proves nothing; XRF-test after delivery, before wearing/resizing.</li>
+</ul>
+<p>Session <code>arena/0029d936-gold4</code> · 2026-10-23 · No manual input required; review after the site is live.</p>
+</body></html>
