@@ -221,5 +221,18 @@
   "spread_vs_active_benchmark_pct": -0.7,
   "decision": "Benchmark RETAINED at USD 4,024.45/oz (the Pass 12/14 dated reading). The live tick moved -0.70% while the source's own 'Data as of' date did not advance, so this reading is recorded as a dated cross-check (FLG-PASS17-01), not silently substituted into derived values. Every derived figure on the site remains labelled with the benchmark and its date; the calculator accepts any spot the reader enters (at 3,996.31/oz, gold = $128.4844/g and a 4.0 g 14K ring's gold value is $299.80 vs $301.91 at the benchmark).",
   "session": "arena/0e04577b-gold4 (Pass 17)"
+ },
+ "pass19_live_crosscheck_2026_10_23": {
+  "session": "arena/bfbdf30c-gold4 (Pass 19)",
+  "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+  "read_path": "browser-rendered page reader",
+  "window_utc": "2026-10-23T23:43Z-23:45Z",
+  "value_usd_per_oz": 3995.47,
+  "source_date_line_verbatim": "22 October, 2026",
+  "source_data_as_of_verbatim": "Data as of 22 October, 2026",
+  "active_benchmark_usd_per_oz": 3996.31,
+  "delta_pct_vs_active_benchmark": -0.021,
+  "decision": "Benchmark RETAINED at the stored value. The tick is 0.84 USD/oz lower (-0.021%) on the same source data date, i.e. an intraday move well inside the noise this project has always tolerated; the previous pass acted only on a -0.70% move. The reading is recorded here as a dated cross-check. No derived gold value was recomputed and no stored value was replaced.",
+  "usd_per_gram_if_used": 128.4576
  }
 }

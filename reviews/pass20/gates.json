@@ -1,0 +1,56 @@
+[
+ {
+  "gate": "1",
+  "name": "Canonical dataset integrity & derived-math recompute",
+  "status": "PASS",
+  "detail": "RESULT: PASS  (132 passed, 1 warnings, 0 failures) \u00b7 exit 0"
+ },
+ {
+  "gate": "2",
+  "name": "Root, /pages & /docs link and policy gate",
+  "status": "PASS",
+  "detail": "PASS: 29 pages checked; local links resolve; every populated row carries an official source link; no-hallucination warning and FTC reference present. \u00b7 exit 0"
+ },
+ {
+  "gate": "3",
+  "name": "Combined schema & blank-flag check",
+  "status": "PASS",
+  "detail": "Records audited: 64 \u00b7 exit 0 \u00b7 exit 0"
+ },
+ {
+  "gate": "4",
+  "name": "Multi-page XSS, 404-blocklist & Assay-Lab scanner",
+  "status": "PASS",
+  "detail": "STATUS                  : PASS \u2014 ZERO HALLUCINATIONS, ZERO BROKEN LINKS, ZERO SECURITY ERRORS. \u00b7 exit 0"
+ },
+ {
+  "gate": "5",
+  "name": "Gemstone-deduction, category-subpage & hallucination auditor",
+  "status": "PASS",
+  "detail": "RESULT: PASS \u2014 zero hallucinated/unsourced values, zero phantom math, zero broken local links. \u00b7 exit 0"
+ },
+ {
+  "gate": "6a",
+  "name": "Citation-integrity self-test (must reject a known-bad CFR citation)",
+  "status": "PASS",
+  "detail": "SELF-TEST PASSED \u2014 a known-wrong CFR citation was correctly rejected \u00b7 exit 0"
+ },
+ {
+  "gate": "6b",
+  "name": "Citation integrity (every CFR citation vs its official heading)",
+  "status": "PASS",
+  "detail": "Citation-integrity gate: 110 CFR section references checked across 40 files (rule violations: label=0, sentence=0). \u00b7 exit 0"
+ },
+ {
+  "gate": "7",
+  "name": "Live-evidence freshness & source-health gate",
+  "status": "PASS",
+  "detail": "RESULT: PASS \u2014 295 checks, 2 warning(s), 0 failures \u00b7 exit 0"
+ },
+ {
+  "gate": "8",
+  "name": "Conservative currency parsing & blank current-price register",
+  "status": "PASS",
+  "detail": "OK \u00b7 exit 0"
+ }
+]

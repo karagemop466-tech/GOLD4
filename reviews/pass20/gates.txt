@@ -1,0 +1,147 @@
+=== Gate 1 — Canonical dataset integrity & derived-math recompute ===
+GOLD4 integrity audit (hallucination / security check)
+run_utc: 2026-10-23T23:54:27+00:00
+dataset rows: 64 | sellers: 10 | sources: 32
+spot benchmark: $3,996.31/oz (22 October, 2026) = $128.4844/g
+
+RESULT: PASS  (132 passed, 1 warnings, 0 failures)
+
+[WARN] B-08 price verification: BE-05: price is only V2 evidence and must be flagged
+
+Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
+price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,
+independent recomputation of every derived number, phantom-math detection (no weight => no value),
+seller contact/return provenance, speculation-language scan, site link check,
+per-row source-link requirement, and render-text sanity.
+exit=0
+
+=== Gate 2 — Root, /pages & /docs link and policy gate ===
+PASS: 29 pages checked; local links resolve; every populated row carries an official source link; no-hallucination warning and FTC reference present.
+REVIEW LIMIT: this offline check cannot confirm that a source is still live, that a product is authentic, or that a quoted price is current.
+exit=0
+
+=== Gate 3 — Combined schema & blank-flag check ===
+# AUDIT — hallucination/security check
+Date: 2026-10-22
+
+HARD FAILURES: 0
+
+FLAGGED (blank/unverified, by design): 49
+- BE-01.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-02.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-01.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-02.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-03.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-04.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-05.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-06.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-07.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-08.weight_g: blank/UNVERIFIED (correct per policy)
+- MJ-01.weight_g: blank/UNVERIFIED (correct per policy)
+- MJ-02.weight_g: blank/UNVERIFIED (correct per policy)
+- MJ-03.weight_g: blank/UNVERIFIED (correct per policy)
+- MJ-04.weight_g: blank/UNVERIFIED (correct per policy)
+- MJ-05.weight_g: blank/UNVERIFIED (correct per policy)
+- VR-02.price: blank/UNVERIFIED (correct per policy)
+- BE-03.weight_g: blank/UNVERIFIED (correct per policy)
+- SR-07.weight_g: blank/UNVERIFIED (correct per policy)
+- SR-08.weight_g: blank/UNVERIFIED (correct per policy)
+- CB-01.weight_g: blank/UNVERIFIED (correct per policy)
+- CB-02.weight_g: blank/UNVERIFIED (correct per policy)
+- MN-01.weight_g: blank/UNVERIFIED (correct per policy)
+- MN-02.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-09.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-10.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-11.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-12.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-13.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-14.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-15.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-16.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-17.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-18.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-19.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-20.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-21.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-22.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-23.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-24.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-25.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-26.price: blank/UNVERIFIED (correct per policy)
+- BN-26.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-04.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-05.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-06.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-07.weight_g: blank/UNVERIFIED (correct per policy)
+- RS-05.weight_g: blank/UNVERIFIED (correct per policy)
+- MJ-06.weight_g: blank/UNVERIFIED (correct per policy)
+- MJ-07.weight_g: blank/UNVERIFIED (correct per policy)
+
+Records audited: 64
+Rule: a value with no official source link + retrieval date must stay blank. Re-run after every review.
+Deeper checks (domain allow-list, recomputation of every derived number, speculation scan) run in scripts/audit.py.
+exit=0
+
+=== Gate 4 — Multi-page XSS, 404-blocklist & Assay-Lab scanner ===
+=== GOLD4 MULTI-PASS SECURITY & ANTI-HALLUCINATION AUDIT (`verify_a0be79d4.py`) ===
+HTML pages scanned      : 39
+Hyperlinks & assets     : 2243 verified (0 dead/unsafe URIs)
+Rendered table rows     : 44 verified (100% official HTTPS + dated)
+Hard failures           : 0
+FLAG NOTE               : By-design blank fields preserved strictly NULL (`UNVERIFIED`): 15 ring weights + 2 conflicting Sarraf karats (`F1625`, `121987-.72P`) + 1 disqualified vermeil control (`G4-RED-01`).
+STATUS                  : PASS — ZERO HALLUCINATIONS, ZERO BROKEN LINKS, ZERO SECURITY ERRORS.
+exit=0
+
+=== Gate 5 — Gemstone-deduction, category-subpage & hallucination auditor ===
+======================================================================
+GOLD4 ANTI-HALLUCINATION & SECURITY AUDIT (arena/81b71aa5-gold4)
+======================================================================
+Checks passed : 1032
+Warnings      : 0
+Hard failures : 0
+RESULT: PASS — zero hallucinated/unsourced values, zero phantom math, zero broken local links.
+exit=0
+
+=== Gate 6a — Citation-integrity self-test (must reject a known-bad CFR citation) ===
+SELF-TEST PASSED: '§ 23.9 Quality Marks' is correctly rejected (§ 23.9 is 'Misrepresentation as to content of pewter.'; quality marks are § 23.10).
+exit=0
+
+=== Gate 6b — Citation integrity (every CFR citation vs its official heading) ===
+Citation-integrity gate: 110 CFR section references checked across 40 files (rule violations: label=0, sentence=0).
+Section table read verbatim from https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23 on 2026-10-23.
+PASS: every CFR section citation matches its official heading, and every statute cited on the site has a registered source URL.
+REVIEW LIMIT: offline. It cannot confirm a page still says today what it said when it was read - that needs a live re-fetch.
+exit=0
+
+=== Gate 7 — Live-evidence freshness & source-health gate ===
+======================================================================
+GOLD4 FRESHNESS & SOURCE-HEALTH GATE (gate 6)
+======================================================================
+evidence checked : 2026-10-23T20:23:21Z
+rows             : 64   registered sources: 32
+row states       : {'OK': 52, 'REFUSED_403': 7, 'HTTP_404': 4, 'EMPTY_OR_JS_SHELL': 1}
+price states     : {'CONFIRMED': 46, 'SOURCE_NOT_REACHED': 12, 'DIFFERS': 4, 'NO_STORED_PRICE': 2, 'NOT_MACHINE_READABLE': 0}
+----------------------------------------------------------------------
+[WARN] BE-06: price dated on the evidence day although this automated check could not read the page (REFUSED_403) — the value rests on a different read path and needs review
+[WARN] BE-07: price dated on the evidence day although this automated check could not read the page (REFUSED_403) — the value rests on a different read path and needs review
+----------------------------------------------------------------------
+RESULT: PASS — 295 checks, 2 warning(s), 0 failures
+This gate proves the evidence exists, is recent, is applied to every row and is honestly flagged.
+It cannot prove a retailer's page today matches what a shopper sees in their own browser.
+exit=0
+
+=== Gate 8 — Conservative currency parsing & blank current-price register ===
+test_accept_plain_numbers (__main__.AssuranceTests.test_accept_plain_numbers) ... ok
+test_explicit_usd_can_match (__main__.AssuranceTests.test_explicit_usd_can_match) ... ok
+test_missing_or_foreign_currency_never_confirms_usd (__main__.AssuranceTests.test_missing_or_foreign_currency_never_confirms_usd) ... ok
+test_pr_checks_do_not_cancel_other_sessions_or_production (__main__.AssuranceTests.test_pr_checks_do_not_cancel_other_sessions_or_production) ... ok
+test_read_only_workflow (__main__.AssuranceTests.test_read_only_workflow) ... ok
+test_reject_ambiguous_numbers (__main__.AssuranceTests.test_reject_ambiguous_numbers) ... ok
+test_review_has_exactly_all_rows_and_blank_current_prices (__main__.AssuranceTests.test_review_has_exactly_all_rows_and_blank_current_prices) ... ok
+test_unreachable_never_confirms (__main__.AssuranceTests.test_unreachable_never_confirms) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.004s
+
+OK
+exit=0
