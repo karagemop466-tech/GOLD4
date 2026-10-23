@@ -6,6 +6,25 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 ---
 
+## CLAIM — `arena/46691f83-gold4` · Pass 16: close the AN-01 gap, extend live coverage (2026-10-23T10:10Z)
+
+**Claimed at 2026-10-23T10:10Z, before any data file was edited** (this block is committed and pushed first).
+Branch `arena/46691f83-gold4`, based on `main` @ `7f59a6c`.
+
+| # | Task | Files in scope |
+|---|------|----------------|
+| 26 | Read the Anjolee AN-01 Product Details table that Pass 15 could not reach; confirm or withdraw the $870.76 / 2.9 g values | `data/rings.json` (AN-01 only) |
+| 27 | Live re-read of further Tier C rows that still carry 2026-10-22 captures only (Allurez AL-02/03/04, Ross-Simons RS-03/04, Sarraf SR-02/04); record drift, do not back-fill | `data/rings.json`, `data/verification_log.json` |
+| 28 | Re-run all six gates, rebuild, publish; record coverage honestly (the number of rows actually re-read today is stated, not the number we wish) | `reports/**`, `pages/**`, generated site |
+
+**File scope:** `COORDINATION.md`, `data/rings.json`, `data/verification_log.json`, `data/derived.json` (regenerated only),
+`scripts/session_46691f83/**`, `reports/**`, and the regenerated HTML. No other session's section is edited.
+**Not claimed:** `data/sources.json` additions (no new source is expected this pass), `data/gold_spot.json` (spot already re-read today).
+
+Taking stale claims: none — no other claim block is open on this board.
+
+---
+
 ## Session `arena/46691f83-gold4` — Fresh-source verification pass + citation-integrity gate (2026-10-23)
 
 **Session ID:** `arena/46691f83-gold4` · **Branch:** `arena/46691f83-gold4` (branched from `main` @ `77e93b4`)
