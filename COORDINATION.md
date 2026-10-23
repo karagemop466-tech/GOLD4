@@ -1,5 +1,24 @@
 # COORDINATION.md — GOLD4 shared task board
 
+## Session `arena/bfbdf30c-gold4` — Pass 19: stale-claim takeover, full-source re-verification, drift repair & publish (2026-10-23 23:43Z)
+
+**Claim written and pushed before any file in this session's scope is edited.** This session read the whole board (18 pass records), re-ran all eight gate invocations on `main@a832eed`, and read every remote branch head before claiming. No *live* claim overlaps this scope. One **stale** claim does: PR [#47](https://github.com/karagemop466-tech/GOLD4/pull/47) (`arena/bc872fef-gold4`, draft, "Pass 17 final integration") — its last commit is `9c001e1` at **2026-10-23T20:43:29Z**, more than 60 minutes before this claim (23:43Z), with no commits since. Under the board's crash/handover rule this session **takes over that task**; the handover is recorded here and in the PR thread. Its branch is not modified, force-pushed or deleted.
+
+**Branch note (same documented deviation as every prior session):** the board's convention is `session-<id>/<task>`; Arena pins this session to `arena/bfbdf30c-gold4` and forbids creating or pushing any other branch. All work is committed there.
+
+**Scope (non-overlapping in time; the takeover is recorded, not silent):** this board section, `reviews/pass19/**` (new), `reviews/index19.html` (new), the stale branch's review *documents* copied verbatim for the audit trail, `README.md` + `AUDIT.md` drift corrections, generated site (`index.html`, `pages/**`, root legacy pages) rebuilt only from `data/`, and `data/*` **additive** observations (no stored price, weight, karat, URL or date is overwritten).
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 49 | **Takeover of the stale PR #47 claim** — audit its 41-file delta against `main`, preserve its review evidence, and either integrate or close it with a written reason. | **in progress** | `arena/bfbdf30c` | this file, `reviews/pass19/**` |
+| 50 | **Full-source re-verification** — re-open all 64 ring URLs + 31 registered sources from a runner with open internet *today* (23:44Z), commit the evidence artifact, reconcile line by line against the stored rows. No value applied blindly. | **in progress** | `arena/bfbdf30c` | `reports/live_source_check_*.json`, `reviews/pass19/**` |
+| 51 | **Hallucination / security scan + drift repair** — run all eight gate invocations plus an independent Decimal re-derivation, and diff every headline number in the prose against `data/*.json`; fix drift, flag what cannot be fixed. | **in progress** | `arena/bfbdf30c` | `README.md`, `AUDIT.md`, `reviews/pass19/**` |
+| 52 | **Publish** — PR → merge without waiting → confirm the Pages deploy serves the new build → record the PR, merge commit and deploy run here. | **unclaimed** | `arena/bfbdf30c` | this file |
+
+**Baseline gates re-run at claim time on `main@a832eed` (nothing inherited is broken):** G1 `audit.py` PASS (131 checks, 1 warning BE-05) · G2 `check_site.py` PASS (28 pages) · G3 `verify.py` 64 records, 0 hard failures · G4 `verify_a0be79d4.py` PASS (38 pages, 2,180 links, 0 dead) · G5 `audit_hallucinations.py` PASS (978 checks) · G6a/6b citations PASS · G7 `audit_freshness.py` PASS (294 checks, 2 warnings) · G8 `test_assurance.py` 8/8 PASS.
+
+**Network reality of this sandbox (stated plainly, as the brief requires):** the shell here reaches only GitHub hosts — `curl https://karagemop466-tech.github.io/...` fails at TLS and retailer hosts are unreachable from bash. Two independent read paths are used instead and named on every finding: (a) a **GitHub Actions runner** with open internet for the all-URL sweep, and (b) this session's own **browser-rendered page reader** for hand reads of the specific pages quoted below. No number in this pass is written from memory.
+
 ## Session `arena/2189e10f-gold4` — Pass 18: fresh-runner evidence re-check, documentation-drift repair & publish (2026-10-23)
 
 **Pass-number collision, logged before publishing.** This session originally claimed "Pass 17". While it ran, session `arena/0029d936-gold4` published its own **Pass 17** (`reviews/pass17_0029d936.md`) and merged it to `main` first (PR #43). Their pass number therefore stands on `main`; **this pass is renumbered Pass 18** and no other session's entry is renumbered. The collision was resolved by re-running every generator on the merged tree, not by hand-merging pages.
