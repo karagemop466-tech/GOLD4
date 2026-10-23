@@ -6,6 +6,18 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 ---
 
+## Session `arena/72d0ee1f-gold4` — current-price re-verification + final integration (claimed 2026-10-23 09:52 UTC)
+
+**Claim recorded before edits.** Scope: `COORDINATION.md`; `scripts/session_72d0ee1f/**` (capture manifest / audit notes); canonical `data/rings.json`, `data/gold_spot.json`, `data/derived.json`, and `data/verification_log.json`; generated site pages and navigation; `README.md`, `VERIFICATION.md`, `AUDIT.md`, and audit reports. This is the integration scope for this pass; do not alter another session's work. The existing remote task rows still marked `in progress` belong to the 2026-10-22 `arena/9614479d` board and are superseded by that session's later completed integration and the subsequent completed verification passes recorded below. There are no open PRs at claim time; the old claims are more than 60 minutes old, so this pass takes over the final-integration work and records that handoff here. The Arena-fixed branch for this session is `arena/72d0ee1f-gold4`.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 20 | Re-fetch each catalog row from its official product/source page for a current price/spec check; refresh the official gold benchmark only when the source page displays a dated value; blank and flag any stale/unconfirmed value; recompute, regenerate the dashboard/category pages and complete line-by-line report; run all five anti-hallucination/security gates and validate local links | in progress | `arena/72d0ee1f-gold4` | `data/rings.json`, `data/gold_spot.json`, `data/derived.json`, `data/verification_log.json`, `scripts/session_72d0ee1f/**`, generated pages, `README.md`, `VERIFICATION.md`, `AUDIT.md`, `COORDINATION.md` |
+
+**Claim log:** 2026-10-23 09:52 UTC — inspected the shared task board, confirmed no open PRs, and claimed the stale integration/re-verification work. The exact date/time is from the workspace UTC clock. No product/data edits have been made at claim time.
+
+---
+
 ## Session `arena/a0be79d4-gold4` — 35-Row Canonical Expansion, 11-Page Assay Lab Suite, 4-Gate CI Audit & Live Pages Confirmation (2026-10-22)
 
 - **Branch:** `arena/a0be79d4-gold4` (active; zero other branches modified or force-pushed)
