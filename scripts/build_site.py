@@ -1295,6 +1295,10 @@ def main() -> None:
 """
         (ROOT / old_path).write_text(stub, encoding="utf-8")
 
+    # Keep the conservative current-session register in sync on every rebuild.
+    from build_session_review import build as build_session_review
+    build_session_review()
+
     # ---------------------------------------------------------------- housekeeping
     (ROOT / ".nojekyll").write_text("", encoding="utf-8")
     print(f"built index.html + {len(list(PAGES.glob('*.html')))} pages at {datetime.now(timezone.utc):%H:%M:%S UTC}")

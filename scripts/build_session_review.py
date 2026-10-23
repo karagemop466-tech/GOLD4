@@ -15,13 +15,24 @@ def build():
     rings = json.loads((ROOT / 'data/rings.json').read_text())['rows']
     health = json.loads((ROOT / 'data/source_health.json').read_text())
     states = {r['id']: r for r in health['rows']}
+    evidence_path = ROOT / 'reports/session-986df4df-live.json'
+    fresh = json.loads(evidence_path.read_text()) if evidence_path.exists() else None
+    fresh_by_id = {r['key']: r for r in fresh.get('results', []) if r.get('kind') == 'ring'} if fresh else {}
+    evidence_note = ('<p>Current-session runner evidence: <a href="../reports/session-986df4df-live.json">raw GET observations</a>. '
+                     'Recorded collection time: ' + esc(fresh.get('checked_utc')) + '. '
+                     'These are HTTP observations, not configuration-specific price or purity verification. '
+                     'Legacy session/pass labels inside the collector output are hardcoded by the pre-existing collector; '
+                     'actual run provenance is recorded in the session report.</p>') if fresh else '<p>The <a href="https://github.com/karagemop466-tech/GOLD4/actions/runs/40018190458">current-session source-check workflow</a> completed successfully. Its uploaded artifact could not be downloaded here because the external artifact-storage host is blocked. Results have not been independently inspected; no fresh factual confirmation is claimed. Prior evidence remains available above.</p>'
     rows = []
     for ring in rings:
         prior = states.get(ring['id'], {})
+        observation = fresh_by_id.get(ring['id'], {})
+        observed = (str(observation.get('checked_utc')) + ' / ' + str(observation.get('classification'))) if observation else 'Unverified here — runner artifact not inspected'
         flags = ', '.join(ring.get('flags', [])) or 'No historical flags recorded; not purchase approval'
         rows.append(f'''<tr data-review-id="{esc(ring['id'])}">
 <td>{esc(ring['id'])}</td><td>{esc(ring['retailer'])}</td>
 <td>{esc(ring['product_name'])}</td>
+<td>{esc(observed)}</td>
 <td class="current-price" aria-label="Unverified current price"></td>
 <td>UNVERIFIED — no current-session configuration-specific quote</td>
 <td>{esc(prior.get('checked_utc', 'Not checked'))}<br>{esc(prior.get('source_state', 'NOT_CHECKED'))} / {esc(prior.get('price_state', 'NOT_CHECKED'))} (historical evidence only)</td>
@@ -50,10 +61,11 @@ No stored product price, weight or purity has been changed in this session.</p><
 <tr><td>Source-check workflow wrote to PR branches and interpolated a branch name into shell</td><td>Fixed: read-only token, upload artifacts only; no branch-writing shell step.</td><td><a href="https://github.com/karagemop466-tech/GOLD4/blob/arena/986df4df-gold4/.github/workflows/live-source-check.yml">Workflow</a></td></tr>
 <tr><td>Historical retailer statements do not prove physical purity, maker mark or independent reputation</td><td>Unverified; no purchase approval. A stamp alone is insufficient.</td><td><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry">Official FTC consumer guidance (not re-fetched this session)</a></td></tr>
 </tbody></table></div></section>
-<section class="section"><h2>Every candidate, reviewed without filling unknowns</h2>
+<section class="section"><h2>Every candidate, reviewed without filling unknowns</h2><!-- current-evidence -->
 <p>Historical evidence timestamp and state are shown only for provenance. Blank current price does not mean free or unavailable.
 All rows need a current official quote and independent gold verification before purchase.</p>
-<div class="table-wrap"><table><thead><tr><th>ID</th><th>Seller</th><th>Product</th><th>Current verified price (USD)</th><th>Current status</th><th>Prior evidence</th><th>Prior flags</th><th>Official source</th></tr></thead><tbody>'''
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Seller</th><th>Product</th><th>Session runner observation</th><th>Current verified price (USD)</th><th>Current status</th><th>Prior evidence</th><th>Prior flags</th><th>Official source</th></tr></thead><tbody>'''
+    body = body.replace('<!-- current-evidence -->', evidence_note)
     body += '\n'.join(rows)
     body += '''</tbody></table></div></section><section class="section"><h2>Before any purchase</h2>
 <p>Require an explicit solid-gold description, karat, gram weight and weight scope, maker mark plus hallmark, written return and independent-testing permission (including resize/custom exclusions), and a current configuration-specific price.

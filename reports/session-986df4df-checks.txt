@@ -1,9 +1,9 @@
-Executed UTC: 2026-10-23T20:17:59.486102+00:00
+Executed UTC: 2026-10-23T20:21:14.236094+00:00
 Offline gate results are not independent factual verification.
 
 $ python3 scripts/audit.py
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T20:17:59+00:00
+run_utc: 2026-10-23T20:21:14+00:00
 dataset rows: 64 | sellers: 10 | sources: 31
 spot benchmark: $4,024.45/oz (22 October, 2026) = $129.3891/g
 
@@ -92,7 +92,7 @@ Exit: 0
 $ python3 scripts/verify_a0be79d4.py
 === GOLD4 MULTI-PASS SECURITY & ANTI-HALLUCINATION AUDIT (`verify_a0be79d4.py`) ===
 HTML pages scanned      : 38
-Hyperlinks & assets     : 2174 verified (0 dead/unsafe URIs)
+Hyperlinks & assets     : 2175 verified (0 dead/unsafe URIs)
 Rendered table rows     : 44 verified (100% official HTTPS + dated)
 Hard failures           : 0
 FLAG NOTE               : By-design blank fields preserved strictly NULL (`UNVERIFIED`): 15 ring weights + 2 conflicting Sarraf karats (`F1625`, `121987-.72P`) + 1 disqualified vermeil control (`G4-RED-01`).
@@ -152,7 +152,7 @@ test_review_has_exactly_all_rows_and_blank_current_prices (__main__.AssuranceTes
 test_unreachable_never_confirms (__main__.AssuranceTests.test_unreachable_never_confirms) ... ok
 
 ----------------------------------------------------------------------
-Ran 7 tests in 0.005s
+Ran 7 tests in 0.003s
 
 OK
 
