@@ -6,6 +6,50 @@ Project: **GOLD4** — verified sourcing, analysis and publication of solid-gold
 
 ---
 
+## Session `arena/d1586f6a-gold4` — Pass 12: independent live re-verification (2026-10-23)
+
+**Claim (written before any file was edited, committed and pushed immediately):** this session claims the *Pass 12 independent live re-verification* scope only.
+Files in scope: `data/verification_log.json`, `data/gold_spot.json`, `data/rings.json` (row-level corrections only, no row additions/removals),
+`data/sellers.json` (policy/contact re-reads only), `COORDINATION.md`, `reports/**`, and the generated site pages rebuilt from those files.
+It does **not** rewrite `scripts/audit.py`, `scripts/check_site.py`, `scripts/verify.py`, `scripts/verify_a0be79d4.py` or
+`scripts/audit_hallucinations.py` — those five gates are used unchanged as the independent check of this pass. No other session's claim or file is edited;
+requests against other scopes are logged here instead.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 20 | Pass 12 — re-open the Tier A legal sources, the Tier B spot benchmark and a live sample of retailer rows/policies; record every discrepancy; keep every unconfirmed value blank and flagged | `done` | arena/d1586f6a | `data/verification_log.json`, `data/gold_spot.json`, `data/rings.json`, `data/sellers.json`, `data/catalog_a0be79d4.json`, `scripts/build_dataset.py`, `scripts/session_d1586f6a/pass12_20261023.py` |
+| 21 | Re-run all five gates, rebuild the site, publish via PR to `main`, confirm the Pages deploy, record the PR + run ids | `in progress` | arena/d1586f6a | generated HTML, this file |
+
+### Pass 12 sources — every one opened live on 2026-10-23 (not copied from an earlier pass)
+
+| Tier | Source | URL | What this pass re-read |
+|---|---|---|---|
+| A | FTC — *Buying Platinum, Gold, and Silver Jewelry* | https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry | karat mark must sit beside the maker's/registered trademark; "solid gold" = not hollow; vermeil = sterling base gold-plated; research complaints; get return policy in writing |
+| A | 15 U.S.C. § 295 | https://www.law.cornell.edu/uscode/text/15/295 | 3/1000 tolerance on the tested part, 7/1000 on the whole article incl. solder |
+| A | 16 CFR § 23.3 | https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3 | (a) misrepresentation of karat; (c)(1) karat designation + hollow-centre "should not be described as solid"; plating/filled/overlay fineness floors |
+| A | 16 CFR § 23.4 | https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.4 | vermeil = sterling silver + ≥10K gold at ≥2.5 microns |
+| B | World Gold Council — Gold spot prices | https://www.gold.org/goldhub/data/gold-prices | live panel `USD/oz 4,024.45`, "Data as of 22 October, 2026" |
+| C | Allurez — AL-01 floral solitaire | https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold | $585 · NG4426 · 14k Yellow Gold · 3.58 g · "Setting only" |
+| C | Sarraf — SR-03 18K 5mm domed band | https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html | $871.00 · 18KY-LPBWB05 · stock 140139 · 18K Solid Gold · 6.70 g (size-10) |
+| C | Sarraf — SR-05 14K men's solitaire | https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html | $2,858.00 · 9240-14ky · 14K Solid Gold · 8.00 g · 0.50 ct H/SI1 |
+| C | Blue Nile — BN-20 Woven Solitaire | https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896 | $965 (Setting Price), no discount · 505038y14 · 1.80 mm · contact panel |
+| C | Mejuri — MJ-01 Diamonds Team Ring | https://mejuri.com/products/diamonds-team-ring | $548 on the **Solid White Gold (14k)** variant; no gram weight published |
+
+### Verification performed in Pass 12
+1. Every stored value on the 5 retailer rows above was compared field by field with the live page: **all matched**, except MJ-01's metal variant (see irregularity 3).
+2. All four Tier A legal claims on the site were re-read against the regulation text itself, not a summary. One claim failed (irregularity 1) and was corrected.
+3. All derived arithmetic was recomputed from the refreshed benchmark by `scripts/compute.py`, then independently re-derived by `scripts/audit.py` (recompute checks D-01/D-02/D-03).
+4. All five CI gates re-run on the regenerated tree: `audit.py` **PASS 128 / 3 warnings / 0 failures** (the 3 warnings are the pre-existing BE-05/06/07 V2-provenance notices), `check_site.py` PASS 26 pages, `verify.py` PASS 64 records with 16 blanks accounted, `verify_a0be79d4.py` PASS (1,957 links, 0 dead), `audit_hallucinations.py` PASS (879 checks).
+
+### Irregularities found in Pass 12 (all published on the Flagged for Review page, none blocking)
+1. **A legal claim on the site was wrong — and is now corrected (`FLG-PASS12-01`, HIGH).** The 14K karat row said 10K is the "lowest fine-gold content legally sellable as 'karat gold' in the U.S. under 16 CFR § 23.3". Re-reading the regulation text shows the opposite: **23.3(c)(1) itself lists "9 Karat Gold" and "9 Kt. Gold" as acceptable descriptions**, and the 2018 revision of the Guides removed the old 10-karat threshold. The 10-karat number that survives in Part 23 is a **plating-fineness floor** (23.3(c)(2)–(3), 23.4(b)) — not a minimum for gold. The cell now states exactly that. This is the clearest example in the repo of why every line must be re-read from its source rather than trusted because an earlier pass recorded it.
+2. **The gold benchmark was one market day behind (`FLG-PASS12-02`, MEDIUM).** Stored benchmark $4,028.53/oz carried the source's own date line "21 October, 2026"; the live panel today shows **$4,024.45/oz with "Data as of 22 October, 2026"** (−0.10%). The benchmark was advanced to the fresh dated reading, every derived melt value recomputed (`AL-01` gold value $270.21 at 4024.45/oz), and the superseded reading kept in `prior_captures`. Note the honest limit: this is a *dated reading*, not a live price — it will drift again.
+3. **Mejuri's price is still variant-dependent (`FLG-PASS12-03`, MEDIUM).** The Diamonds Team Ring URL resolves to the **Solid White Gold (14k)** variant at $548, while the row records 14k yellow gold. Price confirmed, metal mismatch confirmed, gram weight still unpublished.
+4. **No retailer publishes a hallmark image or maker's mark (`FLG-PASS12-04`, HIGH, unchanged policy).** Every live page opened this pass gives karat in a metal field but never shows the physical stamp plus the registered trademark that the FTC says must sit beside the karat mark. `hallmark_published` therefore stays `false` on all 64 rows, and the check stays on the on-arrival XRF step.
+5. **Deliberately not repeated here:** the pre-existing Brilliant Earth `PRICE_V2_ONLY` warnings (BE-05/06/07) stand unchanged — those pages were not re-fetched this pass, so their provenance is untouched rather than silently upgraded.
+
+---
+
 ## Session `arena/a0be79d4-gold4` — 35-Row Canonical Expansion, 11-Page Assay Lab Suite, 4-Gate CI Audit & Live Pages Confirmation (2026-10-22)
 
 - **Branch:** `arena/a0be79d4-gold4` (active; zero other branches modified or force-pushed)

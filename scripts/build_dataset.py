@@ -54,13 +54,13 @@ PRIMARY_SPOT_PER_GRAM = 4024.60 / TROY_OZ_GRAMS  # 129.39389451271923 USD/g
 KARAT_TABLE = [
     {
         "karat": 10,
-        "label": "10K Minimum Legal Gold (US)",
+        "label": "10K (common U.S. market minimum — not a legal floor since the 2018 Guides revision)",
         "exact_fraction": "10/24",
         "mass_fraction": round(10 / 24, 6),
         "millesimal_stamp": "417",
         "usd_per_gram_kitco": round(PRIMARY_SPOT_PER_GRAM * (10 / 24), 2),
         "usd_per_gram_jmb": round((4039.76 / TROY_OZ_GRAMS) * (10 / 24), 2),
-        "durability_profile": "Hardest alloy (58.33% alloy metals); resists scratching well; pale yellow hue; lowest fine-gold content legally sellable as 'karat gold' in the U.S. under 16 CFR § 23.3.",
+        "durability_profile": "Hardest alloy (58.33% alloy metals); resists scratching well; pale yellow hue; the usual lowest karat sold in the U.S. market, but NOT a legal minimum: the 2018 revision of 16 CFR Part 23 removed the old 10-karat threshold, and 16 CFR 23.3(c)(1) itself gives '9 Karat Gold' as an acceptable description. 10-karat is a floor for plating fineness only (23.3(c)(2)-(3), 23.4(b)).",
     },
     {
         "karat": 14,

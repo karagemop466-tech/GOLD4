@@ -70,10 +70,10 @@
       <div class="filter-bar">
         <label>Filter by Severity
           <select id="filter-flag-severity">
-            <option value="all">All Severities (12)</option>
+            <option value="all">All Severities (16)</option>
             <option value="CRITICAL">CRITICAL — Spec Conflicts, Vermeil &amp; 404 Catches (4)</option>
-            <option value="HIGH">HIGH — XRF Spoofing, Multi-Metal &amp; Return Traps (5)</option>
-            <option value="MEDIUM">MEDIUM — Omitted Weights &amp; Sibling Repo Audit (3)</option>
+            <option value="HIGH">HIGH — XRF Spoofing, Multi-Metal &amp; Return Traps (7)</option>
+            <option value="MEDIUM">MEDIUM — Omitted Weights &amp; Sibling Repo Audit (5)</option>
           </select>
         </label>
       </div>
@@ -222,6 +222,54 @@
           <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">First automated pass of `scripts/verify_a0be79d4.py` flagged `docs/sources.html` from sibling PR #2. Live HTTP verification confirmed BOTH `ftc.gov/business-center/advertising-and-marketing` AND `nist.gov/publications/nist-special-publication-811` returned HTTP `404 Page Not Found`! Replaced with verified `200 OK` primary URLs (`consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry`, `ecfr.gov/.../part-23`, and `nist.gov/pml/special-publication-811`) and permanently blocklisted both 404 URLs in CI.</p>
           <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> Remediated across `/docs/sources.html` and permanently enforced in GitHub Actions Gate 3.</p>
           <a href="https://www.nist.gov/pml/special-publication-811" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
+        </article>
+        
+        <article class="flag-card sev-HIGH" data-flag-card="1" data-severity="HIGH">
+          <div style="display:flex;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.4rem;">
+            <span class="badge badge-warn">HIGH · FLG-PASS12-01</span>
+            <span class="mono cell-sub">Anti-Hallucination Correction (legal claim) · Checked 2026-10-23</span>
+          </div>
+          <h3>Incorrect Statement That 10K Is The Legal Minimum For &#x27;Karat Gold&#x27; — Corrected Against 16 CFR 23.3(c)(1)</h3>
+          <div class="cell-sub" style="margin-bottom:0.35rem;"><strong>Target:</strong> standards.html — 14K karat table row (data/catalog_a0be79d4.json)</div>
+          <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">The site previously described 14K as the &#x27;lowest fine-gold content legally sellable as karat gold in the U.S. under 16 CFR § 23.3&#x27;. That is wrong for the current rule. Read live on 2026-10-23, 16 CFR 23.3(c)(1) lists &#x27;9 Karat Gold&#x27; and &#x27;9 Kt. Gold&#x27; among acceptable descriptions, and the 2018 revision of the Guides removed the former 10-karat threshold for the word &#x27;gold&#x27;. The 10-karat figure that remains in Part 23 is a minimum fineness for PLATING: gold plate / gold filled / gold electroplate under 23.3(c)(2)-(3) and vermeil under 23.4(b). The cell was rewritten to say exactly that, and no dataset row was affected (no 9K row exists).</p>
+          <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> Corrected in data/catalog_a0be79d4.json; the karat table now states the market practice, the removal of the 10K threshold and the surviving plating floor, each traceable to the eCFR text.</p>
+          <a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23/section-23.3" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
+        </article>
+        
+        <article class="flag-card sev-MEDIUM" data-flag-card="1" data-severity="MEDIUM">
+          <div style="display:flex;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.4rem;">
+            <span class="badge badge-warn">MEDIUM · FLG-PASS12-02</span>
+            <span class="mono cell-sub">Benchmark date drift · Checked 2026-10-23</span>
+          </div>
+          <h3>Gold Benchmark Was One Data-Day Behind: WGC Panel Re-Read Live And Moved Forward One Day</h3>
+          <div class="cell-sub" style="margin-bottom:0.35rem;"><strong>Target:</strong> data/gold_spot.json — benchmark 4,028.53/oz (21 October) → 4,024.45/oz (22 October)</div>
+          <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">The stored benchmark was USD 4,028.53/oz with the source&#x27;s own date line &#x27;21 October, 2026&#x27;, captured on 2026-10-22. Re-read live on 2026-10-23 the same panel shows USD 4,024.45/oz with &#x27;Data as of 22 October, 2026&#x27; — a -0.10% move that is a change of market data date, not of method. Every derived melt value on the site is recomputed from the newer reading; the superseded reading is retained in prior_captures.</p>
+          <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> Benchmark replaced with the fresh dated reading; prior reading kept for audit. Re-check the source date before quoting any melt value.</p>
+          <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
+        </article>
+        
+        <article class="flag-card sev-MEDIUM" data-flag-card="1" data-severity="MEDIUM">
+          <div style="display:flex;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.4rem;">
+            <span class="badge badge-warn">MEDIUM · FLG-PASS12-03</span>
+            <span class="mono cell-sub">Variant-dependent price re-confirmed live · Checked 2026-10-23</span>
+          </div>
+          <h3>Mejuri Price Still Depends On Which Variant The Page Opens On ($548 On The Solid White Gold 14k Variant)</h3>
+          <div class="cell-sub" style="margin-bottom:0.35rem;"><strong>Target:</strong> MJ-01 Mejuri Diamonds Team Ring</div>
+          <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">Re-opened live on 2026-10-23, the Diamonds Team Ring page resolved to the &#x27;Solid White Gold (14k), Natural Diamond&#x27; variant and displayed $548, while the stored row records the 14k yellow-gold material. The price figure itself was confirmed ($548), but the metal shown at that price was white gold, not the yellow gold recorded in the row. The row&#x27;s price is therefore a variant-reading, not a metal-specific quote, and its gram weight is still not published.</p>
+          <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> Price kept at $548 with PRICE_VARIANT_DEPENDENT retained and this confirmation appended to the row note. Do not treat $548 as a yellow-gold-only price; select the metal variant and re-read before buying.</p>
+          <a href="https://mejuri.com/products/diamonds-team-ring" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
+        </article>
+        
+        <article class="flag-card sev-HIGH" data-flag-card="1" data-severity="HIGH">
+          <div style="display:flex;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.4rem;">
+            <span class="badge badge-warn">HIGH · FLG-PASS12-04</span>
+            <span class="mono cell-sub">Still unverifiable online (unchanged policy) · Checked 2026-10-23</span>
+          </div>
+          <h3>No Retailer Publishes A Hallmark Image Or Maker&#x27;s Mark: The Karat Stamp Can Only Be Verified On Arrival</h3>
+          <div class="cell-sub" style="margin-bottom:0.35rem;"><strong>Target:</strong> All 64 rows — hallmark and as-delivered weight</div>
+          <p style="font-size:0.87rem;color:var(--ink-secondary);margin:0.35rem 0;">Re-checked on the live pages opened this pass: Allurez, Sarraf, Blue Nile and Mejuri publish karat in their metal field but none publishes a photograph or description of the physical stamp plus the maker&#x27;s/registered trademark that 16 CFR 23.3 and the FTC consumer guidance require next to the karat mark. The FTC&#x27;s own guidance is explicit: if the trademark is not next to the karat mark, do not buy. This cannot be settled from a web page, so hallmark_published stays false for every row and the check belongs in the on-arrival XRF step.</p>
+          <p style="font-size:0.84rem;margin:0.35rem 0;"><strong>Required Action:</strong> Keep every hallmark cell UNVERIFIED; complete the stamp + trademark check and an XRF assay with an independent jeweller inside the return window.</p>
+          <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener noreferrer" style="font-size:0.82rem;font-weight:700;">Inspect Primary Source URL ↗</a>
         </article>
         
       </div>
