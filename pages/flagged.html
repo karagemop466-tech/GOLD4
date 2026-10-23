@@ -342,12 +342,11 @@
       <p class="small">Recorded on the <a href="sellers.html">Sellers</a> page for Brilliant Earth, with the page linked.</p>
     </div>
     <div class="card">
-      <h3>The gold spot panel moved during the day while its date stayed put</h3>
-      <p>The World Gold Council page showed $0.00/oz on a second read on 2026-10-22, against the frozen
-      $4,024.45/oz used for every calculation here, while the page's date line still read "Data as of 22 October, 2026".
-      A live panel is not a fixed benchmark. This project keeps the first read so no derived number silently restates itself, and publishes the second
-      read beside it.</p>
-      <p class="small">Both reads are recorded in <span class="mono">data/gold_spot.json</span>; source: <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">World Gold Council</a>.</p>
+      <h3>The gold-spot panel keeps moving, and its date line lags the reading</h3>
+      <p>The benchmark is a live panel, not a fixed number. It was captured again on 2026-10-23 at $4,024.45/oz (the page's own date line read "Data as of 22 October, 2026"), against $4,024.36/oz on the previous capture (+0.00%). Every derived value on this site is recomputed from the newest capture, and the older reading is kept unchanged in <span class="mono">prior_captures</span> so nothing is silently overwritten.</p>
+      <p class="small">Both readings are recorded in <span class="mono">data/gold_spot.json</span> with their own retrieval dates; source:
+      <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">World Gold Council</a>.
+      A melt value computed weeks ago is not today's melt value — the <a href="calculator.html">calculator</a> lets you re-price at any spot you choose.</p>
     </div>
     <div class="card">
       <h3>No seller publishes a hallmark</h3>
@@ -387,6 +386,43 @@
       Flagged on <a href="solitaire.html">BE-01</a> and <a href="solitaire.html">BE-02</a>: open the page with
       United States / USD selected and re-read the price before relying on it.</p>
     </div>
+    <div class="card" style="border-color:#c0392b">
+      <h3>Fixed 2026-10-23 — a cited federal regulation pointed at the wrong section</h3>
+      <p>The standards page cited <em>"16 CFR § 23.9"</em> for the rule that a quality mark must be accompanied by the
+      maker's trademark. § 23.9 is <strong>pewter content</strong>; that rule is in
+      <a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23#23.10" target="_blank" rel="noopener">§ 23.10</a>
+      ("Additional guidance for the use of quality marks"), which in turn cites 15 U.S.C. § 297. Both sections were read
+      on the eCFR page on 2026-10-23 and the citation was corrected. This is the failure mode the numeric audits cannot
+      see: a citation that looks right, is plausible, and is wrong. A new offline gate
+      (<span class="mono">scripts/session_46691f83/verify_citations.py</span>) now compares every CFR citation on the site
+      against the official section headings and fails the build on a mismatch.</p>
+    </div>
+    <div class="card" style="border-color:#c0392b">
+      <h3>Fixed 2026-10-23 — a registered source URL was a 404 with an invented subtitle</h3>
+      <p><span class="mono">nist-hb44-2026</span> pointed at
+      <span class="mono">nist.gov/pml/owm/metric-publications/nist-handbook-44</span>, which returns NIST's own
+      "Page not found" (error 404), and carried the subtitle "Appendix C: Units of Mass for Precious Metals &amp; Metric
+      Carat" — wording the page never used. It now points at the live
+      <a href="https://www.nist.gov/pml/owm/nist-handbook-44-current-edition" target="_blank" rel="noopener">Handbook 44
+      current-edition page</a> with the title the page actually carries. No numeric value was ever taken from that URL:
+      the troy-ounce constant is a definition, not a citation.</p>
+    </div>
+    <div class="card">
+      <h3>Corrected 2026-10-23 — no federal page prints 31.1034768 g as an "exact" troy ounce</h3>
+      <p>NIST SP 811 Appendix B.8 lists the troy ounce as <span class="mono">3.110 348 E+01 g</span> and does
+      <em>not</em> mark it bold (exact); it does mark the metric carat <span class="mono">2.0 E-01 g</span> bold (exact).
+      The 31.1034768 g figure this calculator uses is the 480-grain definition (480 × 64.79891 mg), which is exact by
+      definition and agrees with NIST's rounded table value. The source registry previously described it as an "exact SI
+      conversion factor from NIST" — an overstatement that has been corrected. The constant itself is unchanged.</p>
+    </div>
+    <div class="card">
+      <h3>Coverage, stated plainly: 16 of 64 rows were re-read on 2026-10-23</h3>
+      <p>Three sessions re-opened pages on 23 October. This pass re-opened AL-01, SR-01, RS-01 and MJ-01 and every recorded
+      value matched (MJ-01 only on a different metal variant). AN-01 loaded but its Product Details table was not reached.
+      A parallel session live-re-fetched BE-05, BE-06, BE-07 and re-read SR-01 and SR-02. The other 48
+      rows keep their earlier capture dates and are <strong>not</strong> claimed as re-verified today. Prices and stock move;
+      re-open the linked official page before you buy.</p>
+    </div>
   </div>
 </section>
 
@@ -404,7 +440,7 @@
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
   <p>Gold benchmark: $4,024.45/oz as of 22 October, 2026 (World Gold Council) = $129.3891/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-23 10:05 UTC · dataset 64 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-23 10:05 UTC · dataset 64 rows · 31 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

@@ -1,7 +1,7 @@
 {
  "schema_version": "1.0.0",
  "dataset": "GOLD4 live source health & price reconciliation",
- "generated_utc": "2026-10-23T10:01:02Z",
+ "generated_utc": "2026-10-23T10:05:47Z",
  "evidence_artifact": "reports/live_source_check_latest.json",
  "evidence_checked_utc": "2026-10-23T10:00:09Z",
  "evidence_method": "read-only HTTPS GET of each URL, HTML stripped to text, raw price/weight snippets retained with context",
@@ -29,6 +29,7 @@
   "OK": 20,
   "REFUSED_403": 4,
   "HTTP_404": 3,
+  "NOT_CHECKED": 3,
   "EMPTY_OR_JS_SHELL": 1
  },
  "rows": [
@@ -1742,15 +1743,23 @@
  ],
  "sources": [
   {
-   "id": "ftc-gold-jewelry",
-   "publisher": "U.S. Federal Trade Commission (consumer.ftc.gov)",
-   "title": "Buying Platinum, Gold, and Silver Jewelry",
-   "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+   "id": "cfpb-fcba-en61",
+   "publisher": "Consumer Financial Protection Bureau (CFPB)",
+   "title": "How do I dispute a charge on my credit card bill? (Fair Credit Billing Act)",
+   "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
    "tier": "A",
-   "source_state": "HTTP_404",
-   "http_status": 404,
-   "checked_utc": "2026-10-23T09:59:50Z",
-   "final_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry"
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T10:00:00Z",
+   "final_url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/"
+  },
+  {
+   "id": "ecfr-12-1026-13",
+   "publisher": "Consumer Financial Protection Bureau / eCFR (National Archives) - Regulation Z",
+   "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1026/subpart-B/section-1026.13",
+   "tier": "A",
+   "source_state": "NOT_CHECKED",
+   "http_status": null
   },
   {
    "id": "ecfr-16-23",
@@ -1764,50 +1773,6 @@
    "final_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
   },
   {
-   "id": "usc-15-295",
-   "publisher": "U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 295",
-   "title": "Standard of fineness of gold articles; deviation",
-   "url": "https://www.law.cornell.edu/uscode/text/15/295",
-   "tier": "A",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T09:59:51Z",
-   "final_url": "https://www.law.cornell.edu/uscode/text/15/295"
-  },
-  {
-   "id": "usc-15-ch8",
-   "publisher": "U.S. Code (Legal Information Institute) - 15 U.S.C. ch. 8",
-   "title": "Falsely stamped gold or silver or goods manufactured therefrom (sections 291-300)",
-   "url": "https://www.law.cornell.edu/uscode/text/15/chapter-8",
-   "tier": "A",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T09:59:52Z",
-   "final_url": "https://www.law.cornell.edu/uscode/text/15/chapter-8"
-  },
-  {
-   "id": "wgc-gold-prices",
-   "publisher": "World Gold Council (Goldhub)",
-   "title": "Gold spot prices & market history",
-   "url": "https://www.gold.org/goldhub/data/gold-prices",
-   "tier": "B",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T09:59:52Z",
-   "final_url": "https://www.gold.org/goldhub/data/gold-prices"
-  },
-  {
-   "id": "lbma-prices",
-   "publisher": "London Bullion Market Association",
-   "title": "LBMA Precious Metal Prices",
-   "url": "https://www.lbma.org.uk/prices-and-data/precious-metal-prices",
-   "tier": "B",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T09:59:53Z",
-   "final_url": "https://www.lbma.org.uk/prices-and-data/lbma-precious-metal-prices"
-  },
-  {
    "id": "ftc-credit-cards",
    "publisher": "U.S. Federal Trade Commission (consumer.ftc.gov)",
    "title": "Using Credit Cards and Disputing Charges",
@@ -1819,136 +1784,26 @@
    "final_url": "https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges"
   },
   {
-   "id": "bluenile-returns",
-   "publisher": "Blue Nile",
-   "title": "Return Policy - 30-day money back guarantee",
-   "url": "https://www.bluenile.com/policies/returns",
-   "tier": "C",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T09:59:54Z",
-   "final_url": "https://www.bluenile.com/policies/returns"
-  },
-  {
-   "id": "allurez-returns",
-   "publisher": "Allurez",
-   "title": "Return Policy",
-   "url": "https://www.allurez.com/pages/return-policy",
-   "tier": "C",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T09:59:55Z",
-   "final_url": "https://www.allurez.com/pages/return-policy"
-  },
-  {
-   "id": "vrai-returns",
-   "publisher": "VRAI",
-   "title": "Returns & Exchanges",
-   "url": "https://www.vrai.com/returns-exchanges",
-   "tier": "C",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T09:59:56Z",
-   "final_url": "https://www.vrai.com/returns-exchanges"
-  },
-  {
-   "id": "mejuri-returns",
-   "publisher": "Mejuri",
-   "title": "Returns Terms & Conditions",
-   "url": "https://mejuri.com/company/returns-terms",
-   "tier": "C",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T09:59:57Z",
-   "final_url": "https://mejuri.com/company/returns-terms"
-  },
-  {
-   "id": "brilliantearth-atelier",
-   "publisher": "Brilliant Earth",
-   "title": "Atelier Solitaire Ring in 18K Yellow Gold",
-   "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
-   "tier": "C",
-   "source_state": "REFUSED_403",
-   "http_status": 403,
-   "checked_utc": "2026-10-23T09:59:57Z",
-   "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/"
-  },
-  {
-   "id": "anjolee-ms354a",
-   "publisher": "Anjolee",
-   "title": "Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)",
-   "url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
-   "tier": "C",
-   "source_state": "EMPTY_OR_JS_SHELL",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T09:59:58Z",
-   "final_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx"
-  },
-  {
-   "id": "brilliantearth-atelier-14k",
-   "publisher": "Brilliant Earth",
-   "title": "Atelier Solitaire Ring in 14K Yellow Gold",
-   "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
-   "tier": "C",
-   "source_state": "REFUSED_403",
-   "http_status": 403,
-   "checked_utc": "2026-10-23T09:59:59Z",
-   "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/"
-  },
-  {
-   "id": "kitco-gold-spot",
-   "publisher": "Kitco Metals Inc.",
-   "title": "Live Gold Spot Price & Unit Conversion Table",
-   "url": "https://www.kitco.com/charts/gold",
-   "tier": "B",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T09:59:59Z",
-   "final_url": "https://www.kitco.com/charts/gold"
-  },
-  {
-   "id": "jmbullion-gold-spot",
-   "publisher": "JM Bullion",
-   "title": "Gold Price Charts — Live Ask / Bid Spot Quote",
-   "url": "https://www.jmbullion.com/charts/gold-price/",
-   "tier": "B",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T10:00:00Z",
-   "final_url": "https://www.jmbullion.com/charts/gold-price/"
-  },
-  {
-   "id": "cfpb-fcba-en61",
-   "publisher": "Consumer Financial Protection Bureau (CFPB)",
-   "title": "How do I dispute a charge on my credit card bill? (Fair Credit Billing Act)",
-   "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
+   "id": "ftc-gold-jewelry",
+   "publisher": "U.S. Federal Trade Commission (consumer.ftc.gov)",
+   "title": "Buying Platinum, Gold, and Silver Jewelry",
+   "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
    "tier": "A",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T10:00:00Z",
-   "final_url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/"
+   "source_state": "HTTP_404",
+   "http_status": 404,
+   "checked_utc": "2026-10-23T09:59:50Z",
+   "final_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry"
   },
   {
-   "id": "gia-xrf-winter2024",
-   "publisher": "Gemological Institute of America (GIA)",
-   "title": "Chemical Analysis in the Gemological Laboratory (EDXRF Principles & Depth Limits)",
-   "url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis",
-   "tier": "B",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T10:00:01Z",
-   "final_url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis"
-  },
-  {
-   "id": "gia-electroform-fraud-2024",
-   "publisher": "Gemological Institute of America (GIA Carlsbad Laboratory)",
-   "title": "Lab Notes: Electroformed Gold Piece with Adhered 14K Hallmark Fraud Case",
-   "url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
-   "tier": "B",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T10:00:02Z",
-   "final_url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+   "id": "nist-hb44-2026",
+   "publisher": "National Institute of Standards and Technology (nist.gov)",
+   "title": "NIST Handbook 44 — Current Edition (2026): Specifications, Tolerances, and Other Technical Requirements for Weighing and Measuring Devices",
+   "url": "https://www.nist.gov/pml/owm/nist-handbook-44-current-edition",
+   "tier": "A",
+   "source_state": "HTTP_404",
+   "http_status": 404,
+   "checked_utc": "2026-10-23T10:00:06Z",
+   "final_url": "https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44"
   },
   {
    "id": "nist-sp811-pml",
@@ -1962,59 +1817,42 @@
    "final_url": "https://www.nist.gov/pml/special-publication-811"
   },
   {
-   "id": "sarraf-returns",
-   "publisher": "Sarraf Jewelry Inc.",
-   "title": "Sarraf Return Policy & Lifetime Warranty Terms",
-   "url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
-   "tier": "C",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T10:00:03Z",
-   "final_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html"
-  },
-  {
-   "id": "catbird-returns",
-   "publisher": "Catbird NYC",
-   "title": "Catbird Returns & Exchanges Policy",
-   "url": "https://www.catbirdnyc.com/returns",
-   "tier": "C",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T10:00:03Z",
-   "final_url": "https://www.catbirdnyc.com/returns"
-  },
-  {
-   "id": "mene-returns",
-   "publisher": "Menē Inc.",
-   "title": "Menē 7-Day Returns & Lifetime Buyback Policy",
-   "url": "https://mene.com/customer-care/en-US/articles/returns-319505",
-   "tier": "C",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T10:00:05Z",
-   "final_url": "https://mene.com/customer-care?hcUrl=en-US%2Farticles%2Freturns-319505"
-  },
-  {
-   "id": "brilliant-earth-returns",
-   "publisher": "Brilliant Earth, LLC",
-   "title": "Brilliant Earth Free 30-Day Returns & Resizing Exclusions Policy",
-   "url": "https://www.brilliantearth.com/30-Day-Returns/",
-   "tier": "C",
-   "source_state": "REFUSED_403",
-   "http_status": 403,
-   "checked_utc": "2026-10-23T10:00:06Z",
-   "final_url": "https://www.brilliantearth.com/30-Day-Returns/"
-  },
-  {
-   "id": "nist-hb44-2026",
-   "publisher": "National Institute of Standards and Technology (nist.gov)",
-   "title": "NIST Handbook 44 (2026 Edition) — Appendix C: Units of Mass for Precious Metals & Metric Carat",
-   "url": "https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44",
+   "id": "usc-15-1666",
+   "publisher": "U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 1666",
+   "url": "https://www.law.cornell.edu/uscode/text/15/1666",
    "tier": "A",
-   "source_state": "HTTP_404",
-   "http_status": 404,
-   "checked_utc": "2026-10-23T10:00:06Z",
-   "final_url": "https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44"
+   "source_state": "NOT_CHECKED",
+   "http_status": null
+  },
+  {
+   "id": "usc-15-295",
+   "publisher": "U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 295",
+   "title": "Standard of fineness of gold articles; deviation",
+   "url": "https://www.law.cornell.edu/uscode/text/15/295",
+   "tier": "A",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T09:59:51Z",
+   "final_url": "https://www.law.cornell.edu/uscode/text/15/295"
+  },
+  {
+   "id": "usc-15-297",
+   "publisher": "U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 297",
+   "url": "https://www.law.cornell.edu/uscode/text/15/297",
+   "tier": "A",
+   "source_state": "NOT_CHECKED",
+   "http_status": null
+  },
+  {
+   "id": "usc-15-ch8",
+   "publisher": "U.S. Code (Legal Information Institute) - 15 U.S.C. ch. 8",
+   "title": "Falsely stamped gold or silver or goods manufactured therefrom (sections 291-300)",
+   "url": "https://www.law.cornell.edu/uscode/text/15/chapter-8",
+   "tier": "A",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T09:59:52Z",
+   "final_url": "https://www.law.cornell.edu/uscode/text/15/chapter-8"
   },
   {
    "id": "bullionvault-spot",
@@ -2028,6 +1866,138 @@
    "final_url": "https://www.bullionvault.com/gold-price-chart.do"
   },
   {
+   "id": "gia-electroform-fraud-2024",
+   "publisher": "Gemological Institute of America (GIA Carlsbad Laboratory)",
+   "title": "Lab Notes: Electroformed Gold Piece with Adhered 14K Hallmark Fraud Case",
+   "url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
+   "tier": "B",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T10:00:02Z",
+   "final_url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
+  },
+  {
+   "id": "gia-xrf-winter2024",
+   "publisher": "Gemological Institute of America (GIA)",
+   "title": "Chemical Analysis in the Gemological Laboratory (EDXRF Principles & Depth Limits)",
+   "url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis",
+   "tier": "B",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T10:00:01Z",
+   "final_url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis"
+  },
+  {
+   "id": "jmbullion-gold-spot",
+   "publisher": "JM Bullion",
+   "title": "Gold Price Charts — Live Ask / Bid Spot Quote",
+   "url": "https://www.jmbullion.com/charts/gold-price/",
+   "tier": "B",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T10:00:00Z",
+   "final_url": "https://www.jmbullion.com/charts/gold-price/"
+  },
+  {
+   "id": "kitco-gold-spot",
+   "publisher": "Kitco Metals Inc.",
+   "title": "Live Gold Spot Price & Unit Conversion Table",
+   "url": "https://www.kitco.com/charts/gold",
+   "tier": "B",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T09:59:59Z",
+   "final_url": "https://www.kitco.com/charts/gold"
+  },
+  {
+   "id": "lbma-prices",
+   "publisher": "London Bullion Market Association",
+   "title": "LBMA Precious Metal Prices",
+   "url": "https://www.lbma.org.uk/prices-and-data/precious-metal-prices",
+   "tier": "B",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T09:59:53Z",
+   "final_url": "https://www.lbma.org.uk/prices-and-data/lbma-precious-metal-prices"
+  },
+  {
+   "id": "wgc-gold-prices",
+   "publisher": "World Gold Council (Goldhub)",
+   "title": "Gold spot prices & market history",
+   "url": "https://www.gold.org/goldhub/data/gold-prices",
+   "tier": "B",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T09:59:52Z",
+   "final_url": "https://www.gold.org/goldhub/data/gold-prices"
+  },
+  {
+   "id": "allurez-returns",
+   "publisher": "Allurez",
+   "title": "Return Policy",
+   "url": "https://www.allurez.com/pages/return-policy",
+   "tier": "C",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T09:59:55Z",
+   "final_url": "https://www.allurez.com/pages/return-policy"
+  },
+  {
+   "id": "anjolee-ms354a",
+   "publisher": "Anjolee",
+   "title": "Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)",
+   "url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
+   "tier": "C",
+   "source_state": "EMPTY_OR_JS_SHELL",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T09:59:58Z",
+   "final_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx"
+  },
+  {
+   "id": "bluenile-returns",
+   "publisher": "Blue Nile",
+   "title": "Return Policy - 30-day money back guarantee",
+   "url": "https://www.bluenile.com/policies/returns",
+   "tier": "C",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T09:59:54Z",
+   "final_url": "https://www.bluenile.com/policies/returns"
+  },
+  {
+   "id": "brilliant-earth-returns",
+   "publisher": "Brilliant Earth, LLC",
+   "title": "Brilliant Earth Free 30-Day Returns & Resizing Exclusions Policy",
+   "url": "https://www.brilliantearth.com/30-Day-Returns/",
+   "tier": "C",
+   "source_state": "REFUSED_403",
+   "http_status": 403,
+   "checked_utc": "2026-10-23T10:00:06Z",
+   "final_url": "https://www.brilliantearth.com/30-Day-Returns/"
+  },
+  {
+   "id": "brilliantearth-atelier",
+   "publisher": "Brilliant Earth",
+   "title": "Atelier Solitaire Ring in 18K Yellow Gold",
+   "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
+   "tier": "C",
+   "source_state": "REFUSED_403",
+   "http_status": 403,
+   "checked_utc": "2026-10-23T09:59:57Z",
+   "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/"
+  },
+  {
+   "id": "brilliantearth-atelier-14k",
+   "publisher": "Brilliant Earth",
+   "title": "Atelier Solitaire Ring in 14K Yellow Gold",
+   "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
+   "tier": "C",
+   "source_state": "REFUSED_403",
+   "http_status": 403,
+   "checked_utc": "2026-10-23T09:59:59Z",
+   "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/"
+  },
+  {
    "id": "brilliantearth-returns-30d",
    "publisher": "Brilliant Earth (brilliantearth.com)",
    "title": "Brilliant Earth — Free 30-Day Returns & Resizing Exclusions (/30-Day-Returns/)",
@@ -2039,6 +2009,39 @@
    "final_url": "https://www.brilliantearth.com/30-Day-Returns/"
   },
   {
+   "id": "catbird-returns",
+   "publisher": "Catbird NYC",
+   "title": "Catbird Returns & Exchanges Policy",
+   "url": "https://www.catbirdnyc.com/returns",
+   "tier": "C",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T10:00:03Z",
+   "final_url": "https://www.catbirdnyc.com/returns"
+  },
+  {
+   "id": "mejuri-returns",
+   "publisher": "Mejuri",
+   "title": "Returns Terms & Conditions",
+   "url": "https://mejuri.com/company/returns-terms",
+   "tier": "C",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T09:59:57Z",
+   "final_url": "https://mejuri.com/company/returns-terms"
+  },
+  {
+   "id": "mene-returns",
+   "publisher": "Menē Inc.",
+   "title": "Menē 7-Day Returns & Lifetime Buyback Policy",
+   "url": "https://mene.com/customer-care/en-US/articles/returns-319505",
+   "tier": "C",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T10:00:05Z",
+   "final_url": "https://mene.com/customer-care?hcUrl=en-US%2Farticles%2Freturns-319505"
+  },
+  {
    "id": "ross-simons-returns",
    "publisher": "Ross-Simons (ross-simons.com)",
    "title": "Ross-Simons — Returns & Exchanges Policy",
@@ -2048,6 +2051,28 @@
    "http_status": 200,
    "checked_utc": "2026-10-23T10:00:08Z",
    "final_url": "https://www.ross-simons.com/pages/returns-exchanges"
+  },
+  {
+   "id": "sarraf-returns",
+   "publisher": "Sarraf Jewelry Inc.",
+   "title": "Sarraf Return Policy & Lifetime Warranty Terms",
+   "url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+   "tier": "C",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T10:00:03Z",
+   "final_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html"
+  },
+  {
+   "id": "vrai-returns",
+   "publisher": "VRAI",
+   "title": "Returns & Exchanges",
+   "url": "https://www.vrai.com/returns-exchanges",
+   "tier": "C",
+   "source_state": "OK",
+   "http_status": 200,
+   "checked_utc": "2026-10-23T09:59:56Z",
+   "final_url": "https://www.vrai.com/returns-exchanges"
   }
  ]
 }

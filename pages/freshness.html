@@ -27,7 +27,7 @@
   <p class="lede">The integrity audits in this repo are offline: they prove a value is internally consistent and carries a
   source URL. They cannot see a link that has since rotted. This page does. On <strong>2026-10-23T10:00:09Z</strong> a GitHub
   runner with open internet access re-opened all <strong>64</strong> ring URLs and
-  <strong>28</strong> registered sources, and recorded the HTTP status plus the price the page
+  <strong>31</strong> registered sources, and recorded the HTTP status plus the price the page
   itself publishes in its schema.org data.</p>
   <div class="pill-row">
     <span class="badge b-ok">45 prices re-confirmed by the page itself</span>
@@ -869,55 +869,31 @@
 
 <section class="section">
   <h2>Registered sources, checked the same way</h2>
-  <p class="sub">Government and market-benchmark documents plus retailer policy pages. 20 of 28 answered and were read.</p>
+  <p class="sub">Government and market-benchmark documents plus retailer policy pages. 20 of 31 answered and were read.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>ID</th><th>Tier</th><th>Publisher</th><th>Link</th><th class="num">HTTP</th><th>State</th></tr></thead>
     <tbody>
   <tr>
-    <td class="id">ftc-gold-jewelry</td>
+    <td class="id">cfpb-fcba-en61</td>
     <td>A</td>
-    <td>U.S. Federal Trade Commission (consumer.ftc.gov)</td>
-    <td><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">consumer.ftc.gov/articles/buying-platinum-gold-and-silver-j…</a></td>
-    <td class="num">404</td>
-    <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
+    <td>Consumer Financial Protection Bureau (CFPB)</td>
+    <td><a href="https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/" target="_blank" rel="noopener">consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-m…</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">ecfr-12-1026-13</td>
+    <td>A</td>
+    <td>Consumer Financial Protection Bureau / eCFR (National Archives) - Regulation Z</td>
+    <td><a href="https://www.ecfr.gov/current/title-12/chapter-X/part-1026/subpart-B/section-1026.13" target="_blank" rel="noopener">ecfr.gov/current/title-12/chapter-X/part-1026/subpart-B/sec…</a></td>
+    <td class="num"><span class="blank">—</span></td>
+    <td><span class="badge b-mute">not in the last check</span></td>
   </tr>
   <tr>
     <td class="id">ecfr-16-23</td>
     <td>A</td>
     <td>U.S. Federal Trade Commission / eCFR (National Archives)</td>
     <td><a href="https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23" target="_blank" rel="noopener">ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23</a></td>
-    <td class="num">200</td>
-    <td><span class="badge b-ok">page served and read</span></td>
-  </tr>
-  <tr>
-    <td class="id">usc-15-295</td>
-    <td>A</td>
-    <td>U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 295</td>
-    <td><a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">law.cornell.edu/uscode/text/15/295</a></td>
-    <td class="num">200</td>
-    <td><span class="badge b-ok">page served and read</span></td>
-  </tr>
-  <tr>
-    <td class="id">usc-15-ch8</td>
-    <td>A</td>
-    <td>U.S. Code (Legal Information Institute) - 15 U.S.C. ch. 8</td>
-    <td><a href="https://www.law.cornell.edu/uscode/text/15/chapter-8" target="_blank" rel="noopener">law.cornell.edu/uscode/text/15/chapter-8</a></td>
-    <td class="num">200</td>
-    <td><span class="badge b-ok">page served and read</span></td>
-  </tr>
-  <tr>
-    <td class="id">wgc-gold-prices</td>
-    <td>B</td>
-    <td>World Gold Council (Goldhub)</td>
-    <td><a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">gold.org/goldhub/data/gold-prices</a></td>
-    <td class="num">200</td>
-    <td><span class="badge b-ok">page served and read</span></td>
-  </tr>
-  <tr>
-    <td class="id">lbma-prices</td>
-    <td>B</td>
-    <td>London Bullion Market Association</td>
-    <td><a href="https://www.lbma.org.uk/prices-and-data/precious-metal-prices" target="_blank" rel="noopener">lbma.org.uk/prices-and-data/precious-metal-prices</a></td>
     <td class="num">200</td>
     <td><span class="badge b-ok">page served and read</span></td>
   </tr>
@@ -930,90 +906,66 @@
     <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
   </tr>
   <tr>
-    <td class="id">bluenile-returns</td>
-    <td>C</td>
-    <td>Blue Nile</td>
-    <td><a href="https://www.bluenile.com/policies/returns" target="_blank" rel="noopener">bluenile.com/policies/returns</a></td>
-    <td class="num">200</td>
-    <td><span class="badge b-ok">page served and read</span></td>
-  </tr>
-  <tr>
-    <td class="id">allurez-returns</td>
-    <td>C</td>
-    <td>Allurez</td>
-    <td><a href="https://www.allurez.com/pages/return-policy" target="_blank" rel="noopener">allurez.com/pages/return-policy</a></td>
-    <td class="num">200</td>
-    <td><span class="badge b-ok">page served and read</span></td>
-  </tr>
-  <tr>
-    <td class="id">vrai-returns</td>
-    <td>C</td>
-    <td>VRAI</td>
-    <td><a href="https://www.vrai.com/returns-exchanges" target="_blank" rel="noopener">vrai.com/returns-exchanges</a></td>
-    <td class="num">200</td>
-    <td><span class="badge b-ok">page served and read</span></td>
-  </tr>
-  <tr>
-    <td class="id">mejuri-returns</td>
-    <td>C</td>
-    <td>Mejuri</td>
-    <td><a href="https://mejuri.com/company/returns-terms" target="_blank" rel="noopener">mejuri.com/company/returns-terms</a></td>
-    <td class="num">200</td>
-    <td><span class="badge b-ok">page served and read</span></td>
-  </tr>
-  <tr>
-    <td class="id">brilliantearth-atelier</td>
-    <td>C</td>
-    <td>Brilliant Earth</td>
-    <td><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-420…</a></td>
-    <td class="num">403</td>
-    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
-  </tr>
-  <tr>
-    <td class="id">anjolee-ms354a</td>
-    <td>C</td>
-    <td>Anjolee</td>
-    <td><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Cu…</a></td>
-    <td class="num">200</td>
-    <td><span class="badge b-warn">200 but JavaScript-only shell</span></td>
-  </tr>
-  <tr>
-    <td class="id">brilliantearth-atelier-14k</td>
-    <td>C</td>
-    <td>Brilliant Earth</td>
-    <td><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444…</a></td>
-    <td class="num">403</td>
-    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
-  </tr>
-  <tr>
-    <td class="id">kitco-gold-spot</td>
-    <td>B</td>
-    <td>Kitco Metals Inc.</td>
-    <td><a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener">kitco.com/charts/gold</a></td>
-    <td class="num">200</td>
-    <td><span class="badge b-ok">page served and read</span></td>
-  </tr>
-  <tr>
-    <td class="id">jmbullion-gold-spot</td>
-    <td>B</td>
-    <td>JM Bullion</td>
-    <td><a href="https://www.jmbullion.com/charts/gold-price/" target="_blank" rel="noopener">jmbullion.com/charts/gold-price/</a></td>
-    <td class="num">200</td>
-    <td><span class="badge b-ok">page served and read</span></td>
-  </tr>
-  <tr>
-    <td class="id">cfpb-fcba-en61</td>
+    <td class="id">ftc-gold-jewelry</td>
     <td>A</td>
-    <td>Consumer Financial Protection Bureau (CFPB)</td>
-    <td><a href="https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/" target="_blank" rel="noopener">consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-m…</a></td>
+    <td>U.S. Federal Trade Commission (consumer.ftc.gov)</td>
+    <td><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">consumer.ftc.gov/articles/buying-platinum-gold-and-silver-j…</a></td>
+    <td class="num">404</td>
+    <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
+  </tr>
+  <tr>
+    <td class="id">nist-hb44-2026</td>
+    <td>A</td>
+    <td>National Institute of Standards and Technology (nist.gov)</td>
+    <td><a href="https://www.nist.gov/pml/owm/nist-handbook-44-current-edition" target="_blank" rel="noopener">nist.gov/pml/owm/nist-handbook-44-current-edition</a></td>
+    <td class="num">404</td>
+    <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
+  </tr>
+  <tr>
+    <td class="id">nist-sp811-pml</td>
+    <td>A</td>
+    <td>National Institute of Standards and Technology (NIST)</td>
+    <td><a href="https://www.nist.gov/pml/special-publication-811" target="_blank" rel="noopener">nist.gov/pml/special-publication-811</a></td>
     <td class="num">200</td>
     <td><span class="badge b-ok">page served and read</span></td>
   </tr>
   <tr>
-    <td class="id">gia-xrf-winter2024</td>
+    <td class="id">usc-15-1666</td>
+    <td>A</td>
+    <td>U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 1666</td>
+    <td><a href="https://www.law.cornell.edu/uscode/text/15/1666" target="_blank" rel="noopener">law.cornell.edu/uscode/text/15/1666</a></td>
+    <td class="num"><span class="blank">—</span></td>
+    <td><span class="badge b-mute">not in the last check</span></td>
+  </tr>
+  <tr>
+    <td class="id">usc-15-295</td>
+    <td>A</td>
+    <td>U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 295</td>
+    <td><a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">law.cornell.edu/uscode/text/15/295</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">usc-15-297</td>
+    <td>A</td>
+    <td>U.S. Code (Legal Information Institute, Cornell Law School) - 15 U.S.C. § 297</td>
+    <td><a href="https://www.law.cornell.edu/uscode/text/15/297" target="_blank" rel="noopener">law.cornell.edu/uscode/text/15/297</a></td>
+    <td class="num"><span class="blank">—</span></td>
+    <td><span class="badge b-mute">not in the last check</span></td>
+  </tr>
+  <tr>
+    <td class="id">usc-15-ch8</td>
+    <td>A</td>
+    <td>U.S. Code (Legal Information Institute) - 15 U.S.C. ch. 8</td>
+    <td><a href="https://www.law.cornell.edu/uscode/text/15/chapter-8" target="_blank" rel="noopener">law.cornell.edu/uscode/text/15/chapter-8</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">bullionvault-spot</td>
     <td>B</td>
-    <td>Gemological Institute of America (GIA)</td>
-    <td><a href="https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis" target="_blank" rel="noopener">gia.edu/gems-gemology/winter-2024-chemical-analysis</a></td>
+    <td>BullionVault (bullionvault.com)</td>
+    <td><a href="https://www.bullionvault.com/gold-price-chart.do" target="_blank" rel="noopener">bullionvault.com/gold-price-chart.do</a></td>
     <td class="num">200</td>
     <td><span class="badge b-ok">page served and read</span></td>
   </tr>
@@ -1026,34 +978,66 @@
     <td><span class="badge b-ok">page served and read</span></td>
   </tr>
   <tr>
-    <td class="id">nist-sp811-pml</td>
-    <td>A</td>
-    <td>National Institute of Standards and Technology (NIST)</td>
-    <td><a href="https://www.nist.gov/pml/special-publication-811" target="_blank" rel="noopener">nist.gov/pml/special-publication-811</a></td>
+    <td class="id">gia-xrf-winter2024</td>
+    <td>B</td>
+    <td>Gemological Institute of America (GIA)</td>
+    <td><a href="https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis" target="_blank" rel="noopener">gia.edu/gems-gemology/winter-2024-chemical-analysis</a></td>
     <td class="num">200</td>
     <td><span class="badge b-ok">page served and read</span></td>
   </tr>
   <tr>
-    <td class="id">sarraf-returns</td>
-    <td>C</td>
-    <td>Sarraf Jewelry Inc.</td>
-    <td><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Tradi…</a></td>
+    <td class="id">jmbullion-gold-spot</td>
+    <td>B</td>
+    <td>JM Bullion</td>
+    <td><a href="https://www.jmbullion.com/charts/gold-price/" target="_blank" rel="noopener">jmbullion.com/charts/gold-price/</a></td>
     <td class="num">200</td>
     <td><span class="badge b-ok">page served and read</span></td>
   </tr>
   <tr>
-    <td class="id">catbird-returns</td>
-    <td>C</td>
-    <td>Catbird NYC</td>
-    <td><a href="https://www.catbirdnyc.com/returns" target="_blank" rel="noopener">catbirdnyc.com/returns</a></td>
+    <td class="id">kitco-gold-spot</td>
+    <td>B</td>
+    <td>Kitco Metals Inc.</td>
+    <td><a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener">kitco.com/charts/gold</a></td>
     <td class="num">200</td>
     <td><span class="badge b-ok">page served and read</span></td>
   </tr>
   <tr>
-    <td class="id">mene-returns</td>
+    <td class="id">lbma-prices</td>
+    <td>B</td>
+    <td>London Bullion Market Association</td>
+    <td><a href="https://www.lbma.org.uk/prices-and-data/precious-metal-prices" target="_blank" rel="noopener">lbma.org.uk/prices-and-data/precious-metal-prices</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">wgc-gold-prices</td>
+    <td>B</td>
+    <td>World Gold Council (Goldhub)</td>
+    <td><a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">gold.org/goldhub/data/gold-prices</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">allurez-returns</td>
     <td>C</td>
-    <td>Menē Inc.</td>
-    <td><a href="https://mene.com/customer-care/en-US/articles/returns-319505" target="_blank" rel="noopener">mene.com/customer-care/en-US/articles/returns-319505</a></td>
+    <td>Allurez</td>
+    <td><a href="https://www.allurez.com/pages/return-policy" target="_blank" rel="noopener">allurez.com/pages/return-policy</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">anjolee-ms354a</td>
+    <td>C</td>
+    <td>Anjolee</td>
+    <td><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Cu…</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-warn">200 but JavaScript-only shell</span></td>
+  </tr>
+  <tr>
+    <td class="id">bluenile-returns</td>
+    <td>C</td>
+    <td>Blue Nile</td>
+    <td><a href="https://www.bluenile.com/policies/returns" target="_blank" rel="noopener">bluenile.com/policies/returns</a></td>
     <td class="num">200</td>
     <td><span class="badge b-ok">page served and read</span></td>
   </tr>
@@ -1066,20 +1050,20 @@
     <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
   </tr>
   <tr>
-    <td class="id">nist-hb44-2026</td>
-    <td>A</td>
-    <td>National Institute of Standards and Technology (nist.gov)</td>
-    <td><a href="https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44" target="_blank" rel="noopener">nist.gov/pml/owm/metric-publications/nist-handbook-44</a></td>
-    <td class="num">404</td>
-    <td><span class="badge b-bad">404 — the URL no longer resolves</span></td>
+    <td class="id">brilliantearth-atelier</td>
+    <td>C</td>
+    <td>Brilliant Earth</td>
+    <td><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-420…</a></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
   </tr>
   <tr>
-    <td class="id">bullionvault-spot</td>
-    <td>B</td>
-    <td>BullionVault (bullionvault.com)</td>
-    <td><a href="https://www.bullionvault.com/gold-price-chart.do" target="_blank" rel="noopener">bullionvault.com/gold-price-chart.do</a></td>
-    <td class="num">200</td>
-    <td><span class="badge b-ok">page served and read</span></td>
+    <td class="id">brilliantearth-atelier-14k</td>
+    <td>C</td>
+    <td>Brilliant Earth</td>
+    <td><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/" target="_blank" rel="noopener">brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444…</a></td>
+    <td class="num">403</td>
+    <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
   </tr>
   <tr>
     <td class="id">brilliantearth-returns-30d</td>
@@ -1090,10 +1074,50 @@
     <td><span class="badge b-warn">HTTP 403 — retailer blocked the check</span></td>
   </tr>
   <tr>
+    <td class="id">catbird-returns</td>
+    <td>C</td>
+    <td>Catbird NYC</td>
+    <td><a href="https://www.catbirdnyc.com/returns" target="_blank" rel="noopener">catbirdnyc.com/returns</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">mejuri-returns</td>
+    <td>C</td>
+    <td>Mejuri</td>
+    <td><a href="https://mejuri.com/company/returns-terms" target="_blank" rel="noopener">mejuri.com/company/returns-terms</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">mene-returns</td>
+    <td>C</td>
+    <td>Menē Inc.</td>
+    <td><a href="https://mene.com/customer-care/en-US/articles/returns-319505" target="_blank" rel="noopener">mene.com/customer-care/en-US/articles/returns-319505</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
     <td class="id">ross-simons-returns</td>
     <td>C</td>
     <td>Ross-Simons (ross-simons.com)</td>
     <td><a href="https://www.ross-simons.com/pages/returns-exchanges" target="_blank" rel="noopener">ross-simons.com/pages/returns-exchanges</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">sarraf-returns</td>
+    <td>C</td>
+    <td>Sarraf Jewelry Inc.</td>
+    <td><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Tradi…</a></td>
+    <td class="num">200</td>
+    <td><span class="badge b-ok">page served and read</span></td>
+  </tr>
+  <tr>
+    <td class="id">vrai-returns</td>
+    <td>C</td>
+    <td>VRAI</td>
+    <td><a href="https://www.vrai.com/returns-exchanges" target="_blank" rel="noopener">vrai.com/returns-exchanges</a></td>
     <td class="num">200</td>
     <td><span class="badge b-ok">page served and read</span></td>
   </tr></tbody>
@@ -1120,7 +1144,7 @@
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
   <p>Gold benchmark: $4,024.45/oz as of 22 October, 2026 (World Gold Council) = $129.3891/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-23 10:05 UTC · dataset 64 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-23 10:05 UTC · dataset 64 rows · 31 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>
