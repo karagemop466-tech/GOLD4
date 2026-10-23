@@ -396,7 +396,7 @@ def main() -> None:
   <h2>Source health: are these prices still what the retailers print?</h2>
   <p class="sub">The audits in this repo are offline — they cannot see a link that has since rotted. On
   <strong>{esc(health_doc['evidence_checked_utc'])}</strong> a GitHub runner with open internet re-opened every one of the
-  {len(health_doc['rows'])} ring URLs and {len(health_doc['sources'])} registered sources, read each page's own
+  {len(health_doc['rows'])} ring URLs and {len(health_doc['sources'])} registered sources listed at that time ({C['n_sources']} today), read each page's own
   structured price, and recorded the result. <a href="pages/freshness.html"><strong>Open the line-by-line table →</strong></a></p>
   <div class="kpis">
     <div class="kpi gold"><div class="n">{hp.get('CONFIRMED', 0)}</div><div class="l">prices re-confirmed</div><div class="s">page printed exactly the stored amount</div></div>
