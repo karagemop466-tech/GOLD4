@@ -273,6 +273,40 @@ def main() -> int:
             if phrase in notes_low:
                 errors.append(f"{rid}: speculative wording '{phrase}' found in audit_notes")
 
+    # 2b. Canonical strict-blank and generated-narrative checks. Historical
+    # review documents may quote old values; current generated outputs may not
+    # contradict the canonical dataset or carry a snapshot-only current price.
+    canonical_path = ROOT / "data" / "rings.json"
+    canonical = json.loads(canonical_path.read_text(encoding="utf-8"))
+    for r in canonical["rows"]:
+        rid = r["id"]
+        if r.get("price_usd") is not None and r.get("price_verification") != "V1_direct_page_fetch":
+            errors.append(f"{rid}: HALLUCINATION RISK — populated current price lacks V1 direct-page evidence")
+        elif r.get("price_usd") is None and "PRICE_UNVERIFIED" not in r.get("flags", []):
+            errors.append(f"{rid}: blank price lacks PRICE_UNVERIFIED")
+        else:
+            ok()
+
+    verification_path = ROOT / "VERIFICATION.md"
+    verification_text = verification_path.read_text(encoding="utf-8")
+    canonical_spot = json.loads((ROOT / "data" / "gold_spot.json").read_text(encoding="utf-8"))["benchmark"]
+    derived = json.loads((ROOT / "data" / "derived.json").read_text(encoding="utf-8"))
+    required_narrative = (
+        f"${canonical_spot['value_usd_per_oz']:,.2f}/oz",
+        f"Rows: **{derived['stats']['total_rows']}**",
+        f"{derived['stats']['rows_with_hallmark_published']} of {derived['stats']['total_rows']} rows publish the physical stamp",
+    )
+    for phrase in required_narrative:
+        if phrase not in verification_text:
+            errors.append(f"VERIFICATION.md: stale/missing current narrative evidence: {phrase}")
+        else:
+            ok()
+    for stale in ("0 of 20 rows", "every Brilliant Earth price/weight"):
+        if stale in verification_text:
+            errors.append(f"VERIFICATION.md: known stale hard-coded claim remains: {stale}")
+        else:
+            ok()
+
     # 3. Scan HTML pages across repository
     html_files: list[Path] = []
     for candidate in (ROOT / "index.html", ROOT / "flagged.html"):

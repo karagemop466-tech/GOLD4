@@ -190,12 +190,10 @@ def main() -> int:
             if not row.get("price_basis"):
                 fail("B-07 price basis", f"{rid}: price without a stated basis (setting only vs includes stone)")
             if row.get("price_verification") != "V1_direct_page_fetch":
-                if row.get("price_verification") == "V2_official_page_snapshot_only":
-                    warn("B-08 price verification", f"{rid}: price is only V2 evidence and must be flagged")
-                    if "PRICE_UNVERIFIED" not in row.get("flags", []) and "PRICE_V2_ONLY" not in row.get("flags", []):
-                        fail("B-08 price verification", f"{rid}: V2 price without a flag")
-                else:
-                    fail("B-08 price verification", f"{rid}: price present but verification is {row.get('price_verification')!r}")
+                # Strict publication rule: a snapshot-only or otherwise
+                # unconfirmed value may be documented in a review note, but may
+                # not occupy the current price cell.
+                fail("B-08 price verification", f"{rid}: populated price requires V1 direct-page evidence, got {row.get('price_verification')!r}")
             if not row.get("price_captured_utc"):
                 fail("B-09 price date", f"{rid}: price without capture date")
             check_url("B-10 price source", row.get("price_source_url"), row["retailer_id"], sellers, f"{rid} price")
@@ -282,6 +280,49 @@ def main() -> int:
                     mismatches += 1
     if mismatches == 0:
         ok("D-08 derived recompute", "every derived number re-derives from published inputs")
+
+    # Aggregate multiples must be like-for-like. Recompute from raw published
+    # inputs rather than trusting either derived rows or the aggregate summary.
+    def check_multiple_aggregate(label: str, selected: list[dict], actual: dict) -> None:
+        multiples = []
+        for item in selected:
+            if item.get("multiple_basis") != "setting_metal_only":
+                continue
+            if item.get("weight_g") is None or item.get("price_usd") is None:
+                continue
+            value = float(item["weight_g"]) * fineness[int(item["karat"])] * usd_g
+            multiples.append(round(float(item["price_usd"]) / value, 3))
+        expected = {
+            "multiple_count": len(multiples),
+            "multiple_min": round(min(multiples), 2) if multiples else None,
+            "multiple_max": round(max(multiples), 2) if multiples else None,
+            "multiple_avg": round(sum(multiples) / len(multiples), 2) if multiples else None,
+        }
+        for field, want in expected.items():
+            got = actual.get(field)
+            if isinstance(want, float) and isinstance(got, (int, float)):
+                matches = abs(float(got) - want) <= 0.005
+            else:
+                matches = got == want
+            if not matches:
+                fail("D-10 aggregate basis", f"{label}.{field}: {got!r} != independently recomputed {want!r} (setting/metal-only rows)")
+                return
+        ok("D-10 aggregate basis", f"{label}: {len(multiples)} setting/metal-only multiples; gemstone-inclusive rows excluded")
+
+    stats = derived.get("stats", {})
+    for karat, aggregate in stats.get("by_karat", {}).items():
+        check_multiple_aggregate(f"karat {karat}", [r for r in derived["rows"] if str(r["karat"]) == str(karat)], aggregate)
+    for category, aggregate in stats.get("by_category", {}).items():
+        check_multiple_aggregate(f"category {category}", [r for r in derived["rows"] if r["category"] == category], aggregate)
+    for retailer, aggregate in stats.get("by_retailer", {}).items():
+        check_multiple_aggregate(f"retailer {retailer}", [r for r in derived["rows"] if r["retailer_id"] == retailer], aggregate)
+
+    expected_stored = sum(1 for r in rings["rows"] if r.get("price_usd") is not None)
+    expected_v1 = sum(1 for r in rings["rows"] if r.get("price_usd") is not None and r.get("price_verification") == "V1_direct_page_fetch")
+    if stats.get("rows_with_stored_price") != expected_stored or stats.get("rows_with_verified_price") != expected_v1:
+        fail("D-11 price coverage", "stored/V1 price counts do not match the canonical rows")
+    else:
+        ok("D-11 price coverage", f"{expected_stored} stored prices; {expected_v1} with V1 direct-page evidence")
 
     # no derived number may exist without a published weight
     for row in rings["rows"]:

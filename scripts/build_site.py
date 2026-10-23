@@ -73,9 +73,11 @@ FLAG_HELP = {
     "RETURN_EXCLUSIONS_NOT_ITEMISED": ("warn", "exclusions not itemised on the page"),
     "WARRANTY_VOID_ON_THIRD_PARTY_RESIZE": ("warn", "warranty voids on third-party resize"),
     "PRICE_CURRENCY_LOCALIZED": ("warn", "page price is rendered in visitor currency"),
-    "SOURCE_URL_DEAD": ("bad", "source URL returns 404 as of the live check"),
+    "SOURCE_URL_DEAD": ("bad", "source URL returned 404 / soft-404 at the live check"),
     "SOURCE_BOT_BLOCKED": ("info", "retailer blocked the automated check (HTTP 403)"),
+    "SOURCE_NOT_REACHED": ("warn", "live check received no usable product response"),
     "PRICE_STRUCTURED_DIFFERS": ("bad", "page's structured price differs from the stored price"),
+    "PRICE_STRUCTURED_VARIANT_AMBIGUOUS": ("warn", "multiple variant offers include the stored amount; exact variant unconfirmed"),
     "SOURCE_PRICE_NOT_MACHINE_READABLE": ("info", "price not published in machine-readable form"),
 }
 
@@ -119,6 +121,20 @@ def num(v, dec: int = 2) -> str:
     if v is None:
         return '<span class="blank">—</span>'
     return f"{float(v):,.{dec}f}"
+
+
+def capture_span(rows: list[dict]) -> str:
+    """Human-readable range of actual row capture dates; never hard-coded."""
+    dates = sorted({str(r.get("price_captured_utc") or "")[:10] for r in rows if r.get("price_captured_utc")})
+    if not dates:
+        return "not captured"
+    parsed = [datetime.strptime(d, "%Y-%m-%d") for d in dates]
+    if len(parsed) == 1:
+        return f"{parsed[0].day} {parsed[0]:%B %Y}"
+    first, last = parsed[0], parsed[-1]
+    if first.year == last.year and first.month == last.month:
+        return f"{first.day}–{last.day} {last:%B %Y}"
+    return f"{first.day} {first:%B %Y} – {last.day} {last:%B %Y}"
 
 
 def badge(label: str, kind: str) -> str:
@@ -173,7 +189,7 @@ LAYOUT = """<!doctype html>
   <strong>NO HALLUCINATIONS — dated research, not live offers.</strong>
   Historical captures below are not current verified quotes or a guarantee of purity.
   Unconfirmed current prices are blank in the <a href="{root}pages/session-review.html">current-session review / Flagged for Review</a>.
-  A new World Gold Council panel read differs from the stored historical benchmark; see Current review.
+  Benchmark and product figures are dated captures; later observations may differ. See Current review.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
   Re-check official sources and request independent testing before purchase.
 </aside>
@@ -299,7 +315,7 @@ def main() -> None:
     SELLERS_BY_ID = {s["id"]: s for s in sellers_doc["sellers"]}
     st = d["stats"]
     C = {
-        "captured": "22 October 2026",
+        "captured": capture_span(rows),
         "spot_oz": d["spot"]["value_usd_per_oz"],
         "spot_g": d["spot"]["usd_per_gram"],
         "spot_date": d["spot"]["price_date"],
@@ -327,7 +343,7 @@ def main() -> None:
     _cur = {"value": float(spot["benchmark"]["value_usd_per_oz"]),
             "date": spot["benchmark"]["price_date_as_shown_on_source"],
             "read": spot["benchmark"].get("retrieved_utc", "")}
-    _prev = next((p for p in spot.get("prior_captures", []) if p.get("value_usd_per_oz")), None)
+    _prev = next((p for p in reversed(spot.get("prior_captures", [])) if p.get("value_usd_per_oz")), None)
     if _prev:
         _delta = (_cur["value"] - float(_prev["value_usd_per_oz"])) / float(_prev["value_usd_per_oz"]) * 100
         spot_history_note = (
@@ -340,6 +356,22 @@ def main() -> None:
         spot_history_note = ("Only one spot capture is recorded so far; it is the calculation basis for every derived value.")
     n_weight = st["rows_with_published_weight"]
     n_rows = st["total_rows"]
+    setting_mults = [
+        r["price_to_gold_multiple"] for r in rows
+        if r.get("multiple_basis") == "setting_metal_only" and r.get("price_to_gold_multiple") is not None
+    ]
+    setting_multiple_range = (
+        f"{num(min(setting_mults))}× to {num(max(setting_mults))}× across {len(setting_mults)} setting/metal-only rows"
+        if setting_mults else "not computable"
+    )
+    sarraf_plain_mults = [
+        r["price_to_gold_multiple"] for r in rows
+        if r["id"] in {"SR-01", "SR-02", "SR-03", "SR-04"} and r.get("price_to_gold_multiple") is not None
+    ]
+    sarraf_plain_range = (
+        f"{num(min(sarraf_plain_mults))}×–{num(max(sarraf_plain_mults))}×"
+        if sarraf_plain_mults else "not computable"
+    )
 
     PAGES.mkdir(exist_ok=True)
 
@@ -348,7 +380,7 @@ def main() -> None:
     kpis = f"""
 <div class="kpis">
   <div class="kpi"><div class="n">{st['total_rows']}</div><div class="l">rings tracked</div><div class="s">across {len(st['by_retailer'])} retailers</div></div>
-  <div class="kpi"><div class="n">{st['rows_with_verified_price']}</div><div class="l">prices read from source</div><div class="s">captured {C['captured']}</div></div>
+  <div class="kpi"><div class="n">{st['rows_with_stored_price']}</div><div class="l">V1 prices read from official pages</div><div class="s">captured {C['captured']} · unconfirmed prices blank</div></div>
   <div class="kpi"><div class="n">{st['rows_with_published_weight']}</div><div class="l">gram weights published</div><div class="s">the rest stay blank</div></div>
   <div class="kpi gold"><div class="n">${C['spot_g']:,.2f}</div><div class="l">gold per gram</div><div class="s">${C['spot_oz']:,.2f}/oz · {esc(C['spot_date'])}</div></div>
   <div class="kpi"><div class="n">{flags_total}</div><div class="l">flags raised</div><div class="s">all published for review</div></div>
@@ -397,8 +429,8 @@ def main() -> None:
   {len(health_doc['rows'])} ring URLs and {len(health_doc['sources'])} registered sources, read each page's own
   structured price, and recorded the result. <a href="pages/freshness.html"><strong>Open the line-by-line table →</strong></a></p>
   <div class="kpis">
-    <div class="kpi gold"><div class="n">{hp.get('CONFIRMED', 0)}</div><div class="l">prices re-confirmed</div><div class="s">page printed exactly the stored amount</div></div>
-    <div class="kpi"><div class="n">{hk.get('HTTP_404', 0)}</div><div class="l">dead source URLs</div><div class="s">flagged SOURCE_URL_DEAD</div></div>
+    <div class="kpi gold"><div class="n">{hp.get('CONFIRMED', 0)}</div><div class="l">prices re-confirmed</div><div class="s">single distinct USD offer matched</div></div>
+    <div class="kpi"><div class="n">{hk.get('HTTP_404', 0) + hk.get('SOFT_404', 0)}</div><div class="l">dead source URLs</div><div class="s">flagged SOURCE_URL_DEAD</div></div>
     <div class="kpi"><div class="n">{hk.get('REFUSED_403', 0)}</div><div class="l">bot-blocked checks</div><div class="s">no price claim made</div></div>
     <div class="kpi"><div class="n">{hp.get('DIFFERS', 0)}</div><div class="l">prices that differ</div><div class="s">both numbers published</div></div>
   </div>
@@ -412,12 +444,13 @@ def main() -> None:
 
     index_body = f"""
 <section class="hero">
-  <span class="eyebrow">● dated research dataset · prices captured {C['captured']} · source URLs re-opened live {esc((health_doc or {}).get('evidence_checked_utc', reverif))}</span>
-  <h1>Solid-gold engagement rings, with every number traceable to the seller's own page.</h1>
-  <p class="lede">A dated candidate dataset (not a purchase-approved shortlist): {st['total_rows']} rings from {len(st['by_retailer'])} retailers, {st['rows_with_verified_price']} prices read
-  from the retailer's page on {C['captured']}, {st['rows_with_published_weight']} published gram weights, and the gold-value arithmetic that follows from them.
+  <span class="eyebrow">● dated research dataset · historical prices captured {C['captured']} · source URLs last re-opened {esc((health_doc or {}).get('evidence_checked_utc', reverif))}</span>
+  <h1>Gold engagement-ring candidates, with every populated number traceable to the seller's own page.</h1>
+  <p class="lede">A dated candidate dataset (not a purchase-approved shortlist): {st['total_rows']} rings from {len(st['by_retailer'])} retailers, {st['rows_with_stored_price']} V1 prices read
+  from official pages on {C['captured']}, {st['rows_with_published_weight']} published gram weights, and the gold-value arithmetic that follows from them.
   The source URLs themselves were last re-opened live on {esc((health_doc or {}).get('evidence_checked_utc', reverif))}.
-  Historical source claims are preserved, not independently re-certified by this session. See Current review for blank unconfirmed current quotes and the Flagged page for known issues.</p>
+  Historical source claims are preserved, not independently re-certified by this session. See Current review for blank unconfirmed current quotes and the Flagged page for known issues.
+  <strong>Candidate does not mean checklist-passed:</strong> only {st['rows_with_solid_gold_statement']} rows explicitly say solid gold and no row publishes the physical hallmark.</p>
   <div class="pill-row">
     {badge('no hallucinated values', 'bad')}
     {badge('source link on every row', 'ok')}
@@ -441,15 +474,15 @@ def main() -> None:
   <div class="grid two">
     <div class="card">
       <h3>Only {n_weight} of {n_rows} rows can be priced against their gold at all</h3>
-      <p>Four Allurez settings, six Sarraf bands/solitaires, four Ross-Simons bands, two VRAI settings and one Anjolee ring publish a gram weight ({n_weight} rows total; Sarraf plain bands set a 1.33×–1.50× melt floor, while AN-01/SR-05/SR-06 include centre diamonds).
+      <p>Four Allurez settings, six Sarraf bands/solitaires, four Ross-Simons bands, two VRAI settings and one Anjolee ring publish a gram weight ({n_weight} rows total; Sarraf plain bands SR-01–SR-04 span {sarraf_plain_range} price ÷ derived gold value, while AN-01/SR-05/SR-06 include centre diamonds and are excluded from like-for-like aggregates).
       Blue Nile, Brilliant Earth, Catbird and Mejuri publish prices without gram weights, so their gold content stays <em>blank</em> — not guessed.</p>
-      <p class="small">Price ÷ gold-value multiple across rows with both a price and a published weight: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.
+      <p class="small">Like-for-like price ÷ gold-value range: {setting_multiple_range}. Gemstone-inclusive rows keep their own labelled ratios but do not widen this range.
       Compare Ross-Simons 18K 0.7 g band (RS-02, 0.525 g pure Au) vs 14K 1.7 g band (RS-01, 0.992 g pure Au): higher karat with lower gram weight yields 47% less fine gold. Also see <a href="dashboard.html"><strong>Assay Lab+ →</strong></a> and <a href="categories/calculator.html"><strong>Stone-Deduction Calculator →</strong></a></p>
     </div>
     <div class="card">
       <h3>18K costs more than its extra gold — and by an inconsistent amount</h3>
       <p>Same design, same retailer, only the karat changed: Petite Solitaire is {pct(pair_gap('PAIR-BN-PETITE'))} going 14K→18K, Brilliant Earth Atelier is {pct(pair_gap('PAIR-BE-ATELIER'))}, Classic Four-Prong is {pct(pair_gap('PAIR-BN-FOURPRONG'))}, Comfort Fit is {pct(pair_gap('PAIR-BN-COMFORT'))}, and Allurez Split Shank is {pct(pair_gap('PAIR-AL-SPLIT'))}.</p>
-      <p>For the Allurez pair both prices and weights are published, so the 18K premium can be split: {pct(pairs_by_id.get('PAIR-AL-SPLIT', {}).get('gold_gap_pct'))} of it is simply more gold, and the rest is labour and margin.</p>
+      <p>For the Allurez pair both prices and weights are published. Their pure-gold content differs by {pct(pairs_by_id.get('PAIR-AL-SPLIT', {}).get('gold_gap_pct'))}; the remaining retail-price difference is not explained by published gold content alone. This dataset does not allocate it to labour, margin or any other cause.</p>
       <p class="small"><a href="pages/purity.html">See the full karat analysis →</a></p>
     </div>
     <div class="card">
@@ -749,8 +782,7 @@ def main() -> None:
       <td class="src"><a href="{esc(r['weight_source_url'] or r['url'])}" target="_blank" rel="noopener">source</a></td></tr>'''
       for r in rows if r['weight_g'])}</tbody>
   </table></div>
-  <p class="small" style="margin-top:10px">Multiple = asking price ÷ the gold value of the published weight. It is a sanity check on pricing, not a verdict: a $1,035 setting with 2.86 g of
-  18K gold carries about {money(next((r['gold_value_usd'] for r in rows if r['id']=='VR-01'), 0))} of gold at spot, so roughly {num(next((r['price_to_gold_multiple'] for r in rows if r['id']=='VR-01'), None))}× the metal value — normal for a brand setting, alarming if it were 1.1× with a "solid gold" promise and a suspiciously low price.</p>
+  <p class="small" style="margin-top:10px">Multiple = captured asking price ÷ derived gold value of the published weight. It is arithmetic, not an appraisal or a fair-price verdict. Example: VR-01's captured $1,035 “From” listing price and separately sourced 2.86 g weight produce {money(next((r['gold_value_usd'] for r in rows if r['id']=='VR-01'), 0))} of derived gold value at the captured spot and a {num(next((r['price_to_gold_multiple'] for r in rows if r['id']=='VR-01'), None))}× ratio. The different URLs and variant-dependent price remain flagged; do not treat this ratio as a quote for a configured ring.</p>
 </section>
 """
     (PAGES / "calculator.html").write_text(render("Calculator", calc_body, "calculator", root="../", script=True), encoding="utf-8")
@@ -1038,13 +1070,18 @@ def main() -> None:
     FRESH_KIND = {
         "OK": ("ok", "page served and read"),
         "HTTP_404": ("bad", "404 — the URL no longer resolves"),
+        "SOFT_404": ("bad", "soft-404 — not-found body returned"),
         "REFUSED_403": ("warn", "HTTP 403 — retailer blocked the check"),
+        "REFUSED_401": ("warn", "HTTP 401 — source refused the check"),
+        "REFUSED_429": ("warn", "HTTP 429 — rate limited"),
+        "NO_RESPONSE": ("warn", "no HTTP response"),
         "EMPTY_OR_JS_SHELL": ("warn", "200 but JavaScript-only shell"),
         "NOT_CHECKED": ("mute", "not in the last check"),
     }
     PRICE_KIND = {
         "CONFIRMED": ("ok", "page's own structured price matches"),
         "DIFFERS": ("bad", "page prints a different amount"),
+        "MULTIPLE_OFFERS_INCLUDE_STORED": ("warn", "variant match ambiguous — not confirmed"),
         "SOURCE_NOT_REACHED": ("warn", "page not read — no price statement"),
         "NOT_MACHINE_READABLE": ("warn", "price not machine-readable"),
         "NO_STORED_PRICE": ("mute", "no price stored by design"),
@@ -1068,7 +1105,7 @@ def main() -> None:
         sk = health["source_states"]
         n_rows = len(health["rows"])
         n_conf = pk.get("CONFIRMED", 0)
-        n_dead = rk.get("HTTP_404", 0)
+        n_dead = rk.get("HTTP_404", 0) + rk.get("SOFT_404", 0)
         n_blocked = rk.get("REFUSED_403", 0)
         n_js = rk.get("EMPTY_OR_JS_SHELL", 0)
         checked = health.get("evidence_checked_utc", "")
@@ -1116,7 +1153,7 @@ def main() -> None:
         dead_list = "".join(
             f'<li><strong>{esc(h["id"])}</strong> · {esc(h["retailer"])} · '
             f'<a href="{esc(h["url"])}" target="_blank" rel="noopener">the URL that now 404s</a></li>'
-            for h in health["rows"] if h["source_state"] == "HTTP_404"
+            for h in health["rows"] if h["source_state"] in ("HTTP_404", "SOFT_404")
         ) or "<li>none</li>"
         def diff_items() -> str:
             items = []
@@ -1169,7 +1206,8 @@ def main() -> None:
     <div class="card">
       <h3>Reading the check honestly</h3>
       <ul>
-        <li><strong>Page served and read</strong> — a 200 response with product text. The price is compared with the page's own schema.org offer price.</li>
+        <li><strong>Page served and read</strong> — a 200 response with product text. CONFIRMED requires one distinct USD structured offer matching the stored amount; missing currency is never assumed to be USD.</li>
+        <li><strong>Variant match ambiguous</strong> — several USD offers are present and one equals the stored amount, but the exact variant/SKU is not proven. This is not counted as confirmed.</li>
         <li><strong>404</strong> — the URL stored beside the value no longer resolves. The value stays as captured (with its original date) and is flagged <span class="mono">SOURCE_URL_DEAD</span>; it is <em>not</em> re-confirmed and <em>not</em> silently deleted.</li>
         <li><strong>403</strong> — the retailer's bot protection refused the runner. That is a statement about the runner, not about the price. No claim is made.</li>
         <li><strong>JavaScript-only</strong> — the server sends a shell; the price is rendered in the browser. Again, no claim is made.</li>

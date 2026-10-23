@@ -22,6 +22,7 @@ import json
 import pathlib
 import re
 import sys
+from datetime import datetime, timezone
 
 root = pathlib.Path(__file__).resolve().parent.parent
 fails = []
@@ -112,7 +113,7 @@ for page in page_paths:
     elif generated and "https://" not in text:
         fails.append(f"{page.name}: generated page carries no source link at all")
 
-out = ["# AUDIT — hallucination/security check", "Date: 2026-10-22", "",
+out = ["# AUDIT — hallucination/security check", f"Date: {datetime.now(timezone.utc):%Y-%m-%d}", "",
        f"HARD FAILURES: {len(fails)}"] + [f"- FAIL: {x}" for x in fails] + \
       ["", f"FLAGGED (blank/unverified, by design): {len(flags)}"] + [f"- {x}" for x in flags]
 out += ["", f"Records audited: {len(records)}",

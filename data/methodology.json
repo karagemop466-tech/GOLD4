@@ -6,7 +6,7 @@
   "derived_values": "Only computed from published inputs by scripts/compute.py, using the formulas below. Derived values are labelled as derived and never presented as seller claims.",
   "verification_levels": {
    "V1_direct_page_fetch": "The official page was fetched during this project and the stated value was read from the returned page content.",
-   "V2_official_page_snapshot_only": "The value appeared only in a search-engine snapshot of the official page and was NOT re-read from the live page. Treated as UNVERIFIED for table purposes and listed on the Flagged for Review page.",
+   "V2_official_page_snapshot_only": "Historical provenance only: the value appeared in a dated snapshot of an official page but was NOT re-read from the live page. It must not populate a current price/weight cell; preserve it only in a flagged review note and leave the structured value null.",
    "U_unverified": "No official page value could be read. Field is null."
   }
  },
@@ -117,8 +117,8 @@
  },
  "price_rules": {
   "publishable_only_if": "The price was read from the retailer's own item page (or the retailer's own listing card where the row records price_basis = 'from' price).",
-  "never": "Never carry a price from a review site, price-comparison site, news article, or archived snapshot.",
-  "volatility": "Retail prices change frequently. Every price row carries its capture date and is re-checked by hand on each review pass."
+   "never": "Never carry a price from a review site, price-comparison site, news article, or third-party archive. A dated official-page snapshot that cannot be confirmed live is historical review evidence only: keep the current price null, flag PRICE_UNVERIFIED, and never convert another currency to fill it.",
+   "volatility": "Retail prices change frequently. Every populated price row carries its capture date and V1 direct-page provenance; live reconciliation reports differences without silently overwriting the stored snapshot."
  },
  "spot_rules": {
   "benchmark": "World Gold Council gold spot, USD per troy ounce, with the date shown on the source.",

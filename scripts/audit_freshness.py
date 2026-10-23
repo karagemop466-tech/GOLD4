@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""GOLD4 Gate 6 — freshness & source-health gate.
+"""GOLD4 Gate 7 — freshness & source-health gate.
 
 The five existing gates are offline. This one closes the loop: it checks that the
 *evidence about the sources* still exists, is recent, is internally consistent,
@@ -29,6 +29,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -37,6 +38,7 @@ DATA = ROOT / "data"
 
 REQUIRED_FLAG = {
     "HTTP_404": "SOURCE_URL_DEAD",
+    "SOFT_404": "SOURCE_URL_DEAD",
     "REFUSED_403": "SOURCE_BOT_BLOCKED",
     "EMPTY_OR_JS_SHELL": "SOURCE_PRICE_NOT_MACHINE_READABLE",
 }
@@ -90,10 +92,24 @@ def main() -> int:
     if health.get("network_environment_blocked"):
         bad("the last live check ran in a network-blocked environment and proves nothing")
     art = health.get("evidence_artifact", "")
+    artifact = None
+    raw_by_key = {}
     if not (ROOT / art).exists():
         bad(f"evidence artifact referenced but missing: {art}")
     else:
-        ok()
+        try:
+            artifact = json.loads((ROOT / art).read_text(encoding="utf-8"))
+            raw_by_key = {r.get("key"): r for r in artifact.get("results", [])}
+            if artifact.get("checked_utc") != health.get("evidence_checked_utc"):
+                bad("health evidence_checked_utc does not match the raw artifact timestamp")
+            else:
+                ok()
+            if artifact.get("network_environment_blocked"):
+                bad("raw evidence artifact is marked network_environment_blocked")
+            else:
+                ok()
+        except (OSError, json.JSONDecodeError) as exc:
+            bad(f"evidence artifact is unreadable: {exc}")
 
     checked = parse_utc(health.get("evidence_checked_utc", ""))
     if checked is None:
@@ -109,16 +125,35 @@ def main() -> int:
 
     rows = {r["id"]: r for r in rings["rows"]}
     health_rows = {h["id"]: h for h in health["rows"]}
+    health_sources = {h["id"]: h for h in health["sources"]}
 
     for rid, row in rows.items():
         h = health_rows.get(rid)
         if h is None:
             bad(f"{rid}: no entry in the live source-health evidence")
             continue
+        raw = raw_by_key.get(rid)
+        if raw is None:
+            bad(f"{rid}: no raw result in the referenced evidence artifact")
+            continue
+        if h.get("source_state") in ("NOT_CHECKED", "ENVIRONMENT_BLOCKED"):
+            bad(f"{rid}: source was not successfully checked ({h.get('source_state')})")
+        elif raw.get("classification") != h.get("source_state") or raw.get("http_status") != h.get("http_status"):
+            bad(f"{rid}: health summary does not match raw classification/HTTP evidence")
+        else:
+            ok()
+        if h.get("stored_price_usd") != row.get("price_usd") or h.get("stored_price_captured_utc") != row.get("price_captured_utc"):
+            bad(f"{rid}: health stored price/date differs from the canonical row; rerun reconciliation")
+        else:
+            ok()
         sc = row.get("source_check")
         if not sc:
             bad(f"{rid}: row has no source_check block (evidence not applied)")
             continue
+        if sc.get("checked_utc") != health.get("evidence_checked_utc") or sc.get("evidence_artifact") != art:
+            bad(f"{rid}: applied evidence timestamp/artifact is stale or incorrect")
+        else:
+            ok()
         if sc.get("state") != h.get("source_state"):
             bad(f"{rid}: source_check.state {sc.get('state')} != evidence {h.get('source_state')}")
             continue
@@ -135,9 +170,17 @@ def main() -> int:
             bad(f"{rid}: source state {h['source_state']} must carry the {want} flag")
         else:
             ok()
+        if h["source_state"] not in ("OK", *REQUIRED_FLAG) and "SOURCE_NOT_REACHED" not in row.get("flags", []):
+            bad(f"{rid}: unresponsive source state {h['source_state']} must carry SOURCE_NOT_REACHED")
+        else:
+            ok()
 
         if h.get("price_state") == "DIFFERS" and "PRICE_STRUCTURED_DIFFERS" not in row.get("flags", []):
             bad(f"{rid}: the page prints a different price but PRICE_STRUCTURED_DIFFERS is missing")
+        else:
+            ok()
+        if h.get("price_state") == "MULTIPLE_OFFERS_INCLUDE_STORED" and "PRICE_STRUCTURED_VARIANT_AMBIGUOUS" not in row.get("flags", []):
+            bad(f"{rid}: multi-offer match lacks PRICE_STRUCTURED_VARIANT_AMBIGUOUS")
         else:
             ok()
 
@@ -149,9 +192,9 @@ def main() -> int:
             same_day = str(row.get("price_captured_utc", "")).startswith(
                 (health.get("evidence_checked_utc") or "xx")[:10]
             )
-            if same_day:
+            if same_day and row.get("price_usd") is not None:
                 warn(
-                    f"{rid}: price dated on the evidence day although this automated check could not read the page "
+                    f"{rid}: populated price dated on the evidence day although this automated check could not read the page "
                     f"({h['source_state']}) — the value rests on a different read path and needs review"
                 )
             else:
@@ -161,19 +204,32 @@ def main() -> int:
 
         # Dead URL => the row must still carry a usable official link, and the
         # review flag has to explain itself.
-        if h["source_state"] == "HTTP_404":
+        if h["source_state"] in ("HTTP_404", "SOFT_404"):
             if not str(row.get("url", "")).startswith("https://"):
                 bad(f"{rid}: dead URL is not even an https official link")
-            elif "Pass 15 source check" not in (row.get("flag_detail") or ""):
+            elif not re.search(r"(?:Pass \d+|Live review) source check ", row.get("flag_detail") or ""):
                 warn(f"{rid}: SOURCE_URL_DEAD raised without the evidence sentence in flag_detail")
             else:
                 ok()
 
-    # 6. registered sources
+    # 6. registered sources: raw artifact → health summary → applied source row.
     for src in sources["sources"]:
+        h = health_sources.get(src["id"])
+        raw = raw_by_key.get(src["id"])
         lc = src.get("live_check") or {}
         state = lc.get("state")
-        if state in ("HTTP_404", "REFUSED_403", "EMPTY_OR_JS_SHELL"):
+        if h is None or raw is None:
+            bad(f"source {src['id']}: missing health or raw evidence")
+            continue
+        if h.get("source_state") in ("NOT_CHECKED", "ENVIRONMENT_BLOCKED"):
+            bad(f"source {src['id']}: source was not successfully checked")
+        elif raw.get("classification") != h.get("source_state") or raw.get("http_status") != h.get("http_status"):
+            bad(f"source {src['id']}: health summary differs from raw evidence")
+        elif state != h.get("source_state") or lc.get("http_status") != h.get("http_status") or lc.get("checked_utc") != h.get("checked_utc"):
+            bad(f"source {src['id']}: live_check is not the current applied evidence")
+        else:
+            ok()
+        if state in ("HTTP_404", "SOFT_404", "REFUSED_403", "EMPTY_OR_JS_SHELL"):
             if src.get("manual_verification") or src.get("url_correction"):
                 ok()
             else:
@@ -184,7 +240,7 @@ def main() -> int:
             bad(f"source {src['id']}: URL is not https")
 
     print("=" * 70)
-    print("GOLD4 FRESHNESS & SOURCE-HEALTH GATE (gate 6)")
+    print("GOLD4 FRESHNESS & SOURCE-HEALTH GATE (gate 7)")
     print("=" * 70)
     print(f"evidence checked : {health.get('evidence_checked_utc')}")
     print(f"rows             : {len(rows)}   registered sources: {len(sources['sources'])}")

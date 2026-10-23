@@ -16,9 +16,10 @@ HARD RULES (anti-hallucination)
     * A page that could not be fetched (404, 403 bot-block, JS-only shell, TLS
       failure) yields NO statement about its price. The stored value keeps its
       original provenance and is marked SOURCE_NOT_REACHED.
-    * "CONFIRMED" requires the page's own structured data (schema.org JSON-LD or
-      price meta tag) to print, in USD, exactly the stored amount. Anything else
-      is NOT_MACHINE_READABLE, never "probably fine".
+    * "CONFIRMED" requires exactly one distinct USD structured offer matching
+      the stored amount. Missing currency is never assumed to be USD. If several
+      variant offers include the stored amount, the result is explicitly
+      MULTIPLE_OFFERS_INCLUDE_STORED, not an exact-variant confirmation.
 
 Exit codes: 0 written; 4 inputs missing.
 """
@@ -145,19 +146,26 @@ def reconcile(row: dict, rec: dict | None) -> dict:
         )
         return state
 
+    # Missing currency is not evidence of USD. Do not silently assume it.
     usd = [p for p in prices if p["currency"] == "USD"]
     if not usd:
         state.update(
             price_state="NOT_MACHINE_READABLE",
             note="the page publishes no USD structured price (JSON-LD / price meta); the stored value keeps its original provenance"
             if not prices
-            else "structured data exists but is not priced in USD; no conversion is performed here",
+            else "structured data exists but has no explicit USD price (currency absent or non-USD); no currency is assumed and no conversion is performed",
         )
         return state
 
     values = sorted({p["value"] for p in usd})
-    if any(abs(v - float(stored)) < 0.005 for v in values):
-        state.update(price_state="CONFIRMED", note="the page's own structured data prints the stored amount")
+    matches = [v for v in values if abs(v - float(stored)) < 0.005]
+    if len(values) == 1 and matches:
+        state.update(price_state="CONFIRMED", note="the page's single distinct USD structured offer prints the stored amount")
+    elif matches:
+        state.update(
+            price_state="MULTIPLE_OFFERS_INCLUDE_STORED",
+            note="multiple distinct USD variant offers are present and one equals the stored amount; without an exact variant/SKU match this is not a confirmation, and nothing is overwritten",
+        )
     else:
         state.update(
             price_state="DIFFERS",
@@ -215,7 +223,7 @@ def main() -> int:
         "network_environment_blocked": art.get("network_environment_blocked"),
         "rules": [
             "Nothing here overwrites a stored value. DIFFERS is a review flag, not a correction.",
-            "CONFIRMED means the page's own schema.org/meta price prints exactly the stored USD amount.",
+            "CONFIRMED means exactly one distinct USD schema.org/meta offer matches the stored amount; missing currency and multi-variant matches are not confirmed.",
             "A page that could not be fetched (404 / 403 bot-block / JS shell) says nothing about its price.",
             "No value is inferred, converted between currencies, or averaged.",
         ],

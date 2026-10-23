@@ -1,9 +1,9 @@
 # AUDIT — hallucination/security check
-Date: 2026-10-22
+Date: 2026-10-23
 
 HARD FAILURES: 0
 
-FLAGGED (blank/unverified, by design): 49
+FLAGGED (blank/unverified, by design): 50
 - BE-01.weight_g: blank/UNVERIFIED (correct per policy)
 - BE-02.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-01.weight_g: blank/UNVERIFIED (correct per policy)
@@ -47,6 +47,7 @@ FLAGGED (blank/unverified, by design): 49
 - BN-26.price: blank/UNVERIFIED (correct per policy)
 - BN-26.weight_g: blank/UNVERIFIED (correct per policy)
 - BE-04.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-05.price: blank/UNVERIFIED (correct per policy)
 - BE-05.weight_g: blank/UNVERIFIED (correct per policy)
 - BE-06.weight_g: blank/UNVERIFIED (correct per policy)
 - BE-07.weight_g: blank/UNVERIFIED (correct per policy)

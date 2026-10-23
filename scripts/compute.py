@@ -110,12 +110,22 @@ def main() -> None:
     def bucket(pred):
         sel = [r for r in rows if pred(r)]
         with_price = [r for r in sel if r.get("price_usd") is not None]
+        with_v1_price = [r for r in with_price if r.get("price_verification") == "V1_direct_page_fetch"]
         with_weight = [r for r in sel if r.get("weight_g") is not None]
-        mults = [r["price_to_gold_multiple"] for r in sel if r.get("price_to_gold_multiple")]
+        # Never mix a gemstone-inclusive retail price into a setting/metal-only
+        # aggregate. Per-row multiples remain available with their basis label.
+        mults = [
+            r["price_to_gold_multiple"]
+            for r in sel
+            if r.get("multiple_basis") == "setting_metal_only"
+            and r.get("price_to_gold_multiple") is not None
+        ]
         return {
             "rows": len(sel),
-            "prices_verified": len(with_price),
+            "prices_stored": len(with_price),
+            "prices_verified": len(with_v1_price),
             "weights_published": len(with_weight),
+            "multiple_count": len(mults),
             "multiple_min": round(min(mults), 2) if mults else None,
             "multiple_max": round(max(mults), 2) if mults else None,
             "multiple_avg": round(sum(mults) / len(mults), 2) if mults else None,
@@ -123,7 +133,16 @@ def main() -> None:
 
     stats = {
         "total_rows": len(rows),
-        "rows_with_verified_price": sum(1 for r in rows if r.get("price_usd") is not None),
+        "rows_with_stored_price": sum(1 for r in rows if r.get("price_usd") is not None),
+        "rows_with_verified_price": sum(
+            1 for r in rows
+            if r.get("price_usd") is not None and r.get("price_verification") == "V1_direct_page_fetch"
+        ),
+        "rows_with_snapshot_only_price": sum(
+            1 for r in rows
+            if r.get("price_usd") is not None and r.get("price_verification") == "V2_official_page_snapshot_only"
+        ),
+        "multiple_aggregate_basis": "setting_metal_only; gemstone-inclusive rows excluded",
         "rows_with_published_weight": sum(1 for r in rows if r.get("weight_g") is not None),
         "rows_with_solid_gold_statement": sum(1 for r in rows if r.get("solid_gold_status") == "stated"),
         "rows_with_hallmark_published": sum(1 for r in rows if r.get("hallmark_published")),

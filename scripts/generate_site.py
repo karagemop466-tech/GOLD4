@@ -330,6 +330,9 @@ def render_calculator_widget(rings: list[dict], heading_id: str = "calc-widget")
 def render_shell(active_href: str, title: str, description: str, body_html: str, catalog: dict) -> str:
     counts = catalog["counts"] if "counts" in catalog else catalog["meta"]["counts"]
     flag_total = counts["flagged_register_entries"]
+    canonical_spot = json.loads((ROOT / "data" / "gold_spot.json").read_text(encoding="utf-8"))["benchmark"]
+    wgc_oz = canonical_spot["value_usd_per_oz"]
+    wgc_date = canonical_spot["price_date_as_shown_on_source"]
     nav_items = [
         ("index.html", "Dashboard", "64", False),
         ("dashboard.html", "Assay Lab home", "22", False),
@@ -385,14 +388,14 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
   <div class="spot-ribbon">
     <div class="spot-ribbon-inner">
       <div>
-        <span class="spot-pill">CROSS-CHECK QUOTES · 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct)</span>
+        <span class="spot-pill">DATED CROSS-CHECK QUOTES · 2026-10-22 (canonical WGC capture: ${wgc_oz:,.2f}/oz, {esc(wgc_date)})</span>
         <span class="mono" style="margin-left:0.45rem;">
           Kitco: <strong>$4,024.60/oz</strong> (<strong>$129.39/g</strong>) <a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener noreferrer">[Source ↗]</a>
           · JM Bullion: <strong>$4,039.76/oz</strong> (<strong>$129.88/g</strong>) <a href="https://www.jmbullion.com/charts/gold-price/" target="_blank" rel="noopener noreferrer">[Source ↗]</a>
         </span>
       </div>
       <div>
-        <strong>NO HALLUCINATIONS:</strong> Unconfirmed specs stay blank (<span class="mono">—</span>) · <a href="audit.html">5 Automated Audit Gates Passing ✓</a>
+        <strong>NO HALLUCINATIONS:</strong> Unconfirmed specs stay blank (<span class="mono">—</span>) · <a href="audit.html">7 Automated Audit Gates ✓</a>
       </div>
     </div>
   </div>
@@ -464,6 +467,10 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
 def build_all_pages() -> None:
     catalog = json.loads((ROOT / "data" / "catalog_a0be79d4.json").read_text(encoding="utf-8"))
     rings_legacy = json.loads((ROOT / "data" / "rings.json").read_text(encoding="utf-8"))
+    canonical_spot = json.loads((ROOT / "data" / "gold_spot.json").read_text(encoding="utf-8"))["benchmark"]
+    wgc_oz = canonical_spot["value_usd_per_oz"]
+    wgc_date = canonical_spot["price_date_as_shown_on_source"]
+    wgc_retrieved = canonical_spot["retrieved_utc"]
     rings = catalog["rings"]
     solitaires = [r for r in rings if r["category"] == "solitaires"]
     thh = [r for r in rings if r["category"] == "three-stone-halo"]
@@ -496,12 +503,12 @@ def build_all_pages() -> None:
         <div class="eyebrow">EXECUTIVE RESEARCH BRIEF · VERIFIED 2026-10-22</div>
         <h1 id="hero-heading">Buy Genuine Solid Gold Online.<br>Audit Every Gram, Stamp &amp; Return Clause.</h1>
         <p class="lead">
-          With live fine gold trading at <strong>$4,024.60/oz ($129.39/g)</strong> on <span class="mono">2026-10-22</span>,
-          even a 5-gram 18K ring holds <strong>$485.23</strong> in raw elemental gold — incentivizing widespread vermeil keyword traps,
-          omitted gram weights, mixed-metal prong heads, and title-vs-spec karat contradictions across major online jewelers.
+          At the dated Kitco capture of <strong>$4,024.60/oz ($129.39/g)</strong> on <span class="mono">2026-10-22</span>,
+          a 5-gram 18K alloy contains 3.75 g of pure gold by karat arithmetic, worth <strong>$485.23</strong> at that capture.
+          This is derived benchmark arithmetic, not an appraisal; omitted weights, mixed-metal prongs and title-versus-spec conflicts remain separately flagged.
         </p>
         <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
-          <a class="btn btn-primary" href="#catalog">Explore 22 Live-Verified Listings ↓</a>
+          <a class="btn btn-primary" href="#catalog">Explore 22 Catalogued Candidates ↓</a>
           <a class="btn" href="calculator.html">Open Full Melt &amp; Markup Calculator →</a>
           <a class="btn" href="checklist.html">Run 12-Point Buyer Checklist →</a>
           <a class="btn" href="flagged.html">Inspect {len(catalog["flagged_items"])} Flagged Irregularities →</a>
@@ -512,9 +519,9 @@ def build_all_pages() -> None:
         <span class="policy-stamp">★ MANDATORY RESEARCH STANDARD · NO HALLUCINATIONS</span>
         <h2>Zero-Hallucination &amp; Verification Commitment</h2>
         <ul>
-          <li><strong>Zero Invented Data:</strong> Every price, karat purity, gram weight, spot rate, and return policy on this site was verified line by line from live official pages on <span class="mono">2026-10-22</span>, and re-checked in the <span class="mono">2026-10-23</span> Pass 14 review. The gold benchmark driving every derived value is the World Gold Council panel <span class="mono">$4,024.45/oz</span> read on <span class="mono">2026-10-23</span> ('Data as of 22 October, 2026'); the Kitco quotes shown in the calculator are a separate, independently dated cross-check, not the benchmark.</li>
+          <li><strong>Zero Invented Data:</strong> This secondary 22-item catalogue preserves dated official-source captures and labels partial or conflicted rows; it is not a claim that every candidate passes every buying-checklist item. The canonical 64-row dashboard uses the World Gold Council capture <span class="mono">${wgc_oz:,.2f}/oz</span> read on <span class="mono">{esc(wgc_retrieved)}</span> ('Data as of {esc(wgc_date)}'). This Assay Lab calculator separately uses its own dated Kitco / JM Bullion cross-check quotes, which are not silently refreshed.</li>
           <li><strong>Strict Blank + Flag Rule:</strong> Wherever an official retailer omits gram weight, omits hallmark text, or contradicts its own karat spec, the field stays strictly blank (<span class="mono">—</span>) and is flagged <a href="flagged.html"><strong>UNVERIFIED</strong></a>.</li>
-          <li><strong>Always Check for Hallucinations:</strong> Every review pass runs <strong>three independent security/hallucination scripts</strong> (<span class="mono">check_site.py</span>, <span class="mono">verify.py</span>, <span class="mono">verify_a0be79d4.py</span>). Readers and maintainers should always verify source links directly and check for hallucinations!</li>
+          <li><strong>Always Check for Hallucinations:</strong> Every review pass should run <strong>all seven CI gates</strong>: integrity/math, site links, schema/blanks, security, hallucination scanning, citation integrity and live-evidence freshness. Readers and maintainers should always verify source links directly and check for hallucinations.</li>
         </ul>
         <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
           <a class="btn btn-sm btn-primary" href="audit.html">View Multi-Pass Security Audit →</a>
@@ -1080,7 +1087,7 @@ Thank you!</pre>
       <h1>Multi-Pass Hallucination &amp; Security Audit Log</h1>
       <p class="lead">
         Directly enforcing our <a href="index.html#zero-hallucination-policy"><strong>Front-Page No-Hallucinations Policy</strong></a>,
-        every repository review pass and every GitHub Actions build executes <strong>three independent Python security &amp; hallucination verifiers</strong>.
+        every repository review pass and every GitHub Actions build should execute <strong>all seven Python security, provenance &amp; hallucination gates</strong>.
         <strong>We strongly recommend always looking for hallucinations</strong> whenever adding or editing any row, price, formula, or citation.
       </p>
 

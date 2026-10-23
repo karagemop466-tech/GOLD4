@@ -39,7 +39,7 @@ jobs:
           ref: ${{ github.head_ref || github.ref_name }}
           fetch-depth: 0
       - name: Re-open every official source URL (read-only GET)
-        run: python3 scripts/live_source_check.py --timeout 30
+        run: python3 scripts/live_source_check.py --timeout 30 --session "${{ github.head_ref || github.ref_name }}" --pass-label "Pull request live check"
         continue-on-error: true
       - name: Publish evidence artifact (belt and braces)
         if: always()

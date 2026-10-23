@@ -18,12 +18,13 @@ WHAT THIS SCRIPT WILL AND WILL NOT DO
 Idempotent: re-running replaces the `source_check` block and does not duplicate
 flags or flag_detail sentences.
 
-Usage: python3 scripts/apply_source_health.py [--dry-run]
+Usage: python3 scripts/apply_source_health.py [--dry-run] [--pass-label "Pass 17"] [--session "arena/example"]
 """
 from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -34,28 +35,29 @@ NEW_FLAG_LABELS = {
     "SOURCE_URL_DEAD": "source URL returns 404 as of the live check",
     "SOURCE_BOT_BLOCKED": "retailer blocked the automated check (HTTP 403)",
     "PRICE_STRUCTURED_DIFFERS": "page's structured price differs from the stored price",
+    "PRICE_STRUCTURED_VARIANT_AMBIGUOUS": "several structured variant offers include the stored amount; exact variant not confirmed",
     "SOURCE_PRICE_NOT_MACHINE_READABLE": "price is not published in machine-readable form",
+    "SOURCE_NOT_REACHED": "the live check received no usable product response",
 }
 
 
-def sentence(state_row: dict, checked: str) -> str:
+def sentence(state_row: dict, checked: str, pass_label: str) -> str:
     """The exact, quoted evidence sentence appended to the row."""
     st = state_row["source_state"]
     ps = state_row["price_state"]
     found = ", ".join(
         f"{p['value']:,.2f} {p['currency'] or 'n/a'} via {p['source']}" for p in state_row.get("found_prices", [])
     )
-    head = f"Pass 15 source check {checked}: "
-    if st == "HTTP_404":
+    head = f"{pass_label} source check {checked}: "
+    if st in ("HTTP_404", "SOFT_404"):
         return head + (
-            "the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); "
-            "the stored value was read from this URL on its capture date and cannot be re-confirmed here. "
-            "No value was changed."
+            f"the stored source URL returned {st.replace('_', ' ')}. No current price or weight can be re-confirmed "
+            "at this URL by this check. Structured values were not changed; review the original capture date and evidence artifact."
         )
     if st == "REFUSED_403":
         return head + (
             "the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim "
-            "about the current price; the stored value keeps its original provenance. No value was changed."
+            "about the current price. Structured values were not changed; any stored value keeps its original provenance."
         )
     if st == "EMPTY_OR_JS_SHELL":
         return head + (
@@ -70,15 +72,26 @@ def sentence(state_row: dict, checked: str) -> str:
             f"${state_row['stored_price_usd']:,.2f}. Both numbers are shown; the stored value is NOT overwritten "
             "because the difference may be a variant/configuration selection on the page."
         )
+    if ps == "MULTIPLE_OFFERS_INCLUDE_STORED":
+        return head + (
+            f"the page publishes multiple USD variant offers ({found}); one matches the stored amount, "
+            "but this check cannot bind it to the exact row variant/SKU. It is not marked CONFIRMED and no value was changed."
+        )
     if ps == "NOT_MACHINE_READABLE":
-        return head + "the page publishes no USD structured price, so the stored value keeps its original provenance."
+        return head + "the page publishes no readable USD structured price in this check. No current USD price is inferred; any stored value keeps its original provenance."
     return head + f"source state {st}, price state {ps}."
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--pass-label", default="Live review", help="Evidence label, for example 'Pass 17'")
+    ap.add_argument("--session", default="automated source-health review", help="Session recorded in the dataset summary")
     args = ap.parse_args()
+    if not re.fullmatch(r"[A-Za-z0-9 ._-]{1,80}", args.pass_label):
+        ap.error("--pass-label contains unsupported characters")
+    if not re.fullmatch(r"[A-Za-z0-9 ./_:-]{1,120}", args.session):
+        ap.error("--session contains unsupported characters")
 
     health = json.loads((DATA / "source_health.json").read_text(encoding="utf-8"))
     rings_path = DATA / "rings.json"
@@ -105,34 +118,41 @@ def main() -> int:
         if st.get("final_url") and st["final_url"].rstrip("/") != row["url"].rstrip("/"):
             row["source_check"]["final_url"] = st["final_url"]
 
-        if st.get("source_state") == "HTTP_404":
+        source_state = st.get("source_state")
+        if source_state in ("HTTP_404", "SOFT_404"):
             flags.append("SOURCE_URL_DEAD")
-        elif st.get("source_state") == "REFUSED_403":
+        elif source_state == "REFUSED_403":
             flags.append("SOURCE_BOT_BLOCKED")
-        elif st.get("price_state") == "NOT_MACHINE_READABLE":
+        elif source_state != "OK":
+            flags.append("SOURCE_NOT_REACHED")
+        if st.get("price_state") == "NOT_MACHINE_READABLE":
             flags.append("SOURCE_PRICE_NOT_MACHINE_READABLE")
         if st.get("price_state") == "DIFFERS":
             flags.append("PRICE_STRUCTURED_DIFFERS")
-        row["flags"] = flags
+        if st.get("price_state") == "MULTIPLE_OFFERS_INCLUDE_STORED":
+            flags.append("PRICE_STRUCTURED_VARIANT_AMBIGUOUS")
+        row["flags"] = list(dict.fromkeys(flags))
 
-        # Append the evidence sentence once, keeping whatever an earlier pass wrote.
-        existing = row.get("flag_detail") or ""
-        marker = "Pass 15 source check"
-        if marker in existing:
-            existing = existing.split(" | " + marker)[0].rstrip(" |")
-        note = sentence(st, checked)
+        # Keep manual review history, but replace all earlier automated evidence
+        # segments (including Pass 15/16 duplicates) with this one latest segment.
+        existing_parts = (row.get("flag_detail") or "").split(" | ")
+        existing = " | ".join(
+            part for part in existing_parts
+            if part and not re.match(r"^(?:Pass \d+|Live review) source check ", part)
+        ).strip(" |")
+        note = sentence(st, checked, args.pass_label)
         if st.get("source_state") == "OK" and st.get("price_state") in ("CONFIRMED", "NO_STORED_PRICE"):
-            # confirmed / nothing to raise: record it in source_check only, do not
-            # clutter flag_detail on 45 healthy rows.
-            pass
+            # Confirmed / no stored price: structured evidence is enough. Remove
+            # stale automated detail while preserving every manual review note.
+            row["flag_detail"] = existing or None
         else:
             row["flag_detail"] = (existing + " | " + note).strip(" |") if existing else note
         changed += 1
 
     doc["source_health_pass"] = (
-        f"Pass 15 (session arena/03c0c10f-gold4) re-opened all {len(by_id)} store URLs live from a GitHub runner "
+        f"{args.pass_label} (session {args.session}) re-opened all {len(by_id)} store URLs live from a GitHub runner "
         f"at {health.get('evidence_checked_utc')} and recorded the HTTP status and the page's own structured price "
-        "in each row's `source_check` block. This pass changed no price, weight or URL."
+        "in each row's `source_check` block. This evidence-application step changed no price, weight or URL."
     )
     doc["source_health_checked_utc"] = health.get("evidence_checked_utc")
     doc["source_health_artifact"] = health.get("evidence_artifact")
@@ -144,19 +164,8 @@ def main() -> int:
     print(f"stamped {changed} rows in data/rings.json (no value changed)")
 
     # ---------------------------------------------------------------- sources.json
-    # Only two things are written here: the live-check result for each registered
-    # source, and one documented URL correction for a link that is now dead.
-    # Verified by hand on 2026-10-23 through a browser-rendered fetch:
-    #   https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44  -> NIST "Page not found"
-    #   https://www.nist.gov/nist-pub-series/handbook-nist-hb              -> live, describes HB 44
-    CORRECTIONS = {
-        "nist-hb44-2026": {
-            "url": "https://www.nist.gov/nist-pub-series/handbook-nist-hb",
-            "title": "NIST Handbook series — Handbook 44 (specifications, tolerances and other technical requirements for weighing and measuring devices)",
-            "retrieved_utc": "2026-10-23",
-            "dead_url": "https://www.nist.gov/pml/owm/metric-publications/nist-handbook-44",
-        }
-    }
+    # Attach live-check evidence only. This generic tool never rewrites a source
+    # URL, title or retrieval claim; any correction needs its own sourced review.
     src_doc = json.loads((DATA / "sources.json").read_text(encoding="utf-8"))
     src_health = {s["id"]: s for s in health["sources"]}
     src_changed = 0
@@ -184,32 +193,6 @@ def main() -> int:
         }
         if src["id"] in MANUAL and (src.get("live_check") or {}).get("state") not in (None, "OK"):
             src["manual_verification"] = MANUAL[src["id"]]
-        fix = CORRECTIONS.get(src["id"])
-        if fix and src.get("url") == fix["url"] and (src.get("live_check") or {}).get("http_status") == 404:
-            # idempotent re-run: the correction was already applied on a previous run
-            src["live_check"]["state"] = "URL_CORRECTED_AFTER_CHECK"
-            src["live_check"]["checked_url"] = fix["dead_url"]
-            src["live_check"]["note"] = (
-                "the 404 recorded above belongs to the URL that was in force at check time; the URL was "
-                "corrected on 2026-10-23 and the replacement was verified live by hand"
-            )
-        if fix and src.get("url") == fix["dead_url"]:
-            src["url"] = fix["url"]
-            src["title"] = fix["title"]
-            src["retrieved_utc"] = fix["retrieved_utc"]
-            src["verification"] = "V1_direct_page_fetch (re-verified 2026-10-23)"
-            src["url_correction"] = (
-                "Pass 12 (2026-10-23): the previous URL " + fix["dead_url"] + " now returns NIST's "
-                "'Page not found' (confirmed through a browser-rendered fetch and by HTTP 404 from CI). "
-                "Replaced with the live NIST Handbook series page that describes Handbook 44."
-            )
-            src["live_check"]["state"] = "URL_CORRECTED_AFTER_CHECK"
-            src["live_check"]["checked_url"] = fix["dead_url"]
-            src["live_check"]["note"] = (
-                "the 404 recorded above belongs to the URL that was in force at check time; the URL was "
-                "corrected on 2026-10-23 and the replacement was verified live by hand"
-            )
-            print(f"corrected dead source URL for {src['id']}")
     (DATA / "sources.json").write_text(json.dumps(src_doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"stamped {src_changed} registered sources in data/sources.json")
     return 0

@@ -110,6 +110,24 @@ def host_ok(url: str, allowed: set[str]) -> bool:
     return any(h == a or h.endswith("." + a) for a in allowed)
 
 
+class RedirectAllowlistViolation(Exception):
+    """Raised when a server tries to redirect evidence collection off-policy."""
+
+
+class AllowlistedRedirectHandler(urllib.request.HTTPRedirectHandler):
+    """Permit only HTTPS redirects to the same registered-host allow-list."""
+
+    def __init__(self, allowed: set[str]):
+        self.allowed = allowed
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if not newurl.lower().startswith("https://") or not host_ok(newurl, self.allowed):
+            raise urllib.error.URLError(
+                RedirectAllowlistViolation(f"redirect refused by HTTPS/host allow-list: {newurl}")
+            )
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 def strip_html(html: str) -> str:
     html = re.sub(r"(?is)<(script|style|noscript|svg)[^>]*>.*?</\1>", " ", html)
     html = re.sub(r"(?s)<[^>]+>", " ", html)
@@ -231,8 +249,8 @@ def context(text: str, m: re.Match, pad: int = 70) -> str:
     return ("…" if a else "") + text[a:b] + ("…" if b < len(text) else "")
 
 
-def fetch(url: str, timeout: int) -> dict:
-    """One read-only GET. Returns an evidence dict; never raises."""
+def fetch(url: str, timeout: int, allowed: set[str]) -> dict:
+    """One allow-listed, read-only GET. Returns evidence; never raises."""
     req = urllib.request.Request(
         url,
         headers={
@@ -243,15 +261,21 @@ def fetch(url: str, timeout: int) -> dict:
     )
     started = time.time()
     rec: dict = {"url": url, "checked_utc": utcnow()}
+    opener = urllib.request.build_opener(AllowlistedRedirectHandler(allowed))
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
+        with opener.open(req, timeout=timeout) as r:
+            final_url = r.geturl()
+            if not final_url.lower().startswith("https://") or not host_ok(final_url, allowed):
+                raise urllib.error.URLError(
+                    RedirectAllowlistViolation(f"final URL refused by HTTPS/host allow-list: {final_url}")
+                )
             raw = r.read(3_000_000)
             charset = r.headers.get_content_charset() or "utf-8"
             html = raw.decode(charset, errors="replace")
             rec.update(
                 {
                     "http_status": r.status,
-                    "final_url": r.geturl(),
+                    "final_url": final_url,
                     "bytes": len(raw),
                     "content_type": r.headers.get("Content-Type", ""),
                     "elapsed_ms": int((time.time() - started) * 1000),
@@ -267,7 +291,7 @@ def fetch(url: str, timeout: int) -> dict:
         rec.update(
             {
                 "http_status": e.code,
-                "final_url": url,
+                "final_url": e.geturl(),
                 "bytes": len(body),
                 "elapsed_ms": int((time.time() - started) * 1000),
                 "error": f"HTTPError {e.code}",
@@ -356,7 +380,13 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--only", default="")
     ap.add_argument("--timeout", type=int, default=30)
+    ap.add_argument("--session", default="automated source-health review")
+    ap.add_argument("--pass-label", default="Live source check")
     args = ap.parse_args()
+    if not re.fullmatch(r"[A-Za-z0-9 ./_:-]{1,120}", args.session):
+        ap.error("--session contains unsupported characters")
+    if not re.fullmatch(r"[A-Za-z0-9 ._-]{1,80}", args.pass_label):
+        ap.error("--pass-label contains unsupported characters")
 
     try:
         rings = json.loads((DATA / "rings.json").read_text())["rows"]
@@ -394,7 +424,7 @@ def main() -> int:
         if not host_ok(url, allowed):
             refused_allowlist.append({"key": key, "url": url, "why": "host not in sources.json allow-list"})
             continue
-        rec = fetch(url, args.timeout)
+        rec = fetch(url, args.timeout, allowed)
         rec.update({"key": key, "kind": kind})
         results.append(rec)
         label = classify(rec)
@@ -419,16 +449,12 @@ def main() -> int:
     artifact = {
         "artifact": "GOLD4 live source health check",
         "schema": 1,
-        # Deliberately not a hard-coded session/pass: this script is run by the
-        # workflow on whichever branch is being published, and an artifact that
-        # names the wrong session is a provenance bug (Pass 18 fixed that).
-        "session": os.environ.get("GOLD4_EVIDENCE_SESSION")
-        or os.environ.get("GITHUB_HEAD_REF")
-        or os.environ.get("GITHUB_REF_NAME")
-        or "local-run",
-        "pass": "auto (recorded in data/verification_log.json by the reviewing pass)",
+        # Deliberately not a hard-coded session/pass. CLI overrides and the
+        # GitHub/environment defaults are validated before reaching this record.
+        "session": args.session,
+        "pass": args.pass_label,
         "checked_utc": utcnow(),
-        "method": "read-only HTTPS GET of each URL, HTML stripped to text, raw price/weight snippets retained with context",
+        "method": "read-only HTTPS GET of each URL with HTTPS/host-allow-listed redirects; HTML stripped to text; raw price/weight snippets retained with context",
         "network_environment_blocked": env_blocked,
         "targets": len(targets),
         "allowlist_refused": refused_allowlist,
