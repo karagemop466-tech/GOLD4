@@ -97,7 +97,7 @@ NEW_ROWS = [
        "pave", "14K Yellow Gold", 14, "BE1D3939-14KY", None, 1190.0,
        "Setting only — page shows '$1,190 (Setting Only)'",
        "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
-       ["PRICE_V2_ONLY"],
+       ["PRICE_V2_ONLY", "PRICE_CURRENCY_LOCALIZED"],
        "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session.",
        "2026-10-22T23:35Z: three dated snapshots of official Brilliant Earth pages agree on $1,190 (product page + two category JSON-LD records). Live re-fetch pending (fetch-service outage 23:20-23:47Z).",
        pair="PAIR-BE-FREESIA"),
@@ -105,7 +105,7 @@ NEW_ROWS = [
        "pave", "18K Yellow Gold", 18, None, None, 1390.0,
        "Setting only — page shows '$1,390 (Setting Only)'",
        "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/",
-       ["PRICE_V2_ONLY"],
+       ["PRICE_V2_ONLY", "PRICE_CURRENCY_LOCALIZED"],
        "Snapshot of the official product page (dated 2026-09-28) showed: $1,390 (Setting Only), Metal 18K Yellow Gold. The 18K style code was not visible in the captured text, so sku stays blank rather than inferred from the 14K variant.",
        "2026-10-22T23:35Z: value re-read from the dated official-page snapshot; live re-fetch pending (outage).",
        pair="PAIR-BE-FREESIA"),
@@ -113,7 +113,7 @@ NEW_ROWS = [
        "solitaire", "14K Yellow Gold", 14, "BE1574-14KY", 1.8, 1350.0,
        "Setting only — page shows '$1,350 (Setting Only)'",
        "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
-       ["PRICE_V2_ONLY"],
+       ["PRICE_V2_ONLY", "PRICE_CURRENCY_LOCALIZED"],
        "Snapshot of the official product page (dated 2026-08-07) showed: $1,350 (Setting Only), Style BE1574-14KY, Metal 14K Yellow Gold, Width 1.8 mm, Setting Four-Prong.",
        "2026-10-22T23:39Z: value re-read from the dated official-page snapshot; live re-fetch pending (outage)."),
 
@@ -331,7 +331,7 @@ def main():
             "scope": ("19 candidate rows collected independently from official Blue Nile and Brilliant Earth pages (9 by live fetch 23:13-23:19Z, "
                       "10 from dated snapshots of the same official pages during a fetch-service outage 23:20-23:47Z, each corroborated against at "
                       "least one additional official-page read including schema.org JSON-LD where published); one live gold-spot API reading plus "
-                      "same-day Kitco/APMEX snapshot readings; integration merge of main's 47-row tree (PRs #1-#19) with this session's branch; "
+                      "same-day Kitco/APMEX snapshot readings; integration merge of main's 47-row tree (PRs #1-#21) with this session's branch; "
                       "one live alias re-fetch at 23:58Z resolving a cross-session duplicate."),
             "checked": [
                 "Every added row carries its official source URL, capture date, and either V1 (live fetch) or V2 (dated official-page snapshot, always flagged PRICE_V2_ONLY) provenance. No value was carried over from memory or secondary sources.",
@@ -341,6 +341,7 @@ def main():
                 "Gold spot cross-check: benchmark $4,028.53/oz (WGC) vs this session's independent live reading $4,028.10/oz (gold-api.com, 23:01:42Z) — 0.01% apart; Kitco ($4,062.30 @10:54 ET; $4,032.80 @14:46 ET) and APMEX ($4,042.90 @19:13 ET) snapshots sit inside the same intraday range. Recorded informationally in data/gold_spot.json; derived arithmetic still uses only the WGC benchmark.",
                 "Timestamp anomaly noted, not corrected: Pass 5 in this log is stamped 2026-10-23T00:05Z, which is ahead of the wall-clock time when it was merged (main's PR #10 merged 23:33Z on 22 Oct). Left as that session wrote it; flagged here for the record.",
                 "Ring weights: none of the 17 added rows has a retailer-published gram weight (Blue Nile and Brilliant Earth product pages do not publish one), so every added weight cell is blank with NO_WEIGHT_PUBLISHED — consistent with the published Blue Nile rows.",
+                "Brilliant Earth currency localization: consistent with the PRICE_CURRENCY_LOCALIZED flag Pass 7 placed on BE-01/BE-02, the three added Brilliant Earth rows carry the same flag; all three snapshot readings displayed US-dollar figures ('$' symbol recorded in each flag_detail), but Brilliant Earth serves currency-localized renderings, so a USD re-check is advised before purchase.",
             ],
             "result": "PASS (full pipeline + all five CI gates re-run after integration; outputs in reports/ and AUDIT.md)",
             "outcome": ("Dataset grows from 47 to 64 rows; retailer count unchanged at 10 (Blue Nile +14 including the James Allen line and one sold-out "
@@ -348,7 +349,8 @@ def main():
                         "price blank) and 9 at V2-with-flag; 2 duplicate candidates folded into corroboration notes on BE-01 and BN-10. This session's "
                         "original ids (BE-03..BE-05, BN-09..BN-23) were renumbered because main had assigned BE-03/BE-04 and BN-09..BN-12 in the meantime. "
                         "Two new flag types introduced (SALE_PRICE_VARIES_ACROSS_PAGES, SOLD_OUT_AT_CHECK) plus first use of PRICE_FROM_CATEGORY_PAGE for "
-                        "rows whose price was read from a live category-page fetch. No existing row's verified content was altered — only the two appended, "
+                        "rows whose price was read from a live category-page fetch. The three added Brilliant Earth rows also carry PRICE_CURRENCY_LOCALIZED "
+                        "for consistency with BE-01/BE-02 (Pass 7). No existing row's verified content was altered — only the two appended, "
                         "marker-guarded corroboration notes. Recommendation unchanged: re-run the gates after every change, re-fetch the V2 rows when "
                         "possible, and never fill a blank cell without an official source."),
         })

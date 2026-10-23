@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-22T23:56:23Z",
+  "generated_utc": "2026-10-23T00:08:02Z",
   "spot": {
     "value_usd_per_oz": 4028.53,
     "usd_per_gram": 129.520247,
@@ -276,7 +276,7 @@
       "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
       "price_usd": 1190.0,
       "price_source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
-      "flag_detail": "Price \"$1,190 (Setting Only)\" read from the 14K yellow gold page on 2026-10-22. The page publishes no gram weight, no hallmark and no \"solid gold\" wording. Its badge reads \"Free 1-Year Resizing\", while the earlier capture of the same page described one complimentary resize within 60 days — recorded as inconsistent rather than silently overwritten. Pass 7 (arena/1372cb32-gold4, 2026-10-22): this page is currency-localized - the re-check fetches served a EUR rendering ('1,350.00 EUR (Setting Only)') with a Global-e checkout, so the recorded USD figure could not be reproduced in this pass and is retained only from the earlier same-day USD capture. Metal (14K Yellow Gold), style (BE1D2444-14KY) and 2mm width did re-confirm. Open the page with United States / USD selected to see the recorded figure.",
+      "flag_detail": "Price \"$1,190 (Setting Only)\" read from the 14K yellow gold page on 2026-10-22. The page publishes no gram weight, no hallmark and no \"solid gold\" wording. Its badge reads \"Free 1-Year Resizing\", while the earlier capture of the same page described one complimentary resize within 60 days — recorded as inconsistent rather than silently overwritten. Pass 7 (arena/1372cb32-gold4, 2026-10-22): this page is currency-localized - the re-check fetches served a EUR rendering ('1,350.00 EUR (Setting Only)') with a Global-e checkout, so the recorded USD figure could not be reproduced in this pass and is retained only from the earlier same-day USD capture. Metal (14K Yellow Gold), style (BE1D2444-14KY) and 2mm width did re-confirm. Open the page with United States / USD selected to see the recorded figure. Cross-session corroboration (arena/22b5b06c-gold4, 2026-10-22T23:39Z): an independent dated snapshot of the same product page (2026-08-27) and schema.org JSON-LD on three official Brilliant Earth category pages (2026-08-25, 2026-09-14, 2026-09-23) all show $1,190 (Setting Only), style BE1D2444-14KY, 2 mm, claw prong — consistent with this record.",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -2399,7 +2399,8 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_V2_ONLY"
+        "PRICE_V2_ONLY",
+        "PRICE_CURRENCY_LOCALIZED"
       ],
       "flag_detail": "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session.",
       "reverified_utc": "2026-10-22",
@@ -2444,7 +2445,8 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_V2_ONLY"
+        "PRICE_V2_ONLY",
+        "PRICE_CURRENCY_LOCALIZED"
       ],
       "flag_detail": "Snapshot of the official product page (dated 2026-09-28) showed: $1,390 (Setting Only), Metal 18K Yellow Gold. The 18K style code was not visible in the captured text, so sku stays blank rather than inferred from the 14K variant.",
       "reverified_utc": "2026-10-22",
@@ -2489,7 +2491,8 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_V2_ONLY"
+        "PRICE_V2_ONLY",
+        "PRICE_CURRENCY_LOCALIZED"
       ],
       "flag_detail": "Snapshot of the official product page (dated 2026-08-07) showed: $1,350 (Setting Only), Style BE1574-14KY, Metal 14K Yellow Gold, Width 1.8 mm, Setting Four-Prong.",
       "reverified_utc": "2026-10-22",

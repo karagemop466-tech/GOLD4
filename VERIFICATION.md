@@ -1,6 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-22 23:56 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-23 00:08 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
@@ -76,9 +76,9 @@ Generated 2026-10-22 23:56 UTC from `data/*.json` by `scripts/gen_verification.p
 | BN-25 | Blue Nile | [Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen](https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661) | 14K | $1,657 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, WHITE_GOLD |
 | BN-26 | Blue Nile | [Comfort Fit Solitaire Engagement Ring In 14K Yellow Gold (James Allen style 17740y14)](https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515) | 14K | **blank** | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_UNVERIFIED, SOLD_OUT_AT_CHECK |
 | BE-04 | Brilliant Earth | [Fairmined Hollis Knife Edge Solitaire Engagement Ring](https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/) | 18K | $1,090 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, RESIZE_EXCLUDED_ON_PAGE |
-| BE-05 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/) | 14K | $1,190 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY |
-| BE-06 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/) | 18K | $1,390 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY |
-| BE-07 | Brilliant Earth | [Fleur Solitaire Ring](https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/) | 14K | $1,350 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY |
+| BE-05 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/) | 14K | $1,190 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED |
+| BE-06 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/) | 18K | $1,390 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED |
+| BE-07 | Brilliant Earth | [Fleur Solitaire Ring](https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/) | 14K | $1,350 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED |
 | RS-01 | Ross-Simons | [14kt Yellow Gold 2mm Wedding Band](https://www.ross-simons.com/jewelry/rings/571221.html) | 14K | $400 | V1 · 2026-10-22 | 1.70 g | V1 | $128.44 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | RS-02 | Ross-Simons | [Italian 18kt Yellow Gold 2mm Wedding Band](https://www.ross-simons.com/jewelry/rings/985230.html) | 18K | $249 | V1 · 2026-10-22 | 0.70 g | V1 | $68 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | RS-03 | Ross-Simons | [14kt Yellow Gold 3mm Comfort-Fit Wedding Band](https://www.ross-simons.com/jewelry/rings/820263.html) | 14K | $595 | V1 · 2026-10-22 | 2.10 g | V1 | $158.66 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
@@ -246,21 +246,13 @@ Generated 2026-10-22 23:56 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T00:02:22+00:00
-dataset rows: 64 | sellers: 10 | sources: 28
+run_utc: 2026-10-22T23:56:23+00:00
+dataset rows: 47 | sellers: 10 | sources: 28
 spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
 
-RESULT: PASS  (128 passed, 9 warnings, 0 failures)
+RESULT: PASS  (112 passed, 0 warnings, 0 failures)
 
-[WARN] B-08 price verification: BN-20: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-21: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-22: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-23: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-24: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-25: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BE-05: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BE-06: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BE-07: price is only V2 evidence and must be flagged
+No warnings, no failures.
 
 Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
 price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,
