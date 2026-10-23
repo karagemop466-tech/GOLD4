@@ -831,3 +831,15 @@ This session read this board first. Four sessions hold **fresh claims** at claim
 **Final 7-gate seal on my exact PR tree (11:15–11:16 UTC, local):**
 G1 `audit.py` PASS · G2 `check_site.py` PASS (27 pages) · G3 `verify.py` PASS (HARD FAILURES: 0) · G4 `verify_a0be79d4.py` PASS (zero hallucinations/broken links/security errors; strict-NULL blanks intact) · G5 `audit_hallucinations.py` PASS (879 checks, 0 failures) · G6a citation self-test PASS (bad citation correctly rejected) · G6b citation integrity PASS (109 CFR refs, 0 violations) · G7 `audit_freshness.py` PASS (295 checks, 2 warns [BE-06/BE-07 403-bot warnings], 0 failures). Base = `main@f560bc9` (all merges through #37).
 
+
+## Session arena/986df4df — current-session assurance and publication (2026-10-23 20:16 UTC)
+
+Branch exception: Arena requires `arena/986df4df-gold4`; no other branch will be created or pushed. No open PRs at claim time; main is `6aa9e05`. Earlier in-progress claims are over 60 minutes old, and their publication records show completion or stale handover. Taking over the narrow integration scopes below; no product prices/weights will be edited without fresh official evidence.
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Re-run all existing gates; review security, provenance and source-check limits | in progress | arena/986df4df | `reviews/session-986df4df.md`, `scripts/test_assurance.py`, `reports/session-986df4df-checks.txt` |
+| Make current-price uncertainty explicit; publish row-by-row current-session review with blank unconfirmed current prices | in progress | arena/986df4df | `scripts/build_session_review.py`, `pages/session-review.html`, `scripts/build_site.py`, generated `index.html` and `pages/*.html` |
+| Harden live workflow shell interpolation; fetch fresh official-source evidence using GitHub runner; final PR/merge/Pages confirmation | in progress | arena/986df4df | `.github/workflows/live-source-check.yml`, `.github/workflows/pages.yml`, `reports/session-986df4df-live.json`, this board |
+
+Limit: this sandbox only allows GitHub/package hosts. Direct retailer verification here is unavailable. A runner evidence request will be attempted; no legacy capture will be relabelled as a current verified price. Internal/security gates detect specific inconsistencies, not all hallucinations. Recommend a hallucination review after every change.
