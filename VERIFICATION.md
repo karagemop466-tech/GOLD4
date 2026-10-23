@@ -1,12 +1,12 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-23 00:21 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-23 09:54 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
 > **No hallucination.** A value is recorded only if it was read from the official page linked in the same row and the fetch was made during this project (verification level **V1**). If a value could not be read from the official page it is **blank** and flagged `PRICE_UNVERIFIED` / `NO_WEIGHT_PUBLISHED` / `WEIGHT_UNVERIFIED` on the Flagged for Review page. Nothing is estimated, averaged, inferred from photos, or copied from a blog, marketplace, resale listing or price-comparison site. Derived values (gold grams, gold value, price ÷ gold) are arithmetic on published inputs and are re-computed independently by `scripts/audit.py` on every pass.
 
-**Benchmark:** gold spot **$4,028.53/oz** as shown on the World Gold Council page for **21 October, 2026** (retrieved 2026-10-22) = **$129.5202/g**. Benchmark source: https://www.gold.org/goldhub/data/gold-prices
+**Benchmark:** gold spot **$4,024.45/oz** as shown on the World Gold Council page for **22 October, 2026** (retrieved 2026-10-23) = **$129.3891/g**. Benchmark source: https://www.gold.org/goldhub/data/gold-prices
 
 
 ## Coverage summary
@@ -22,11 +22,11 @@ Generated 2026-10-23 00:21 UTC from `data/*.json` by `scripts/gen_verification.p
 
 | ID | Retailer | Ring | Karat | Price | Price source (fetched) | Weight | Weight source (fetched) | Gold value (derived) | Solid wording | Hallmark | Flags |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| AL-01 | Allurez | [Engraved Floral Solitaire Engagement Ring Setting](https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold) | 14K | $585 | V1 · 2026-10-22 | 3.58 g | V1 | $270.48 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| AL-02 | Allurez | [Milgrain Trellis Solitaire Engagement Ring](https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold) | 14K | $724 | V1 · 2026-10-22 | 3.40 g | V1 | $256.88 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| AL-03 | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold) | 14K | $848 | V1 · 2026-10-22 | 4.40 g | V1 | $332.44 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| AL-04 | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold) | 18K | $1,425 | V1 · 2026-10-22 | 5.30 g | V1 | $514.84 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| AN-01 | Anjolee | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) | 14K | $870.76 | V1 · 2026-10-22 | 2.90 g | V1 | $219.11 | not stated | not published | PRICE_INCLUDES_CENTRE_STONE, CENTRE_STONE_LAB_CREATED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
+| AL-01 | Allurez | [Engraved Floral Solitaire Engagement Ring Setting](https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold) | 14K | $585 | V1 · 2026-10-22 | 3.58 g | V1 | $270.21 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| AL-02 | Allurez | [Milgrain Trellis Solitaire Engagement Ring](https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold) | 14K | $724 | V1 · 2026-10-22 | 3.40 g | V1 | $256.62 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| AL-03 | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold) | 14K | $848 | V1 · 2026-10-22 | 4.40 g | V1 | $332.10 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| AL-04 | Allurez | [Split Shank Solitaire Engagement Ring](https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold) | 18K | $1,425 | V1 · 2026-10-22 | 5.30 g | V1 | $514.32 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| AN-01 | Anjolee | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) | 14K | $870.76 | V1 · 2026-10-22 | 2.90 g | V1 | $218.88 | not stated | not published | PRICE_INCLUDES_CENTRE_STONE, CENTRE_STONE_LAB_CREATED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
 | BE-01 | Brilliant Earth | [Atelier Solitaire Ring (2 mm, claw-prong bypass)](https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/) | 14K | $1,190 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED |
 | BE-02 | Brilliant Earth | [Atelier Solitaire Ring (2 mm, claw-prong bypass)](https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/) | 18K | $1,390 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED |
 | BN-01 | Blue Nile | [Petite Solitaire Engagement Ring](https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639) | 14K | $1,000 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
@@ -42,15 +42,15 @@ Generated 2026-10-23 00:21 UTC from `data/*.json` by `scripts/gen_verification.p
 | MJ-03 | Mejuri | [Pave Diamond Slim Signet](https://mejuri.com/products/pave-diamond-slim-signet-ring) | 14K | $548 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, ENGRAVING_NON_RETURNABLE, PRICE_VARIANT_DEPENDENT |
 | MJ-04 | Mejuri | [Pave Diamond Thin Dome Ring](https://mejuri.com/products/pave-diamond-thin-dome-ring) | 14K | $798 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL |
 | MJ-05 | Mejuri | [Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)](https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring) | 14K | $598 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid Yellow Gold (14k)” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, SCS_CERT_REQUIRED_FOR_RETURN, PRICE_IS_FROM_PRICE |
-| VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.82 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND, WIDTH_UNVERIFIED |
-| VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.88 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND, WIDTH_UNVERIFIED |
+| VR-01 | VRAI | [The Classic Engagement Ring (4-prong dome, plain band)](https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861) | 18K | $1,035 | V1 · 2026-10-22 | 2.86 g | V1 | $277.54 | not stated | not published | PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND, WIDTH_UNVERIFIED |
+| VR-02 | VRAI | [Signature 6 Prong Engagement Ring (plain band)](https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301) | 18K | **blank** | **not verified** | 2.84 g | V1 | $275.60 | not stated | not published | PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND, WIDTH_UNVERIFIED |
 | BE-03 | Brilliant Earth | [Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K Shank + 14K White Gold Prongs)](https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/) | 18K | $850 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, MIXED_METAL_UNCLEAR |
-| SR-01 | Sarraf | [10k White Gold 5mm High Polished Traditional Domed Wedding Band](https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 10K | $352 | V1 · 2026-10-22 | 4.80 g | V1 | $259.04 | stated: “Material: 10K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
-| SR-02 | Sarraf | [14k Yellow Gold 6mm High Polished Comfort Fit Heavy Wedding Band](https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html) | 14K | $1,063 | V1 · 2026-10-22 | 9.40 g | V1 | $710.20 | stated: “Material: 14K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
-| SR-03 | Sarraf | [18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band](https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 18K | $871 | V1 · 2026-10-22 | 6.70 g | V1 | $650.84 | stated: “Material: 18K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
-| SR-04 | Sarraf | [18K Yellow Gold 6mm High Polished Flat Comfort Fit Heavy Band](https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html) | 18K | $1,436 | V1 · 2026-10-22 | 11.10 g | V1 | $1,078.26 | stated: “Material: 18K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
-| SR-05 | Sarraf | [14k Yellow Gold Men's Solitaire Natural Diamond Ring (0.50 ct H/SI1)](https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html) | 14K | $2,858 | V1 · 2026-10-22 | 8.00 g | V1 | $604.43 | stated: “Material: 14K Solid Gold” | not published | WEIGHT_APPROXIMATE, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED |
-| SR-06 | Sarraf | [18k Yellow Gold Men's Solitaire Natural Diamond Ring (0.74 ct J/SI1)](https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html) | 18K | $4,068 | V1 · 2026-10-22 | 6.30 g | V1 | $611.98 | stated: “Material: 18K Solid Gold” | not published | WEIGHT_APPROXIMATE, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED |
+| SR-01 | Sarraf | [10k White Gold 5mm High Polished Traditional Domed Wedding Band](https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 10K | $352 | V1 · 2026-10-22 | 4.80 g | V1 | $258.78 | stated: “Material: 10K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED, WHITE_GOLD, SALE_MSRP_ANCHOR |
+| SR-02 | Sarraf | [14k Yellow Gold 6mm High Polished Comfort Fit Heavy Wedding Band](https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html) | 14K | $1,063 | V1 · 2026-10-22 | 9.40 g | V1 | $709.48 | stated: “Material: 14K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
+| SR-03 | Sarraf | [18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band](https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 18K | $871 | V1 · 2026-10-22 | 6.70 g | V1 | $650.18 | stated: “Material: 18K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
+| SR-04 | Sarraf | [18K Yellow Gold 6mm High Polished Flat Comfort Fit Heavy Band](https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html) | 18K | $1,436 | V1 · 2026-10-22 | 11.10 g | V1 | $1,077.16 | stated: “Material: 18K Solid Gold” | not published | WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED |
+| SR-05 | Sarraf | [14k Yellow Gold Men's Solitaire Natural Diamond Ring (0.50 ct H/SI1)](https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html) | 14K | $2,858 | V1 · 2026-10-22 | 8.00 g | V1 | $603.82 | stated: “Material: 14K Solid Gold” | not published | WEIGHT_APPROXIMATE, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED |
+| SR-06 | Sarraf | [18k Yellow Gold Men's Solitaire Natural Diamond Ring (0.74 ct J/SI1)](https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html) | 18K | $4,068 | V1 · 2026-10-22 | 6.30 g | V1 | $611.36 | stated: “Material: 18K Solid Gold” | not published | WEIGHT_APPROXIMATE, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED |
 | SR-07 | Sarraf | [14k Gold 1/2 Ctw Natural Diamond Solitaire Engagement Ring (G/SI1)](https://www.sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-engagement-diamond-ring.html) | 14K | $2,183 | V1 · 2026-10-22 | **blank** | — | — | stated: “Material: 14K Solid Gold” | not published | NO_WEIGHT_PUBLISHED, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED |
 | SR-08 | Sarraf | [18k Yellow Gold 1/2 Carat Round Diamond Solitaire Engagement Ring](https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html) | 18K | $2,461 | V1 · 2026-10-22 | **blank** | — | — | stated: “Material: 18K Solid Gold” | not published | NO_WEIGHT_PUBLISHED, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED |
 | CB-01 | Catbird NYC | [The Swan Solitaire Diamond Engagement Ring (1.0mm Recycled 14K Band)](https://www.catbirdnyc.com/the-swan-solitaire-2475.html) | 14K | $3,900 | V1 · 2026-10-22 | **blank** | — | — | stated: “recycled solid 14k gold” | not published | NO_WEIGHT_PUBLISHED, PRICE_IS_FROM_PRICE, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED |
@@ -77,12 +77,12 @@ Generated 2026-10-23 00:21 UTC from `data/*.json` by `scripts/gen_verification.p
 | BN-26 | Blue Nile | [Comfort Fit Solitaire Engagement Ring In 14K Yellow Gold (James Allen style 17740y14)](https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515) | 14K | **blank** | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_UNVERIFIED, SOLD_OUT_AT_CHECK |
 | BE-04 | Brilliant Earth | [Fairmined Hollis Knife Edge Solitaire Engagement Ring](https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/) | 18K | $1,090 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, RESIZE_EXCLUDED_ON_PAGE |
 | BE-05 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/) | 14K | $1,190 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED |
-| BE-06 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/) | 18K | $1,390 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED |
-| BE-07 | Brilliant Earth | [Fleur Solitaire Ring](https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/) | 14K | $1,350 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED |
-| RS-01 | Ross-Simons | [14kt Yellow Gold 2mm Wedding Band](https://www.ross-simons.com/jewelry/rings/571221.html) | 14K | $400 | V1 · 2026-10-22 | 1.70 g | V1 | $128.44 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| RS-02 | Ross-Simons | [Italian 18kt Yellow Gold 2mm Wedding Band](https://www.ross-simons.com/jewelry/rings/985230.html) | 18K | $249 | V1 · 2026-10-22 | 0.70 g | V1 | $68 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| RS-03 | Ross-Simons | [14kt Yellow Gold 3mm Comfort-Fit Wedding Band](https://www.ross-simons.com/jewelry/rings/820263.html) | 14K | $595 | V1 · 2026-10-22 | 2.10 g | V1 | $158.66 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| RS-04 | Ross-Simons | [14kt Yellow Gold 4mm Flat Wedding Band Ring](https://www.ross-simons.com/jewelry/rings/823796.html) | 14K | $1,195 | V1 · 2026-10-22 | 4.00 g | V1 | $302.21 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| BE-06 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/) | 18K | $1,390 | V1 · 2026-10-23 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED |
+| BE-07 | Brilliant Earth | [Fleur Solitaire Ring](https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/) | 14K | $1,350 | V1 · 2026-10-23 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED |
+| RS-01 | Ross-Simons | [14kt Yellow Gold 2mm Wedding Band](https://www.ross-simons.com/jewelry/rings/571221.html) | 14K | $400 | V1 · 2026-10-22 | 1.70 g | V1 | $128.31 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| RS-02 | Ross-Simons | [Italian 18kt Yellow Gold 2mm Wedding Band](https://www.ross-simons.com/jewelry/rings/985230.html) | 18K | $249 | V1 · 2026-10-22 | 0.70 g | V1 | $67.93 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| RS-03 | Ross-Simons | [14kt Yellow Gold 3mm Comfort-Fit Wedding Band](https://www.ross-simons.com/jewelry/rings/820263.html) | 14K | $595 | V1 · 2026-10-22 | 2.10 g | V1 | $158.50 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| RS-04 | Ross-Simons | [14kt Yellow Gold 4mm Flat Wedding Band Ring](https://www.ross-simons.com/jewelry/rings/823796.html) | 14K | $1,195 | V1 · 2026-10-22 | 4.00 g | V1 | $301.91 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | RS-05 | Ross-Simons | [0.80 Carat GIA Certified Solitaire Diamond Engagement Ring](https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html) | 14K | $2,819 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, PRICE_INCLUDES_CENTRE_STONE, WHITE_GOLD, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | MJ-06 | Mejuri | [Pavé Diamond Slim Eternity Band](https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&Stone=Natural+Diamond) | 14K | $1,100 | V1 · 2026-10-22 | **blank** | — | — | stated: “14k solid gold” | not published | NO_WEIGHT_PUBLISHED, PRICE_IS_FROM_PRICE, HALLMARK_NOT_PUBLISHED, ENGRAVING_NON_RETURNABLE, COPY_CARAT_MISMATCH |
 | MJ-07 | Mejuri | [Diamonds Line Ring](https://mejuri.com/us/en/products/diamonds-line-ring) | 10K | $348 | V1 · 2026-10-22 | **blank** | — | — | stated: “10k solid gold” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, COPY_INCONSISTENT_METAL, ENGRAVING_NON_RETURNABLE, NOT_MARKETED_AS_BRIDAL |
@@ -91,23 +91,23 @@ Generated 2026-10-23 00:21 UTC from `data/*.json` by `scripts/gen_verification.p
 
 | ID | Weight (g) | Fineness | Pure gold (g) | Spot $/g | Gold value | Legal-min value (stamp − 0.007) | Price | Price ÷ gold |
 |---|---|---|---|---|---|---|---|---|
-| AL-01 | 3.58 | 0.5833 | 2.088 | $129.5202 | $270.48 | $267.24 | $585 | 2.16× |
-| AL-02 | 3.40 | 0.5833 | 1.983 | $129.5202 | $256.88 | $253.80 | $724 | 2.82× |
-| AL-03 | 4.40 | 0.5833 | 2.567 | $129.5202 | $332.44 | $328.45 | $848 | 2.55× |
-| AL-04 | 5.30 | 0.7500 | 3.975 | $129.5202 | $514.84 | $510.04 | $1,425 | 2.77× |
-| AN-01 | 2.90 | 0.5833 | 1.692 | $129.5202 | $219.11 | $216.48 | $870.76 | 3.97× |
-| VR-01 | 2.86 | 0.7500 | 2.145 | $129.5202 | $277.82 | $275.23 | $1,035 | 3.73× |
-| VR-02 | 2.84 | 0.7500 | 2.130 | $129.5202 | $275.88 | $273.30 | **blank** | **blank**× |
-| SR-01 | 4.80 | 0.4167 | 2.000 | $129.5202 | $259.04 | $254.69 | $352 | 1.36× |
-| SR-02 | 9.40 | 0.5833 | 5.483 | $129.5202 | $710.20 | $701.68 | $1,063 | 1.50× |
-| SR-03 | 6.70 | 0.7500 | 5.025 | $129.5202 | $650.84 | $644.76 | $871 | 1.34× |
-| SR-04 | 11.10 | 0.7500 | 8.325 | $129.5202 | $1,078.26 | $1,068.19 | $1,436 | 1.33× |
-| SR-05 | 8.00 | 0.5833 | 4.667 | $129.5202 | $604.43 | $597.17 | $2,858 | 4.73× |
-| SR-06 | 6.30 | 0.7500 | 4.725 | $129.5202 | $611.98 | $606.27 | $4,068 | 6.65× |
-| RS-01 | 1.70 | 0.5833 | 0.992 | $129.5202 | $128.44 | $126.90 | $400 | 3.11× |
-| RS-02 | 0.70 | 0.7500 | 0.525 | $129.5202 | $68 | $67.36 | $249 | 3.66× |
-| RS-03 | 2.10 | 0.5833 | 1.225 | $129.5202 | $158.66 | $156.76 | $595 | 3.75× |
-| RS-04 | 4.00 | 0.5833 | 2.333 | $129.5202 | $302.21 | $298.59 | $1,195 | 3.95× |
+| AL-01 | 3.58 | 0.5833 | 2.088 | $129.3891 | $270.21 | $266.97 | $585 | 2.17× |
+| AL-02 | 3.40 | 0.5833 | 1.983 | $129.3891 | $256.62 | $253.54 | $724 | 2.82× |
+| AL-03 | 4.40 | 0.5833 | 2.567 | $129.3891 | $332.10 | $328.11 | $848 | 2.55× |
+| AL-04 | 5.30 | 0.7500 | 3.975 | $129.3891 | $514.32 | $509.52 | $1,425 | 2.77× |
+| AN-01 | 2.90 | 0.5833 | 1.692 | $129.3891 | $218.88 | $216.26 | $870.76 | 3.98× |
+| VR-01 | 2.86 | 0.7500 | 2.145 | $129.3891 | $277.54 | $274.95 | $1,035 | 3.73× |
+| VR-02 | 2.84 | 0.7500 | 2.130 | $129.3891 | $275.60 | $273.03 | **blank** | **blank**× |
+| SR-01 | 4.80 | 0.4167 | 2.000 | $129.3891 | $258.78 | $254.43 | $352 | 1.36× |
+| SR-02 | 9.40 | 0.5833 | 5.483 | $129.3891 | $709.48 | $700.97 | $1,063 | 1.50× |
+| SR-03 | 6.70 | 0.7500 | 5.025 | $129.3891 | $650.18 | $644.11 | $871 | 1.34× |
+| SR-04 | 11.10 | 0.7500 | 8.325 | $129.3891 | $1,077.16 | $1,067.11 | $1,436 | 1.33× |
+| SR-05 | 8.00 | 0.5833 | 4.667 | $129.3891 | $603.82 | $596.57 | $2,858 | 4.73× |
+| SR-06 | 6.30 | 0.7500 | 4.725 | $129.3891 | $611.36 | $605.66 | $4,068 | 6.65× |
+| RS-01 | 1.70 | 0.5833 | 0.992 | $129.3891 | $128.31 | $126.77 | $400 | 3.12× |
+| RS-02 | 0.70 | 0.7500 | 0.525 | $129.3891 | $67.93 | $67.30 | $249 | 3.67× |
+| RS-03 | 2.10 | 0.5833 | 1.225 | $129.3891 | $158.50 | $156.60 | $595 | 3.75× |
+| RS-04 | 4.00 | 0.5833 | 2.333 | $129.3891 | $301.91 | $298.28 | $1,195 | 3.96× |
 
 ## Karat pairs (same design, both karats sold by the same retailer)
 
@@ -246,21 +246,13 @@ Generated 2026-10-23 00:21 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T00:16:13+00:00
+run_utc: 2026-10-23T09:54:20+00:00
 dataset rows: 64 | sellers: 10 | sources: 28
-spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
+spot benchmark: $4,024.45/oz (22 October, 2026) = $129.3891/g
 
-RESULT: PASS  (128 passed, 9 warnings, 0 failures)
+RESULT: PASS  (128 passed, 1 warnings, 0 failures)
 
-[WARN] B-08 price verification: BN-20: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-21: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-22: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-23: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-24: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-25: price is only V2 evidence and must be flagged
 [WARN] B-08 price verification: BE-05: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BE-06: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BE-07: price is only V2 evidence and must be flagged
 
 Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
 price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,

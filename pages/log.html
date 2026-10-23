@@ -107,26 +107,23 @@
       <p class="small">2026-10-23T00:35Z · The fetch-service outage that forced 9 rows to V2 snapshot provenance cleared briefly (00:20-00:33 UTC). Six Blue Nile product pages (BN-20..BN-25) were re-fetched live; the three Brilliant Earth pages (BE-05/06/07) were attempted but the outage returned mid-page before the product block.</p>
       <ul class="small"><li>BN-21/BN-22/BN-23/BN-24: live prices identical to the snapshots ($1,290 / $2,050 / $5,190 / $1,145); stock numbers, metals and widths re-read from the live pages - upgraded to V1_direct_page_fetch, PRICE_V2_ONLY removed.</li><li>BN-20: live page shows $965 (Setting Price) with NO discount - the 22 Oct sale ($772/-20%, and $724/$730/$728 on category pages) has ENDED. Price updated to the live $965; SALE_PRICE_VARIES_ACROSS_PAGES kept as a documented historical irregularity with the live resolution appended.</li><li>BN-25: live page shows $2,210 (Setting Price) with NO discount - the 22 Oct sale ($1,657/-25%) has ENDED. Price updated to the live $2,210.</li><li>BN-22: the metal-copy contradiction (&#x27;platinum solitaire setting&#x27; text vs 14K Yellow Gold specs) is STILL present on the live page - COPY_INCONSISTENT_METAL confirmed live.</li><li>BE-05/BE-06/BE-07: live re-fetch could not be completed (outage returned ~00:31-00:33Z); they keep V2 provenance and PRICE_V2_ONLY + PRICE_CURRENCY_LOCALIZED until a live read confirms them.</li></ul>
       <p class="small"><strong>Outcome:</strong> 6 of the 9 PRICE_V2_ONLY rows upgraded to V1 with live reads; 2 prices corrected to current live values (BN-20 $772-&gt;$965, BN-25 $1,657-&gt;$2,210 - both sales ended); dataset provenance now 60 V1 / 3 V2 / 1 U of 64 rows. No value was inferred: every change quotes the live page.</p>
+    </div><div class="card">
+      <h3>Pass 14 — live re-verification, official spot refresh (session arena/04f1f10d-gold4) <span class="badge b-ok">PASS (compute -&gt; build_site + generate_site -&gt; all five CI gates re-run after the edits)</span></h3>
+      <p class="small">2026-10-23T10:05Z · Independent live pass over the published 64-row tree from branch arena/04f1f10d-gold4. The three rows still carrying PRICE_V2_ONLY plus four rows with published gram weights were re-fetched directly from their official pages, and the gold benchmark was re-read from the World Gold Council. No value was copied from an earlier pass without being re-read, and no value was written that the page did not show.</p>
+      <ul class="small"><li>World Gold Council spot panel (https://www.gold.org/goldhub/data/gold-prices): 4,024.45 USD/oz, &#x27;Data as of 22 October, 2026&#x27;. Replaces the 4,028.53 / 21 October benchmark that had been in force since Pass 2; the old reading is preserved in prior_captures and every derived number was recomputed at the new rate.</li><li>gold-api.com XAU live quote as an independent cross-check: $4,025.60/oz at 2026-10-23T09:51:43Z, 0.029% from the WGC benchmark. Not used in any calculation.</li><li>BE-06 (Freesia 18K): live USD &#x27;$1,390 (Setting Only)&#x27; — matches the stored price. Upgraded V2 -&gt; V1, PRICE_V2_ONLY removed, SKU BE1D3939-18KY recorded from the live spec block, width left blank (page publishes a 2-1.3 mm taper).</li><li>BE-07 (Fleur 14K): live USD &#x27;$1,350 (Setting Only)&#x27; — matches the stored price. Upgraded V2 -&gt; V1, PRICE_V2_ONLY removed, width 1.8 mm recorded from the live spec block.</li><li>BE-05 (Freesia 14K): the live page served &#x27;EUR 1,350.00 (Setting Only)&#x27; and published no USD figure, so the stored $1,190 was NOT updated and provenance stays V2. BE-06 and BE-07 served USD within the same minutes, so the localization is per-page.</li><li>AL-01 (Allurez): &#x27;$585&#x27;, NG4426, 14k Yellow Gold, &#x27;Approximate Metal Weight 3.58 grams&#x27;, &#x27;Setting only. Center stone sold separately.&#x27; — all match the stored record.</li><li>RS-01 (Ross-Simons): &#x27;$400&#x27;, Item 571221, 14kt Yellow Gold, &#x27;Gold Weight 1.7 grams&#x27; — matches.</li><li>RS-02 (Ross-Simons): &#x27;$249&#x27;, Item 985230, &#x27;2mm 18kt Yellow Gold Polished Ring&#x27;, 18kt Yellow Gold, &#x27;Gold Weight 0.7 grams&#x27; — matches; the stored karat (18) is correct and the page is 18kt, not 14kt.</li><li>SR-01 (Sarraf): &#x27;Now: US$352.00&#x27;, SKU 10KW-LPBWB05, &#x27;10K Solid Gold&#x27;, &#x27;Approximate Metal Weight: 4.80 grams&#x27;, size-10 weight caveat — all match. New flag SALE_MSRP_ANCHOR records the page&#x27;s three price references (MSRP $1,369 / Was $412 / Now $352).</li></ul>
+      <p class="small"><strong>Outcome:</strong> All 3 remaining PRICE_V2_ONLY rows were re-examined live: 2 upgraded to V1 with matching prices and the third left V2 because the page would not serve a USD figure. The dataset benchmark is now the 22 October World Gold Council reading, so every derived gold value is current to the day of this pass. The 3 standing Gate-1 warnings (B-08, BE-05/06/07) drop to 1.</p>
     </div></div></section>
 <section class="section">
   <h2>Latest integrity audit output</h2>
   <p class="sub">Produced by <span class="mono">scripts/audit.py</span>. Any FAIL fails the build; warnings must be published on the Flagged page.</p>
   <pre class="mono" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;white-space:pre-wrap">GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T00:16:13+00:00
+run_utc: 2026-10-23T09:54:20+00:00
 dataset rows: 64 | sellers: 10 | sources: 28
-spot benchmark: $4,028.53/oz (21 October, 2026) = $129.5202/g
+spot benchmark: $4,024.45/oz (22 October, 2026) = $129.3891/g
 
-RESULT: PASS  (128 passed, 9 warnings, 0 failures)
+RESULT: PASS  (128 passed, 1 warnings, 0 failures)
 
-[WARN] B-08 price verification: BN-20: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-21: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-22: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-23: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-24: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BN-25: price is only V2 evidence and must be flagged
 [WARN] B-08 price verification: BE-05: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BE-06: price is only V2 evidence and must be flagged
-[WARN] B-08 price verification: BE-07: price is only V2 evidence and must be flagged
 
 Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
 price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,
@@ -146,9 +143,9 @@ per-row source-link requirement, and render-text sanity.
 <footer class="wrap foot">
   <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
   22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
-  <p>Gold benchmark: $4,028.53/oz as of 21 October, 2026 (World Gold Council) = $129.5202/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>Gold benchmark: $4,024.45/oz as of 22 October, 2026 (World Gold Council) = $129.3891/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-23 00:21 UTC · dataset 64 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-23 09:54 UTC · dataset 64 rows · 28 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>
