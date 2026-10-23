@@ -331,16 +331,17 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
     counts = catalog["counts"] if "counts" in catalog else catalog["meta"]["counts"]
     flag_total = counts["flagged_register_entries"]
     nav_items = [
-        ("index.html", "Main Desk (64)", "64", False),
-        ("dashboard.html", "Assay Lab", "22", False),
+        ("index.html", "Dashboard", "64", False),
+        ("dashboard.html", "Assay Lab home", "22", False),
         ("solitaires.html", "Solitaires", "8", False),
         ("three-stone-halo.html", "3-Stone & Halo", "4", False),
         ("bands.html", "Solid Bands & 24K", "9", False),
-        ("calculator.html", "Melt Calculator", None, False),
+        ("pages/calculator.html", "Melt Calculator", None, False),
         ("checklist.html", "12-Point Checklist", "12", False),
-        ("sellers.html", "Sellers", "6", False),
+        ("pages/sellers.html", "Sellers", "10", False),
         ("standards.html", "FTC & XRF Law", "5", False),
-        ("flagged.html", "Flagged Register", str(flag_total), True),
+        ("pages/flagged.html", "Flagged Register", str(flag_total), True),
+        ("pages/freshness.html", "Source Freshness", None, False),
         ("audit.html", "Security Audit", "PASS", False),
         ("coordination.html", "Git Coordination", None, False),
     ]
@@ -362,7 +363,8 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
           </div>
           <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
             <a class="btn btn-sm" href="dashboard.html#zero-hallucination-policy">Read Policy ↑</a>
-            <a class="btn btn-sm" href="flagged.html">Flagged Register →</a>
+            <a class="btn btn-sm" href="pages/flagged.html">Flagged Register (64 rows) →</a>
+            <a class="btn btn-sm" href="pages/freshness.html">Live Source Check →</a>
             <a class="btn btn-sm" href="audit.html">Security Audit Log →</a>
           </div>
         </div>
@@ -406,7 +408,7 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
       </a>
       <div class="header-badges">
         <span class="badge badge-ok">18K: $97.05/g · 14K: $75.48/g · 10K: $53.91/g</span>
-        <a class="badge badge-crit" href="flagged.html" style="text-decoration:none;">{flag_total} Flagged Irregularities ↗</a>
+        <a class="badge badge-crit" href="pages/flagged.html" style="text-decoration:none;">{flag_total} Flagged Irregularities ↗</a>
       </div>
     </div>
     <nav class="site-nav" aria-label="Primary site navigation">
@@ -415,6 +417,19 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
   </header>
 
   <main id="main-content" class="container">
+    <div class="audit-banner" role="note" style="border-left-color:#9e7620">
+      <div>
+        <strong>ASSAY LAB — secondary deep-dive.</strong> This section is a 22-item curated catalogue with its own
+        two Kitco / JM Bullion cross-check quotes (22 October 2026). The canonical dataset is
+        <strong>64 rows / 10 retailers</strong> on the <a href="index.html">Dashboard</a>, benchmarked on the
+        World Gold Council panel, with <a href="pages/freshness.html">live source health</a> checked line by line.
+        Where the two differ, the Dashboard wins — this section is a companion, not a second source of truth.
+      </div>
+      <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+        <a class="btn btn-sm" href="index.html">Canonical Dashboard →</a>
+        <a class="btn btn-sm" href="pages/freshness.html">Source Freshness →</a>
+      </div>
+    </div>
     {banner_html}
     {body_html}
   </main>
@@ -427,10 +442,11 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
         Unconfirmed fields are never estimated or inferred — always check for hallucinations after every review.
       </div>
       <div style="display:flex;gap:0.9rem;flex-wrap:wrap;">
-        <a href="index.html">Overview</a>
-        <a href="calculator.html">Melt Calculator</a>
+        <a href="index.html">Canonical Dashboard</a>
+        <a href="pages/calculator.html">Melt Calculator</a>
         <a href="checklist.html">12-Point Checklist</a>
-        <a href="flagged.html">Flagged for Review</a>
+        <a href="pages/flagged.html">Flagged for Review</a>
+        <a href="pages/freshness.html">Source Freshness</a>
         <a href="audit.html">Security Audit</a>
         <a href="coordination.html">Git Coordination</a>
         <a href="docs/index.html">Preserved /docs/ Sub-Site</a>
@@ -1186,11 +1202,8 @@ python3 scripts/verify.py</pre>
         ("solitaires.html", "Solitaire Solid Gold Engagement Rings — GOLD4", "Verified comparison of 14K and 18K solitaire diamond engagement rings and settings with official links.", sol_body),
         ("three-stone-halo.html", "Three-Stone, Halo & Pavé Gold Engagement Rings — GOLD4", "Verified comparison of three-stone, halo, and accent-diamond gold engagement rings and live spec conflict case studies.", thh_body),
         ("bands.html", "Solid Gold Engagement Bands, Eternity Rings & 24K Bullion Rings — GOLD4", "Verified comparison of 10K, 14K, 18K, and 24K solid gold bands and raw gold melt benchmarks.", bands_body),
-        ("calculator.html", "Interactive Gold Karat, Weight & Raw Melt Value Calculator — GOLD4", "Calculate pure 24K fine gold grams, raw melt value in USD, gemstone weight deductions, and retail markup multiples.", calc_body),
         ("checklist.html", "12-Point Solid Gold Engagement Ring Buyer Checklist & XRF Guide — GOLD4", "Complete pre-purchase and post-arrival verification checklist, seller inquiry script, and XRF assay protocol.", checklist_body),
-        ("sellers.html", "Verified Jewelry Seller Reputation, Return Windows & Warranty Audit — GOLD4", "Line-by-line comparison of return policies, shipment vs delivery clocks, resizing exclusions, and physical addresses.", seller_body),
         ("standards.html", "FTC 16 CFR Part 23, Hallmarks, FCBA & GIA XRF Assay Standards — GOLD4", "Official federal regulations, karat purity constants, credit card chargeback rules, and gemological XRF testing science.", standards_body),
-        ("flagged.html", "Flagged for Review & Unverified Data Register — GOLD4", "Transparent public register of all unconfirmed fields, live retailer contradictions, and disqualified vermeil traps.", flagged_body),
         ("audit.html", "Multi-Pass Anti-Hallucination & Security Verification Audit — GOLD4", "Automated security, math, schema, and anti-hallucination audit results across the entire GOLD4 repository.", audit_body),
         ("coordination.html", "Multi-Session Git Coordination & Merge Log — GOLD4", "Shared multi-agent task coordination board, non-destructive merge history, and PR deployment status.", coord_body),
     ]

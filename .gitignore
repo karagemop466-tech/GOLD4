@@ -2,3 +2,6 @@ node_modules/
 .cache/
 __pycache__/
 *.pyc
+
+# one-shot audit run artifacts (keep reports/audit_latest.txt and the live-check evidence)
+reports/audit_2026*T*.txt
