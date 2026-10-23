@@ -331,7 +331,7 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
     counts = catalog["counts"] if "counts" in catalog else catalog["meta"]["counts"]
     flag_total = counts["flagged_register_entries"]
     nav_items = [
-        ("index.html", "Main Desk (53)", "53", False),
+        ("index.html", "Main Desk (64)", "64", False),
         ("dashboard.html", "Assay Lab", "22", False),
         ("solitaires.html", "Solitaires", "8", False),
         ("three-stone-halo.html", "3-Stone & Halo", "4", False),
@@ -1091,9 +1091,9 @@ Thank you!</pre>
           <span class="badge badge-ok">GATE 3 · PASSING</span>
           <h3 style="margin-top:0.45rem;"><code>scripts/verify.py</code></h3>
           <p style="font-size:0.86rem;color:var(--ink-secondary);">
-            Preserved sibling audit gate over <code>data/rings.json</code> (all 53 combined records — the
-            <span class="mono">AL / AN / BE / BN / MJ / VR / SR / CB / MN</span> id series) and <code>docs/*.html</code>: <strong>0 hard failures</strong>,
-            <strong>43 blank/unverified fields explicitly accounted for</strong>.
+            Preserved sibling audit gate over <code>data/rings.json</code> (all 64 combined records — the
+            <span class="mono">AL / AN / BE / BN / MJ / VR / SR / CB / MN / RS</span> id series) and <code>docs/*.html</code>: <strong>0 hard failures</strong>,
+            <strong>50 blank/unverified fields explicitly accounted for</strong>.
           </p>
         </div>
       </div>
@@ -1131,9 +1131,9 @@ Thank you!</pre>
                 <td><span class="badge badge-ok">ENFORCED IN CI</span></td>
               </tr>
               <tr>
-                <td class="mono"><strong>Pass 7</strong> <span class="mono">(verification_log)</span></td>
-                <td>Second Independent Collection &amp; Integration — session <span class="mono">arena/22b5b06c-gold4</span>, PR #11 (18 rows added, <span class="mono">35 → 53</span>)</td>
-                <td>9 rows live-fetched from official Blue Nile / Brilliant Earth pages (incl. the live James Allen → Blue Nile merger redirect and one sold-out ring left deliberately price-blank); 9 rows from dated official-page snapshots, each corroborated by ≥2 official reads and flagged <span class="mono">PRICE_V2_ONLY</span>. Two new Blue Nile contradictions found (BN-19 "platinum" copy on a 14K YG page; BN-17 four sale prices for one SKU). Independent live spot reading $4,028.10/oz vs benchmark $4,028.53/oz — 0.01% apart. Full pipeline re-run: audit 108 passed / 9 informational warnings / 0 failures.</td>
+                <td class="mono"><strong>Pass 9</strong> <span class="mono">(verification_log)</span></td>
+                <td>Second Independent Collection &amp; Additive Integration — session <span class="mono">arena/22b5b06c-gold4</span>, PR #11 (17 rows added, <span class="mono">47 → 64</span>)</td>
+                <td>8 rows live-fetched from official Blue Nile pages (incl. the live James Allen → Blue Nile merger redirect and one sold-out ring left deliberately price-blank); 9 rows from dated official-page snapshots, each corroborated by ≥2 official reads and flagged <span class="mono">PRICE_V2_ONLY</span>. Two cross-session duplicates resolved as appended corroboration notes instead of rows (BE-01 Atelier; BN-10 — same stock number <span class="mono">502120y14</span> re-fetched live via alias <span class="mono">item-203348</span> at 23:58Z, with the product-NAME variance between the two official aliases recorded). Two new Blue Nile contradictions found (BN-22 "platinum" copy on a 14K YG page; BN-20 four sale prices for one SKU). Independent live spot reading $4,028.10/oz vs benchmark $4,028.53/oz — 0.01% apart. Full pipeline + all five CI gates re-run: audit 128 passed / 9 informational warnings / 0 failures; hallucination auditor 875 checks / 0 failures.</td>
                 <td><span class="badge badge-ok">PASS — MERGED ADDITIVELY</span></td>
               </tr>
             </tbody>
