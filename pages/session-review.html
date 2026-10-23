@@ -1,0 +1,479 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Current-session review · GOLD4</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><header class="site-header"><div class="wrap bar"><a class="brand" href="../index.html">Au · GOLD4</a>
+<nav class="main"><a href="../index.html">Dashboard</a><a href="flagged.html">Flagged for Review</a><a href="freshness.html">Historical evidence</a><a href="calculator.html">Calculator</a></nav></div></header>
+<main class="wrap"><section class="hero"><span class="eyebrow">Review date: 23 October 2026 · session 986df4df</span>
+<h1>Current-session review — Flagged for Review</h1>
+<p class="lede">NO HALLUCINATIONS: unconfirmed current prices stay blank. This is a candidate register, not an approved purchase list or a complete inventory of rings available online.</p></section>
+<div class="nohall"><h2>What this session can actually verify</h2>
+<p>The sandbox cannot directly access retailer or regulator hosts. Existing dated captures are preserved as historical claims, not newly verified facts.
+A successful HTTP response or a matching structured-data price does not prove the selected size, metal, stone, availability, taxes, shipping, or actual gold purity.
+No current price, weight, hallmark or seller reputation is inferred here. All current-price cells below are intentionally empty.</p>
+<p>Internal arithmetic, citation and security gates test specific rules; passing them is not proof that a claim is true or that all hallucinations have been found.
+<strong>Recommend a hallucination review after every review and before buying.</strong> Compare each field against its official source and keep a dated copy.</p>
+<p>See the <a href="../reviews/session-986df4df.md">session findings and limitations</a>, <a href="../reports/session-986df4df-checks.txt">executed gate log</a>,
+<a href="../data/source_health.json">prior source evidence summary</a>, and <a href="../reports/live_source_check_latest.json">prior raw evidence</a>.
+No stored product price, weight or purity has been changed in this session.</p></div>
+<section class="section"><h2>Security / hallucination irregularities</h2><div class="table-wrap"><table>
+<thead><tr><th>Finding</th><th>Disposition</th><th>Source / review link</th></tr></thead><tbody>
+<tr><td>Missing currency was treated as USD in the price reconciler</td><td>Fixed: only explicit USD qualifies. Legacy CONFIRMED states remain historical, not re-certified.</td><td><a href="https://github.com/karagemop466-tech/GOLD4/blob/arena/986df4df-gold4/scripts/build_source_health.py">Reconciler code</a></td></tr>
+<tr><td>Permissive numeric parsing could turn signed/currency text into another amount</td><td>Fixed: reject negatives, nonfinite values and ambiguous formatted text. Regression tests added.</td><td><a href="https://github.com/karagemop466-tech/GOLD4/blob/arena/986df4df-gold4/scripts/test_assurance.py">Regression tests</a></td></tr>
+<tr><td>Source-check workflow wrote to PR branches and interpolated a branch name into shell</td><td>Fixed: read-only token, upload artifacts only; no branch-writing shell step.</td><td><a href="https://github.com/karagemop466-tech/GOLD4/blob/arena/986df4df-gold4/.github/workflows/live-source-check.yml">Workflow</a></td></tr>
+<tr><td>Historical retailer statements do not prove physical purity, maker mark or independent reputation</td><td>Unverified; no purchase approval. A stamp alone is insufficient.</td><td><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry">Official FTC consumer guidance (not re-fetched this session)</a></td></tr>
+</tbody></table></div></section>
+<section class="section"><h2>Every candidate, reviewed without filling unknowns</h2>
+<p>Historical evidence timestamp and state are shown only for provenance. Blank current price does not mean free or unavailable.
+All rows need a current official quote and independent gold verification before purchase.</p>
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Seller</th><th>Product</th><th>Current verified price (USD)</th><th>Current status</th><th>Prior evidence</th><th>Prior flags</th><th>Official source</th></tr></thead><tbody><tr data-review-id="AL-01">
+<td>AL-01</td><td>Allurez</td>
+<td>Engraved Floral Solitaire Engagement Ring Setting</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:08:59Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="AL-02">
+<td>AL-02</td><td>Allurez</td>
+<td>Milgrain Trellis Solitaire Engagement Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:00Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="AL-03">
+<td>AL-03</td><td>Allurez</td>
+<td>Split Shank Solitaire Engagement Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:01Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="AL-04">
+<td>AL-04</td><td>Allurez</td>
+<td>Split Shank Solitaire Engagement Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:02Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="AN-01">
+<td>AN-01</td><td>Anjolee</td>
+<td>Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:02Z<br>EMPTY_OR_JS_SHELL / NOT_MACHINE_READABLE (historical evidence only)</td>
+<td>PRICE_INCLUDES_CENTRE_STONE, CENTRE_STONE_LAB_CREATED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, WHITE_GOLD, SOURCE_PRICE_NOT_MACHINE_READABLE</td><td><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BE-01">
+<td>BE-01</td><td>Brilliant Earth</td>
+<td>Atelier Solitaire Ring (2 mm, claw-prong bypass)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:03Z<br>REFUSED_403 / SOURCE_NOT_REACHED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED, SOURCE_BOT_BLOCKED</td><td><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BE-02">
+<td>BE-02</td><td>Brilliant Earth</td>
+<td>Atelier Solitaire Ring (2 mm, claw-prong bypass)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:04Z<br>REFUSED_403 / SOURCE_NOT_REACHED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED, SOURCE_BOT_BLOCKED</td><td><a href="https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-01">
+<td>BN-01</td><td>Blue Nile</td>
+<td>Petite Solitaire Engagement Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:04Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-02">
+<td>BN-02</td><td>Blue Nile</td>
+<td>Petite Solitaire Engagement Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:05Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-03">
+<td>BN-03</td><td>Blue Nile</td>
+<td>Classic Six-Prong Solitaire Engagement Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:06Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-04">
+<td>BN-04</td><td>Blue Nile</td>
+<td>Classic Comfort Fit Solitaire Engagement Ring (2.5mm)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:07Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, COPY_INCONSISTENT_METAL</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-05">
+<td>BN-05</td><td>Blue Nile</td>
+<td>Classic Comfort Fit Solitaire Engagement Ring (2.5mm)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:07Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-06">
+<td>BN-06</td><td>Blue Nile</td>
+<td>Six-Prong Low Dome Comfort Fit Solitaire Engagement Ring (2mm)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:08Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/six-prong-low-dome-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-2mm-item-195379" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-07">
+<td>BN-07</td><td>Blue Nile</td>
+<td>Classic Four Prong Solitaire Engagement Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:09Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, MIXED_METAL_UNCLEAR</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-08">
+<td>BN-08</td><td>Blue Nile</td>
+<td>Riviera Pave Diamond Engagement Ring (1/6 ct. tw.)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:10Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, COPY_INCONSISTENT_METAL</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="MJ-01">
+<td>MJ-01</td><td>Mejuri</td>
+<td>Diamonds Team Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:10Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, PRICE_VARIANT_DEPENDENT</td><td><a href="https://mejuri.com/products/diamonds-team-ring" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="MJ-02">
+<td>MJ-02</td><td>Mejuri</td>
+<td>Diamonds Band</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:11Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL</td><td><a href="https://mejuri.com/products/diamonds-band" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="MJ-03">
+<td>MJ-03</td><td>Mejuri</td>
+<td>Pave Diamond Slim Signet</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:12Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, ENGRAVING_NON_RETURNABLE, PRICE_VARIANT_DEPENDENT</td><td><a href="https://mejuri.com/products/pave-diamond-slim-signet-ring" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="MJ-04">
+<td>MJ-04</td><td>Mejuri</td>
+<td>Pave Diamond Thin Dome Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:13Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL</td><td><a href="https://mejuri.com/products/pave-diamond-thin-dome-ring" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="MJ-05">
+<td>MJ-05</td><td>Mejuri</td>
+<td>Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:14Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, NOT_MARKETED_AS_BRIDAL, SCS_CERT_REQUIRED_FOR_RETURN, PRICE_IS_FROM_PRICE</td><td><a href="https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="VR-01">
+<td>VR-01</td><td>VRAI</td>
+<td>The Classic Engagement Ring (4-prong dome, plain band)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:15Z<br>OK / DIFFERS (historical evidence only)</td>
+<td>PRICE_IS_FROM_PRICE, PRICE_AND_WEIGHT_DIFFERENT_URLS, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND, WIDTH_UNVERIFIED, PRICE_STRUCTURED_DIFFERS</td><td><a href="https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="VR-02">
+<td>VR-02</td><td>VRAI</td>
+<td>Signature 6 Prong Engagement Ring (plain band)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:17Z<br>OK / NO_STORED_PRICE (historical evidence only)</td>
+<td>PRICE_UNVERIFIED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SPEC_LISTED_PAVE_ON_PLAIN_BAND, WIDTH_UNVERIFIED</td><td><a href="https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BE-03">
+<td>BE-03</td><td>Brilliant Earth</td>
+<td>Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K Shank + 14K White Gold Prongs)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:18Z<br>REFUSED_403 / SOURCE_NOT_REACHED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, MIXED_METAL_UNCLEAR, SOURCE_BOT_BLOCKED</td><td><a href="https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="SR-01">
+<td>SR-01</td><td>Sarraf</td>
+<td>10k White Gold 5mm High Polished Traditional Domed Wedding Band</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:18Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED, WHITE_GOLD, SALE_MSRP_ANCHOR</td><td><a href="https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="SR-02">
+<td>SR-02</td><td>Sarraf</td>
+<td>14k Yellow Gold 6mm High Polished Comfort Fit Heavy Wedding Band</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:20Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="SR-03">
+<td>SR-03</td><td>Sarraf</td>
+<td>18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:21Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="SR-04">
+<td>SR-04</td><td>Sarraf</td>
+<td>18K Yellow Gold 6mm High Polished Flat Comfort Fit Heavy Band</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:22Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="SR-05">
+<td>SR-05</td><td>Sarraf</td>
+<td>14k Yellow Gold Men&#x27;s Solitaire Natural Diamond Ring (0.50 ct H/SI1)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:23Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="SR-06">
+<td>SR-06</td><td>Sarraf</td>
+<td>18k Yellow Gold Men&#x27;s Solitaire Natural Diamond Ring (0.74 ct J/SI1)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:24Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="SR-07">
+<td>SR-07</td><td>Sarraf</td>
+<td>14k Gold 1/2 Ctw Natural Diamond Solitaire Engagement Ring (G/SI1)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:24Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-engagement-diamond-ring.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="SR-08">
+<td>SR-08</td><td>Sarraf</td>
+<td>18k Yellow Gold 1/2 Carat Round Diamond Solitaire Engagement Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:25Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="CB-01">
+<td>CB-01</td><td>Catbird NYC</td>
+<td>The Swan Solitaire Diamond Engagement Ring (1.0mm Recycled 14K Band)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:26Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, PRICE_IS_FROM_PRICE, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.catbirdnyc.com/the-swan-solitaire-2475.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="CB-02">
+<td>CB-02</td><td>Catbird NYC</td>
+<td>Grand Painter&#x27;s Solid 14k Yellow Gold Band</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:33Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.catbirdnyc.com/grand-painters-ring.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="MN-01">
+<td>MN-01</td><td>Menē</td>
+<td>Menē 24k Pure Solid Gold Knot Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:35Z<br>OK / DIFFERS (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, PRICE_STRUCTURED_DIFFERS</td><td><a href="https://mene.com/products/knot-ring-gold" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="MN-02">
+<td>MN-02</td><td>Menē</td>
+<td>Menē 24k Pure Solid Gold Etruscan Sun Band (4.5mm)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:36Z<br>OK / DIFFERS (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, PRICE_STRUCTURED_DIFFERS</td><td><a href="https://mene.com/products/etruscan-sun-band-gold" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-09">
+<td>BN-09</td><td>Blue Nile</td>
+<td>Classic Four-Prong Solitaire Engagement Ring (Platinum Prongs)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:37Z<br>HTTP_404 / SOURCE_NOT_REACHED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, MIXED_METAL_UNCLEAR, SOURCE_URL_DEAD</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-10">
+<td>BN-10</td><td>Blue Nile</td>
+<td>Low Dome Comfort Fit Solitaire Engagement Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:37Z<br>HTTP_404 / SOURCE_NOT_REACHED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SOURCE_URL_DEAD</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-11">
+<td>BN-11</td><td>Blue Nile</td>
+<td>French Pavé Diamond Engagement Ring (1/20 ct. tw.)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:38Z<br>HTTP_404 / SOURCE_NOT_REACHED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SOURCE_URL_DEAD</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-12">
+<td>BN-12</td><td>Blue Nile</td>
+<td>Tapered Baguette Diamond Engagement Ring (1/6 ct. tw.)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:39Z<br>HTTP_404 / SOURCE_NOT_REACHED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, COPY_INCONSISTENT_METAL, COPY_CARAT_MISMATCH, SOURCE_URL_DEAD</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-13">
+<td>BN-13</td><td>Blue Nile</td>
+<td>Solitaire Engagement Ring With Pavé Basket In 14K Yellow Gold By James Allen</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:39Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_FROM_CATEGORY_PAGE</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-pave-basket-in-14k-yellow-gold-by-james-allen-item-311230" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-14">
+<td>BN-14</td><td>Blue Nile</td>
+<td>Solitaire Engagement Ring With Intricate Basket In 14K Yellow Gold By James Allen</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:40Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_FROM_CATEGORY_PAGE</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-intricate-basket-in-14k-yellow-gold-by-james-allen-item-315036" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-15">
+<td>BN-15</td><td>Blue Nile</td>
+<td>East West Knife Edge Cathedral Solitaire Engagement Ring In 14K Yellow Gold By James Allen</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:41Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_FROM_CATEGORY_PAGE</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-knife-edge-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-311246" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-16">
+<td>BN-16</td><td>Blue Nile</td>
+<td>Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:42Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_FROM_CATEGORY_PAGE</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-oval-by-james-allen-item-311127" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-17">
+<td>BN-17</td><td>Blue Nile</td>
+<td>Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:43Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_FROM_CATEGORY_PAGE</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-pear-by-james-allen-item-311121" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-18">
+<td>BN-18</td><td>Blue Nile</td>
+<td>Petite Hidden Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:43Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_FROM_CATEGORY_PAGE</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-hidden-halo-solitaire-plus-diamond-engagement-ring-in-14k-yellow-gold-item-192506" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-19">
+<td>BN-19</td><td>Blue Nile</td>
+<td>Bow-Tie Engagement Ring With Channel Set Round Diamonds In 14K Yellow Gold By James Allen</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:44Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_FROM_CATEGORY_PAGE</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/bow-tie-engagement-ring-with-channel-set-round-diamonds-in-14k-yellow-gold-by-james-allen-item-304294" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-20">
+<td>BN-20</td><td>Blue Nile</td>
+<td>Woven Solitaire Engagement Ring In 14K Yellow Gold By James Allen</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:45Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SALE_PRICE_VARIES_ACROSS_PAGES</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-21">
+<td>BN-21</td><td>Blue Nile</td>
+<td>Knife Edge Solitaire Engagement Ring in 14k Yellow Gold</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:45Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-22">
+<td>BN-22</td><td>Blue Nile</td>
+<td>Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:46Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, COPY_INCONSISTENT_METAL</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-23">
+<td>BN-23</td><td>Blue Nile</td>
+<td>Emerald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:47Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-24">
+<td>BN-24</td><td>Blue Nile</td>
+<td>Classic Simple Solitaire Engagement Ring in 14k White Gold</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:48Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, WHITE_GOLD</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-25">
+<td>BN-25</td><td>Blue Nile</td>
+<td>Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:48Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, WHITE_GOLD</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BN-26">
+<td>BN-26</td><td>Blue Nile</td>
+<td>Comfort Fit Solitaire Engagement Ring In 14K Yellow Gold (James Allen style 17740y14)</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:49Z<br>OK / NO_STORED_PRICE (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_UNVERIFIED, SOLD_OUT_AT_CHECK</td><td><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BE-04">
+<td>BE-04</td><td>Brilliant Earth</td>
+<td>Fairmined Hollis Knife Edge Solitaire Engagement Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:50Z<br>REFUSED_403 / SOURCE_NOT_REACHED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, RESIZE_EXCLUDED_ON_PAGE, SOURCE_BOT_BLOCKED</td><td><a href="https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BE-05">
+<td>BE-05</td><td>Brilliant Earth</td>
+<td>Freesia Hidden Halo Diamond Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:50Z<br>REFUSED_403 / SOURCE_NOT_REACHED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED, SOURCE_BOT_BLOCKED</td><td><a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BE-06">
+<td>BE-06</td><td>Brilliant Earth</td>
+<td>Freesia Hidden Halo Diamond Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:51Z<br>REFUSED_403 / SOURCE_NOT_REACHED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED, SOURCE_BOT_BLOCKED</td><td><a href="https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="BE-07">
+<td>BE-07</td><td>Brilliant Earth</td>
+<td>Fleur Solitaire Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:51Z<br>REFUSED_403 / SOURCE_NOT_REACHED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED, SOURCE_BOT_BLOCKED</td><td><a href="https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="RS-01">
+<td>RS-01</td><td>Ross-Simons</td>
+<td>14kt Yellow Gold 2mm Wedding Band</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:52Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.ross-simons.com/jewelry/rings/571221.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="RS-02">
+<td>RS-02</td><td>Ross-Simons</td>
+<td>Italian 18kt Yellow Gold 2mm Wedding Band</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:53Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.ross-simons.com/jewelry/rings/985230.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="RS-03">
+<td>RS-03</td><td>Ross-Simons</td>
+<td>14kt Yellow Gold 3mm Comfort-Fit Wedding Band</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:55Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.ross-simons.com/jewelry/rings/820263.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="RS-04">
+<td>RS-04</td><td>Ross-Simons</td>
+<td>14kt Yellow Gold 4mm Flat Wedding Band Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:56Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED</td><td><a href="https://www.ross-simons.com/jewelry/rings/823796.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="RS-05">
+<td>RS-05</td><td>Ross-Simons</td>
+<td>0.80 Carat GIA Certified Solitaire Diamond Engagement Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:58Z<br>HTTP_404 / SOURCE_NOT_REACHED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, PRICE_INCLUDES_CENTRE_STONE, WHITE_GOLD, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SOURCE_URL_DEAD</td><td><a href="https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="MJ-06">
+<td>MJ-06</td><td>Mejuri</td>
+<td>Pavé Diamond Slim Eternity Band</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:09:59Z<br>OK / DIFFERS (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, PRICE_IS_FROM_PRICE, HALLMARK_NOT_PUBLISHED, ENGRAVING_NON_RETURNABLE, COPY_CARAT_MISMATCH, PRICE_STRUCTURED_DIFFERS</td><td><a href="https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&amp;Stone=Natural+Diamond" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>
+<tr data-review-id="MJ-07">
+<td>MJ-07</td><td>Mejuri</td>
+<td>Diamonds Line Ring</td>
+<td class="current-price" aria-label="Unverified current price"></td>
+<td>UNVERIFIED — no current-session configuration-specific quote</td>
+<td>2026-10-23T10:10:00Z<br>OK / CONFIRMED (historical evidence only)</td>
+<td>NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, COPY_INCONSISTENT_METAL, ENGRAVING_NON_RETURNABLE, NOT_MARKETED_AS_BRIDAL</td><td><a href="https://mejuri.com/us/en/products/diamonds-line-ring" target="_blank" rel="noopener noreferrer">Official product</a></td></tr></tbody></table></div></section><section class="section"><h2>Before any purchase</h2>
+<p>Require an explicit solid-gold description, karat, gram weight and weight scope, maker mark plus hallmark, written return and independent-testing permission (including resize/custom exclusions), and a current configuration-specific price.
+Keep the listing and receipt; prefer a credit card. Before wearing or resizing, have an independent jeweler check weight and purity with an appropriate professional test, such as XRF with its limitations explained.
+If independent verification and a suitable return are not allowed, do not buy.</p>
+<p>The calculator uses a dated benchmark, not a live bullion price or a resale quote. Gross ring weight must not be passed off as metal-only weight when stones or other materials are included.</p></section></main></body></html>

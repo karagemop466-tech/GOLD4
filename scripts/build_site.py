@@ -31,6 +31,7 @@ NAV = [
     ("pages/methodology.html", "Method", "method"),
     ("pages/sources.html", "Sources", "sources"),
     ("pages/freshness.html", "Freshness", "freshness"),
+    ("pages/session-review.html", "Current review", "session-review"),
     ("checklist.html", "Checklist", "checklist"),
     ("pages/log.html", "Log", "log"),
     ("dashboard.html", "Assay Lab+", "assay"),
@@ -135,7 +136,7 @@ def flag_chips(row) -> str:
 def status_badge(row) -> str:
     if row.get("price_usd") is None or row.get("weight_g") is None:
         return badge("needs review", "warn")
-    return badge("verified V1", "ok")
+    return badge("historical capture", "info")
 
 
 def short_url(url: str) -> str:
@@ -152,7 +153,7 @@ LAYOUT = """<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} · GOLD4 gold-ring verification desk</title>
-<meta name="description" content="Verified solid-gold engagement-ring data: retailer prices, published gram weights, computed gold content and flagged irregularities. No hallucinated values.">
+<meta name="description" content="Dated gold-ring candidate research: source-linked historical prices, published gram weights, derived gold content and verification limits.">
 <link rel="stylesheet" href="{root}assets/style.css">
 </head>
 <body>
@@ -168,6 +169,13 @@ LAYOUT = """<!doctype html>
   </div>
 </header>
 <main class="wrap">
+<aside class="nohall" aria-label="Current verification limits">
+  <strong>NO HALLUCINATIONS — dated research, not live offers.</strong>
+  Historical captures below are not current verified quotes or a guarantee of purity.
+  Unconfirmed current prices are blank in the <a href="{root}pages/session-review.html">current-session review / Flagged for Review</a>.
+  Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
+  Re-check official sources and request independent testing before purchase.
+</aside>
 {body}
 </main>
 <footer class="wrap foot">
@@ -403,12 +411,12 @@ def main() -> None:
 
     index_body = f"""
 <section class="hero">
-  <span class="eyebrow">● live dataset · prices captured {C['captured']} · source URLs re-opened live {esc((health_doc or {}).get('evidence_checked_utc', reverif))}</span>
+  <span class="eyebrow">● dated research dataset · prices captured {C['captured']} · source URLs re-opened live {esc((health_doc or {}).get('evidence_checked_utc', reverif))}</span>
   <h1>Solid-gold engagement rings, with every number traceable to the seller's own page.</h1>
-  <p class="lede">A small, deliberately boring dataset: {st['total_rows']} rings from {len(st['by_retailer'])} retailers, {st['rows_with_verified_price']} prices read
+  <p class="lede">A dated candidate dataset (not a purchase-approved shortlist): {st['total_rows']} rings from {len(st['by_retailer'])} retailers, {st['rows_with_verified_price']} prices read
   from the retailer's page on {C['captured']}, {st['rows_with_published_weight']} published gram weights, and the gold-value arithmetic that follows from them.
   The source URLs themselves were last re-opened live on {esc((health_doc or {}).get('evidence_checked_utc', reverif))}.
-  Nothing is estimated. Everything uncertain is on the Flagged page.</p>
+  Historical source claims are preserved, not independently re-certified by this session. See Current review for blank unconfirmed current quotes and the Flagged page for known issues.</p>
   <div class="pill-row">
     {badge('no hallucinated values', 'bad')}
     {badge('source link on every row', 'ok')}
