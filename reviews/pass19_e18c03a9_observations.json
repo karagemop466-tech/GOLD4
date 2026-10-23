@@ -1,0 +1,79 @@
+{
+  "pass": "Pass 19",
+  "session": "arena/e18c03a9-gold4",
+  "date_utc": "2026-10-23",
+  "fetched_window_utc": "2026-10-23T23:44Z to 2026-10-23T23:46Z (browser-rendered page-reader fetches by this session)",
+  "base_tree": "main db46dd2 (Pass 18 close-out + PR #49 merged) + Pass 19 claim commit 283a714",
+  "rule": "Read-only on data/: no stored price, weight, karat, URL or flag was changed by this pass. A value that could not be confirmed from an official source stays blank and is flagged UNVERIFIED. Derived percentages below are labelled arithmetic on the two quoted numbers.",
+  "benchmark_in_force": {
+    "value_usd_per_oz": 3996.31,
+    "usd_per_gram": 128.48435,
+    "price_date_as_shown_on_source": "22 October, 2026",
+    "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+    "note": "Frozen benchmark from data/gold_spot.json (captured 2026-10-23T20:23Z). Retained this pass; see live re-read below."
+  },
+  "gates": {
+    "report_file": "reports/pass19_e18c03a9_gates.txt",
+    "run_utc": "2026-10-23T23:46:37Z",
+    "result": "All eight CI gates (nine invocations) PASS, 0 hard failures. Known warnings only: BE-05 V2-only (Gate 1); BE-06/BE-07 read-path warnings (Gate 7).",
+    "calculator_rederivation": "Independent fresh arithmetic: 17 weighted rows, 0 mismatches, 0 phantom values at $128.48435/g."
+  },
+  "authority_sources_reread": [
+    {
+      "id": "WGC-SPOT",
+      "url": "https://www.gold.org/goldhub/data/gold-prices",
+      "fetch": "chunk 0 of 1",
+      "live_text": "Gold Spot price panel: USD /oz 3,995.47; page dated 22 October, 2026; footer 'Data as of 22 October, 2026'; 'Market Data: Provided by ICE Data Services'.",
+      "stored_benchmark_usd_per_oz": 3996.31,
+      "live_usd_per_oz": 3995.47,
+      "derived_difference_pct": -0.021,
+      "verdict": "CORROBORATED within an intraday tick. Source date did not advance, so the frozen benchmark is RETAINED (Pass 17 protocol). Sensitivity (derived): at 3,995.47 gold is $128.45734/g; SR-03 gold value moves $645.63 -> $645.50. No derived value was recomputed on the tick.",
+      "flag": "FLG-P19-01 (informational)"
+    },
+    {
+      "id": "FTC-GOLD",
+      "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+      "fetch": "chunk 0 of 2",
+      "live_text": "Karat mark states pure-gold content (18K = 18 parts gold + 6 other; 14K = 14 + 10); 'Near the karat quality mark, look for the name or the U.S. registered trademark... If you don't see a trademark along with the karat mark, don't buy it'; 'solid gold means the gold item isn't hollow'; gold filled/overlay/RGP = layer of at least 10K gold on base metal; vermeil = sterling silver base coated/plated with gold; research complaints; get refund/return policies in writing.",
+      "verdict": "CORROBORATED. Every checklist claim on the site matches the page as read this pass."
+    },
+    {
+      "id": "ECFR-PART23",
+      "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
+      "fetch": "chunk 0 of 9 (table of contents; title up to date as of 10/21/2026 as displayed)",
+      "live_text": "Section 23.3 'Misrepresentation as to gold content.'; Section 23.4 'Misuse of the word vermeil.'; Section 23.9 'Misrepresentation as to content of pewter.'; Section 23.10 'Additional guidance for the use of quality marks.'",
+      "verdict": "CORROBORATED. Headings match the citation gate's table (Gate 6b: 110 references, 0 violations; self-test correctly rejects 'Section 23.9 Quality Marks')."
+    },
+    {
+      "id": "USC-15-295",
+      "url": "https://www.law.cornell.edu/uscode/text/15/295",
+      "fetch": "chunk 0 of 1",
+      "live_text": "Tested-part fineness may not fall more than three one-thousandth parts below the mark; whole-article fineness including solder may not fall more than seven one-thousandth parts below the mark for 'any other such article' (rings).",
+      "verdict": "CORROBORATED. Legal-minimum floors re-derive exactly (derived): 14/24 - 0.007 = 0.576333 (57.63%); 18/24 - 0.007 = 0.743 (74.30%)."
+    }
+  ],
+  "retailer_rows_reread": [
+    {"id": "AL-01", "retailer": "Allurez", "url": "https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold", "fetch": "chunk 0 of 3", "stored_price_usd": 585.0, "live_price_text": "$585", "stored_weight_g": 3.58, "live_weight_text": "Approximate Metal Weight 3.58 grams", "live_other": "'Setting only. Center stone sold separately.'; Style number NG4426; Metal 14k Yellow Gold; sizes above 10 carry surcharges (+$39 to +$99 as displayed)", "verdict": "MATCH (price, weight, metal, setting-only basis). Size surcharges mean $585 is the displayed base-size price, not an every-size quote."},
+    {"id": "AN-01", "retailer": "Anjolee", "url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx", "fetch": "chunks 2-3 of 4", "stored_price_usd": 870.76, "live_price_text": "Price:$870.76", "stored_weight_g": 2.9, "live_weight_text": "Approx. Metal Weight: 2.90 Gr.", "live_other": "Style No MS354-A; Metal Type 14K White Gold; 0.50 ct model, Ring Size 6.5; Center Diamond Color 'Lab Created FG', Clarity 'Lab Created VS'; 30-Day Returns linked", "verdict": "MATCH including white-gold + lab-created-centre-stone basis. Not comparable with setting-only rows; multiple_basis=includes_centre_stone is correct. Runner could not machine-read this JS page (EMPTY_OR_JS_SHELL) but the browser-rendered read succeeds; fetch-path variance, not a data error."},
+    {"id": "BE-05", "retailer": "Brilliant Earth", "url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/", "fetch": "chunk 4 of 8", "stored_price_usd": 1190.0, "live_price_text": "$1,190 (Setting Only) with USD currency selector displayed", "stored_weight_g": null, "live_weight_text": "No gram weight in returned text (blank stays blank)", "live_other": "Title 'Freesia Hidden Halo Diamond Ring in 14K Yellow Gold'; Metal 14K Yellow Gold; Style BE1D3939-14KY", "verdict": "MATCH on this session's USD read path. Does NOT resolve the known per-visitor currency localization (other read paths served EUR; PRICE_CURRENCY_LOCALIZED / PRICE_V2_ONLY / SOURCE_BOT_BLOCKED). Stored value left untouched; disposition (PR #47 proposes blanking the current USD price) is logged as a request to the PR #47 owner. See FLG-P19-04."},
+    {"id": "BN-22", "retailer": "Blue Nile", "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321", "fetch": "chunk 0 of 1", "stored_price_usd": 2050.0, "live_price_text": "$2,050 (Setting Price)", "stored_weight_g": null, "live_weight_text": "No gram weight published (blank correct)", "live_other": "Stock Number 501580y14; Metal 14K Yellow Gold; Width 5.00mm; Product Details copy still reads 'this platinum solitaire setting'; contact +1-800-242-2728 / service@bluenile.com", "verdict": "MATCH; COPY_INCONSISTENT_METAL reproduces (spec says 14K yellow gold, prose says platinum). Do not rely on the prose."},
+    {"id": "BN-09", "retailer": "Blue Nile", "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y", "fetch": "chunk 0 of 1", "stored_price_usd": 1125.0, "live_price_text": "No product price: 'We're sorry, the page you're looking for cannot be found.'", "verdict": "DEAD URL corroborated off-runner. SOURCE_URL_DEAD stands. Stored $1,125 (captured 2026-10-22) is historical only and must not be quoted as current. Same family as BN-10/BN-11/BN-12 (not individually re-fetched this pass; runner evidence HTTP_404)."},
+    {"id": "BN-26", "retailer": "Blue Nile", "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515", "fetch": "chunk 0 of 1", "stored_price_usd": null, "live_price_text": "'This popular style is sold out' (no purchasable price for this item; prices shown belong to other suggested items)", "verdict": "BLANK CONFIRMED CORRECT. PRICE_UNVERIFIED + SOLD_OUT_AT_CHECK stand. Suggested-item prices on the page must never be copied onto this row."},
+    {"id": "MJ-01", "retailer": "Mejuri", "url": "https://mejuri.com/products/diamonds-team-ring", "fetch": "chunk 0 of 1 (served URL included Material=Solid White Gold (14k))", "stored_price_usd": 548.0, "live_price_text": "$548", "live_other": "Served variant 'Solid White Gold (14k), Natural Diamond' while the Materials heading reads 'Solid Yellow Gold (14k)'; stored row is the yellow-gold variant at the same $548", "verdict": "PRICE MATCHES, VARIANT MISMATCH reproduces (PRICE_VARIANT_DEPENDENT). Confirm metal variant in cart before relying on the amount."},
+    {"id": "MJ-06", "retailer": "Mejuri", "url": "https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&Stone=Natural+Diamond", "fetch": "chunk 0 of 1 (served as Material=Solid Yellow Gold (14k))", "stored_price_usd": 1100.0, "live_price_text": "From $1,100 (size unselected; 'Select a size to see availability')", "live_other": "Solid Yellow Gold (14k), Natural Diamond; no explicit 'USD' token in returned text", "verdict": "FROM-AMOUNT MATCHES stored From-price. No size-specific current quote is claimed; PRICE_IS_FROM_PRICE + PRICE_STRUCTURED_DIFFERS stand."},
+    {"id": "VR-01", "retailer": "VRAI", "url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861", "fetch": "chunks 0-1 of 3", "stored_price_usd": 1035.0, "live_price_text": "No setting price in returned text chunks (no current quote claimed this pass)", "stored_weight_g": 2.86, "live_weight_text": "Metal weight: 2.86g (Ring size 6)", "live_other": "Page title 'Plain Band | 18k Yellow Gold'; Ring Size: 5 selected; Setting Details also list 'Pave carat weight: 0.18ctw' under the plain-band configuration", "verdict": "WEIGHT MATCHES for size 6; size-6 weight must not be applied to the size-5 selection without its flag. Plain/pave spec conflict (SPEC_LISTED_PAVE_ON_PLAIN_BAND) reproduces. Price verdict this pass: NOT MACHINE-READABLE; stored From-$1,035 keeps PRICE_STRUCTURED_DIFFERS and is historical."},
+    {"id": "SR-03", "retailer": "Sarraf", "url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html", "fetch": "chunk 0 of 6", "stored_price_usd": 871.0, "live_price_text": "Now: US$871.00 (Was US$1,019.00; MSRP US$3,388.00)", "stored_weight_g": 6.7, "live_weight_text": "Approximate Metal Weight: 6.70 grams ('approximate weight of a ring in size 10')", "live_other": "SKU 18KY-LPBWB05 / Stock 140139; Material '18K Solid Gold'; derived MSRP anchor = 3.89x the sale price", "verdict": "MATCH (price, weight, solid-gold wording). MSRP anchor reproduces; compare on the sale price and gram weight, never on MSRP."},
+    {"id": "CB-01", "retailer": "Catbird NYC", "url": "https://www.catbirdnyc.com/the-swan-solitaire-2475.html", "fetch": "chunk 0 of 6", "stored_price_usd": 3900.0, "live_price_text": "from $3,900.00", "live_other": "Title 'The Swan Solitaire Diamond Engagement Ring'; stored basis is complete ring including centre diamond (PRICE_IS_FROM_PRICE + PRICE_INCLUDES_CENTRE_STONE)", "verdict": "FROM-AMOUNT MATCHES. Configuration-dependent complete-ring price; never compare its multiple with setting-only rows (it has no published weight, so no gold value exists)."},
+    {"id": "MN-01", "retailer": "Mene", "url": "https://mene.com/products/knot-ring-gold", "fetch": "chunk 0 of 3", "stored_price_usd": 1465.0, "live_price_text": "$1,442 USD", "derived_difference_pct": -1.57, "live_other": "'Products are sold by weight, not size.'; size selector 5-9.5 with no size named for the displayed amount in returned text", "verdict": "DIFFERS reproduces (sold-by-weight daily float). Both numbers published; stored value NOT overwritten because the size/weight basis of the live amount is not stated."},
+    {"id": "MN-02", "retailer": "Mene", "url": "https://mene.com/products/etruscan-sun-band-gold", "fetch": "chunk 0 of 3", "stored_price_usd": 1730.0, "live_price_text": "$1,704 USD", "derived_difference_pct": -1.5, "live_other": "'Products are sold by weight, not size.'", "verdict": "DIFFERS reproduces. Both numbers published; nothing overwritten."},
+    {"id": "RS-05", "retailer": "Ross-Simons", "url": "https://www.ross-simons.com/products/990022", "fetch": "chunk 0 of 2", "stored_price_usd": 2819.0, "live_price_text": "Sale price $2,819 (Original price $3,995)", "live_other": "Item 990022; '.80 Carat Certified Diamond Solitaire Ring in 14kt White Gold' (retailer title spells 'Ceritified'); GIA Cert #2225975086 as displayed; Sizes 5-8 In-Stock at $2,819.00, Size 9 Sold Out; no gram weight (blank correct)", "verdict": "MATCH. Pass 18 catalogue-migration URL fix independently confirmed: same item, same price, purchasable."}
+  ],
+  "live_site_check": {
+    "url": "https://karagemop466-tech.github.io/GOLD4/",
+    "fetch": "chunk 0 of 8",
+    "observed": "Serves 'NO HALLUCINATIONS — read before using any number' top summary; 64 rings / 10 retailers / 62 prices captured 22 October 2026 / 17 gram weights / $3,996.31/oz ($128.48/g) / 249 flags; source-health panel dated 2026-10-23T20:23:21Z (46 confirmed / 4 dead / 7 blocked / 4 differ).",
+    "verdict": "Deployed site matches the main tree checked this pass. Pages API at claim time: status=built, https_enforced=true."
+  },
+  "not_reread_this_pass": "50 of 64 rows were NOT individually re-opened this pass. Their stored prices keep capture date 2026-10-22 (BN-22: 2026-10-23) and must be treated as dated historical readings, not current quotes. Full-URL runner evidence for all 64 rows remains data/source_health.json + reports/live_source_check_latest.json (2026-10-23T20:23:21Z), enforced by Gate 7.",
+  "counts_at_this_pass": {"rings": 64, "retailers": 10, "registered_sources": 31, "stored_prices": 62, "blank_prices": ["VR-02", "BN-26"], "published_weights": 17, "flag_instances": 249}
+}
