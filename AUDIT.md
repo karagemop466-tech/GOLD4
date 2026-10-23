@@ -3,7 +3,7 @@ Date: 2026-10-22
 
 HARD FAILURES: 0
 
-FLAGGED (blank/unverified, by design): 31
+FLAGGED (blank/unverified, by design): 49
 - BE-01.weight_g: blank/UNVERIFIED (correct per policy)
 - BE-02.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-01.weight_g: blank/UNVERIFIED (correct per policy)
@@ -31,11 +31,29 @@ FLAGGED (blank/unverified, by design): 31
 - BN-10.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-11.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-12.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-13.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-14.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-15.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-16.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-17.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-18.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-19.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-20.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-21.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-22.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-23.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-24.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-25.weight_g: blank/UNVERIFIED (correct per policy)
+- BN-26.price: blank/UNVERIFIED (correct per policy)
+- BN-26.weight_g: blank/UNVERIFIED (correct per policy)
 - BE-04.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-05.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-06.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-07.weight_g: blank/UNVERIFIED (correct per policy)
 - RS-05.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-06.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-07.weight_g: blank/UNVERIFIED (correct per policy)
 
-Records audited: 47
+Records audited: 64
 Rule: a value with no official source link + retrieval date must stay blank. Re-run after every review.
 Deeper checks (domain allow-list, recomputation of every derived number, speculation scan) run in scripts/audit.py.
