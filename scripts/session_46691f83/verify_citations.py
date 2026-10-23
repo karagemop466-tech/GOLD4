@@ -79,11 +79,20 @@ TOPIC_OWNER = {
 }
 
 REF_RE = re.compile(r"(?:§{1,2}\s*|section\s+)(23\.\d+)", re.IGNORECASE)
-SCAN_FILES = (
-    sorted((ROOT / "data").glob("*.json"))
-    + sorted(ROOT.glob("*.html"))
-    + sorted((ROOT / "pages").glob("*.html"))
-    + sorted((ROOT / "categories").glob("*.html"))
+# Pages that quote a wrong citation *in order to report the correction* are
+# excluded: coordination.html, pages/log.html and the verification log exist to
+# name the error that was fixed, and scanning them would only flag the fix.
+# Every buyer-facing page and every data file is still scanned.
+SKIP_NAMES = {"coordination.html", "pages/log.html"}
+
+SCAN_FILES = tuple(
+    p for p in (
+        sorted((ROOT / "data").glob("*.json"))
+        + sorted(ROOT.glob("*.html"))
+        + sorted((ROOT / "pages").glob("*.html"))
+        + sorted((ROOT / "categories").glob("*.html"))
+    )
+    if str(p.relative_to(ROOT)) not in SKIP_NAMES
 )
 SENTENCE_SPLIT = re.compile(r"(?<=[.:;])\s+|\n|</li>|<li>|</p>")
 
@@ -129,9 +138,19 @@ def main() -> int:
                 errors.append(f"{rel}: cites 16 CFR \u00a7 {sec}, which is not in the verified section table")
                 continue
             refs += 1
+
+            # A page that quotes an existing wrong citation in order to correct it
+            # ("the standards page cited § 23.9 for ...") is doing the opposite of
+            # misattributing it. Both rules are skipped when the surrounding text
+            # says so — the marker may sit before OR after the citation.
+            correction_context = re.search(
+                r"(cited|previously|wrongly|incorrectly|mistaken|corrected|used to say|misattribut)",
+                (text[max(0, m.start() - 220): m.start()] + " " + text[m.end(): m.end() + 200]).lower(),
+            )
+
             # R1 — explicit label immediately after the citation.
             lab = label_after(text, m.end())
-            if lab:
+            if lab and not correction_context:
                 for topic, owner in TOPIC_OWNER.items():
                     if lab.startswith(topic) and owner != sec:
                         r1 += 1
@@ -139,15 +158,6 @@ def main() -> int:
                             f"{rel}: 16 CFR \u00a7 {sec} ({CFR_16_PART_23[sec]}) is labelled "
                             f"'{topic}', which is \u00a7 {owner}"
                         )
-            # A page that quotes an existing wrong citation in order to correct it
-            # ("the standards page cited § 23.9 for ...") is doing the opposite of
-            # misattributing it. R2 is skipped when the run-up says so.
-            correction_context = re.search(
-                r"(cited|previously|wrongly|incorrectly|mistaken|was corrected|used to say|misattribut|"
-                r"now correct|error)",
-                text[max(0, m.start() - 220): m.start()].lower(),
-            )
-
             # R2 — single-section sentence with another section's topic right after it.
             # Only applied to the HTML pages: the JSON files are machine-formatted
             # blobs where "sentences" run across unrelated records, which produced

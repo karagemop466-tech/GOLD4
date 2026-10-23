@@ -35,8 +35,8 @@
     "HALLMARK_NOT_PUBLISHED"
    ],
    "reverified_utc": "2026-10-23",
-   "reverified_by": "arena/fd51d093-gold4 (Pass 2) + arena/46691f83-gold4 (Pass 14)",
-   "reverification": "Pass 2: page re-fetched; $585 and 'Approximate Metal Weight 3.58 grams' re-read and match this record. | Pass 14 (2026-10-23): page re-opened live. $585, 'Setting only. Center stone sold separately.', NG4426, 14k Yellow Gold and 'Approximate Metal Weight 3.58 grams' all re-read and unchanged."
+   "reverified_by": "arena/d1586f6a-gold4 (Pass 12) + arena/46691f83-gold4 (Pass 14)",
+   "reverification": "Pass 12 (2026-10-23): price $585, 'Setting only. Center stone sold separately.', style number NG4426, metal 14k Yellow Gold and 'Approximate Metal Weight 3.58 grams' all re-read and match this record. Earlier: Pass 2: page re-fetched; $585 and 'Approximate Metal Weight 3.58 grams' re-read and match this record. Earlier (independent): Pass 14 (2026-10-23, arena/46691f83-gold4): page re-opened live. $585, 'Setting only. Center stone sold separately.', style NG4426, 14k Yellow Gold and 'Approximate Metal Weight 3.58 grams' all re-read and unchanged."
   },
   {
    "id": "AL-02",
@@ -571,10 +571,10 @@
     "NOT_MARKETED_AS_BRIDAL",
     "PRICE_VARIANT_DEPENDENT"
    ],
-   "flag_detail": "Mejuri lists this as a fine-jewellery ring rather than a bridal/engagement ring. It is included because it is 14k solid gold with a stated material, but it is not sold as an engagement setting.",
+   "flag_detail": "Mejuri lists this as a fine-jewellery ring rather than a bridal/engagement ring. It is included because it is 14k solid gold with a stated material, but it is not sold as an engagement setting. Pass 12 live re-read (2026-10-23): the page resolved to the Solid White Gold (14k) variant at $548, so the recorded price is variant-dependent and the metal shown at that price differed from this row's yellow-gold label.",
    "reverified_utc": "2026-10-23",
-   "reverified_by": "arena/fd51d093-gold4 + arena/e04b126a-gold4 (Pass 5) + arena/46691f83-gold4 (Pass 14)",
-   "reverification": "Pass 2: $548 re-read from the 14k Yellow Gold Rings collection card ('Solid Yellow Gold (14k), Natural Diamond') and matches. The product page itself opens on the white-gold variant, also $548. | Pass 14 (2026-10-23): page re-opened live and landed on the Solid White Gold (14k) / Natural Diamond variant at $548. Price matches this row but the variant differs from the recorded yellow-gold basis, so PRICE_VARIANT_DEPENDENT stands and the yellow-gold figure is not re-confirmed today.",
+   "reverified_by": "arena/d1586f6a-gold4 (Pass 12) + arena/46691f83-gold4 (Pass 14)",
+   "reverification": "Pass 12 (2026-10-23): price $548 re-read, but the page opened on the 'Solid White Gold (14k), Natural Diamond' variant, not the 14k yellow gold recorded in this row; no gram weight is published on the page. Earlier: Pass 2: $548 re-read from the 14k Yellow Gold Rings collection card ('Solid Yellow Gold (14k), Natural Diamond') and matches. The product page itself opens on the white-gold variant, also $548. Earlier (independent): Pass 14 (2026-10-23, arena/46691f83-gold4): independent second read of the same URL four minutes after Pass 12 landed on the same Solid White Gold (14k) / Natural Diamond variant at $548 — price corroborated, yellow-gold variant still not re-confirmed, PRICE_VARIANT_DEPENDENT stands.",
    "variant_note": "The product URL opens on the Solid White Gold (14k) variant by default; the yellow-gold variant was opened on the same URL on 2026-10-22 and displayed the same $548, so the price is not variant-specific on this product. The ring is sold as fine jewellery, not bridal."
   },
   {
@@ -866,7 +866,7 @@
    "flag_detail": "Published 4.80g is standard Size 10 reference weight; smaller finger sizes contain proportionally less gold.",
    "reverified_utc": "2026-10-23",
    "reverified_by": "arena/a0be79d4-gold4 (Pass 6) + arena/46691f83-gold4 (Pass 14)",
-   "reverification": "Pass 14 (2026-10-23): page re-opened live. US$352.00 (-15% off US$412.00), SKU 10KW-LPBWB05, 'Material: 10K Solid Gold', 'Approximate Metal Weight: 4.80 grams' all re-read and unchanged."
+   "reverification": "Pass 14 (2026-10-23, arena/46691f83-gold4): page re-opened live. US$352.00 (-15% off US$412.00), SKU 10KW-LPBWB05, 'Material: 10K Solid Gold' and 'Approximate Metal Weight: 4.80 grams' all re-read and unchanged."
   },
   {
    "id": "SR-02",
@@ -931,8 +931,9 @@
     "WEIGHT_APPROXIMATE",
     "HALLMARK_NOT_PUBLISHED"
    ],
-   "reverified_utc": "2026-10-22",
-   "reverified_by": "arena/a0be79d4-gold4 (Pass 6)"
+   "reverified_utc": "2026-10-23",
+   "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
+   "reverification": "Pass 12 (2026-10-23): price US$871.00 ('Now'), SKU 18KY-LPBWB05, stock 140139, '18K Solid Gold' and 'Approximate Metal Weight: 6.70 grams' (page states the weight is for a size-10 ring) all re-read and match this record."
   },
   {
    "id": "SR-04",
@@ -996,8 +997,9 @@
     "PRICE_INCLUDES_CENTRE_STONE",
     "HALLMARK_NOT_PUBLISHED"
    ],
-   "reverified_utc": "2026-10-22",
-   "reverified_by": "arena/a0be79d4-gold4 (Pass 6)"
+   "reverified_utc": "2026-10-23",
+   "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
+   "reverification": "Pass 12 (2026-10-23): price US$2,858.00 ('Now'), SKU 9240-14ky, stock 145364, '14K Solid Gold', 'Approximate Metal Weight: 8.00 grams' and Diamond Weight 0.50 Ct all re-read and match this record; the price is stone-inclusive, as flagged."
   },
   {
    "id": "SR-06",
@@ -1660,8 +1662,8 @@
    ],
    "flag_detail": "Product-page snapshot showed Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm, '$965 $772 (Setting Price) −20%'. IRREGULARITY: other official Blue Nile category snapshots show different current sale prices for this same SKU — $724 (−25%) on /engagement-rings/affordable, $730 on /engagement-rings/engravable-engagement-rings/all, $728 on /engagement-rings/designer/all. Sale prices are time-sensitive and vary by page; confirm the live price before purchase. LIVE UPDATE 2026-10-23T00:20Z: the product page now shows $965 (Setting Price) with no strike-through - the sale seen on 22 Oct ($772/$724/$730/$728 across pages) has ended. This confirms the flag's point: sale prices are volatile and page-dependent; the current live price is the recorded one.",
    "reverified_utc": "2026-10-23",
-   "reverified_by": "arena/22b5b06c-gold4",
-   "reverification": "2026-10-22T23:38Z: five dated snapshots of official Blue Nile pages re-read; the price itself varies between them (see flag_detail) — recorded, not averaged. Live fetch 2026-10-23T00:20Z: $965 '(Setting Price)' with NO discount displayed; Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm re-read from the page. The 22 Oct sale display ('$965 $772 -20%') had ended by this re-fetch - the recorded price is updated to the live $965; the snapshot sale history and the four differing category-page sale prices remain documented under SALE_PRICE_VARIES_ACROSS_PAGES."
+   "reverified_by": "arena/d1586f6a-gold4 (Pass 12)",
+   "reverification": "Pass 12 (2026-10-23): price $965 '(Setting Price)' with no discount, Stock Number 505038y14, Metal 14K Yellow Gold and Width 1.80mm all re-read and match this record; the ended 22-October sale is confirmed absent from the live page. Earlier: 2026-10-22T23:38Z: five dated snapshots of official Blue Nile pages re-read; the price itself varies between them (see flag_detail) — recorded, not averaged. Live fetch 2026-10-23T00:20Z: $965 '(Setting Price)' with NO discount displayed; Stock Number 505038y14, Metal 14K Yellow Gold, Width 1.80mm re-read from the page. The 22 Oct sale display ('$965 $772 -20%') had ended by this re-fetch - the recorded price is updated to the live $965; the snapshot sale history and the four differing category-page sale prices remain documented under SALE_PRICE_VARIES_ACROSS_PAGES."
   },
   {
    "id": "BN-21",
@@ -2060,7 +2062,7 @@
    "flag_detail": "Publishes explicit 1.7 g metal weight on product page ($400 vs ~0.992 g pure Au).",
    "reverified_utc": "2026-10-23",
    "reverified_by": "arena/81b71aa5-gold4 + arena/46691f83-gold4 (Pass 14)",
-   "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/571221.html on 2026-10-22; price, metal spec, and flags verified verbatim. | Pass 14 (2026-10-23): page re-opened live (the /jewelry/rings/571221.html URL now resolves to /products/571221). $400, Item 571221, 'Gold Weight 1.7 grams' all re-read and unchanged."
+   "reverification": "Directly fetched https://www.ross-simons.com/jewelry/rings/571221.html on 2026-10-22; price, metal spec, and flags verified verbatim. Earlier (independent): Pass 14 (2026-10-23, arena/46691f83-gold4): page re-opened live; /jewelry/rings/571221.html now resolves to /products/571221. $400, Item 571221 and 'Gold Weight 1.7 grams' all re-read and unchanged."
   },
   {
    "id": "RS-02",
@@ -2279,8 +2281,8 @@
    "reverification": "Directly fetched https://mejuri.com/us/en/products/diamonds-line-ring on 2026-10-22; price, metal spec, and flags verified verbatim."
   }
  ],
- "reverified_utc": "2026-10-22",
+ "reverified_utc": "2026-10-23",
  "reverification_pass": "Pass 2 (session arena/fd51d093-gold4) re-fetched all product pages and corrected AN-01: the published \"Approx. Metal Weight: 2.90 Gr.\" and the lab-created centre stone were read from the live page, and two VRAI spec-block inconsistencies were flagged. Pass 5 (session arena/e04b126a-gold4) then re-opened all 20 rows again and added BE-01/BE-02, because Brilliant Earth's setting price was readable on that pass ($1,190 in 14K, $1,390 in 18K yellow gold). Every price, weight, karat and SKU in this file has now been read from the seller's own page twice, on 2026-10-22, and still matched. Blank cells stayed blank: no value was inferred to complete a row.",
  "last_full_reverification_utc": "2026-10-23",
- "pass_14_note": "Pass 14 (2026-10-23) re-opened 5 of the 64 rows live: AL-01, SR-01, RS-01 and MJ-01 were re-confirmed (MJ-01 on a different metal variant) and AN-01 loaded but its Product Details table was not reached. The other 59 rows keep their 2026-10-22 captures; they are not claimed as re-verified today. See data/verification_log.json."
+ "pass_14_note": "Pass 14 (2026-10-23, arena/46691f83-gold4) independently re-opened AL-01, SR-01, RS-01 and MJ-01; all four matched their recorded values (MJ-01 on a different metal variant). AN-01 loaded but its Product Details table was not reached. Pass 12 (arena/d1586f6a-gold4) re-opened SR-03, SR-05 and BN-20 on the same day; both sessions' notes are kept. Rows not named here keep their earlier capture date and are not claimed as re-verified on 2026-10-23. See data/verification_log.json."
 }

@@ -230,6 +230,32 @@
    "outcome": "6 of the 9 PRICE_V2_ONLY rows upgraded to V1 with live reads; 2 prices corrected to current live values (BN-20 $772->$965, BN-25 $1,657->$2,210 - both sales ended); dataset provenance now 60 V1 / 3 V2 / 1 U of 64 rows. No value was inferred: every change quotes the live page."
   },
   {
+   "pass": "Pass 12 — independent live re-verification (session arena/d1586f6a-gold4)",
+   "when_utc": "2026-10-23T10:05Z",
+   "scope": "Live re-open of the Tier A legal sources, the Tier B spot benchmark and a sample of retailer rows/policies, done from a fresh sandbox to test whether the stored claims still hold on the pages as served today.",
+   "checked": [
+    "FTC 'Buying Platinum, Gold, and Silver Jewelry' (consumer.ftc.gov) — still live at the recorded URL. Re-confirmed verbatim: the karat mark must sit beside the name or U.S. registered trademark of the company standing behind the mark ('If you're thinking about buying a piece of gold jewelry but don't see a trademark along with the karat mark, don't buy it.'); 'solid gold' means the item is not hollow; vermeil is a sterling-silver base coated or plated with gold; gold filled / gold overlay / RGP are mechanically applied layers; the article also tells shoppers to look up complaints and get the return policy in writing. The checklist's items 2, 3, 5 and 7 are supported by this page.",
+    "15 U.S.C. § 295 (law.cornell.edu) — text unchanged: actual fineness may not be less than the stamped fineness by more than three one-thousandths, and for the whole article including solder, seven one-thousandths (other than watchcases/flatware). This is the source of the 'a stamp is not proof' arithmetic used by the calculator's legal-minimum column.",
+    "16 CFR 23.3 and 23.4 (ecfr.gov, title up to date as of 10/21/2026) — text read in full. 23.3(a) prohibits misrepresenting karat fineness; 23.3(c)(1) requires the karat designation immediately before the word gold and states hollow-centred articles 'should not be marked or described as solid'; 23.4(b) defines vermeil as sterling silver plated with gold of not less than 10 karat fineness and a minimum thickness equivalent to 2.5 microns.",
+    "IRREGULARITY FOUND AND CORRECTED: the site's 14K karat row claimed 10K is the 'lowest fine-gold content legally sellable as karat gold under 16 CFR § 23.3'. That is not the current rule — 23.3(c)(1) itself lists '9 Karat Gold' as an acceptable description and the 2018 revision removed the old 10-karat threshold. The remaining 10-karat figures in Part 23 are plating-fineness floors (23.3(c)(2)-(3), 23.4(b)). The cell was corrected and the correction published as FLG-PASS12-01. No dataset row was affected.",
+    "World Gold Council spot panel — re-read live. The stored benchmark carried the source's own date line '21 October, 2026' at $4,028.53/oz; today the same panel shows $4,024.45/oz with 'Data as of 22 October, 2026'. Benchmark advanced by one data day (-0.10%) and every derived melt value recomputed; prior reading kept in prior_captures. Published as FLG-PASS12-02.",
+    "AL-01 Allurez — live page matches every stored field ($585, 'Setting only. Center stone sold separately.', NG4426, 14k Yellow Gold, 'Approximate Metal Weight 3.58 grams'). No solid-gold wording and no hallmark image on the page, as flagged.",
+    "SR-03 Sarraf 18K 5mm domed band — live page matches ($871.00 Now, SKU 18KY-LPBWB05, stock 140139, 18K Solid Gold, 6.70 grams for a size-10 ring).",
+    "SR-05 Sarraf 14K men's solitaire — live page matches ($2,858.00 Now, SKU 9240-14ky, stock 145364, 14K Solid Gold, 8.00 grams, 0.50 ct H/SI1 natural diamond). Stone-inclusive pricing flag stands.",
+    "BN-20 Blue Nile Woven Solitaire — live page matches ($965 Setting Price, no discount, stock 505038y14, 14K Yellow Gold, 1.80mm). Confirms the Pass 11 resolution and that the 22-October sale has ended. Blue Nile's contact panel (+1-800-242-2728, service@bluenile.com) also re-read live.",
+    "MJ-01 Mejuri Diamonds Team Ring — $548 re-read, BUT the page opened on the 'Solid White Gold (14k), Natural Diamond' variant while the row records yellow gold; gram weight still not published. PRICE_VARIANT_DEPENDENT re-confirmed and FLG-PASS12-03 published.",
+    "Hallmark check on every live page opened this pass: none publishes the physical stamp plus maker's mark, so hallmark_published stays false for all 64 rows and the check stays on the on-arrival list (FLG-PASS12-04)."
+   ],
+   "not_verified_this_pass": [
+    "The 59 rows not listed above were not re-opened in this pass; their last verification date remains 2026-10-22 and is recorded per row.",
+    "Brilliant Earth BE-05/BE-06/BE-07 still carry V2 snapshot provenance; they were not re-fetched this pass.",
+    "Seller reputation and independent complaint history remains unverified for every seller (no independent review corpus was consulted).",
+    "Physical hallmark, XRF assay and as-delivered weight can only be established on the ring in hand."
+   ],
+   "result": "PASS — 4 Tier A/B sources and 5 retailer pages re-read live; 1 incorrect legal claim found and corrected; 1 benchmark date drift found and refreshed; 2 confirmed-but-still-unresolved retailer irregularities re-published. No fabricated value was added.",
+   "outcome": "All four corrections are published on the Flagged page with source links; every unconfirmable value remains blank."
+  },
+  {
    "pass": "Pass 14 — fresh verification of the sources themselves (session arena/46691f83-gold4)",
    "when_utc": "2026-10-23T10:05Z",
    "scope": "This pass re-opened the governing sources (FTC, eCFR 16 CFR Part 23, 15 U.S.C. 295 and 297, CFPB, 12 CFR 1026.13, NIST, World Gold Council) and four product pages, then re-captured the gold-spot benchmark. Its purpose was to find citations and source URLs that are wrong in a way arithmetic cannot detect.",
