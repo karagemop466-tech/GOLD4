@@ -540,7 +540,10 @@ BE-05/BE-06/BE-07 (Brilliant Earth): re-fetch **attempted** ~00:31–00:33Z; the
 | Pages build | `built` for commit `34b8c5f` (Pages API `status=built`) |
 | Live-site verification | https://karagemop466-tech.github.io/GOLD4/ fetched 2026-10-23 ~00:16 UTC: front page serves **64 rings / 10 retailers / 62 prices / 17 weights / 238 flags**, the NO HALLUCINATIONS banner, and links to the Flagged, Log and category pages (first post-deploy fetch showed a stale 47-row CDN cache; re-fetch after ~2 min served the new build) |
 | Follow-up record PR | #23 — merged (record of PR #11 merge + deploy verification) |
-| Pass 11 upgrade PR | see row added by the Pass 11 commit (V2→V1 upgrades + price corrections BN-20 $965, BN-25 $2,210) |
+| Pass 11 upgrade PR | **#24** https://github.com/karagemop466-tech/GOLD4/pull/24 — **MERGED** as `cc1def6` (V2→V1 upgrades + price corrections BN-20 $965, BN-25 $2,210; CI run on the PR: success, five gates) |
+| Pages deploy after #24 | push run `39877981858` **completed / success**; Pages API build **`built`** for `cc1def6` |
+| Live site after #24 | https://karagemop466-tech.github.io/GOLD4/ fetched 2026-10-23 ~00:52 UTC: front page serves **64 rings / 10 retailers / 62 prices / 17 weights / 234 flags** with the NO HALLUCINATIONS banner — the post-Pass-11 build is live |
+| Record PR for #24 | this commit&#x27;s PR (board-only + regenerated coordination page) — merged immediately after; it closes this session&#x27;s PR ledger |
 
 ---
 
