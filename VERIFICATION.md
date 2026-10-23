@@ -249,7 +249,7 @@ Generated 2026-10-23 10:08 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T10:07:59+00:00
+run_utc: 2026-10-23T10:08:37+00:00
 dataset rows: 64 | sellers: 10 | sources: 31
 spot benchmark: $4,024.45/oz (22 October, 2026) = $129.3891/g
 
