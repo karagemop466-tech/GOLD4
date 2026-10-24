@@ -269,6 +269,7 @@ class ReadinessTests(unittest.TestCase):
         self.assertIn("not</strong> establish any measured lower or upper bound", calculator)
         self.assertIn("hypothetical example", calculator)
         self.assertIn("concurrent, not alternatives", calculator)
+        self.assertIn("Initial selected-source reads:", (r.ROOT / "pages/readiness.html").read_text())
 
 
     def test_capture_label_uses_explicit_populated_price_dates_not_build_date(self):

@@ -318,7 +318,7 @@ def render_html(report):
 <p><strong>No candidate currently has complete evidence for your pre-purchase checklist.</strong> That is an evidence-completeness finding, not a claim that any ring is fake. No ring has been independently assayed for this project.</p></div>
 <section class="hero"><span class="eyebrow">Requirement-by-requirement register</span><h1>What is still missing before buying?</h1>
 <p class="lede">Every candidate, with its official links and unresolved buying requirements. No manual research input is required to generate this register.</p>
-<p class="meta-line">Selected-source review: {e(report['review_date_utc'])} UTC. All other product facts below are inherited, dated research records, <strong>not freshly re-certified facts</strong>. No size or final checkout configuration was selected.</p></section>
+<p class="meta-line">Initial selected-source reads: {e(report['review_date_utc'])} UTC; subsequent dates are listed per source. All other product facts below are inherited, dated research records, <strong>not freshly re-certified facts</strong>. No size or final checkout configuration was selected.</p></section>
 <div class="kpis"><div class="kpi"><div class="n">{stats['candidates']}</div><div class="l">Candidates / {stats['retailers']} retailers</div></div>
 <div class="kpi gold"><div class="n">{stats['recorded_explicit_solid_wording']}</div><div class="l">Explicit solid-wording records</div><div class="s">Not proof of construction</div></div>
 <div class="kpi"><div class="n">{stats['recorded_sourced_weights']}</div><div class="l">Sourced weight records</div><div class="s">Size-specific / often approximate</div></div>
