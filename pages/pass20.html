@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pass 20 verification record · GOLD4 gold-ring verification desk</title>
+<meta name="description" content="Dated gold-ring candidate research: source-linked historical prices, published gram weights, derived gold content and verification limits.">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html" style="text-decoration:none;color:inherit">
+      <span class="mark">Au</span>
+      <span>GOLD4<small>gold-ring verification desk</small></span>
+    </a>
+    <nav class="main">
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="freshness.html" class="">Freshness</a><a href="session-review.html" class="">Current review</a><a href="pass20.html" class="active">Pass 20</a><a href="../checklist.html" class="">Checklist</a><a href="log.html" class="">Log</a><a href="../dashboard.html" class="">Assay Lab+</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap">
+<aside class="nohall" aria-label="Current verification limits">
+  <strong>NO HALLUCINATIONS — dated research, not live offers.</strong>
+  Historical captures below are not current verified quotes or a guarantee of purity.
+  Unconfirmed current prices are blank in the <a href="../pages/session-review.html">current-session review / Flagged for Review</a>.
+  A new World Gold Council panel read ($3,995.47/oz, 23:43Z) differs from the stored historical benchmark ($3,996.31/oz); both are published — see Pass 20.
+  Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
+  Re-check official sources and request independent testing before purchase.
+</aside>
+
+<h1>Pass 20 — what was actually re-read, and what still is not</h1>
+<p class="lede">Session <span class="mono">arena/bfbdf30c-gold4</span> · evidence window
+<span class="mono">2026-10-23T23:43Z-23:45Z (whole session, checked against the sandbox clock)</span> · evidence file
+<span class="mono">reviews/pass20/observations.json</span></p>
+
+
+<div class="nohall">
+  <h2>⚠ NO HALLUCINATIONS — read before using any number</h2>
+  <p><strong>No hallucinations.</strong> This project manufactures no values. A price, weight, karat, deadline or contact detail is only shown if it was read from the
+  official page linked in the same row. The consumer rules being applied come from the
+  <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC's guidance on buying gold jewelry</a>
+  and <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.</p>
+  <ul>
+    <li><strong>Blank means blank.</strong> If a retailer did not publish a gram weight, the weight cell stays empty — it is never estimated from photos, blogs or "typical" rings.</li>
+    <li><strong>Every row carries its source.</strong> Open the source link and confirm the number yourself; prices change without notice.</li>
+    <li><strong>Derived ≠ claimed.</strong> Gold content and gold value are arithmetic on published values at the captured spot price, and are labelled as derived.</li>
+    <li><strong>Anything uncertain is published on <a href="../pages/flagged.html">Flagged for Review</a></strong> with the reason and the source, instead of being quietly filled in.</li>
+    <li><strong>Re-run the check after every review.</strong> <span class="mono">python3 scripts/audit.py</span> re-derives every number and fails the build on an unsourced value. When you review this dataset, ask of each row: <em>where is the official source, and what date was it read?</em> If a row cannot answer that, treat it as unverified and flag it — including anything added by a previous pass.</li>
+  </ul>
+</div>
+
+
+<div class="callout">
+  <p><strong>Read this first.</strong> 53 of 64 rows were NOT re-read in Pass 20. Their stored values keep their original 2026-10-22 capture dates and are not claimed to be current.</p>
+  <p>This pass re-read 11 of the 64 product rows plus the gold benchmark. Nothing was filled in,
+  nothing was overwritten, and where a page printed a different number both numbers are published.
+  A page that could not be read is reported as unreadable — not guessed.</p>
+</div>
+
+<h2>Coverage of this pass</h2>
+<div class="kpis"><div class="kpi"><div class="n">5</div><div class="l">of 64 rows fully corroborated</div></div><div class="kpi"><div class="n">1</div><div class="l">row where the price differs</div></div><div class="kpi"><div class="n">1</div><div class="l">dead link confirmed by hand</div></div><div class="kpi"><div class="n">3</div><div class="l">rows partly read</div></div><div class="kpi"><div class="n">53</div><div class="l">rows NOT re-read this pass</div></div></div>
+<p class="small">Counts are read from the evidence file. "Fully corroborated" means the page printed
+the stored price <em>and</em>, where the row has a published weight, the stored weight.
+"Partly read" covers pages that loaded but whose price sat in a JavaScript panel (BE-07, AN-01)
+or whose specification block was readable without the price (VR-01).</p>
+
+<h2>Line-by-line readings</h2>
+<p>Each row below is one page this session opened. The quoted text is what the page printed at the
+time in the second column; the fourth column is what this repository stores. No value was applied
+from a reading — the evidence is published, not merged.</p>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>Ref</th><th>Row</th><th>Source read</th><th>What the page printed (verbatim)</th>
+  <th>What this repo stores</th><th>Verdict &amp; note</th></tr></thead>
+  <tbody>
+  <tr data-row-id="gold benchmark">
+    <td class="id">P20-R01</td>
+    <td>gold benchmark<span class="sub"></span></td>
+    <td class="src"><a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">Gold spot price panel: &#x27;USD /oz&#x27; with &#x27;3,995.47&#x27; above &#x27;Last Updated&#x27;; page date line &#x27;22 October, 2026&#x27;; chart footer &#x27;Data as of 22 October, 2026&#x27;</td>
+    <td>benchmark $3,996.31/oz</td>
+    <td><span class="badge b-warn">differs, immaterial</span><span class="sub"></span></td>
+  </tr>
+  <tr data-row-id="AL-01">
+    <td class="id">P20-R02</td>
+    <td>AL-01<span class="sub">Allurez</span></td>
+    <td class="src"><a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">&#x27;$585&#x27;, &#x27;51% Savings&#x27;, &#x27;$1,194 Everyone Else&#x27;, &#x27;Setting only. Center stone sold separately.&#x27;, &#x27;Style number NG4426&#x27;, &#x27;Metal 14k Yellow Gold&#x27;, &#x27;Approximate Metal Weight 3.58 grams&#x27;</td>
+    <td>price $585.00; weight 3.58 g</td>
+    <td><span class="badge b-ok">matches the stored value</span><span class="sub">Price, basis, style number, metal, karat and the seller&#x27;s approximate weight all match the stored record.</span></td>
+  </tr>
+  <tr data-row-id="SR-03">
+    <td class="id">P20-R03</td>
+    <td>SR-03<span class="sub">Sarraf</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">&#x27;Now: US$871.00  -15% OFF&#x27;, &#x27;Was: US$1,019.00&#x27;, &#x27;MSRP: US$3,388.00&#x27;, &#x27;Material: 18K Solid Gold&#x27;, &#x27;Approximate Metal Weight: 6.70 grams&#x27;, SKU 18KY-LPBWB05, &#x27;The weight listed is an approximate weight of a ring in size 10&#x27;</td>
+    <td>price $871.00; weight 6.7 g</td>
+    <td><span class="badge b-ok">matches the stored value</span><span class="sub">Price, &#x27;18K Solid Gold&#x27; wording and 6.70 g all match. The page itself states the weight is for a size-10 ring; the stored weight_scope already records the approximation but not the size - published here as an observation.</span></td>
+  </tr>
+  <tr data-row-id="SR-05">
+    <td class="id">P20-R04</td>
+    <td>SR-05<span class="sub">Sarraf</span></td>
+    <td class="src"><a href="https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">&#x27;Now: US$2,858.00  -14% OFF&#x27;, &#x27;Was: US$3,342.00&#x27;, &#x27;MSRP: US$11,116.00&#x27;, &#x27;Material: 14K Solid Gold&#x27;, &#x27;Approximate Metal Weight: 8.00 grams&#x27;, &#x27;Diamond Weight: 0.50 Ct.&#x27;, &#x27;Color H&#x27;, &#x27;Clarity SI 1&#x27;, &#x27;Natural&#x27;, SKU 9240-14ky</td>
+    <td>price $2,858.00; weight 8.0 g</td>
+    <td><span class="badge b-ok">matches the stored value</span><span class="sub">Price, solid-gold wording, 8.00 g and the diamond specification all match the stored record.</span></td>
+  </tr>
+  <tr data-row-id="RS-02">
+    <td class="id">P20-R05</td>
+    <td>RS-02<span class="sub">Ross-Simons</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/jewelry/rings/985230.html" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">&#x27;$249&#x27;, &#x27;Item 985230&#x27;, &#x27;Metal 18kt Yellow Gold&#x27;, &#x27;Gold Weight 0.7 grams&#x27;, &#x27;Width 1/16 inch&#x27;, sizes 5-10 each listed &#x27;$249.00 In-Stock&#x27;; the stored /jewelry/rings/985230.html URL resolves to /products/985230</td>
+    <td>price $249.00; weight 0.7 g</td>
+    <td><span class="badge b-ok">matches the stored value</span><span class="sub">Price, 18kt metal and 0.7 g gold weight match. The legacy URL redirects to /products/985230 and still resolves.</span></td>
+  </tr>
+  <tr data-row-id="RS-05">
+    <td class="id">P20-R06</td>
+    <td>RS-05<span class="sub">Ross-Simons</span></td>
+    <td class="src"><a href="https://www.ross-simons.com/products/990022" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">&#x27;CLEARANCE 29% Off&#x27;, &#x27;Original price $3,995&#x27;, &#x27;Sale price $2,819&#x27;, &#x27;Item 990022&#x27;, &#x27;Metal 14kt White Gold&#x27;, &#x27;Style Solitaire&#x27;, &#x27;Width 1/4 inch&#x27;, &#x27;Diamond ... Color Grade: I, Clarity: VS1-VS1, Weight: 0.80 carats&#x27;, &#x27;GIA Cert#2225975086&#x27;; sizes 5-8 In-Stock, size 9 Sold Out; no gram weight published</td>
+    <td>price $2,819.00; weight blank</td>
+    <td><span class="badge b-ok">matches — new observation</span><span class="sub">The corrected URL (fixed in Pass 18) is live and the price still prints $2,819; the blank weight is confirmed correct. New observation: the price is a clearance price, and Ross-Simons excludes &#x27;Final sale items&#x27; from its 30-day returns while the page does not say &#x27;final sale&#x27;.</span></td>
+  </tr>
+  <tr data-row-id="MJ-01">
+    <td class="id">P20-R07</td>
+    <td>MJ-01<span class="sub">Mejuri</span></td>
+    <td class="src"><a href="https://mejuri.com/products/diamonds-team-ring" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">The stored URL renders the variant &#x27;Solid White Gold (14k), Natural Diamond&#x27; at &#x27;$548&#x27;; &#x27;Our 14k solid gold pieces are made to last&#x27;; Specifications: &#x27;Minimum Carat Weight: 0.14 ct&#x27;, &#x27;Diamond Clarity: SI - I&#x27;, &#x27;Diamond Color: GHI&#x27;, &#x27;Stone Size: 1.3 mm&#x27;, &#x27;Shank Width: 1.6 mm&#x27;; no gram weight; 30-day free returns</td>
+    <td>price $548.00; weight blank</td>
+    <td><span class="badge b-warn">different variant rendered</span><span class="sub">The $548 price is confirmed for the white-gold variant that the stored URL actually renders. The yellow-gold variant price was NOT read this pass, so this is not a confirmation of the stored yellow-gold listing. No gram weight is published, which confirms the blank weight cell.</span></td>
+  </tr>
+  <tr data-row-id="MN-01">
+    <td class="id">P20-R08</td>
+    <td>MN-01<span class="sub">Mene</span></td>
+    <td class="src"><a href="https://mene.com/products/knot-ring-gold" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">&#x27;$1,442&#x27;, &#x27;24K Gold5&#x27;, displayed in the &#x27;notify me when available&#x27; panel for that selection; site statement: &#x27;Weights can fluctuate by up to 0.5 grams per piece for in-stock pieces&#x27;</td>
+    <td>price $1,465.00; weight blank</td>
+    <td><span class="badge b-bad">page prints a different number</span><span class="sub">Third independent read of this page showing $1,442 against the stored $1,465. Nothing overwritten; PRICE_STRUCTURED_DIFFERS stays and both numbers are published.</span></td>
+  </tr>
+  <tr data-row-id="VR-01">
+    <td class="id">P20-R09</td>
+    <td>VR-01<span class="sub">VRAI</span></td>
+    <td class="src"><a href="https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">&#x27;Metal: 18k Yellow Gold&#x27;, &#x27;Band depth: 1.6mm&#x27;, &#x27;Metal weight: 2.86g (Ring size 6)&#x27;, &#x27;Pave carat weight: 0.18ctw&#x27; shown while &#x27;Band: Plain band&#x27; is selected, &#x27;Ring Size: 5&#x27;, &#x27;Carat weight: 1.0 ct, I-J, VS+&#x27;</td>
+    <td>price $1,035.00; weight 2.86 g</td>
+    <td><span class="badge b-warn">partly readable</span><span class="sub">The 2.86 g weight is confirmed but is the seller&#x27;s ring-size-6 figure while the page had size 5 selected - it must not be applied to a size-5 ring. The plain-band/pave specification conflict is confirmed to persist. The price was not readable in the returned page content, so no price claim is made.</span></td>
+  </tr>
+  <tr data-row-id="BE-07">
+    <td class="id">P20-R10</td>
+    <td>BE-07<span class="sub">Brilliant Earth</span></td>
+    <td class="src"><a href="https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">Page loads with title &#x27;Fleur Solitaire Ring in 14K Yellow Gold | Brilliant Earth&#x27;</td>
+    <td>price $1,350.00; weight blank</td>
+    <td><span class="badge b-warn">partly readable</span><span class="sub">The page is live and its title still states 14K yellow gold, but the price sits deep in a JavaScript-heavy page and was not read this pass. No price claim is made.</span></td>
+  </tr>
+  <tr data-row-id="AN-01">
+    <td class="id">P20-R11</td>
+    <td>AN-01<span class="sub">Anjolee</span></td>
+    <td class="src"><a href="https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">Page loads (navigation and marketing copy only in the returned content); product price and weight not present in the readable text</td>
+    <td>price $870.76; weight 2.9 g</td>
+    <td><span class="badge b-warn">partly readable</span><span class="sub">Consistent with the existing JavaScript-shell finding; no value could be read and none was inferred.</span></td>
+  </tr>
+  <tr data-row-id="BN-09">
+    <td class="id">P20-R12</td>
+    <td>BN-09<span class="sub">Blue Nile</span></td>
+    <td class="src"><a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">&#x27;We&#x27;re sorry, the page you&#x27;re looking for cannot be found.&#x27;</td>
+    <td>price $1,125.00; weight blank</td>
+    <td><span class="badge b-bad">page confirmed dead</span><span class="sub">Independent browser-rendered confirmation of the SOURCE_URL_DEAD flag (previously established by runner reads). The stored price keeps its 2026-10-22 date and is not claimed current.</span></td>
+  </tr>
+  <tr data-row-id="source registry (seller policy)">
+    <td class="id">P20-S01</td>
+    <td>source registry (seller policy)<span class="sub">Sarraf</span></td>
+    <td class="src"><a href="https://www.sarraf.com/30-day-returns-and-exchange-policy/" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">&#x27;Return or exchange of an item within 30 days of receipt&#x27;; &#x27;Engraving and shipping Charges are nonrefundable&#x27;; &#x27;$25.00 engraving fee ... non-refundable&#x27;; &#x27;altered, special-ordered items ... cannot be accepted for return&#x27;; &#x27;Items from which the Sarraf.com tag has been removed are not eligible&#x27;; return address &#x27;650 South Hill Street, # 728, Los Angeles, CA 90014&#x27;</td>
+    <td></td>
+    <td><span class="badge b-ok">matches — new observation</span><span class="sub">The registry cited a product page for the policy; the dedicated policy page was read and the registry updated to cite it.</span></td>
+  </tr>
+  <tr data-row-id="source registry (warranty)">
+    <td class="id">P20-S02</td>
+    <td>source registry (warranty)<span class="sub">Sarraf</span></td>
+    <td class="src"><a href="https://www.sarraf.com/lifetime-guarantee/" target="_blank" rel="noopener">official page</a>
+        <span class="sub mono">2026-10-23T23:43Z-23:45Z</span></td>
+    <td class="prod">&#x27;subject to a Shipping and handling fee of $100.00 or 10% of current price which ever amount is greater&#x27;; &#x27;Third Party alteration to the jewelry will automatically void the Lifetime Guarantee&#x27;; &#x27;Lifetime Guarantee cannot be used for chipped or missing stones&#x27;; wholesale orders excluded</td>
+    <td></td>
+    <td><span class="badge b-ok">matches — new observation</span><span class="sub">Warranty terms now have their own registered source instead of being supported by the returns page.</span></td>
+  </tr></tbody>
+</table></div>
+
+<h2>Findings, published rather than fixed</h2>
+<p>Every finding below is also visible on <a href="flagged.html">Flagged for Review</a> via the row
+flags, or recorded in the evidence file with its source link.</p>
+
+<div class="card" id="F20-01">
+  <h3>F20-01 · Live gold panel prints 3,995.47/oz against the stored 3,996.31/oz benchmark <span class="badge b-info">INFO</span></h3>
+  <p>Same source date line (&#x27;22 October, 2026&#x27;) on both reads; the difference is -0.84 USD/oz (-0.021%), an intraday tick. The benchmark is retained, the reading recorded. No derived value was recomputed because nothing material changed.</p>
+  <p class="small">Evidence: <span class="mono">P20-R01</span> ·
+     Source: <a href="https://www.gold.org/goldhub/data/gold-prices" target="_blank" rel="noopener">https://www.gold.org/goldhub/data/gold-prices</a></p>
+  <p class="small"><strong>What was done:</strong> Recorded in data/gold_spot.json as a dated cross-check; no stored value replaced.</p>
+</div>
+<div class="card" id="F20-02">
+  <h3>F20-02 · Mene prints $1,442 against the stored $1,465 <span class="badge b-warn">MEDIUM</span></h3>
+  <p>Third independent read of the same discrepancy (Passes 17 and 18 saw it too). Mene sells by gram weight and states weights can fluctuate by up to 0.5 g, so the displayed price moves with the gold price. Both numbers stay published.</p>
+  <p class="small">Evidence: <span class="mono">P20-R08</span> ·
+     Source: <a href="https://mene.com/products/knot-ring-gold" target="_blank" rel="noopener">https://mene.com/products/knot-ring-gold</a></p>
+  <p class="small"><strong>What was done:</strong> No overwrite. Existing PRICE_STRUCTURED_DIFFERS flag stands.</p>
+</div>
+<div class="card" id="F20-03">
+  <h3>F20-03 · Blue Nile item 500000y is confirmed dead from an ordinary browser session <span class="badge b-warn">MEDIUM</span></h3>
+  <p>The retailer&#x27;s own 404 copy is served. BN-10, BN-11 and BN-12 were not re-read this pass and keep the earlier runner findings.</p>
+  <p class="small">Evidence: <span class="mono">P20-R12</span> ·
+     Source: <a href="https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y" target="_blank" rel="noopener">https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y</a></p>
+  <p class="small"><strong>What was done:</strong> SOURCE_URL_DEAD stands. No replacement URL was guessed.</p>
+</div>
+<div class="card" id="F20-04">
+  <h3>F20-04 · RS-05 is priced as a clearance item while the return policy excludes &#x27;final sale&#x27; items <span class="badge b-warn">MEDIUM</span></h3>
+  <p>The page shows &#x27;CLEARANCE 29% Off&#x27;, original $3,995, sale $2,819, and does not state &#x27;final sale&#x27;. Ross-Simons&#x27; 30-day policy lists &#x27;Final sale items&#x27; as a return exclusion. Whether this clearance item is returnable must be confirmed in writing before paying - this is exactly the return-policy trap in the buying checklist.</p>
+  <p class="small">Evidence: <span class="mono">P20-R06</span> ·
+     Source: <a href="https://www.ross-simons.com/products/990022" target="_blank" rel="noopener">https://www.ross-simons.com/products/990022</a></p>
+  <p class="small"><strong>What was done:</strong> New row flag CLEARANCE_RETURN_TERMS_UNCLEAR added; price and date untouched.</p>
+</div>
+<div class="card" id="F20-05">
+  <h3>F20-05 · The stored Mejuri URL renders a different metal variant from the stored metal <span class="badge b-mute">LOW</span></h3>
+  <p>The row records Solid Yellow Gold (14k) but the bare URL opens &#x27;Solid White Gold (14k), Natural Diamond&#x27; at $548. A $548 reading therefore corroborates the white-gold variant, not the yellow-gold one.</p>
+  <p class="small">Evidence: <span class="mono">P20-R07</span> ·
+     Source: <a href="https://mejuri.com/products/diamonds-team-ring" target="_blank" rel="noopener">https://mejuri.com/products/diamonds-team-ring</a></p>
+  <p class="small"><strong>What was done:</strong> Existing PRICE_VARIANT_DEPENDENT flag is accurate; no value changed. Yellow-gold price remains unconfirmed.</p>
+</div>
+<div class="card" id="F20-06">
+  <h3>F20-06 · Flag vocabulary is applied inconsistently to &#x27;compare-at&#x27; price anchors <span class="badge b-mute">LOW</span></h3>
+  <p>AL-01 prints &#x27;$1,194 Everyone Else&#x27; (2.04x the $585 charged) and Allurez advertises &#x27;up to 55% below retail&#x27;, yet only the Sarraf rows carry SALE_MSRP_ANCHOR. The rows are not wrong - the flagging is inconsistent.</p>
+  <p class="small">Evidence: <span class="mono">P20-R02 / P20-R03</span> ·
+     Source: <a href="https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold" target="_blank" rel="noopener">https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold</a></p>
+  <p class="small"><strong>What was done:</strong> Published, not silently patched: adding flags to rows not re-read this pass would assert unverified facts about those pages.</p>
+</div>
+<div class="card" id="F20-07">
+  <h3>F20-07 · Documentation drift in README.md <span class="badge b-mute">LOW</span></h3>
+  <p>The README said &#x27;Seven CI gates&#x27; while .github/workflows/pages.yml runs eight gates (nine invocations, Gate 6 split into 6a/6b), and a section introduced as &#x27;Latest pass&#x27; still described Pass 15.</p>
+  <p class="small">Evidence: <span class="mono">README review</span> ·
+     Source: <a href="https://github.com/karagemop466-tech/GOLD4/blob/main/README.md" target="_blank" rel="noopener">https://github.com/karagemop466-tech/GOLD4/blob/main/README.md</a></p>
+  <p class="small"><strong>What was done:</strong> Corrected in this pass; the historical figures are kept and labelled as of that pass.</p>
+</div>
+<div class="card" id="F20-08">
+  <h3>F20-08 · Stale PR #47 taken over; its Sarraf source fix re-verified and adopted <span class="badge b-info">INFO</span></h3>
+  <p>PR #47 (arena/bc872fef-gold4) had no commits for three hours when this pass started, so the task was taken over and the handover recorded. Reviewing its delta showed one substantive change not already on main: cite Sarraf&#x27;s dedicated returns page rather than a product page, and register the Lifetime Guarantee separately. Both pages were opened by this session before adoption; the returns page printed the 30-day window, the $25 non-refundable engraving fee, the special-order and third-party-resize exclusions and the Los Angeles return address, and the guarantee page printed the $100-or-10% handling fee and the third-party-alteration void.</p>
+  <p class="small">Evidence: <span class="mono">P20-S01/P20-S02</span> ·
+     Source: <a href="https://www.sarraf.com/30-day-returns-and-exchange-policy/" target="_blank" rel="noopener">https://www.sarraf.com/30-day-returns-and-exchange-policy/</a></p>
+  <p class="small"><strong>What was done:</strong> data/sources.json: sarraf-returns now points at the policy page with the old URL kept in url_history; new source sarraf-warranty registered (32 sources). No row price, weight, karat or date changed.</p>
+</div>
+
+<h2>Security and anti-hallucination checks run after these edits</h2>
+<p>The gates are the same ones CI runs before a merge. They recompute every derived number,
+re-check every link, and fail on an unsourced value. A passing gate proves internal consistency —
+it cannot prove a retailer is honest or that a price is still live.</p>
+
+<div class="table-wrap"><table>
+  <thead><tr><th>Gate</th><th>Check</th><th>Result</th><th>Detail</th></tr></thead>
+  <tbody>
+  <tr><td class="id">1</td><td>Canonical dataset integrity &amp; derived-math recompute</td>
+      <td><span class="badge b-ok">PASS</span></td>
+      <td class="mono small">RESULT: PASS  (132 passed, 1 warnings, 0 failures) · exit 0</td></tr>
+  <tr><td class="id">2</td><td>Root, /pages &amp; /docs link and policy gate</td>
+      <td><span class="badge b-ok">PASS</span></td>
+      <td class="mono small">PASS: 29 pages checked; local links resolve; every populated row carries an official source link; no-hallucination warning and FTC reference present. · exit 0</td></tr>
+  <tr><td class="id">3</td><td>Combined schema &amp; blank-flag check</td>
+      <td><span class="badge b-ok">PASS</span></td>
+      <td class="mono small">Records audited: 64 · exit 0 · exit 0</td></tr>
+  <tr><td class="id">4</td><td>Multi-page XSS, 404-blocklist &amp; Assay-Lab scanner</td>
+      <td><span class="badge b-ok">PASS</span></td>
+      <td class="mono small">STATUS                  : PASS — ZERO HALLUCINATIONS, ZERO BROKEN LINKS, ZERO SECURITY ERRORS. · exit 0</td></tr>
+  <tr><td class="id">5</td><td>Gemstone-deduction, category-subpage &amp; hallucination auditor</td>
+      <td><span class="badge b-ok">PASS</span></td>
+      <td class="mono small">RESULT: PASS — zero hallucinated/unsourced values, zero phantom math, zero broken local links. · exit 0</td></tr>
+  <tr><td class="id">6a</td><td>Citation-integrity self-test (must reject a known-bad CFR citation)</td>
+      <td><span class="badge b-ok">PASS</span></td>
+      <td class="mono small">SELF-TEST PASSED — a known-wrong CFR citation was correctly rejected · exit 0</td></tr>
+  <tr><td class="id">6b</td><td>Citation integrity (every CFR citation vs its official heading)</td>
+      <td><span class="badge b-ok">PASS</span></td>
+      <td class="mono small">Citation-integrity gate: 110 CFR section references checked across 40 files (rule violations: label=0, sentence=0). · exit 0</td></tr>
+  <tr><td class="id">7</td><td>Live-evidence freshness &amp; source-health gate</td>
+      <td><span class="badge b-ok">PASS</span></td>
+      <td class="mono small">RESULT: PASS — 295 checks, 2 warning(s), 0 failures · exit 0</td></tr>
+  <tr><td class="id">8</td><td>Conservative currency parsing &amp; blank current-price register</td>
+      <td><span class="badge b-ok">PASS</span></td>
+      <td class="mono small">OK · exit 0</td></tr></tbody>
+</table></div>
+
+<h2>What this pass could not do — stated plainly</h2>
+<ul>
+  <li>This pass read 11 of 64 rows. 53 rows were not re-read and their values keep their original dates.</li><li>No GitHub Actions evidence was collected: workflow_dispatch returned HTTP 403 for this integration and run logs/artifacts are not downloadable from this sandbox. No runner result is claimed or quoted.</li><li>A browser-rendered read is not an independent assay: it can confirm what a retailer prints, not that the metal is what they say. XRF testing after delivery remains the only purity check.</li><li>Screenshots were not stored; the quoted strings above are what the reader returned at the time shown.</li>
+</ul>
+
+<h2>The standing recommendation, repeated after every review</h2>
+<div class="callout">
+  <p><strong>Look for hallucinations again next time.</strong> For every row ask four questions in order:</p>
+  <ol>
+    <li><strong>What is the official source link for this number?</strong> If there is no link, there is no number.</li>
+    <li><strong>What date was it read, and by what read path?</strong> "Captured last week" is not a date.</li>
+    <li><strong>Does the page still print that exact figure?</strong> If it prints something else, publish both — never overwrite.</li>
+    <li><strong>Was anything inferred?</strong> Currency conversions, "typical" weights, ranges collapsed to one number and
+        prose that rounds a value are all inference. Inference must be labelled as derived or left blank.</li>
+  </ol>
+  <p class="small">A 14K or 18K stamp is a claim, not a proof. The only purity check in this project's
+  checklist is an independent jeweller's XRF test after delivery, paired with a gram-weight check on
+  a scale. Nothing on this site replaces that.</p>
+</div>
+
+<p class="small">Related: <a href="freshness.html">Freshness (last all-URL runner sweep, 20:23Z)</a> ·
+<a href="flagged.html">Flagged for Review</a> ·
+<a href="log.html">Verification log</a> ·
+<a href="../reviews/index20.html">Plain-text copy of this pass</a></p>
+
+</main>
+<footer class="wrap foot">
+  <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
+  22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
+  <p>Gold benchmark: $3,996.31/oz as of 22 October, 2026 (World Gold Council) = $128.4844/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
+  <p class="small">Built 2026-10-23 · dataset 64 rows · 32 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+</footer>
+
+</body>
+</html>

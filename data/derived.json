@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-23T20:34:06Z",
+  "generated_utc": "2026-10-23T23:56:39Z",
   "spot": {
     "value_usd_per_oz": 3996.31,
     "usd_per_gram": 128.48435,
@@ -3793,7 +3793,8 @@
         "PRICE_INCLUDES_CENTRE_STONE",
         "WHITE_GOLD",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "CLEARANCE_RETURN_TERMS_UNCLEAR"
       ],
       "flag_detail": "Includes natural 0.80 ct GIA-certified diamond (#2225975086 = 0.160 g diamond mass per NIST HB 44), URL/title contains typo 'Ceritified', and total gram weight is omitted. | Pass 16 source check 2026-10-23 10:00Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); the stored value was read from this URL on its capture date and cannot be re-confirmed here. No value was changed. | PASS 18 (2026-10-23T20:31Z): the 404 is a URL MIGRATION, not a withdrawn product. The stored .html URL was replaced by https://www.ross-simons.com/products/990022 (Item 990022), confirmed independently by this session: same $2,819 sale price, same 14kt white gold, same 0.80 ct GIA-certified stone. The SOURCE_URL_DEAD flag will drop on the next runner read of the corrected URL; the price and its capture date are unchanged.",
       "reverified_utc": "2026-10-22",
@@ -3828,6 +3829,7 @@
         "why_the_url_changed": "Ross-Simons migrated its catalogue to /products/<item> URLs; the stored .html URL now returns HTTP 404 (four consecutive runner reads). The price, metal, karat and item number on the live page match the stored row exactly, so this is the same product at a moved address.",
         "what_was_NOT_changed": "price_usd stays $2,819 with its original 2026-10-22 capture date. The live page posting the same number is corroboration, not a new price claim."
       },
+      "pass20_observation": "Pass 19 (2026-10-23T23:43-23:45Z, session arena/bfbdf30c-gold4) re-read this page with a browser-rendered reader: 'CLEARANCE 29% Off', 'Original price $3,995', 'Sale price $2,819', Item 990022, 14kt White Gold, 0.80 ct diamond I/VS1, GIA Cert#2225975086, sizes 5-8 In-Stock and size 9 Sold Out, no gram weight published. The stored price and its 2026-10-22 capture date are unchanged. New: the price is a CLEARANCE price and Ross-Simons' 30-day return policy excludes 'Final sale items' while this page does not state 'final sale', so return eligibility must be confirmed in writing before purchase (flag CLEARANCE_RETURN_TERMS_UNCLEAR).",
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
