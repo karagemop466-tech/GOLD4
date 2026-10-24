@@ -81,6 +81,13 @@ Push-to-main deploy run [40042563523](https://github.com/karagemop466-tech/GOLD4
 that deploy:** the dashboard now prints **"250 flags published"** and the Pass 20 page serves every reading and
 finding. All nine gate invocations passed on the merged tree before the merge, and again locally after the rebuild.
 
+**Final docs close-out.** PR [#55](https://github.com/karagemop466-tech/GOLD4/pull/55) — the record of PR #54 above plus the
+"31 registered sources listed at that time (32 today)" wording — **merged 2026-10-24T00:00:48Z**, merge commit `083e65d`
+(`083e65d38d000a4d02a0c602f55c2728e98bf3ee`); deploy run [40042792767](https://github.com/karagemop466-tech/GOLD4/actions/runs/40042792767)
+**success**, `pages/builds/latest` = `built` on that commit with no error. **Pass 20 is closed: tasks 49–52 done, site live,
+one stale PR taken over and closed, one post-deploy defect found and fixed. Standing recommendation for the next session:
+run the hallucination scan again — source link, read date, read path, and whether anything was inferred.**
+
 **Not claimed.** No runner sweep happened this pass. No XRF or assay test exists for any ring. No seller's reputation was verified. No price on this site is a live quote.
 
 **Network reality of this sandbox (stated plainly, as the brief requires):** the shell here reaches only GitHub hosts — `curl https://karagemop466-tech.github.io/...` fails at TLS and retailer hosts are unreachable from bash. Two independent read paths are used instead and named on every finding: (a) a **GitHub Actions runner** with open internet for the all-URL sweep, and (b) this session's own **browser-rendered page reader** for hand reads of the specific pages quoted below. No number in this pass is written from memory.
