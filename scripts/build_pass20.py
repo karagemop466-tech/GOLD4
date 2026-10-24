@@ -33,6 +33,7 @@ def prime_layout() -> None:
         "spot_oz": derived["spot"]["value_usd_per_oz"],
         "spot_g": derived["spot"]["usd_per_gram"],
         "spot_date": derived["spot"]["price_date"],
+        "spot_captured": json.loads((ROOT / "data" / "gold_spot.json").read_text())["captured_utc"],
         "built": rings.get("reverified_utc", ""),
         "n_rows": len(derived["rows"]),
         "n_sources": len(sources["sources"]),
@@ -116,10 +117,11 @@ def gate_table(gates) -> str:
         rows.append(f"""
   <tr><td class="id">{esc(g['gate'])}</td><td>{esc(g['name'])}</td>
       <td>{badge('PASS' if g['status'] == 'PASS' else g['status'], 'ok' if g['status'] == 'PASS' else 'warn')}</td>
-      <td class="mono small">{esc(g['detail'])}</td></tr>""")
+      <td class="mono small">{esc(g['detail'])}</td>
+      <td class="src"><a href="https://github.com/karagemop466-tech/GOLD4/blob/main/reviews/pass20/gates.json">Original project test evidence</a></td></tr>""")
     return f"""
 <div class="table-wrap"><table>
-  <thead><tr><th>Gate</th><th>Check</th><th>Result</th><th>Detail</th></tr></thead>
+  <thead><tr><th>Gate</th><th>Check</th><th>Result</th><th>Detail</th><th>Official project source</th></tr></thead>
   <tbody>{''.join(rows)}</tbody>
 </table></div>"""
 
@@ -195,9 +197,11 @@ it cannot prove a retailer is honest or that a price is still live.</p>
     <li><strong>Was anything inferred?</strong> Currency conversions, "typical" weights, ranges collapsed to one number and
         prose that rounds a value are all inference. Inference must be labelled as derived or left blank.</li>
   </ol>
-  <p class="small">A 14K or 18K stamp is a claim, not a proof. The only purity check in this project's
-  checklist is an independent jeweller's XRF test after delivery, paired with a gram-weight check on
-  a scale. Nothing on this site replaces that.</p>
+  <p class="small">Integration clarification: a 14K or 18K stamp is a claim, not proof. Seek an
+  independent professional's appropriate complementary tests and a metal-only gram-weight check,
+  within written testing/return permissions. A single surface XRF reading can miss thick plating or
+  electroformed construction; see <a href="https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet">GIA's documented case</a>.
+  Nothing on this site substitutes for that assessment.</p>
 </div>
 
 <p class="small">Related: <a href="freshness.html">Freshness (last all-URL runner sweep, 20:23Z)</a> ·

@@ -47,21 +47,40 @@
   function calc() {
     if (!weightEl || !karatEl || !spotEl) return;
     var oz = 31.1034768;
-    var w = parseFloat(weightEl.value);
-    var k = parseInt(karatEl.value, 10);
-    var spot = parseFloat(spotEl.value);
-    var price = parseFloat(priceEl.value);
-
-    var valid = isFinite(w) && w > 0 && isFinite(spot) && spot > 0 && FINENESS[k];
-    if (!valid) {
+    function numericInput(el) {
+      var raw = el ? el.value.trim() : "";
+      // Consume the entire decimal/scientific input: never turn "4 grams" or
+      // a partial currency string into an apparently valid measurement.
+      if (!/^(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?$/i.test(raw)) return NaN;
+      var n = Number(raw);
+      return Number.isFinite(n) && n > 0 ? n : NaN;
+    }
+    function clearResults(message) {
       [outPure, outValue, outMin, outPerGram, outMult].forEach(function (el) { if (el) el.textContent = "—"; });
-      if (outMultNote) outMultNote.textContent = "Enter a weight and a spot price.";
+      if (outMultNote) outMultNote.textContent = message;
+    }
+    var w = numericInput(weightEl);
+    var k = Number(karatEl.value);
+    var spot = numericInput(spotEl);
+    var price = numericInput(priceEl);
+
+    var valid = Number.isFinite(w) && Number.isFinite(spot) &&
+      Object.prototype.hasOwnProperty.call(FINENESS, k);
+    if (!valid) {
+      clearResults("Enter a positive numeric weight and spot price, and select a supported karat. Results are illustrations, not measurements.");
       return;
     }
     var usdPerGram = spot / oz;
     var pure = w * FINENESS[k];
     var value = pure * usdPerGram;
     var minValue = w * LEGAL_MIN[k] * usdPerGram;
+    // Finite inputs can still overflow or underflow during multiplication.
+    // Never display infinity, a zero multiple caused by overflow, or a
+    // zero-value result caused by floating-point underflow.
+    if (![usdPerGram, pure, value, minValue].every(function (n) { return Number.isFinite(n) && n > 0; })) {
+      clearResults("Inputs exceed the calculator’s safe numeric range. Results are left blank; no gold value is inferred.");
+      return;
+    }
 
     if (outPure) outPure.textContent = pure.toFixed(3) + " g";
     if (outValue) outValue.textContent = money(value);
@@ -69,14 +88,17 @@
     if (outPerGram) outPerGram.textContent = money(usdPerGram);
 
     if (outMult) {
-      if (isFinite(price) && price > 0) {
-        outMult.textContent = (price / value).toFixed(2) + "×";
+      var multiple = price / value;
+      if (Number.isFinite(price) && Number.isFinite(multiple) && multiple > 0) {
+        outMult.textContent = multiple.toFixed(2) + "×";
         if (outMultNote) {
           outMultNote.textContent = "Price ÷ gold value. A multiple below ~1 would mean the ring is priced at or under its bare gold content, which is a red flag for a genuine solid-gold engagement ring.";
         }
       } else {
         outMult.textContent = "—";
-        if (outMultNote) outMultNote.textContent = "Add the asking price to see the multiple.";
+        if (outMultNote) outMultNote.textContent = Number.isFinite(price)
+          ? "The price-to-gold ratio exceeds the safe numeric range and is left blank."
+          : "Add a positive numeric asking price to see the multiple.";
       }
     }
   }

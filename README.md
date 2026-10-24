@@ -1,15 +1,26 @@
 # GOLD4 — gold engagement-ring verification desk
 
-A small, auditable dataset of **solid-gold engagement rings** with retailer prices, published gram weights, computed gold content and every unverified value published as *blank* instead of guessed.
+**No-hallucination policy:** unsupported facts stay blank and explicitly unverified. Official sources, capture dates and configuration limits matter; an automated pass is not proof of authenticity. [Read the policy](#-no-hallucination-rule-read-before-trusting-anything-here).
 
-**Latest review pass — Pass 20 (23 October 2026, 23:43–23:45Z): independent hand re-verification, and an honest coverage statement.** This session re-opened **11 of the 64 product rows plus the gold benchmark** with its own browser-rendered reader — a different read path from the runner sweeps of Passes 15–18 — and published every result, including the ones that did not go its way:
+An auditable dataset of **gold engagement-ring candidates**, with historical retailer prices, published gram weights, nominal gold-content arithmetic and clearly labelled evidence gaps. Only 17 of the 64 rows carry recorded explicit solid-gold wording; none has a complete purchase-readiness evidence set.
+
+**Latest integration — purchase-readiness register and calculator safety (source reads: 23 October 2026; integration: 24 October UTC).** The [Readiness page](https://karagemop466-tech.github.io/GOLD4/pages/readiness.html) checks all **64 candidates / 10 retailers** against the requested checklist: explicit solid wording, karat AND maker mark, scoped grams, seller contacts/reputation, exact configured quote, return/testing eligibility, card protection, documentation and independent professional testing. All **64 exact-current-price fields remain blank**; no seller or ring is purchase-approved. Seventeen sourced historical weights are usable for conditional arithmetic, not physical authentication.
+
+- **Evidence correction:** MN-01/MN-02 no longer receive solid-wording credit from a quote that only says pure 24k. Their previous records remain in the JSON audit history; no price or weight changes.
+- **First-hand corroboration:** BE-05's unchanged **$1,190 USD, setting only** was explicitly visible in official product chunk 4. It moves from V2 to V1; prior localization/snapshot evidence remains. Size and centre diamond are unselected; this is not a complete-ring quote.
+- **Calculator repair:** whole-input validation and derived-result guards reject partial numbers, unsupported karats, overflow and underflow. Ten actual-script runtime tests use **hypothetical** arithmetic fixtures. Nominal and statutory illustrations are not claimed to bound a ring's measured gold value; XRF limitations are explicit.
+- **Integration:** Readiness is linked in primary navigation/top policy/Flagged, every canonical table data row has an official-source or official-project-evidence link, and missing return exclusions no longer imply return permission. Pages CI now runs **nine gates / twelve command invocations**, including readiness and calculator regression checks.
+
+Evidence, scope and remaining limits: [`reviews/readiness-8a2b9dfb.md`](reviews/readiness-8a2b9dfb.md). **Continue hallucination review after every change.**
+
+**Earlier independent review — Pass 20 (23 October 2026, 23:43–23:45Z): independent hand re-verification, and an honest coverage statement.** This session re-opened **11 of the 64 product rows plus the gold benchmark** with its own browser-rendered reader — a different read path from the runner sweeps of Passes 15–18 — and published every result, including the ones that did not go its way:
 
 - **Five rows corroborated exactly** (price *and*, where published, weight): AL-01 `$585` / `3.58 g`, SR-03 `$871` / `6.70 g` ("18K Solid Gold"), SR-05 `$2,858` / `8.00 g` ("14K Solid Gold"), RS-02 `$249` / `0.7 g` (18kt), RS-05 `$2,819` (Item 990022, still live at the URL corrected in Pass 18).
 - **One row still differs:** Menē MN-01 prints `$1,442` against the stored `$1,465` (−1.57%) — the **third** independent read of the same gap. Both numbers stay published; nothing was overwritten.
 - **One row confirmed for the wrong variant:** Mejuri MJ-01's stored URL renders **white** gold, so the `$548` reading corroborates the white-gold variant, not the stored yellow-gold one.
 - **One dead link confirmed by hand:** BN-09 serves Blue Nile's own "page cannot be found" copy.
 - **Three pages only partly readable:** BE-07 (loaded, title still 14K yellow gold, price unreadable), AN-01 (JavaScript shell, as before), VR-01 (2.86 g confirmed but it is the seller's *ring-size-6* figure while size 5 was selected; the plain-band/pavé spec conflict persists). No price claim is made for these three.
-- **54 rows were not re-read this pass** and keep their 22 October 2026 capture dates. The site says so on the Pass 20 page rather than implying a full sweep.
+- **53 rows were not re-read this pass** and keep their 22 October 2026 capture dates. The site says so on the Pass 20 page rather than implying a full sweep.
 
 New irregularity found and published: **RS-05 is priced as a clearance item** ("CLEARANCE 29% Off", `$3,995` → `$2,819`) while Ross-Simons' 30-day return policy excludes **"Final sale items"**, and the page never says *final sale* — so its returnability must be confirmed in writing before paying (new row flag `CLEARANCE_RETURN_TERMS_UNCLEAR`). The gold panel printed **`$3,995.47/oz`** on the same source date line as the stored `$3,996.31` benchmark (−0.021%, an intraday tick); the benchmark was **retained**, the reading recorded. The stale, unmerged PR #47 (`arena/bc872fef-gold4`, no commits for three hours) was taken over under the board's handover rule; its one still-valuable fix — citing Sarraf's **dedicated** returns and warranty pages instead of a product page — was re-verified from the pages themselves and adopted, with a new `sarraf-warranty` source registered. Documentation drift was repaired: this README advertised *seven* CI gates when the pipeline runs **eight** (nine invocations) and introduced a Pass 15 section as "latest". Full record: [Pass 20 page](https://karagemop466-tech.github.io/GOLD4/pages/pass20.html) · [`reviews/pass20/report.md`](reviews/pass20/report.md) · raw evidence [`reviews/pass20/observations.json`](reviews/pass20/observations.json). **The standing recommendation stands: after every review, look for hallucinations again — source link, date, read path, and whether anything was inferred.**
 
@@ -39,7 +50,7 @@ See the **[Freshness page](https://karagemop466-tech.github.io/GOLD4/pages/fresh
 
 ## ⚠ No hallucination rule (read before trusting anything here)
 
-> **Every price, weight, karat, policy and link in this repository was read from the official page linked beside it, during this project.**
+> **Publish factual values only with linked official evidence, a capture date and clear limits.** Historical rows and source-health records are not current configured quotes; unknown or unsupported claims must remain unverified. The latest integration is not a fresh independent re-read of all 64 products.
 > If a value could not be read from an official source it is **left blank** and flagged as `UNVERIFIED` on the [Flagged for Review](https://karagemop466-tech.github.io/GOLD4/pages/flagged.html) page.
 > Nothing is estimated, averaged, inferred from photographs, or copied from a blog, marketplace, resale listing or price-comparison site.
 > Derived numbers (gold grams, gold value, price ÷ gold) are arithmetic on published inputs at a frozen, dated spot price — and an automated audit re-derives every one of them on every pass.
@@ -62,6 +73,8 @@ When reviewing anything in this repo, **ask of each value: where is the official
 | `data/methodology.json` | Karat table, 15 U.S.C. § 295 tolerances, formulas, assumptions, verification levels |
 | `data/gold_spot.json` | The gold benchmark in force: **$3,996.31/oz** = **$128.48435/g**, read from the World Gold Council Goldhub panel on **23 Oct 2026 at 20:23Z** (the panel's own "Data as of" line reads 22 October, 2026). Corroborated within four minutes by Kitco ($3,996.30), BullionVault ($3,996.62) and JM Bullion's gold ask ($4,010.61). Every earlier reading is kept in `prior_captures` / `secondary_reference` — superseded values are never deleted |
 | `data/derived.json` | Computed gold content / value / multiples (generated) |
+| `pages/readiness.html`, `reports/readiness-8a2b9dfb.json` | Full buying-checklist evidence gaps, blank current exact quotes, source observations and canonical input hashes |
+| `scripts/session_8a2b9dfb/` | Deterministic readiness builder, adversarial/runtime suites, idempotent documented corrections and twelve-command gate runner |
 | `data/verification_log.json` | Every verification pass, 0 through 18 (20 entries including Pass 12b), rendered on the site's Log page |
 | `VERIFICATION.md` | Line-by-line verification record (generated from the JSON) |
 | `reports/audit_latest.txt` | Latest integrity-audit output |
@@ -75,19 +88,22 @@ When reviewing anything in this repo, **ask of each value: where is the official
 ```bash
 python3 scripts/compute.py            # derived gold values from published inputs
 python3 scripts/generate_site.py      # Assay Lab section (secondary 22-item catalogue)
-python3 scripts/build_site.py         # canonical dashboard + pages/ (run last: it owns index.html)
+python3 scripts/build_site.py         # canonical dashboard + Readiness; run after secondary generator
+python3 scripts/build_pass20.py       # historical review page, current layout; original evidence unchanged
 python3 scripts/gen_verification.py   # regenerates VERIFICATION.md from the log
 python3 scripts/audit.py              # gate 1 — integrity / hallucination audit
 python3 scripts/check_site.py         # gate 2 — links, source link per row, no-hallucination banner
 python3 scripts/verify.py             # gate 3 — schema + blank-value accounting
 python3 scripts/verify_a0be79d4.py    # gate 4 — XSS, dead-link and 404 blocklist scanner
 python3 scripts/audit_hallucinations.py  # gate 5 — phantom-math / unsourced-value auditor
-python3 scripts/audit_freshness.py    # gate 6 — live-evidence freshness & source-health
+python3 scripts/audit_freshness.py    # Gate 7 — evidence-artifact freshness, not a new retailer read
+python3 scripts/session_8a2b9dfb/readiness.py --check  # deterministic report/input-hash check
+node scripts/session_8a2b9dfb/test_calculator.js       # hypothetical runtime regressions
 ```
 
 ### The online half of the audit (needs internet)
 
-`scripts/live_source_check.py` makes read-only GETs to every official URL in the dataset, restricted to the host allow-list in `data/sources.json`, and writes an evidence artifact (HTTP status, soft-404 detection, page title, and the raw price strings the page prints) to `reports/`. It never writes a value into the dataset. `scripts/build_source_health.py` reconciles that artifact into `data/source_health.json`, and `scripts/apply_source_health.py` stamps each row with a `source_check` block plus review flags. The whole chain runs in CI (`.github/workflows/live-source-check.yml`) and commits its evidence back to the branch.
+`scripts/live_source_check.py` makes read-only GETs to every official URL in the dataset, restricted to the host allow-list in `data/sources.json`, and writes an evidence artifact (HTTP status, soft-404 detection, page title, and the raw price strings the page prints) to `reports/`. It never writes a value into the dataset. `scripts/build_source_health.py` reconciles that artifact into `data/source_health.json`, and `scripts/apply_source_health.py` stamps each row with a `source_check` block plus review flags. The source-check CI (`.github/workflows/live-source-check.yml`) uploads a read-only evidence artifact; it does not commit or overwrite stored data. Evidence must be inspected and explicitly reconciled before a later integration applies it.
 
 **Rule for the reconciliation:** `CONFIRMED` requires the page's own structured data to print exactly the stored USD amount. A 404, a 403 or a JavaScript-only shell produces *no claim at all*. A different number is reported, never silently adopted.
 
@@ -149,25 +165,26 @@ Every re-read is recorded per row in `data/rings.json` (`reverified_utc`, `rever
 
 ## What the data currently shows
 
-| Metric | Value |
-|---|---|
-| Rings tracked | 64 |
-| Retailers with product rows | 10 (Blue Nile — including the James Allen line, Allurez, VRAI, Mejuri, Brilliant Earth, Anjolee, Ross-Simons, Sarraf, Catbird, Mene) |
-| Prices read from the retailer's own page | 62 of 64 (2 deliberately blank: VRAI VR-02 publishes no price; Blue Nile BN-26 was sold out at the live check) |
-| Price provenance | 62 rows V1 (read from the retailer's own page) · 1 row V2 (BE-05 — a dated snapshot of the official page, corroborated by ≥2 official reads, flagged `PRICE_V2_ONLY`; BE-06 and BE-07 were upgraded to V1 in Pass 14) · 1 row with no published price (`U_unverified`, BN-26 — sold out at capture) |
-| Gram weights published by the retailer | 17 of 64 — only these rows have a computable gold value |
-| Rows with explicit *solid gold* wording | 19 of 64 |
-| Rows publishing a hallmark / maker's mark | **0 of 64** — it can only be checked in your hand |
-| Rows re-read from their own source page | the original 20 rows were re-read by up to four independent sessions on 2026-10-22; the 17 rows added by Pass 9 were each read from their official page at collection (8 live-fetched, 9 from dated official-page snapshots with corroboration); every row carries its re-verification record |
-| Gold benchmark used | **$3,996.31/oz = $128.48435/g**, read 23 Oct 2026 at 20:23Z (panel's "Data as of" line: 22 October 2026). The 10:02Z reading of $4,024.45 is preserved in `prior_captures`; the same-day Kitco/BullionVault/JM Bullion cross-checks are recorded informationally in `data/gold_spot.json` — the benchmark itself was independently re-read by a second session at ~20:19Z (same $3,996.31) and by Pass 17 as a cross-check before this refresh; derived arithmetic uses only the benchmark |
-| Flags raised for review | published on the Flagged page, with sources |
+| Metric | Value | Official evidence |
+|---|---|---|
+| Rings tracked | 64 | [Project source](https://github.com/karagemop466-tech/GOLD4/blob/main/data/rings.json) |
+| Retailers with product rows | 10 (Blue Nile — including the James Allen line, Allurez, VRAI, Mejuri, Brilliant Earth, Anjolee, Ross-Simons, Sarraf, Catbird, Mene) | [Project source](https://github.com/karagemop466-tech/GOLD4/blob/main/data/rings.json) |
+| Prices read from the retailer's own page | 62 of 64 (2 deliberately blank: VRAI VR-02 publishes no price; Blue Nile BN-26 was sold out at the live check) | [Project source](https://github.com/karagemop466-tech/GOLD4/blob/main/data/rings.json) |
+| Price provenance | All 62 populated amounts now have V1 first-hand evidence; no V2-only amount remains. Across all rows, 63 have V1 source records (including blank-price VR-02), and BN-26 remains `U_unverified` / sold-out at capture. These are historical observations, not exact-current quotes. | [Project source](https://github.com/karagemop466-tech/GOLD4/blob/main/data/rings.json) |
+| Gram weights published by the retailer | 17 of 64 — only these rows have a computable gold value | [Project source](https://github.com/karagemop466-tech/GOLD4/blob/main/data/rings.json) |
+| Rows with explicit *solid gold* wording | 17 of 64; wording is a seller claim, not physical proof | [Project source](https://github.com/karagemop466-tech/GOLD4/blob/main/data/rings.json) |
+| Rows documenting both karat AND maker hallmark | **0 of 64**; no physical authentication is implied | [Project source](https://github.com/karagemop466-tech/GOLD4/blob/main/data/rings.json) |
+| Rows re-read from their own source page | the original 20 rows were re-read by up to four independent sessions on 2026-10-22; the 17 rows added by Pass 9 were each read from their official page at collection (8 live-fetched, 9 from dated official-page snapshots with corroboration); every row carries its re-verification record | [Project source](https://github.com/karagemop466-tech/GOLD4/blob/main/data/rings.json) |
+| Gold benchmark used | **$3,996.31/oz = $128.48435/g**, read 23 Oct 2026 at 20:23Z (panel's "Data as of" line: 22 October 2026). The 10:02Z reading of $4,024.45 is preserved in `prior_captures`; the same-day Kitco/BullionVault/JM Bullion cross-checks are recorded informationally in `data/gold_spot.json` — the benchmark itself was independently re-read by a second session at ~20:19Z (same $3,996.31) and by Pass 17 as a cross-check before this refresh; derived arithmetic uses only the benchmark | [Project source](https://github.com/karagemop466-tech/GOLD4/blob/main/data/gold_spot.json) |
+| Flags raised for review | published on the Flagged page, with sources | [Project source](https://github.com/karagemop466-tech/GOLD4/blob/main/data/rings.json) |
+
 
 **Headline findings**
 
-1. A stamp is a claim with a legal tolerance, not a measurement: under 15 U.S.C. § 295 an "18K" ring may be as low as 74.3% gold and a "14K" ring as low as 57.63%.
+1. A stamp is a claim, not a measurement. The 74.3% (18K) and 57.63% (14K) illustrations use the soldered-article tolerance in [15 U.S.C. § 295](https://www.law.cornell.edu/uscode/text/15/295), **conditional on that rule applying and compliance**. They do not establish measured lower or upper bounds; an inaccurately marked/plated article need not fall inside them.
 2. Most major retailers do not publish a gram weight, so their rings cannot be priced against their own gold. Only Allurez, VRAI, Anjolee, Sarraf and Ross-Simons did (17 of 64 rows). Anjolee's price includes a lab-created centre stone, so even that multiple is not a setting markup. Blue Nile and Brilliant Earth publish none at all.
-3. The 18K premium is inconsistent: +15.5% (Blue Nile Petite Solitaire), +16.8% (Brilliant Earth Atelier), +16.8% (Brilliant Earth Freesia, added by Pass 9), +40.1% (Blue Nile Comfort Fit), +68.0% (Allurez Split Shank) — and for the one pair with both weights published, 54.9% of that premium is simply more gold.
-4. Return windows all look like "30 days", but exclusions differ sharply (resized, engraved, custom). One seller (Anjolee) explicitly accepts returns on customised orders; another (Allurez) makes custom orders non-refundable.
+3. The 18K premium is inconsistent: +15.5% (Blue Nile Petite Solitaire), +16.8% (Brilliant Earth Atelier), +16.8% (Brilliant Earth Freesia, added by Pass 9), +40.1% (Blue Nile Comfort Fit), +68.0% (Allurez Split Shank) — and for the one pair with both weights published, nominal fine-gold content rises 54.9%. That is **not** the fraction of the price premium attributable to gold; the remainder cannot be allocated without itemised costs.
+4. Recorded return windows range from 7 to 30 days, but refund method and exclusions differ (resized, engraved, custom); a window alone does not establish configured-ring returnability. One seller (Anjolee) explicitly accepts returns on customised orders; another (Allurez) makes custom orders non-refundable.
 5. Several retailer pages contradict their own specification blocks; each case is listed on the Flagged page. Pass 9 found two more on Blue Nile: a 14K yellow-gold page whose copy says "platinum solitaire setting" (BN-22 — **confirmed on the live page** at the 2026-10-23 re-fetch), and one SKU showing four different sale prices across four official category pages (BN-20 — at the live re-fetch the sale had *ended* and the page showed $965 undiscounted; the live price is the recorded one). It also recorded a naming variance: stock number 502120y14 is titled "Low Dome Comfort Fit Solitaire" on one official URL and "Classic Simple Solitaire" on its alias (BN-10's record).
 6. James Allen now redirects into Blue Nile: jamesallen.com product URLs land on bluenile.com, which states "James Allen is Now Part of Blue Nile" (live-verified 2026-10-22, recorded on BN-26). "By James Allen" collection rings are Blue Nile listings and carry Blue Nile's policies.
 
@@ -197,7 +214,7 @@ Several agent sessions worked in this repository. `main` already contained two o
 | `docs/legacy/REPO_REVIEW_22b5b06c.md`, `docs/legacy/VERIFICATION_22b5b06c.md`, `docs/legacy/COORDINATION_22b5b06c.md`, `docs/legacy/README_22b5b06c.md` | same session | Its baseline repo review (annotated), line-by-line verification log, task board and README, preserved as written |
 | `scripts/session_22b5b06c/`, `scripts/merge_rows_22b5b06c.py` | same session | Its standalone checkers and the idempotent converter that documents exactly how each added row was sourced — the audit trail of the Pass 9 integration |
 
-**Eight** CI gates run against the combined repository (`.github/workflows/pages.yml`) as nine invocations — Gate 6 is split into a self-test (6a) and the real check (6b) — and every one must pass before a merge:
+**Nine** CI gates run against the combined repository (`.github/workflows/pages.yml`) as **twelve command invocations**: Gate 6 has a negative self-test plus the real check, and Gate 9 has three commands. Every command must pass before merge:
 
 ```bash
 python3 scripts/audit.py                # Gate 1 — deep audit: allow-list, recomputation, speculation scan
@@ -209,9 +226,12 @@ python3 scripts/session_46691f83/verify_citations.py --self-test   # Gate 6 — 
 python3 scripts/session_46691f83/verify_citations.py              # Gate 6 — CFR citation vs official section heading
 python3 scripts/audit_freshness.py                                # Gate 7 — live evidence present, recent and applied to every row
 python3 scripts/test_assurance.py                                 # Gate 8 — conservative currency parsing + blank current-price register
+python3 scripts/session_8a2b9dfb/test_readiness.py                   # Gate 9 — provenance, hostile inputs, all primary table row citations
+node scripts/session_8a2b9dfb/test_calculator.js                     # Gate 9 — actual-runtime numeric-boundary tests
+python3 scripts/session_8a2b9dfb/readiness.py --check                 # Gate 9 — canonical input hashes and deterministic outputs
 ```
 
-`scripts/run_gates_pass20.py` runs all nine invocations in one go and writes `reviews/pass20/gates.json`; that is the record quoted on the Pass 20 page.
+`scripts/run_gates_pass20.py` preserves the earlier eight-gate/nine-command review in `reviews/pass20/gates.json`; it is historical, not the new Gate 9 runner. Run `python3 scripts/session_8a2b9dfb/run_checks.py` for the current twelve-command suite. The latest integration's actual output is [`reports/readiness-checks-8a2b9dfb.txt`](reports/readiness-checks-8a2b9dfb.txt).
 
 The earlier sessions' own records (including the note that their sandboxes had no outbound access, which is why their catalogs were empty) are preserved in `COORDINATION.md` and in the site's Log page.
 

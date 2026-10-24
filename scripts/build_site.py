@@ -27,6 +27,7 @@ NAV = [
     ("pages/purity.html", "14K vs 18K", "purity"),
     ("pages/sellers.html", "Sellers", "sellers"),
     ("pages/calculator.html", "Calculator", "calculator"),
+    ("pages/readiness.html", "Readiness", "readiness"),
     ("pages/flagged.html", "Flagged", "flagged"),
     ("pages/methodology.html", "Method", "method"),
     ("pages/sources.html", "Sources", "sources"),
@@ -52,7 +53,7 @@ FLAG_HELP = {
     "SALE_PRICE_VARIES_ACROSS_PAGES": ("bad", "same SKU showed different sale prices across official pages"),
     "SALE_MSRP_ANCHOR": ("warn", "seller's 'MSRP' is several times the charged price"),
     "PRICE_FROM_CATEGORY_PAGE": ("info", "price read from a live official category-page fetch"),
-    "SOLID_NOT_STATED": ("warn", "no 'solid gold' wording on page"),
+    "SOLID_NOT_STATED": ("warn", "explicit solid-gold wording not documented"),
     "HALLMARK_NOT_PUBLISHED": ("warn", "hallmark not published"),
     "COPY_INCONSISTENT_METAL": ("bad", "page copy contradicts the metal spec"),
     "COPY_CARAT_MISMATCH": ("bad", "prose vs spec diamond carat mismatch"),
@@ -177,14 +178,14 @@ LAYOUT = """<!doctype html>
   Unconfirmed current prices are blank in the <a href="{root}pages/session-review.html">current-session review / Flagged for Review</a>.
   A new World Gold Council panel read ($3,995.47/oz, 23:43Z) differs from the stored historical benchmark ($3,996.31/oz); both are published — see Pass 20.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
-  Re-check official sources and request independent testing before purchase.
+  Candidate inclusion is not purchase approval: see the <a href="{root}pages/readiness.html">per-ring readiness gaps and new findings</a>.
+  Re-check official sources and request independent professional testing before purchase; one surface XRF reading may not establish solid construction.
 </aside>
 {body}
 </main>
 <footer class="wrap foot">
-  <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
-  {captured}. Where a value could not be read, the cell is blank and the row is on the <a href="{root}pages/flagged.html">Flagged for Review</a> page.</p>
-  <p>Gold benchmark: ${spot:,.2f}/oz as of {spot_date} (World Gold Council) = ${spot_g:,.4f}/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p><strong>No-hallucination policy:</strong> captured seller claims are linked to their official sources; dates differ by row and evidence record. They are not live offers, physical tests or endorsements. Where a value could not be read, the cell is blank and the row is on the <a href="{root}pages/flagged.html">Flagged for Review</a> page.</p>
+  <p>Gold benchmark: ${spot:,.2f}/oz, captured {spot_captured}; source page data-date label {spot_date} (World Gold Council) = ${spot_g:,.4f}/g. This is not a live quote. Derived values are arithmetic on published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
   <p class="small">Built {built} · dataset {n_rows} rows · {n_sources} registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
@@ -211,7 +212,7 @@ def render(title: str, body: str, active: str, root: str = "", script: bool = Fa
     return LAYOUT.format(
         title=esc(title), nav=nav, body=body, root=root, extra_scripts=extra,
         captured=C["captured"], spot=C["spot_oz"], spot_date=C["spot_date"],
-        spot_g=C["spot_g"], built=C["built"], n_rows=C["n_rows"], n_sources=C["n_sources"],
+        spot_g=C["spot_g"], spot_captured=esc(C["spot_captured"]), built=C["built"], n_rows=C["n_rows"], n_sources=C["n_sources"],
     )
 
 
@@ -298,6 +299,8 @@ def main() -> None:
     rings = load("rings.json")
 
     rows = d["rows"]
+    rows_by_id = {r["id"]: r for r in rows}
+    sources_by_id = {src["id"]: src for src in sources_doc["sources"]}
     SELLERS_BY_ID = {s["id"]: s for s in sellers_doc["sellers"]}
     st = d["stats"]
     C = {
@@ -305,6 +308,7 @@ def main() -> None:
         "spot_oz": d["spot"]["value_usd_per_oz"],
         "spot_g": d["spot"]["usd_per_gram"],
         "spot_date": d["spot"]["price_date"],
+        "spot_captured": spot["benchmark"].get("captured_utc") or spot["benchmark"]["retrieved_utc"],
         "built": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "n_rows": len(rows),
         "n_sources": len(sources_doc["sources"]),
@@ -379,7 +383,8 @@ def main() -> None:
         <td class="num">{money(p['low_price'])} → {money(p['high_price'])}</td>
         <td class="num">{('+' + f"{p['price_gap_pct']:.1f}%") if p['price_gap_pct'] is not None else '—'}</td>
         <td class="num">{('+' + f"{p['gold_gap_pct']:.1f}%") if p['gold_gap_pct'] is not None else badge('no weight', 'warn')}</td>
-        <td class="num">{num(p['low_multiple']) if p['low_multiple'] else '—'} → {num(p['high_multiple']) if p['high_multiple'] else '—'}</td></tr>"""
+        <td class="num">{num(p['low_multiple']) if p['low_multiple'] else '—'} → {num(p['high_multiple']) if p['high_multiple'] else '—'}</td>
+        <td class="src"><a href="{esc(rows_by_id[p['low_id']]['url'])}" rel="noopener">{esc(p['low_id'])} official</a><br><a href="{esc(rows_by_id[p['high_id']]['url'])}" rel="noopener">{esc(p['high_id'])} official</a></td></tr>"""
         for p in sorted(d["pairs"], key=lambda x: x["pair_id"])
     )
 
@@ -449,19 +454,19 @@ def main() -> None:
       Compare Ross-Simons 18K 0.7 g band (RS-02, 0.525 g pure Au) vs 14K 1.7 g band (RS-01, 0.992 g pure Au): higher karat with lower gram weight yields 47% less fine gold. Also see <a href="dashboard.html"><strong>Assay Lab+ →</strong></a> and <a href="categories/calculator.html"><strong>Stone-Deduction Calculator →</strong></a></p>
     </div>
     <div class="card">
-      <h3>18K costs more than its extra gold — and by an inconsistent amount</h3>
+      <h3>Karat-upgrade premiums vary; metal cost often cannot be isolated</h3>
       <p>Same design, same retailer, only the karat changed: Petite Solitaire is {pct(pair_gap('PAIR-BN-PETITE'))} going 14K→18K, Brilliant Earth Atelier is {pct(pair_gap('PAIR-BE-ATELIER'))}, Classic Four-Prong is {pct(pair_gap('PAIR-BN-FOURPRONG'))}, Comfort Fit is {pct(pair_gap('PAIR-BN-COMFORT'))}, and Allurez Split Shank is {pct(pair_gap('PAIR-AL-SPLIT'))}.</p>
-      <p>For the Allurez pair both prices and weights are published, so the 18K premium can be split: {pct(pairs_by_id.get('PAIR-AL-SPLIT', {}).get('gold_gap_pct'))} of it is simply more gold, and the rest is labour and margin.</p>
+      <p>For the Allurez pair, published weights imply {pct(pairs_by_id.get('PAIR-AL-SPLIT', {}).get('gold_gap_pct'))} more nominal fine gold, while the asking price rises {pct(pair_gap('PAIR-AL-SPLIT'))}. A percentage increase in gold content is <em>not</em> that percentage of the price premium. The unallocated price difference cannot be called labour or margin without an itemised cost breakdown.</p>
       <p class="small"><a href="pages/purity.html">See the full karat analysis →</a></p>
     </div>
     <div class="card">
-      <h3>Zero retailers publish the physical hallmark</h3>
-      <p>Not one product page in this dataset shows the inner-shank stamp or registered maker's mark, which is why the checklist requires post-delivery inspection.
-      Under 15 U.S.C. § 297(b) a karat mark must be accompanied by a registered trademark or legal company name, and GIA Lab Notes advise pairing XRF with gram-weight checks.</p>
+      <h3>No karat-and-maker mark pair is documented in this register</h3>
+      <p>Our records do not document both marks; this is not a claim about every photograph on the retailers' sites.
+      <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry">FTC guidance</a> says to look for a company name or U.S.-registered trademark near the karat mark. Markings remain claims, not physical authentication.</p>
     </div>
     <div class="card">
-      <h3>Return windows range from 7 to 30 days — and resizing kills returns</h3>
-      <p>Menē allows <strong>7 days</strong> (10% cash-refund restocking fee), Catbird allows <strong>14–20 days</strong> ($9 fee; special orders final sale), and Blue Nile's 30-day clock starts at <strong>shipment</strong>. Brilliant Earth, Blue Nile, Ross-Simons, VRAI and Allurez exclude resized rings — verify purity <em>before</em> resizing.</p>
+      <h3>Recorded return windows span 7–30 days; eligibility needs review</h3>
+      <p>A window does not establish cash-refund or custom/resized/testing rights. Menē's seven-day merchandise-credit route is not an unconditional refund promise: <a href="https://mene.com/terms-of-service">the reviewed terms</a> distinguish refund requests, conditional fees and exclusions. Obtain written terms for the exact order and do not resize or alter it before inspection.</p>
       <p class="small"><a href="pages/sellers.html">Compare all 10 sellers' clauses →</a></p>
     </div>
   </div>
@@ -493,7 +498,7 @@ def main() -> None:
   <h2>Karat pairs: the same design in 14K and 18K</h2>
   <p class="sub">Only pairs where the retailer sells the identical design in both karats are compared. The gold-content column stays blank unless both weights are published.</p>
   <div class="table-wrap"><table>
-    <thead><tr><th>Retailer</th><th>Design</th><th class="num">Price 14K → 18K</th><th class="num">Price gap</th><th class="num">Gold-content gap</th><th class="num">Multiple 14K → 18K</th></tr></thead>
+    <thead><tr><th>Retailer</th><th>Design</th><th class="num">Price 14K → 18K</th><th class="num">Price gap</th><th class="num">Gold-content gap</th><th class="num">Multiple 14K → 18K</th><th>Official sources</th></tr></thead>
     <tbody>{pairs_html}</tbody>
   </table></div>
 </section>
@@ -540,7 +545,8 @@ def main() -> None:
         <td class="num">${C['spot_g'] * k['fineness']:,.2f}</td>
         <td class="num">{minf[str(k['karat'])]:.4f}</td>
         <td class="num">${C['spot_g'] * minf[str(k['karat'])]:,.2f}</td>
-        <td class="mono">{esc(k['stamp_examples'])}</td></tr>"""
+        <td class="mono">{esc(k['stamp_examples'])}</td>
+        <td class="src"><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry">FTC karat guidance</a><br><a href="https://www.gold.org/goldhub/data/gold-prices">Gold benchmark</a><br><a href="https://www.law.cornell.edu/uscode/text/15/295">Conditional tolerance</a></td></tr>"""
         for k in kt
     )
     purity_body = f"""
@@ -555,14 +561,14 @@ def main() -> None:
   <h4>The key finding</h4>
   <p>A 14K or 18K stamp by itself does not prove the ring is that purity. Under 15 U.S.C. § 295 the actual fineness of the whole article may be up to
   <strong>0.007 below</strong> the stamped fineness, so an "18K" ring can legally test as low as <strong>74.3%</strong> gold and a "14K" ring as low as
-  <strong>57.63%</strong>. Only an assay or XRF measurement tells you what you actually own.</p>
+  <strong>57.63%</strong> on this project's karat-divided-by-24 basis. These are conditional statutory illustrations for compliant articles, not measured bounds for a ring with an unverified stamp. Arrange independent professional testing; <a href="https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet">GIA documents thick plating that XRF alone may miss</a>.</p>
 </div>
 
 <section class="section">
   <h2>Karat reference</h2>
   <p class="sub">Fineness is karat ÷ 24. Gold value per gram uses the captured benchmark of ${C['spot_oz']:,.2f}/oz (${C['spot_g']:,.2f}/g). The "legal minimum" column applies the § 295 whole-article tolerance.</p>
   <div class="table-wrap"><table>
-    <thead><tr><th>Karat</th><th class="num">Gold %</th><th class="num">Fineness</th><th class="num">Gold value / g</th><th class="num">Legal min fineness</th><th class="num">Legal min value / g</th><th>Typical stamps</th></tr></thead>
+    <thead><tr><th>Karat</th><th class="num">Gold %</th><th class="num">Fineness</th><th class="num">Gold value / g</th><th class="num">Legal min fineness</th><th class="num">Legal min value / g</th><th>Informational stamp examples (not item evidence)</th><th>Official sources</th></tr></thead>
     <tbody>{kt_rows}</tbody>
   </table></div>
   <p class="small" style="margin-top:10px">Dataset spans 10K, 14K, 18K, and 24K (Menē 24K bands; note 24K is malleable and requires thick shanks rather than delicate prongs). Sources: <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC consumer guidance on gold karats</a> ·
@@ -574,7 +580,7 @@ def main() -> None:
   <h2>What the karat jump actually costs in this dataset</h2>
   <p class="sub">Same design, same retailer, only the karat differs. Price gap is measured; gold-content gap is only measured where both weights are published.</p>
   <div class="table-wrap"><table>
-    <thead><tr><th>Retailer</th><th>Design</th><th class="num">Price 14K → 18K</th><th class="num">Price gap</th><th class="num">Gold gap</th><th class="num">Multiple 14K → 18K</th></tr></thead>
+    <thead><tr><th>Retailer</th><th>Design</th><th class="num">Price 14K → 18K</th><th class="num">Price gap</th><th class="num">Gold gap</th><th class="num">Multiple 14K → 18K</th><th>Official sources</th></tr></thead>
     <tbody>{pairs_html}</tbody>
   </table></div>
   <div class="grid two" style="margin-top:16px">
@@ -596,6 +602,7 @@ def main() -> None:
     seller_cards = []
     for s in sellers_doc["sellers"]:
         n_prod = sum(1 for r in rows if r["retailer_id"] == s["id"])
+        n_solid = sum(1 for r in rows if r["retailer_id"] == s["id"] and r.get("solid_gold_status") == "stated")
         contact_bits = []
         if s["contact"].get("phone"):
             contact_bits.append(f'<a href="tel:{esc(s["contact"]["phone"]).replace(" ", "")}">{esc(s["contact"]["phone"])}</a>')
@@ -607,12 +614,12 @@ def main() -> None:
 <article class="card" id="{esc(s['id'])}">
   <h3>{esc(s['name'])} {badge(f"{n_prod} rows", "gold")}</h3>
   <p class="small">Contact: {' · '.join(contact_bits)}</p>
-  <p><strong>{s['return_window_days']}-day return window.</strong> {esc(s['return_window_basis'])}.</p>
+  <p><strong>Historically recorded window: {s['return_window_days']} days.</strong> {esc(s['return_window_basis'])}. Not confirmation of configured-ring refund/testing eligibility; <a href="readiness.html#flagged">review the evidence gaps and newer terms observations</a>.</p>
   <p class="small"><strong>Exclusions:</strong></p>
   <ul class="small">{excl}</ul>
   <p class="small"><strong>Resize:</strong> {esc(s.get('resize_policy') or 'not captured')}</p>
   <p class="small"><strong>Warranty:</strong> {esc(s.get('warranty') or 'not captured on the fetched page')}</p>
-  <p class="small"><strong>Solid-gold wording:</strong> {'explicit "solid" wording found' if s.get('solid_gold_stated') else 'no explicit "solid" wording found on the captured pages'}</p>
+  <p class="small"><strong>Recorded item-specific solid wording:</strong> {n_solid} of {n_prod} candidate rows. This is not a seller-wide guarantee; <a href="readiness.html">inspect the per-ring evidence</a>.</p>
   <p class="small">Policy source: <a href="{esc(next((x['url'] for x in sources_doc['sources'] if x['id'] == s['returns_source_id']), '#'))}" target="_blank" rel="noopener">open the seller's own policy page</a></p>
   {flag_chips({'flags': s['flags']})}
 </article>""")
@@ -620,7 +627,7 @@ def main() -> None:
     sellers_body = f"""
 <section class="hero">
   <span class="eyebrow">Sellers</span>
-  <h1>Return windows, exclusions and contact routes — quoted, not summarised.</h1>
+  <h1>Recorded policy clauses and contacts — not an eligibility approval.</h1>
   <p class="lede">The checklist asks for a real return policy, real contact information and a check on the seller's reputation. Here is what each seller's own site states.</p>
 </section>
 {no_hallucination_block('../')}
@@ -634,15 +641,16 @@ def main() -> None:
 <section class="section">
   <h2>Side by side</h2>
   <div class="table-wrap"><table>
-    <thead><tr><th>Seller</th><th>Return window</th><th>Resized rings returnable?</th><th>Custom / engraved</th><th>Resize service</th><th>Contact</th><th>Solid stated</th></tr></thead>
+    <thead><tr><th>Seller</th><th>Return window</th><th>Resized rings returnable?</th><th>Custom / engraved</th><th>Resize service</th><th>Contact</th><th>Solid wording</th><th>Official source</th></tr></thead>
     <tbody>
     {''.join(f'''<tr><td><a href="#{esc(s['id'])}">{esc(s['name'])}</a></td>
       <td>{s['return_window_days']} days</td>
-      <td>{badge('no', 'bad') if any('resized' in x.lower() or 'altered' in x.lower() for x in s['return_exclusions']) else (badge('not itemised', 'mute') if not s['return_exclusions'] else badge('not excluded', 'ok'))}</td>
+      <td>{badge('no', 'bad') if any('resized' in x.lower() or 'altered' in x.lower() for x in s['return_exclusions']) else badge('unverified', 'warn')}</td>
       <td>{badge('excluded', 'warn') if any(('custom' in x.lower() or 'engrav' in x.lower()) for x in s['return_exclusions']) else badge('no exclusion captured', 'mute')}</td>
       <td class="small">{esc((s.get('resize_policy') or 'not captured')[:80])}</td>
       <td class="small">{esc(s['contact'].get('phone') or s['contact'].get('email') or 'not captured')}</td>
-      <td>{badge('yes', 'ok') if s.get('solid_gold_stated') else badge('no', 'warn')}</td></tr>''' for s in sellers_doc['sellers'])}
+      <td><a href="readiness.html">Item-specific evidence only</a></td>
+      <td class="src"><a href="{esc(sources_by_id[s['returns_source_id']]['url'])}">Official captured policy</a></td></tr>''' for s in sellers_doc['sellers'])}
     </tbody>
   </table></div>
 </section>
@@ -670,8 +678,7 @@ def main() -> None:
 <section class="hero">
   <span class="eyebrow">Calculator</span>
   <h1>Gold content and gold value, from a weight you can actually weigh.</h1>
-  <p class="lede">This tool does arithmetic, not verification. It cannot tell you whether the metal is gold — only an assay or XRF can. It tells you what a given weight
-  and karat would be worth as raw gold at the captured spot price.</p>
+  <p class="lede">This tool does conditional arithmetic, not verification. It calculates nominal fine-gold content from a stated metal weight and karat at a dated benchmark. It cannot establish purity or solid construction. An independent professional should choose appropriate tests; XRF alone can miss thick plating.</p>
 </section>
 {no_hallucination_block('../')}
 
@@ -680,9 +687,9 @@ def main() -> None:
     <div class="card">
       <h3>Inputs</h3>
       <div class="field">
-        <label for="c-weight">Measured weight (grams)</label>
+        <label for="c-weight">Metal-only weight (grams)</label>
         <input id="c-weight" type="number" min="0" step="0.01" value="4.00" inputmode="decimal">
-        <div class="hint">Weigh the ring without the box. Diamonds add carat weight, not gold.</div>
+        <div class="hint">The pre-filled 4.00 g is a hypothetical example, not a measurement of your ring. Use a sourced metal-only gram weight for the correct size; do not treat stone weight as gold.</div>
       </div>
       <div class="field">
         <label for="c-karat">Stamped karat</label>
@@ -693,12 +700,12 @@ def main() -> None:
           <option value="22">22K — 91.67% gold</option>
           <option value="24">24K — 100% gold</option>
         </select>
-        <div class="hint">Use the stamp, then treat the result as an upper bound (see the tolerance note below).</div>
+        <div class="hint">The selected karat is an assumption for arithmetic, not proof of purity or a measured upper bound. Verify the actual article independently.</div>
       </div>
       <div class="field">
         <label for="c-spot">Gold spot (USD per troy ounce)</label>
         <input id="c-spot" type="number" min="0" step="0.01" value="{C['spot_oz']:.2f}" inputmode="decimal">
-        <div class="hint">Pre-filled with the captured benchmark: ${C['spot_oz']:,.2f}/oz on {esc(C['spot_date'])}. Change it to test another price — the page will not do it for you.</div>
+        <div class="hint">Pre-filled with a dated benchmark: ${C['spot_oz']:,.2f}/oz, captured {esc(C['spot_captured'])}. The page data-date label is {esc(C['spot_date'])}; neither is a live quote. <a href="https://www.gold.org/goldhub/data/gold-prices">Official benchmark source</a>.</div>
       </div>
       <div class="field">
         <label for="c-price">Asking price (optional)</label>
@@ -708,17 +715,17 @@ def main() -> None:
     </div>
     <div>
       <div class="result">
-        <div class="row"><span>Pure gold in the ring</span><b id="c-pure">—</b></div>
-        <div class="row"><span>Gold value at spot</span><b id="c-value">—</b></div>
-        <div class="row"><span>Legal-minimum value if the stamp is only just met</span><b id="c-min">—</b></div>
+        <div class="row"><span>Nominal fine-gold content (derived)</span><b id="c-pure">—</b></div>
+        <div class="row"><span>Nominal gold value at dated spot</span><b id="c-value">—</b></div>
+        <div class="row"><span>Conditional statutory-floor illustration</span><b id="c-min">—</b></div>
         <div class="row"><span>Spot per gram</span><b id="c-pergram">—</b></div>
         <div class="row"><span>Price ÷ gold value</span><b id="c-mult">—</b></div>
         <p class="small" id="c-multnote" style="margin:10px 0 0">Add the asking price to see the multiple.</p>
       </div>
       <div class="callout warn" style="margin-top:16px">
         <h4>Read the tolerance</h4>
-        <p>15 U.S.C. § 295 lets the whole-article fineness sit up to 0.007 below the stamp. The "legal-minimum value" row applies that floor, so the true gold value of a
-        stamped ring lies between the two middle numbers — before any wear, solder or rhodium plating.</p>
+        <p>For a compliant marked article, <a href="https://www.law.cornell.edu/uscode/text/15/295">15 U.S.C. § 295</a> provides a whole-article fineness tolerance of 0.007. The floor illustration applies that tolerance to the assumed karat on this project's karat-divided-by-24 basis. It does <strong>not</strong> establish any measured lower or upper bound for an unverified ring. A false stamp or non-gold components can invalidate the assumptions entirely.</p>
+        <p><a href="https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet">GIA's electroformed-bracelet case</a> shows why one surface XRF result need not prove solid construction. Preserve return rights before any potentially altering test.</p>
       </div>
       <div class="callout info">
         <h4>What this is not</h4>
@@ -730,12 +737,12 @@ def main() -> None:
 
 <section class="section">
   <h2>Benchmark values per gram</h2>
-  <p class="sub">Pure-gold value of one gram of metal, by karat, at the captured spot. Multiply by your ring's gold content.</p>
+  <p class="sub">Nominal fine-gold value per gram of alloy, by assumed karat, at the dated benchmark. Multiply by the sourced metal-only ring weight, not by fine-gold content again.</p>
   <div class="table-wrap"><table>
-    <thead><tr><th>Karat</th><th class="num">Gold %</th><th class="num">Value of 1 g</th><th class="num">Value of 3 g</th><th class="num">Value of 5 g</th><th class="num">Value of 8 g</th></tr></thead>
+    <thead><tr><th>Karat</th><th class="num">Gold %</th><th class="num">Value of 1 g</th><th class="num">Value of 3 g</th><th class="num">Value of 5 g</th><th class="num">Value of 8 g</th><th>Official inputs</th></tr></thead>
     <tbody>{''.join(f'''<tr><td>{k['karat']}K</td><td class="num">{k['gold_pct']:.2f}%</td>
       <td class="num">${C['spot_g']*k['fineness']:,.2f}</td><td class="num">${C['spot_g']*k['fineness']*3:,.2f}</td>
-      <td class="num">${C['spot_g']*k['fineness']*5:,.2f}</td><td class="num">${C['spot_g']*k['fineness']*8:,.2f}</td></tr>''' for k in kt)}</tbody>
+      <td class="num">${C['spot_g']*k['fineness']*5:,.2f}</td><td class="num">${C['spot_g']*k['fineness']*8:,.2f}</td><td class="src"><a href="https://www.gold.org/goldhub/data/gold-prices">Dated gold benchmark</a><br><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry">Karat definition</a></td></tr>''' for k in kt)}</tbody>
   </table></div>
 </section>
 
@@ -751,8 +758,7 @@ def main() -> None:
       <td class="src"><a href="{esc(r['weight_source_url'] or r['url'])}" target="_blank" rel="noopener">source</a></td></tr>'''
       for r in rows if r['weight_g'])}</tbody>
   </table></div>
-  <p class="small" style="margin-top:10px">Multiple = asking price ÷ the gold value of the published weight. It is a sanity check on pricing, not a verdict: a $1,035 setting with 2.86 g of
-  18K gold carries about {money(next((r['gold_value_usd'] for r in rows if r['id']=='VR-01'), 0))} of gold at spot, so roughly {num(next((r['price_to_gold_multiple'] for r in rows if r['id']=='VR-01'), None))}× the metal value — normal for a brand setting, alarming if it were 1.1× with a "solid gold" promise and a suspiciously low price.</p>
+  <p class="small" style="margin-top:10px">Multiple = historical asking price ÷ conditional nominal gold value at the dated benchmark. It is not a resale offer, authentication test or proof of fair pricing. For VR-01, the recorded 2.86 g weight is scoped to size 6, not the selected size 5, and the specification conflict remains flagged. The displayed arithmetic applies to that published weight only, not a verified configured-ring quote. Higher multiples can reflect many unitemised costs; no universal safe multiple is established.</p>
 </section>
 """
     (PAGES / "calculator.html").write_text(render("Calculator", calc_body, "calculator", root="../", script=True), encoding="utf-8")
@@ -789,6 +795,7 @@ def main() -> None:
   <h1>Flagged for Review.</h1>
   <p class="lede">Everything this project could not confirm from an official source, every contradiction found on a retailer's own page, and every policy clause that can cost you money.
   These items do not block publication — they block a purchase until you check them.</p>
+  <p><a href="readiness.html#flagged"><strong>New requirement findings: Menē solid-wording / refund conditions, XRF limits and calculator corrections</strong></a>. The <a href="readiness.html">readiness register</a> evaluates every candidate against the full buying checklist, with current exact-price cells left blank.</p>
 </section>
 {no_hallucination_block('../')}
 
@@ -934,7 +941,7 @@ def main() -> None:
   <h2>What would change my mind</h2>
   <div class="grid two">
     <div class="card"><h3>A gram weight per size</h3><p>If a retailer published the weight for each ring size, most of the blank cells here would compute. It is the single highest-value disclosure missing from this market.</p></div>
-    <div class="card"><h3>An XRF report per item</h3><p>An assay or XRF result on the actual article would replace the "legal tolerance" range with a measurement. Nothing on a product page can do that.</p></div>
+    <div class="card"><h3>Independent item-specific professional testing</h3><p>Document the actual weight, markings, construction and purity with appropriate tests. A surface XRF reading alone is not a solid-construction guarantee: <a href="https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet">see GIA's documented case</a>. Statutory arithmetic is not a measured range.</p></div>
   </div>
 </section>
 """
@@ -942,11 +949,11 @@ def main() -> None:
 
     # ---------------------------------------------------------------- methodology
     rule_rows = "".join(
-        f"<tr><td>{esc(k.replace('_', ' '))}</td><td>{esc(v)}</td></tr>"
+        f"<tr><td>{esc(k.replace('_', ' '))}</td><td>{esc(v)}</td><td class='src'><a href='https://github.com/karagemop466-tech/GOLD4/blob/main/data/methodology.json'>Official project rule</a></td></tr>"
         for k, v in method["no_hallucination_policy"]["verification_levels"].items()
     )
     formula_rows = "".join(
-        f"<tr><td class='mono'>{esc(k)}</td><td>{esc(v) if isinstance(v, str) else esc('; '.join(v))}</td></tr>"
+        f"<tr><td class='mono'>{esc(k)}</td><td>{esc(v) if isinstance(v, str) else esc('; '.join(v))}</td><td class='src'><a href='https://github.com/karagemop466-tech/GOLD4/blob/main/data/methodology.json'>Official project formula</a></td></tr>"
         for k, v in method["formulas"].items()
     )
     assumptions = "".join(f"<li>{esc(a)}</li>" for a in method["formulas"]["assumptions"])
@@ -962,12 +969,12 @@ def main() -> None:
   <h2>The rule</h2>
   <div class="callout bad"><h4>No hallucination</h4><p>{esc(method['no_hallucination_policy']['rule'])}</p>
   <p>{esc(method['no_hallucination_policy']['derived_values'])}</p></div>
-  <div class="table-wrap"><table><thead><tr><th>Verification level</th><th>Meaning</th></tr></thead><tbody>{rule_rows}</tbody></table></div>
+  <div class="table-wrap"><table><thead><tr><th>Verification level</th><th>Meaning</th><th>Project source</th></tr></thead><tbody>{rule_rows}</tbody></table></div>
 </section>
 
 <section class="section">
   <h2>Formulas</h2>
-  <div class="table-wrap"><table><thead><tr><th>Value</th><th>Definition</th></tr></thead><tbody>{formula_rows}</tbody></table></div>
+  <div class="table-wrap"><table><thead><tr><th>Value</th><th>Definition</th><th>Project source</th></tr></thead><tbody>{formula_rows}</tbody></table></div>
   <h3 style="margin-top:18px">Assumptions that limit the result</h3>
   <ul>{assumptions}</ul>
 </section>
@@ -1301,6 +1308,12 @@ def main() -> None:
     # Keep the conservative current-session register in sync on every rebuild.
     from build_session_review import build as build_session_review
     build_session_review()
+
+    # Generate the evidence-completeness register from the SAME final canonical
+    # inputs. Its --check CI gate catches drift rather than silently recertifying.
+    from session_8a2b9dfb.readiness import outputs as readiness_outputs
+    for name, content in readiness_outputs(ROOT).items():
+        (ROOT / name).write_text(content, encoding="utf-8")
 
     # ---------------------------------------------------------------- housekeeping
     (ROOT / ".nojekyll").write_text("", encoding="utf-8")

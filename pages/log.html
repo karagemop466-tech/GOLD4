@@ -15,7 +15,7 @@
       <span>GOLD4<small>gold-ring verification desk</small></span>
     </a>
     <nav class="main">
-      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="freshness.html" class="">Freshness</a><a href="session-review.html" class="">Current review</a><a href="pass20.html" class="">Pass 20</a><a href="../checklist.html" class="">Checklist</a><a href="log.html" class="active">Log</a><a href="../dashboard.html" class="">Assay Lab+</a>
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="readiness.html" class="">Readiness</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="freshness.html" class="">Freshness</a><a href="session-review.html" class="">Current review</a><a href="pass20.html" class="">Pass 20</a><a href="../checklist.html" class="">Checklist</a><a href="log.html" class="active">Log</a><a href="../dashboard.html" class="">Assay Lab+</a>
     </nav>
   </div>
 </header>
@@ -26,7 +26,8 @@
   Unconfirmed current prices are blank in the <a href="../pages/session-review.html">current-session review / Flagged for Review</a>.
   A new World Gold Council panel read ($3,995.47/oz, 23:43Z) differs from the stored historical benchmark ($3,996.31/oz); both are published — see Pass 20.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
-  Re-check official sources and request independent testing before purchase.
+  Candidate inclusion is not purchase approval: see the <a href="../pages/readiness.html">per-ring readiness gaps and new findings</a>.
+  Re-check official sources and request independent professional testing before purchase; one surface XRF reading may not establish solid construction.
 </aside>
 
 <section class="hero">
@@ -155,13 +156,13 @@
   <h2>Latest integrity audit output</h2>
   <p class="sub">Produced by <span class="mono">scripts/audit.py</span>. Any FAIL fails the build; warnings must be published on the Flagged page.</p>
   <pre class="mono" style="background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;white-space:pre-wrap">GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T23:59:15+00:00
+run_utc: 2026-10-24T00:16:38+00:00
 dataset rows: 64 | sellers: 10 | sources: 32
 spot benchmark: $3,996.31/oz (22 October, 2026) = $128.4844/g
 
-RESULT: PASS  (132 passed, 1 warnings, 0 failures)
+RESULT: PASS  (132 passed, 0 warnings, 0 failures)
 
-[WARN] B-08 price verification: BE-05: price is only V2 evidence and must be flagged
+No warnings, no failures.
 
 Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
 price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,
@@ -179,11 +180,10 @@ per-row source-link requirement, and render-text sanity.
 
 </main>
 <footer class="wrap foot">
-  <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
-  22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
-  <p>Gold benchmark: $3,996.31/oz as of 22 October, 2026 (World Gold Council) = $128.4844/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p><strong>No-hallucination policy:</strong> captured seller claims are linked to their official sources; dates differ by row and evidence record. They are not live offers, physical tests or endorsements. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
+  <p>Gold benchmark: $3,996.31/oz, captured 2026-10-23T20:23Z; source page data-date label 22 October, 2026 (World Gold Council) = $128.4844/g. This is not a live quote. Derived values are arithmetic on published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-23 23:59 UTC · dataset 64 rows · 32 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-24 00:17 UTC · dataset 64 rows · 32 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 
 </body>

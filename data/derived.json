@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-23T23:56:39Z",
+  "generated_utc": "2026-10-24T00:12:35Z",
   "spot": {
     "value_usd_per_oz": 3996.31,
     "usd_per_gram": 128.48435,
@@ -2031,7 +2031,7 @@
       "id": "MN-01",
       "retailer": "Menē",
       "retailer_id": "mene",
-      "product_name": "Menē 24k Pure Solid Gold Knot Ring",
+      "product_name": "Knot Ring",
       "style": "Sculpted pure 24K solid gold ring",
       "category": "band",
       "metal_label": "Pure 24K Gold (99.99% Au)",
@@ -2039,8 +2039,8 @@
       "sku": "knot-ring-gold",
       "width_mm": 6.0,
       "url": "https://mene.com/products/knot-ring-gold",
-      "solid_gold_statement": "Pure 24k Gold sold by weight with Certificate of Authenticity",
-      "solid_gold_status": "stated",
+      "solid_gold_statement": null,
+      "solid_gold_status": "not_stated",
       "hallmark_published": false,
       "price_usd": 1465.0,
       "price_basis": "Ring as sold ($1,465 live on 2026-10-22; stale search cache showed $1,445.30)",
@@ -2055,7 +2055,8 @@
       "flags": [
         "NO_WEIGHT_PUBLISHED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_STRUCTURED_DIFFERS"
+        "PRICE_STRUCTURED_DIFFERS",
+        "SOLID_NOT_STATED"
       ],
       "flag_detail": "Per-size gram weight renders inside client JS modal rather than initial static HTML — left strictly null (never back-solved). Strict 7-day return window. | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 2,441.00 USD via json-ld, 1,908.00 USD via json-ld, 2,223.00 USD via json-ld, 1,800.00 USD via json-ld, 1,888.00 USD via json-ld, 1,770.00 USD via json-ld, 1,627.00 USD via json-ld, 1,530.00 USD via json-ld, 1,454.00 USD via json-ld against the stored $1,465.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 20:23Z: the page's own structured data currently prints 2,422.00 USD via json-ld, 1,893.00 USD via json-ld, 2,205.00 USD via json-ld, 1,785.00 USD via json-ld, 1,873.00 USD via json-ld, 1,756.00 USD via json-ld, 1,614.00 USD via json-ld, 1,518.00 USD via json-ld, 1,442.00 USD via json-ld against the stored $1,465.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
       "reverified_utc": "2026-10-22",
@@ -2100,6 +2101,22 @@
         "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
       },
       "reverification": " PASS 17 (2026-10-23, arena/0e04577b-gold4): official Mene page re-fetched live: display price today is $1,442 USD for the default size (stored record: $1,465 captured 2026-10-22; Pass 16 structured size offers $1,800-$2,441). The page states 'Products are sold by weight, not size' and resale/exchange 'at the daily metal value', i.e. the price floats. Both dated readings are published; the stored value was NOT overwritten. PRICE_STRUCTURED_DIFFERS stands (FLG-PASS17-04). No gram weight was read from the fetched page content, so weight stays blank.",
+      "readiness_review_8a2b9dfb": {
+        "review_date_utc": "2026-10-23",
+        "fields_reviewed": [
+          "solid_gold_statement",
+          "solid_gold_status",
+          "product_name"
+        ],
+        "source_url": "https://mene.com/products/knot-ring-gold",
+        "source_chunks_reviewed": [
+          0
+        ],
+        "prior_solid_gold_statement": "Pure 24k Gold sold by weight with Certificate of Authenticity",
+        "prior_solid_gold_status": "stated",
+        "note": "The recorded wording Pure 24k Gold sold by weight with Certificate of Authenticity does not explicitly say solid. Withhold solid-wording credit rather than infer construction from purity, a certificate or a product name. The reviewed product block identifies 24k Gold and Crafted-on-Demand; this is not a claim about every part of the website and not a physical-construction finding. Price/weight captures and source-health evidence are unchanged. See R8-SOLID-01 and the dated official-source observation record.",
+        "prior_descriptive_product_name": "Menē 24k Pure Solid Gold Knot Ring"
+      },
       "fineness": 1.0,
       "gold_pct": 100.0,
       "pure_gold_g": null,
@@ -2113,7 +2130,7 @@
       "id": "MN-02",
       "retailer": "Menē",
       "retailer_id": "mene",
-      "product_name": "Menē 24k Pure Solid Gold Etruscan Sun Band (4.5mm)",
+      "product_name": "Etruscan Sun Band",
       "style": "Pure 24K gold band (4.5mm x 2.0mm)",
       "category": "band",
       "metal_label": "Pure 24K Gold (99.99% Au)",
@@ -2121,8 +2138,8 @@
       "sku": "etruscan-sun-band-gold",
       "width_mm": 4.5,
       "url": "https://mene.com/products/etruscan-sun-band-gold",
-      "solid_gold_statement": "Pure 24k Gold sold by weight with Certificate of Authenticity",
-      "solid_gold_status": "stated",
+      "solid_gold_statement": null,
+      "solid_gold_status": "not_stated",
       "hallmark_published": false,
       "price_usd": 1730.0,
       "price_basis": "Band as sold ($1,730 live on 2026-10-22; stale search cache showed $1,643.01)",
@@ -2137,7 +2154,8 @@
       "flags": [
         "NO_WEIGHT_PUBLISHED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_STRUCTURED_DIFFERS"
+        "PRICE_STRUCTURED_DIFFERS",
+        "SOLID_NOT_STATED"
       ],
       "flag_detail": "Per-size gram weight renders inside client JS modal rather than initial static HTML — left strictly null. Strict 7-day return window. | Pass 16 source check 2026-10-23 10:00Z: the page's own structured data currently prints 2,565.00 USD via json-ld, 2,386.00 USD via json-ld, 2,378.00 USD via json-ld, 2,264.00 USD via json-ld, 2,189.00 USD via json-ld, 2,201.00 USD via json-ld, 1,961.00 USD via json-ld, 1,906.00 USD via json-ld against the stored $1,730.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page. | Pass 15 source check 2026-10-23 20:23Z: the page's own structured data currently prints 2,545.00 USD via json-ld, 2,367.00 USD via json-ld, 2,359.00 USD via json-ld, 2,246.00 USD via json-ld, 2,172.00 USD via json-ld, 2,184.00 USD via json-ld, 1,946.00 USD via json-ld, 1,891.00 USD via json-ld against the stored $1,730.00. Both numbers are shown; the stored value is NOT overwritten because the difference may be a variant/configuration selection on the page.",
       "reverified_utc": "2026-10-22",
@@ -2180,6 +2198,22 @@
           }
         ],
         "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
+      },
+      "readiness_review_8a2b9dfb": {
+        "review_date_utc": "2026-10-23",
+        "fields_reviewed": [
+          "solid_gold_statement",
+          "solid_gold_status",
+          "product_name"
+        ],
+        "source_url": "https://mene.com/products/etruscan-sun-band-gold",
+        "source_chunks_reviewed": [
+          0
+        ],
+        "prior_solid_gold_statement": "Pure 24k Gold sold by weight with Certificate of Authenticity",
+        "prior_solid_gold_status": "stated",
+        "note": "The recorded wording Pure 24k Gold sold by weight with Certificate of Authenticity does not explicitly say solid. Withhold solid-wording credit rather than infer construction from purity, a certificate or a product name. The reviewed product block identifies 24k Gold and Crafted-on-Demand; this is not a claim about every part of the website and not a physical-construction finding. Price/weight captures and source-health evidence are unchanged. See R8-SOLID-01 and the dated official-source observation record.",
+        "prior_descriptive_product_name": "Menē 24k Pure Solid Gold Etruscan Sun Band (4.5mm)"
       },
       "fineness": 1.0,
       "gold_pct": 100.0,
@@ -3363,10 +3397,10 @@
       "solid_gold_status": "not_stated",
       "hallmark_published": false,
       "price_usd": 1190.0,
-      "price_basis": "Setting only — page shows '$1,190 (Setting Only)'",
-      "price_captured_utc": "2026-10-22",
+      "price_basis": "USD $1,190 (Setting Only), first-hand official-page read 2026-10-23; ring size/centre diamond unselected. Not a final configured-ring or checkout quote.",
+      "price_captured_utc": "2026-10-23",
       "price_source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
-      "price_verification": "V2_official_page_snapshot_only",
+      "price_verification": "V1_direct_page_fetch",
       "weight_g": null,
       "weight_scope": null,
       "weight_source_url": null,
@@ -3376,14 +3410,13 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_V2_ONLY",
         "PRICE_CURRENCY_LOCALIZED",
         "SOURCE_BOT_BLOCKED"
       ],
       "flag_detail": "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session. PASS 14 (2026-10-23): live re-fetch served 'EUR 1,350.00 (Setting Only)' on this page while BE-06 and BE-07 served USD in the same minute; the USD figure ($1,190) therefore remains snapshot-sourced and stays flagged. The EUR figure is not converted to USD here — a conversion would be a number this project computed, not a price the retailer published. | Pass 16 source check 2026-10-23 10:00Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed. | Pass 15 source check 2026-10-23 20:23Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. No value was changed.",
       "reverified_utc": "2026-10-23",
       "reverified_by": "arena/04f1f10d-gold4 (Pass 14)",
-      "reverification": "2026-10-22T23:35Z: three dated snapshots of official Brilliant Earth pages agree on $1,190 (product page + two category JSON-LD records). Live re-fetch pending (fetch-service outage 23:20-23:47Z). PASS 14 (2026-10-23): official page re-fetched live. It served the geolocalized price 'EUR 1,350.00 (Setting Only)' for style BE1D3939-14KY (14K Yellow Gold, 'Width: 2-1.3 mm', 'Setting: Claw Prong', 14 shared-prong round diamonds totalling 0.05 ct) and published no USD figure, so the stored $1,190 was NOT re-confirmed and NOT changed. Provenance stays V2. In the same minutes the 18K variant (BE-06) and Fleur (BE-07) both rendered in USD, so the localization is per-page rather than per-session. No gram weight is published on any of the three pages.",
+      "reverification": "2026-10-22T23:35Z: three dated snapshots of official Brilliant Earth pages agree on $1,190 (product page + two category JSON-LD records). Live re-fetch pending (fetch-service outage 23:20-23:47Z). PASS 14 (2026-10-23): official page re-fetched live. It served the geolocalized price 'EUR 1,350.00 (Setting Only)' for style BE1D3939-14KY (14K Yellow Gold, 'Width: 2-1.3 mm', 'Setting: Claw Prong', 14 shared-prong round diamonds totalling 0.05 ct) and published no USD figure, so the stored $1,190 was NOT re-confirmed and NOT changed. Provenance stays V2. In the same minutes the 18K variant (BE-06) and Fleur (BE-07) both rendered in USD, so the localization is per-page rather than per-session. No gram weight is published on any of the three pages. R8 (2026-10-23, arena/8a2b9dfb-gold4): first-hand official product chunk 4 finally rendered USD and $1,190 (Setting Only), style BE1D3939-14KY, 14K Yellow Gold. V2 upgraded to V1 without changing the amount. Selected ring size/centre diamond and gram weight remain unconfirmed. Historical currency-localization and runner-403 evidence preserved.",
       "pair_id": "PAIR-BE-FREESIA",
       "source_check": {
         "checked_utc": "2026-10-23T20:23:21Z",
@@ -3394,6 +3427,33 @@
         "page_title": "Brilliant Earth - Verifying",
         "found_prices": [],
         "note": "the retailer's bot protection refused the runner (HTTP 403) — no statement about the price is possible"
+      },
+      "readiness_review_8a2b9dfb": {
+        "review_date_utc": "2026-10-23",
+        "fields_reviewed": [
+          "price_verification",
+          "price_captured_utc",
+          "price_basis"
+        ],
+        "source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
+        "source_chunks_reviewed": [
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        "price_evidence_chunk": 4,
+        "prior_price_observation": {
+          "price_usd": 1190.0,
+          "price_basis": "Setting only — page shows '$1,190 (Setting Only)'",
+          "price_captured_utc": "2026-10-22",
+          "price_verification": "V2_official_page_snapshot_only",
+          "price_source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/"
+        },
+        "observed_currency": "USD",
+        "observed_setting_price_usd": 1190.0,
+        "note": "First-hand official-page read before midnight UTC on 23 October: currency selector USD; Freesia Hidden Halo Diamond Ring in 14K Yellow Gold; $1,190 (Setting Only); BE1D3939-14KY. This corroborates the unchanged setting amount and upgrades V2 to V1. No ring size or centre diamond was selected, so it is not a final configured-ring or checkout quote. Weight stays blank. Prior EUR/localization observations and the historical runner's 403 remain intact; browser and runner outcomes differ."
       },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
@@ -4131,7 +4191,7 @@
     "total_rows": 64,
     "rows_with_verified_price": 62,
     "rows_with_published_weight": 17,
-    "rows_with_solid_gold_statement": 19,
+    "rows_with_solid_gold_statement": 17,
     "rows_with_hallmark_published": 0,
     "rows_with_any_flag": 64,
     "by_karat": {
