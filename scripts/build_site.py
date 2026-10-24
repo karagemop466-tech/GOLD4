@@ -454,19 +454,19 @@ def main() -> None:
       Compare Ross-Simons 18K 0.7 g band (RS-02, 0.525 g pure Au) vs 14K 1.7 g band (RS-01, 0.992 g pure Au): higher karat with lower gram weight yields 47% less fine gold. Also see <a href="dashboard.html"><strong>Assay Lab+ →</strong></a> and <a href="categories/calculator.html"><strong>Stone-Deduction Calculator →</strong></a></p>
     </div>
     <div class="card">
-      <h3>18K costs more than its extra gold — and by an inconsistent amount</h3>
+      <h3>Karat-upgrade premiums vary; metal cost often cannot be isolated</h3>
       <p>Same design, same retailer, only the karat changed: Petite Solitaire is {pct(pair_gap('PAIR-BN-PETITE'))} going 14K→18K, Brilliant Earth Atelier is {pct(pair_gap('PAIR-BE-ATELIER'))}, Classic Four-Prong is {pct(pair_gap('PAIR-BN-FOURPRONG'))}, Comfort Fit is {pct(pair_gap('PAIR-BN-COMFORT'))}, and Allurez Split Shank is {pct(pair_gap('PAIR-AL-SPLIT'))}.</p>
-      <p>For the Allurez pair both prices and weights are published, so the 18K premium can be split: {pct(pairs_by_id.get('PAIR-AL-SPLIT', {}).get('gold_gap_pct'))} of it is simply more gold, and the rest is labour and margin.</p>
+      <p>For the Allurez pair, published weights imply {pct(pairs_by_id.get('PAIR-AL-SPLIT', {}).get('gold_gap_pct'))} more nominal fine gold, while the asking price rises {pct(pair_gap('PAIR-AL-SPLIT'))}. A percentage increase in gold content is <em>not</em> that percentage of the price premium. The unallocated price difference cannot be called labour or margin without an itemised cost breakdown.</p>
       <p class="small"><a href="pages/purity.html">See the full karat analysis →</a></p>
     </div>
     <div class="card">
-      <h3>Zero retailers publish the physical hallmark</h3>
-      <p>Not one product page in this dataset shows the inner-shank stamp or registered maker's mark, which is why the checklist requires post-delivery inspection.
-      Under 15 U.S.C. § 297(b) a karat mark must be accompanied by a registered trademark or legal company name, and GIA Lab Notes advise pairing XRF with gram-weight checks.</p>
+      <h3>No karat-and-maker mark pair is documented in this register</h3>
+      <p>Our records do not document both marks; this is not a claim about every photograph on the retailers' sites.
+      <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry">FTC guidance</a> says to look for a company name or U.S.-registered trademark near the karat mark. Markings remain claims, not physical authentication.</p>
     </div>
     <div class="card">
-      <h3>Return windows range from 7 to 30 days — and resizing kills returns</h3>
-      <p>Menē allows <strong>7 days</strong> (10% cash-refund restocking fee), Catbird allows <strong>14–20 days</strong> ($9 fee; special orders final sale), and Blue Nile's 30-day clock starts at <strong>shipment</strong>. Brilliant Earth, Blue Nile, Ross-Simons, VRAI and Allurez exclude resized rings — verify purity <em>before</em> resizing.</p>
+      <h3>Recorded return windows span 7–30 days; eligibility needs review</h3>
+      <p>A window does not establish cash-refund or custom/resized/testing rights. Menē's seven-day merchandise-credit route is not an unconditional refund promise: <a href="https://mene.com/terms-of-service">the reviewed terms</a> distinguish refund requests, conditional fees and exclusions. Obtain written terms for the exact order and do not resize or alter it before inspection.</p>
       <p class="small"><a href="pages/sellers.html">Compare all 10 sellers' clauses →</a></p>
     </div>
   </div>
@@ -602,6 +602,7 @@ def main() -> None:
     seller_cards = []
     for s in sellers_doc["sellers"]:
         n_prod = sum(1 for r in rows if r["retailer_id"] == s["id"])
+        n_solid = sum(1 for r in rows if r["retailer_id"] == s["id"] and r.get("solid_gold_status") == "stated")
         contact_bits = []
         if s["contact"].get("phone"):
             contact_bits.append(f'<a href="tel:{esc(s["contact"]["phone"]).replace(" ", "")}">{esc(s["contact"]["phone"])}</a>')
@@ -613,12 +614,12 @@ def main() -> None:
 <article class="card" id="{esc(s['id'])}">
   <h3>{esc(s['name'])} {badge(f"{n_prod} rows", "gold")}</h3>
   <p class="small">Contact: {' · '.join(contact_bits)}</p>
-  <p><strong>{s['return_window_days']}-day return window.</strong> {esc(s['return_window_basis'])}.</p>
+  <p><strong>Historically recorded window: {s['return_window_days']} days.</strong> {esc(s['return_window_basis'])}. Not confirmation of configured-ring refund/testing eligibility; <a href="readiness.html#flagged">review the evidence gaps and newer terms observations</a>.</p>
   <p class="small"><strong>Exclusions:</strong></p>
   <ul class="small">{excl}</ul>
   <p class="small"><strong>Resize:</strong> {esc(s.get('resize_policy') or 'not captured')}</p>
   <p class="small"><strong>Warranty:</strong> {esc(s.get('warranty') or 'not captured on the fetched page')}</p>
-  <p class="small"><strong>Solid-gold wording:</strong> {'explicit "solid" wording found' if s.get('solid_gold_stated') else 'no explicit "solid" wording found on the captured pages'}</p>
+  <p class="small"><strong>Recorded item-specific solid wording:</strong> {n_solid} of {n_prod} candidate rows. This is not a seller-wide guarantee; <a href="readiness.html">inspect the per-ring evidence</a>.</p>
   <p class="small">Policy source: <a href="{esc(next((x['url'] for x in sources_doc['sources'] if x['id'] == s['returns_source_id']), '#'))}" target="_blank" rel="noopener">open the seller's own policy page</a></p>
   {flag_chips({'flags': s['flags']})}
 </article>""")
@@ -626,7 +627,7 @@ def main() -> None:
     sellers_body = f"""
 <section class="hero">
   <span class="eyebrow">Sellers</span>
-  <h1>Return windows, exclusions and contact routes — quoted, not summarised.</h1>
+  <h1>Recorded policy clauses and contacts — not an eligibility approval.</h1>
   <p class="lede">The checklist asks for a real return policy, real contact information and a check on the seller's reputation. Here is what each seller's own site states.</p>
 </section>
 {no_hallucination_block('../')}
@@ -757,8 +758,7 @@ def main() -> None:
       <td class="src"><a href="{esc(r['weight_source_url'] or r['url'])}" target="_blank" rel="noopener">source</a></td></tr>'''
       for r in rows if r['weight_g'])}</tbody>
   </table></div>
-  <p class="small" style="margin-top:10px">Multiple = asking price ÷ the gold value of the published weight. It is a sanity check on pricing, not a verdict: a $1,035 setting with 2.86 g of
-  18K gold carries about {money(next((r['gold_value_usd'] for r in rows if r['id']=='VR-01'), 0))} of gold at spot, so roughly {num(next((r['price_to_gold_multiple'] for r in rows if r['id']=='VR-01'), None))}× the metal value — normal for a brand setting, alarming if it were 1.1× with a "solid gold" promise and a suspiciously low price.</p>
+  <p class="small" style="margin-top:10px">Multiple = historical asking price ÷ conditional nominal gold value at the dated benchmark. It is not a resale offer, authentication test or proof of fair pricing. For VR-01, the recorded 2.86 g weight is scoped to size 6, not the selected size 5, and the specification conflict remains flagged. The displayed arithmetic applies to that published weight only, not a verified configured-ring quote. Higher multiples can reflect many unitemised costs; no universal safe multiple is established.</p>
 </section>
 """
     (PAGES / "calculator.html").write_text(render("Calculator", calc_body, "calculator", root="../", script=True), encoding="utf-8")

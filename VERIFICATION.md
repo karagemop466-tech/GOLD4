@@ -1,6 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-24 00:06 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-24 00:12 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 

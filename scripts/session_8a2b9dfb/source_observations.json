@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "review_date_utc": "2026-10-23",
   "session": "arena/8a2b9dfb-gold4",
-  "method": "Seven official web pages were opened with the remote page-reader tool on 2026-10-23 UTC; only the listed chunks were reviewed. Pinned repository code was separately read locally and executed with synthetic Node VM inputs. These are not complete product verification, selected-configuration checkout quotes, a reputation investigation or physical tests.",
+  "method": "Seven official web pages were opened with the remote page-reader tool on 2026-10-23 UTC; only the listed chunks were reviewed. Pinned repository code was read locally; the calculator was executed with synthetic Node VM inputs, while the dashboard generator was inspected and regenerated. These are not complete product verification, selected-configuration checkout quotes, a reputation investigation or physical tests.",
   "sources": [
     {
       "id": "ftc-jewelry-r8",
@@ -123,6 +123,16 @@
         "var valid = isFinite(w) && w > 0 && isFinite(spot) && spot > 0 && FINENESS[k];"
       ],
       "observation": "Synthetic finite weight 1e308 passed input checks but overflowed the derived gold value, displaying infinity and a false zero multiple. The repair validates entire numeric inputs and every derived value; 10 synthetic runtime tests cover overflow, underflow, malformed data, unsupported karats and optional price. Calculator prose now labels nominal/statutory arithmetic as conditional, not physical bounds."
+    },
+    {
+      "id": "analysis-code-r8",
+      "url": "https://github.com/karagemop466-tech/GOLD4/blob/9f08b6d09265c65f054c3973f73bdeb2ba3c87ab/scripts/build_site.py",
+      "title": "Historical primary dashboard generator (local code inspection)",
+      "review_date_utc": "2026-10-24",
+      "chunks_reviewed": [],
+      "method": "Local source inspection; not an external retailer read.",
+      "quotes": [],
+      "observation": "Generator confused the percentage increase in fine-gold content with the fraction of the price premium attributable to gold, assigned the rest to labour/margin without itemised costs, treated missing return exclusions as permission and made seller-wide solid-wording claims from booleans. These UI inferences are removed; the recorded source facts stay historical."
     }
   ],
   "findings": [
@@ -185,12 +195,13 @@
       "id": "R8-CALC-05",
       "status": "done (code repair)",
       "row_ids": [],
-      "title": "Calculator overflow and unsupported physical-value bounds corrected",
-      "detail": "Finite inputs could overflow into infinity or a false zero multiple; malformed/fractional inputs could be partially parsed. Numeric and derived-result guards now fail closed, with 10 runtime regression tests. The primary calculator no longer claims a stamped ring’s true value lies between nominal and statutory figures: those are conditional illustrations, not measured bounds. Tests use hypothetical arithmetic fixtures, never retailer offers.",
+      "title": "Calculator numeric boundaries and unsupported analysis inferences corrected",
+      "detail": "Finite inputs could overflow into infinity or a false zero multiple; malformed/fractional inputs could be partially parsed. Numeric and derived-result guards now fail closed, with 10 runtime regression tests. The primary calculator no longer claims a stamped ring’s true value lies between nominal and statutory figures: those are conditional illustrations, not measured bounds. Tests use hypothetical arithmetic fixtures, never retailer offers. Integration also corrects percentage-increase versus premium-allocation language, removes unitemised labour/margin attribution and an unsupported normal-brand-price judgement, and labels the VR-01 size mismatch. Seller-wide solid wording is no longer inferred from booleans, nor return permission from a missing exclusion.",
       "source_ids": [
         "calculator-code-r8",
         "ftc-jewelry-r8",
-        "gia-electroformed-r8"
+        "gia-electroformed-r8",
+        "analysis-code-r8"
       ]
     },
     {

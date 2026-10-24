@@ -20,7 +20,7 @@ import json
 import math
 from pathlib import Path
 import re
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[2]
 OBSERVATIONS = "scripts/session_8a2b9dfb/source_observations.json"
@@ -73,7 +73,9 @@ def safe_url(value, retailer_id=None):
         if (parsed.scheme != "https" or parsed.hostname not in hosts or
                 parsed.username is not None or parsed.password is not None or
                 parsed.port not in (None, 443) or
-                (parsed.hostname == "github.com" and not parsed.path.startswith("/karagemop466-tech/GOLD4/"))):
+                (parsed.hostname == "github.com" and (
+                    not parsed.path.startswith("/karagemop466-tech/GOLD4/") or
+                    any(part in {".", ".."} for part in unquote(parsed.path).split("/"))))):
             return None
     except ValueError:
         return None
@@ -86,7 +88,7 @@ def positive_number(value):
         return None
     try:
         number = Decimal(str(value))
-        if number.is_finite() and number > 0 and math.isfinite(float(number)):
+        if number.is_finite() and number > 0 and math.isfinite(float(number)) and float(number) > 0:
             return number
     except (ValueError, InvalidOperation, OverflowError):
         pass
@@ -301,7 +303,7 @@ def render_html(report):
     observation_rows = []
     for source in obs["sources"]:
         quoted = " ".join(source["quotes"])
-        observation_rows.append(f'<tr><td>{e(source["title"])}<span class="sub">{e("Chunks " + ", ".join(map(str, source["chunks_reviewed"])) if source["chunks_reviewed"] else "Pinned repository code; local runtime test")} · {e(source.get("review_date_utc", report["review_date_utc"]))} UTC</span></td><td><q>{e(quoted)}</q><p>{e(source["observation"])}</p></td><td class="src">{link(source["url"], "Official source")}</td></tr>')
+        observation_rows.append(f'<tr><td>{e(source["title"])}<span class="sub">{e("Chunks " + ", ".join(map(str, source["chunks_reviewed"])) if source["chunks_reviewed"] else "Pinned repository code; local inspection")} · {e(source.get("review_date_utc", report["review_date_utc"]))} UTC</span></td><td><q>{e(quoted)}</q><p>{e(source["observation"])}</p></td><td class="src">{link(source["url"], "Official source")}</td></tr>')
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Purchase readiness · GOLD4</title><meta name="description" content="Source-linked checklist evidence gaps for every GOLD4 ring candidate. No inferred prices or purchase approvals.">

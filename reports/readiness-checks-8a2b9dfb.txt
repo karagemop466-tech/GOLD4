@@ -1,16 +1,18 @@
-GOLD4 requirement-readiness review: executed checks
-2026-10-23T23:54:08.303372+00:00
-Checks detect programmed failure cases, NOT the absence of every hallucination.
+Final combined-tree Pages assurance — session 8a2b9dfb
+Started UTC: 2026-10-24T00:16:38.192279+00:00
+Scope: current working-tree code/data/artifacts; publication revision is recorded in COORDINATION.md.
+Nine gates / twelve commands. No new retailer reads, physical tests or purchase approvals.
+Automated passes detect defined failures; they cannot prove absence of all hallucinations.
 
-$ python3 scripts/audit.py
+===== 1/12: python3 scripts/audit.py =====
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T23:54:08+00:00
-dataset rows: 64 | sellers: 10 | sources: 31
+run_utc: 2026-10-24T00:16:38+00:00
+dataset rows: 64 | sellers: 10 | sources: 32
 spot benchmark: $3,996.31/oz (22 October, 2026) = $128.4844/g
 
-RESULT: PASS  (131 passed, 1 warnings, 0 failures)
+RESULT: PASS  (132 passed, 0 warnings, 0 failures)
 
-[WARN] B-08 price verification: BE-05: price is only V2 evidence and must be flagged
+No warnings, no failures.
 
 Checks performed: source registry + domain allow-list, banned-domain scan, HTTPS enforcement,
 price/weight provenance, capture dates, blank-value flagging, karat/fineness consistency,
@@ -19,17 +21,15 @@ seller contact/return provenance, speculation-language scan, site link check,
 per-row source-link requirement, and render-text sanity.
 
 
+EXIT CODE: 0
 
-exit=0
-
-$ python3 scripts/check_site.py
-PASS: 29 pages checked; local links resolve; every populated row carries an official source link; no-hallucination warning and FTC reference present.
+===== 2/12: python3 scripts/check_site.py =====
+PASS: 30 pages checked; local links resolve; every populated row carries an official source link; no-hallucination warning and FTC reference present.
 REVIEW LIMIT: this offline check cannot confirm that a source is still live, that a product is authentic, or that a quoted price is current.
 
+EXIT CODE: 0
 
-exit=0
-
-$ python3 scripts/verify.py
+===== 3/12: python3 scripts/verify.py =====
 # AUDIT — hallucination/security check
 Date: 2026-10-22
 
@@ -90,69 +90,63 @@ Records audited: 64
 Rule: a value with no official source link + retrieval date must stay blank. Re-run after every review.
 Deeper checks (domain allow-list, recomputation of every derived number, speculation scan) run in scripts/audit.py.
 
+EXIT CODE: 0
 
-exit=0
-
-$ python3 scripts/verify_a0be79d4.py
+===== 4/12: python3 scripts/verify_a0be79d4.py =====
 === GOLD4 MULTI-PASS SECURITY & ANTI-HALLUCINATION AUDIT (`verify_a0be79d4.py`) ===
-HTML pages scanned      : 39
-Hyperlinks & assets     : 2422 verified (0 dead/unsafe URIs)
+HTML pages scanned      : 40
+Hyperlinks & assets     : 2641 verified (0 dead/unsafe URIs)
 Rendered table rows     : 44 verified (100% official HTTPS + dated)
 Hard failures           : 0
 FLAG NOTE               : By-design blank fields preserved strictly NULL (`UNVERIFIED`): 15 ring weights + 2 conflicting Sarraf karats (`F1625`, `121987-.72P`) + 1 disqualified vermeil control (`G4-RED-01`).
 STATUS                  : PASS — ZERO HALLUCINATIONS, ZERO BROKEN LINKS, ZERO SECURITY ERRORS.
 
+EXIT CODE: 0
 
-exit=0
-
-$ python3 scripts/audit_hallucinations.py
+===== 5/12: python3 scripts/audit_hallucinations.py =====
 ======================================================================
 GOLD4 ANTI-HALLUCINATION & SECURITY AUDIT (arena/81b71aa5-gold4)
 ======================================================================
-Checks passed : 1058
+Checks passed : 1170
 Warnings      : 0
 Hard failures : 0
 RESULT: PASS — zero hallucinated/unsourced values, zero phantom math, zero broken local links.
 
+EXIT CODE: 0
 
-exit=0
-
-$ python3 scripts/session_46691f83/verify_citations.py --self-test
+===== 6/12: python3 scripts/session_46691f83/verify_citations.py --self-test =====
 SELF-TEST PASSED: '§ 23.9 Quality Marks' is correctly rejected (§ 23.9 is 'Misrepresentation as to content of pewter.'; quality marks are § 23.10).
 
+EXIT CODE: 0
 
-exit=0
-
-$ python3 scripts/session_46691f83/verify_citations.py
-Citation-integrity gate: 110 CFR section references checked across 40 files (rule violations: label=0, sentence=0).
+===== 7/12: python3 scripts/session_46691f83/verify_citations.py =====
+Citation-integrity gate: 110 CFR section references checked across 41 files (rule violations: label=0, sentence=0).
 Section table read verbatim from https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23 on 2026-10-23.
 PASS: every CFR section citation matches its official heading, and every statute cited on the site has a registered source URL.
 REVIEW LIMIT: offline. It cannot confirm a page still says today what it said when it was read - that needs a live re-fetch.
 
+EXIT CODE: 0
 
-exit=0
-
-$ python3 scripts/audit_freshness.py
+===== 8/12: python3 scripts/audit_freshness.py =====
 ======================================================================
 GOLD4 FRESHNESS & SOURCE-HEALTH GATE (gate 6)
 ======================================================================
 evidence checked : 2026-10-23T20:23:21Z
-rows             : 64   registered sources: 31
+rows             : 64   registered sources: 32
 row states       : {'OK': 52, 'REFUSED_403': 7, 'HTTP_404': 4, 'EMPTY_OR_JS_SHELL': 1}
 price states     : {'CONFIRMED': 46, 'SOURCE_NOT_REACHED': 12, 'DIFFERS': 4, 'NO_STORED_PRICE': 2, 'NOT_MACHINE_READABLE': 0}
 ----------------------------------------------------------------------
+[WARN] BE-05: price dated on the evidence day although this automated check could not read the page (REFUSED_403) — the value rests on a different read path and needs review
 [WARN] BE-06: price dated on the evidence day although this automated check could not read the page (REFUSED_403) — the value rests on a different read path and needs review
 [WARN] BE-07: price dated on the evidence day although this automated check could not read the page (REFUSED_403) — the value rests on a different read path and needs review
 ----------------------------------------------------------------------
-RESULT: PASS — 294 checks, 2 warning(s), 0 failures
+RESULT: PASS — 295 checks, 3 warning(s), 0 failures
 This gate proves the evidence exists, is recent, is applied to every row and is honestly flagged.
 It cannot prove a retailer's page today matches what a shopper sees in their own browser.
 
+EXIT CODE: 0
 
-exit=0
-
-$ python3 scripts/test_assurance.py
-
+===== 9/12: python3 scripts/test_assurance.py =====
 test_accept_plain_numbers (__main__.AssuranceTests.test_accept_plain_numbers) ... ok
 test_explicit_usd_can_match (__main__.AssuranceTests.test_explicit_usd_can_match) ... ok
 test_missing_or_foreign_currency_never_confirms_usd (__main__.AssuranceTests.test_missing_or_foreign_currency_never_confirms_usd) ... ok
@@ -163,14 +157,16 @@ test_review_has_exactly_all_rows_and_blank_current_prices (__main__.AssuranceTes
 test_unreachable_never_confirms (__main__.AssuranceTests.test_unreachable_never_confirms) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.007s
+Ran 8 tests in 0.009s
 
 OK
 
-exit=0
+EXIT CODE: 0
 
-$ python3 scripts/session_8a2b9dfb/test_readiness.py
-
+===== 10/12: python3 scripts/session_8a2b9dfb/test_readiness.py =====
+test_all_present_canonical_prices_have_firsthand_provenance (__main__.ReadinessTests.test_all_present_canonical_prices_have_firsthand_provenance) ... ok
+test_canonical_solid_status_requires_explicit_sourced_wording (__main__.ReadinessTests.test_canonical_solid_status_requires_explicit_sourced_wording) ... ok
+test_every_primary_table_data_row_has_an_official_source (__main__.ReadinessTests.test_every_primary_table_data_row_has_an_official_source) ... ok
 test_every_rendered_row_has_official_source_and_one_blank_current_price (__main__.ReadinessTests.test_every_rendered_row_has_official_source_and_one_blank_current_price) ... ok
 test_field_capture_date_is_not_fabricated_or_overridden (__main__.ReadinessTests.test_field_capture_date_is_not_fabricated_or_overridden) ... ok
 test_hallmark_boolean_does_not_prove_maker_mark_or_assay (__main__.ReadinessTests.test_hallmark_boolean_does_not_prove_maker_mark_or_assay) ... ok
@@ -180,6 +176,7 @@ test_karat_bool_fraction_or_unsupported_number_is_blank (__main__.ReadinessTests
 test_missing_or_unsafe_source_suppresses_claim (__main__.ReadinessTests.test_missing_or_unsafe_source_suppresses_claim) ... ok
 test_official_https_hosts_not_lookalikes (__main__.ReadinessTests.test_official_https_hosts_not_lookalikes) ... ok
 test_only_finite_positive_numeric_inputs (__main__.ReadinessTests.test_only_finite_positive_numeric_inputs) ... ok
+test_primary_ui_does_not_infer_return_permission_or_physical_value_bounds (__main__.ReadinessTests.test_primary_ui_does_not_infer_return_permission_or_physical_value_bounds) ... ok
 test_report_is_deterministic_hash_bound_and_read_only (__main__.ReadinessTests.test_report_is_deterministic_hash_bound_and_read_only) ... ok
 test_reputation_boolean_has_no_approval_override (__main__.ReadinessTests.test_reputation_boolean_has_no_approval_override) ... ok
 test_solid_wording_cannot_be_inferred_from_karat_purity_or_name (__main__.ReadinessTests.test_solid_wording_cannot_be_inferred_from_karat_purity_or_name) ... ok
@@ -190,15 +187,30 @@ test_weight_needs_provenance_source_and_scope (__main__.ReadinessTests.test_weig
 test_window_and_source_match_do_not_establish_configuration_rights (__main__.ReadinessTests.test_window_and_source_match_do_not_establish_configuration_rights) ... ok
 
 ----------------------------------------------------------------------
-Ran 17 tests in 0.090s
+Ran 21 tests in 0.242s
 
 OK
 
-exit=0
+EXIT CODE: 0
 
-$ python3 scripts/session_8a2b9dfb/readiness.py --check
+===== 11/12: node scripts/session_8a2b9dfb/test_calculator.js =====
+PASS: normal synthetic arithmetic and exact supported karat
+PASS: invalid, signed, nonfinite and partly numeric weights are not coerced
+PASS: missing or invalid spot is never inferred
+PASS: fractional/unsupported karats are not truncated to another purity
+PASS: finite input with overflowing derived gold value fails closed
+PASS: intermediate underflow does not produce phantom zero gold value
+PASS: ratio overflow does not display infinity or a false zero multiple
+PASS: optional price is not required for gold-content arithmetic
+PASS: input events clear an earlier valid result after invalidation
+PASS: scientific decimal notation works when all results remain finite
+10 calculator runtime tests passed. Fixtures are hypothetical arithmetic, not sourced offers.
+
+EXIT CODE: 0
+
+===== 12/12: python3 scripts/session_8a2b9dfb/readiness.py --check =====
 PASS: readiness register matches canonical input hashes; unsupported current quotes remain blank; no purchase approvals.
 
+EXIT CODE: 0
 
-exit=0
-
+RESULT: all twelve commands passed. Factual and purchase-readiness gaps remain unverified.

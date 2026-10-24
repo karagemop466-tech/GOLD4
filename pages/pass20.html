@@ -15,7 +15,7 @@
       <span>GOLD4<small>gold-ring verification desk</small></span>
     </a>
     <nav class="main">
-      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="freshness.html" class="">Freshness</a><a href="session-review.html" class="">Current review</a><a href="pass20.html" class="active">Pass 20</a><a href="../checklist.html" class="">Checklist</a><a href="log.html" class="">Log</a><a href="../dashboard.html" class="">Assay Lab+</a>
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="">Calculator</a><a href="readiness.html" class="">Readiness</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="freshness.html" class="">Freshness</a><a href="session-review.html" class="">Current review</a><a href="pass20.html" class="active">Pass 20</a><a href="../checklist.html" class="">Checklist</a><a href="log.html" class="">Log</a><a href="../dashboard.html" class="">Assay Lab+</a>
     </nav>
   </div>
 </header>
@@ -26,7 +26,8 @@
   Unconfirmed current prices are blank in the <a href="../pages/session-review.html">current-session review / Flagged for Review</a>.
   A new World Gold Council panel read ($3,995.47/oz, 23:43Z) differs from the stored historical benchmark ($3,996.31/oz); both are published — see Pass 20.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
-  Re-check official sources and request independent testing before purchase.
+  Candidate inclusion is not purchase approval: see the <a href="../pages/readiness.html">per-ring readiness gaps and new findings</a>.
+  Re-check official sources and request independent professional testing before purchase; one surface XRF reading may not establish solid construction.
 </aside>
 
 <h1>Pass 20 — what was actually re-read, and what still is not</h1>
@@ -269,35 +270,44 @@ re-check every link, and fail on an unsourced value. A passing gate proves inter
 it cannot prove a retailer is honest or that a price is still live.</p>
 
 <div class="table-wrap"><table>
-  <thead><tr><th>Gate</th><th>Check</th><th>Result</th><th>Detail</th></tr></thead>
+  <thead><tr><th>Gate</th><th>Check</th><th>Result</th><th>Detail</th><th>Official project source</th></tr></thead>
   <tbody>
   <tr><td class="id">1</td><td>Canonical dataset integrity &amp; derived-math recompute</td>
       <td><span class="badge b-ok">PASS</span></td>
-      <td class="mono small">RESULT: PASS  (132 passed, 1 warnings, 0 failures) · exit 0</td></tr>
+      <td class="mono small">RESULT: PASS  (132 passed, 1 warnings, 0 failures) · exit 0</td>
+      <td class="src"><a href="https://github.com/karagemop466-tech/GOLD4/blob/main/reviews/pass20/gates.json">Original project test evidence</a></td></tr>
   <tr><td class="id">2</td><td>Root, /pages &amp; /docs link and policy gate</td>
       <td><span class="badge b-ok">PASS</span></td>
-      <td class="mono small">PASS: 29 pages checked; local links resolve; every populated row carries an official source link; no-hallucination warning and FTC reference present. · exit 0</td></tr>
+      <td class="mono small">PASS: 29 pages checked; local links resolve; every populated row carries an official source link; no-hallucination warning and FTC reference present. · exit 0</td>
+      <td class="src"><a href="https://github.com/karagemop466-tech/GOLD4/blob/main/reviews/pass20/gates.json">Original project test evidence</a></td></tr>
   <tr><td class="id">3</td><td>Combined schema &amp; blank-flag check</td>
       <td><span class="badge b-ok">PASS</span></td>
-      <td class="mono small">Records audited: 64 · exit 0 · exit 0</td></tr>
+      <td class="mono small">Records audited: 64 · exit 0 · exit 0</td>
+      <td class="src"><a href="https://github.com/karagemop466-tech/GOLD4/blob/main/reviews/pass20/gates.json">Original project test evidence</a></td></tr>
   <tr><td class="id">4</td><td>Multi-page XSS, 404-blocklist &amp; Assay-Lab scanner</td>
       <td><span class="badge b-ok">PASS</span></td>
-      <td class="mono small">STATUS                  : PASS — ZERO HALLUCINATIONS, ZERO BROKEN LINKS, ZERO SECURITY ERRORS. · exit 0</td></tr>
+      <td class="mono small">STATUS                  : PASS — ZERO HALLUCINATIONS, ZERO BROKEN LINKS, ZERO SECURITY ERRORS. · exit 0</td>
+      <td class="src"><a href="https://github.com/karagemop466-tech/GOLD4/blob/main/reviews/pass20/gates.json">Original project test evidence</a></td></tr>
   <tr><td class="id">5</td><td>Gemstone-deduction, category-subpage &amp; hallucination auditor</td>
       <td><span class="badge b-ok">PASS</span></td>
-      <td class="mono small">RESULT: PASS — zero hallucinated/unsourced values, zero phantom math, zero broken local links. · exit 0</td></tr>
+      <td class="mono small">RESULT: PASS — zero hallucinated/unsourced values, zero phantom math, zero broken local links. · exit 0</td>
+      <td class="src"><a href="https://github.com/karagemop466-tech/GOLD4/blob/main/reviews/pass20/gates.json">Original project test evidence</a></td></tr>
   <tr><td class="id">6a</td><td>Citation-integrity self-test (must reject a known-bad CFR citation)</td>
       <td><span class="badge b-ok">PASS</span></td>
-      <td class="mono small">SELF-TEST PASSED — a known-wrong CFR citation was correctly rejected · exit 0</td></tr>
+      <td class="mono small">SELF-TEST PASSED — a known-wrong CFR citation was correctly rejected · exit 0</td>
+      <td class="src"><a href="https://github.com/karagemop466-tech/GOLD4/blob/main/reviews/pass20/gates.json">Original project test evidence</a></td></tr>
   <tr><td class="id">6b</td><td>Citation integrity (every CFR citation vs its official heading)</td>
       <td><span class="badge b-ok">PASS</span></td>
-      <td class="mono small">Citation-integrity gate: 110 CFR section references checked across 40 files (rule violations: label=0, sentence=0). · exit 0</td></tr>
+      <td class="mono small">Citation-integrity gate: 110 CFR section references checked across 40 files (rule violations: label=0, sentence=0). · exit 0</td>
+      <td class="src"><a href="https://github.com/karagemop466-tech/GOLD4/blob/main/reviews/pass20/gates.json">Original project test evidence</a></td></tr>
   <tr><td class="id">7</td><td>Live-evidence freshness &amp; source-health gate</td>
       <td><span class="badge b-ok">PASS</span></td>
-      <td class="mono small">RESULT: PASS — 295 checks, 2 warning(s), 0 failures · exit 0</td></tr>
+      <td class="mono small">RESULT: PASS — 295 checks, 2 warning(s), 0 failures · exit 0</td>
+      <td class="src"><a href="https://github.com/karagemop466-tech/GOLD4/blob/main/reviews/pass20/gates.json">Original project test evidence</a></td></tr>
   <tr><td class="id">8</td><td>Conservative currency parsing &amp; blank current-price register</td>
       <td><span class="badge b-ok">PASS</span></td>
-      <td class="mono small">OK · exit 0</td></tr></tbody>
+      <td class="mono small">OK · exit 0</td>
+      <td class="src"><a href="https://github.com/karagemop466-tech/GOLD4/blob/main/reviews/pass20/gates.json">Original project test evidence</a></td></tr></tbody>
 </table></div>
 
 <h2>What this pass could not do — stated plainly</h2>
@@ -315,9 +325,11 @@ it cannot prove a retailer is honest or that a price is still live.</p>
     <li><strong>Was anything inferred?</strong> Currency conversions, "typical" weights, ranges collapsed to one number and
         prose that rounds a value are all inference. Inference must be labelled as derived or left blank.</li>
   </ol>
-  <p class="small">A 14K or 18K stamp is a claim, not a proof. The only purity check in this project's
-  checklist is an independent jeweller's XRF test after delivery, paired with a gram-weight check on
-  a scale. Nothing on this site replaces that.</p>
+  <p class="small">Integration clarification: a 14K or 18K stamp is a claim, not proof. Seek an
+  independent professional's appropriate complementary tests and a metal-only gram-weight check,
+  within written testing/return permissions. A single surface XRF reading can miss thick plating or
+  electroformed construction; see <a href="https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet">GIA's documented case</a>.
+  Nothing on this site substitutes for that assessment.</p>
 </div>
 
 <p class="small">Related: <a href="freshness.html">Freshness (last all-URL runner sweep, 20:23Z)</a> ·
@@ -327,9 +339,8 @@ it cannot prove a retailer is honest or that a price is still live.</p>
 
 </main>
 <footer class="wrap foot">
-  <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
-  22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
-  <p>Gold benchmark: $3,996.31/oz as of 22 October, 2026 (World Gold Council) = $128.4844/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p><strong>No-hallucination policy:</strong> captured seller claims are linked to their official sources; dates differ by row and evidence record. They are not live offers, physical tests or endorsements. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
+  <p>Gold benchmark: $3,996.31/oz, captured 2026-10-23T20:23Z; source page data-date label 22 October, 2026 (World Gold Council) = $128.4844/g. This is not a live quote. Derived values are arithmetic on published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
   <p class="small">Built 2026-10-23 · dataset 64 rows · 32 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>

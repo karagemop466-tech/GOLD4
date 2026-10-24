@@ -86,7 +86,7 @@ class ReadinessTests(unittest.TestCase):
 
     def test_only_finite_positive_numeric_inputs(self):
         for value in [True, False, None, "3.58", "$585", "-12", "12 grams", "1,200", 0, -1,
-                      float("nan"), float("inf"), Decimal("Infinity"), Decimal("NaN"), Decimal("1e10000")]:
+                      float("nan"), float("inf"), Decimal("Infinity"), Decimal("NaN"), Decimal("1e10000"), Decimal("1e-10000")]:
             with self.subTest(value=value):
                 self.assertIsNone(r.positive_number(value))
         for value in [1, 3.58, Decimal("0.7")]:
@@ -102,6 +102,9 @@ class ReadinessTests(unittest.TestCase):
                 self.assertIsNone(r.safe_url(url, "allurez"))
         self.assertEqual(r.safe_url(self.raw["url"], "allurez"), self.raw["url"])
         self.assertIsNone(r.safe_url("https://www.allurez.com/a", "mene"))
+        for url in ["https://github.com/other/project/", "https://github.com/karagemop466-tech/GOLD4/../../other",
+                    "https://github.com/karagemop466-tech/GOLD4/%2e%2e/%2e%2e/other"]:
+            self.assertIsNone(r.safe_url(url))
 
     def test_solid_wording_cannot_be_inferred_from_karat_purity_or_name(self):
         for quote in [None, "14K Yellow Gold", "Pure 24k Gold sold by weight with Certificate of Authenticity",
@@ -256,6 +259,9 @@ class ReadinessTests(unittest.TestCase):
         sellers = (r.ROOT / "pages/sellers.html").read_text()
         calculator = (r.ROOT / "pages/calculator.html").read_text()
         self.assertNotIn("not excluded", sellers)
+        self.assertNotIn('explicit "solid" wording found', sellers)
+        self.assertNotIn("normal for a brand setting", calculator)
+        self.assertNotIn("of it is simply more gold", (r.ROOT / "index.html").read_text())
         self.assertNotIn("stamped ring lies between", calculator)
         self.assertIn("not</strong> establish any measured lower or upper bound", calculator)
         self.assertIn("hypothetical example", calculator)
