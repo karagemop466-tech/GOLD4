@@ -73,6 +73,21 @@ lists the flag with the Ross-Simons source link and the count reads **250 flag i
 nine gate invocations were re-run after the rebuild and pass. Recorded here rather than quietly republished,
 because "the page did not show the finding" is itself a finding.
 
+**Close-out PR merged.** PR [#54](https://github.com/karagemop466-tech/GOLD4/pull/54) — the correction above plus a
+small wording fix on the dashboard (the 20:23:21Z sweep line now reads "31 registered sources listed at that time
+(32 today)") — **merged 2026-10-23T23:58:14Z**, merge commit `b81f4b1` (`b81f4b13f2871ebdad3ccfd309edbabc43ec9c08`).
+Push-to-main deploy run [40042563523](https://github.com/karagemop466-tech/GOLD4/actions/runs/40042563523)
+**success**; `pages/builds/latest` reports `status=built`, `commit=b81f4b1…`, `error=none`. **Live verification after
+that deploy:** the dashboard now prints **"250 flags published"** and the Pass 20 page serves every reading and
+finding. All nine gate invocations passed on the merged tree before the merge, and again locally after the rebuild.
+
+**Final docs close-out.** PR [#55](https://github.com/karagemop466-tech/GOLD4/pull/55) — the record of PR #54 above plus the
+"31 registered sources listed at that time (32 today)" wording — **merged 2026-10-24T00:00:48Z**, merge commit `083e65d`
+(`083e65d38d000a4d02a0c602f55c2728e98bf3ee`); deploy run [40042792767](https://github.com/karagemop466-tech/GOLD4/actions/runs/40042792767)
+**success**, `pages/builds/latest` = `built` on that commit with no error. **Pass 20 is closed: tasks 49–52 done, site live,
+one stale PR taken over and closed, one post-deploy defect found and fixed. Standing recommendation for the next session:
+run the hallucination scan again — source link, read date, read path, and whether anything was inferred.**
+
 **Not claimed.** No runner sweep happened this pass. No XRF or assay test exists for any ring. No seller's reputation was verified. No price on this site is a live quote.
 
 **Network reality of this sandbox (stated plainly, as the brief requires):** the shell here reaches only GitHub hosts — `curl https://karagemop466-tech.github.io/...` fails at TLS and retailer hosts are unreachable from bash. Two independent read paths are used instead and named on every finding: (a) a **GitHub Actions runner** with open internet for the all-URL sweep, and (b) this session's own **browser-rendered page reader** for hand reads of the specific pages quoted below. No number in this pass is written from memory.
@@ -1126,3 +1141,5 @@ The shared changes above are made only now, after concurrent code/data work comp
 **R8 scope clarification before the Pass 20 generator repair:** the same released `scripts/build_pass20.py` also contains integration prose saying a single XRF test is the project's “only purity check.” Claim the narrow correction of that non-evidence paragraph to the already-sourced complementary-professional-testing wording, with a direct GIA link. This does not change its original observations, findings or historic test outcomes. It prevents the generated historical review page from contradicting the current no-single-test guarantee.
 
 **R8 pre-PR verification (2026-10-24T00:16:37+00:00):** all **nine gates / twelve commands PASS**, with **21 readiness + 10 actual-runtime calculator + 8 existing assurance tests**. Actual output replaced in `reports/readiness-checks-8a2b9dfb.txt`; integrity 132/0 warnings/0 failures, all 30 gate-scoped pages linked, 40-page scanner clean, hallucination auditor 1,150 programmed checks, citation self-test + 110 references clean. Freshness retains **three** browser-vs-runner 403 warnings (BE-05/06/07); they remain reviewable, not suppressed. Current exact quotes remain 64 blanks and zero purchase approvals. Deeper prose review also corrected gold-content percentage vs premium-allocation confusion, unsupported labour/margin/normal-brand-price inferences, blanket hallmark-publication claims, seller-wide solid booleans and unconditional return wording. Hypothetical fixtures are not retailer observations. README Pass 20 untouched count corrected 54→53. Newly fetched main `207d5d1` includes completed owner's PRs #55/#56 (close-out plus historical 31/32-source wording); it will be integrated before the final repeat suite/PR. No original Pass 20 observation or result is rewritten.
+
+**R8 final combined-main merge (2026-10-24T00:17:53+00:00):** integrated `origin/main@207d5d1` / PRs #55/#56. Board and builder source merged automatically, preserving the completed owner's close-out records and historical 31-then/32-now source wording. **13 generated artifacts** conflicted (12 canonical HTML files + latest audit output); regenerated from the combined source rather than discarding either author's source changes. Pass 20 original `reviews/pass20/**` evidence is retained from main, including its owner's latest timestamp. All **12 commands pass again after integration**; current results are in the scoped actual-output log. Only browser/runner 403 warnings remain; no broken build/check is proposed for merge. R8-1/R8-2 done, R8-3 publication in progress.
