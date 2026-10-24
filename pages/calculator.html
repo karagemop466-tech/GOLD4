@@ -15,7 +15,7 @@
       <span>GOLD4<small>gold-ring verification desk</small></span>
     </a>
     <nav class="main">
-      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="active">Calculator</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="freshness.html" class="">Freshness</a><a href="session-review.html" class="">Current review</a><a href="pass20.html" class="">Pass 20</a><a href="../checklist.html" class="">Checklist</a><a href="log.html" class="">Log</a><a href="../dashboard.html" class="">Assay Lab+</a>
+      <a href="../index.html" class="">Dashboard</a><a href="solitaire.html" class="">Solitaire</a><a href="pave.html" class="">Pavé</a><a href="band.html" class="">Bands</a><a href="purity.html" class="">14K vs 18K</a><a href="sellers.html" class="">Sellers</a><a href="calculator.html" class="active">Calculator</a><a href="readiness.html" class="">Readiness</a><a href="flagged.html" class="">Flagged</a><a href="methodology.html" class="">Method</a><a href="sources.html" class="">Sources</a><a href="freshness.html" class="">Freshness</a><a href="session-review.html" class="">Current review</a><a href="pass20.html" class="">Pass 20</a><a href="../checklist.html" class="">Checklist</a><a href="log.html" class="">Log</a><a href="../dashboard.html" class="">Assay Lab+</a>
     </nav>
   </div>
 </header>
@@ -26,14 +26,14 @@
   Unconfirmed current prices are blank in the <a href="../pages/session-review.html">current-session review / Flagged for Review</a>.
   A new World Gold Council panel read ($3,995.47/oz, 23:43Z) differs from the stored historical benchmark ($3,996.31/oz); both are published — see Pass 20.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
-  Re-check official sources and request independent testing before purchase.
+  Candidate inclusion is not purchase approval: see the <a href="../pages/readiness.html">per-ring readiness gaps and new findings</a>.
+  Re-check official sources and request independent professional testing before purchase; one surface XRF reading may not establish solid construction.
 </aside>
 
 <section class="hero">
   <span class="eyebrow">Calculator</span>
   <h1>Gold content and gold value, from a weight you can actually weigh.</h1>
-  <p class="lede">This tool does arithmetic, not verification. It cannot tell you whether the metal is gold — only an assay or XRF can. It tells you what a given weight
-  and karat would be worth as raw gold at the captured spot price.</p>
+  <p class="lede">This tool does conditional arithmetic, not verification. It calculates nominal fine-gold content from a stated metal weight and karat at a dated benchmark. It cannot establish purity or solid construction. An independent professional should choose appropriate tests; XRF alone can miss thick plating.</p>
 </section>
 
 <div class="nohall">
@@ -57,9 +57,9 @@
     <div class="card">
       <h3>Inputs</h3>
       <div class="field">
-        <label for="c-weight">Measured weight (grams)</label>
+        <label for="c-weight">Metal-only weight (grams)</label>
         <input id="c-weight" type="number" min="0" step="0.01" value="4.00" inputmode="decimal">
-        <div class="hint">Weigh the ring without the box. Diamonds add carat weight, not gold.</div>
+        <div class="hint">The pre-filled 4.00 g is a hypothetical example, not a measurement of your ring. Use a sourced metal-only gram weight for the correct size; do not treat stone weight as gold.</div>
       </div>
       <div class="field">
         <label for="c-karat">Stamped karat</label>
@@ -70,12 +70,12 @@
           <option value="22">22K — 91.67% gold</option>
           <option value="24">24K — 100% gold</option>
         </select>
-        <div class="hint">Use the stamp, then treat the result as an upper bound (see the tolerance note below).</div>
+        <div class="hint">The selected karat is an assumption for arithmetic, not proof of purity or a measured upper bound. Verify the actual article independently.</div>
       </div>
       <div class="field">
         <label for="c-spot">Gold spot (USD per troy ounce)</label>
         <input id="c-spot" type="number" min="0" step="0.01" value="3996.31" inputmode="decimal">
-        <div class="hint">Pre-filled with the captured benchmark: $3,996.31/oz on 22 October, 2026. Change it to test another price — the page will not do it for you.</div>
+        <div class="hint">Pre-filled with a dated benchmark: $3,996.31/oz, captured 2026-10-23T20:23Z. The page data-date label is 22 October, 2026; neither is a live quote. <a href="https://www.gold.org/goldhub/data/gold-prices">Official benchmark source</a>.</div>
       </div>
       <div class="field">
         <label for="c-price">Asking price (optional)</label>
@@ -85,17 +85,17 @@
     </div>
     <div>
       <div class="result">
-        <div class="row"><span>Pure gold in the ring</span><b id="c-pure">—</b></div>
-        <div class="row"><span>Gold value at spot</span><b id="c-value">—</b></div>
-        <div class="row"><span>Legal-minimum value if the stamp is only just met</span><b id="c-min">—</b></div>
+        <div class="row"><span>Nominal fine-gold content (derived)</span><b id="c-pure">—</b></div>
+        <div class="row"><span>Nominal gold value at dated spot</span><b id="c-value">—</b></div>
+        <div class="row"><span>Conditional statutory-floor illustration</span><b id="c-min">—</b></div>
         <div class="row"><span>Spot per gram</span><b id="c-pergram">—</b></div>
         <div class="row"><span>Price ÷ gold value</span><b id="c-mult">—</b></div>
         <p class="small" id="c-multnote" style="margin:10px 0 0">Add the asking price to see the multiple.</p>
       </div>
       <div class="callout warn" style="margin-top:16px">
         <h4>Read the tolerance</h4>
-        <p>15 U.S.C. § 295 lets the whole-article fineness sit up to 0.007 below the stamp. The "legal-minimum value" row applies that floor, so the true gold value of a
-        stamped ring lies between the two middle numbers — before any wear, solder or rhodium plating.</p>
+        <p>For a compliant marked article, <a href="https://www.law.cornell.edu/uscode/text/15/295">15 U.S.C. § 295</a> provides a whole-article fineness tolerance of 0.007. The floor illustration applies that tolerance to the assumed karat on this project's karat-divided-by-24 basis. It does <strong>not</strong> establish any measured lower or upper bound for an unverified ring. A false stamp or non-gold components can invalidate the assumptions entirely.</p>
+        <p><a href="https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet">GIA's electroformed-bracelet case</a> shows why one surface XRF result need not prove solid construction. Preserve return rights before any potentially altering test.</p>
       </div>
       <div class="callout info">
         <h4>What this is not</h4>
@@ -107,20 +107,20 @@
 
 <section class="section">
   <h2>Benchmark values per gram</h2>
-  <p class="sub">Pure-gold value of one gram of metal, by karat, at the captured spot. Multiply by your ring's gold content.</p>
+  <p class="sub">Nominal fine-gold value per gram of alloy, by assumed karat, at the dated benchmark. Multiply by the sourced metal-only ring weight, not by fine-gold content again.</p>
   <div class="table-wrap"><table>
-    <thead><tr><th>Karat</th><th class="num">Gold %</th><th class="num">Value of 1 g</th><th class="num">Value of 3 g</th><th class="num">Value of 5 g</th><th class="num">Value of 8 g</th></tr></thead>
+    <thead><tr><th>Karat</th><th class="num">Gold %</th><th class="num">Value of 1 g</th><th class="num">Value of 3 g</th><th class="num">Value of 5 g</th><th class="num">Value of 8 g</th><th>Official inputs</th></tr></thead>
     <tbody><tr><td>24K</td><td class="num">100.00%</td>
       <td class="num">$128.48</td><td class="num">$385.45</td>
-      <td class="num">$642.42</td><td class="num">$1,027.87</td></tr><tr><td>22K</td><td class="num">91.67%</td>
+      <td class="num">$642.42</td><td class="num">$1,027.87</td><td class="src"><a href="https://www.gold.org/goldhub/data/gold-prices">Dated gold benchmark</a><br><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry">Karat definition</a></td></tr><tr><td>22K</td><td class="num">91.67%</td>
       <td class="num">$117.78</td><td class="num">$353.33</td>
-      <td class="num">$588.89</td><td class="num">$942.22</td></tr><tr><td>18K</td><td class="num">75.00%</td>
+      <td class="num">$588.89</td><td class="num">$942.22</td><td class="src"><a href="https://www.gold.org/goldhub/data/gold-prices">Dated gold benchmark</a><br><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry">Karat definition</a></td></tr><tr><td>18K</td><td class="num">75.00%</td>
       <td class="num">$96.36</td><td class="num">$289.09</td>
-      <td class="num">$481.82</td><td class="num">$770.91</td></tr><tr><td>14K</td><td class="num">58.33%</td>
+      <td class="num">$481.82</td><td class="num">$770.91</td><td class="src"><a href="https://www.gold.org/goldhub/data/gold-prices">Dated gold benchmark</a><br><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry">Karat definition</a></td></tr><tr><td>14K</td><td class="num">58.33%</td>
       <td class="num">$74.95</td><td class="num">$224.85</td>
-      <td class="num">$374.75</td><td class="num">$599.59</td></tr><tr><td>10K</td><td class="num">41.67%</td>
+      <td class="num">$374.75</td><td class="num">$599.59</td><td class="src"><a href="https://www.gold.org/goldhub/data/gold-prices">Dated gold benchmark</a><br><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry">Karat definition</a></td></tr><tr><td>10K</td><td class="num">41.67%</td>
       <td class="num">$53.54</td><td class="num">$160.61</td>
-      <td class="num">$267.68</td><td class="num">$428.28</td></tr></tbody>
+      <td class="num">$267.68</td><td class="num">$428.28</td><td class="src"><a href="https://www.gold.org/goldhub/data/gold-prices">Dated gold benchmark</a><br><a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry">Karat definition</a></td></tr></tbody>
   </table></div>
 </section>
 
@@ -205,11 +205,10 @@
 
 </main>
 <footer class="wrap foot">
-  <p><strong>No-hallucination policy:</strong> every price, weight, policy and link on this site was read from the official page named beside it on
-  22 October 2026. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
-  <p>Gold benchmark: $3,996.31/oz as of 22 October, 2026 (World Gold Council) = $128.4844/g. Derived values are arithmetic on retailer-published inputs, not appraisals.</p>
+  <p><strong>No-hallucination policy:</strong> captured seller claims are linked to their official sources; dates differ by row and evidence record. They are not live offers, physical tests or endorsements. Where a value could not be read, the cell is blank and the row is on the <a href="../pages/flagged.html">Flagged for Review</a> page.</p>
+  <p>Gold benchmark: $3,996.31/oz, captured 2026-10-23T20:23Z; source page data-date label 22 October, 2026 (World Gold Council) = $128.4844/g. This is not a live quote. Derived values are arithmetic on published inputs, not appraisals.</p>
   <p>This site is research, not financial, legal or gemmological advice. Verify any ring in person with an independent jeweller, including XRF or assay, before relying on its purity.</p>
-  <p class="small">Built 2026-10-23 23:56 UTC · dataset 64 rows · 32 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
+  <p class="small">Built 2026-10-24 00:06 UTC · dataset 64 rows · 32 registered sources · run <span class="mono">python3 scripts/audit.py</span> for the integrity check.</p>
 </footer>
 <script src="../assets/app.js"></script>
 </body>

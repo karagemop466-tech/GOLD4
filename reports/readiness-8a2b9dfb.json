@@ -4,10 +4,10 @@
   "review_date_utc": "2026-10-23",
   "limits": "Historical canonical claims are not independently re-certified by this register. No selected-configuration quote, reputation assessment, return/testing permission, hallmark/maker proof or physical test is supplied. Current-price fields remain null. Automated checks cannot prove the absence of hallucinations.",
   "input_sha256": {
-    "data/rings.json": "5ef576e51f84ab353870e77ee52e4a0f2bc05099a9ac66bb95ba9bfc202ad2d7",
+    "data/rings.json": "2827dc2566aec872545b31dc64aea9b0157bbe6353a8b654b19495187f74eaec",
     "data/sellers.json": "a8a2ec1cfb6f6d50e42dc7a076848aaf22ee36da3b3c632e6f86ef04635d03ec",
-    "data/sources.json": "4d9ad231068e5901feb5fa0a249ffc4cdcc4913b3b89260c0e3cd606a87f5f6e",
-    "scripts/session_8a2b9dfb/source_observations.json": "b7de521ce0e9453a504af8f2a5f96ddf906ba12d0c9fbba78f23520ba42e84fb"
+    "data/sources.json": "c5aabcee368b42aaba537a9db700c2687420ce621e558a5bc0facd8d430e7925",
+    "scripts/session_8a2b9dfb/source_observations.json": "e87bbbd08529437a8708e6a8a756927446f998d1037fc0ecd2c22da3b811c7c7"
   },
   "stats": {
     "candidates": 64,
@@ -25,7 +25,6 @@
       "PHYSICAL_TEST_NOT_DOCUMENTED": 64,
       "PRODUCT_SPECIFICATION_CONFLICT_REQUIRES_REVIEW": 10,
       "RETURN_AND_TESTING_RIGHTS_UNVERIFIED": 64,
-      "SOLID_STATUS_NOT_SUPPORTED_BY_RECORDED_WORDING": 2,
       "SOURCED_WEIGHT_AND_SCOPE_UNVERIFIED": 47,
       "WEIGHT_FIELD_CAPTURE_DATE_NOT_RECORDED": 17
     }
@@ -34,7 +33,7 @@
     "schema_version": "1.0.0",
     "review_date_utc": "2026-10-23",
     "session": "arena/8a2b9dfb-gold4",
-    "method": "Official pages opened with the remote page-reader tool during this session. Only the chunks listed below were reviewed. These observations are not full product verification, checkout quotes, a reputation investigation or physical tests.",
+    "method": "Seven official web pages were opened with the remote page-reader tool on 2026-10-23 UTC; only the listed chunks were reviewed. Pinned repository code was separately read locally and executed with synthetic Node VM inputs. These are not complete product verification, selected-configuration checkout quotes, a reputation investigation or physical tests.",
     "sources": [
       {
         "id": "ftc-jewelry-r8",
@@ -47,7 +46,8 @@
           "Near the karat quality mark, look for the name or the U.S. registered trademark of the company that will stand behind the mark.",
           "The phrase “solid gold” means the gold item isn’t hollow."
         ],
-        "observation": "FTC guidance also recommends investigating reviews/complaints and getting refund/return policies in writing. This is general guidance, not confirmation of any candidate's purity, markings or seller reputation."
+        "observation": "FTC guidance also recommends investigating reviews/complaints and getting refund/return policies in writing. This is general guidance, not confirmation of any candidate's purity, markings or seller reputation.",
+        "review_date_utc": "2026-10-23"
       },
       {
         "id": "mene-knot-r8",
@@ -60,7 +60,8 @@
           "This is a Crafted-on-Demand item.",
           "Dimensions are approximate. Products are sold by weight, not size."
         ],
-        "observation": "The reviewed product block identifies 24k Gold. It does not supply an unambiguous selected-size gram weight. No configuration-specific current quote was collected. Absence of a phrase in this chunk is not a claim about every part of the seller's website."
+        "observation": "The reviewed product block identifies 24k Gold. It does not supply an unambiguous selected-size gram weight. No configuration-specific current quote was collected. Absence of a phrase in this chunk is not a claim about every part of the seller's website.",
+        "review_date_utc": "2026-10-23"
       },
       {
         "id": "mene-sun-r8",
@@ -73,7 +74,8 @@
           "This is a Crafted-on-Demand item.",
           "Dimensions are approximate. Products are sold by weight, not size."
         ],
-        "observation": "The reviewed product block identifies 24k Gold and offers engraving. No configuration-specific current quote or selected-size gram weight was collected. Crafted-on-demand status alone is NOT treated as proof that returns are excluded."
+        "observation": "The reviewed product block identifies 24k Gold and offers engraving. No configuration-specific current quote or selected-size gram weight was collected. Crafted-on-demand status alone is NOT treated as proof that returns are excluded.",
+        "review_date_utc": "2026-10-23"
       },
       {
         "id": "mene-returns-r8",
@@ -85,7 +87,8 @@
         "quotes": [
           "If you are not completely satisfied with your order, you may return it for merchandise credit (Menē Credit) within seven (7) days of receipt"
         ],
-        "observation": "The index contains abbreviated answers and links to hosted help articles. The detailed Terms of Purchase were opened separately; the abbreviated index is not a complete refund/exclusions policy."
+        "observation": "The index contains abbreviated answers and links to hosted help articles. The detailed Terms of Purchase were opened separately; the abbreviated index is not a complete refund/exclusions policy.",
+        "review_date_utc": "2026-10-23"
       },
       {
         "id": "mene-terms-r8",
@@ -104,7 +107,8 @@
           "Please include the Certificate of Authenticity with your return. If it is not included, a 5% assessment fee will apply.",
           "Engraved, customized or otherwise personalized Products are final sale and are not eligible for discretionary return or exchange."
         ],
-        "observation": "Chunk 3 distinguishes seven-day merchandise-credit returns from original-payment refunds requested through Customer Care, subject to stated conditions. Non-waivable consumer rights are preserved. These terms must not be reduced to an unconditional seven-day cash-refund promise; applicable checkout disclosures and the exact ring configuration remain unverified. No conclusion that crafted-on-demand alone means final sale is drawn. Chunks 4–6 were not reviewed."
+        "observation": "Chunk 3 distinguishes seven-day merchandise-credit returns from original-payment refunds requested through Customer Care, subject to stated conditions. Non-waivable consumer rights are preserved. These terms must not be reduced to an unconditional seven-day cash-refund promise; applicable checkout disclosures and the exact ring configuration remain unverified. No conclusion that crafted-on-demand alone means final sale is drawn. Chunks 4–6 were not reviewed.",
+        "review_date_utc": "2026-10-23"
       },
       {
         "id": "gia-electroformed-r8",
@@ -116,7 +120,40 @@
         "quotes": [
           "Thick plating and electroforming may not be detected by XRF methods alone, and additional testing may be necessary to detect the application of these processes."
         ],
-        "observation": "GIA's documented bracelet case explains why a surface XRF reading alone is not a guarantee of solid construction. No candidate in this repository was physically tested in this session. Ask an independent professional to select appropriate tests and confirm return eligibility before any potentially altering test."
+        "observation": "GIA's documented bracelet case explains why a surface XRF reading alone is not a guarantee of solid construction. No candidate in this repository was physically tested in this session. Ask an independent professional to select appropriate tests and confirm return eligibility before any potentially altering test.",
+        "review_date_utc": "2026-10-23"
+      },
+      {
+        "id": "be-freesia-r8",
+        "url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
+        "title": "Freesia Hidden Halo Diamond Ring in 14K Yellow Gold | Brilliant Earth",
+        "review_date_utc": "2026-10-23",
+        "chunks_reviewed": [
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        "quotes": [
+          "USD",
+          "$1,190(Setting Only)",
+          "Freesia Hidden Halo Diamond Ring in 14K Yellow Gold",
+          "BE1D3939-14KY"
+        ],
+        "observation": "Product chunk 4 supplies explicit USD currency, setting-only amount, matching style and metal. The unchanged stored setting amount is now first-hand V1 evidence. Ring size and centre diamond remain unselected, so this is not a complete-ring/checkout quote. No gram weight is supplied by the reviewed specification block. Prior V2 and EUR/localization observations and the runner 403 are preserved."
+      },
+      {
+        "id": "calculator-code-r8",
+        "url": "https://github.com/karagemop466-tech/GOLD4/blob/a832eed3a95e7f7e11b5a5bda2daf3228efa7c6d/assets/app.js",
+        "title": "Historical primary calculator source (pinned project revision)",
+        "review_date_utc": "2026-10-24",
+        "chunks_reviewed": [],
+        "method": "Local git source read and Node VM execution, not a remote retailer read. The linked revision predates this repair.",
+        "quotes": [
+          "var valid = isFinite(w) && w > 0 && isFinite(spot) && spot > 0 && FINENESS[k];"
+        ],
+        "observation": "Synthetic finite weight 1e308 passed input checks but overflowed the derived gold value, displaying infinity and a false zero multiple. The repair validates entire numeric inputs and every derived value; 10 synthetic runtime tests cover overflow, underflow, malformed data, unsupported karats and optional price. Calculator prose now labels nominal/statutory arithmetic as conditional, not physical bounds."
       }
     ],
     "findings": [
@@ -128,7 +165,7 @@
           "MN-02"
         ],
         "title": "A solid-status flag is not a substitute for explicit solid wording",
-        "detail": "Both canonical rows were marked stated, but their recorded solid_gold_statement reads Pure 24k Gold sold by weight with Certificate of Authenticity. That recorded quotation does not explicitly say solid. The readiness register withholds solid-wording credit rather than inferring it from pure/24K, a certificate, a product name or a boolean. This is an evidence gap, not a finding that the items are plated or hollow. Canonical correction was requested from the active integration owner.",
+        "detail": "Both canonical rows had been marked stated, but their recorded solid_gold_statement read Pure 24k Gold sold by weight with Certificate of Authenticity. The quote does not explicitly say solid. Final integration now leaves that field blank, marks explicit wording unverified and preserves the prior record in a dated review block. The readiness register grants no solid-wording credit. This is an evidence gap, not a finding that the items are plated or hollow.",
         "source_ids": [
           "mene-knot-r8",
           "mene-sun-r8",
@@ -173,6 +210,30 @@
         "source_ids": [
           "gia-electroformed-r8",
           "ftc-jewelry-r8"
+        ]
+      },
+      {
+        "id": "R8-CALC-05",
+        "status": "done (code repair)",
+        "row_ids": [],
+        "title": "Calculator overflow and unsupported physical-value bounds corrected",
+        "detail": "Finite inputs could overflow into infinity or a false zero multiple; malformed/fractional inputs could be partially parsed. Numeric and derived-result guards now fail closed, with 10 runtime regression tests. The primary calculator no longer claims a stamped ring’s true value lies between nominal and statutory figures: those are conditional illustrations, not measured bounds. Tests use hypothetical arithmetic fixtures, never retailer offers.",
+        "source_ids": [
+          "calculator-code-r8",
+          "ftc-jewelry-r8",
+          "gia-electroformed-r8"
+        ]
+      },
+      {
+        "id": "R8-BE05-06",
+        "status": "done (provenance repair)",
+        "row_ids": [
+          "BE-05"
+        ],
+        "title": "Last snapshot-only setting amount corroborated directly in explicit USD",
+        "detail": "Official product chunk 4 rendered USD and $1,190 (Setting Only), with BE1D3939-14KY and 14K Yellow Gold. The amount is unchanged; provenance is upgraded from V2 to V1 and the first-hand capture is dated 23 October 2026. Prior snapshot/EUR observations are preserved. Size and centre diamond are unselected; no exact configured-ring quote or gram weight is inferred.",
+        "source_ids": [
+          "be-freesia-r8"
         ]
       }
     ]
@@ -1108,7 +1169,7 @@
       "configured_return_and_testing_eligibility": null,
       "configured_credit_card_option": null,
       "physical_test_result": null,
-      "official_return_policy_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+      "official_return_policy_url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
       "official_contact_route_url": "https://www.sarraf.com/",
       "source_health_state_as_recorded": "OK",
       "source_health_price_state_as_recorded": "CONFIRMED",
@@ -1146,7 +1207,7 @@
       "configured_return_and_testing_eligibility": null,
       "configured_credit_card_option": null,
       "physical_test_result": null,
-      "official_return_policy_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+      "official_return_policy_url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
       "official_contact_route_url": "https://www.sarraf.com/",
       "source_health_state_as_recorded": "OK",
       "source_health_price_state_as_recorded": "CONFIRMED",
@@ -1184,7 +1245,7 @@
       "configured_return_and_testing_eligibility": null,
       "configured_credit_card_option": null,
       "physical_test_result": null,
-      "official_return_policy_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+      "official_return_policy_url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
       "official_contact_route_url": "https://www.sarraf.com/",
       "source_health_state_as_recorded": "OK",
       "source_health_price_state_as_recorded": "CONFIRMED",
@@ -1222,7 +1283,7 @@
       "configured_return_and_testing_eligibility": null,
       "configured_credit_card_option": null,
       "physical_test_result": null,
-      "official_return_policy_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+      "official_return_policy_url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
       "official_contact_route_url": "https://www.sarraf.com/",
       "source_health_state_as_recorded": "OK",
       "source_health_price_state_as_recorded": "CONFIRMED",
@@ -1260,7 +1321,7 @@
       "configured_return_and_testing_eligibility": null,
       "configured_credit_card_option": null,
       "physical_test_result": null,
-      "official_return_policy_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+      "official_return_policy_url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
       "official_contact_route_url": "https://www.sarraf.com/",
       "source_health_state_as_recorded": "OK",
       "source_health_price_state_as_recorded": "CONFIRMED",
@@ -1298,7 +1359,7 @@
       "configured_return_and_testing_eligibility": null,
       "configured_credit_card_option": null,
       "physical_test_result": null,
-      "official_return_policy_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+      "official_return_policy_url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
       "official_contact_route_url": "https://www.sarraf.com/",
       "source_health_state_as_recorded": "OK",
       "source_health_price_state_as_recorded": "CONFIRMED",
@@ -1336,7 +1397,7 @@
       "configured_return_and_testing_eligibility": null,
       "configured_credit_card_option": null,
       "physical_test_result": null,
-      "official_return_policy_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+      "official_return_policy_url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
       "official_contact_route_url": "https://www.sarraf.com/",
       "source_health_state_as_recorded": "OK",
       "source_health_price_state_as_recorded": "CONFIRMED",
@@ -1374,7 +1435,7 @@
       "configured_return_and_testing_eligibility": null,
       "configured_credit_card_option": null,
       "physical_test_result": null,
-      "official_return_policy_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+      "official_return_policy_url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
       "official_contact_route_url": "https://www.sarraf.com/",
       "source_health_state_as_recorded": "OK",
       "source_health_price_state_as_recorded": "CONFIRMED",
@@ -1471,13 +1532,13 @@
     {
       "id": "MN-01",
       "retailer": "Menē",
-      "product_name": "Menē 24k Pure Solid Gold Knot Ring",
+      "product_name": "Knot Ring",
       "category": "band",
       "official_product_url": "https://mene.com/products/knot-ring-gold",
       "record_capture_date_utc": "2026-10-22",
       "recorded_karat_claim": 24,
       "recorded_explicit_solid_wording": null,
-      "unsupported_recorded_solid_wording": "Pure 24k Gold sold by weight with Certificate of Authenticity",
+      "unsupported_recorded_solid_wording": null,
       "recorded_weight_g": null,
       "recorded_weight_scope": null,
       "weight_source_url": null,
@@ -1504,20 +1565,19 @@
         "INDEPENDENT_REPUTATION_RESEARCH_UNVERIFIED",
         "PHYSICAL_TEST_NOT_DOCUMENTED",
         "RETURN_AND_TESTING_RIGHTS_UNVERIFIED",
-        "SOLID_STATUS_NOT_SUPPORTED_BY_RECORDED_WORDING",
         "SOURCED_WEIGHT_AND_SCOPE_UNVERIFIED"
       ]
     },
     {
       "id": "MN-02",
       "retailer": "Menē",
-      "product_name": "Menē 24k Pure Solid Gold Etruscan Sun Band (4.5mm)",
+      "product_name": "Etruscan Sun Band",
       "category": "band",
       "official_product_url": "https://mene.com/products/etruscan-sun-band-gold",
       "record_capture_date_utc": "2026-10-22",
       "recorded_karat_claim": 24,
       "recorded_explicit_solid_wording": null,
-      "unsupported_recorded_solid_wording": "Pure 24k Gold sold by weight with Certificate of Authenticity",
+      "unsupported_recorded_solid_wording": null,
       "recorded_weight_g": null,
       "recorded_weight_scope": null,
       "weight_source_url": null,
@@ -1544,7 +1604,6 @@
         "INDEPENDENT_REPUTATION_RESEARCH_UNVERIFIED",
         "PHYSICAL_TEST_NOT_DOCUMENTED",
         "RETURN_AND_TESTING_RIGHTS_UNVERIFIED",
-        "SOLID_STATUS_NOT_SUPPORTED_BY_RECORDED_WORDING",
         "SOURCED_WEIGHT_AND_SCOPE_UNVERIFIED"
       ]
     },

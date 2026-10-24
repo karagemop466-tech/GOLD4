@@ -44,6 +44,33 @@ class ProductRows(HTMLParser):
             self.current = None
 
 
+class AllTableRows(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.rows = []
+        self.current = None
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == "tr":
+            self.current = {"data": False, "urls": [], "text": ""}
+        if self.current is not None:
+            if tag == "td":
+                self.current["data"] = True
+            if tag == "a":
+                self.current["urls"].append(attrs.get("href", ""))
+
+    def handle_data(self, data):
+        if self.current is not None:
+            self.current["text"] += data
+
+    def handle_endtag(self, tag):
+        if tag == "tr" and self.current is not None:
+            if self.current["data"]:
+                self.rows.append(self.current)
+            self.current = None
+
+
 class ReadinessTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -78,7 +105,7 @@ class ReadinessTests(unittest.TestCase):
 
     def test_solid_wording_cannot_be_inferred_from_karat_purity_or_name(self):
         for quote in [None, "14K Yellow Gold", "Pure 24k Gold sold by weight with Certificate of Authenticity",
-                      "not solid gold", "hollowed 14k solid gold", "gold plated solid gold", "gold-filled", True]:
+                      "not solid gold", "not necessarily solid gold", "hollowed 14k solid gold", "gold plated solid gold", "solid gold electroplate", "gold-filled", True]:
             with self.subTest(quote=quote):
                 result = self.evaluate(solid_gold_status="stated", solid_gold_statement=quote)
                 self.assertIsNone(result["recorded_explicit_solid_wording"])
@@ -190,6 +217,48 @@ class ReadinessTests(unittest.TestCase):
         self.assertIsNone(self.evaluate(weight_captured_utc="yesterday")["weight_field_capture_date_utc"])
         self.assertEqual(self.evaluate(weight_captured_utc="2026-10-22")["weight_field_capture_date_utc"], "2026-10-22")
         self.assertIsNone(r.date_only("2026-02-30"))
+
+
+    def test_all_present_canonical_prices_have_firsthand_provenance(self):
+        for row in self.rings["rows"]:
+            if row.get("price_usd") is not None:
+                with self.subTest(row=row["id"]):
+                    self.assertEqual(row.get("price_verification"), r.V1)
+                    self.assertTrue(r.safe_url(row.get("price_source_url"), row["retailer_id"]))
+                    self.assertTrue(r.date_only(row.get("price_captured_utc")))
+
+    def test_canonical_solid_status_requires_explicit_sourced_wording(self):
+        for row in self.rings["rows"]:
+            if row.get("solid_gold_status") == "stated":
+                with self.subTest(row=row["id"]):
+                    self.assertTrue(r.explicit_solid_wording(row.get("solid_gold_statement")))
+                    self.assertTrue(r.safe_url(row.get("url"), row["retailer_id"]))
+
+    def test_every_primary_table_data_row_has_an_official_source(self):
+        from urllib.parse import urlsplit
+        # The registry itself is separately host-allowlist audited by Gate 1.
+        hosts = {urlsplit(src["url"]).hostname for src in self.sources.values()}
+        hosts |= set(r.RETAILER_DOMAINS.values()) | {"www." + d for d in r.RETAILER_DOMAINS.values()}
+        hosts |= {"github.com", "consumer.ftc.gov", "www.gia.edu", "www.gold.org"}
+        pages = [r.ROOT / "index.html"] + sorted((r.ROOT / "pages").glob("*.html"))
+        inspected = 0
+        for page in pages:
+            parser = AllTableRows()
+            parser.feed(page.read_text())
+            for row in parser.rows:
+                inspected += 1
+                with self.subTest(page=page.name, row=row["text"][:70]):
+                    self.assertTrue(any(urlsplit(url).scheme == "https" and urlsplit(url).hostname in hosts
+                                        for url in row["urls"]), "Missing official row citation")
+        self.assertGreater(inspected, len(self.rings["rows"]))
+
+    def test_primary_ui_does_not_infer_return_permission_or_physical_value_bounds(self):
+        sellers = (r.ROOT / "pages/sellers.html").read_text()
+        calculator = (r.ROOT / "pages/calculator.html").read_text()
+        self.assertNotIn("not excluded", sellers)
+        self.assertNotIn("stamped ring lies between", calculator)
+        self.assertIn("not</strong> establish any measured lower or upper bound", calculator)
+        self.assertIn("hypothetical example", calculator)
 
 
 if __name__ == "__main__":

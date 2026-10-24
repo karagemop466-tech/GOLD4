@@ -1,6 +1,6 @@
 # VERIFICATION.md — line-by-line verification record
 
-Generated 2026-10-23 20:38 UTC from `data/*.json` by `scripts/gen_verification.py`.
+Generated 2026-10-24 00:06 UTC from `data/*.json` by `scripts/gen_verification.py`.
 
 ## Rule applied to every single value
 
@@ -14,7 +14,7 @@ Generated 2026-10-23 20:38 UTC from `data/*.json` by `scripts/gen_verification.p
 - Rows: **64**
 - Prices read from the seller's page: **62**
 - Gram weights published by the seller: **17** (therefore only these rows have a computable gold value)
-- Rows with explicit *solid gold* wording: **19**
+- Rows with explicit *solid gold* wording: **17**
 - Rows publishing a hallmark or maker's mark: **0** (the legal requirement is quoted in `data/methodology.json`)
 - Rows carrying at least one flag: **64**
 
@@ -55,8 +55,8 @@ Generated 2026-10-23 20:38 UTC from `data/*.json` by `scripts/gen_verification.p
 | SR-08 | Sarraf | [18k Yellow Gold 1/2 Carat Round Diamond Solitaire Engagement Ring](https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html) | 18K | $2,461 | V1 · 2026-10-22 | **blank** | — | — | stated: “Material: 18K Solid Gold” | not published | NO_WEIGHT_PUBLISHED, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED |
 | CB-01 | Catbird NYC | [The Swan Solitaire Diamond Engagement Ring (1.0mm Recycled 14K Band)](https://www.catbirdnyc.com/the-swan-solitaire-2475.html) | 14K | $3,900 | V1 · 2026-10-22 | **blank** | — | — | stated: “recycled solid 14k gold” | not published | NO_WEIGHT_PUBLISHED, PRICE_IS_FROM_PRICE, PRICE_INCLUDES_CENTRE_STONE, HALLMARK_NOT_PUBLISHED |
 | CB-02 | Catbird NYC | [Grand Painter's Solid 14k Yellow Gold Band](https://www.catbirdnyc.com/grand-painters-ring.html) | 14K | $313.50 | V1 · 2026-10-22 | **blank** | — | — | stated: “Solid 14k Yellow Gold” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED |
-| MN-01 | Menē | [Menē 24k Pure Solid Gold Knot Ring](https://mene.com/products/knot-ring-gold) | 24K | $1,465 | V1 · 2026-10-22 | **blank** | — | — | stated: “Pure 24k Gold sold by weight with Certificate of Authenticity” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, PRICE_STRUCTURED_DIFFERS |
-| MN-02 | Menē | [Menē 24k Pure Solid Gold Etruscan Sun Band (4.5mm)](https://mene.com/products/etruscan-sun-band-gold) | 24K | $1,730 | V1 · 2026-10-22 | **blank** | — | — | stated: “Pure 24k Gold sold by weight with Certificate of Authenticity” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, PRICE_STRUCTURED_DIFFERS |
+| MN-01 | Menē | [Knot Ring](https://mene.com/products/knot-ring-gold) | 24K | $1,465 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, PRICE_STRUCTURED_DIFFERS, SOLID_NOT_STATED |
+| MN-02 | Menē | [Etruscan Sun Band](https://mene.com/products/etruscan-sun-band-gold) | 24K | $1,730 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, PRICE_STRUCTURED_DIFFERS, SOLID_NOT_STATED |
 | BN-09 | Blue Nile | [Classic Four-Prong Solitaire Engagement Ring (Platinum Prongs)](https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y) | 18K | $1,125 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, MIXED_METAL_UNCLEAR, SOURCE_URL_DEAD |
 | BN-10 | Blue Nile | [Low Dome Comfort Fit Solitaire Engagement Ring](https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14) | 14K | $1,145 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SOURCE_URL_DEAD |
 | BN-11 | Blue Nile | [French Pavé Diamond Engagement Ring (1/20 ct. tw.)](https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y) | 18K | $1,805 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, SOURCE_URL_DEAD |
@@ -76,14 +76,14 @@ Generated 2026-10-23 20:38 UTC from `data/*.json` by `scripts/gen_verification.p
 | BN-25 | Blue Nile | [Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen](https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661) | 14K | $2,210 | V1 · 2026-10-23 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, WHITE_GOLD |
 | BN-26 | Blue Nile | [Comfort Fit Solitaire Engagement Ring In 14K Yellow Gold (James Allen style 17740y14)](https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515) | 14K | **blank** | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_UNVERIFIED, SOLD_OUT_AT_CHECK |
 | BE-04 | Brilliant Earth | [Fairmined Hollis Knife Edge Solitaire Engagement Ring](https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/) | 18K | $1,090 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, RESIZE_EXCLUDED_ON_PAGE, SOURCE_BOT_BLOCKED |
-| BE-05 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/) | 14K | $1,190 | **not verified** | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_V2_ONLY, PRICE_CURRENCY_LOCALIZED, SOURCE_BOT_BLOCKED |
+| BE-05 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/) | 14K | $1,190 | V1 · 2026-10-23 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED, SOURCE_BOT_BLOCKED |
 | BE-06 | Brilliant Earth | [Freesia Hidden Halo Diamond Ring](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/) | 18K | $1,390 | V1 · 2026-10-23 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED, SOURCE_BOT_BLOCKED |
 | BE-07 | Brilliant Earth | [Fleur Solitaire Ring](https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/) | 14K | $1,350 | V1 · 2026-10-23 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, PRICE_CURRENCY_LOCALIZED, SOURCE_BOT_BLOCKED |
 | RS-01 | Ross-Simons | [14kt Yellow Gold 2mm Wedding Band](https://www.ross-simons.com/jewelry/rings/571221.html) | 14K | $400 | V1 · 2026-10-22 | 1.70 g | V1 | $127.41 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | RS-02 | Ross-Simons | [Italian 18kt Yellow Gold 2mm Wedding Band](https://www.ross-simons.com/jewelry/rings/985230.html) | 18K | $249 | V1 · 2026-10-22 | 0.70 g | V1 | $67.45 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | RS-03 | Ross-Simons | [14kt Yellow Gold 3mm Comfort-Fit Wedding Band](https://www.ross-simons.com/jewelry/rings/820263.html) | 14K | $595 | V1 · 2026-10-22 | 2.10 g | V1 | $157.39 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
 | RS-04 | Ross-Simons | [14kt Yellow Gold 4mm Flat Wedding Band Ring](https://www.ross-simons.com/jewelry/rings/823796.html) | 14K | $1,195 | V1 · 2026-10-22 | 4.00 g | V1 | $299.80 | not stated | not published | WEIGHT_APPROXIMATE, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
-| RS-05 | Ross-Simons | [0.80 Carat GIA Certified Solitaire Diamond Engagement Ring](https://www.ross-simons.com/products/990022) | 14K | $2,819 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, PRICE_INCLUDES_CENTRE_STONE, WHITE_GOLD, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED |
+| RS-05 | Ross-Simons | [0.80 Carat GIA Certified Solitaire Diamond Engagement Ring](https://www.ross-simons.com/products/990022) | 14K | $2,819 | V1 · 2026-10-22 | **blank** | — | — | not stated | not published | NO_WEIGHT_PUBLISHED, PRICE_INCLUDES_CENTRE_STONE, WHITE_GOLD, SOLID_NOT_STATED, HALLMARK_NOT_PUBLISHED, CLEARANCE_RETURN_TERMS_UNCLEAR |
 | MJ-06 | Mejuri | [Pavé Diamond Slim Eternity Band](https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&Stone=Natural+Diamond) | 14K | $1,100 | V1 · 2026-10-22 | **blank** | — | — | stated: “14k solid gold” | not published | NO_WEIGHT_PUBLISHED, PRICE_IS_FROM_PRICE, HALLMARK_NOT_PUBLISHED, ENGRAVING_NON_RETURNABLE, COPY_CARAT_MISMATCH, PRICE_STRUCTURED_DIFFERS |
 | MJ-07 | Mejuri | [Diamonds Line Ring](https://mejuri.com/us/en/products/diamonds-line-ring) | 10K | $348 | V1 · 2026-10-22 | **blank** | — | — | stated: “10k solid gold” | not published | NO_WEIGHT_PUBLISHED, HALLMARK_NOT_PUBLISHED, COPY_INCONSISTENT_METAL, ENGRAVING_NON_RETURNABLE, NOT_MARKETED_AS_BRIDAL |
 
@@ -131,7 +131,7 @@ Generated 2026-10-23 20:38 UTC from `data/*.json` by `scripts/gen_verification.p
 | Mejuri | 30 days | **not captured** | not excluded | excluded | Not published as a standard free service on the captured returns page | Two-year warranty from the date of receipt for defects or issues resulting from workmanshi | stated | [Returns Terms & Conditions](https://mejuri.com/company/returns-terms) |
 | Brilliant Earth | 30 days | 800.691.0952 | no | excluded | Page badge reads "Free 1-Year Resizing" (Pass 5, 2026-10-22). The earlier capture of the same page described one complimentary resize within 60 days of purchase. The two captures disagree, so ask the seller which applies to your ring before ordering. | Free Lifetime Warranty (product page badge) | not stated | [Atelier Solitaire Ring in 18K Yellow Gold](https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/) |
 | Anjolee | 30 days | 877-265-6533 | not excluded | no exclusion captured | Not captured on the page | Lifetime warranty (prong tightening, re-polishing, rhodium plating, cleaning) plus a one-y | not stated | [Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)](https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx) |
-| Sarraf | 30 days | +1-888-472-7723 | no | excluded | Third-party resizing immediately voids warranty; Lifetime Warranty replacement charges max($100, 10% of purchase price) | Lifetime Warranty subject to seller inspection and max($100, 10% of purchase price) replac | stated | [Sarraf Return Policy & Lifetime Warranty Terms](https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) |
+| Sarraf | 30 days | +1-888-472-7723 | no | excluded | Third-party resizing immediately voids warranty; Lifetime Warranty replacement charges max($100, 10% of purchase price) | Lifetime Warranty subject to seller inspection and max($100, 10% of purchase price) replac | stated | [30 Day Returns and Exchange Policy](https://www.sarraf.com/30-day-returns-and-exchange-policy/) |
 | Catbird NYC | 20 days | **not captured** | not excluded | excluded | Must inspect unengraved before return window closes (20 days) | Standard studio craftsmanship support | stated | [Catbird Returns & Exchanges Policy](https://www.catbirdnyc.com/returns) |
 | Menē | 7 days | **not captured** | no | no exclusion captured | Pure 24K bands cannot be traditionally torch-resized without specialized 24K goldsmithing | Signed Certificate of Authenticity assaying pure 24K gold weight (+/-0.5g to +/-1.0g toler | stated | [Menē 7-Day Returns & Lifetime Buyback Policy](https://mene.com/customer-care/en-US/articles/returns-319505) |
 | Ross-Simons | 30 days | 800-835-0919 | no | excluded | Outside jeweler resizing or alteration voids the 30-day return right | 100% satisfaction guarantee within 30 days of receipt | not stated | [Ross-Simons — Returns & Exchanges Policy](https://www.ross-simons.com/pages/returns-exchanges) |
@@ -169,8 +169,9 @@ Generated 2026-10-23 20:38 UTC from `data/*.json` by `scripts/gen_verification.p
 | mejuri-returns | C | Mejuri | [Returns Terms & Conditions](https://mejuri.com/company/returns-terms) | 2026-10-22 |
 | mene-returns | C | Menē Inc. | [Menē 7-Day Returns & Lifetime Buyback Policy](https://mene.com/customer-care/en-US/articles/returns-319505) | 2026-10-22 |
 | ross-simons-returns | C | Ross-Simons (ross-simons.com) | [Ross-Simons — Returns & Exchanges Policy](https://www.ross-simons.com/pages/returns-exchanges) | 2026-10-22 |
-| sarraf-returns | C | Sarraf Jewelry Inc. | [Sarraf Return Policy & Lifetime Warranty Terms](https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html) | 2026-10-22 |
+| sarraf-returns | C | Sarraf Jewelry Inc. | [30 Day Returns and Exchange Policy](https://www.sarraf.com/30-day-returns-and-exchange-policy/) | 2026-10-23 |
 | vrai-returns | C | VRAI | [Returns & Exchanges](https://www.vrai.com/returns-exchanges) | 2026-10-22 |
+| sarraf-warranty | C | Sarraf Jewelry Inc. | [Lifetime Guarantee](https://www.sarraf.com/lifetime-guarantee/) | 2026-10-23 |
 
 ## Irregularities flagged for human review
 
@@ -213,8 +214,8 @@ Generated 2026-10-23 20:38 UTC from `data/*.json` by `scripts/gen_verification.p
 - **SR-08** (Sarraf · 18k Yellow Gold 1/2 Carat Round Diamond Solitaire Engagement Ring): weight not published on the captured page → https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html
 - **CB-01** (Catbird NYC · The Swan Solitaire Diamond Engagement Ring (1.0mm Recycled 14K Band)): weight not published on the captured page → https://www.catbirdnyc.com/the-swan-solitaire-2475.html
 - **CB-02** (Catbird NYC · Grand Painter's Solid 14k Yellow Gold Band): weight not published on the captured page → https://www.catbirdnyc.com/grand-painters-ring.html
-- **MN-01** (Menē · Menē 24k Pure Solid Gold Knot Ring): weight not published on the captured page → https://mene.com/products/knot-ring-gold
-- **MN-02** (Menē · Menē 24k Pure Solid Gold Etruscan Sun Band (4.5mm)): weight not published on the captured page → https://mene.com/products/etruscan-sun-band-gold
+- **MN-01** (Menē · Knot Ring): weight, solid-gold wording not published on the captured page → https://mene.com/products/knot-ring-gold
+- **MN-02** (Menē · Etruscan Sun Band): weight, solid-gold wording not published on the captured page → https://mene.com/products/etruscan-sun-band-gold
 - **BN-09** (Blue Nile · Classic Four-Prong Solitaire Engagement Ring (Platinum Prongs)): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y
 - **BN-10** (Blue Nile · Low Dome Comfort Fit Solitaire Engagement Ring): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14
 - **BN-11** (Blue Nile · French Pavé Diamond Engagement Ring (1/20 ct. tw.)): weight, solid-gold wording not published on the captured page → https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y
@@ -249,11 +250,11 @@ Generated 2026-10-23 20:38 UTC from `data/*.json` by `scripts/gen_verification.p
 
 ```
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-23T20:34:16+00:00
-dataset rows: 64 | sellers: 10 | sources: 31
+run_utc: 2026-10-23T23:56:40+00:00
+dataset rows: 64 | sellers: 10 | sources: 32
 spot benchmark: $3,996.31/oz (22 October, 2026) = $128.4844/g
 
-RESULT: PASS  (131 passed, 1 warnings, 0 failures)
+RESULT: PASS  (132 passed, 1 warnings, 0 failures)
 
 [WARN] B-08 price verification: BE-05: price is only V2 evidence and must be flagged
 

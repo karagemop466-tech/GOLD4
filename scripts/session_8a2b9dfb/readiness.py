@@ -34,13 +34,13 @@ RETAILER_DOMAINS = {
     "mejuri": "mejuri.com", "anjolee": "anjolee.com", "sarraf": "sarraf.com",
     "catbird": "catbirdnyc.com", "mene": "mene.com", "ross-simons": "ross-simons.com",
 }
-REFERENCE_HOSTS = {"consumer.ftc.gov", "www.gia.edu", "mene.com", "www.mene.com"}
+REFERENCE_HOSTS = {"consumer.ftc.gov", "www.gia.edu", "mene.com", "www.mene.com", "www.brilliantearth.com", "github.com"}
 UNSAFE_URL = re.compile(r'[\x00-\x20\x7f\\<>"`]|%(?:0[0-9a-f]|1[0-9a-f]|7f)', re.I)
 EXPLICIT_SOLID = re.compile(
     r"\bsolid\s+(?:(?:yellow|white|rose|recycled|\d{1,2}\s*k(?:arat)?)\s+){0,3}gold\b", re.I
 )
 CONFLICTING_SOLID = re.compile(
-    r"\b(?:not\s+solid|hollow(?:ed)?|plated|vermeil|filled|overlay|electroform\w*|gold[- ]tone)\b", re.I
+    r"\b(?:not(?:\s+necessarily)?\s+solid|hollow(?:ed)?|(?:electro)?plat(?:e|ed|ing)|vermeil|filled|overlay|electroform\w*|gold[- ]tone)\b", re.I
 )
 CONFLICT_FLAGS = {"COPY_INCONSISTENT_METAL", "MIXED_METAL_UNCLEAR", "SPEC_LISTED_PAVE_ON_PLAIN_BAND"}
 
@@ -72,7 +72,8 @@ def safe_url(value, retailer_id=None):
         }
         if (parsed.scheme != "https" or parsed.hostname not in hosts or
                 parsed.username is not None or parsed.password is not None or
-                parsed.port not in (None, 443)):
+                parsed.port not in (None, 443) or
+                (parsed.hostname == "github.com" and not parsed.path.startswith("/karagemop466-tech/GOLD4/"))):
             return None
     except ValueError:
         return None
@@ -259,7 +260,7 @@ def render_html(report):
     finding_rows = []
     for f in obs["findings"]:
         refs = "<br>".join(link(sources[x]["url"], sources[x]["title"]) for x in f["source_ids"])
-        finding_rows.append(f'<tr><td>{e(f["id"])}<br>{badge("Needs review")}</td><td><strong>{e(f["title"])}</strong><p>{e(f["detail"])}</p></td><td class="src">{refs}</td></tr>')
+        finding_rows.append(f'<tr><td>{e(f["id"])}<br>{badge(f["status"], "ok" if f["status"].startswith("done") else "warn")}</td><td><strong>{e(f["title"])}</strong><p>{e(f["detail"])}</p></td><td class="src">{refs}</td></tr>')
     product_rows = []
     for row in report["rows"]:
         solid = (f'<q>{e(row["recorded_explicit_solid_wording"])}</q><span class="sub">Recorded seller wording, not an assay</span>'
@@ -300,7 +301,7 @@ def render_html(report):
     observation_rows = []
     for source in obs["sources"]:
         quoted = " ".join(source["quotes"])
-        observation_rows.append(f'<tr><td>{e(source["title"])}<span class="sub">Chunks {e(", ".join(map(str, source["chunks_reviewed"])))}</span></td><td><q>{e(quoted)}</q><p>{e(source["observation"])}</p></td><td class="src">{link(source["url"], "Official source")}</td></tr>')
+        observation_rows.append(f'<tr><td>{e(source["title"])}<span class="sub">{e("Chunks " + ", ".join(map(str, source["chunks_reviewed"])) if source["chunks_reviewed"] else "Pinned repository code; local runtime test")} · {e(source.get("review_date_utc", report["review_date_utc"]))} UTC</span></td><td><q>{e(quoted)}</q><p>{e(source["observation"])}</p></td><td class="src">{link(source["url"], "Official source")}</td></tr>')
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Purchase readiness · GOLD4</title><meta name="description" content="Source-linked checklist evidence gaps for every GOLD4 ring candidate. No inferred prices or purchase approvals.">

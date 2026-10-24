@@ -2,90 +2,173 @@
   "schema_version": "1.0.0",
   "review_date_utc": "2026-10-23",
   "session": "arena/8a2b9dfb-gold4",
-  "method": "Official pages opened with the remote page-reader tool during this session. Only the chunks listed below were reviewed. These observations are not full product verification, checkout quotes, a reputation investigation or physical tests.",
+  "method": "Seven official web pages were opened with the remote page-reader tool on 2026-10-23 UTC; only the listed chunks were reviewed. Pinned repository code was separately read locally and executed with synthetic Node VM inputs. These are not complete product verification, selected-configuration checkout quotes, a reputation investigation or physical tests.",
   "sources": [
     {
       "id": "ftc-jewelry-r8",
       "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
       "title": "Buying Platinum, Gold, and Silver Jewelry",
-      "chunks_reviewed": [0],
+      "chunks_reviewed": [
+        0
+      ],
       "quotes": [
         "Near the karat quality mark, look for the name or the U.S. registered trademark of the company that will stand behind the mark.",
         "The phrase “solid gold” means the gold item isn’t hollow."
       ],
-      "observation": "FTC guidance also recommends investigating reviews/complaints and getting refund/return policies in writing. This is general guidance, not confirmation of any candidate's purity, markings or seller reputation."
+      "observation": "FTC guidance also recommends investigating reviews/complaints and getting refund/return policies in writing. This is general guidance, not confirmation of any candidate's purity, markings or seller reputation.",
+      "review_date_utc": "2026-10-23"
     },
     {
       "id": "mene-knot-r8",
       "url": "https://mene.com/products/knot-ring-gold",
       "title": "Knot ring - 24k Gold | Menē",
-      "chunks_reviewed": [0],
-      "quotes": ["This is a Crafted-on-Demand item.", "Dimensions are approximate. Products are sold by weight, not size."],
-      "observation": "The reviewed product block identifies 24k Gold. It does not supply an unambiguous selected-size gram weight. No configuration-specific current quote was collected. Absence of a phrase in this chunk is not a claim about every part of the seller's website."
+      "chunks_reviewed": [
+        0
+      ],
+      "quotes": [
+        "This is a Crafted-on-Demand item.",
+        "Dimensions are approximate. Products are sold by weight, not size."
+      ],
+      "observation": "The reviewed product block identifies 24k Gold. It does not supply an unambiguous selected-size gram weight. No configuration-specific current quote was collected. Absence of a phrase in this chunk is not a claim about every part of the seller's website.",
+      "review_date_utc": "2026-10-23"
     },
     {
       "id": "mene-sun-r8",
       "url": "https://mene.com/products/etruscan-sun-band-gold",
       "title": "Menē Etruscan Sun Band - 24k Gold | Menē",
-      "chunks_reviewed": [0],
-      "quotes": ["This is a Crafted-on-Demand item.", "Dimensions are approximate. Products are sold by weight, not size."],
-      "observation": "The reviewed product block identifies 24k Gold and offers engraving. No configuration-specific current quote or selected-size gram weight was collected. Crafted-on-demand status alone is NOT treated as proof that returns are excluded."
+      "chunks_reviewed": [
+        0
+      ],
+      "quotes": [
+        "This is a Crafted-on-Demand item.",
+        "Dimensions are approximate. Products are sold by weight, not size."
+      ],
+      "observation": "The reviewed product block identifies 24k Gold and offers engraving. No configuration-specific current quote or selected-size gram weight was collected. Crafted-on-demand status alone is NOT treated as proof that returns are excluded.",
+      "review_date_utc": "2026-10-23"
     },
     {
       "id": "mene-returns-r8",
       "url": "https://mene.com/customer-care/en-US/articles/returns-319505",
       "title": "Returns | Menē Customer Care",
-      "chunks_reviewed": [0],
-      "quotes": ["If you are not completely satisfied with your order, you may return it for merchandise credit (Menē Credit) within seven (7) days of receipt"],
-      "observation": "The index contains abbreviated answers and links to hosted help articles. The detailed Terms of Purchase were opened separately; the abbreviated index is not a complete refund/exclusions policy."
+      "chunks_reviewed": [
+        0
+      ],
+      "quotes": [
+        "If you are not completely satisfied with your order, you may return it for merchandise credit (Menē Credit) within seven (7) days of receipt"
+      ],
+      "observation": "The index contains abbreviated answers and links to hosted help articles. The detailed Terms of Purchase were opened separately; the abbreviated index is not a complete refund/exclusions policy.",
+      "review_date_utc": "2026-10-23"
     },
     {
       "id": "mene-terms-r8",
       "url": "https://mene.com/terms-of-service",
       "title": "Terms of Service / Terms of Purchase | Menē",
       "effective_date_as_shown": "Sep 2, 2026",
-      "chunks_reviewed": [0, 1, 2, 3],
+      "chunks_reviewed": [
+        0,
+        1,
+        2,
+        3
+      ],
       "quotes": [
         "For Crafted-on-Demand Investment Jewelry, the actual weight may vary by up to 1 gram from the advertised weight, and the final price may be adjusted to reflect the final weight.",
         "For discretionary returns to the original payment method, Menē may deduct a restocking fee of up to 10% where disclosed at checkout and permitted by applicable law.",
         "Please include the Certificate of Authenticity with your return. If it is not included, a 5% assessment fee will apply.",
         "Engraved, customized or otherwise personalized Products are final sale and are not eligible for discretionary return or exchange."
       ],
-      "observation": "Chunk 3 distinguishes seven-day merchandise-credit returns from original-payment refunds requested through Customer Care, subject to stated conditions. Non-waivable consumer rights are preserved. These terms must not be reduced to an unconditional seven-day cash-refund promise; applicable checkout disclosures and the exact ring configuration remain unverified. No conclusion that crafted-on-demand alone means final sale is drawn. Chunks 4–6 were not reviewed."
+      "observation": "Chunk 3 distinguishes seven-day merchandise-credit returns from original-payment refunds requested through Customer Care, subject to stated conditions. Non-waivable consumer rights are preserved. These terms must not be reduced to an unconditional seven-day cash-refund promise; applicable checkout disclosures and the exact ring configuration remain unverified. No conclusion that crafted-on-demand alone means final sale is drawn. Chunks 4–6 were not reviewed.",
+      "review_date_utc": "2026-10-23"
     },
     {
       "id": "gia-electroformed-r8",
       "url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
       "title": "Electroformed Gold Bracelet | GIA",
-      "chunks_reviewed": [0],
-      "quotes": ["Thick plating and electroforming may not be detected by XRF methods alone, and additional testing may be necessary to detect the application of these processes."],
-      "observation": "GIA's documented bracelet case explains why a surface XRF reading alone is not a guarantee of solid construction. No candidate in this repository was physically tested in this session. Ask an independent professional to select appropriate tests and confirm return eligibility before any potentially altering test."
+      "chunks_reviewed": [
+        0
+      ],
+      "quotes": [
+        "Thick plating and electroforming may not be detected by XRF methods alone, and additional testing may be necessary to detect the application of these processes."
+      ],
+      "observation": "GIA's documented bracelet case explains why a surface XRF reading alone is not a guarantee of solid construction. No candidate in this repository was physically tested in this session. Ask an independent professional to select appropriate tests and confirm return eligibility before any potentially altering test.",
+      "review_date_utc": "2026-10-23"
+    },
+    {
+      "id": "be-freesia-r8",
+      "url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
+      "title": "Freesia Hidden Halo Diamond Ring in 14K Yellow Gold | Brilliant Earth",
+      "review_date_utc": "2026-10-23",
+      "chunks_reviewed": [
+        0,
+        2,
+        3,
+        4,
+        5
+      ],
+      "quotes": [
+        "USD",
+        "$1,190(Setting Only)",
+        "Freesia Hidden Halo Diamond Ring in 14K Yellow Gold",
+        "BE1D3939-14KY"
+      ],
+      "observation": "Product chunk 4 supplies explicit USD currency, setting-only amount, matching style and metal. The unchanged stored setting amount is now first-hand V1 evidence. Ring size and centre diamond remain unselected, so this is not a complete-ring/checkout quote. No gram weight is supplied by the reviewed specification block. Prior V2 and EUR/localization observations and the runner 403 are preserved."
+    },
+    {
+      "id": "calculator-code-r8",
+      "url": "https://github.com/karagemop466-tech/GOLD4/blob/a832eed3a95e7f7e11b5a5bda2daf3228efa7c6d/assets/app.js",
+      "title": "Historical primary calculator source (pinned project revision)",
+      "review_date_utc": "2026-10-24",
+      "chunks_reviewed": [],
+      "method": "Local git source read and Node VM execution, not a remote retailer read. The linked revision predates this repair.",
+      "quotes": [
+        "var valid = isFinite(w) && w > 0 && isFinite(spot) && spot > 0 && FINENESS[k];"
+      ],
+      "observation": "Synthetic finite weight 1e308 passed input checks but overflowed the derived gold value, displaying infinity and a false zero multiple. The repair validates entire numeric inputs and every derived value; 10 synthetic runtime tests cover overflow, underflow, malformed data, unsupported karats and optional price. Calculator prose now labels nominal/statutory arithmetic as conditional, not physical bounds."
     }
   ],
   "findings": [
     {
       "id": "R8-SOLID-01",
       "status": "needs review",
-      "row_ids": ["MN-01", "MN-02"],
+      "row_ids": [
+        "MN-01",
+        "MN-02"
+      ],
       "title": "A solid-status flag is not a substitute for explicit solid wording",
-      "detail": "Both canonical rows were marked stated, but their recorded solid_gold_statement reads Pure 24k Gold sold by weight with Certificate of Authenticity. That recorded quotation does not explicitly say solid. The readiness register withholds solid-wording credit rather than inferring it from pure/24K, a certificate, a product name or a boolean. This is an evidence gap, not a finding that the items are plated or hollow. Canonical correction was requested from the active integration owner.",
-      "source_ids": ["mene-knot-r8", "mene-sun-r8", "ftc-jewelry-r8"]
+      "detail": "Both canonical rows had been marked stated, but their recorded solid_gold_statement read Pure 24k Gold sold by weight with Certificate of Authenticity. The quote does not explicitly say solid. Final integration now leaves that field blank, marks explicit wording unverified and preserves the prior record in a dated review block. The readiness register grants no solid-wording credit. This is an evidence gap, not a finding that the items are plated or hollow.",
+      "source_ids": [
+        "mene-knot-r8",
+        "mene-sun-r8",
+        "ftc-jewelry-r8"
+      ]
     },
     {
       "id": "R8-RETURNS-02",
       "status": "needs review",
-      "row_ids": ["MN-01", "MN-02"],
+      "row_ids": [
+        "MN-01",
+        "MN-02"
+      ],
       "title": "Seven days does not establish an unconditional cash-refund right",
       "detail": "The reviewed Menē terms distinguish merchandise credit and original-payment refunds, provide for conditional restocking/assessment fees, and exclude engraved/customized/personalized discretionary returns. The inherited seller exclusions do not enumerate all these clauses. A generic window cannot establish whether independent inspection/testing of a particular configured ring preserves a refund right. No legal eligibility conclusion is made.",
-      "source_ids": ["mene-terms-r8", "mene-returns-r8"]
+      "source_ids": [
+        "mene-terms-r8",
+        "mene-returns-r8"
+      ]
     },
     {
       "id": "R8-WEIGHT-03",
       "status": "needs review",
-      "row_ids": ["MN-01", "MN-02"],
+      "row_ids": [
+        "MN-01",
+        "MN-02"
+      ],
       "title": "Crafted-on-demand weight and final price can vary",
       "detail": "Both reviewed product blocks identify crafted-on-demand items. The terms state that final weight and final price may change. A default display amount must not be promoted to a final selected-size quote or used to back-solve a gram weight. No gram amount was inferred, and no current quote is published by this register.",
-      "source_ids": ["mene-knot-r8", "mene-sun-r8", "mene-terms-r8"]
+      "source_ids": [
+        "mene-knot-r8",
+        "mene-sun-r8",
+        "mene-terms-r8"
+      ]
     },
     {
       "id": "R8-XRF-04",
@@ -93,7 +176,34 @@
       "row_ids": [],
       "title": "XRF alone is not a solid-construction guarantee",
       "detail": "GIA documents an electroformed article whose surface XRF results did not reveal the underlying construction. The project therefore recommends independent professional verification using appropriate complementary methods, not a promise that a stamp or one XRF reading proves the entire ring. No physical test has been performed for these candidates.",
-      "source_ids": ["gia-electroformed-r8", "ftc-jewelry-r8"]
+      "source_ids": [
+        "gia-electroformed-r8",
+        "ftc-jewelry-r8"
+      ]
+    },
+    {
+      "id": "R8-CALC-05",
+      "status": "done (code repair)",
+      "row_ids": [],
+      "title": "Calculator overflow and unsupported physical-value bounds corrected",
+      "detail": "Finite inputs could overflow into infinity or a false zero multiple; malformed/fractional inputs could be partially parsed. Numeric and derived-result guards now fail closed, with 10 runtime regression tests. The primary calculator no longer claims a stamped ring’s true value lies between nominal and statutory figures: those are conditional illustrations, not measured bounds. Tests use hypothetical arithmetic fixtures, never retailer offers.",
+      "source_ids": [
+        "calculator-code-r8",
+        "ftc-jewelry-r8",
+        "gia-electroformed-r8"
+      ]
+    },
+    {
+      "id": "R8-BE05-06",
+      "status": "done (provenance repair)",
+      "row_ids": [
+        "BE-05"
+      ],
+      "title": "Last snapshot-only setting amount corroborated directly in explicit USD",
+      "detail": "Official product chunk 4 rendered USD and $1,190 (Setting Only), with BE1D3939-14KY and 14K Yellow Gold. The amount is unchanged; provenance is upgraded from V2 to V1 and the first-hand capture is dated 23 October 2026. Prior snapshot/EUR observations are preserved. Size and centre diamond are unselected; no exact configured-ring quote or gram weight is inferred.",
+      "source_ids": [
+        "be-freesia-r8"
+      ]
     }
   ]
 }
