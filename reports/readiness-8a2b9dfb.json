@@ -7,7 +7,7 @@
     "data/rings.json": "2827dc2566aec872545b31dc64aea9b0157bbe6353a8b654b19495187f74eaec",
     "data/sellers.json": "a8a2ec1cfb6f6d50e42dc7a076848aaf22ee36da3b3c632e6f86ef04635d03ec",
     "data/sources.json": "c5aabcee368b42aaba537a9db700c2687420ce621e558a5bc0facd8d430e7925",
-    "scripts/session_8a2b9dfb/source_observations.json": "c80bbafab7d44de2c26fa176530f954173e5cfcdf94ea6c57187c0a5905ce34f"
+    "scripts/session_8a2b9dfb/source_observations.json": "f75a67260f25f735ea8d2b5195f2d23167507e483cc52c8b3fc17ff6c9818942"
   },
   "stats": {
     "candidates": 64,
@@ -33,7 +33,7 @@
     "schema_version": "1.0.0",
     "review_date_utc": "2026-10-23",
     "session": "arena/8a2b9dfb-gold4",
-    "method": "Seven official web pages were opened with the remote page-reader tool on 2026-10-23 UTC; only the listed chunks were reviewed. Pinned repository code was read locally; the calculator was executed with synthetic Node VM inputs, while the dashboard generator was inspected and regenerated. These are not complete product verification, selected-configuration checkout quotes, a reputation investigation or physical tests.",
+    "method": "Seven official web pages were opened with the remote page-reader tool on 2026-10-23 UTC; only the listed chunks were reviewed. Pinned repository code was read locally; the calculator was executed with synthetic Node VM inputs, while the dashboard generator was inspected and regenerated. These are not complete product verification, selected-configuration checkout quotes, a reputation investigation or physical tests. Additional LII statute text was read on 2026-10-24 UTC and labelled separately; both fineness tests are concurrent, not alternatives.",
     "sources": [
       {
         "id": "ftc-jewelry-r8",
@@ -164,6 +164,21 @@
         "method": "Local source inspection; not an external retailer read.",
         "quotes": [],
         "observation": "Generator confused the percentage increase in fine-gold content with the fraction of the price premium attributable to gold, assigned the rest to labour/margin without itemised costs, treated missing return exclusions as permission and made seller-wide solid-wording claims from booleans. These UI inferences are removed; the recorded source facts stay historical."
+      },
+      {
+        "id": "statute-295-r8",
+        "url": "https://www.law.cornell.edu/uscode/text/15/295",
+        "title": "15 U.S.C. § 295 text at Cornell LII (academic legal publisher)",
+        "review_date_utc": "2026-10-24",
+        "chunks_reviewed": [
+          0
+        ],
+        "quotes": [
+          "three one-thousandth parts",
+          "seven one-thousandth parts",
+          "concurrent and not alternative"
+        ],
+        "observation": "Additional statute-text read on 24 October, not recast as a 23-October retailer read. The solder-free portion test is 0.003; a further entire-metal test including solder is 0.007 for other covered articles, 0.003 for watchcases/flatware. The tests are concurrent, not alternatives. The calculator’s 0.007 illustration is not a compliance test or a measured purity bound. Cornell LII is an academic legal publisher, not a retailer or a government publisher."
       }
     ],
     "findings": [
@@ -227,12 +242,13 @@
         "status": "done (code repair)",
         "row_ids": [],
         "title": "Calculator numeric boundaries and unsupported analysis inferences corrected",
-        "detail": "Finite inputs could overflow into infinity or a false zero multiple; malformed/fractional inputs could be partially parsed. Numeric and derived-result guards now fail closed, with 10 runtime regression tests. The primary calculator no longer claims a stamped ring’s true value lies between nominal and statutory figures: those are conditional illustrations, not measured bounds. Tests use hypothetical arithmetic fixtures, never retailer offers. Integration also corrects percentage-increase versus premium-allocation language, removes unitemised labour/margin attribution and an unsupported normal-brand-price judgement, and labels the VR-01 size mismatch. Seller-wide solid wording is no longer inferred from booleans, nor return permission from a missing exclusion.",
+        "detail": "Finite inputs could overflow into infinity or a false zero multiple; malformed/fractional inputs could be partially parsed. Numeric and derived-result guards now fail closed, with 10 runtime regression tests. The primary calculator no longer claims a stamped ring’s true value lies between nominal and statutory figures: those are conditional illustrations, not measured bounds. Tests use hypothetical arithmetic fixtures, never retailer offers. Integration also corrects percentage-increase versus premium-allocation language, removes unitemised labour/margin attribution and an unsupported normal-brand-price judgement, and labels the VR-01 size mismatch. Seller-wide solid wording is no longer inferred from booleans, nor return permission from a missing exclusion. A separate 24-October statute-text check clarifies the concurrent 0.003 solder-free and additional whole-metal tests; the 0.007 illustration alone is not legal compliance.",
         "source_ids": [
           "calculator-code-r8",
           "ftc-jewelry-r8",
           "gia-electroformed-r8",
-          "analysis-code-r8"
+          "analysis-code-r8",
+          "statute-295-r8"
         ]
       },
       {

@@ -13,7 +13,7 @@ import html
 import json
 import pathlib
 import shutil
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -176,7 +176,7 @@ LAYOUT = """<!doctype html>
   <strong>NO HALLUCINATIONS — dated research, not live offers.</strong>
   Historical captures below are not current verified quotes or a guarantee of purity.
   Unconfirmed current prices are blank in the <a href="{root}pages/session-review.html">current-session review / Flagged for Review</a>.
-  A new World Gold Council panel read ($3,995.47/oz, 23:43Z) differs from the stored historical benchmark ($3,996.31/oz); both are published — see Pass 20.
+  Pass 20 recorded a World Gold Council panel read ($3,995.47/oz, 23 October 2026) differing from the stored benchmark ($3,996.31/oz); see <a href="{root}pages/pass20.html">that pass's evidence</a>. Neither is a live quote.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
   Candidate inclusion is not purchase approval: see the <a href="{root}pages/readiness.html">per-ring readiness gaps and new findings</a>.
   Re-check official sources and request independent professional testing before purchase; one surface XRF reading may not establish solid construction.
@@ -288,6 +288,28 @@ def load(name: str) -> dict:
         return json.load(fh)
 
 
+def price_capture_label(rows: list[dict]) -> str:
+    """Display only explicit dates of populated prices, never a build/global date."""
+    dates = []
+    for row in rows:
+        if row.get("price_usd") is None:
+            continue
+        try:
+            dates.append(date.fromisoformat(row.get("price_captured_utc")))
+        except (TypeError, ValueError):
+            return "unverified (see per-row dates)"
+    if not dates:
+        return "unverified (see per-row dates)"
+    first, last = min(dates), max(dates)
+    def label(value):
+        return f"{value.day} {value:%B %Y}"
+    if first == last:
+        return label(first)
+    if (first.year, first.month) == (last.year, last.month):
+        return f"{first.day}–{last.day} {last:%B %Y}"
+    return label(first) + " – " + label(last)
+
+
 def main() -> None:
     global C, SELLERS_BY_ID
     d = load("derived.json")
@@ -304,7 +326,7 @@ def main() -> None:
     SELLERS_BY_ID = {s["id"]: s for s in sellers_doc["sellers"]}
     st = d["stats"]
     C = {
-        "captured": "22 October 2026",
+        "captured": price_capture_label(rings["rows"]),
         "spot_oz": d["spot"]["value_usd_per_oz"],
         "spot_g": d["spot"]["usd_per_gram"],
         "spot_date": d["spot"]["price_date"],
@@ -418,12 +440,13 @@ def main() -> None:
         fresh_strip = ""
 
     index_body = f"""
+{no_hallucination_block()}
 <section class="hero">
-  <span class="eyebrow">● dated research dataset · prices captured {C['captured']} · source URLs re-opened live {esc((health_doc or {}).get('evidence_checked_utc', reverif))}</span>
-  <h1>Solid-gold engagement rings, with every number traceable to the seller's own page.</h1>
+  <span class="eyebrow">● dated research dataset · prices captured {C['captured']} · stored source-check evidence {esc((health_doc or {}).get('evidence_checked_utc', reverif))}</span>
+  <h1>Gold engagement-ring candidates, with sourced observations and explicit gaps.</h1>
   <p class="lede">A dated candidate dataset (not a purchase-approved shortlist): {st['total_rows']} rings from {len(st['by_retailer'])} retailers, {st['rows_with_verified_price']} prices read
-  from the retailer's page on {C['captured']}, {st['rows_with_published_weight']} published gram weights, and the gold-value arithmetic that follows from them.
-  The source URLs themselves were last re-opened live on {esc((health_doc or {}).get('evidence_checked_utc', reverif))}.
+  from the retailer's page during {C['captured']}, {st['rows_with_published_weight']} published gram weights, and the gold-value arithmetic that follows from them.
+  The latest inspected full-sweep evidence stored in this build is dated {esc((health_doc or {}).get('evidence_checked_utc', reverif))}; later uninspected runs are not substituted into these records.
   Historical source claims are preserved, not independently re-certified by this session. See Current review for blank unconfirmed current quotes and the Flagged page for known issues.</p>
   <div class="pill-row">
     {badge('no hallucinated values', 'bad')}
@@ -433,7 +456,6 @@ def main() -> None:
     {badge('full re-verification pass ' + esc(reverif), 'ok')}
   </div>
 </section>
-{no_hallucination_block()}
 {kpis}
 {fresh_strip}
 
@@ -448,7 +470,7 @@ def main() -> None:
   <div class="grid two">
     <div class="card">
       <h3>Only {n_weight} of {n_rows} rows can be priced against their gold at all</h3>
-      <p>Four Allurez settings, six Sarraf bands/solitaires, four Ross-Simons bands, two VRAI settings and one Anjolee ring publish a gram weight ({n_weight} rows total; Sarraf plain bands set a 1.33×–1.50× melt floor, while AN-01/SR-05/SR-06 include centre diamonds).
+      <p>Four Allurez settings, six Sarraf bands/solitaires, four Ross-Simons bands, two VRAI settings and one Anjolee ring publish a gram weight ({n_weight} rows total; AN-01/SR-05/SR-06 include centre diamonds, so their multiples are not setting-only markups).
       Blue Nile, Brilliant Earth, Catbird and Mejuri publish prices without gram weights, so their gold content stays <em>blank</em> — not guessed.</p>
       <p class="small">Price ÷ gold-value multiple across rows with both a price and a published weight: {num(min(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}× to {num(max(r['price_to_gold_multiple'] for r in rows if r['price_to_gold_multiple']), 2)}×.
       Compare Ross-Simons 18K 0.7 g band (RS-02, 0.525 g pure Au) vs 14K 1.7 g band (RS-01, 0.992 g pure Au): higher karat with lower gram weight yields 47% less fine gold. Also see <a href="dashboard.html"><strong>Assay Lab+ →</strong></a> and <a href="categories/calculator.html"><strong>Stone-Deduction Calculator →</strong></a></p>
@@ -724,12 +746,12 @@ def main() -> None:
       </div>
       <div class="callout warn" style="margin-top:16px">
         <h4>Read the tolerance</h4>
-        <p>For a compliant marked article, <a href="https://www.law.cornell.edu/uscode/text/15/295">15 U.S.C. § 295</a> provides a whole-article fineness tolerance of 0.007. The floor illustration applies that tolerance to the assumed karat on this project's karat-divided-by-24 basis. It does <strong>not</strong> establish any measured lower or upper bound for an unverified ring. A false stamp or non-gold components can invalidate the assumptions entirely.</p>
+        <p><a href="https://www.law.cornell.edu/uscode/text/15/295">15 U.S.C. § 295</a> sets a 0.003 test for a portion excluding solder, plus an entire-metal test including solder of 0.007 for other covered articles (0.003 for watchcases/flatware). These are concurrent, not alternatives. This calculator uses only the 0.007 whole-metal illustration for the assumed ring; it is not a compliance test and does not replace the other requirement. It does <strong>not</strong> establish any measured lower or upper bound for an unverified ring. A false stamp or non-gold components can invalidate the assumptions entirely.</p>
         <p><a href="https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet">GIA's electroformed-bracelet case</a> shows why one surface XRF result need not prove solid construction. Preserve return rights before any potentially altering test.</p>
       </div>
       <div class="callout info">
         <h4>What this is not</h4>
-        <p>Not an appraisal, not a resale offer, and not proof of purity. A jeweller buying gold will apply a discount to melt value; a retailer adds labour, stone and brand cost on top of it.</p>
+        <p>Not an appraisal, not a resale offer, and not proof of purity. Actual buyback offers, fees and retailer costs are not established by this arithmetic.</p>
       </div>
     </div>
   </div>
