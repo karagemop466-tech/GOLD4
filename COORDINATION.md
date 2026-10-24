@@ -73,6 +73,14 @@ lists the flag with the Ross-Simons source link and the count reads **250 flag i
 nine gate invocations were re-run after the rebuild and pass. Recorded here rather than quietly republished,
 because "the page did not show the finding" is itself a finding.
 
+**Close-out PR merged.** PR [#54](https://github.com/karagemop466-tech/GOLD4/pull/54) — the correction above plus a
+small wording fix on the dashboard (the 20:23:21Z sweep line now reads "31 registered sources listed at that time
+(32 today)") — **merged 2026-10-23T23:58:14Z**, merge commit `b81f4b1` (`b81f4b13f2871ebdad3ccfd309edbabc43ec9c08`).
+Push-to-main deploy run [40042563523](https://github.com/karagemop466-tech/GOLD4/actions/runs/40042563523)
+**success**; `pages/builds/latest` reports `status=built`, `commit=b81f4b1…`, `error=none`. **Live verification after
+that deploy:** the dashboard now prints **"250 flags published"** and the Pass 20 page serves every reading and
+finding. All nine gate invocations passed on the merged tree before the merge, and again locally after the rebuild.
+
 **Not claimed.** No runner sweep happened this pass. No XRF or assay test exists for any ring. No seller's reputation was verified. No price on this site is a live quote.
 
 **Network reality of this sandbox (stated plainly, as the brief requires):** the shell here reaches only GitHub hosts — `curl https://karagemop466-tech.github.io/...` fails at TLS and retailer hosts are unreachable from bash. Two independent read paths are used instead and named on every finding: (a) a **GitHub Actions runner** with open internet for the all-URL sweep, and (b) this session's own **browser-rendered page reader** for hand reads of the specific pages quoted below. No number in this pass is written from memory.
