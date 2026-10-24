@@ -1,6 +1,6 @@
 # Requirement-readiness review — session 8a2b9dfb
 
-**Official-source reads:** 2026-10-23 UTC. **Integration/testing:** 2026-10-24 UTC. **Branch:** `arena/8a2b9dfb-gold4`.
+**Product/FTC/GIA source reads:** 2026-10-23 UTC. **Additional Cornell LII statute-text read:** 2026-10-24 UTC (academic legal publisher). **Integration/testing:** 2026-10-24 UTC. **Branch:** `arena/8a2b9dfb-gold4`.
 
 ## No hallucinations: what this review does and does not establish
 
@@ -15,7 +15,7 @@ This is an evidence-completeness review and final integration of the existing ca
 
 ## Official sources actually opened
 
-The remote reader succeeded on these official pages on **23 October**, before the post-midnight integration. Only the listed chunks were reviewed. Exact excerpts and limits are in [`source_observations.json`](../scripts/session_8a2b9dfb/source_observations.json).
+The remote reader succeeded on the product/FTC/GIA pages on **23 October**, before the post-midnight integration; the separately labelled LII statute read is **24 October**. Only the listed chunks were reviewed. Exact excerpts and limits are in [`source_observations.json`](../scripts/session_8a2b9dfb/source_observations.json).
 
 | Official source | Reviewed chunks | Supports / limits |
 |---|---|---|
@@ -26,6 +26,8 @@ The remote reader succeeded on these official pages on **23 October**, before th
 | [Menē Terms of Service / Purchase](https://mene.com/terms-of-service) | 0–3 of 7 | Effective date Sep 2, 2026; weight/final-price variability; conditional refund/fees and customized/engraved discretionary-return exclusion. Chunks 4–6 not reviewed. Crafted-on-demand alone is NOT treated as a return exclusion. |
 | [GIA electroformed-bracelet case](https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet) | 0 | Surface XRF did not establish solid construction; complementary professional tests may be needed. No candidate was tested. |
 | [Brilliant Earth Freesia / BE-05](https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/) | 0, 2, 3, 4, 5 of 8 | Chunk 4 explicitly shows USD, $1,190 (Setting Only), BE1D3939-14KY and 14K Yellow Gold. Size/centre diamond unselected; no grams. Chunks 1, 6, 7 not reviewed. |
+
+| [15 U.S.C. § 295 at Cornell LII](https://www.law.cornell.edu/uscode/text/15/295) | 0; **24 October UTC** | Academic legal publisher, not a government/retailer page. Solder-free 0.003 and additional entire-metal tests are concurrent, not alternatives; 0.007 for other covered articles, 0.003 for watchcases/flatware. The calculator illustration is not a compliance test. |
 
 A [general GIA chemical-analysis article](https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis) was also opened at chunk 0, but is not used as evidence for solid-gold authentication. The bracelet case is the directly relevant warning. The pinned [historical calculator source](https://github.com/karagemop466-tech/GOLD4/blob/a832eed3a95e7f7e11b5a5bda2daf3228efa7c6d/assets/app.js) was read locally and executed with synthetic Node VM inputs; that is code inspection, not a retailer observation. WGC/source-health evidence is inherited and explicitly attributed, not a fresh read by this session.
 
@@ -70,7 +72,7 @@ Release/PR/deployment evidence is recorded in the appended [coordination entry](
 
 PR [#57](https://github.com/karagemop466-tech/GOLD4/pull/57) merged 2026-10-24T00:22:01Z as `90cb0efc9d2181f5f0a344a0b3dd3b57b951016c`. Production [run 40044621776](https://github.com/karagemop466-tech/GOLD4/actions/runs/40044621776) succeeded with all nine gates and Pages deploy; Pages API reported `built` on that commit, no error. Live dashboard, Readiness and calculator were fetched and matched the new findings, 251 canonical flags, blank exact quotes and repaired calculator labels/default arithmetic. The separate successful read-only [source run 40044322397](https://github.com/karagemop466-tech/GOLD4/actions/runs/40044322397) is **not** used as inspected per-URL evidence.
 
-Live review caught an inherited single-day capture label and stale hardcoded Sarraf multiple range. The close-out derives the display range from populated prices' actual explicit dates (**22–23 October 2026**), never the build date; missing/invalid dates yield unverified, not a fallback date. It removes the obsolete range and universal solid-gold hero, and places the full front-page policy before the candidate headline. A new adversarial formatting regression brings readiness tests to 22. No product or benchmark data changes. Corrective PR/deployment state is recorded only after actual confirmation in the board/PR thread.
+Live review caught an inherited single-day capture label and stale hardcoded Sarraf multiple range. The close-out derives the display range from populated prices' actual explicit dates (**22–23 October 2026**), never the build date; missing/invalid dates yield unverified, not a fallback date. It removes the obsolete range and universal solid-gold hero, and places the full front-page policy before the candidate headline. A new adversarial formatting regression brings readiness tests to 22. A separate 24-October read of the LII statute text also clarifies that the solder-free 0.003 and additional entire-metal requirements are concurrent, not alternatives; the 0.007 illustration alone does not test compliance. This new read is dated separately from the 23-October retailer evidence. No product or benchmark data changes. Corrective PR/deployment state is recorded only after actual confirmation in the board/PR thread.
 
 ## Remaining boundaries
 

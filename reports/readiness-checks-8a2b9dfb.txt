@@ -1,12 +1,12 @@
 Final combined-tree Pages assurance — session 8a2b9dfb
-Started UTC: 2026-10-24T00:26:50.432629+00:00
+Started UTC: 2026-10-24T00:30:35.857153+00:00
 Scope: current working-tree code/data/artifacts; publication revision is recorded in COORDINATION.md.
 Nine gates / twelve commands. No new retailer reads, physical tests or purchase approvals.
 Automated passes detect defined failures; they cannot prove absence of all hallucinations.
 
 ===== 1/12: python3 scripts/audit.py =====
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-10-24T00:26:50+00:00
+run_utc: 2026-10-24T00:30:36+00:00
 dataset rows: 64 | sellers: 10 | sources: 32
 spot benchmark: $3,996.31/oz (22 October, 2026) = $128.4844/g
 
@@ -95,7 +95,7 @@ EXIT CODE: 0
 ===== 4/12: python3 scripts/verify_a0be79d4.py =====
 === GOLD4 MULTI-PASS SECURITY & ANTI-HALLUCINATION AUDIT (`verify_a0be79d4.py`) ===
 HTML pages scanned      : 40
-Hyperlinks & assets     : 2654 verified (0 dead/unsafe URIs)
+Hyperlinks & assets     : 2656 verified (0 dead/unsafe URIs)
 Rendered table rows     : 44 verified (100% official HTTPS + dated)
 Hard failures           : 0
 FLAG NOTE               : By-design blank fields preserved strictly NULL (`UNVERIFIED`): 15 ring weights + 2 conflicting Sarraf karats (`F1625`, `121987-.72P`) + 1 disqualified vermeil control (`G4-RED-01`).
@@ -157,7 +157,7 @@ test_review_has_exactly_all_rows_and_blank_current_prices (__main__.AssuranceTes
 test_unreachable_never_confirms (__main__.AssuranceTests.test_unreachable_never_confirms) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.004s
+Ran 8 tests in 0.005s
 
 OK
 
@@ -188,7 +188,7 @@ test_weight_needs_provenance_source_and_scope (__main__.ReadinessTests.test_weig
 test_window_and_source_match_do_not_establish_configuration_rights (__main__.ReadinessTests.test_window_and_source_match_do_not_establish_configuration_rights) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 0.197s
+Ran 22 tests in 0.177s
 
 OK
 

@@ -746,7 +746,7 @@ def main() -> None:
       </div>
       <div class="callout warn" style="margin-top:16px">
         <h4>Read the tolerance</h4>
-        <p>For a compliant marked article, <a href="https://www.law.cornell.edu/uscode/text/15/295">15 U.S.C. § 295</a> provides a whole-article fineness tolerance of 0.007. The floor illustration applies that tolerance to the assumed karat on this project's karat-divided-by-24 basis. It does <strong>not</strong> establish any measured lower or upper bound for an unverified ring. A false stamp or non-gold components can invalidate the assumptions entirely.</p>
+        <p><a href="https://www.law.cornell.edu/uscode/text/15/295">15 U.S.C. § 295</a> sets a 0.003 test for a portion excluding solder, plus an entire-metal test including solder of 0.007 for other covered articles (0.003 for watchcases/flatware). These are concurrent, not alternatives. This calculator uses only the 0.007 whole-metal illustration for the assumed ring; it is not a compliance test and does not replace the other requirement. It does <strong>not</strong> establish any measured lower or upper bound for an unverified ring. A false stamp or non-gold components can invalidate the assumptions entirely.</p>
         <p><a href="https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet">GIA's electroformed-bracelet case</a> shows why one surface XRF result need not prove solid construction. Preserve return rights before any potentially altering test.</p>
       </div>
       <div class="callout info">

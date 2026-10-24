@@ -34,7 +34,7 @@ RETAILER_DOMAINS = {
     "mejuri": "mejuri.com", "anjolee": "anjolee.com", "sarraf": "sarraf.com",
     "catbird": "catbirdnyc.com", "mene": "mene.com", "ross-simons": "ross-simons.com",
 }
-REFERENCE_HOSTS = {"consumer.ftc.gov", "www.gia.edu", "mene.com", "www.mene.com", "www.brilliantearth.com", "github.com"}
+REFERENCE_HOSTS = {"consumer.ftc.gov", "www.gia.edu", "mene.com", "www.mene.com", "www.brilliantearth.com", "www.law.cornell.edu", "github.com"}
 UNSAFE_URL = re.compile(r'[\x00-\x20\x7f\\<>"`]|%(?:0[0-9a-f]|1[0-9a-f]|7f)', re.I)
 EXPLICIT_SOLID = re.compile(
     r"\bsolid\s+(?:(?:yellow|white|rose|recycled|\d{1,2}\s*k(?:arat)?)\s+){0,3}gold\b", re.I
