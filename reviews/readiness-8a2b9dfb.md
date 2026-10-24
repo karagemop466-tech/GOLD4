@@ -49,7 +49,7 @@ Remaining data gaps publish rather than blocking research release: 47 rows lack 
 - HTTPS exact-host allowlists reject credentials, lookalike hosts, non-standard ports and control/markup injection; output is escaped. No new external runtime dependency or remote API call.
 - Canonical navigation/top policy/Flagged link Readiness. Table rows for ring comparisons, karat/benchmark arithmetic, seller policies, methodology and historical test results now link their relevant official external source or original official-project evidence.
 - The expanded row-citation test first caught **nine** missing source links in Pass 20's historic gate table. Those now link the unchanged original `reviews/pass20/gates.json`; the original results are not relabelled as new tests. The review generator also uses the new capture-date footer and current complementary-testing caveat. Its observations/quotes/review report remain unchanged.
-- **21 readiness tests and 10 calculator runtime tests pass locally.** Pages CI Gate 9 adds both suites plus deterministic freshness. All nine gates / twelve commands passed on the current integration candidate, including 8 existing assurance tests. Three source-health warnings retain the separate runner-403 path for BE-05/06/07; these are not erased by a browser read. The suite is repeated after merging any newer main changes; actual executed output is retained in [`reports/readiness-checks-8a2b9dfb.txt`](../reports/readiness-checks-8a2b9dfb.txt).
+- **22 readiness tests and 10 calculator runtime tests pass locally.** Pages CI Gate 9 adds both suites plus deterministic freshness. All nine gates / twelve commands passed on the current integration candidate, including 8 existing assurance tests. Three source-health warnings retain the separate runner-403 path for BE-05/06/07; these are not erased by a browser read. The suite is repeated after merging any newer main changes; actual executed output is retained in [`reports/readiness-checks-8a2b9dfb.txt`](../reports/readiness-checks-8a2b9dfb.txt).
 
 ```bash
 python3 scripts/compute.py
@@ -65,6 +65,12 @@ python3 scripts/session_8a2b9dfb/run_checks.py  # all twelve CI commands; preser
 Inherited scanner stdout uses phrases such as “ZERO HALLUCINATIONS.” This review does **not** endorse a universal semantic guarantee: the tests only establish their programmed checks. The full log records their exact output, preceded by the limitation. The README's Pass 20 untouched-row typo is corrected from 54 to 53, matching 64 total minus 11 reviewed.
 
 Release/PR/deployment evidence is recorded in the appended [coordination entry](../COORDINATION.md) after it is actually obtained. No pending operation is described as completed.
+
+## Confirmed publication and post-deploy correction
+
+PR [#57](https://github.com/karagemop466-tech/GOLD4/pull/57) merged 2026-10-24T00:22:01Z as `90cb0efc9d2181f5f0a344a0b3dd3b57b951016c`. Production [run 40044621776](https://github.com/karagemop466-tech/GOLD4/actions/runs/40044621776) succeeded with all nine gates and Pages deploy; Pages API reported `built` on that commit, no error. Live dashboard, Readiness and calculator were fetched and matched the new findings, 251 canonical flags, blank exact quotes and repaired calculator labels/default arithmetic. The separate successful read-only [source run 40044322397](https://github.com/karagemop466-tech/GOLD4/actions/runs/40044322397) is **not** used as inspected per-URL evidence.
+
+Live review caught an inherited single-day capture label and stale hardcoded Sarraf multiple range. The close-out derives the display range from populated prices' actual explicit dates (**22–23 October 2026**), never the build date; missing/invalid dates yield unverified, not a fallback date. It removes the obsolete range and universal solid-gold hero, and places the full front-page policy before the candidate headline. A new adversarial formatting regression brings readiness tests to 22. No product or benchmark data changes. Corrective PR/deployment state is recorded only after actual confirmation in the board/PR thread.
 
 ## Remaining boundaries
 

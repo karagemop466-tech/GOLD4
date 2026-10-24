@@ -10,6 +10,9 @@ import tempfile
 import unittest
 
 import readiness as r
+import sys
+sys.path.insert(0, str(r.ROOT / "scripts"))
+import build_site as canonical_site
 
 
 class ProductRows(HTMLParser):
@@ -265,6 +268,25 @@ class ReadinessTests(unittest.TestCase):
         self.assertNotIn("stamped ring lies between", calculator)
         self.assertIn("not</strong> establish any measured lower or upper bound", calculator)
         self.assertIn("hypothetical example", calculator)
+
+
+    def test_capture_label_uses_explicit_populated_price_dates_not_build_date(self):
+        def row(day, amount=100):
+            # Synthetic formatting fixtures, not product-price observations.
+            return {"price_usd": amount, "price_captured_utc": day}
+        label = canonical_site.price_capture_label
+        self.assertEqual(label([row("2026-10-22"), row("2026-10-23")]), "22–23 October 2026")
+        self.assertEqual(label([row("2026-10-22"), row("2099-01-01", None)]), "22 October 2026")
+        self.assertEqual(label([row("2026-10-23"), row("2027-01-01")]), "23 October 2026 – 1 January 2027")
+        for rows in [[], [row(None)], [row("2026-02-30")], [row(True)], [row("2026-10-22"), row(None)]]:
+            self.assertIn("unverified", label(rows))
+        current = label(self.rings["rows"])
+        self.assertIn(current, (r.ROOT / "index.html").read_text())
+        front = (r.ROOT / "index.html").read_text()
+        self.assertLess(front.index('read before using any number'), front.index('class="hero"'))
+        self.assertNotIn("source URLs themselves were last re-opened", front)
+        self.assertNotIn("1.33×–1.50× melt floor", front)
+        self.assertNotIn("Solid-gold engagement rings, with every number", front)
 
 
 if __name__ == "__main__":

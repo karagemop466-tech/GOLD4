@@ -29,7 +29,7 @@ def prime_layout() -> None:
     rings = json.loads((ROOT / "data" / "rings.json").read_text(encoding="utf-8"))
     bs.SELLERS_BY_ID = {s["id"]: s for s in sellers["sellers"]}
     bs.C = {
-        "captured": "22 October 2026",
+        "captured": bs.price_capture_label(rings["rows"]),
         "spot_oz": derived["spot"]["value_usd_per_oz"],
         "spot_g": derived["spot"]["usd_per_gram"],
         "spot_date": derived["spot"]["price_date"],
