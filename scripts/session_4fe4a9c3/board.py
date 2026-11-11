@@ -50,7 +50,7 @@ At claim time `gh pr list` showed 0 open PRs and no branch newer than 24 October
 
 **Pass-number collision, logged before publishing (the board's rule since Pass 18).** This session claimed "Pass 21" on its branch. Session `arena/91415e29-gold4` claimed the same number and reached `main` first (PR #60, 08:01Z), so **their number stands**. `arena/d5947c03-gold4` (PR #65) also uses "Pass 21" and `arena/4dc3210a-gold4` uses "Pass 22". To avoid another collision this session's work carries **no pass number**: it is identified by date and session id. Every file was renamed accordingly (`reviews/reread-4fe4a9c3/**`, `scripts/session_4fe4a9c3/**`, `pages/reread-4fe4a9c3.html`, date-based flags) and every generator and gate was re-run on the combined tree.
 
-**Merge conflict, resolved without discarding anyone's work.** `main` advanced by PRs #60, #61, #63 and #64 while this session worked. The merge conflicted in `data/gold_spot.json`, `data/derived.json`, the generated pages and `reports/audit_latest.txt`. Resolution: every conflicted and generated file was taken from `main` as-is, then this session's evidence was re-applied on top by its scripts and all outputs were regenerated. `91415e29`'s `reviews/pass21/**`, its `pass21_live_crosscheck_2026_11_11` block and README summary, and `91e9aba0`'s `reviews/assurance-91e9aba0/**`, script and board section are all present unchanged.
+**Merge conflict, resolved without discarding anyone's work.** `main` advanced by PRs #60, #61 (`91415e29`), #63, #64 (`91e9aba0`) and #66 (`2fa1c987`) while this session worked. The merge conflicted in `data/gold_spot.json`, `data/derived.json`, the generated pages and `reports/audit_latest.txt`. Resolution: every conflicted and generated file was taken from `main` as-is, then this session's evidence was re-applied on top by its scripts and all outputs were regenerated. `91415e29`'s `reviews/pass21/**`, its `pass21_live_crosscheck_2026_11_11` block and README summary, `91e9aba0`'s `reviews/assurance-91e9aba0/**`, script and board section, and `2fa1c987`'s `scripts/generate_site.py` fix, scanners and reports are all present unchanged. `generate_site.py` was only re-run, not edited; its root pages now show the refreshed benchmark because that fix derives it from the data.
 
 **Branch note (the same documented deviation as every prior session):** Arena pins this session to `arena/4fe4a9c3-gold4`.
 
@@ -112,7 +112,7 @@ At claim time `gh pr list` showed 0 open PRs and no branch newer than 24 October
    - `scripts/build_site.py` (shared): banner sentence, navigation entry, sale and blank price cells, flag labels, coverage card.
    - `scripts/build_session_review.py` (`986df4df`): page titled as the 23 October review; its two regenerated columns labelled as current. Narrative unchanged.
 3. **Stored prices were changed**, which earlier passes avoided. Each change has a logged read that day and the earlier value is kept in `price_history`.
-4. **Open PRs from other live sessions are not touched:** #62 (`a2f26a30`), #65 (`d5947c03`), #66 (`2fa1c987`). #65 makes the same benchmark change as this PR; whichever merges second must re-run `compute.py` on the combined tree.
+4. **Open PRs from other live sessions are not touched:** #62 (`a2f26a30`) and #65 (`d5947c03`). #65 makes the same benchmark change as this PR; whichever merges second must re-run `compute.py` on the combined tree.
 
 ### Publication
 
