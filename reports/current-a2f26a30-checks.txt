@@ -1,9 +1,9 @@
-Started 2026-11-11T08:37:34.758403+00:00
+Started 2026-11-11T08:39:03.631638+00:00
 Automated software checks only; not external factual verification or an assay.
 
 $ python3 scripts/audit.py
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-11-11T08:37:34+00:00
+run_utc: 2026-11-11T08:39:03+00:00
 dataset rows: 64 | sellers: 10 | sources: 32
 spot benchmark: $4,059.49/oz (10 November, 2026) = $130.5156/g
 
@@ -204,7 +204,7 @@ test_weight_needs_provenance_source_and_scope (__main__.ReadinessTests.test_weig
 test_window_and_source_match_do_not_establish_configuration_rights (__main__.ReadinessTests.test_window_and_source_match_do_not_establish_configuration_rights) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 0.215s
+Ran 22 tests in 0.211s
 
 OK
 
@@ -237,17 +237,17 @@ GOLD4 LIVE SOURCE HEALTH CHECK — read-only evidence collection
 ========================================================================
 targets        : 1 (1 row URLs, 0 registered sources)
 allow-listed   : 21 hostnames from data/sources.json
-checked_utc    : 2026-11-11T08:37:36Z
+checked_utc    : 2026-11-11T08:39:05Z
   AL-01                      NO_RESPONSE        None          B  
 ------------------------------------------------------------------------
   NO_RESPONSE            1
-artifact: tmp6hdlrrbb/live_source_check_20261111T083736Z.json
+artifact: tmpoc6f_g5c/live_source_check_20261111T083905Z.json
 RESULT: evidence collected (this is not a pass/fail verdict; review the artifact).
 SYNTHETIC negative CLI fixture: FAIL below is the expected rejection of an unknown ID.
 FAIL: no targets matched (unknown --only ID or empty dataset)
 ..........
 ----------------------------------------------------------------------
-Ran 10 tests in 0.197s
+Ran 10 tests in 0.198s
 
 OK
 
@@ -257,7 +257,7 @@ $ python3 scripts/session_a2f26a30/test_review.py
 Staged 6 public files (no Git metadata, workflows or Python tooling)
 ...............
 ----------------------------------------------------------------------
-Ran 15 tests in 0.089s
+Ran 15 tests in 0.088s
 
 OK
 
@@ -282,10 +282,10 @@ PASS currency evidence: 8 unsupported assertions blank/flagged; remaining popula
 
 exit=0
 
-$ python3 scripts/session_a2f26a30/stage_pages.py /tmp/tmp03bc6odc/site
-Staged 183 public files (no Git metadata, workflows or Python tooling)
+$ python3 scripts/session_a2f26a30/stage_pages.py /tmp/tmpulybj8iw/site
+Staged 184 public files (no Git metadata, workflows or Python tooling)
 
 exit=0
 
 18/18 command invocations passed
-Completed 2026-11-11T08:37:37.238203+00:00
+Completed 2026-11-11T08:39:06.039494+00:00
