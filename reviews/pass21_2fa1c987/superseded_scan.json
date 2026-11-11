@@ -1,0 +1,173 @@
+{
+  "scanner": "scripts/session_2fa1c987/check_superseded.py",
+  "session": "arena/2fa1c987-gold4",
+  "active_benchmark_usd_per_oz": 3996.31,
+  "active_source_date": "22 October, 2026",
+  "superseded": [
+    {
+      "value_usd_per_oz": 4024.36,
+      "price_date_as_shown_on_source": "21 October, 2026",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "status": "superseded",
+      "note": "Earlier capture of the same World Gold Council spot panel on the same day. Superseded during Pass 2 because the live panel had moved by the time it was re-read. Kept for audit, not used in any calculation."
+    },
+    {
+      "value_usd_per_oz": 4028.53,
+      "price_date_as_shown_on_source": "21 October, 2026",
+      "retrieved_utc": "2026-10-22",
+      "verification": "V1_direct_page_fetch",
+      "status": "superseded",
+      "note": "Benchmark used by Passes 2-11 (2026-10-22). Superseded in Pass 12 when the live WGC panel showed a newer data date (22 October, 2026) at USD 4,024.45/oz. Kept for audit; no current calculation uses it."
+    },
+    {
+      "id": "wgc-gold-spot-usd",
+      "name": "Gold spot price, USD per troy ounce",
+      "value_usd_per_oz": 4024.45,
+      "quote_currency": "USD",
+      "quote_unit": "troy ounce",
+      "price_date_as_shown_on_source": "22 October, 2026",
+      "data_as_of_shown_on_source": "Data as of 22 October, 2026",
+      "retrieved_utc": "2026-10-23",
+      "publisher": "World Gold Council (Goldhub)",
+      "publisher_type": "industry benchmark body (market data supplied by ICE Data Services)",
+      "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+      "what_the_source_page_shows": "Gold spot price panel: 'USD /oz 4,024.45' on a page dated '22 October, 2026', with the chart footer 'Data as of 22 October, 2026' and 'Market Data: Provided by ICE Data Services'.",
+      "verification": "V1_direct_page_fetch",
+      "notes": [
+        "Pass 12 (2026-10-23): the live World Gold Council panel was re-read and now displays USD 4,024.45/oz with the date line 'Data as of 22 October, 2026'. This reading replaces the 21-October reading as the benchmark, so every derived value on the site is computed from a benchmark whose own source date moved forward by one day.",
+        "Difference from the previous benchmark (USD 4,028.53/oz): -0.10%. The change comes from the market data date advancing, not from any change in method.",
+        "Spot is a live market quote; the figure recorded here is a dated reading, not a claim about today's price. Re-read the source before relying on it.",
+        "The World Gold Council page states that the LBMA Gold Price is the key benchmark used throughout the gold market and that historical LBMA auction data was removed from the WGC site at the request of ICE Benchmark Administration (licensing)."
+      ],
+      "status": "superseded",
+      "note": "Benchmark used from Pass 12 until Pass 18 on 2026-10-23: the WGC panel read USD 4,024.45/oz at 10:02Z and again during the 20:19Z runner pass the panel itself printed no number to a plain GET. Superseded in Pass 18 by the 20:23Z browser-rendered read of USD 3,996.31/oz. Kept for audit; no current calculation uses it."
+    }
+  ],
+  "files_scanned": [
+    "dashboard.html",
+    "solitaires.html",
+    "three-stone-halo.html",
+    "bands.html",
+    "checklist.html",
+    "standards.html",
+    "audit.html",
+    "flagged.html",
+    "sellers.html",
+    "calculator.html",
+    "app.js",
+    "categories/accent-rings.html",
+    "categories/calculator.html",
+    "categories/checklist-standards.html",
+    "categories/gold-bands.html",
+    "categories/solitaires.html",
+    "categories/verification-audit.html",
+    "docs/calculator.html",
+    "docs/checklist.html",
+    "docs/flagged.html",
+    "docs/index.html",
+    "docs/rings.html",
+    "docs/sellers.html",
+    "docs/sources.html",
+    "docs/verification.html",
+    "assets/app.js",
+    "assets/gold4-app.js",
+    "assets/gold4-data.js",
+    "static/gold4.js",
+    "README.md",
+    "AUDIT.md",
+    "VERIFICATION.md"
+  ],
+  "findings": [
+    {
+      "file": "dashboard.html",
+      "line": 16,
+      "superseded_value_usd_per_oz": 4024.45,
+      "superseded_source_date": "22 October, 2026",
+      "active_benchmark_usd_per_oz": 3996.31,
+      "official_link_in_context": false,
+      "context": " CROSS-CHECK QUOTES \u00b7 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct) Kitco: $4,024.60/oz ( $129.39/g ) [Source \u2197] "
+    },
+    {
+      "file": "solitaires.html",
+      "line": 16,
+      "superseded_value_usd_per_oz": 4024.45,
+      "superseded_source_date": "22 October, 2026",
+      "active_benchmark_usd_per_oz": 3996.31,
+      "official_link_in_context": false,
+      "context": " CROSS-CHECK QUOTES \u00b7 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct) Kitco: $4,024.60/oz ( $129.39/g ) [Source \u2197] "
+    },
+    {
+      "file": "three-stone-halo.html",
+      "line": 16,
+      "superseded_value_usd_per_oz": 4024.45,
+      "superseded_source_date": "22 October, 2026",
+      "active_benchmark_usd_per_oz": 3996.31,
+      "official_link_in_context": false,
+      "context": " CROSS-CHECK QUOTES \u00b7 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct) Kitco: $4,024.60/oz ( $129.39/g ) [Source \u2197] "
+    },
+    {
+      "file": "bands.html",
+      "line": 16,
+      "superseded_value_usd_per_oz": 4024.45,
+      "superseded_source_date": "22 October, 2026",
+      "active_benchmark_usd_per_oz": 3996.31,
+      "official_link_in_context": false,
+      "context": " CROSS-CHECK QUOTES \u00b7 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct) Kitco: $4,024.60/oz ( $129.39/g ) [Source \u2197] "
+    },
+    {
+      "file": "checklist.html",
+      "line": 16,
+      "superseded_value_usd_per_oz": 4024.45,
+      "superseded_source_date": "22 October, 2026",
+      "active_benchmark_usd_per_oz": 3996.31,
+      "official_link_in_context": false,
+      "context": " CROSS-CHECK QUOTES \u00b7 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct) Kitco: $4,024.60/oz ( $129.39/g ) [Source \u2197] "
+    },
+    {
+      "file": "standards.html",
+      "line": 16,
+      "superseded_value_usd_per_oz": 4024.45,
+      "superseded_source_date": "22 October, 2026",
+      "active_benchmark_usd_per_oz": 3996.31,
+      "official_link_in_context": false,
+      "context": " CROSS-CHECK QUOTES \u00b7 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct) Kitco: $4,024.60/oz ( $129.39/g ) [Source \u2197] "
+    },
+    {
+      "file": "audit.html",
+      "line": 16,
+      "superseded_value_usd_per_oz": 4024.45,
+      "superseded_source_date": "22 October, 2026",
+      "active_benchmark_usd_per_oz": 3996.31,
+      "official_link_in_context": false,
+      "context": " CROSS-CHECK QUOTES \u00b7 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct) Kitco: $4,024.60/oz ( $129.39/g ) [Source \u2197] "
+    },
+    {
+      "file": "categories/calculator.html",
+      "line": 62,
+      "superseded_value_usd_per_oz": 4024.36,
+      "superseded_source_date": "21 October, 2026",
+      "active_benchmark_usd_per_oz": 3996.31,
+      "official_link_in_context": false,
+      "context": " JM Bullion Bid (2026-10-22): $4,025.26 / oz t World Gold Council (2026-10-21): $4,024.36 / oz t Custom Spot Input ($/oz t) "
+    },
+    {
+      "file": "README.md",
+      "line": 137,
+      "superseded_value_usd_per_oz": 4028.53,
+      "superseded_source_date": "21 October, 2026",
+      "active_benchmark_usd_per_oz": 3996.31,
+      "official_link_in_context": false,
+      "context": "- All four returns pages re-read in full; every quoted clause (windows, RMA, the $150 and $300 missing-document fees, the free-resize rules, VRAI's $300/$50 recycling fees, Mejuri's SCS-certificate rule) matched. - The World Gold Council panel was read a **third** time and still showed **USD 4,028.5"
+    },
+    {
+      "file": "README.md",
+      "line": 157,
+      "superseded_value_usd_per_oz": 4028.53,
+      "superseded_source_date": "21 October, 2026",
+      "active_benchmark_usd_per_oz": 3996.31,
+      "official_link_in_context": false,
+      "context": "- **Two new Blue Nile contradictions:** BN-22's copy says \"platinum solitaire setting\" against a 14K Yellow Gold spec (`COPY_INCONSISTENT_METAL`), and BN-20 showed four sale prices ($772/$724/$730/$728) for one SKU across four official pages (`SALE_PRICE_VARIES_ACROSS_PAGES`). - **Benchmark cross-ch"
+    }
+  ]
+}
