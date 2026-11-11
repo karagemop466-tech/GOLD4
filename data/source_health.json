@@ -1,7 +1,7 @@
 {
  "schema_version": "1.0.0",
  "dataset": "GOLD4 live source health & price reconciliation",
- "generated_utc": "2026-11-11T08:11:40Z",
+ "generated_utc": "2026-11-11T08:19:30Z",
  "evidence_artifact": "reports/live_source_check_latest.json",
  "evidence_checked_utc": "2026-11-11T08:03:09Z",
  "evidence_method": "read-only HTTPS GET of each URL, HTML stripped to text, raw price/weight snippets retained with context",

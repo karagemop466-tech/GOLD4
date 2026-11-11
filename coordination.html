@@ -118,7 +118,7 @@ session to `arena/4fe4a9c3-gold4`. No other session was active, so this session 
 2. Verdicts: UNCHANGED 27, SALE 25, CHANGED 4, SOURCE_DEAD 5, SOLD_OUT 2, NOT_REREAD 1.
 3. Invariants checked after the apply: no weight and no URL changed; only price, date, basis, flag and history fields were touched; the script is idempotent (second run byte-identical).
 4. Every derived gold value recomputed at $130.515634/g. Gate 1 caught a rounding error in this session&#x27;s first write of that constant (5 decimals instead of 6); it was fixed before the site was built.
-5. Final tree: G1 PASS, G2 PASS, G3 PASS, G4 PASS, G5 PASS, G6a PASS, G6b PASS, G7 PASS, G8 PASS, G9a PASS, G9b PASS, G9c PASS (`reviews/pass21/gates.json`). Gate 7 passes with 8 warnings, all expected: BE-01/02/03/05/06/07 and VR-01 carry a price dated that day from the hand read while the runner was refused, and the evidence-age warning is gone.
+5. Final tree: G1 PASS, G2 PASS, G3 PASS, G4 PASS, G5 PASS, G6a PASS, G6b PASS, G7 PASS, G8 PASS, G9a PASS, G9b PASS, G9c PASS (`reviews/pass21/gates.json`). Gate 7 passes with 8 warnings, all expected: AN-01, BE-01, BE-02, BE-03, BE-05, BE-06, BE-07 and VR-01 carry a price dated that day from the hand read while the runner could not read the page. The evidence-age warning is gone. An independent self-check (`scripts/pass21_selfcheck.py`, output in `reviews/pass21/selfcheck.txt`) confirms every price dated that day is printed in that day&#x27;s raw evidence.
 
 ### Irregularities found (all published on the Pass 21 and Flagged pages with source links)
 
