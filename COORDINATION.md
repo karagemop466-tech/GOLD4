@@ -1208,7 +1208,7 @@ of every derived value with its own arithmetic implementation (not `scripts/comp
 | 58 | **Independent live re-read of the seller-policy layer** — open each retailer's own return/resize/warranty/contact page today; compare with the stored `data/sellers.json` facts; record match / differs / unreachable with the exact wording read. Apply **nothing** to shared data. | **done** — 10/10 sellers + Sarraf's Lifetime Guarantee page read; 26 confirmed, 4 differ/understated, 1 seller-page defect (A21-03…A21-08) | `arena/91e9aba0` | `reviews/assurance-91e9aba0/**` (new, this session only) |
 | 59 | **Independent live re-read of the legal/standards sources** — confirm each tier-A/B citation still says what the site claims it says, and that the cited URL resolves today; flag any that do not. | **done, narrower than planned and said so** — FTC gold-jewellery guidance + 15 U.S.C. § 295 re-read and confirmed; the remaining seven tier-A and five tier-B sources were **not** re-fetched and keep their October dates | `arena/91e9aba0` | `reviews/assurance-91e9aba0/**` |
 | 60 | **Independent derivation audit** — re-derive every weighted row's gold grams, gold value and price÷gold multiple with this session's own `Decimal` code from the *stored* inputs, and report every mismatch against `data/derived.json`; no stored value changed. | **done** — 644 comparisons, 0 mismatches, 1 rounding note (A21-02) | `arena/91e9aba0` | `scripts/session_91e9aba0/**` (new), `reviews/assurance-91e9aba0/**` |
-| 61 | **Publish this session's evidence only** — PR → merge → confirm Pages still serves; record the PR, merge commit and deploy run here. No shared page, generator, data file, workflow or README is edited by this session; anything that needs changing is **logged as a request** to the Pass 21 owner below. | in progress | `arena/91e9aba0` | this section |
+| 61 | **Publish this session's evidence only** — PR → merge → confirm Pages still serves; record the PR, merge commit and deploy run here. No shared page, generator, data file, workflow or README is edited by this session; anything that needs changing is **logged as a request** to the Pass 21 owner below. | **done** — PR [#63](https://github.com/karagemop466-tech/GOLD4/pull/63) **MERGED 2026-11-11T08:06:44Z** as `1232a3f`; deploy run [42984454100](https://github.com/karagemop466-tech/GOLD4/actions/runs/42984454100) **success**; Pages `status=built` on the same commit, `error=none`; the live page was fetched and matched | `arena/91e9aba0` | this section |
 
 **Non-overlap declaration (explicit).** This session edits **only**: this appended board section (appended at the
 *end* of the file so it cannot conflict with the live owner's *top-of-file* section), new files under
@@ -1259,3 +1259,30 @@ recorded, restated rather than hidden.
 re-derives. It does **not** prove any ring is solid gold, hallmarked, authentic or still priced as stored — those remain
 the product-row pass's job, and ultimately an independent professional test after delivery.
 
+### Publish record — MERGED AND LIVE
+
+PR [#63](https://github.com/karagemop466-tech/GOLD4/pull/63) opened from `arena/91e9aba0-gold4` and **merged
+2026-11-11T08:06:44Z** as merge commit `1232a3fe3e125894ee76cb58ace1d30c5f255f18`. The PR build passed every gate and
+the live-source-check workflow ran. The push-to-main **Deploy GOLD research site** run
+[42984454100](https://github.com/karagemop466-tech/GOLD4/actions/runs/42984454100) completed **success**, and
+`gh api repos/.../pages/builds/latest` reports `status=built`, `commit=1232a3f…`, `error=none`.
+**Live verification:** <https://karagemop466-tech.github.io/GOLD4/reviews/assurance-91e9aba0/index.html> was fetched
+after the deploy and serves this pass's coverage counts, the seller-by-seller table with its official links, the legal
+layer, the derivation audit and the twelve findings — including the explicit statement of what was **not** re-read.
+
+**Rebase/interaction record (concurrent sessions, no work discarded).** While this session ran, two other sessions
+published and merged their own "Pass 21" work: `arena/91415e29-gold4` (#60/#61, freshness spot-check that independently
+read the same WGC panel as **USD 4,059.49/oz, "Data as of 10 November, 2026"** and merged the benchmark as
+**deliberately retained**) and `arena/4fe4a9c3-gold4` (#59, still open at this merge). This session rebased onto
+`main@97b5c92`; the **only** conflict was the generated `reports/audit_latest.txt`, resolved by keeping main's file and
+then **regenerating it on the combined tree** (`de03755`, timestamp-only change, all counts identical). No other
+session's content was dropped, renumbered or force-pushed, and this pass does **not** claim the "Pass 21" label — it is
+a companion slice by design.
+
+**What this session deliberately did not do:** it did not re-read any of the 64 product pages, did not touch
+`data/**`, the generators, the site or the README, and did not merge PRs #59 or #62 that belong to other sessions.
+Every change it wants made in those shared files is a numbered request (A21-01 … A21-12) in the table above, so the
+owning session can apply it with its own provenance rather than inheriting an undocumented edit.
+
+**Standing instruction, unchanged:** after every review, look for hallucinations again — source link, read date, read
+path, and whether anything was inferred rather than read.
