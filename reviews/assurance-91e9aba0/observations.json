@@ -1,0 +1,449 @@
+{
+  "schema_version": "1.0.0",
+  "session": "arena/91e9aba0-gold4",
+  "task_set": "Pass 21 companion: seller-policy & legal-source assurance + independent derivation audit",
+  "read_window_utc": "2026-11-11T08:05Z-2026-11-11T08:40Z",
+  "reader": "browser-rendered fetch (chunk-by-chunk text of the seller's own page); no shell network in this sandbox (only github.com reachable, verified: gold.org TLS fails from bash)",
+  "rule": "Nothing in this file changes data/*.json. A stored value this session could not re-read today stays at its original capture date and is marked NOT_RE_READ; a value the page prints differently is recorded as DIFFERS with both readings and nothing is overwritten.",
+  "benchmark_observation": {
+    "publisher": "World Gold Council (Goldhub)",
+    "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+    "read_utc": "2026-11-11T08:03Z",
+    "value_usd_per_oz_shown": 4059.49,
+    "page_date_line": "Data as of 10 November, 2026",
+    "spot_panel": "USD /oz 4,059.49",
+    "stored_benchmark_in_force": {
+      "value_usd_per_oz": 3996.31,
+      "price_date_as_shown_on_source": "22 October, 2026",
+      "retrieved_utc": "2026-10-23"
+    },
+    "difference_pct_vs_stored": 1.58,
+    "state": "DIFFERS_FROM_STORED_BENCHMARK",
+    "applied_to_data": false,
+    "note": "This is a dated reading, not a claim about the price at any other moment. Every derived gold value on the site is still computed at the stored USD 3,996.31/oz until the benchmark is replaced and data/derived.json is regenerated. Recorded here so the change is not applied silently.",
+    "independent_corroboration": {
+      "session": "arena/91415e29-gold4 (Pass 21, merged as PR #60)",
+      "read_utc": "2026-11-11T07:59Z",
+      "value_usd_per_oz_shown": 4059.49,
+      "same_number": true,
+      "merged_decision": "Benchmark RETAINED at USD 3,996.31; the tick is recorded additively in data/gold_spot.json under pass21_live_crosscheck_2026_11_11 and no derived value was recomputed.",
+      "reading_of_this_session": "The retained benchmark is a published, dated decision, not unrecorded drift. Two independent reads on the same day produced the same number."
+    }
+  },
+  "seller_policy_reads": [
+    {
+      "seller_id": "blue-nile",
+      "seller_name": "Blue Nile",
+      "source_url": "https://www.bluenile.com/policies/returns",
+      "read_utc": "2026-11-11",
+      "http_state": "OK (page text returned)",
+      "stored_claims_checked": [
+        {
+          "claim": "30-day return window from the shipment date",
+          "result": "CONFIRMED",
+          "page_wording": "\"you may return eligible items in their original, unworn condition within 30 days from the shipment date\""
+        },
+        {
+          "claim": "Exclusions: personalized jewellery, custom orders, engraved items, items resized after purchase, Diamond Upgrade Program, clearance and Final Sale items, Personalized gemstones collection",
+          "result": "CONFIRMED",
+          "page_wording": "\"Personalized jewelry, custom orders, engraved items, items resized after initial purchase, Diamond Upgrade Program purchases, clearance items and 'Final Sale' items are not eligible\" and \"Personalized gemstones collection & clearance items are not eligible for return\""
+        },
+        {
+          "claim": "Two complimentary returns per customer per year; RMA number required",
+          "result": "CONFIRMED",
+          "page_wording": "\"Two complimentary returns are allowed per customer, per year. A Return Merchandise Authorization (RMA) number is required\""
+        },
+        {
+          "claim": "Missing grading report fee USD 150",
+          "result": "CONFIRMED",
+          "page_wording": "\"The cost to replace a missing diamond grading report is $150\""
+        },
+        {
+          "claim": "One free resize up or down two sizes within 6 months if the design permits; eternity, tension, alternative-metal and some milgrain/ornate bands cannot be resized",
+          "result": "CONFIRMED",
+          "page_wording": "\"Eligible rings receive one free resize, up or down two sizes, within 6 months of purchase if the design permits. Eternity bands, tension rings, rings made of alternative metals ... cannot be resized\""
+        },
+        {
+          "claim": "Contact +1-800-242-2728 / service@bluenile.com",
+          "result": "CONFIRMED",
+          "page_wording": "Page header prints '+1-800-242-2728' and 'service@bluenile.com'"
+        },
+        {
+          "claim": "Limited lifetime warranty on gold/platinum items priced at USD 1,000 or more",
+          "result": "NOT_ON_THIS_PAGE",
+          "page_wording": "not printed on the returns page; not contradicted either"
+        }
+      ],
+      "new_facts_not_in_dataset": [
+        "Extended holiday returns: orders placed on or after November 1st through December 5th may be returned through January 5, 2027 (standard 30-day terms otherwise)",
+        "Refund processing: returns typically entered into the system within 24 business hours; 5-15 business days to complete"
+      ]
+    },
+    {
+      "seller_id": "allurez",
+      "seller_name": "Allurez",
+      "source_url": "https://www.allurez.com/pages/return-policy",
+      "read_utc": "2026-11-11",
+      "http_state": "OK",
+      "stored_claims_checked": [
+        {
+          "claim": "Return must ARRIVE at Allurez within 30 days of the original shipment",
+          "result": "CONFIRMED",
+          "page_wording": "\"Your return must arrive at our office within 30 days of the original shipment.\""
+        },
+        {
+          "claim": "Exclusions: engraved, custom-made, Design Your Own (exchange only, same or higher value, not for loose diamonds), contoured wedding bands, clearance, appraisals, gift cards, layaway deposits, resized or altered",
+          "result": "CONFIRMED",
+          "page_wording": "all nine exclusions printed under 'Exceptions and special conditions' and 'Return eligibility'"
+        },
+        {
+          "claim": "Buyer pays return shipping; original shipping not refundable; RMA required",
+          "result": "CONFIRMED",
+          "page_wording": "\"You are responsible for return shipping costs. Our original shipping cost is not refundable\" / \"Returns cannot be accepted without an RMA number\""
+        },
+        {
+          "claim": "USD 300 deduction for a missing document",
+          "result": "CONFIRMED_WITH_NARROWER_WORDING",
+          "page_wording": "\"A deduction of $300 per missing certificate applies to your refund\" - the fee is specifically for a missing diamond certificate, not any document"
+        },
+        {
+          "claim": "Contact 1-800-554-3509 / service@allurez.com",
+          "result": "CONFIRMED",
+          "page_wording": "printed twice on the policy page"
+        }
+      ],
+      "new_facts_not_in_dataset": [
+        "If a shipped free gift is not returned, its retail value is deducted from the refund",
+        "Refund issued within 7 business days after inspection; wire-transfer payments refunded by company check"
+      ]
+    },
+    {
+      "seller_id": "vrai",
+      "seller_name": "VRAI",
+      "source_url": "https://www.vrai.com/returns-exchanges",
+      "read_utc": "2026-11-11",
+      "http_state": "OK (page states 'Last revised on November 2, 2026')",
+      "stored_claims_checked": [
+        {
+          "claim": "30 days eligible; under USD 15,000 refund minus recycling fee or full store credit; above USD 15,000 store credit only",
+          "result": "CONFIRMED",
+          "page_wording": "\"Eligible items below $15,000 can be returned within 30 days for full credit to store or refund minus recycling fee to the original payment method. Eligible items above $15,000 can be returned within 30 days for full credit to store.\""
+        },
+        {
+          "claim": "Exclusions: modified or resized rings, custom-designed, engraved items and engraving/finishing fees, items altered by a third party, all shipping fees, gift cards",
+          "result": "CONFIRMED",
+          "page_wording": "all six appear in the NON-ELIGIBLE ITEMS list"
+        },
+        {
+          "claim": "One complimentary resize up to one full US size; infinity and eternity bands cannot be resized",
+          "result": "CONFIRMED",
+          "page_wording": "\"We offer one complimentary resize up to one full US size ... INFINITY AND ETERNITY BAND STYLES ... cannot be resized; they must be returned and repurchased.\""
+        },
+        {
+          "claim": "Free return shipping in the US; refund within 14 business days of receipt",
+          "result": "CONFIRMED",
+          "page_wording": "\"We offer free return shipping in the US\" / \"Your refund will be processed within 14 business days of receipt\""
+        },
+        {
+          "claim": "Lifetime warranty and annual shine included with the ring",
+          "result": "NOT_ON_THIS_PAGE",
+          "page_wording": "the returns page links a 'Lifetime Diamond Upgrade' programme instead; the product-page warranty claim was not re-read today"
+        }
+      ],
+      "new_facts_not_in_dataset": [
+        "Recycling fee amounts, printed on the page: engagement ring USD 300; wedding bands USD 50 (USD 300 if engraved); made-to-order jewellery USD 50. Waived if the customer takes a full store credit (gift card)",
+        "Extended holiday returns: purchases between November 1, 2026 and December 16, 2026 may be returned through January 15, 2027",
+        "EU/EEA statutory 14-day right of withdrawal is described as separate from the 30-day commercial window, and does not apply to customised/personalised items"
+      ]
+    },
+    {
+      "seller_id": "mejuri",
+      "seller_name": "Mejuri",
+      "source_url": "https://mejuri.com/company/returns-terms",
+      "read_utc": "2026-11-11",
+      "http_state": "OK",
+      "stored_claims_checked": [
+        {
+          "claim": "Free 30-day returns in the US, Canada, UK, Australia, Germany, counted from delivery or in-store pickup",
+          "result": "CONFIRMED",
+          "page_wording": "\"We offer free 30-day returns for all customers in the US, Canada, UK, Australia, and Germany. The return window starts from the day the shipment is delivered or picked up in store.\""
+        },
+        {
+          "claim": "Engraved and monogrammed products not eligible at any time",
+          "result": "CONFIRMED",
+          "page_wording": "\"Engraved or monogrammed products are not eligible for return or refund at any time.\""
+        },
+        {
+          "claim": "Final sale items, gift cards, earrings used during a piercing appointment, lab-grown items without the SCS certificate",
+          "result": "CONFIRMED",
+          "page_wording": "all four printed in the non-returnable list; SCS clause: \"the SCS certification must be included or it will be returned back to the sender\""
+        },
+        {
+          "claim": "EU USD 20 and Rest of World USD 30 return fee; free in the five listed countries; no online exchanges, 30-day exchanges in stores",
+          "result": "CONFIRMED",
+          "page_wording": "fee table prints Canada/US/Australia/Germany/UK Free, EU $20, Rest of World $30; \"We do not currently offer exchanges online\" / \"All of our retail locations offer 30-day exchanges\""
+        }
+      ],
+      "new_facts_not_in_dataset": [
+        "Items purchased as a set must be returned as a complete set; individual items of a set are not eligible",
+        "Mejuri reserves the right to refuse returns where it identifies an atypical pattern of excessive returns"
+      ]
+    },
+    {
+      "seller_id": "brilliant-earth",
+      "seller_name": "Brilliant Earth",
+      "source_url": "https://www.brilliantearth.com/30-Day-Returns/",
+      "read_utc": "2026-11-11",
+      "http_state": "OK via this session's reader (the automated runner has been refused with HTTP 403 on this host for 19 days)",
+      "stored_claims_checked": [
+        {
+          "claim": "30-day return window (previously carried from the 2026-10-22 capture because a later re-read showed only the badge)",
+          "result": "CONFIRMED_ON_THE_PAGE_ITSELF",
+          "page_wording": "page headline \"Free Extended Holiday Returns & 1-Year Resizes\"; \"we have extended our 30-day money back guarantee\"; \"Our free 1-year resizes...\""
+        },
+        {
+          "claim": "Non-returnable: custom-designed, altered in process, resized or modified rings, repaired or modified after purchase, exchanged items, Lifetime Diamond Upgrade items",
+          "result": "CONFIRMED",
+          "page_wording": "all seven printed under \"What products aren't eligible for return?\""
+        },
+        {
+          "claim": "Engraved rings returnable with a USD 40 engraving-removal fee",
+          "result": "CONFIRMED",
+          "page_wording": "\"while you can return an engraved ring, we charge $40 to remove the custom engraving\""
+        },
+        {
+          "claim": "Conflict recorded in sellers.json: badge 'Free 1-Year Resizing' vs an earlier capture describing 'one complimentary resize within 60 days'",
+          "result": "RESOLVED_AS_TWO_COMPLEMENTARY_RULES",
+          "page_wording": "\"We offer one complimentary resizing within 60 days regardless of sizing range, or up to 1 year if within sizing range.\" - the two stored readings are two branches of one rule, not a contradiction"
+        },
+        {
+          "claim": "Contact 800.691.0952",
+          "result": "CONFIRMED",
+          "page_wording": "printed in the page header and the returns instructions"
+        }
+      ],
+      "new_facts_not_in_dataset": [
+        "Extended holiday returns: items ordered between November 1st and December 15th are eligible for return through January 15th",
+        "The online return portal accepts only unworn items under USD 1,000, within 30 days, for US-shipped orders; everything else (over USD 1,000, non-US, Create Your Own, engraved rings) is handled by phone",
+        "Refund processed about 5 business days after receipt",
+        "Comparative purchasing (buying several items intending to keep one) is not allowed and may be blocked"
+      ]
+    },
+    {
+      "seller_id": "anjolee",
+      "seller_name": "Anjolee",
+      "source_url": "https://www.anjolee.com/information/ReturnPolicy",
+      "source_url_provenance": "Discovered on Anjolee's own site navigation while reading the registered product page for AN-01; not guessed and not inferred from a URL pattern.",
+      "read_utc": "2026-11-11",
+      "http_state": "OK",
+      "stored_claims_checked": [
+        {
+          "claim": "30 days from receipt",
+          "result": "CONFIRMED",
+          "page_wording": "\"you may return any item in its original condition within 30 days of receipt\""
+        },
+        {
+          "claim": "'All customized orders can be returned for full refund within 30 days of receipt'",
+          "result": "CONFIRMED",
+          "page_wording": "identical sentence printed on the dedicated returns page"
+        },
+        {
+          "claim": "return_exclusions: [] (none recorded)",
+          "result": "DIFFERS_FROM_STORED",
+          "page_wording": "\"If an item has been worn or is not in its original condition, a 15% restocking fee will apply.\" plus \"A Package without a Return Authorization number will not be accepted for refund.\" - the stored empty list understates the conditions"
+        },
+        {
+          "claim": "resize: 'Not captured on the page'",
+          "result": "NOW_CAPTURED",
+          "page_wording": "\"Ring Size Adjustments - If the ring you purchased from us is either too small or too big, you may send it back to us for adjustment. We will make the necessary adjustments and send the ring back to you - free of charge.\""
+        },
+        {
+          "claim": "Contact 877-265-6533",
+          "result": "CONFIRMED",
+          "page_wording": "printed in the page header; the policy page also prints service@anjolee.com, which is not stored"
+        }
+      ],
+      "new_facts_not_in_dataset": [
+        "Buyer is responsible for return shipping costs; a Return Ticket ID must be obtained before shipping",
+        "Free ring-size adjustment service after purchase; bracelet/necklace link changes are charged or refunded accordingly"
+      ]
+    },
+    {
+      "seller_id": "sarraf",
+      "seller_name": "Sarraf",
+      "source_url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
+      "read_utc": "2026-11-11",
+      "http_state": "OK",
+      "stored_claims_checked": [
+        {
+          "claim": "30 days from receipt; unworn, original packaging and invoice; buyer pays insured shipping to 650 S Hill St #728, Los Angeles, CA 90014",
+          "result": "CONFIRMED",
+          "page_wording": "\"Return or exchange of an item within 30 days of receipt\"; return address printed in full; signature-required insured shipping required"
+        },
+        {
+          "claim": "Exclusions: used/worn/altered, third-party resizing voids warranty, special/custom orders non-refundable",
+          "result": "CONFIRMED",
+          "page_wording": "\"Items that show signs of wear or have been resized (by a jeweler other than Sarraf Jewelry Inc.), altered, special-ordered items, or damaged in any way cannot be accepted for return\""
+        },
+        {
+          "claim": "Engraving fee USD 25 non-refundable",
+          "result": "CONFIRMED",
+          "page_wording": "\"the $25.00 engraving fee or $50.00 finish charges are non-refundable\""
+        }
+      ],
+      "page_defect_found": {
+        "what": "The extended holiday-return paragraph contradicts itself on its own dates",
+        "verbatim": "\"Extended Holiday Returns policy requires that items purchased between November 03, 2026, and December 15, 2025, are returnable through January 15, 2027.\"",
+        "why_it_matters": "The window starts in 2026 and ends in 2025. A shopper cannot tell which purchases qualify. This is the seller's drafting defect, not a reading error; it is published as found and must not be 'corrected' by inference.",
+        "state": "SELLER_PAGE_DATE_CONTRADICTION"
+      },
+      "new_facts_not_in_dataset": [
+        "International returns must NOT be sent by FedEx; Sarraf refuses international FedEx return packages",
+        "Import duties or brokerage billed to Sarraf on a return are deducted from the refund"
+      ]
+    },
+    {
+      "seller_id": "sarraf-warranty",
+      "seller_name": "Sarraf (Lifetime Guarantee page)",
+      "source_url": "https://www.sarraf.com/lifetime-guarantee/",
+      "read_utc": "2026-11-11",
+      "http_state": "OK",
+      "stored_claims_checked": [
+        {
+          "claim": "Repair/replacement fee is the greater of USD 100 or 10% of the purchase price",
+          "result": "DIFFERS_IN_WORDING",
+          "page_wording": "\"All jewelry returned for repair or replacement is subject to a Shipping and handling fee of $100.00 or 10% of the current price, whichever amount is greater.\" - the page says CURRENT price, the dataset says PURCHASE price"
+        },
+        {
+          "claim": "Original invoice required",
+          "result": "CONFIRMED",
+          "page_wording": "\"All SARRAF'S jewelry that is returned must be accompanied with an original invoice\""
+        },
+        {
+          "claim": "Third-party alteration voids the guarantee",
+          "result": "CONFIRMED",
+          "page_wording": "\"Third Party alteration to the jewelry will automatically void the Lifetime Guarantee.\""
+        },
+        {
+          "claim": "Does not cover chipped or missing stones or normal wear and tear; wholesale accounts excluded; substitution allowed",
+          "result": "CONFIRMED",
+          "page_wording": "items 4-7 of the conditions plus \"Lifetime Guarantee do not apply to Wholesale account orders\""
+        }
+      ]
+    },
+    {
+      "seller_id": "catbird",
+      "seller_name": "Catbird NYC",
+      "source_url": "https://www.catbirdnyc.com/returns",
+      "read_utc": "2026-11-11",
+      "http_state": "OK",
+      "stored_claims_checked": [
+        {
+          "claim": "20-day return window from delivery; USD 9 return shipping deducted",
+          "result": "CONFIRMED",
+          "page_wording": "\"you can send it back to us for a refund or credit within 20 days of the date your package was delivered\" / \"An $9 charge for return shipping will be deducted from your refund\""
+        },
+        {
+          "claim": "Exclusions: engraved items final sale, special orders and custom rings final sale, all international sales final sale",
+          "result": "CONFIRMED_WITH_MORE_ITEMS",
+          "page_wording": "\"Special orders, engraved items, Forever jewelry, earrings from piercing events, home & beauty items, and comestibles are final sale and cannot be returned\" / \"All international sales are final.\""
+        },
+        {
+          "claim": "Return window applies to domestic shipments",
+          "result": "CONFIRMED",
+          "page_wording": "section heading \"Online return policy (Domestic Shipments only)\""
+        },
+        {
+          "claim": "resize: 'Must inspect unengraved before return window closes (20 days)'",
+          "result": "IMPRECISE_IN_DATASET",
+          "page_wording": "the page describes a repairs/resizing service for Catbird-bought items with cost quoted after receipt, and says exchanges are done by returning the ring and placing a new order - it does not tie resizing to inspection of engraving"
+        }
+      ],
+      "new_facts_not_in_dataset": [
+        "In-store purchases: 20 days, store credit only, receipt required",
+        "Online orders can also be returned at a Catbird store for credit or refund via the return portal",
+        "Refund processing takes up to 7-10 business days after receipt"
+      ]
+    },
+    {
+      "seller_id": "mene",
+      "seller_name": "Mene",
+      "source_url": "https://mene.com/customer-care/en-US/articles/returns-319505",
+      "read_utc": "2026-11-11",
+      "http_state": "OK (this URL is an article index; the sub-article text was read from the index page itself)",
+      "stored_claims_checked": [
+        {
+          "claim": "7-day return window from receipt",
+          "result": "CONFIRMED",
+          "page_wording": "\"you may return it for merchandise credit (Mene Credit) within seven (7) days of receipt via the My Collection section of your Mene account\""
+        },
+        {
+          "claim": "Certificate of Authenticity must accompany the return",
+          "result": "CONFIRMED",
+          "page_wording": "\"Securely package and return your jewelry and Certificate(s) of Authenticity\""
+        },
+        {
+          "claim": "Contact: none stored",
+          "result": "BLANK_IN_DATASET_BUT_PUBLISHED_BY_SELLER",
+          "page_wording": "the page prints '+1 833 636 3245' (Mon-Fri 9am-6pm ET) and 'service@mene.com'"
+        },
+        {
+          "claim": "Refund route",
+          "result": "CLARIFIES_STORED_WORDING",
+          "page_wording": "the return is described as merchandise credit (Mene Credit); a separate FAQ asks about refunds to the original payment method and quotes up to 10 business days. The dataset does not record the credit-first structure"
+        }
+      ],
+      "new_facts_not_in_dataset": [
+        "A prepaid FedEx label is emailed once the return is approved",
+        "Returns from outside the USA and Canada must be requested by email"
+      ]
+    }
+  ],
+  "legal_source_reads": [
+    {
+      "source_id": "ftc-gold-jewelry",
+      "publisher": "U.S. Federal Trade Commission",
+      "source_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+      "read_utc": "2026-11-11",
+      "state": "CONFIRMED",
+      "what_the_page_says_that_the_project_relies_on": [
+        "\"look for the karat quality mark\" and \"Near the karat quality mark, look for the name or the U.S. registered trademark of the company that will stand behind the mark ... If ... you don't see a trademark along with the karat mark, don't buy it.\"",
+        "\"The phrase 'solid gold' means the gold item isn't hollow.\"",
+        "Plated terminology defined: gold filled, gold overlay, rolled gold plate (RGP), gold electroplate, vermeil, gold flashed / gold washed"
+      ],
+      "note": "The FTC page does not promise the item IS solid gold when the word is absent; the absence of the word is simply not evidence. The project's 'solid_gold_status: not_stated' treatment is consistent with this wording."
+    },
+    {
+      "source_id": "usc-15-295",
+      "publisher": "U.S. Code via Cornell LII",
+      "source_url": "https://www.law.cornell.edu/uscode/text/15/295",
+      "read_utc": "2026-11-11",
+      "state": "CONFIRMED",
+      "statute_title_as_printed": "15 U.S. Code § 295 - Standard of fineness of gold articles; deviation",
+      "what_the_page_says_that_the_project_relies_on": [
+        "actual fineness shall not be less by more than three one-thousandth parts than the fineness marked (solder-free sample)",
+        "in addition, the entire article including solder shall not be less by more than three one-thousandth (watchcase/flatware) or seven one-thousandth (any other article) than the marked fineness",
+        "\"it being intended that the standards of fineness and the tests or methods for ascertaining the same provided in this section ... shall be concurrent and not alternative\""
+      ],
+      "arithmetic_check": "0.5833 - 0.007 = 0.5763 (14K) and 1.0 - 0.007 = 0.993 (24K) match data/methodology.json's minimum_fineness_if_stamped values 0.5763333 and 0.993, which are the figures the site's legal-minimum column uses."
+    }
+  ],
+  "derivation_audit": {
+    "script": "scripts/session_91e9aba0/derive_audit.py",
+    "method": "independent Decimal implementation (ROUND_HALF_UP), reading data/rings.json, data/methodology.json and data/gold_spot.json; no import of scripts/compute.py or scripts/audit.py",
+    "field_comparisons": 644,
+    "rows": 64,
+    "weighted_rows": 17,
+    "karat_pairs": 7,
+    "real_mismatches": 0,
+    "rounding_notes": 3,
+    "rounding_note_detail": "VRAI aggregate multiple_min/max/avg print 3.75 while exact-decimal arithmetic gives 3.76 (VR-01: 1035 USD / 275.604... USD of gold = 3.755457; at two decimals ROUND_HALF_UP is 3.76). scripts/compute.py rounds the already 3-dp value with binary float round(), which lands on 3.75. The published row-level figure 3.755 is correct; only the two-decimal presentation and the retailer aggregate are one hundredth low.",
+    "state": "PASS_WITH_ONE_ROUNDING_NOTE"
+  },
+  "coverage_statement": {
+    "seller_policy_layer": "10 of 10 sellers in data/sellers.json were re-read from their own pages today, plus Sarraf's separate Lifetime Guarantee page (11 policy pages)",
+    "legal_layer": "2 of the 9 tier-A sources were re-read today (FTC gold jewellery guidance, 15 U.S.C. § 295). The CFR section-heading table, NIST, CFPB/Reg Z and the three remaining USC pages were NOT re-fetched this pass and keep their 2026-10-22/23 dates",
+    "ring_product_rows": "0 of 64 re-read by this session - that is the concurrent Pass 21 owner's scope; this session deliberately did not duplicate it",
+    "not_claimed": "No statement in this file is about today's price of any ring, the availability of any ring, or the authenticity of any item."
+  }
+}
