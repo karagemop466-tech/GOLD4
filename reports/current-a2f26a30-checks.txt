@@ -1,9 +1,9 @@
-Started 2026-11-11T08:08:27.682779+00:00
+Started 2026-11-11T08:09:09.902488+00:00
 Automated software checks only; not external factual verification or an assay.
 
 $ python3 scripts/audit.py
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-11-11T08:08:27+00:00
+run_utc: 2026-11-11T08:09:10+00:00
 dataset rows: 64 | sellers: 10 | sources: 32
 spot benchmark: $3,996.31/oz (22 October, 2026) = $128.4844/g
 
@@ -92,7 +92,7 @@ exit=0
 $ python3 scripts/verify_a0be79d4.py
 === GOLD4 MULTI-PASS SECURITY & ANTI-HALLUCINATION AUDIT (`verify_a0be79d4.py`) ===
 HTML pages scanned      : 41
-Hyperlinks & assets     : 2773 verified (0 dead/unsafe URIs)
+Hyperlinks & assets     : 2774 verified (0 dead/unsafe URIs)
 Rendered table rows     : 44 verified (100% official HTTPS + dated)
 Hard failures           : 0
 FLAG NOTE               : By-design blank fields preserved strictly NULL (`UNVERIFIED`): 15 ring weights + 2 conflicting Sarraf karats (`F1625`, `121987-.72P`) + 1 disqualified vermeil control (`G4-RED-01`).
@@ -104,7 +104,7 @@ $ python3 scripts/audit_hallucinations.py
 ======================================================================
 GOLD4 ANTI-HALLUCINATION & SECURITY AUDIT (arena/81b71aa5-gold4)
 ======================================================================
-Checks passed : 1289
+Checks passed : 1290
 Warnings      : 0
 Hard failures : 0
 RESULT: PASS — zero hallucinated/unsourced values, zero phantom math, zero broken local links.
@@ -186,7 +186,7 @@ test_weight_needs_provenance_source_and_scope (__main__.ReadinessTests.test_weig
 test_window_and_source_match_do_not_establish_configuration_rights (__main__.ReadinessTests.test_window_and_source_match_do_not_establish_configuration_rights) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 0.168s
+Ran 22 tests in 0.174s
 
 OK
 
@@ -219,11 +219,11 @@ GOLD4 LIVE SOURCE HEALTH CHECK — read-only evidence collection
 ========================================================================
 targets        : 1 (1 row URLs, 0 registered sources)
 allow-listed   : 21 hostnames from data/sources.json
-checked_utc    : 2026-11-11T08:08:29Z
+checked_utc    : 2026-11-11T08:09:11Z
   AL-01                      NO_RESPONSE        None          B  
 ------------------------------------------------------------------------
   NO_RESPONSE            1
-artifact: tmp4j3h7lxz/live_source_check_20261111T080829Z.json
+artifact: tmp3bs8u7ym/live_source_check_20261111T080911Z.json
 RESULT: evidence collected (this is not a pass/fail verdict; review the artifact).
 SYNTHETIC negative CLI fixture: FAIL below is the expected rejection of an unknown ID.
 FAIL: no targets matched (unknown --only ID or empty dataset)
@@ -239,7 +239,7 @@ $ python3 scripts/session_a2f26a30/test_review.py
 Staged 6 public files (no Git metadata, workflows or Python tooling)
 ..............
 ----------------------------------------------------------------------
-Ran 14 tests in 0.067s
+Ran 14 tests in 0.068s
 
 OK
 
@@ -250,10 +250,10 @@ PASS November review freshness
 
 exit=0
 
-$ python3 scripts/session_a2f26a30/stage_pages.py /tmp/tmpphz17ojg/site
-Staged 158 public files (no Git metadata, workflows or Python tooling)
+$ python3 scripts/session_a2f26a30/stage_pages.py /tmp/tmpqimt2nii/site
+Staged 159 public files (no Git metadata, workflows or Python tooling)
 
 exit=0
 
 16/16 command invocations passed
-Completed 2026-11-11T08:08:29.714825+00:00
+Completed 2026-11-11T08:09:11.945093+00:00

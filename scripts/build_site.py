@@ -227,7 +227,7 @@ def no_hallucination_block(prefix: str = "") -> str:
     return f"""
 <div class="nohall">
   <h2>⚠ NO HALLUCINATIONS — read before using any number</h2>
-  <p><strong>No hallucinations.</strong> This project manufactures no values. A price, weight, karat, deadline or contact detail is only shown if it was read from the
+  <p><strong>No hallucinations.</strong> Policy: never manufacture values. A price, weight, karat, deadline or contact detail is only shown if it was read from the
   official page linked in the same row. The consumer rules being applied come from the
   <a href="https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry" target="_blank" rel="noopener">FTC's guidance on buying gold jewelry</a>
   and <a href="https://www.law.cornell.edu/uscode/text/15/295" target="_blank" rel="noopener">15 U.S.C. § 295</a>.</p>
@@ -561,7 +561,7 @@ def main() -> None:
 {no_hallucination_block('../')}
 {filter_bar(len(sel))}
 {table(sel, '../')}
-<p class="small" style="margin-top:12px">Blank weight cells mean the retailer publishes no gram weight for that item. See the <a href="flagged.html">Flagged</a> page for the full list.</p>
+<p class="small" style="margin-top:12px">Blank weight cells mean no gram weight was confirmed in the stored evidence for that item; this is not proof the seller never publishes one. See the <a href="flagged.html">Flagged</a> page for the full list.</p>
 """
         (PAGES / f"{cat}.html").write_text(render(title, body, cat, root="../"), encoding="utf-8")
 
