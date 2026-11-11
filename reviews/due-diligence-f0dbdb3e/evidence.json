@@ -3534,6 +3534,12 @@
    "target": "data/sources.json",
    "owner": "final-integration owner",
    "request": "If these sources are adopted, register the BBB profile addresses, the EDGAR company page for Brilliant Earth Group, Inc. and the sellers' contact, payment and materials pages listed in this register's read ledger."
+  },
+  {
+   "id": "RQ-F0-10",
+   "target": ".github/workflows/pages.yml",
+   "owner": "owner of the Pages workflow",
+   "request": "Add the two commands 'python3 scripts/session_f0dbdb3e/check_register.py' and 'python3 scripts/session_f0dbdb3e/check_register.py --self-test' to the gate list so this register is re-checked on every push."
   }
  ],
  "incidental": [

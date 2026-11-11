@@ -3,7 +3,8 @@
 
 Session arena/f0dbdb3e-gold4.  Read-only: it never writes a file and never touches the network.
 
-    python3 scripts/session_f0dbdb3e/check_register.py
+    python3 scripts/session_f0dbdb3e/check_register.py              # check the files on disk
+    python3 scripts/session_f0dbdb3e/check_register.py --self-test  # prove the checks can fail
 
 What it can and cannot establish
 --------------------------------
@@ -57,11 +58,9 @@ EXTRA_LINK_HOSTS = {
 REGULATOR_HOSTS = {"consumer.ftc.gov", "www.sec.gov"}
 BBB_HOST = "www.bbb.org"
 
-results: list[tuple[bool, str, str]] = []
-
-
-def check(ok: bool, name: str, detail: str = "") -> None:
-    results.append((bool(ok), name, detail))
+# Fixed identifiers that contain digits but are names, not figures. They are removed before the page's
+# figures are compared with the evidence file.
+NOT_FIGURES = ("karagemop466-tech/GOLD4", "session_f0dbdb3e", "due-diligence-f0dbdb3e", "arena/f0dbdb3e-gold4")
 
 
 def norm(text: str) -> str:
@@ -181,11 +180,12 @@ def stats_of(ev: dict) -> dict[str, int]:
     return s
 
 
-def main() -> int:
-    if not EVIDENCE.exists():
-        print("FAIL: evidence file is missing:", EVIDENCE)
-        return 1
-    ev = json.loads(EVIDENCE.read_text(encoding="utf-8"))
+def run(ev: dict, page: str | None, report: str | None) -> list[tuple[bool, str, str]]:
+    """Run every check on an evidence object and the published page/report text. Pure: no file is written."""
+    results: list[tuple[bool, str, str]] = []
+
+    def check(ok: bool, name: str, detail: str = "") -> None:
+        results.append((bool(ok), name, detail))
 
     # ---- 1. schema --------------------------------------------------------------------------
     need = ["schema_version", "session", "no_hallucination_rule", "read_window_utc", "sellers", "reads",
@@ -193,6 +193,8 @@ def main() -> int:
             "leads_unverified", "requests", "incidental", "derived", "count_claims", "limits"]
     missing = [k for k in need if k not in ev]
     check(not missing, "1. evidence file has every required section", ", ".join(missing))
+    if missing:
+        return results
 
     sellers = {s["id"]: s for s in ev["sellers"]}
     reads = {r["read_id"]: r for r in ev["reads"]}
@@ -439,10 +441,9 @@ def main() -> int:
                    f"{fills} stored nulls now have a read value (logged as a request, not written)", "; ".join(bad))
 
     # ---- 12-15. the published page ------------------------------------------------------------
-    if not PAGE.exists():
+    if page is None:
         check(False, "12. published page exists", str(PAGE))
     else:
-        page = PAGE.read_text(encoding="utf-8")
         low = page.lower()
         bad = []
         if "NO HALLUCINATIONS" not in page:
@@ -510,19 +511,21 @@ def main() -> int:
 
         bad = []
         st = stats_of(ev)
-        shown = dict(re.findall(r'data-stat="([a-zA-Z0-9_\-]+)">(\d+)<', page))
-        for key, val in shown.items():
+        shown = re.findall(r'data-stat="([a-zA-Z0-9_\-]+)">(\d+)<', page)   # every occurrence, not one per key
+        for key, val in shown:
             if key not in st:
                 bad.append(f"page shows an unknown statistic {key}")
             elif st[key] != int(val):
                 bad.append(f"statistic {key}: page shows {val}, recomputed {st[key]}")
         visible = re.sub(r"<style.*?</style>", " ", page, flags=re.S)
         visible = html.unescape(re.sub(r"<[^>]+>", " ", visible))
+        for fixed in NOT_FIGURES:
+            visible = visible.replace(fixed, " ")
         known = digit_runs(" ".join(strings_in(ev))) | {str(v) for v in st.values()}
         unknown = sorted(digit_runs(visible) - known, key=lambda x: (len(x), x))
         if unknown:
             bad.append("figures on the page that are not in the evidence file: " + ", ".join(unknown[:15]))
-        check(not bad, f"15. page figures: {len(shown)} statistics recompute, and no figure appears that is absent from the evidence",
+        check(not bad, f"15. page figures: {len(shown)} printed statistics recompute, and no figure appears that is absent from the evidence",
               "; ".join(bad))
 
         # ---- 16. page and report are exactly what the builder renders -------------------------
@@ -533,16 +536,179 @@ def main() -> int:
 
             if build_register.render_html(ev) != page:
                 bad.append("index.html differs from a fresh render (hand-edited or stale)")
-            if not REPORT.exists():
+            if report is None:
                 bad.append("report.md is missing")
-            elif build_register.render_md(ev) != REPORT.read_text(encoding="utf-8"):
+            elif build_register.render_md(ev) != report:
                 bad.append("report.md differs from a fresh render (hand-edited or stale)")
         except Exception as exc:  # noqa: BLE001
             bad.append(f"builder could not be run: {exc}")
         check(not bad, "16. index.html and report.md are byte-for-byte the builder's output for this evidence file",
               "; ".join(bad))
 
-    # ---- report -------------------------------------------------------------------------------
+    return results
+
+
+def number_of(name: str) -> int:
+    return int(name.split(".", 1)[0])
+
+
+def self_test(ev: dict, page: str, report: str) -> int:
+    """Inject one fault at a time and require the named check to fail. Nothing on disk is changed."""
+    import copy
+
+    def obs_where(e, **kw):
+        return next(o for o in e["observations"] if all(o.get(k) == v for k, v in kw.items()))
+
+    def m_figure(e, p, r):
+        o = obs_where(e, task="F0-1", seller_id="blue-nile", field="complaints_3y", profile="Blue Nile Inc")
+        o["value"] = "142"
+        return e, p, r
+
+    def m_exact(e, p, r):
+        obs_where(e, task="F0-2", seller_id="ross-simons", field="email")["value"] = "service@ross-simons.com"
+        return e, p, r
+
+    def m_blank_no_flag(e, p, r):
+        next(o for o in e["observations"] if o["value"] is None)["flags"] = []
+        return e, p, r
+
+    def m_blank_with_quote(e, p, r):
+        next(o for o in e["observations"] if o["value"] is None)["quote"] = "A+ Rated by BBB"
+        return e, p, r
+
+    def m_value_no_quote(e, p, r):
+        next(o for o in e["observations"] if o["value"] is not None)["quote"] = ""
+        return e, p, r
+
+    def m_host(e, p, r):
+        next(x for x in e["reads"] if x["read_id"] == "MJ-04")["url"] = "https://www.mejurs.us.com/faqs/"
+        return e, p, r
+
+    def m_http(e, p, r):
+        next(x for x in e["reads"] if x["read_id"] == "BBB-01")["url"] = "http://www.bbb.org/x"
+        return e, p, r
+
+    def m_time(e, p, r):
+        next(x for x in e["reads"] if x["read_id"] == "BBB-01")["read_utc"] = "2026-11-11T09:59:00Z"
+        return e, p, r
+
+    def m_wrong_class(e, p, r):
+        obs_where(e, task="F0-3", seller_id="mene", field="cards")["read_id"] = "BBB-15"
+        return e, p, r
+
+    def m_other_seller(e, p, r):
+        obs_where(e, task="F0-4", seller_id="mejuri", field="karat_stamp_statement")["read_id"] = "RS-03"
+        return e, p, r
+
+    def m_missing_cell(e, p, r):
+        e["observations"] = [o for o in e["observations"]
+                             if not (o["task"] == "F0-3" and o["seller_id"] == "catbird" and o["field"] == "cards")]
+        return e, p, r
+
+    def m_lead_as_data(e, p, r):
+        e["leads_unverified"][0]["read_id"] = "MJ-01"
+        return e, p, r
+
+    def m_dangling(e, p, r):
+        e["irregularities"][0]["basis"] = ["BBB-99"]
+        return e, p, r
+
+    def m_arith(e, p, r):
+        e["derived"][1]["result"] = "7.5"
+        return e, p, r
+
+    def m_count(e, p, r):
+        e["count_claims"][1]["expected"] = 9
+        return e, p, r
+
+    def m_script(e, p, r):
+        return e, p.replace("</main>", "<script>alert(1)</script></main>"), r
+
+    def m_remote(e, p, r):
+        return e, p.replace("</main>", '<img src="https://example.com/x.png"></main>'), r
+
+    def m_bad_host(e, p, r):
+        return e, p.replace("</main>", '<a href="https://example.com/" rel="noopener noreferrer">x</a></main>'), r
+
+    def m_broken_local(e, p, r):
+        return e, p.replace('href="evidence.json"', 'href="evidence-missing.json"'), r
+
+    def m_row_no_link(e, p, r):
+        i = p.index('<table class="data" id="t-identity"')
+        j = p.index("</tr>", p.index("<tbody>", i))
+        row = p[i:j]
+        stripped = re.sub(r'<a href="https://[^"]*"[^>]*>([^<]*)</a>', r"\1", row)
+        return e, p[:i] + stripped + p[j:], r
+
+    def m_invented_number(e, p, r):
+        return e, p.replace("</main>", "<p>Average premium over melt value: 731 percent.</p></main>"), r
+
+    def m_stat(e, p, r):
+        return e, re.sub(r'data-stat="blank">\d+<', 'data-stat="blank">3<', p, count=1), r
+
+    def m_stale_report(e, p, r):
+        return e, p, r + "\nhand edit\n"
+
+    cases = [
+        ("a figure in a value that the page did not print", m_figure, 5),
+        ("an 'exact' value that differs from the printed one", m_exact, 5),
+        ("a blank cell without a flag", m_blank_no_flag, 4),
+        ("a blank cell that still carries a quotation", m_blank_with_quote, 4),
+        ("a value without the page's words", m_value_no_quote, 4),
+        ("a seller fact sourced from a look-alike host", m_host, 2),
+        ("a source address that is not https", m_http, 2),
+        ("a read time outside the declared window", m_time, 2),
+        ("a payment value sourced from BBB instead of the seller", m_wrong_class, 3),
+        ("a stamp statement sourced from another seller's site", m_other_seller, 3),
+        ("a seller missing from a table", m_missing_cell, 6),
+        ("a search-result lead presented as a read", m_lead_as_data, 7),
+        ("a finding that cites a page that was never read", m_dangling, 8),
+        ("a calculation with the wrong result", m_arith, 9),
+        ("a prose count that the data does not support", m_count, 10),
+        ("a script injected into the page", m_script, 12),
+        ("a remote resource loaded by the page", m_remote, 12),
+        ("a link to a host that was never read", m_bad_host, 13),
+        ("a broken local link", m_broken_local, 13),
+        ("a table row stripped of its source links", m_row_no_link, 14),
+        ("an invented figure typed into the page", m_invented_number, 15),
+        ("a statistic on the page that the evidence does not support", m_stat, 15),
+        ("a hand-edited report", m_stale_report, 16),
+    ]
+    base = run(ev, page, report)
+    if not all(ok for ok, _, _ in base):
+        print("SELF-TEST ABORTED: the unmodified files do not pass, so the faults cannot be isolated")
+        return 1
+    print("Self-test: one fault injected at a time; the named check must fail.")
+    failed = 0
+    for label, mutate, expect in cases:
+        e2, p2, r2 = mutate(copy.deepcopy(ev), page, report)
+        res = run(e2, p2, r2)
+        tripped = sorted({number_of(n) for ok, n, _ in res if not ok})
+        ok = expect in tripped
+        failed += 0 if ok else 1
+        print(("CAUGHT  " if ok else "MISSED  ") + f"{label:<62} expected check {expect:>2}; failed: {tripped or 'none'}")
+    print()
+    if failed:
+        print(f"SELF-TEST RESULT: {failed} of {len(cases)} injected faults were NOT caught")
+        return 1
+    print(f"SELF-TEST RESULT: all {len(cases)} injected faults were caught")
+    return 0
+
+
+def main() -> int:
+    if not EVIDENCE.exists():
+        print("FAIL: evidence file is missing:", EVIDENCE)
+        return 1
+    ev = json.loads(EVIDENCE.read_text(encoding="utf-8"))
+    page = PAGE.read_text(encoding="utf-8") if PAGE.exists() else None
+    report = REPORT.read_text(encoding="utf-8") if REPORT.exists() else None
+    if "--self-test" in sys.argv[1:]:
+        if page is None or report is None:
+            print("SELF-TEST ABORTED: index.html or report.md is missing")
+            return 1
+        return self_test(ev, page, report)
+
+    results = run(ev, page, report)
     width = max(len(n) for _, n, _ in results)
     failed = 0
     print("Seller due-diligence register — hallucination, integrity and security check")
