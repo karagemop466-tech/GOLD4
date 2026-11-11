@@ -234,5 +234,18 @@
   "delta_pct_vs_active_benchmark": -0.021,
   "decision": "Benchmark RETAINED at the stored value. The tick is 0.84 USD/oz lower (-0.021%) on the same source data date, i.e. an intraday move well inside the noise this project has always tolerated; the previous pass acted only on a -0.70% move. The reading is recorded here as a dated cross-check. No derived gold value was recomputed and no stored value was replaced.",
   "usd_per_gram_if_used": 128.4576
+ },
+ "pass21_live_crosscheck_2026_11_11": {
+  "session": "arena/91415e29-gold4 (Pass 21)",
+  "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+  "read_path": "browser-rendered page reader",
+  "window_utc": "2026-11-11T07:59Z",
+  "value_usd_per_oz": 4059.49,
+  "source_date_line_verbatim": "10 November, 2026",
+  "source_data_as_of_verbatim": "Data as of 10 November, 2026",
+  "active_benchmark_usd_per_oz": 3996.31,
+  "delta_pct_vs_active_benchmark": 1.581,
+  "decision": "Benchmark RETAINED at the stored value. The live panel moved +1.58% (+$63.18/oz) over 18 days and its own data date advanced from 22 October to 10 November, 2026. The reading is recorded here as a dated cross-check. No derived gold value was recomputed and no stored value was replaced. At the live tick, gold = $130.5156/g (vs $128.48435/g at the benchmark); a 4.0 g 14K ring's nominal gold value would be $305.20 vs $299.80 at the benchmark — shown only to size the move.",
+  "usd_per_gram_if_used": 130.5156
  }
 }
