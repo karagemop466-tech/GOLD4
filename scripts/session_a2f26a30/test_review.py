@@ -6,6 +6,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+import sys
 
 import build_review as review
 import stage_pages
@@ -114,6 +115,28 @@ class ReviewTests(unittest.TestCase):
                 self.assertFalse((dest / banned).exists())
             with self.assertRaises(ValueError):
                 stage_pages.stage(root / 'recursive', root)
+
+    def test_future_observation_rejected(self):
+        with self.assertRaises(ValueError):
+            self.mutate(review.INPUTS[-1], lambda d: d['product_observations'][0].update(read_date_utc='2099-01-01'))
+
+    def test_invalid_date_rejected(self):
+        with self.assertRaises(ValueError):
+            self.mutate(review.INPUTS[-1], lambda d: d['product_observations'][0].update(read_date_utc='not a date'))
+
+    def test_invalid_chunk_rejected(self):
+        with self.assertRaises(ValueError):
+            self.mutate(review.INPUTS[-1], lambda d: d['product_observations'][0].update(chunks_read=[True]))
+
+    def test_legacy_layout_caller_still_builds(self):
+        sys.path.insert(0, str(review.ROOT / 'scripts'))
+        import build_pass20
+        import build_site
+        build_pass20.prime_layout()
+        html = build_site.render('Hypothetical fixture', '<p>Fixture</p>', 'pass20', root='../')
+        self.assertIn('2026-11-11', html)
+        self.assertIn('10 product URLs', html)
+        self.assertIn('54 not re-opened', html)
 
     def test_deterministic(self):
         self.assertEqual(review.outputs(), review.outputs())

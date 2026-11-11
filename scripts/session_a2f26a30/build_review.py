@@ -2,6 +2,7 @@
 """Deterministic November review: no data enrichment or current-price inference."""
 import argparse
 from collections import Counter
+from datetime import date
 from hashlib import sha256
 from html import escape
 import json
@@ -40,6 +41,17 @@ def outputs(root=ROOT):
     # www and apex names used by existing canonical official product URLs.
     allowed |= {h.removeprefix('www.') for h in allowed if h}
     allowed |= {'www.' + h for h in list(allowed) if h and not h.startswith('www.')}
+    review_date = date.fromisoformat(evidence['review_date_utc'])
+    for observation in evidence['product_observations'] + evidence['reference_observations']:
+        read_date = date.fromisoformat(observation['read_date_utc'])
+        if read_date > review_date:
+            raise ValueError('Observation read date is after the dated review')
+        chunks = observation['chunks_read']
+        if (not chunks or any(type(c) is not int or c < 0 for c in chunks)
+                or len(set(chunks)) != len(chunks)):
+            raise ValueError('Invalid inspected chunk list')
+        if not observation['verbatim_excerpts'] or not observation['finding']:
+            raise ValueError('Observation lacks evidence or limitation')
     observations = {o['id']: o for o in evidence['product_observations']}
     ids = [r['id'] for r in rows]
     if len(set(ids)) != len(ids) or not set(observations) <= set(ids):

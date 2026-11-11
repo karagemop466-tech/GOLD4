@@ -1,9 +1,9 @@
-Started 2026-11-11T08:04:45.619332+00:00
+Started 2026-11-11T08:06:03.387488+00:00
 Automated software checks only; not external factual verification or an assay.
 
 $ python3 scripts/audit.py
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-11-11T08:04:45+00:00
+run_utc: 2026-11-11T08:06:03+00:00
 dataset rows: 64 | sellers: 10 | sources: 32
 spot benchmark: $3,996.31/oz (22 October, 2026) = $128.4844/g
 
@@ -186,7 +186,7 @@ test_weight_needs_provenance_source_and_scope (__main__.ReadinessTests.test_weig
 test_window_and_source_match_do_not_establish_configuration_rights (__main__.ReadinessTests.test_window_and_source_match_do_not_establish_configuration_rights) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 0.169s
+Ran 22 tests in 0.182s
 
 OK
 
@@ -218,16 +218,16 @@ GOLD4 LIVE SOURCE HEALTH CHECK — read-only evidence collection
 ========================================================================
 targets        : 1 (1 row URLs, 0 registered sources)
 allow-listed   : 21 hostnames from data/sources.json
-checked_utc    : 2026-11-11T08:04:47Z
+checked_utc    : 2026-11-11T08:06:05Z
   AL-01                      NO_RESPONSE        None          B  
 ------------------------------------------------------------------------
   NO_RESPONSE            1
-artifact: tmpu1gtqgci/live_source_check_20261111T080447Z.json
+artifact: tmp8a4fp3to/live_source_check_20261111T080605Z.json
 RESULT: evidence collected (this is not a pass/fail verdict; review the artifact).
 FAIL: no targets matched (unknown --only ID or empty dataset)
 ..........
 ----------------------------------------------------------------------
-Ran 10 tests in 0.192s
+Ran 10 tests in 0.239s
 
 OK
 
@@ -235,9 +235,9 @@ exit=0
 
 $ python3 scripts/session_a2f26a30/test_review.py
 Staged 6 public files (no Git metadata, workflows or Python tooling)
-.........
+.............
 ----------------------------------------------------------------------
-Ran 9 tests in 0.053s
+Ran 13 tests in 0.076s
 
 OK
 
@@ -249,4 +249,4 @@ PASS November review freshness
 exit=0
 
 15/15 command invocations passed
-Completed 2026-11-11T08:04:47.317944+00:00
+Completed 2026-11-11T08:06:05.410935+00:00

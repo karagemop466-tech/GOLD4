@@ -176,8 +176,8 @@ LAYOUT = """<!doctype html>
 <aside class="nohall" aria-label="Current verification limits">
   <strong>NO HALLUCINATIONS — dated research, not live offers.</strong>
   Historical captures below are not current verified quotes or a guarantee of purity.
-  <strong>November 11 review:</strong> current configured prices remain unverified and blank in the <a href="{root}pages/current-review.html">latest evidence register / Flagged for Review</a>.
-  Ten product URLs sampled in partial chunks; 54 not re-opened. October records below have not become current quotes.
+  <strong>Evidence review ({review_date}):</strong> current configured prices remain unverified and blank in the <a href="{root}pages/current-review.html">latest evidence register / Flagged for Review</a>.
+  {review_sampled} product URLs sampled in partial chunks; {review_unopened} not re-opened. October records below have not become current quotes.
   The <a href="{root}pages/session-review.html">October session review</a> is historical.
   Pass 20 recorded a World Gold Council panel read ($3,995.47/oz, 23 October 2026) differing from the stored benchmark ($3,996.31/oz); see <a href="{root}pages/pass20.html">that pass's evidence</a>. Neither is a live quote.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
@@ -211,10 +211,14 @@ def render(title: str, body: str, active: str, root: str = "", script: bool = Fa
         f'<a href="{nav_href(href)}" class="{"active" if key == active else ""}">{esc(label)}</a>'
         for href, label, key in NAV
     )
+    review_doc = json.loads((ROOT / "reviews/current-a2f26a30.json").read_text())
+    review_sampled = len({o["id"] for o in review_doc["product_observations"]})
+    review_total = len(load("rings.json")["rows"])
     extra = f'<script src="{root}assets/app.js"></script>' if script else ""
     return LAYOUT.format(
         title=esc(title), nav=nav, body=body, root=root, extra_scripts=extra,
         captured=C["captured"], spot=C["spot_oz"], spot_date=C["spot_date"],
+        review_date=esc(review_doc["review_date_utc"]), review_sampled=review_sampled, review_unopened=review_total-review_sampled,
         spot_g=C["spot_g"], spot_captured=esc(C["spot_captured"]), built=C["built"], n_rows=C["n_rows"], n_sources=C["n_sources"],
     )
 
