@@ -165,7 +165,7 @@ def main() -> int:
         if h["source_state"] == "HTTP_404":
             if not str(row.get("url", "")).startswith("https://"):
                 bad(f"{rid}: dead URL is not even an https official link")
-            elif not re.search(r"Pass \d+ source check", row.get("flag_detail") or ""):  # Pass 21: any pass label, not only "Pass 15"
+            elif not re.search(r"(?:Pass \d+[a-z]?|Re-read [0-9-]+ \([0-9a-f]+\)) source check", row.get("flag_detail") or ""):  # session 4fe4a9c3: any pass or dated re-read label, not only "Pass 15"
                 warn(f"{rid}: SOURCE_URL_DEAD raised without the evidence sentence in flag_detail")
             else:
                 ok()

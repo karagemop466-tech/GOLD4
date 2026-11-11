@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """Pass 21: regenerate this session's COORDINATION.md section from the evidence files (argument: the Publication paragraph)."""
 import json, pathlib, re, sys
-ROOT = pathlib.Path(__file__).resolve().parents[1]
-rec = json.loads((ROOT/'reviews/pass21/reconciliation.json').read_text())
-hand = json.loads((ROOT/'reviews/pass21/hand_reads.json').read_text())
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+rec = json.loads((ROOT/'reviews/reread-4fe4a9c3/reconciliation.json').read_text())
+hand = json.loads((ROOT/'reviews/reread-4fe4a9c3/hand_reads.json').read_text())
 spot = json.loads((ROOT/'data/gold_spot.json').read_text())
 rings = json.loads((ROOT/'data/rings.json').read_text())['rows']
-gates = json.loads((ROOT/'reviews/pass21/gates.json').read_text())
+gates = json.loads((ROOT/'reviews/reread-4fe4a9c3/gates.json').read_text())
 health = json.loads((ROOT/'data/source_health.json').read_text())
 vc = rec['verdict_counts']; dec = rec['rows']; by = {d['id']: d for d in dec}
 b = spot['benchmark']; prev = [p for p in spot['prior_captures'] if p.get('status') == 'superseded'][-1]
@@ -17,7 +17,7 @@ hand_ids = [h['id'] for h in hand['rows']]
 flags_total = sum(len(r['flags']) for r in rings)
 close = sys.argv[1] if len(sys.argv) > 1 else "**Publication:** recorded below once the PR is merged and the deploy is confirmed."
 changed = "; ".join(f"{i} {m(by[i]['stored_price_usd'])} → {m(by[i]['price_today_usd'])}" for i in ids('CHANGED'))
-cross = "; ".join(f"[{c['label']}]({c['source_url']}) ${c['value_usd_per_oz']:,.2f}" for c in spot['pass21_cross_checks'])
+cross = "; ".join(f"[{c['label']}]({c['source_url']}) ${c['value_usd_per_oz']:,.2f}" for c in spot['reread_2026_11_11_cross_checks'])
 gate_line = ", ".join(f"G{g['gate']} {g['status']}" for g in gates)
 section = f"""## Session `arena/4fe4a9c3-gold4` — Pass 21: 19-day staleness re-verification, hallucination scan, integration & publish (2026-11-11)
 
@@ -35,8 +35,8 @@ session to `arena/4fe4a9c3-gold4`. No other session was active, so this session 
 | # | Task | Status | Owner | Files in scope |
 |---|------|--------|-------|----------------|
 | 53 | **Baseline** — all nine CI gates (twelve commands) on `main@b34ae17` before any change. | **done** — 12/12 pass, Gate 7 with 4 warnings | `arena/4fe4a9c3` | this section |
-| 54 | **Repo review, line by line** — data rows, sources, scripts, generated pages. | **done** | `arena/4fe4a9c3` | `reviews/pass21/**` |
-| 55 | **Fresh re-verification** — benchmark and every ring URL; apply only what was read. | **done** — {rec['rows_with_price_read_today']}/{len(dec)} prices read that day | `arena/4fe4a9c3` | `reviews/pass21/**`, `data/*` |
+| 54 | **Repo review, line by line** — data rows, sources, scripts, generated pages. | **done** | `arena/4fe4a9c3` | `reviews/reread-4fe4a9c3/**` |
+| 55 | **Fresh re-verification** — benchmark and every ring URL; apply only what was read. | **done** — {rec['rows_with_price_read_today']}/{len(dec)} prices read that day | `arena/4fe4a9c3` | `reviews/reread-4fe4a9c3/**`, `data/*` |
 | 56 | **Hallucination / security scan** — gates after every edit, prose-vs-data drift, staleness labels. | **done** — {sum(g['status']=='PASS' for g in gates)}/{len(gates)} pass | `arena/4fe4a9c3` | `scripts/*pass21*`, `README.md` |
 | 57 | **Integration & publish** — rebuild, link check, PR, merge, confirm deploy. | see Publication below | `arena/4fe4a9c3` | generated site, this section |
 
@@ -44,29 +44,29 @@ session to `arena/4fe4a9c3-gold4`. No other session was active, so this session 
 
 - **Gold benchmark:** [World Gold Council gold prices](https://www.gold.org/goldhub/data/gold-prices), hand-read {b['captured_utc']}: **${b['value_usd_per_oz']:,.2f}/oz**, "{b['data_as_of_shown_on_source']}". Previous benchmark ${prev['value_usd_per_oz']:,.2f}/oz kept in `prior_captures`. Runner cross-checks at 08:02Z: {cross}.
 - **Runner sweep:** {len(dec)} ring URLs + {len(health['sources'])} registered sources, read-only GET, {rec['runner_checked_utc']}, [run 42983630067](https://github.com/karagemop466-tech/GOLD4/actions/runs/42983630067). Evidence: `reports/live_source_check_20261111T080309Z.json`. Row states: {", ".join(f"{k} {v}" for k, v in health['row_states'].items())}.
-- **Hand reads (browser-rendered reader, 08:00–08:50Z), {len(hand_ids)} rows:** {", ".join(f"[{h['id']}]({h['url']})" for h in hand['rows'])}. Verbatim strings and what each read did not reach: `reviews/pass21/hand_reads.json`.
+- **Hand reads (browser-rendered reader, 08:00–08:50Z), {len(hand_ids)} rows:** {", ".join(f"[{h['id']}]({h['url']})" for h in hand['rows'])}. Verbatim strings and what each read did not reach: `reviews/reread-4fe4a9c3/hand_reads.json`.
 
 ### Verification performed
 
-1. Each row was reconciled against both read paths by `scripts/pass21_apply.py`, which copies values from the two evidence files and types none. Result: `reviews/pass21/reconciliation.json` and [`reviews/pass21/pass21.md`](reviews/pass21/pass21.md).
+1. Each row was reconciled against both read paths by `scripts/session_4fe4a9c3/apply_reread.py`, which copies values from the two evidence files and types none. Result: `reviews/reread-4fe4a9c3/reconciliation.json` and [`reviews/reread-4fe4a9c3/report.md`](reviews/reread-4fe4a9c3/report.md).
 2. Verdicts: UNCHANGED {vc.get('UNCHANGED',0)}, SALE {vc.get('SALE',0)}, CHANGED {vc.get('CHANGED',0)}, SOURCE_DEAD {vc.get('SOURCE_DEAD',0)}, SOLD_OUT {vc.get('SOLD_OUT',0)}, NOT_REREAD {vc.get('NOT_REREAD',0)}.
 3. Invariants checked after the apply: no weight and no URL changed; only price, date, basis, flag and history fields were touched; the script is idempotent (second run byte-identical).
 4. Every derived gold value recomputed at ${spot['constants']['spot_usd_per_gram']}/g. Gate 1 caught a rounding error in this session's first write of that constant (5 decimals instead of 6); it was fixed before the site was built.
-5. Final tree: {gate_line} (`reviews/pass21/gates.json`). Gate 7 passes with 8 warnings, all expected: AN-01, BE-01, BE-02, BE-03, BE-05, BE-06, BE-07 and VR-01 carry a price dated that day from the hand read while the runner could not read the page. The evidence-age warning is gone. An independent self-check (`scripts/pass21_selfcheck.py`, output in `reviews/pass21/selfcheck.txt`) confirms every price dated that day is printed in that day's raw evidence.
+5. Final tree: {gate_line} (`reviews/reread-4fe4a9c3/gates.json`). Gate 7 passes with 8 warnings, all expected: AN-01, BE-01, BE-02, BE-03, BE-05, BE-06, BE-07 and VR-01 carry a price dated that day from the hand read while the runner could not read the page. The evidence-age warning is gone. An independent self-check (`scripts/session_4fe4a9c3/selfcheck.py`, output in `reviews/reread-4fe4a9c3/selfcheck.txt`) confirms every price dated that day is printed in that day's raw evidence.
 
 ### Irregularities found (all published on the Pass 21 and Flagged pages with source links)
 
 | # | Finding | Rows | Action |
 |---|---|---|---|
-| F21-01 | Two site-wide sales made the October prices wrong | {vc.get('SALE',0)} rows (Blue Nile, Ross-Simons) | sale price shown with the list price beside it; flag `SALE_PRICE_TEMPORARY` |
-| F21-02 | Machine-readable price lags the displayed sale price, so the `CONFIRMED` rule would have confirmed stale prices | RS-01…RS-05 | flag `STRUCTURED_PRICE_LAGS_DISPLAY`; finding published |
-| F21-03 | Price changed with no sale label | {changed} | updated, history kept; flag `PRICE_CHANGED_PASS21` |
-| F21-04 | Page gone | {", ".join(ids('SOURCE_DEAD'))} | current price blanked, last value kept; flag `SOURCE_DEAD_PASS21` |
-| F21-05 | Sold out | {", ".join(ids('SOLD_OUT'))} | current price blank; flag `SOLD_OUT_PASS21` |
-| F21-06 | Runner refused or rate-limited; price rests on the hand read alone | Brilliant Earth, VRAI | stated on the page |
-| F21-07 | Not re-read | {", ".join(ids('NOT_REREAD'))} | flag `PRICE_NOT_REREAD_PASS21` |
-| F21-08 | Gram weight not re-seen | AN-01, VR-02 | stated; October weight kept |
-| F21-09 | Tooling stamped "Pass 15" on any later evidence | scripts | fixed (see deviations) |
+| R11-01 | Two site-wide sales made the October prices wrong | {vc.get('SALE',0)} rows (Blue Nile, Ross-Simons) | sale price shown with the list price beside it; flag `SALE_PRICE_TEMPORARY` |
+| R11-02 | Machine-readable price lags the displayed sale price, so the `CONFIRMED` rule would have confirmed stale prices | RS-01…RS-05 | flag `STRUCTURED_PRICE_LAGS_DISPLAY`; finding published |
+| R11-03 | Price changed with no sale label | {changed} | updated, history kept; flag `PRICE_CHANGED_2026_11_11` |
+| R11-04 | Page gone | {", ".join(ids('SOURCE_DEAD'))} | current price blanked, last value kept; flag `SOURCE_DEAD_2026_11_11` |
+| R11-05 | Sold out | {", ".join(ids('SOLD_OUT'))} | current price blank; flag `SOLD_OUT_2026_11_11` |
+| R11-06 | Runner refused or rate-limited; price rests on the hand read alone | Brilliant Earth, VRAI | stated on the page |
+| R11-07 | Not re-read | {", ".join(ids('NOT_REREAD'))} | flag `PRICE_NOT_REREAD_2026_11_11` |
+| R11-08 | Gram weight not re-seen | AN-01, VR-02 | stated; October weight kept |
+| R11-09 | Tooling stamped "Pass 15" on any later evidence | scripts | fixed (see deviations) |
 
 **Not verified (does not block the merge):** {len(dec) - len(hand_ids)} of {len(dec)} rows were not hand-read; return-policy, warranty, law and guidance text was checked for reachability only; no XRF or assay result, no hallmark and no independently verified seller reputation exists for any row. {flags_total} flag instances are published.
 
@@ -82,7 +82,7 @@ session to `arena/4fe4a9c3-gold4`. No other session was active, so this session 
 
 ### Files added or changed
 
-`reviews/pass21/**`, `reports/live_source_check_20261111T080309Z.json`, `scripts/pass21_apply.py`, `scripts/build_pass21.py`, `scripts/run_gates_pass21.py`, `scripts/pass21_docs.py`, `pages/pass21.html`, `data/{{rings,gold_spot,derived,source_health,sources,verification_log}}.json`, regenerated `index.html`, `pages/*.html`, `VERIFICATION.md`, `AUDIT.md`, `README.md`.
+`reviews/reread-4fe4a9c3/**`, `reports/live_source_check_20261111T080309Z.json`, `scripts/session_4fe4a9c3/apply_reread.py`, `scripts/session_4fe4a9c3/build_page.py`, `scripts/session_4fe4a9c3/run_gates.py`, `scripts/session_4fe4a9c3/docs.py`, `pages/reread-4fe4a9c3.html`, `data/{{rings,gold_spot,derived,source_health,sources,verification_log}}.json`, regenerated `index.html`, `pages/*.html`, `VERIFICATION.md`, `AUDIT.md`, `README.md`.
 
 ### Publication
 

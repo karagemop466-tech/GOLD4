@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Build pages/pass21.html — the Pass 21 record (2026-11-11, session arena/4fe4a9c3-gold4).
+"""Build pages/reread-4fe4a9c3.html — the record of the 2026-11-11 re-read (session arena/4fe4a9c3-gold4).
 
 NO HALLUCINATIONS. Every price, weight, count and quoted page string on the page is
 read from committed files, never typed here:
 
-  reviews/pass21/reconciliation.json   per-row verdicts (written by scripts/pass21_apply.py)
-  reviews/pass21/hand_reads.json       this session's hand reads, verbatim
-  reviews/pass21/gates.json            gate results (written by scripts/run_gates_pass21.py)
+  reviews/reread-4fe4a9c3/reconciliation.json   per-row verdicts (written by scripts/session_4fe4a9c3/apply_reread.py)
+  reviews/reread-4fe4a9c3/hand_reads.json       this session's hand reads, verbatim
+  reviews/reread-4fe4a9c3/gates.json            gate results (written by scripts/session_4fe4a9c3/run_gates.py)
   data/rings.json, data/gold_spot.json, data/source_health.json, data/derived.json
 
 Run after scripts/build_site.py.
@@ -16,12 +16,16 @@ from __future__ import annotations
 import json
 import pathlib
 
-import build_site as bs
-from build_pass20 import prime_layout
-from build_site import esc, no_hallucination_block, render
+import sys
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
-P21 = ROOT / "reviews" / "pass21"
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
+
+import build_site as bs  # noqa: E402
+from build_pass20 import prime_layout  # noqa: E402
+from build_site import esc, no_hallucination_block, render  # noqa: E402
+
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+P21 = ROOT / "reviews" / "reread-4fe4a9c3"
 GH = "https://github.com/karagemop466-tech/GOLD4/blob/main/"
 
 VERDICT = {
@@ -129,7 +133,7 @@ def main() -> None:
       <td class="num">{c['spread_vs_benchmark_pct']:+.2f}%</td><td class="mono small">{esc(c['verbatim'])}</td>
       <td class="mono small">{esc(c['retrieved_utc'])}</td>
       <td class="src"><a href="{esc(c['source_url'])}" target="_blank" rel="noopener">official page</a></td></tr>"""
-                    for c in spot.get("pass21_cross_checks", []))
+                    for c in spot.get("reread_2026_11_11_cross_checks", []))
 
     by_id = {d["id"]: d for d in dec}
     sale_bn = [i for i in ids(dec, "SALE") if i.startswith("BN-")]
@@ -171,21 +175,21 @@ def main() -> None:
         ("HIGH", "Prices changed with no sale label",
          "These pages print a different price from October and show no strikethrough or sale wording in the part that was read: "
          + "; ".join(change_line(i) for i in changed) + ". The two Menē prices float with the gold price, so they change daily.",
-         f"{links(changed)}.", "PRICE_CHANGED_PASS21"),
+         f"{links(changed)}.", "PRICE_CHANGED_2026_11_11"),
         ("HIGH", "Pages that are gone: the current price is blank",
          f"{len(dead)} product pages no longer exist. The price cell is blank and the last value read is shown beside it with its October date. "
          f"{len(dead_before)} of them already returned 404 to the runner on 23 October; {len(dead) - len(dead_before)} is new this pass.",
-         f"{links(dead)}.", "SOURCE_DEAD_PASS21"),
+         f"{links(dead)}.", "SOURCE_DEAD_2026_11_11"),
         ("MEDIUM", "Sold out: the current price is blank",
          "The page reports the item as sold out and offers no purchasable price.",
-         f"{links(sold)}.", "SOLD_OUT_PASS21"),
+         f"{links(sold)}.", "SOLD_OUT_2026_11_11"),
         ("MEDIUM", "Rows the runner cannot read rest on one read path",
          f"The retailer's bot protection refused or rate-limited the GitHub runner on {len(blocked)} rows. Where a price is shown for them it comes from this "
          "session's hand read alone, with no second path to corroborate it.",
          f"{links(blocked)}.", "SOURCE_BOT_BLOCKED"),
         ("MEDIUM", "Not re-read at all",
          "No price or weight evidence was obtained for these rows on 11 November. They keep their October state.",
-         f"{links(notread)}.", "PRICE_NOT_REREAD_PASS21"),
+         f"{links(notread)}.", "PRICE_NOT_REREAD_2026_11_11"),
         ("MEDIUM", "Gram weights were re-read for only part of the list",
          f"{len(w_rows)} rows publish a gram weight. The weight was seen again on 11 November for {len(w_rows) - len(w_not)} of them. "
          "The others keep their October weight; the price-to-gold figure for those rows mixes a November price with an October weight.",
@@ -203,8 +207,8 @@ def main() -> None:
     ]
     sev_kind = {"HIGH": "bad", "MEDIUM": "warn", "LOW": "mute"}
     finding_html = "".join(f"""
-<div class="card" id="F21-{i:02d}">
-  <h3>F21-{i:02d} · {esc(title)} {badge(sev, sev_kind[sev])}</h3>
+<div class="card" id="R11-{i:02d}">
+  <h3>R11-{i:02d} · {esc(title)} {badge(sev, sev_kind[sev])}</h3>
   <p>{detail}</p>
   <p class="small"><strong>Rows / files:</strong> {where}</p>
 </div>""" for i, (sev, title, detail, where, _flag) in enumerate(findings, start=1))
@@ -220,11 +224,11 @@ def main() -> None:
   <tr><td class="id">{esc(g['gate'])}</td><td>{esc(g['name'])}</td>
       <td>{badge(g['status'], 'ok' if g['status'] == 'PASS' else 'bad')}</td>
       <td class="mono small">{esc(g['detail'])}</td>
-      <td class="src"><a href="{GH}reviews/pass21/gates.json">project test evidence</a></td></tr>""" for g in gates)
+      <td class="src"><a href="{GH}reviews/reread-4fe4a9c3/gates.json">project test evidence</a></td></tr>""" for g in gates)
 
     body = f"""
 <section class="hero">
-  <span class="eyebrow">Pass 21 · 11 November 2026 · session arena/4fe4a9c3-gold4</span>
+  <span class="eyebrow">Re-read of 11 November 2026 · session arena/4fe4a9c3-gold4</span>
   <h1>Re-verification after 19 days: what changed, and what could not be re-read.</h1>
   <p class="lede">The prices on this site were read on 22 and 23 October 2026. On 11 November a GitHub runner re-opened all {n} ring pages
   and this session hand-read {len(hand_ids)} of them. {rec['rows_with_price_read_today']} prices were read again;
@@ -250,13 +254,13 @@ def main() -> None:
       machine-readable prices. <strong>Hand read:</strong> this session opened {len(hand_ids)} pages in a browser-rendered reader between
       08:00 and 08:50 UTC and copied the strings the page printed. Retailers that block the runner could only be read by hand.</p>
       <p class="small">Evidence files: <a href="{GH}reports/live_source_check_20261111T080309Z.json">runner sweep</a> ·
-      <a href="{GH}reviews/pass21/hand_reads.json">hand reads</a> ·
-      <a href="{GH}reviews/pass21/reconciliation.json">row-by-row reconciliation</a>.</p></div>
+      <a href="{GH}reviews/reread-4fe4a9c3/hand_reads.json">hand reads</a> ·
+      <a href="{GH}reviews/reread-4fe4a9c3/reconciliation.json">row-by-row reconciliation</a>.</p></div>
     <div class="card"><h3>What the rules were</h3>
       <p>A price was updated only where that day's evidence printed the current amount. The earlier value is kept in the row's history.
       A page that is gone or sold out gets a blank price, never a carried-over one. A row nobody could read keeps its October date and a flag.
       No number was estimated, averaged or converted.</p>
-      <p class="small">The update is done by <span class="mono">scripts/pass21_apply.py</span>, which copies values from the two evidence
+      <p class="small">The update is done by <span class="mono">scripts/session_4fe4a9c3/apply_reread.py</span>, which copies values from the two evidence
       files and types none of its own.</p></div>
   </div>
 </section>
@@ -342,8 +346,8 @@ def main() -> None:
   </table></div>
 </section>
 """
-    (ROOT / "pages" / "pass21.html").write_text(render("Pass 21 — re-verification after 19 days", body, "pass21", root="../", script=True), encoding="utf-8")
-    print(f"wrote pages/pass21.html ({len(body)} chars of body)")
+    (ROOT / "pages" / "reread-4fe4a9c3.html").write_text(render("11 November re-read — what changed after 19 days", body, "reread-4fe4a9c3", root="../", script=True), encoding="utf-8")
+    print(f"wrote pages/reread-4fe4a9c3.html ({len(body)} chars of body)")
 
 
 if __name__ == "__main__":

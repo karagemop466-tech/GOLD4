@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Pass 21 copy of run_gates_pass20.py, extended with Gate 9 (all twelve CI commands).
+"""Session 4fe4a9c3 copy of run_gates_pass20.py, extended with Gate 9 (all twelve CI commands).
 
-Run every CI gate locally, record the result, and write reviews/pass21/gates.json.
+Run every CI gate locally, record the result, and write reviews/reread-4fe4a9c3/gates.json.
 
 The gate list mirrors .github/workflows/pages.yml exactly, so a local PASS means
 CI is expected to pass on the same tree. The exit code of each gate is the source
@@ -16,8 +16,8 @@ import re
 import subprocess
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
-OUT = ROOT / "reviews" / "pass21"
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+OUT = ROOT / "reviews" / "reread-4fe4a9c3"
 SUMMARY = re.compile(r"(RESULT:|runtime tests passed|STATUS\s*:|PASS[a-zA-Z ]*:|OK\b|Ran \d+ tests|Records audited:|Checks passed|FAIL)")
 
 GATES = [

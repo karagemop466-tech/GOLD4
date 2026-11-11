@@ -32,7 +32,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 
-# Pass 21 fix: the pass label and session used to be hard-coded as "Pass 15 / arena/03c0c10f",
+# Fix by session 4fe4a9c3 (2026-11-11): the pass label and session used to be hard-coded as "Pass 15 / arena/03c0c10f",
 # so any later re-run stamped new evidence with the wrong pass and session (a provenance bug).
 # They are now supplied by the pass that runs the script; the defaults keep the historical text.
 PASS_LABEL = os.environ.get("GOLD4_SOURCE_CHECK_PASS", "Pass 15")
@@ -125,8 +125,8 @@ def main() -> int:
 
         # Append the evidence sentence once, keeping whatever an earlier pass wrote.
         existing = row.get("flag_detail") or ""
-        # drop the sentence written by any earlier source check (Pass 15, Pass 21, ...) before appending today's
-        existing = re.sub(r"(?:^| \| )Pass \d+[a-z]? source check .*$", "", existing).rstrip(" |")
+        # drop the sentence written by any earlier source check (any pass or dated re-read) before appending today's
+        existing = re.sub(r"(?:^| \| )(?:Pass \d+[a-z]?|Re-read [0-9-]+ \([0-9a-f]+\)) source check .*$", "", existing).rstrip(" |")
         note = sentence(st, checked)
         if st.get("source_state") == "OK" and st.get("price_state") in ("CONFIRMED", "NO_STORED_PRICE"):
             # confirmed / nothing to raise: record it in source_check only, do not

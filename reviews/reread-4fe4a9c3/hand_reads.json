@@ -1,5 +1,5 @@
 {
- "artifact": "GOLD4 Pass 21 — hand reads by session arena/4fe4a9c3-gold4",
+ "artifact": "GOLD4 re-read of 2026-11-11 — hand reads by session arena/4fe4a9c3-gold4",
  "read_path": "this session's browser-rendered page reader (fetch of the official URL, page text returned as markdown). Independent of the GitHub runner sweep in reports/live_source_check_20261111T080309Z.json.",
  "read_window_utc": "2026-11-11T08:00Z–08:50Z",
  "rule": "NO HALLUCINATIONS. Every 'verbatim' string below was printed by the official page at the URL given, on the date given. Nothing here is inferred, averaged or converted. 'not_read' lists what this read did NOT reach.",

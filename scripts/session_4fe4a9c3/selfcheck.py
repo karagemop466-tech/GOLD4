@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Pass 21 hallucination self-check — independent of scripts/pass21_apply.py.
+"""Hallucination self-check for the 2026-11-11 re-read (session 4fe4a9c3) — independent of scripts/session_4fe4a9c3/apply_reread.py.
 
 For every row it asks one question: does the price now stored in data/rings.json
 appear, as printed text, in the raw evidence captured on 2026-11-11? It reads the
@@ -18,7 +18,7 @@ import re
 import subprocess
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
+ROOT = pathlib.Path(__file__).resolve().parents[2]
 BASE = "b34ae17fc474e02539dc40c1b0f41ad9d952ced3"
 
 
@@ -39,7 +39,7 @@ def amounts(text: str) -> set[float]:
 def main() -> int:
     rings = load("data/rings.json")["rows"]
     runner = {r["key"]: r for r in load("reports/live_source_check_20261111T080309Z.json")["results"]}
-    hand = {h["id"]: h for h in load("reviews/pass21/hand_reads.json")["rows"]}
+    hand = {h["id"]: h for h in load("reviews/reread-4fe4a9c3/hand_reads.json")["rows"]}
     spot = load("data/gold_spot.json")
     derived = {r["id"]: r for r in load("data/derived.json")["rows"]}
     method = load("data/methodology.json")
@@ -68,7 +68,7 @@ def main() -> int:
         if p is None:
             check("PRICE_UNVERIFIED" in r["flags"], f"{rid}: blank price without PRICE_UNVERIFIED")
         if p is not None and not dated_today:
-            check("PRICE_NOT_REREAD_PASS21" in r["flags"], f"{rid}: price keeps an October date without the not-re-read flag")
+            check("PRICE_NOT_REREAD_2026_11_11" in r["flags"], f"{rid}: price keeps an October date without the not-re-read flag")
         check(r.get("weight_g") == base[rid].get("weight_g"), f"{rid}: weight changed against main")
         check(r["url"] == base[rid]["url"], f"{rid}: URL changed against main")
         check(r["karat"] == base[rid]["karat"], f"{rid}: karat changed against main")
@@ -80,8 +80,8 @@ def main() -> int:
 
     oz = spot["constants"]["troy_ounce_grams"]
     val = spot["benchmark"]["value_usd_per_oz"]
-    check(abs(val - load("reviews/pass21/hand_reads.json")["benchmark"]["value_usd_per_oz"]) < 1e-9, "benchmark differs from the hand-read record")
-    check(f"{val:,.2f}" in " ".join(load("reviews/pass21/hand_reads.json")["benchmark"]["verbatim"]), "benchmark figure not in the verbatim strings")
+    check(abs(val - load("reviews/reread-4fe4a9c3/hand_reads.json")["benchmark"]["value_usd_per_oz"]) < 1e-9, "benchmark differs from the hand-read record")
+    check(f"{val:,.2f}" in " ".join(load("reviews/reread-4fe4a9c3/hand_reads.json")["benchmark"]["verbatim"]), "benchmark figure not in the verbatim strings")
     fin = {int(t["karat"]): float(t["fineness"]) for t in method["karat_fineness"]["table"]}
     for r in rings:
         d = derived[r["id"]]

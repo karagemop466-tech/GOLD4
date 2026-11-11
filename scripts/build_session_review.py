@@ -51,7 +51,7 @@ def build():
 <h1>Session review of 23 October 2026 — Flagged for Review</h1>
 <p class="small"><strong>Read this first:</strong> this page is the dated record of session 986df4df (23 October 2026). Its narrative has not been rewritten.
 The two right-hand evidence columns of the table are regenerated from the current data files, so they show the latest runner sweep and the current flags.
-For the reads of 11 November 2026, including which prices changed, see <a href="pass21.html">Pass 21</a>.</p>
+For the reads of 11 November 2026, including which prices changed, see <a href="reread-4fe4a9c3.html">the 11 November re-read</a>.</p>
 <p class="lede">NO HALLUCINATIONS: unconfirmed current prices stay blank. This is a candidate register, not an approved purchase list or a complete inventory of rings available online.</p></section>
 <div class="nohall"><h2>What this session can actually verify</h2>
 <p>The shell network cannot directly access retailer or regulator hosts; the remote page reader did successfully reopen six selected official sources (observations below). This is not an independent re-verification of all 64 products. Existing dated captures are preserved as historical claims, not newly verified facts.

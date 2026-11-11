@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""GOLD4 Pass 21 (session arena/4fe4a9c3-gold4, 2026-11-11) — apply today's evidence.
+"""GOLD4 re-read of 2026-11-11 (session arena/4fe4a9c3-gold4) — apply that day's evidence.
+
+This session claimed "Pass 21" on its branch at 08:00Z; session 91415e29's Pass 21 reached main first, so that
+number is theirs. This work carries no pass number: it is identified by date and session id.
 
 NO HALLUCINATIONS. This script types no price, weight or spot value of its own.
 Every number it writes is copied from one of two committed evidence files:
@@ -8,7 +11,7 @@ Every number it writes is copied from one of two committed evidence files:
        GitHub runner, read-only GET of all 64 ring URLs + 32 registered sources,
        2026-11-11T08:00-08:03Z. Carries each page's JSON-LD / price-meta offers
        and the raw price text the page printed.
-  B. reviews/pass21/hand_reads.json
+  B. reviews/reread-4fe4a9c3/hand_reads.json
        This session's browser-rendered reads (benchmark + 16 rows), with the
        verbatim strings each page printed and what each read did NOT reach.
 
@@ -18,11 +21,11 @@ Rules
   * A row whose page is dead or sold out today gets a BLANK current price; the
     last value read stays visible as `last_known_price_usd` with its date.
   * A row nobody could read today keeps its October value and date and is
-    flagged PRICE_NOT_REREAD_PASS21. It is not presented as current.
+    flagged PRICE_NOT_REREAD_2026_11_11. It is not presented as current.
   * Weights are only re-dated when today's evidence prints the weight.
   * Idempotent: a second run changes nothing.
 
-Usage: python3 scripts/pass21_apply.py [--check]
+Usage: python3 scripts/session_4fe4a9c3/apply_reread.py [--check]
 """
 from __future__ import annotations
 
@@ -33,23 +36,23 @@ import re
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT / "data"
 RUNNER = ROOT / "reports" / "live_source_check_20261111T080309Z.json"
-HAND = ROOT / "reviews" / "pass21" / "hand_reads.json"
-OUT = ROOT / "reviews" / "pass21" / "reconciliation.json"
+HAND = ROOT / "reviews" / "reread-4fe4a9c3" / "hand_reads.json"
+OUT = ROOT / "reviews" / "reread-4fe4a9c3" / "reconciliation.json"
 
 TODAY = "2026-11-11"
-SESSION = "arena/4fe4a9c3-gold4 (Pass 21)"
+SESSION = "arena/4fe4a9c3-gold4 (re-read 2026-11-11)"
 RUNNER_REL = str(RUNNER.relative_to(ROOT))
 HAND_REL = str(HAND.relative_to(ROOT))
 
-PASS21_FLAGS = (
+REREAD_FLAGS = (
     "SALE_PRICE_TEMPORARY",
-    "PRICE_CHANGED_PASS21",
-    "PRICE_NOT_REREAD_PASS21",
-    "SOURCE_DEAD_PASS21",
-    "SOLD_OUT_PASS21",
+    "PRICE_CHANGED_2026_11_11",
+    "PRICE_NOT_REREAD_2026_11_11",
+    "SOURCE_DEAD_2026_11_11",
+    "SOLD_OUT_2026_11_11",
     "STRUCTURED_PRICE_LAGS_DISPLAY",
 )
 
@@ -273,7 +276,7 @@ def decide(row: dict, rec: dict, hand: dict | None) -> dict:
 
 
 def apply_row(row: dict, d: dict) -> None:
-    flags = [f for f in row.get("flags", []) if f not in PASS21_FLAGS]
+    flags = [f for f in row.get("flags", []) if f not in REREAD_FLAGS]
     verdict, stored = d["verdict"], row.get("price_usd")
     hist = row.setdefault("price_history", [])
 
@@ -293,7 +296,7 @@ def apply_row(row: dict, d: dict) -> None:
         if stored is None or abs(new - stored) > 0.005:
             push_history({"SALE": "page now prints a sale price", "CHANGED": "page now prints a different price"}.get(verdict, "re-read"))
             row["price_usd"] = new
-            flags.append("PRICE_CHANGED_PASS21")
+            flags.append("PRICE_CHANGED_2026_11_11")
         row["price_captured_utc"] = TODAY
         row["reverified_utc"] = TODAY
         if verdict == "SALE":
@@ -307,7 +310,7 @@ def apply_row(row: dict, d: dict) -> None:
                 row.pop("list_price_usd", None)
             basis_word = f"Price read {TODAY}: ${new:,.2f}"
         old_basis = row.get("price_basis") or ""
-        marker = " || Pass 21: "
+        marker = " || Re-read 2026-11-11: "
         row["price_basis"] = old_basis.split(marker)[0] + marker + f"{basis_word} ({paths}). Verbatim: {quote}."
         if d.get("structured_lags"):
             flags.append("STRUCTURED_PRICE_LAGS_DISPLAY")
@@ -319,15 +322,15 @@ def apply_row(row: dict, d: dict) -> None:
             row["price_usd"] = None
         if "PRICE_UNVERIFIED" not in flags:
             flags.append("PRICE_UNVERIFIED")
-        flags.append("SOURCE_DEAD_PASS21" if verdict == "SOURCE_DEAD" else "SOLD_OUT_PASS21")
+        flags.append("SOURCE_DEAD_2026_11_11" if verdict == "SOURCE_DEAD" else "SOLD_OUT_2026_11_11")
     else:  # NOT_REREAD
-        flags.append("PRICE_NOT_REREAD_PASS21")
+        flags.append("PRICE_NOT_REREAD_2026_11_11")
 
     if d["weight_reread_today"] and row.get("weight_g") is not None:
         row["weight_reread_utc"] = TODAY
 
     row["flags"] = flags
-    row["pass21"] = {
+    row["reread_2026_11_11"] = {
         "session": SESSION, "observed_utc": TODAY, "verdict": verdict,
         "stored_price_before_usd": d["stored_price_usd"], "stored_price_before_captured_utc": d["stored_price_captured_utc"],
         "price_today_usd": d["price_today_usd"], "list_price_usd": d["list_price_usd"],
@@ -371,7 +374,7 @@ def apply_gold(spot: dict, ge: dict) -> bool:
         return False
     old = dict(b)
     old["status"] = "superseded"
-    old["note"] = (f"Benchmark in force from Pass 18 (2026-10-23T20:23Z) until Pass 21. Superseded on {TODAY} when the World Gold "
+    old["note"] = (f"Benchmark in force from Pass 18 (2026-10-23T20:23Z) until the re-read of 2026-11-11 (session 4fe4a9c3). Superseded on {TODAY} when the World Gold "
                    "Council panel printed a newer data date. Kept for audit; no current calculation uses it.")
     spot.setdefault("prior_captures", []).append(old)
     val = new["value_usd_per_oz"]
@@ -386,12 +389,13 @@ def apply_gold(spot: dict, ge: dict) -> bool:
                                       "'Data as of 10 November, 2026' and 'Market Data: Provided by ICE Data Services'. The 'Last Updated' caption rendered empty in this read.",
         "verification": "V1_direct_page_fetch",
         "notes": [
-            f"Pass 21 ({TODAY}, 08:01Z): the World Gold Council panel was re-read in a browser-rendered fetch and printed USD {val:,.2f}/oz under "
+            f"Re-read of {TODAY} (session 4fe4a9c3, 08:01Z): the World Gold Council panel was re-read in a browser-rendered fetch and printed USD {val:,.2f}/oz under "
             f"'{new['source_date_line_verbatim']}'. It replaces the 2026-10-23 reading of USD {old['value_usd_per_oz']:,.2f}/oz ({delta:+.2f}%), "
             "which was 19 days old. Every derived gold value on the site is recomputed from this reading.",
-            "Cross-checked the same morning by three market pages read by the GitHub runner at 08:02Z (see pass21_cross_checks): "
+            "Cross-checked the same morning by three market pages read by the GitHub runner at 08:02Z (see reread_2026_11_11_cross_checks): "
             + "; ".join(f"{c['label']} USD {c['value_usd_per_oz']:,.2f}" for c in ge["cross_checks"])
             + ". Informational only; the single calculation basis remains the World Gold Council panel.",
+            "Sessions 91415e29 and 91e9aba0 read the same figure on the same panel that morning and kept the October benchmark because their scope was additive only; 91e9aba0 logged request A21-01 to replace it. This change applies that request. Their records (pass21_live_crosscheck_2026_11_11) are kept unchanged.",
             "Spot is a live market quote; the figure recorded here is a dated reading, not a claim about the price at the moment you read this. Re-read the source before relying on it.",
         ],
     })
@@ -400,9 +404,9 @@ def apply_gold(spot: dict, ge: dict) -> bool:
     spot["constants"]["spot_usd_per_gram_note"] = (
         f"value_usd_per_oz / 31.1034768 = {val} / 31.1034768 = {round(val / oz, 6)} USD/g "
         "(recomputed by scripts/compute.py and re-checked by scripts/audit.py).")
-    spot["recheck_note"] = (f"Re-read in Pass 21 at {new['retrieved_utc']} (browser-rendered fetch of the WGC panel) and cross-checked against three "
+    spot["recheck_note"] = (f"Re-read by session 4fe4a9c3 at {new['retrieved_utc']} (browser-rendered fetch of the WGC panel) and cross-checked against three "
                             "market pages read by the runner at 08:02Z. scripts/audit.py re-derives every derived value on every run.")
-    spot["pass21_cross_checks"] = [
+    spot["reread_2026_11_11_cross_checks"] = [
         dict(c, spread_vs_benchmark_pct=round((c["value_usd_per_oz"] / val - 1) * 100, 3)) for c in ge["cross_checks"]]
     return True
 
@@ -420,7 +424,7 @@ def main() -> int:
 
     decisions = []
     for row in rings["rows"]:
-        prior = row.get("pass21")
+        prior = row.get("reread_2026_11_11")
         if prior:  # idempotence: reconcile against the value that was stored before this pass
             base = dict(row, price_usd=prior["stored_price_before_usd"], price_captured_utc=prior["stored_price_before_captured_utc"])
         else:
@@ -436,7 +440,7 @@ def main() -> int:
         counts[d["verdict"]] = counts.get(d["verdict"], 0) + 1
 
     summary = {
-        "artifact": "GOLD4 Pass 21 reconciliation — every row, both read paths",
+        "artifact": "GOLD4 re-read of 2026-11-11 (session 4fe4a9c3) — reconciliation of every row, both read paths",
         "session": SESSION, "date_utc": TODAY,
         "rule": "NO HALLUCINATIONS: every value is copied from the evidence files listed; nothing is inferred.",
         "evidence": [RUNNER_REL, HAND_REL],
@@ -458,12 +462,12 @@ def main() -> int:
 
     apply_gold(spot, ge)
     rings["reverified_utc"] = TODAY
-    rings["pass21_note"] = (
-        f"Pass 21 ({SESSION}, {TODAY}): every row was reconciled against a runner sweep of all 64 URLs taken at "
+    rings["reread_2026_11_11_note"] = (
+        f"Re-read of {TODAY} ({SESSION}): every row was reconciled against a runner sweep of all 64 URLs taken at "
         f"{runner['checked_utc']} and against this session's hand reads of {len(by_hand)} rows. Verdicts: "
         + ", ".join(f"{k} {v}" for k, v in sorted(counts.items()))
         + ". Prices were updated only where today's evidence prints the current price; superseded values are kept in each row's price_history. "
-          "Rows whose page is dead or sold out carry a blank current price and a last_known_price_usd. See reviews/pass21/reconciliation.json.")
+          "Rows whose page is dead or sold out carry a blank current price and a last_known_price_usd. See reviews/reread-4fe4a9c3/reconciliation.json.")
     (DATA / "rings.json").write_text(json.dumps(rings, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     (DATA / "gold_spot.json").write_text(json.dumps(spot, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     OUT.write_text(json.dumps(summary, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
