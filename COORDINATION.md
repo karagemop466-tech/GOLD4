@@ -1,5 +1,33 @@
 # COORDINATION.md — GOLD4 shared task board
 
+## Session `arena/91415e29-gold4` — Pass 21: 18-day freshness re-verification, hallucination sweep & publish (2026-11-11)
+
+**Claim written and pushed before any file in this session's scope is edited.** This session read the whole
+board, re-ran all nine gates (twelve invocations) on `main@b34ae17` (all green — see P21-1), and checked
+every remote branch head and open PR: **no other branch and no open PR exists**, so no live claim overlaps
+this scope. This is a fresh pass, not a takeover; no stale claim was found.
+
+**Branch note (same documented deviation as every prior session):** the board's convention is
+`session-<id>/<task>`; Arena pins this session to `arena/91415e29-gold4` and forbids creating or pushing
+any other branch. All work is committed there.
+
+**Scope (non-overlapping; additive evidence only — no stored price, weight, karat, URL or date is
+overwritten):** this board section, `reviews/pass21/**` (new), `data/gold_spot.json` (one additive
+dated-cross-check key only; benchmark untouched), `README.md` (Pass 21 summary), and generated outputs
+rebuilt only from `data/` (`data/derived.json`, `index.html`, `pages/*`, `VERIFICATION.md`, `AUDIT.md`,
+`reports/audit_latest.txt`). No other session's files are touched.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| P21-1 | **Baseline gates + offline line-by-line audit** — re-run all nine gates on `main@b34ae17`; audit all 64 rows for provenance (source link + date + verification level on every populated price/weight), recompute derived math independently, diff headline numbers vs `data/*.json`. | **done** — 9/9 gates PASS (12/12 invocations): audit 132/0/0 · check_site 30 pages · verify 64 records 0 hard · verify_a0be79d4 40 pages/2,656 links 0 dead · hallucinations 1,183 checks 0 failures · citations 110 refs clean (+self-test) · freshness 295 checks 0 failures (4 known warnings: 18-day-old evidence + 3× BE 403) · assurance 8/8 · readiness 22/22 + calculator 10/10 + readiness-check PASS. Provenance audit: 0 issues; 62 prices / 17 weights / 17 solid-stated / 251 flags all match README + site. | `arena/91415e29-gold4` | this file |
+| P21-2 | **Live spot re-reads (browser-rendered reader, official pages only)** — WGC benchmark, FTC guidance, 15 U.S.C. § 295, one retailer row (AL-01), live site read-back. Publish every result including disagreements; state coverage honestly. | **done** — 5 reads: WGC **$4,059.49/oz dated 10 Nov 2026** vs stored $3,996.31 dated 22 Oct (+1.58%, benchmark RETAINED, recorded as dated cross-check); AL-01 **exact match** ($585, 3.58 g, NG4426, setting-only); FTC + Cornell wording confirmed; live site matches repo. **59 rows not re-read** and keep Oct capture dates — stated, not implied. | `arena/91415e29-gold4` | `reviews/pass21/**` |
+| P21-3 | **Hallucination / security sweep + additive evidence + rebuild** — record the WGC cross-check additively, re-run `compute.py` + `build_site.py`, re-run all nine gates after every edit. | **in progress** | `arena/91415e29-gold4` | `data/gold_spot.json`, `reviews/pass21/**`, generated outputs |
+| P21-4 | **Publish** — PR → merge without waiting → confirm Pages deploy serves the new build → record PR, merge commit and deploy run here. | **pending** | `arena/91415e29-gold4` | this file |
+
+**Pass-number note:** the last published pass is Pass 20 (session `arena/bfbdf30c-gold4`, PRs #51/#54);
+the final integration (session `arena/8a2b9dfb-gold4`, PRs #57/#58) did not claim a pass number. This
+session claims **Pass 21**; no collision was found at claim time (no other branch/PR exists).
+
 **Pass-number collision, logged before publishing (same rule the board used for Pass 18).** This session
 originally claimed **"Pass 19"** at 23:43Z. While it ran, session `arena/e18c03a9-gold4` published its own
 **Pass 19** (`reviews/pass19_e18c03a9.md`, `reviews/pass19-e18c03a9.html`) and merged it to `main` first
