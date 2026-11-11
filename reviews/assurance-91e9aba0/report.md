@@ -32,9 +32,13 @@ rests on**, and **the arithmetic** — with an independent implementation.
 The gold benchmark used by every derived figure is **still the 23 October reading** (`USD 3,996.31/oz`). Read today,
 the same official panel prints **`USD 4,059.49/oz`** with the page's own line *"Data as of 10 November, 2026"*
 ([World Gold Council Goldhub](https://www.gold.org/goldhub/data/gold-prices), read 2026-11-11T08:03Z). That is
-**+1.58%**, and it is recorded here as an observation only — applying it is the Pass 21 owner's documented step, not
-this session's, because every derived number on the site must be recomputed in the same commit that moves the
-benchmark.
+**+1.58%**. Read independently, this is the **second** first-hand reading of that panel today: session
+`arena/91415e29-gold4` read the same **USD 4,059.49 / "Data as of 10 November, 2026"** at 07:59Z and merged a
+deliberate decision to **retain** the stored benchmark, recording the tick additively in
+`data/gold_spot.json` (`pass21_live_crosscheck_2026_11_11`). Two sessions, one number, and a decision that is
+written down rather than implied. This report therefore does **not** call the retained benchmark drift: it is a
+dated, published choice, and the only thing left open is when the project chooses to re-base every derived figure
+at the newer rate.
 
 ---
 
@@ -139,7 +143,7 @@ This session edits no shared file. Each finding below is a **request** logged on
 
 | ID | Severity | Finding | Requested action |
 |---|---|---|---|
-| **F-A21-01** | High (for the research, not a bug) | The official gold panel moved to **USD 4,059.49/oz, "Data as of 10 November, 2026"** (+1.58% on the stored USD 3,996.31). Every derived gold value on the site is still computed at the 23 October rate, so all of them now understate the metal value by about 1.6% | Replace the benchmark with a first-hand reading of the same panel, keep the old value in `prior_captures`, re-run `compute.py`, state the new USD/g rate and the reading date on the site |
+| **F-A21-01** | Info — corroboration, not drift | The official panel reads **USD 4,059.49/oz, "Data as of 10 November, 2026"** (+1.58% on the stored USD 3,996.31). This session's independent read at 08:03Z matches the reading `arena/91415e29-gold4` took at 07:59Z and merged with the benchmark **deliberately retained**. Every derived figure still uses the 23 October rate, so all of them sit about 1.6% below the live tick — by decision, published as such | No action needed to stay honest. If the project wants current-rate arithmetic, re-base the benchmark and recompute every derived value in one commit, keeping `prior_captures` intact |
 | **F-A21-02** | Low | VR-01's displayed multiple is **3.75**; exact arithmetic gives **3.755457 → 3.76**. Same value appears in the VRAI aggregate | Round presentation output with `Decimal`/`ROUND_HALF_UP` rather than binary-float `round()`, or display 3 decimals consistently |
 | **F-A21-03** | Medium | Ross-Simons' stored exclusion **"Final sale items"** is **not printed** on today's returns page, which instead says "return eligible merchandise" and adds an extended holiday window (16 Oct – 25 Dec 2026 → 31 Jan 2027). With RS-05 already flagged `CLEARANCE_RETURN_TERMS_UNCLEAR`, the *basis* for that exclusion is now unconfirmed | Keep the flag, mark the exclusion `basis_not_reconfirmed_2026-11-11`, and record the holiday window; ask Ross-Simons in writing before relying on final-sale status |
 | **F-A21-04** | Medium | **Anjolee `return_exclusions` is empty**, but its official policy page states a **15% restocking fee** for worn/non-original items and requires a Return Ticket ID. Its `resize` field ("not captured") is now verifiable as **free size adjustment**, and `service@anjolee.com` is published but not stored | Add the restocking fee and Return Ticket ID conditions, fill the resize field from the page, add the email |

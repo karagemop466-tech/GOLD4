@@ -73,8 +73,11 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding-top:14px;font-si
 The benchmark still in force across this dataset is <strong>USD 3,996.31/oz</strong> (read 2026-10-23, page date
 22 October 2026). That is <strong>+1.58%</strong>, so every derived gold value on the site currently understates the
 metal value by about that much until the benchmark is replaced and the derived file is regenerated.
-This session recorded the reading and changed nothing — moving a benchmark without recomputing every derived figure
-in the same commit is exactly the kind of silent drift this project exists to prevent.</p>
+<strong>Second independent read, same number.</strong> Session <code>arena/91415e29-gold4</code> read the same panel at
+07:59Z and merged a deliberate decision to <strong>retain</strong> the stored benchmark, recording the tick additively in
+<code>data/gold_spot.json</code> (<code>pass21_live_crosscheck_2026_11_11</code>). The retained rate is therefore a published,
+dated choice — not unrecorded drift. Moving a benchmark without recomputing every derived figure in the same commit is
+what this project must never do; the open question is only <em>when</em> to re-base, not whether the number is known.</p>
 
 <h2>2. Seller policies, line by line</h2>
 <p class="small">"Confirmed" = the seller's own page still prints the stored wording. Every row links the page read today.</p>
@@ -152,7 +155,7 @@ rounded on the wrong side of a half-way digit.</p>
 <table>
 <thead><tr><th>ID</th><th>Severity</th><th>Finding</th><th>Requested action</th></tr></thead>
 <tbody>
-<tr><td>F-A21-01</td><td class="bad">High</td><td>Official panel moved to USD 4,059.49/oz ("Data as of 10 November, 2026"), +1.58% on the stored USD 3,996.31; all derived values still use the October rate</td><td>Replace the benchmark with a first-hand reading, keep the old one in <code>prior_captures</code>, re-run the derived build, show the new USD/g rate and date</td></tr>
+<tr><td>F-A21-01</td><td class="ok">Info — corroborated</td><td>Official panel reads USD 4,059.49/oz ("Data as of 10 November, 2026"), +1.58% on the stored USD 3,996.31. This session's 08:03Z read matches <code>arena/91415e29-gold4</code>'s 07:59Z read; that session merged the benchmark as <strong>deliberately retained</strong></td><td>Nothing to stay honest. If current-rate arithmetic is wanted, re-base the benchmark and recompute every derived value in one commit, keeping <code>prior_captures</code></td></tr>
 <tr><td>F-A21-02</td><td class="warn">Low</td><td>VR-01 displayed multiple 3.75 vs exact 3.76; same in the VRAI aggregate</td><td>Round presentation with Decimal ROUND_HALF_UP, or show three decimals consistently</td></tr>
 <tr><td>F-A21-03</td><td class="warn">Medium</td><td>Ross-Simons' stored "Final sale items" exclusion is not printed on today's returns page; the page adds an extended holiday window (16 Oct – 25 Dec 2026 → 31 Jan 2027)</td><td>Mark the exclusion's basis as not reconfirmed on 2026-11-11, keep the existing clearance flag, and record the holiday window</td></tr>
 <tr><td>F-A21-04</td><td class="warn">Medium</td><td>Anjolee's <code>return_exclusions</code> is empty, but the official page states a 15% restocking fee for worn/non-original items and a Return Ticket ID requirement; its resize field is capturable and its email is missing</td><td>Add the fee and the ticket requirement, fill the resize field from the page, add service@anjolee.com</td></tr>
