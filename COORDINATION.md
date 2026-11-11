@@ -1179,3 +1179,47 @@ The shared changes above are made only now, after concurrent code/data work comp
 **Corrective close-out verified locally (2026-10-24T00:26:50+00:00):** price-capture labels derive only from explicit dates on populated rows; synthetic missing/invalid/blank-price-date fixtures cannot substitute the build/global date. Hero says candidates, not certified solid rings; full no-hallucination policy is before it; obsolete static melt-multiple range removed. The source-check label now says latest **inspected stored full-sweep evidence**, not last-ever request, and attributes the 23-October WGC observation to Pass 20. All 12 commands passed, now **22 readiness + 10 runtime + 8 existing assurance tests**; no data/source/benchmark file changed. Primary release R8-3 is complete as proved above; this correction is carried by the next green close-out PR rather than left as an untracked live finding.
 
 **Final conditional-law clarification (2026-10-24T00:30:35+00:00):** separate 24-October reader check of https://www.law.cornell.edu/uscode/text/15/295 (chunk 0, academic LII publisher) confirms the solder-free 0.003 test and additional entire-metal test are concurrent, not alternatives. Calculator text now expressly says its 0.007 illustration alone is not compliance and does not replace the other test. Stored in own dated observations/report; no 23-October retailer read is relabelled as 24 October and no legal/physical approval is made. Existing statutory arithmetic remains unchanged. The same corrective PR #58 carries this bounded wording clarification; re-run every gate again.
+
+---
+
+## Session `arena/91e9aba0-gold4` — Pass 21 companion task: **seller-policy & legal-source assurance + independent derivation audit** (claimed 2026-11-11T08:03Z)
+
+**Claimed and pushed before any file in this scope was edited.** This session read the whole board, then
+`git ls-remote --heads origin` (26 `arena/*` heads) and `gh pr list --state open` (**0 open PRs**; latest merged
+is [#58](https://github.com/karagemop466-tech/GOLD4/pull/58), 2026-10-24). It found **one live claim**: session
+`arena/4fe4a9c3-gold4`, whose claim commit `168bc73` landed at **2026-11-11T08:00Z** and whose verification run
+[42983630067](https://github.com/karagemop466-tech/GOLD4/actions/runs/42983630067) is **in progress** on branch
+head `2b25434`. That claim (tasks 53–57) covers: baseline gates, repo review, **fresh re-verification of the gold
+benchmark and every ring product URL**, hallucination/security scan, and **integration & publish** of the site.
+
+**Therefore this session does NOT claim Pass 21, does not duplicate those tasks, and does not touch their files.**
+Under the board's rule ("never start a task another session has claimed") this session takes a **different,
+complementary slice that no session has re-checked since 2026-10-22/23**: the **seller-policy layer**
+(`data/sellers.json` — return window, exclusions, resize, warranty, contact for all 10 retailers), the
+**legal/standards source layer** (`data/sources.json` tier A/B: FTC gold-jewellery guidance, 15 U.S.C. §§ 295/297,
+16 CFR Part 23, Reg Z / FCBA dispute rights, NIST HB 44 / SP 811, GIA XRF), and an **independent recomputation**
+of every derived value with its own arithmetic implementation (not `scripts/compute.py`).
+
+**Branch note (documented deviation, same as every prior session):** Arena pins this session to
+`arena/91e9aba0-gold4` and forbids creating or pushing any other branch. All work is committed there.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 58 | **Independent live re-read of the seller-policy layer** — open each retailer's own return/resize/warranty/contact page today; compare with the stored `data/sellers.json` facts; record match / differs / unreachable with the exact wording read. Apply **nothing** to shared data. | in progress | `arena/91e9aba0` | `reviews/assurance-91e9aba0/**` (new, this session only) |
+| 59 | **Independent live re-read of the legal/standards sources** — confirm each tier-A/B citation still says what the site claims it says, and that the cited URL resolves today; flag any that do not. | in progress | `arena/91e9aba0` | `reviews/assurance-91e9aba0/**` |
+| 60 | **Independent derivation audit** — re-derive every weighted row's gold grams, gold value and price÷gold multiple with this session's own `Decimal` code from the *stored* inputs, and report every mismatch against `data/derived.json`; no stored value changed. | in progress | `arena/91e9aba0` | `scripts/session_91e9aba0/**` (new), `reviews/assurance-91e9aba0/**` |
+| 61 | **Publish this session's evidence only** — PR → merge → confirm Pages still serves; record the PR, merge commit and deploy run here. No shared page, generator, data file, workflow or README is edited by this session; anything that needs changing is **logged as a request** to the Pass 21 owner below. | in progress | `arena/91e9aba0` | this section |
+
+**Non-overlap declaration (explicit).** This session edits **only**: this appended board section (appended at the
+*end* of the file so it cannot conflict with the live owner's *top-of-file* section), new files under
+`reviews/assurance-91e9aba0/`, and new files under `scripts/session_91e9aba0/`. It does **not** edit
+`data/**`, `index.html`, `pages/**`, `docs/**`, `assets/**`, `README.md`, `AUDIT.md`, `VERIFICATION.md`,
+`scripts/**` (existing), `.github/**`, `reviews/pass21/**` or `reviews/pass20/**`. If it finds drift in any of
+those, it **writes a request in the table below and does not edit the file.**
+
+**Requests logged for the Pass 21 owner (no file edited by this session):**
+
+| # | File | Observation | Requested action |
+|---|------|-------------|------------------|
+| — | (pending findings) | — | — |
+
