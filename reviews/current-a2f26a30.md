@@ -4,7 +4,7 @@
 
 ## Sources and external coverage
 
-New evidence: [recorded excerpts](current-a2f26a30.json). Official URLs are linked per excerpt and per candidate in [the published review](../pages/current-review.html). WGC printed 4,059.49 USD/troy oz with data date 10 November 2026, read 11 November; the historical canonical benchmark is not replaced. FTC official guidance read in chunk 0. Dates are read dates, not claimed source publication dates.
+New evidence: [recorded excerpts](current-a2f26a30.json). Official URLs are linked per excerpt and per candidate in [the published review](../pages/current-review.html). WGC printed 4,059.49 USD/troy oz with data date 10 November 2026, read 11 November; this session does not replace the canonical benchmark. FTC official guidance read in chunk 0. Dates are read dates, not claimed source publication dates.
 
 Ten partial product reads are not full re-verification. Displays differ for MN-01, BN-22, RS-05, BE-05. Currency codes, size, item variant, settings versus complete rings and return eligibility are never inferred. All findings are published on the clearly labelled Flagged for Review link. No historical evidence deleted or rewritten.
 

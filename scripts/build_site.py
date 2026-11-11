@@ -177,7 +177,7 @@ LAYOUT = """<!doctype html>
   <strong>NO HALLUCINATIONS — dated research, not live offers.</strong>
   Historical captures below are not current verified quotes or a guarantee of purity.
   <strong>Evidence review ({review_date}):</strong> current configured prices remain unverified and blank in the <a href="{root}pages/current-review.html">latest evidence register / Flagged for Review</a>.
-  {review_sampled} product URLs sampled in partial chunks; {review_unopened} not re-opened. October records below have not become current quotes.
+  {review_sampled} product URLs sampled in partial chunks; {review_unopened} not re-opened. Stored records below have not become live configured quotes.
   The <a href="{root}pages/session-review.html">October session review</a> is historical.
   Pass 20 recorded a World Gold Council panel read ($3,995.47/oz, 23 October 2026) differing from the stored benchmark ($3,996.31/oz); see <a href="{root}pages/pass20.html">that pass's evidence</a>. Neither is a live quote.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.

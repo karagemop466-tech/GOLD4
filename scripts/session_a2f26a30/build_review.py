@@ -115,7 +115,7 @@ This is a dated {e(evidence['review_date_utc'])} review, not a live feed. Automa
 <p class="lede">{stats['total_rows']} existing candidates / {stats['retailers']} retailers. {stats['sampled_product_urls']} official product URLs sampled in partial chunks;
 {stats['not_reopened']} not re-opened. All rows audited structurally; no full external line-by-line re-verification is claimed. No purchase approvals.</p></section>
 <div class="callout bad" id="flagged"><h2>Flagged for Review — November findings</h2>
-<ul><li>Historical October prices and benchmark are not November quotes. New displayed prices differ on Menē, Blue Nile, Ross-Simons and Brilliant Earth; no canonical values silently overwritten.</li>
+<ul><li>Comparisons in this sampled review use the October snapshot inspected at the start of this session. Displays differed on Menē, Blue Nile, Ross-Simons and Brilliant Earth; later canonical updates, if any, retain their own attribution and capture dates. This review does not overwrite them.</li>
 <li>Blue Nile BN-22: gold title versus platinum copy. Mejuri MJ-01: selected white gold versus yellow-gold materials/canonical variant. VRAI VR-01: size-6 weight versus size-5 selection and plain/pavé conflict.</li>
 <li>SR-03 weight is approximate and explicitly size 10; not a weight guarantee for all sizes. Clearance/custom/testing-return conditions and independent reputation remain unresolved.</li>
 <li>The full runner sweep could not be manually dispatched (GitHub API HTTP 403). Partial page-reader evidence below is the only new external product evidence claimed in this pass.</li>
@@ -124,7 +124,7 @@ This is a dated {e(evidence['review_date_utc'])} review, not a live feed. Automa
 <li>Security gap repaired: source fetches now reject off-list/non-HTTPS redirects before following them. Network errors remain unknown-cause failures, not inferred dead links or inferred environment blocks.</li></ul>
 <p>Official evidence and exact scope are in the source-linked table below. <strong>Needs review does not mean counterfeit.</strong></p></div>
 <section class="section"><h2>Inspected official excerpts — observations, not approved quotes</h2>
-<p>Excerpts use normalized whitespace. Dollar symbols are retained exactly; no currency code is inferred. No variant, size, complete-ring total or current metal weight is filled from these excerpts. WGC data-date is November 10, distinct from the November 11 read date. The calculator still labels its October historical benchmark; it was not changed to this observation.</p>
+<p>Excerpts use normalized whitespace. Dollar symbols are retained exactly; no currency code is inferred. No variant, size, complete-ring total or current metal weight is filled from these excerpts. WGC data-date is November 10, distinct from the November 11 read date. The calculator uses the canonical stored benchmark with its own capture and source-data dates. This review records a separate observation, not an automatic spot update.</p>
 <div class="table-wrap"><table><thead><tr><th>Record</th><th>Read date / chunks</th><th>Official excerpt</th><th>Interpretation / limits</th><th>Source</th></tr></thead><tbody>{''.join(sample_rows)}</tbody></table></div></section>
 <section class="section"><h2>All-candidate current-evidence register</h2><p>Empty cells mean <strong>unverified</strong>, never zero. Historical capture dates describe stored records, not today’s verification. The <a href="../index.html">historical dashboard</a> preserves original observations; the <a href="readiness.html">readiness register</a> covers the full checklist.</p>
 <div class="table-wrap"><table><thead><tr><th>ID</th><th>Candidate / category</th><th>Historical price capture</th><th>Sample read</th><th>Current exact price (USD)</th><th>Current exact metal grams</th><th>Status / findings</th><th>Source</th></tr></thead><tbody>{''.join(body_rows)}</tbody></table></div></section>
@@ -138,7 +138,7 @@ This is a dated {e(evidence['review_date_utc'])} review, not a live feed. Automa
 
 ## Sources and external coverage
 
-New evidence: [recorded excerpts](current-a2f26a30.json). Official URLs are linked per excerpt and per candidate in [the published review](../pages/current-review.html). WGC printed 4,059.49 USD/troy oz with data date 10 November 2026, read 11 November; the historical canonical benchmark is not replaced. FTC official guidance read in chunk 0. Dates are read dates, not claimed source publication dates.
+New evidence: [recorded excerpts](current-a2f26a30.json). Official URLs are linked per excerpt and per candidate in [the published review](../pages/current-review.html). WGC printed 4,059.49 USD/troy oz with data date 10 November 2026, read 11 November; this session does not replace the canonical benchmark. FTC official guidance read in chunk 0. Dates are read dates, not claimed source publication dates.
 
 Ten partial product reads are not full re-verification. Displays differ for MN-01, BN-22, RS-05, BE-05. Currency codes, size, item variant, settings versus complete rings and return eligibility are never inferred. All findings are published on the clearly labelled Flagged for Review link. No historical evidence deleted or rewritten.
 

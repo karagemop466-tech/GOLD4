@@ -6,7 +6,7 @@
     "data/sources.json": "c5aabcee368b42aaba537a9db700c2687420ce621e558a5bc0facd8d430e7925",
     "data/sellers.json": "a8a2ec1cfb6f6d50e42dc7a076848aaf22ee36da3b3c632e6f86ef04635d03ec",
     "data/gold_spot.json": "b608d4142706092a30de4792b66c841df22d7d6c14ea612ad35974cb8e1c9ed2",
-    "reviews/current-a2f26a30.json": "979b1a6bc59d3e8fb73a8d69eefa649cfd38712861c98e020b89d0e37dfb1ff4"
+    "reviews/current-a2f26a30.json": "c00886dee7c6a11f1a2e1f9c86ecae1c78a82f2ecfe5cfb6a6e0b1f4533854e5"
   },
   "stats": {
     "total_rows": 64,
@@ -716,7 +716,7 @@
       "current_price_status": "UNVERIFIED",
       "purchase_approved": false,
       "review_status": "partial_official_read_needs_review",
-      "finding": "Display differs from stored historical $1,465. Exact configured checkout and gram weight not confirmed in inspected chunk. 24k wording is not an explicit solid/non-hollow statement.",
+      "finding": "Display differs from the inspected October snapshot’s historical $1,465. Exact configured checkout and gram weight not confirmed in inspected chunk. 24k wording is not an explicit solid/non-hollow statement.",
       "inherited_flags": [
         "NO_WEIGHT_PUBLISHED",
         "HALLMARK_NOT_PUBLISHED",
@@ -1033,7 +1033,7 @@
       "current_price_status": "UNVERIFIED",
       "purchase_approved": false,
       "review_status": "partial_official_read_needs_review",
-      "finding": "Promotional display differs from historical $2,050; setting-only $1,640 shown, not a complete ring. Currency code not explicit in inspected chunk. Platinum copy conflicts with yellow-gold title/spec. Size unselected.",
+      "finding": "Promotional display differs from the inspected October snapshot’s historical $2,050; setting-only $1,640 shown, not a complete ring. Currency code not explicit in inspected chunk. Platinum copy conflicts with yellow-gold title/spec. Size unselected.",
       "inherited_flags": [
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
@@ -1306,7 +1306,7 @@
       "current_price_status": "UNVERIFIED",
       "purchase_approved": false,
       "review_status": "partial_official_read_needs_review",
-      "finding": "Display differs from stored historical $2,819. Sizes 5-8 shown in stock; 9 sold out. Currency code not explicit in inspected chunk, no final size selected. Clearance refund/testing eligibility remains unverified; no metal grams confirmed.",
+      "finding": "Display differs from the inspected October snapshot’s historical $2,819. Sizes 5-8 shown in stock; 9 sold out. Currency code not explicit in inspected chunk, no final size selected. Clearance refund/testing eligibility remains unverified; no metal grams confirmed.",
       "inherited_flags": [
         "NO_WEIGHT_PUBLISHED",
         "PRICE_INCLUDES_CENTRE_STONE",

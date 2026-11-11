@@ -53,7 +53,7 @@
         "This is a Crafted-on-Demand item. Learn More",
         "Products are sold by weight, not size."
       ],
-      "finding": "Display differs from stored historical $1,465. Exact configured checkout and gram weight not confirmed in inspected chunk. 24k wording is not an explicit solid/non-hollow statement.",
+      "finding": "Display differs from the inspected October snapshot’s historical $1,465. Exact configured checkout and gram weight not confirmed in inspected chunk. 24k wording is not an explicit solid/non-hollow statement.",
       "current_configured_price_usd": null
     },
     {
@@ -69,7 +69,7 @@
         "14K Yellow Gold",
         "Bold and modern, this platinum solitaire setting features a flat profile"
       ],
-      "finding": "Promotional display differs from historical $2,050; setting-only $1,640 shown, not a complete ring. Currency code not explicit in inspected chunk. Platinum copy conflicts with yellow-gold title/spec. Size unselected.",
+      "finding": "Promotional display differs from the inspected October snapshot’s historical $2,050; setting-only $1,640 shown, not a complete ring. Currency code not explicit in inspected chunk. Platinum copy conflicts with yellow-gold title/spec. Size unselected.",
       "current_configured_price_usd": null
     },
     {
@@ -139,7 +139,7 @@
         "Size 9Sold Out",
         "14ktWhite Gold"
       ],
-      "finding": "Display differs from stored historical $2,819. Sizes 5-8 shown in stock; 9 sold out. Currency code not explicit in inspected chunk, no final size selected. Clearance refund/testing eligibility remains unverified; no metal grams confirmed.",
+      "finding": "Display differs from the inspected October snapshot’s historical $2,819. Sizes 5-8 shown in stock; 9 sold out. Currency code not explicit in inspected chunk, no final size selected. Clearance refund/testing eligibility remains unverified; no metal grams confirmed.",
       "current_configured_price_usd": null
     },
     {
@@ -190,7 +190,7 @@
         "Data as of 10 November, 2026",
         "Prices are quoted in currency unit per troy ounce unless otherwise stated."
       ],
-      "finding": "The panel differs from the stored October benchmark 3,996.31 USD/troy oz. This is a dated observation, not a live feed or a new canonical calculation input. Source data date is Nov 10, not read date Nov 11. No historical arithmetic relabelled as current."
+      "finding": "The panel differs from the October benchmark 3,996.31 USD/troy oz in the b34ae17 snapshot inspected at session start. This is a dated observation, not a live feed or an automatic canonical calculation update by this session. Source data date is Nov 10, not read date Nov 11. No historical arithmetic relabelled as current."
     },
     {
       "id": "FTC",

@@ -1,9 +1,9 @@
-Started 2026-11-11T08:09:20.410706+00:00
+Started 2026-11-11T08:16:32.146883+00:00
 Automated software checks only; not external factual verification or an assay.
 
 $ python3 scripts/audit.py
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-11-11T08:09:20+00:00
+run_utc: 2026-11-11T08:16:32+00:00
 dataset rows: 64 | sellers: 10 | sources: 32
 spot benchmark: $3,996.31/oz (22 October, 2026) = $128.4844/g
 
@@ -186,7 +186,7 @@ test_weight_needs_provenance_source_and_scope (__main__.ReadinessTests.test_weig
 test_window_and_source_match_do_not_establish_configuration_rights (__main__.ReadinessTests.test_window_and_source_match_do_not_establish_configuration_rights) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 0.204s
+Ran 22 tests in 0.169s
 
 OK
 
@@ -219,17 +219,17 @@ GOLD4 LIVE SOURCE HEALTH CHECK — read-only evidence collection
 ========================================================================
 targets        : 1 (1 row URLs, 0 registered sources)
 allow-listed   : 21 hostnames from data/sources.json
-checked_utc    : 2026-11-11T08:09:22Z
+checked_utc    : 2026-11-11T08:16:33Z
   AL-01                      NO_RESPONSE        None          B  
 ------------------------------------------------------------------------
   NO_RESPONSE            1
-artifact: tmpku1bttgr/live_source_check_20261111T080922Z.json
+artifact: tmpr9hn9eb7/live_source_check_20261111T081633Z.json
 RESULT: evidence collected (this is not a pass/fail verdict; review the artifact).
 SYNTHETIC negative CLI fixture: FAIL below is the expected rejection of an unknown ID.
 FAIL: no targets matched (unknown --only ID or empty dataset)
 ..........
 ----------------------------------------------------------------------
-Ran 10 tests in 0.193s
+Ran 10 tests in 0.190s
 
 OK
 
@@ -239,7 +239,7 @@ $ python3 scripts/session_a2f26a30/test_review.py
 Staged 6 public files (no Git metadata, workflows or Python tooling)
 ..............
 ----------------------------------------------------------------------
-Ran 14 tests in 0.068s
+Ran 14 tests in 0.067s
 
 OK
 
@@ -250,10 +250,10 @@ PASS November review freshness
 
 exit=0
 
-$ python3 scripts/session_a2f26a30/stage_pages.py /tmp/tmpfcd7bg5z/site
-Staged 160 public files (no Git metadata, workflows or Python tooling)
+$ python3 scripts/session_a2f26a30/stage_pages.py /tmp/tmp0h_w28mj/site
+Staged 161 public files (no Git metadata, workflows or Python tooling)
 
 exit=0
 
 16/16 command invocations passed
-Completed 2026-11-11T08:09:22.479670+00:00
+Completed 2026-11-11T08:16:34.178132+00:00
