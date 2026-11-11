@@ -45,6 +45,14 @@ jobs:
           python3 scripts/session_8a2b9dfb/test_readiness.py
           node scripts/session_8a2b9dfb/test_calculator.js
           python3 scripts/session_8a2b9dfb/readiness.py --check
+      - name: Gate 10 — Redirect security and November evidence provenance
+        run: |
+          python3 scripts/session_a2f26a30/test_source_security.py
+          python3 scripts/session_a2f26a30/test_review.py
+          python3 scripts/session_a2f26a30/build_review.py --check
+      - name: Stage public site only (exclude repository metadata and tooling)
+        if: github.event_name != 'pull_request'
+        run: python3 scripts/session_a2f26a30/stage_pages.py "$RUNNER_TEMP/gold4-pages"
       - name: Configure Pages
         if: github.event_name != 'pull_request'
         uses: actions/configure-pages@v5
@@ -52,7 +60,7 @@ jobs:
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ${{ runner.temp }}/gold4-pages
   deploy:
     if: github.event_name != 'pull_request'
     environment:

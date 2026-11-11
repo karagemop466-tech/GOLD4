@@ -32,7 +32,8 @@ NAV = [
     ("pages/methodology.html", "Method", "method"),
     ("pages/sources.html", "Sources", "sources"),
     ("pages/freshness.html", "Freshness", "freshness"),
-    ("pages/session-review.html", "Current review", "session-review"),
+    ("pages/current-review.html", "November review", "current-review"),
+    ("pages/session-review.html", "October review", "session-review"),
     ("pages/pass20.html", "Pass 20", "pass20"),
     ("checklist.html", "Checklist", "checklist"),
     ("pages/log.html", "Log", "log"),
@@ -175,7 +176,9 @@ LAYOUT = """<!doctype html>
 <aside class="nohall" aria-label="Current verification limits">
   <strong>NO HALLUCINATIONS — dated research, not live offers.</strong>
   Historical captures below are not current verified quotes or a guarantee of purity.
-  Unconfirmed current prices are blank in the <a href="{root}pages/session-review.html">current-session review / Flagged for Review</a>.
+  <strong>November 11 review:</strong> current configured prices remain unverified and blank in the <a href="{root}pages/current-review.html">latest evidence register / Flagged for Review</a>.
+  Ten product URLs sampled in partial chunks; 54 not re-opened. October records below have not become current quotes.
+  The <a href="{root}pages/session-review.html">October session review</a> is historical.
   Pass 20 recorded a World Gold Council panel read ($3,995.47/oz, 23 October 2026) differing from the stored benchmark ($3,996.31/oz); see <a href="{root}pages/pass20.html">that pass's evidence</a>. Neither is a live quote.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
   Candidate inclusion is not purchase approval: see the <a href="{root}pages/readiness.html">per-ring readiness gaps and new findings</a>.
@@ -817,6 +820,7 @@ def main() -> None:
   <h1>Flagged for Review.</h1>
   <p class="lede">Everything this project could not confirm from an official source, every contradiction found on a retailer's own page, and every policy clause that can cost you money.
   These items do not block publication — they block a purchase until you check them.</p>
+  <p><a href="current-review.html#flagged"><strong>November 11 findings: changed displays, variant/weight conflicts and incomplete fresh verification</strong></a>. All current configured prices remain blank; official excerpts and all 64 row-level sources are in the dated register.</p>
   <p><a href="readiness.html#flagged"><strong>New requirement findings: Menē solid-wording / refund conditions, XRF limits and calculator corrections</strong></a>. The <a href="readiness.html">readiness register</a> evaluates every candidate against the full buying checklist, with current exact-price cells left blank.</p>
 </section>
 {no_hallucination_block('../')}
@@ -1335,6 +1339,10 @@ def main() -> None:
     # inputs. Its --check CI gate catches drift rather than silently recertifying.
     from session_8a2b9dfb.readiness import outputs as readiness_outputs
     for name, content in readiness_outputs(ROOT).items():
+        (ROOT / name).write_text(content, encoding="utf-8")
+
+    from session_a2f26a30.build_review import outputs as november_outputs
+    for name, content in november_outputs(ROOT).items():
         (ROOT / name).write_text(content, encoding="utf-8")
 
     # ---------------------------------------------------------------- housekeeping
