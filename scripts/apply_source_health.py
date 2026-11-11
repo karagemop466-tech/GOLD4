@@ -58,17 +58,17 @@ def sentence(state_row: dict, checked: str) -> str:
         return head + (
             "the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); "
             "the stored value was read from this URL on its capture date and cannot be re-confirmed here. "
-            "No value was changed."
+            "The source check itself changed no value."
         )
     if st == "REFUSED_403":
         return head + (
             "the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim "
-            "about the current price; the stored value keeps its original provenance. No value was changed."
+            "about the current price; the stored value keeps its original provenance. The source check itself changed no value."
         )
     if st == "EMPTY_OR_JS_SHELL":
         return head + (
             "the page answered HTTP 200 but serves a JavaScript shell with no product text, so the price could "
-            "not be read without a browser render. No value was changed."
+            "not be read without a browser render. The source check itself changed no value."
         )
     if ps == "CONFIRMED":
         return head + f"the page's own structured data printed {found}, matching the stored price."

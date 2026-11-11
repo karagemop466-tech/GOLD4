@@ -360,14 +360,20 @@ def gold_evidence(runner: dict, hand: dict) -> dict:
 
 def apply_gold(spot: dict, ge: dict) -> bool:
     b, new = spot["benchmark"], ge["benchmark"]
+    oz = float(spot["constants"]["troy_ounce_grams"])
     if abs(b["value_usd_per_oz"] - new["value_usd_per_oz"]) < 0.005 and b.get("captured_utc") == new["retrieved_utc"]:
+        # already applied; keep the derived constant at the 6-decimal precision scripts/audit.py (A-03) checks
+        g = round(b["value_usd_per_oz"] / oz, 6)
+        spot["constants"]["spot_usd_per_gram"] = g
+        spot["constants"]["spot_usd_per_gram_note"] = (
+            f"value_usd_per_oz / 31.1034768 = {b['value_usd_per_oz']} / 31.1034768 = {g} USD/g "
+            "(recomputed by scripts/compute.py and re-checked by scripts/audit.py).")
         return False
     old = dict(b)
     old["status"] = "superseded"
     old["note"] = (f"Benchmark in force from Pass 18 (2026-10-23T20:23Z) until Pass 21. Superseded on {TODAY} when the World Gold "
                    "Council panel printed a newer data date. Kept for audit; no current calculation uses it.")
     spot.setdefault("prior_captures", []).append(old)
-    oz = float(spot["constants"]["troy_ounce_grams"])
     val = new["value_usd_per_oz"]
     delta = (val / old["value_usd_per_oz"] - 1) * 100
     b.update({
@@ -390,9 +396,9 @@ def apply_gold(spot: dict, ge: dict) -> bool:
         ],
     })
     spot["captured_utc"] = new["retrieved_utc"]
-    spot["constants"]["spot_usd_per_gram"] = round(val / oz, 5)
+    spot["constants"]["spot_usd_per_gram"] = round(val / oz, 6)
     spot["constants"]["spot_usd_per_gram_note"] = (
-        f"value_usd_per_oz / 31.1034768 = {val} / 31.1034768 = {round(val / oz, 5)} USD/g "
+        f"value_usd_per_oz / 31.1034768 = {val} / 31.1034768 = {round(val / oz, 6)} USD/g "
         "(recomputed by scripts/compute.py and re-checked by scripts/audit.py).")
     spot["recheck_note"] = (f"Re-read in Pass 21 at {new['retrieved_utc']} (browser-rendered fetch of the WGC panel) and cross-checked against three "
                             "market pages read by the runner at 08:02Z. scripts/audit.py re-derives every derived value on every run.")

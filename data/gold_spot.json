@@ -36,8 +36,8 @@
  "constants": {
   "troy_ounce_grams": 31.1034768,
   "troy_ounce_grams_note": "Defined exact conversion (troy ounce = 480 grains = 31.1034768 g). This is a definition, not a sourced market claim. Note (2026-10-23): NIST SP 811 Appendix B.8 prints 3.110 348 E+01 g for the troy ounce in non-bold type, i.e. rounded and not exact; the 31.1034768 g figure is exact only as the 480-grain definition.",
-  "spot_usd_per_gram": 130.51563,
-  "spot_usd_per_gram_note": "value_usd_per_oz / 31.1034768 = 4059.49 / 31.1034768 = 130.51563 USD/g (recomputed by scripts/compute.py and re-checked by scripts/audit.py)."
+  "spot_usd_per_gram": 130.515634,
+  "spot_usd_per_gram_note": "value_usd_per_oz / 31.1034768 = 4059.49 / 31.1034768 = 130.515634 USD/g (recomputed by scripts/compute.py and re-checked by scripts/audit.py)."
  },
  "prior_captures": [
   {
