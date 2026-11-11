@@ -80,6 +80,7 @@ class SourceSecurity(unittest.TestCase):
             self.assertEqual(live.classify(rec), 'INCOMPLETE_RESPONSE')
 
     def test_only_selects_one_ring(self):
+        print("SYNTHETIC CLI fixture: NO_RESPONSE below is mocked, not a retailer request.")
         captured = []
         def fake_fetch(url, timeout, allowed):
             captured.append(url)
@@ -96,6 +97,7 @@ class SourceSecurity(unittest.TestCase):
             self.assertEqual(artifact['summary'], {'NO_RESPONSE': 1})
 
     def test_unknown_only_fails(self):
+        print('SYNTHETIC negative CLI fixture: FAIL below is the expected rejection of an unknown ID.')
         with patch.object(sys, 'argv', ['check', '--only', 'NOT-A-ROW']), \
              patch.object(live, 'fetch') as fetch:
             self.assertEqual(live.main(), 4)

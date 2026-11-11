@@ -119,6 +119,7 @@ This is a dated {e(evidence['review_date_utc'])} review, not a live feed. Automa
 <li>Blue Nile BN-22: gold title versus platinum copy. Mejuri MJ-01: selected white gold versus yellow-gold materials/canonical variant. VRAI VR-01: size-6 weight versus size-5 selection and plain/pavé conflict.</li>
 <li>SR-03 weight is approximate and explicitly size 10; not a weight guarantee for all sizes. Clearance/custom/testing-return conditions and independent reputation remain unresolved.</li>
 <li>The full runner sweep could not be manually dispatched (GitHub API HTTP 403). Partial page-reader evidence below is the only new external product evidence claimed in this pass.</li>
+<li>Prior published Pass 21 coverage arithmetic needs review: its evidence lists only one product row out of 64, so 63—not 59—were not re-opened. The other four reads are references/site checks, not product rows. <a href="https://github.com/karagemop466-tech/GOLD4/blob/3c271ce/reviews/pass21/observations.json">Original project evidence</a> is preserved; this does not invalidate its actual AL-01 read.</li>
 <li>Security gap repaired: source fetches now reject off-list/non-HTTPS redirects before following them. Network errors remain unknown-cause failures, not inferred dead links or inferred environment blocks.</li></ul>
 <p>Official evidence and exact scope are in the source-linked table below. <strong>Needs review does not mean counterfeit.</strong></p></div>
 <section class="section"><h2>Inspected official excerpts — observations, not approved quotes</h2>
@@ -142,6 +143,7 @@ Ten partial product reads are not full re-verification. Displays differ for MN-0
 
 ## Repository review / irregularities
 
+- Flagged a prior published coverage arithmetic error with its immutable project evidence: [Pass 21 observations](https://github.com/karagemop466-tech/GOLD4/blob/3c271ce/reviews/pass21/observations.json) list one product read, but claim 59 unread of 64. The supported unread count is 63; the other four reads are not product rows. Original evidence remains unchanged.
 - Reviewed canonical ring rows structurally: IDs, official-domain product links, existing capture dates/flags and current-value nonpromotion. New deterministic register hashes its canonical inputs and sampled observations.
 - Reviewed source fetcher's URL handling, redirect chain, response limit, classification and --only scope. Fixed redirect validation before network follow; credential/port/scheme/host rejection; labelled body truncation. Fixed --only unexpectedly adding all policy URLs. Unknown-cause connection failures no longer automatically become ENVIRONMENT_BLOCKED when all requests fail.
 - The inherited Gate 4 console slogan “ZERO HALLUCINATIONS” and Gate 7 “is recent” summary overstate what passing software checks establish: Gate 7 explicitly warns the full-sweep evidence is old. Treat those slogans as unproven, not factual assurance. No scanner proves gold authenticity, truthful seller claims, complete market coverage or absence of hallucinations. Existing historic reports claiming full passes are preserved as dated records, not treated as this session's evidence.
