@@ -3,6 +3,7 @@
 from datetime import datetime, timezone
 from pathlib import Path
 import subprocess
+import tempfile
 import sys
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -36,7 +37,14 @@ def main():
         with path.open('a') as log:
             log.write('\n$ ' + ' '.join(command) + '\n' + result.stdout + result.stderr + '\nexit=' + str(result.returncode) + '\n')
         print(('PASS' if result.returncode == 0 else 'FAIL') + ' ' + ' '.join(command), flush=True)
-    summary = f'{len(COMMANDS)-failures}/{len(COMMANDS)} command invocations passed'
+    with tempfile.TemporaryDirectory() as tmp:
+        command = ['python3', 'scripts/session_a2f26a30/stage_pages.py', str(Path(tmp) / 'site')]
+        result = subprocess.run(command, cwd=ROOT, capture_output=True, text=True)
+        failures += result.returncode != 0
+        with path.open('a') as log:
+            log.write('\n$ ' + ' '.join(command) + '\n' + result.stdout + result.stderr + '\nexit=' + str(result.returncode) + '\n')
+        print(('PASS' if result.returncode == 0 else 'FAIL') + ' actual public-artifact staging and HTML local-file links', flush=True)
+    summary = f'{len(COMMANDS)+1-failures}/{len(COMMANDS)+1} command invocations passed'
     with path.open('a') as log:
         log.write('\n' + summary + '\nCompleted ' + datetime.now(timezone.utc).isoformat() + '\n')
     print(summary)

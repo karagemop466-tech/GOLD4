@@ -138,6 +138,14 @@ class ReviewTests(unittest.TestCase):
         self.assertIn('10 product URLs', html)
         self.assertIn('54 not re-opened', html)
 
+    def test_staged_missing_link_blocks_publication(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / 'repo'
+            root.mkdir()
+            (root / 'index.html').write_text('<a href="missing.html">Fixture</a>')
+            with self.assertRaises(ValueError):
+                stage_pages.stage(Path(tmp) / 'site', root)
+
     def test_deterministic(self):
         self.assertEqual(review.outputs(), review.outputs())
 

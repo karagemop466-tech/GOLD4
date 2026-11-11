@@ -150,7 +150,7 @@ Ten partial product reads are not full re-verification. Displays differ for MN-0
 - Manual workflow dispatch returned HTTP 403 Resource not accessible by integration. No fresh full-sweep artifact inspected. Workflow run success, if later observed, is not itself inspected product evidence.
 - Local link checks establish repository-relative target existence, not that every remote product URL works or every remote fragment is valid. Full external link/content review remains **needs review**.
 - Source registry and old review prose include academic/industry publishers as well as government sources; official-project check logs are software evidence, not retailer or assay evidence.
-- Automatic GitHub Pages upload previously sent the whole repository directory. This pass limits publication to public site/data/evidence assets, excluding Git internals and build tooling from the deployed artifact.
+- Automatic GitHub Pages upload previously sent the whole repository directory. This pass limits publication to public site/data/evidence assets, excluding Git internals and build tooling from the deployed artifact. A frozen placeholder mini-site had seven broken relative links; staging replaces only its deployed copy with an archive notice linking to the preserved Git snapshot and current dashboard. The original repository snapshot is untouched. All staged HTML local-file targets are checked before upload.
 
 ## Checks and repeat recommendation
 
