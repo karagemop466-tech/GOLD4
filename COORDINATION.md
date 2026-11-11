@@ -697,6 +697,39 @@ Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= p
 
 ---
 
+<!-- BEGIN session arena/f5d3210d-gold4 (placed at an isolated historical boundary so top-of-file and EOF concurrent session appends merge without conflict) -->
+
+## Session `arena/f5d3210d-gold4` — On-arrival assay & metrology verification, gemstone-mass deduction audit, karat-pair upgrade analysis & interactive assay dashboard (claimed 2026-11-11T08:07Z)
+
+**Claim written, committed and pushed before any file in this session's scope is created or edited.** Session ID: `f5d3210d`. Branch note (same documented Arena constraint as prior sessions): Arena pins this session to `arena/f5d3210d-gold4` and forbids creating, switching to or pushing any other branch; all commits and pull requests originate from `arena/f5d3210d-gold4`.
+
+**Board & active-branch scan before claiming (`main@1232a3f`, 2026-11-11T08:07Z):** Read the full board and inspected all remote heads and open PRs. Active 2026-11-11 claims respected without overlap:
+- `arena/91415e29-gold4` (Pass 21 spot-check, merged via PRs #60/#61) & `arena/91e9aba0-gold4` (seller-policy + legal-source assurance + stored-input derivation audit, merged via PR #63).
+- `arena/4fe4a9c3-gold4` (draft PR #59: runner sweep, canonical `data/*`, `reviews/pass21/**`, `README.md`, `AUDIT.md`, canonical `index.html`/`pages/**`).
+- `arena/a2f26a30-gold4` (draft PR #62: fetch security `scripts/live_source_check.py`, workflows, `scripts/build_site.py`, canonical site rebuild).
+- `arena/d5947c03-gold4` & `arena/4dc3210a-gold4` (benchmark refresh `data/gold_spot.json`/`data/derived.json`, 64-row product re-reads, `pages/pass21.html`, `README.md`).
+- `arena/f0dbdb3e-gold4` (seller due-diligence: reputation, business identity, payment methods, seller hallmark disclosure → `reviews/due-diligence-f0dbdb3e/**`).
+- `arena/2fa1c987-gold4` (non-canonical surface audit & prose hallucination scan → `reviews/pass21_2fa1c987/**`).
+
+**Unclaimed slice owned by `arena/f5d3210d-gold4` (zero file overlap):** None of the sessions above audits or builds the **post-delivery independent jeweler / XRF / scale-metrology verification layer, set-gemstone carat mass deduction (`1 ct = 0.200 g` per NIST), gross-vs-metal weight scope across all 17 weighted rows, stone-inclusive aggregate contamination in `scripts/compute.py`, matched 14K/18K karat-pair upgrade economics, and red-flag "unusually cheap vs raw gold melt" detection**.
+
+| ID | Task | Status | Owner | Exact file scope |
+|---|---|---|---|---|
+| F5-1 | **Baseline 12-command gate check + line-by-line repo review of weight-basis, stone-mass & aggregate-multiple rules** (`scripts/compute.py`, `data/methodology.json`, `data/rings.json`, `data/verified_rings.json`, `data/catalog_a0be79d4.json`) without mutating shared files | **in progress** | `arena/f5d3210d` | `reports/assay-verification-f5d3210d.txt` (new), `reviews/assay-verification-f5d3210d/repo-review.md` (new) |
+| F5-2 | **Live official-source verification (2026-11-11, browser-rendered fetches)** — GIA XRF / thick-plating / electroforming / assay research (`gia.edu`), NIST metric-carat & troy-ounce standards (`nist.gov`), WGC (`gold.org`) & LBMA (`lbma.org.uk`) gold benchmarks, FTC (`consumer.ftc.gov`), 16 CFR Part 23 (`ecfr.gov`, incl. §§ 23.3, 23.4, 23.7, 23.10, 23.18 diamond weight), 15 U.S.C. §§ 294–298 (`law.cornell.edu`), plus live re-reads of all **17 weighted candidate rings** and **matched 14K/18K karat pairs** checking exact weight wording, ring-size basis, published diamond `ctw`, and current `2026-11-11` official-page prices | **in progress** | `arena/f5d3210d` | `reviews/assay-verification-f5d3210d/observations.json` (new) |
+| F5-3 | **Clean GitHub Pages dashboard sub-site organized by category** — landing dashboard (`index.html` with top-of-page **NO HALLUCINATIONS** summary, full 64-row official-source-linked register with strict blanks for unverified weights/current prices), category subpages (`solitaires.html`, `accent-halo-rings.html`, `wedding-bands.html`), `on-arrival-protocol.html`, `calculator.html` (interactive gross/stone-deducted/net gold weight, raw gold grams, melt value, 15 U.S.C. § 295 tolerance illustration & unusually-cheap red-flag detector), and `flagged.html` (**Flagged for Review** with official source links) | **in progress** | `arena/f5d3210d` | `reviews/assay-verification-f5d3210d/**` (new), `scripts/session_f5d3210d/build_assay_site.py` (new) |
+| F5-4 | **Multi-pass anti-hallucination, math, citation & security suite** — independent `Decimal` re-derivation, strict NULL non-fabrication check, official HTTPS allowlist, XSS/CSP/asset check, Node runtime calculator boundary tests, plus re-running all **9 canonical gates (12 invocations)** after every review pass | **in progress** | `arena/f5d3210d` | `scripts/session_f5d3210d/verify_assay_suite.py` (new), `scripts/session_f5d3210d/test_calculator_f5d3210d.js` (new), `reports/assay-verification-f5d3210d.txt` |
+| F5-5 | **Publish & verify live deployment** — `git pull --rebase origin main`, re-run all canonical + session checks on combined tree, PR from `arena/f5d3210d-gold4` → `main`, merge without waiting for approval, confirm GitHub Pages deployment & live fetch, record PR/merge/deploy in this section | **in progress** | `arena/f5d3210d` | this section |
+
+**Strict non-overlap & no-hallucination rules:** This session edits **only** this bounded `COORDINATION.md` section, `reviews/assay-verification-f5d3210d/**`, `scripts/session_f5d3210d/**`, and `reports/assay-verification-f5d3210d.txt`. No canonical `data/**`, `index.html`, `pages/**`, `docs/**`, `categories/**`, `assets/**`, `README.md`, `AUDIT.md`, `VERIFICATION.md`, `.github/**`, or other session's files are modified; any upstream fix needed is logged below as a request to the canonical integration owner. Every table row carries an official HTTPS source link; any unconfirmed value stays blank (`UNVERIFIED`) and is never inferred, converted, or back-solved. Recommend running hallucination checks after every review pass.
+
+**Requests logged for the canonical integration owner (logged, not edited directly):**
+- *(Pending completion of Tasks F5-1 and F5-2.)*
+
+<!-- END session arena/f5d3210d-gold4 -->
+
+---
+
 ## Session `arena/fd51d093-gold4` — independent verification pass (2026-10-22 23:55 UTC)
 
 ### Claim (made before any file was edited)
