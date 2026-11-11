@@ -1314,3 +1314,124 @@ path, and whether anything was inferred rather than read.
 **Companion close-out integration:** retained #64's appended publication record in full when it conflicted with this session's append; no source/evidence deletion. Latest combined tree passes all 16 commands again, including staged HTML links. Product/policy factual gaps remain needs review; no purchase approval or source-currentness inferred from a green build.
 
 **Date-provenance follow-up:** the new review builder now also rejects a review date later than the actual UTC build clock, in addition to invalid/future-within-review observation dates and invalid chunk lists. New review/staging tests now total **15** (plus 10 source-security tests). Preview was restarted against the same public-only staged artifact as production: dashboard/review/calculator return 200; `/.git/config` and `/scripts/live_source_check.py` return 404. No repository metadata or Python tooling is served by the preview.
+
+## Session `arena/2fa1c987-gold4` — Pass 21 companion task: **non-canonical surface audit + prose hallucination scan + dead-link re-read** (claimed 2026-11-11T08:05Z, before any file in scope was edited)
+
+**State read before claiming.** Board read in full. `git ls-remote --heads origin` → **32 `arena/*` heads**; `gh pr list --state open` → **two**: [#59](https://github.com/karagemop466-tech/GOLD4/pull/59) (draft, `arena/4fe4a9c3-gold4`, tasks 53–57) and [#60](https://github.com/karagemop466-tech/GOLD4/pull/60) (open, `arena/91415e29-gold4`, P21-1..P21-4). Live claims found on branch heads: `arena/4dc3210a-gold4` (tasks 70–75: benchmark refresh, all-64-row re-verification, publish), `arena/91e9aba0-gold4` (seller-policy & legal-source assurance + independent derivation audit), `arena/a2f26a30-gold4` (freshness, fetch security, final integration), `arena/d5947c03-gold4` (tasks 66–71: benchmark refresh, re-verification, publish). **None of those six sessions claims the scope below, and this session claims none of theirs.**
+
+**Pass-number note.** Six sessions are numbering this round "Pass 21". This session does **not** renumber anyone and does not claim to be *the* Pass 21. Its files are namespaced `2fa1c987` so that whatever number the merge order settles on, the evidence stays attributable.
+
+**Branch note (documented deviation, as with every prior session):** Arena pins this session to `arena/2fa1c987-gold4`; no other branch is created, switched to, or pushed to.
+
+**Why this scope exists.** Every live session is working the *canonical* surfaces — `data/**`, `index.html`, `pages/**`, the benchmark, the gates. Nobody has claimed the **non-canonical** surfaces: the ten hand-era root pages, the six `categories/**` pages, the frozen `docs/**` sub-site, `assets/**`, `static/**`, `app.js`, and the long prose documents (`README.md`, `AUDIT.md`, `VERIFICATION.md`, `audit/repo-line-by-line-review.md`, the `reviews/*.md` historical reports). Those pages are still published to GitHub Pages and a reader can reach them, so a number that drifted there is a live hallucination risk even when `data/` is perfect. The 2026-11-11 staleness (19 days) makes prose drift *more* likely, not less.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| 76 | **Baseline** — run all nine gates (twelve invocations) on the unedited `main@b34ae17` tree and record exact output before touching anything. | **in progress** | `arena/2fa1c987` | `reports/pass21_2fa1c987_gates.txt` (new), `reviews/pass21_2fa1c987/` (new) |
+| 77 | **Non-canonical surface audit** — line by line over the root legacy pages, `categories/**`, `docs/**`, `assets/**`, `static/**`, `app.js`: every price, weight, karat, count, percentage, date and "solid gold" claim matched against `data/**`; every table row checked for an official `https://` source link; every local link checked for 404; no-hallucination banner presence checked. | **in progress** | `arena/2fa1c987` | new files under `reviews/pass21_2fa1c987/`, `scripts/session_2fa1c987/` |
+| 78 | **Prose hallucination scan** — a purpose-built scanner that extracts every numeric/date claim from the repository's Markdown and generated prose and reconciles it against `data/*.json`; every unreconcilable claim is listed with file + line + the nearest official source. Read-only: nothing is silently "corrected" to make prose match data. | **in progress** | `arena/2fa1c987` | `scripts/session_2fa1c987/scan_prose.py` (new), `reviews/pass21_2fa1c987/prose_scan.json` (new) |
+| 79 | **Dead-link re-read (bounded sample)** — re-open today, from this session's own reader, the four rows whose URLs the stored evidence marks dead (**BN-09…BN-12**) and the three pages recorded as only partly readable (**AN-01**, **VR-01**, **BE-07**). Record alive/dead/differs with a UTC timestamp and the exact URL. **No stored price, weight, URL or capture date is written by this session**; a finding is published and logged as a request for the `data/rings.json` owner. | **in progress** | `arena/2fa1c987` | `reviews/pass21_2fa1c987/observations.json` (new) |
+| 80 | **Report + publish** — publish the audit as its own dated review page, log every drift found as an explicit *request* against the owning session, run all gates, open a PR from this branch to `main`, merge without waiting for approval, confirm the Pages deploy, and record the PR/merge/deploy here. | **in progress** | `arena/2fa1c987` | `reviews/pass21_2fa1c987/**`, `reports/pass21_2fa1c987_*`, this board section |
+
+**Non-overlap declaration — what this session will NOT touch.** `data/**` (all of it: `rings.json`, `gold_spot.json`, `derived.json`, `sources.json`, `sellers.json`, `source_health.json`, `verification_log.json`, `methodology.json`); `index.html`; `pages/**`; `docs/**`; `categories/**`; `assets/**`; `static/**`; root legacy HTML; `README.md`; `AUDIT.md`; `VERIFICATION.md`; every existing `scripts/*.py` and its gate tests; `.github/**`; and every other session's `reviews/**` or `reports/**` file. Drift found in any of those is **written into the request table below, not edited**. This session adds only: new files under `reviews/pass21_2fa1c987/`, `reports/pass21_2fa1c987_*`, `scripts/session_2fa1c987/`, and this appended board section.
+
+**Read path (stated up front because it bounds every claim).** This sandbox has no general outbound internet from `bash`; it has a browser-rendered page reader. Every live reading below is taken through that reader at a recorded UTC time. Nothing is written from memory, and a page that will not render produces **no claim at all**.
+
+**Standing rule restated:** passing gates is not proof that a claim is true. After every review, look for hallucinations again — source link, capture date, read path, and whether anything was inferred rather than read.
+
+**Requests logged for other sessions (no file edited by this session):**
+
+| # | File | Observation | Requested action | Owner |
+|---|------|-------------|------------------|-------|
+| — | (findings appended as they are confirmed) | — | — | — |
+
+**Scope extension, claimed 2026-11-11T08:20Z BEFORE editing (documented, and narrow).** Task 77's audit found live factual errors on the surfaces generated by `scripts/generate_site.py`. Before claiming the fix this session re-verified ownership: no live session's branch touches `scripts/generate_site.py` or the eight root pages it writes (`git diff --name-only b34ae17` for `4dc3210a`, `4fe4a9c3`, `91415e29`, `91e9aba0`, `a2f26a30`, `d5947c03` → `COORDINATION.md` only, plus `README.md`/`data/derived.json`/`data/gold_spot.json`/`pages/**`/`reports/pass21/**` for `91415e29`, and `.github/workflows/live-source-check.yml` for `4fe4a9c3`). **No file this session now edits is in another session's claimed scope.** Additional exact scope: `scripts/generate_site.py` (benchmark/gate-count/date wording derived from `data/gold_spot.json` and `.github/workflows/pages.yml` instead of hardcoded; the pre-filled calculator example labelled as an example) and the eight root pages it regenerates. **No ring price, weight, karat, URL, seller policy, benchmark value or other session's evidence file is changed**; `data/**` is read, never written. If a later integration prefers to revert this, the edits are confined to those two file groups.
+
+### Result of session `arena/2fa1c987-gold4` (line by line)
+
+**Read window:** 2026-11-11, 08:05–08:26Z. **Read path:** this session's browser-rendered reader (no general outbound
+internet from `bash`). Per-read clock times are not returned by the reader, so each entry records the date, not a
+second-level time. **No value was written into `data/**`** by this session; every live finding that bears on a stored
+row is logged as a request for the `data/rings.json` / `data/gold_spot.json` owner below.
+
+| # | Task | Status | Evidence |
+|---|------|--------|----------|
+| 76 | Baseline — nine gates / twelve invocations on the unedited `main@b34ae17` tree | **done** — 12/12 PASS | `reports/pass21_2fa1c987_gates.txt` |
+| 77 | Non-canonical surface audit (8 root pages, `categories/**`, `docs/**`, `assets/**`, `static/**`, `app.js`) | **done** — 34 files; 2 new scanners; 4 defects found, 4 fixed | `reviews/pass21_2fa1c987/prose_scan*.json`, `superseded_scan*.json` |
+| 78 | Prose hallucination scan | **done** — 1,507 numeric claims reconciled against `data/**`: 1,503 traceable, 3 dated-historical, **1 untraceable** | `scripts/session_2fa1c987/scan_prose.py`, `check_superseded.py` |
+| 79 | Dead-link re-read (BN-09…BN-12, AN-01, VR-01, BE-07) | **done** — 4 dead confirmed, 2 prices corroborated exactly, 1 price not returned | `reviews/pass21_2fa1c987/observations.json` |
+| 80 | Report + publish | **in progress** — report published, gates green, PR next | `reviews/pass21_2fa1c987/report.md` + `report.html` |
+
+**Findings (full write-up, source links and limits: [`reviews/pass21_2fa1c987/report.md`](reviews/pass21_2fa1c987/report.md) · published page [`report.html`](reviews/pass21_2fa1c987/report.html)):**
+
+| ID | Sev | Finding | Disposition |
+|----|-----|---------|-------------|
+| F-2F-01 | **HIGH** | Eight published pages (dashboard, solitaires, three-stone-halo, bands, checklist, standards, audit, coordination) printed a **superseded** benchmark as the benchmark in force — `CROSS-CHECK QUOTES · 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct)` — while `data/gold_spot.json` keeps $4,024.45 in `prior_captures[2]` with `status: superseded` and the active benchmark is **$3,996.31/oz**. Confirmed live on `https://karagemop466-tech.github.io/GOLD4/dashboard.html` today. The "Zero Invented Data" bullet repeated it. | **fixed** — derived from `data/gold_spot.json` at build time, with the WGC source link + both dates |
+| F-2F-02 | MEDIUM | Same ribbon: "**5** Automated Audit Gates Passing ✓" vs the nine gates / twelve command invocations in `pages.yml`. | **fixed** — counted from `pages.yml` at build time |
+| F-2F-03 | MEDIUM | Hero called a 2026-10-22 captured quote "**live** fine gold trading at $4,024.60/oz". | **fixed** — reworded as a dated cross-check, benchmark in force named beside it |
+| F-2F-04 | LOW | Melt calculator rendered **pre-filled placeholder results** ($650.20 · 1.34× melt · +$220.80 · zone 1.02×–1.65×) with no label and no source; visible if the script does not run. `+$220.80` is the only value the scanner could not trace to `data/**`. | **fixed** — panel headed "Pre-filled example only … not a quote, a valuation or a measured result" |
+| F-2F-05 | INFO | BN-09/10/11/12 all still serve Blue Nile's own 404 copy — a **soft 404** (HTTP 200 with 404 copy). | confirmed unchanged, 19 days on — request logged |
+| F-2F-06 | INFO | **AN-01 $870.76 corroborated exactly** today (page prints `Price:$870.76`, MS354-A, 14K White Gold, 0.50 ct FG/VS, size 6.5) — the row was flagged `SOURCE_PRICE_NOT_MACHINE_READABLE`. | request logged |
+| F-2F-07 | INFO | **BE-07 $1,350 corroborated exactly, in USD** (`fleur solitaire-$1,350`, currency selector shows USD) — row carries `SOURCE_BOT_BLOCKED` + `PRICE_CURRENCY_LOCALIZED`. | request logged |
+| F-2F-08 | INFO | VR-01: metal confirmed 18k Yellow Gold; price not returned → **no price claim**. Separately, the stored $1,035 (already flagged `PRICE_AND_WEIGHT_DIFFERENT_URLS`) equals a figure this page prints today for a **different** product ("Half Pave Band … $1,035"). | **flagged, no claim** — may be coincidence; reviewer told so |
+| F-2F-09 | INFO | WGC panel today: **USD 4,059.49/oz**, "Data as of 10 November, 2026" (ICE Data Services) — **+1.58 %** vs the stored $3,996.31. | **recorded, not applied** — `data/gold_spot.json` is owned by `arena/d5947c03` |
+| F-2F-10 | INFO | README lines 144/164 still flagged by the new scanner — both are historical pass narratives. | scanner false positive, documented |
+| F-2F-11 | INFO | `categories/calculator.html` still offers "World Gold Council (2026-10-21): $4,024.36" as a selectable spot source — honestly dated, but superseded and 3 weeks stale. | request logged |
+
+**Sources opened today (each linked in `observations.json`):** World Gold Council Goldhub gold-prices panel · Anjolee
+AN-01 product page · Brilliant Earth BE-07 product page · VRAI VR-01 configure page · four Blue Nile product URLs ·
+the published `dashboard.html` (pre-fix state).
+
+**Verification performed:** all nine gates / twelve command invocations re-run on the edited tree — **12/12 PASS**
+(G1 132/0/0 · G2 30 pages · G3 64 records 0 hard · G4 40 pages 2,665 links 0 dead/unsafe · G5 1,183 checks 0 failures ·
+G6a self-test + G6b 110 refs · G7 295 checks/4 known warnings · G8 8/8 · G9a 22 · G9b 10 · G9c check).
+Post-fix scanner state: superseded findings **10 → 3** (2 false positives + 1 honestly-dated option); untraceable
+numeric claims **1** (the now-labelled placeholder). Full log: `reports/pass21_2fa1c987_gates.txt`.
+
+**Requests logged for other sessions — no file outside this session's scope was edited:**
+
+| # | File | Owner | Requested action |
+|---|------|-------|------------------|
+| R-2F-1 | `data/rings.json` BN-09/10/11/12 | Pass 21 row owner (`arena/4dc3210a` task 72) | BN-09…BN-12 are still dead as of 2026-11-11 (soft 404). `SOURCE_URL_DEAD` stands; no URL replacement is proposed because none was found. |
+| R-2F-2 | `data/rings.json` AN-01 | row owner | This session read `Price:$870.76` today, contradicting the `SOURCE_PRICE_NOT_MACHINE_READABLE` flag. Additive observation only — the stored price and date were **not** changed by this session. |
+| R-2F-3 | `data/rings.json` BE-07 | row owner | This session read `fleur solitaire-$1,350` with USD shown, corroborating the stored amount and bearing on `PRICE_CURRENCY_LOCALIZED`. Additive observation only. |
+| R-2F-4 | `data/rings.json` VR-01 | row owner | Stored price $1,035 (captured from a different URL) equals a price the product page prints today for a different product. No claim made; please confirm the provenance before the flag is relaxed. |
+| R-2F-5 | `data/gold_spot.json` | `arena/d5947c03` (task 67) | Today's WGC panel reads $4,059.49/oz, "Data as of 10 November, 2026" (+1.58 %). Recorded here, **not applied**. |
+| R-2F-6 | `categories/calculator.html` | unowned / final integration | The spot-source dropdown still offers the superseded WGC 2026-10-21 reading. Not edited — it is honestly dated, so this is an improvement request, not a correction. |
+| R-2F-7 | `.github/workflows/pages.yml` | final integration | **Offer:** `scripts/session_2fa1c987/check_superseded.py --gate` as a candidate Gate 10. The eight legacy pages passed every existing gate *while* printing a superseded benchmark, because no gate compares a rendered legacy number against `data/gold_spot.json`. Do not enable `--gate` until the three remaining findings are cleared. |
+
+**Standing rule restated:** passing gates is not proof. After every review, look for hallucinations again — source
+link, capture date, read path, and whether anything was inferred rather than read.
+
+**Close-out (2026-11-11T08:28Z) — task 80 done.** PR [#66](https://github.com/karagemop466-tech/GOLD4/pull/66)
+opened from `arena/2fa1c987-gold4` at 08:22Z; its build workflow **passed in 9s** (run
+[42986485504](https://github.com/karagemop466-tech/GOLD4/actions/runs/42986485504)); **merged 2026-11-11T08:23:30Z** as
+merge commit `5b5b4e5`. Push-to-main **Deploy GOLD research site** run
+[42986652293](https://github.com/karagemop466-tech/GOLD4/actions/runs/42986652293) completed **success** on `5b5b4e5`,
+and the Pages API reports `status=built`, `commit=5b5b4e5`, `error=none`.
+
+**Live read-back after the deploy (not just "the workflow went green"):**
+`https://karagemop466-tech.github.io/GOLD4/dashboard.html` now serves
+`BENCHMARK IN FORCE: WGC $3,996.31/oz · source date 22 October, 2026 · retrieved 2026-10-23 [Source ↗]`,
+`9 Automated Audit Gates / 12 command invocations Passing ✓`, the KPI line
+`Benchmark in force: $3,996.31/oz = $128.4844/g · WGC, source date 22 October, 2026`, and the hero's dated
+cross-check wording. The superseded `$4,024.45/oz` ribbon that this pass was opened to fix is **gone from the live
+site**. The session report is live at
+`https://karagemop466-tech.github.io/GOLD4/reviews/pass21_2fa1c987/report.html` and was fetched and matched.
+
+**Board housekeeping.** This session hit two rebase conflicts in `COORDINATION.md` (expected — six sessions append to
+the same file). Both were resolved as a **union**: no other session's text was discarded, renumbered or rewritten; the
+resolver only concatenates when neither side already contains the other's session id. One force-push was needed, on
+**this session's own branch only** (`--force-with-lease` after rebasing my own two claim commits onto newer `main`);
+no other session's branch was touched. While reconciling, this session briefly deleted 22 historical
+`reports/audit_2026*.txt` artifacts with an over-broad `rm` and **restored all 22 from `HEAD` in the next command**;
+`git status` was verified clean of deletions before the commit, and the merged PR contains no deletions under `reports/`.
+That mistake is recorded here because a process error that is silently undone is still a process error.
+
+**Handover note.** Three findings and seven requests remain open by design and are published, not hidden:
+F-2F-05 (BN-09…BN-12 dead), F-2F-08 (VR-01 price provenance — **no claim made**), F-2F-09 (WGC $4,059.49/oz today,
++1.58 %, owned by `arena/d5947c03`), F-2F-11 (`categories/calculator.html` stale dropdown option), and requests
+R-2F-1…R-2F-7 in the table above. Nothing here blocks integration. **Look for hallucinations again on the next pass:
+source link, capture date, read path, and whether anything was inferred rather than read.**
+
+**Final integration handoff, ~08:32Z:** #59's tasks 53–56 are now marked done, its PR is ready, and its build/live-check are successful. This session will integrate those completed source commits into this assigned branch and repeat every gate and staged-link test; the research owner's branch is untouched. Already-merged #66/#67 non-canonical surface fixes are retained; their appended board conflict was resolved by keeping both sections. No canonical research is reimplemented. This is final integration of completed work; remaining timestamp/quote/purity gaps are published needs-review items, not blockers or fabricated confirmations.
