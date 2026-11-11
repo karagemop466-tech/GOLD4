@@ -1,7 +1,7 @@
 {
  "artifact": "GOLD4 Pass 21 — hand reads by session arena/4fe4a9c3-gold4",
  "read_path": "this session's browser-rendered page reader (fetch of the official URL, page text returned as markdown). Independent of the GitHub runner sweep in reports/live_source_check_20261111T080309Z.json.",
- "read_window_utc": "2026-11-11T08:00Z–08:45Z",
+ "read_window_utc": "2026-11-11T08:00Z–08:50Z",
  "rule": "NO HALLUCINATIONS. Every 'verbatim' string below was printed by the official page at the URL given, on the date given. Nothing here is inferred, averaged or converted. 'not_read' lists what this read did NOT reach.",
  "benchmark": {
   "id": "wgc-gold-prices",
@@ -322,12 +322,35 @@
    "verdict": "SOURCE_URL_DEAD",
    "note": "The stored URL now serves Brilliant Earth's own page-does-not-exist copy. No price can be read; the stored $1,090 keeps its original read date and is not a current price.",
    "not_read": "Chunks 0-3 and 5-6 not read; the not-found message and the generic page title are unambiguous."
+  },
+  {
+   "id": "BN-04",
+   "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
+   "chunk": 0,
+   "verbatim": [
+    "20% Off* Engagement Ring Settings",
+    "Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)",
+    "$935$748(Setting Price)",
+    "-20%",
+    "*Discount code is applied automatically",
+    "Stock Number 501310y14",
+    "Metal 14K Yellow Gold",
+    "Width 2.50mm",
+    "Free Overnight Shipping Extended Returns",
+    "This one, crafted in 18k yellow gold, features a rounded inside edge for comfort."
+   ],
+   "price_usd_displayed": 748.0,
+   "list_price_usd_displayed": 935.0,
+   "weight_g_displayed": null,
+   "verdict": "PRICE_CHANGED_SALE",
+   "note": "Blue Nile is running a site-wide '20% Off* Engagement Ring Settings' promotion; the page prints both the list price and the sale price. The product copy still says '18k yellow gold' on a 14K page (already flagged COPY_INCONSISTENT_METAL). The same page's 'You May Also Like' cards print '$2,260 $1,808' (BN-13) and '$1,255 $1,004' (BN-18).",
+   "not_read": "No gram weight is printed in the chunk read. Chunks 1-6 not read."
   }
  ],
  "coverage": {
   "benchmark_read": true,
-  "rows_hand_read": 15,
+  "rows_hand_read": 16,
   "rows_total": 64,
-  "statement": "15 of 64 rows were hand-read by this session today. The other 49 rows were NOT hand-read; for them the only evidence dated today is the runner sweep (reports/live_source_check_20261111T080309Z.json)."
+  "statement": "16 of 64 rows were hand-read by this session today. The other 48 rows were NOT hand-read; for them the only evidence dated today is the runner sweep (reports/live_source_check_20261111T080309Z.json)."
  }
 }
