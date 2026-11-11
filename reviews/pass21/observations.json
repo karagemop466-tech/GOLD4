@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "session": "arena/91415e29-gold4",
+  "pass": "Pass 21",
+  "generated_utc": "2026-11-11T07:59Z",
+  "read_path": "browser-rendered page reader used by this session (NOT a GitHub runner; no runner sweep was run this pass — the most recent all-URL runner evidence remains 2026-10-23T20:23:21Z and is left exactly as it was)",
+  "coverage": {
+    "rows_total": 64,
+    "rows_fully_corroborated_price_and_weight": 1,
+    "rows_price_differed": 0,
+    "rows_not_re_read_this_pass": 59,
+    "statement": "59 of 64 rows were NOT re-read in Pass 21. Their stored values keep their original 2026-10-22/23 capture dates and are not claimed to be current. This pass is a freshness spot-check, not a full sweep.",
+    "sources_registered": 32
+  },
+  "readings": [
+    {
+      "id": "P21-R01",
+      "target": "gold benchmark",
+      "source_id": "wgc-gold-prices",
+      "url": "https://www.gold.org/goldhub/data/gold-prices",
+      "window_utc": "2026-11-11T07:59Z",
+      "page_printed": "Gold spot price panel: 'USD /oz' with '4,059.49' above 'Last Updated'; page date line '10 November, 2026'; chart footer 'Data as of 10 November, 2026'; 'Market Data: Provided by ICE Data Services'",
+      "stored": {
+        "value_usd_per_oz": 3996.31,
+        "captured_utc": "2026-10-23T20:23Z",
+        "price_date_as_shown_on_source": "22 October, 2026"
+      },
+      "verdict": "DIFFERS_MATERIAL",
+      "delta_pct": 1.581,
+      "action": "Benchmark RETAINED at 3,996.31/oz (dated 22 October, 2026) for this pass. The live panel moved +1.58% over 18 days and its own data date advanced to 10 November, 2026. Reading recorded as a dated cross-check in data/gold_spot.json (pass21_live_crosscheck_2026_11_11); no derived value changed. At the live tick, gold = $130.5156/g and a 4.0 g 14K ring's nominal gold value would be $305.20 vs $299.80 at the stored benchmark — shown only to size the move, not as a new benchmark."
+    },
+    {
+      "id": "P21-R02",
+      "row_id": "AL-01",
+      "retailer": "Allurez",
+      "url": "https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold",
+      "window_utc": "2026-11-11T07:59Z",
+      "page_printed": "'$585', '51% Savings', '$1,194 Everyone Else', 'Setting only. Center stone sold separately.', 'Style number NG4426', 'Metal 14k Yellow Gold', 'Approximate Metal Weight 3.58 grams'",
+      "stored": {
+        "price_usd": 585.0,
+        "weight_g": 3.58,
+        "sku": "NG4426",
+        "karat": 14
+      },
+      "verdict": "MATCH",
+      "note": "Price, basis, style number, metal, karat and the seller's approximate weight all match the stored record 18 days after the last full sweep. Fourth independent corroboration of this row (Passes 2, 12, 14/15, 20, now 21). No value changed."
+    },
+    {
+      "id": "P21-R03",
+      "target": "FTC gold-jewelry guidance (registered source)",
+      "source_id": "ftc-gold-jewelry",
+      "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+      "window_utc": "2026-11-11T07:59Z",
+      "page_printed": "'look for the karat quality mark'; 'Near the karat quality mark, look for the name or the U.S. registered trademark of the company that will stand behind the mark... If you're thinking about buying a piece of gold jewelry but don't see a trademark along with the karat mark, don't buy it.'; 'solid gold means the gold item isn't hollow'; gold-filled/overlay/RGP, gold electroplate and vermeil definitions as registered",
+      "verdict": "MATCH",
+      "note": "The site's checklist wording (karat + trademark, solid vs plated/filled/vermeil) is confirmed against the live FTC page. No wording change needed."
+    },
+    {
+      "id": "P21-R04",
+      "target": "15 U.S.C. § 295 (registered source)",
+      "source_id": "usc-15-295",
+      "url": "https://www.law.cornell.edu/uscode/text/15/295",
+      "window_utc": "2026-11-11T07:59Z",
+      "page_printed": "'the actual fineness of such gold or alloy shall not be less by more than three one-thousandth parts than the fineness indicated by the mark'; solder-free part test at 0.003 plus entire-quantity test at 0.003 (watchcase/flatware) or 0.007 (any other article), 'it being intended that the standards of fineness and the tests or methods for ascertaining the same provided in this section for articles mentioned therein shall be concurrent and not alternative.'",
+      "verdict": "MATCH",
+      "note": "Calculator wording (0.007 illustration alone is not compliance; tests are concurrent, not alternative) is confirmed against the live statute text. No wording change needed."
+    },
+    {
+      "id": "P21-R05",
+      "target": "live site read-back",
+      "url": "https://karagemop466-tech.github.io/GOLD4/",
+      "window_utc": "2026-11-11T07:59Z",
+      "page_printed": "Dashboard serves 64 rings / 10 retailers, 62 prices captured 22–23 October 2026, 17 gram weights, $128.48/g at $3,996.31/oz dated 22 October 2026, 251 flags, no-hallucination banner and FTC/§295 links present",
+      "verdict": "MATCH",
+      "note": "Live site matches the repo at main@b34ae17. No drift between published site and data files."
+    }
+  ],
+  "offline_audit": {
+    "provenance": "All 62 populated prices and all 17 populated weights carry an official source URL, capture date and verification level; 0 issues. Every row has an official-source link (check_site PASS).",
+    "derived_math": "Spot $3,996.31/oz ÷ 31.1034768 = $128.48435/g verified. AL-01: 3.58 g × 0.5833333 = 2.0883 g pure Au × $128.48435 = $268.32 — matches derived.json. Full recompute is Gate 1 (audit.py, 132 checks, 0 failures).",
+    "headline_numbers": "64 rings / 62 prices / 17 weights / 17 solid-stated / 251 flags / $3,996.31/oz / $128.48435/g / 32 sources / nine gates — all match README.md and index.html. No drift found."
+  }
+}
