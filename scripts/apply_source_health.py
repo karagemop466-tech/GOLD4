@@ -24,11 +24,19 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
+
+# Fix by session 4fe4a9c3 (2026-11-11): the pass label and session used to be hard-coded as "Pass 15 / arena/03c0c10f",
+# so any later re-run stamped new evidence with the wrong pass and session (a provenance bug).
+# They are now supplied by the pass that runs the script; the defaults keep the historical text.
+PASS_LABEL = os.environ.get("GOLD4_SOURCE_CHECK_PASS", "Pass 15")
+PASS_SESSION = os.environ.get("GOLD4_SOURCE_CHECK_SESSION", "arena/03c0c10f-gold4")
 
 NEW_FLAG_LABELS = {
     "SOURCE_URL_DEAD": "source URL returns 404 as of the live check",
@@ -45,22 +53,22 @@ def sentence(state_row: dict, checked: str) -> str:
     found = ", ".join(
         f"{p['value']:,.2f} {p['currency'] or 'n/a'} via {p['source']}" for p in state_row.get("found_prices", [])
     )
-    head = f"Pass 15 source check {checked}: "
+    head = f"{PASS_LABEL} source check {checked}: "
     if st == "HTTP_404":
         return head + (
             "the stored source URL returned HTTP 404 (Blue Nile / Ross-Simons 'not found'); "
             "the stored value was read from this URL on its capture date and cannot be re-confirmed here. "
-            "No value was changed."
+            "The source check itself changed no value."
         )
     if st == "REFUSED_403":
         return head + (
             "the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim "
-            "about the current price; the stored value keeps its original provenance. No value was changed."
+            "about the current price; the stored value keeps its original provenance. The source check itself changed no value."
         )
     if st == "EMPTY_OR_JS_SHELL":
         return head + (
             "the page answered HTTP 200 but serves a JavaScript shell with no product text, so the price could "
-            "not be read without a browser render. No value was changed."
+            "not be read without a browser render. The source check itself changed no value."
         )
     if ps == "CONFIRMED":
         return head + f"the page's own structured data printed {found}, matching the stored price."
@@ -117,9 +125,8 @@ def main() -> int:
 
         # Append the evidence sentence once, keeping whatever an earlier pass wrote.
         existing = row.get("flag_detail") or ""
-        marker = "Pass 15 source check"
-        if marker in existing:
-            existing = existing.split(" | " + marker)[0].rstrip(" |")
+        # drop the sentence written by any earlier source check (any pass or dated re-read) before appending today's
+        existing = re.sub(r"(?:^| \| )(?:Pass \d+[a-z]?|Re-read [0-9-]+ \([0-9a-f]+\)) source check .*$", "", existing).rstrip(" |")
         note = sentence(st, checked)
         if st.get("source_state") == "OK" and st.get("price_state") in ("CONFIRMED", "NO_STORED_PRICE"):
             # confirmed / nothing to raise: record it in source_check only, do not
@@ -130,9 +137,9 @@ def main() -> int:
         changed += 1
 
     doc["source_health_pass"] = (
-        f"Pass 15 (session arena/03c0c10f-gold4) re-opened all {len(by_id)} store URLs live from a GitHub runner "
+        f"{PASS_LABEL} (session {PASS_SESSION}) re-opened all {len(by_id)} store URLs live from a GitHub runner "
         f"at {health.get('evidence_checked_utc')} and recorded the HTTP status and the page's own structured price "
-        "in each row's `source_check` block. This pass changed no price, weight or URL."
+        "in each row's `source_check` block. The source check itself changes no price, weight or URL."
     )
     doc["source_health_checked_utc"] = health.get("evidence_checked_utc")
     doc["source_health_artifact"] = health.get("evidence_artifact")
@@ -140,7 +147,7 @@ def main() -> int:
     if args.dry_run:
         print(f"dry run: would stamp {changed} rows")
         return 0
-    rings_path.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    rings_path.write_text(json.dumps(doc, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"stamped {changed} rows in data/rings.json (no value changed)")
 
     # ---------------------------------------------------------------- sources.json
@@ -210,7 +217,7 @@ def main() -> int:
                 "corrected on 2026-10-23 and the replacement was verified live by hand"
             )
             print(f"corrected dead source URL for {src['id']}")
-    (DATA / "sources.json").write_text(json.dumps(src_doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    (DATA / "sources.json").write_text(json.dumps(src_doc, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"stamped {src_changed} registered sources in data/sources.json")
     return 0
 

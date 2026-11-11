@@ -31,12 +31,10 @@ SECURITY / ANTI-HALLUCINATION POSTURE
 * Requests are restricted to the hostnames already registered in
   data/sources.json (same allow-list posture as audit.py). No third-party,
   marketplace, blog or price-comparison host can be probed.
-* If the *environment* blocks outbound TLS (sandboxed runners do), the run is
-  marked `network_environment_blocked` and the artifact is written with
-  statuses recorded as `ENVIRONMENT_BLOCKED` — never as \"unreachable\", so a
-  blocked sandbox can never be mistaken for a dead source.
-* Exit codes: 0 = artifact written; 3 = blocked environment (artifact written
-  with the block recorded); 4 = dataset could not be read.
+* Connection failures are recorded as NO_RESPONSE; their cause is not inferred
+  from all requests failing. SECURITY_BLOCKED means a URL/redirect failed policy.
+* Exit codes: 0 = evidence artifact written (not a verification verdict);
+  4 = dataset could not be read or no target matched.
 
 USAGE
     python3 scripts/live_source_check.py                # check every row URL + registered source
@@ -57,6 +55,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from urllib.parse import urlsplit
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -94,20 +93,51 @@ def stamp() -> str:
     return dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
 
 
+MAX_RESPONSE_BYTES = 3_000_000
+
+
 def norm_host(url: str) -> str:
-    m = re.match(r"https?://([^/]+)", url or "")
-    return (m.group(1) if m else "").lower().removeprefix("www.")
+    try:
+        return (urlsplit(url).hostname or "").lower().removeprefix("www.")
+    except ValueError:
+        return ""
 
 
 def allowed_hosts(sources: dict) -> set[str]:
-    hosts = {norm_host(s.get("url", "")) for s in sources.get("sources", [])}
-    hosts.discard("")
-    return hosts
+    return {norm_host(s.get("url", "")) for s in sources.get("sources", [])} - {""}
 
 
 def host_ok(url: str, allowed: set[str]) -> bool:
-    h = norm_host(url)
-    return any(h == a or h.endswith("." + a) for a in allowed)
+    try:
+        parsed = urlsplit(url)
+        if (parsed.scheme != "https" or parsed.username is not None
+                or parsed.password is not None or parsed.port not in (None, 443)
+                or any(c.isspace() or ord(c) < 32 for c in url)
+                or "\\" in url):
+            return False
+        h = norm_host(url)
+        return bool(h) and h in allowed
+    except ValueError:
+        return False
+
+
+class UnsafeSourceURL(ValueError):
+    """Initial or redirect destination is outside the registered HTTPS scope."""
+    def __init__(self, message: str, destination: str = ""):
+        super().__init__(message)
+        self.destination = destination
+
+
+class SourceRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def __init__(self, allowed: set[str]):
+        super().__init__()
+        self.allowed = allowed
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        # Called BEFORE the redirected request is sent, including each hop.
+        if not host_ok(newurl, self.allowed):
+            raise UnsafeSourceURL("redirect destination is outside registered HTTPS scope", newurl)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
 
 
 def strip_html(html: str) -> str:
@@ -231,8 +261,15 @@ def context(text: str, m: re.Match, pad: int = 70) -> str:
     return ("…" if a else "") + text[a:b] + ("…" if b < len(text) else "")
 
 
-def fetch(url: str, timeout: int) -> dict:
-    """One read-only GET. Returns an evidence dict; never raises."""
+def fetch(url: str, timeout: int, allowed: set[str]) -> dict:
+    """Read-only GET with a validated initial URL and every redirect hop.
+
+    Returns evidence only. Body reads are capped; truncated bodies are labelled
+    incomplete and cannot receive OK. No automatic product-price approval.
+    """
+    if not host_ok(url, allowed):
+        return {"url": url, "checked_utc": utcnow(), "http_status": None,
+                "security_blocked": True, "error": "initial URL outside registered HTTPS scope"}
     req = urllib.request.Request(
         url,
         headers={
@@ -244,8 +281,12 @@ def fetch(url: str, timeout: int) -> dict:
     started = time.time()
     rec: dict = {"url": url, "checked_utc": utcnow()}
     try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            raw = r.read(3_000_000)
+        with urllib.request.build_opener(SourceRedirectHandler(allowed)).open(req, timeout=timeout) as r:
+            if not host_ok(r.geturl(), allowed):
+                raise UnsafeSourceURL("response URL outside registered HTTPS scope", r.geturl())
+            raw = r.read(MAX_RESPONSE_BYTES + 1)
+            truncated = len(raw) > MAX_RESPONSE_BYTES
+            raw = raw[:MAX_RESPONSE_BYTES]
             charset = r.headers.get_content_charset() or "utf-8"
             html = raw.decode(charset, errors="replace")
             rec.update(
@@ -253,10 +294,15 @@ def fetch(url: str, timeout: int) -> dict:
                     "http_status": r.status,
                     "final_url": r.geturl(),
                     "bytes": len(raw),
+                    "body_truncated": truncated,
                     "content_type": r.headers.get("Content-Type", ""),
                     "elapsed_ms": int((time.time() - started) * 1000),
                 }
             )
+    except UnsafeSourceURL as e:
+        rec.update({"http_status": None, "security_blocked": True, "error": str(e),
+                    "blocked_destination": e.destination})
+        return rec
     except urllib.error.HTTPError as e:
         body = b""
         try:
@@ -267,7 +313,7 @@ def fetch(url: str, timeout: int) -> dict:
         rec.update(
             {
                 "http_status": e.code,
-                "final_url": url,
+                "final_url": e.geturl(),
                 "bytes": len(body),
                 "elapsed_ms": int((time.time() - started) * 1000),
                 "error": f"HTTPError {e.code}",
@@ -337,6 +383,8 @@ def fetch(url: str, timeout: int) -> dict:
 
 def classify(rec: dict) -> str:
     """Evidence-based label. No inference beyond what the response proves."""
+    if rec.get("security_blocked"):
+        return "SECURITY_BLOCKED"
     if rec.get("http_status") is None:
         return "ENVIRONMENT_BLOCKED" if rec.get("_env_blocked") else "NO_RESPONSE"
     s = rec["http_status"]
@@ -344,6 +392,8 @@ def classify(rec: dict) -> str:
         return f"REFUSED_{s}"
     if s >= 400:
         return f"HTTP_{s}"
+    if rec.get("body_truncated"):
+        return "INCOMPLETE_RESPONSE"
     if rec.get("soft_404"):
         return "SOFT_404"
     if rec.get("text_chars", 0) < 400:
@@ -371,8 +421,12 @@ def main() -> int:
         if args.only and r["id"] != args.only:
             continue
         targets.append((r["id"], r["url"], "ring"))
-    for s in sources["sources"]:
-        targets.append((s["id"], s["url"], "source"))
+    if not args.only:
+        for s in sources["sources"]:
+            targets.append((s["id"], s["url"], "source"))
+    if not targets:
+        print("FAIL: no targets matched (unknown --only ID or empty dataset)")
+        return 4
 
     if args.limit:
         targets = targets[: args.limit]
@@ -394,7 +448,7 @@ def main() -> int:
         if not host_ok(url, allowed):
             refused_allowlist.append({"key": key, "url": url, "why": "host not in sources.json allow-list"})
             continue
-        rec = fetch(url, args.timeout)
+        rec = fetch(url, args.timeout, allowed)
         rec.update({"key": key, "kind": kind})
         results.append(rec)
         label = classify(rec)
@@ -402,15 +456,11 @@ def main() -> int:
               f"{str(rec.get('bytes','')):>8}B  {(rec.get('title') or rec.get('connection_error',''))[:52]}")
         time.sleep(0.4)
 
-    conn_fail = [r for r in results if r.get("http_status") is None]
-    env_blocked = bool(results) and len(conn_fail) == len(results)
-    if env_blocked:
-        for r in results:
-            r["_env_blocked"] = True
-            r["classification"] = "ENVIRONMENT_BLOCKED"
-    else:
-        for r in results:
-            r["classification"] = classify(r)
+    # All requests failing does not establish WHY the network failed. Do not
+    # mislabel DNS/TLS/source failures as a known sandbox restriction.
+    env_blocked = False
+    for r in results:
+        r["classification"] = classify(r)
 
     summary: dict = {}
     for r in results:
@@ -430,11 +480,13 @@ def main() -> int:
         "checked_utc": utcnow(),
         "method": "read-only HTTPS GET of each URL, HTML stripped to text, raw price/weight snippets retained with context",
         "network_environment_blocked": env_blocked,
+        "all_requests_failed": bool(results) and all(r.get("http_status") is None for r in results),
         "targets": len(targets),
         "allowlist_refused": refused_allowlist,
         "summary": summary,
         "results": results,
         "interpretation_rules": [
+            "All requests failing does not by itself prove an environment block or dead sources.",
             "OK / SOFT_404 / HTTP_4xx are statements about THIS check at THIS timestamp only.",
             "A price snippet is raw page text, not a confirmed price; a later pass must reconcile it line by line.",
             "the classification OK does not by itself prove the price is unchanged — compare price_snippets with the stored value",
@@ -453,10 +505,6 @@ def main() -> int:
     if refused_allowlist:
         print(f"  allow-list refusals     {len(refused_allowlist)}")
     print(f"artifact: {out.relative_to(ROOT)}")
-    if env_blocked:
-        print("RESULT: NETWORK ENVIRONMENT BLOCKED — nothing can be concluded about the sources.")
-        print("        This run is recorded as ENVIRONMENT_BLOCKED, not as unreachable URLs.")
-        return 3
     print("RESULT: evidence collected (this is not a pass/fail verdict; review the artifact).")
     return 0
 

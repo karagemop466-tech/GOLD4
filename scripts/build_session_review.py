@@ -40,7 +40,7 @@ def build():
 <td>{esc(observed)}</td>
 <td class="current-price" aria-label="Unverified current price"></td>
 <td>UNVERIFIED — no current-session configuration-specific quote</td>
-<td>{esc(prior.get('checked_utc', 'Not checked'))}<br>{esc(prior.get('source_state', 'NOT_CHECKED'))} / {esc(prior.get('price_state', 'NOT_CHECKED'))} (historical evidence only)</td>
+<td>{esc(prior.get('checked_utc', 'Not checked'))}<br>{esc(prior.get('source_state', 'NOT_CHECKED'))} / {esc(prior.get('price_state', 'NOT_CHECKED'))} (runner evidence only)</td>
 <td>{esc(flags)}</td><td><a href="{esc(ring['url'])}" target="_blank" rel="noopener noreferrer">Official product</a></td></tr>''')
     body = '''<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,7 +48,10 @@ def build():
 <body><header class="site-header"><div class="wrap bar"><a class="brand" href="../index.html">Au · GOLD4</a>
 <nav class="main"><a href="../index.html">Dashboard</a><a href="flagged.html">Flagged for Review</a><a href="freshness.html">Historical evidence</a><a href="calculator.html">Calculator</a></nav></div></header>
 <main class="wrap"><section class="hero"><span class="eyebrow">Review date: 23 October 2026 · session 986df4df</span>
-<h1>Current-session review — Flagged for Review</h1>
+<h1>Session review of 23 October 2026 — Flagged for Review</h1>
+<p class="small"><strong>Read this first:</strong> this page is the dated record of session 986df4df (23 October 2026). Its narrative has not been rewritten.
+The two right-hand evidence columns of the table are regenerated from the current data files, so they show the latest runner sweep and the current flags.
+For the reads of 11 November 2026, including which prices changed, see <a href="reread-4fe4a9c3.html">the 11 November re-read</a>.</p>
 <p class="lede">NO HALLUCINATIONS: unconfirmed current prices stay blank. This is a candidate register, not an approved purchase list or a complete inventory of rings available online.</p></section>
 <div class="nohall"><h2>What this session can actually verify</h2>
 <p>The shell network cannot directly access retailer or regulator hosts; the remote page reader did successfully reopen six selected official sources (observations below). This is not an independent re-verification of all 64 products. Existing dated captures are preserved as historical claims, not newly verified facts.
@@ -69,7 +72,7 @@ No stored product price, weight or purity has been changed in this session.</p><
 <section class="section"><h2>Every candidate, reviewed without filling unknowns</h2><!-- current-evidence -->
 <p>Historical evidence timestamp and state are shown only for provenance. Blank current price does not mean free or unavailable.
 All rows need a current official quote and independent gold verification before purchase.</p>
-<div class="table-wrap"><table><thead><tr><th>ID</th><th>Seller</th><th>Product</th><th>Session runner observation</th><th>Current verified price (USD)</th><th>Current status</th><th>Prior evidence</th><th>Prior flags</th><th>Official source</th></tr></thead><tbody>'''
+<div class="table-wrap"><table><thead><tr><th>ID</th><th>Seller</th><th>Product</th><th>Session runner observation</th><th>Current verified price (USD)</th><th>Current status</th><th>Latest runner evidence</th><th>Current flags</th><th>Official source</th></tr></thead><tbody>'''
     body = body.replace('<!-- current-evidence -->', evidence_note + observations_html)
     body += '\n'.join(rows)
     body += '''</tbody></table></div></section><section class="section"><h2>Before any purchase</h2>

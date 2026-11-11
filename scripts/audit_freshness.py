@@ -29,6 +29,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -164,7 +165,7 @@ def main() -> int:
         if h["source_state"] == "HTTP_404":
             if not str(row.get("url", "")).startswith("https://"):
                 bad(f"{rid}: dead URL is not even an https official link")
-            elif "Pass 15 source check" not in (row.get("flag_detail") or ""):
+            elif not re.search(r"(?:Pass \d+[a-z]?|Re-read [0-9-]+ \([0-9a-f]+\)) source check", row.get("flag_detail") or ""):  # session 4fe4a9c3: any pass or dated re-read label, not only "Pass 15"
                 warn(f"{rid}: SOURCE_URL_DEAD raised without the evidence sentence in flag_detail")
             else:
                 ok()

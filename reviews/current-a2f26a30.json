@@ -1,0 +1,224 @@
+{
+  "schema": 1,
+  "session": "arena/a2f26a30-gold4",
+  "review_date_utc": "2026-11-11",
+  "scope": "Ten product URLs sampled (partial chunks), WGC and FTC; not full external re-verification of all 64 rows. All 64 rows reviewed structurally by code.",
+  "product_observations": [
+    {
+      "id": "AL-01",
+      "source_url": "https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold",
+      "read_date_utc": "2026-11-11",
+      "method": "fetch_page tool; returned markdown chunks inspected, not a checkout or assay",
+      "chunks_read": [
+        0
+      ],
+      "verbatim_excerpts": [
+        "$585",
+        "Setting only. Center stone sold separately.",
+        "Metal14k Yellow Gold",
+        "Approximate Metal Weight 3.58 grams"
+      ],
+      "finding": "Partial corroboration of recorded display/karat/approximate metal weight. Size unselected; size surcharges exist. Dollar symbol alone in this excerpt does not confirm USD. No exact complete-ring quote.",
+      "current_configured_price_usd": null
+    },
+    {
+      "id": "SR-03",
+      "source_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+      "read_date_utc": "2026-11-11",
+      "method": "fetch_page tool; returned markdown chunks inspected, not a checkout or assay",
+      "chunks_read": [
+        0
+      ],
+      "verbatim_excerpts": [
+        "Now: US$871.00",
+        "18K Solid Gold",
+        "6.70 grams",
+        "The weight listed is an approximate weight of a ring in size 10 Made in the USA"
+      ],
+      "finding": "Seller display corroborates historical US$871 and 6.70 g, but weight applies to size 10, not every size. Required size and finish unselected. This is a band, not a diamond engagement ring; no physical certification.",
+      "current_configured_price_usd": null
+    },
+    {
+      "id": "MN-01",
+      "source_url": "https://mene.com/products/knot-ring-gold",
+      "read_date_utc": "2026-11-11",
+      "method": "fetch_page tool; returned markdown chunks inspected, not a checkout or assay",
+      "chunks_read": [
+        0
+      ],
+      "verbatim_excerpts": [
+        "$1,455",
+        "USD",
+        "Gold24k Gold",
+        "This is a Crafted-on-Demand item. Learn More",
+        "Products are sold by weight, not size."
+      ],
+      "finding": "Display differs from the inspected October snapshot’s historical $1,465. Exact configured checkout and gram weight not confirmed in inspected chunk. 24k wording is not an explicit solid/non-hollow statement.",
+      "current_configured_price_usd": null
+    },
+    {
+      "id": "BN-22",
+      "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321",
+      "read_date_utc": "2026-11-11",
+      "method": "fetch_page tool; returned markdown chunks inspected, not a checkout or assay",
+      "chunks_read": [
+        0
+      ],
+      "verbatim_excerpts": [
+        "$2,050$1,640(Setting Price)",
+        "14K Yellow Gold",
+        "Bold and modern, this platinum solitaire setting features a flat profile"
+      ],
+      "finding": "Promotional display differs from the inspected October snapshot’s historical $2,050; setting-only $1,640 shown, not a complete ring. Currency code not explicit in inspected chunk. Platinum copy conflicts with yellow-gold title/spec. Size unselected.",
+      "current_configured_price_usd": null
+    },
+    {
+      "id": "MJ-01",
+      "source_url": "https://mejuri.com/products/diamonds-team-ring",
+      "read_date_utc": "2026-11-11",
+      "method": "fetch_page tool; returned markdown chunks inspected, not a checkout or assay",
+      "chunks_read": [
+        0
+      ],
+      "verbatim_excerpts": [
+        "$548",
+        "Solid White Gold (14k), Natural Diamond",
+        "Solid Yellow Gold (14k)",
+        "Orders placed between November 1 and December 31, 2026, are eligible for return through January 31, 2027."
+      ],
+      "finding": "Generic URL selects white gold; not verification of stored yellow-gold variant. Materials section still says yellow gold. Holiday-return wording observed, not item-specific testing/custom refund approval. USD code not explicit in excerpt.",
+      "current_configured_price_usd": null
+    },
+    {
+      "id": "VR-01",
+      "source_url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
+      "read_date_utc": "2026-11-11",
+      "method": "fetch_page tool; returned markdown chunks inspected, not a checkout or assay",
+      "chunks_read": [
+        0,
+        1
+      ],
+      "verbatim_excerpts": [
+        "Ring size:5",
+        "Metal weight:2.86g (Ring size 6)",
+        "Band:Plain band",
+        "Pavé carat weight:0.18ctw"
+      ],
+      "finding": "Size-6 metal weight cannot verify size 5. Plain/pave contradiction persists. Target configured price not confirmed; related-product $1,035 is not adopted.",
+      "current_configured_price_usd": null
+    },
+    {
+      "id": "CB-01",
+      "source_url": "https://www.catbirdnyc.com/the-swan-solitaire-2475.html",
+      "read_date_utc": "2026-11-11",
+      "method": "fetch_page tool; returned markdown chunks inspected, not a checkout or assay",
+      "chunks_read": [
+        0,
+        1
+      ],
+      "verbatim_excerpts": [
+        "The Swan Solitaire Diamond Engagement Ring",
+        "from$3,900.00"
+      ],
+      "finding": "From-price is not a configured quote. Page includes multiple recommendations and sold-out/waitlist badges, which do not establish availability for all configurations. No target gram weight confirmed in inspected chunks.",
+      "current_configured_price_usd": null
+    },
+    {
+      "id": "RS-05",
+      "source_url": "https://www.ross-simons.com/products/990022",
+      "read_date_utc": "2026-11-11",
+      "method": "fetch_page tool; returned markdown chunks inspected, not a checkout or assay",
+      "chunks_read": [
+        0
+      ],
+      "verbatim_excerpts": [
+        "Sale price $2,537.10",
+        "CLEARANCE",
+        "EXTRA 10% OFF - PRICED AS MARKED",
+        "Item 990022",
+        "Size 9Sold Out",
+        "14ktWhite Gold"
+      ],
+      "finding": "Display differs from the inspected October snapshot’s historical $2,819. Sizes 5-8 shown in stock; 9 sold out. Currency code not explicit in inspected chunk, no final size selected. Clearance refund/testing eligibility remains unverified; no metal grams confirmed.",
+      "current_configured_price_usd": null
+    },
+    {
+      "id": "AN-01",
+      "source_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
+      "read_date_utc": "2026-11-11",
+      "method": "fetch_page tool; returned markdown chunks inspected, not a checkout or assay",
+      "chunks_read": [
+        0,
+        1
+      ],
+      "verbatim_excerpts": [
+        "Six Curved Prongs Solitaire Diamond Engagement Ring"
+      ],
+      "finding": "Only navigation/images read in chunks 0-1. No price, purity or gram weight corroborated in these chunks. Do not reuse other sessions' readings as a new verification.",
+      "current_configured_price_usd": null
+    },
+    {
+      "id": "BE-05",
+      "source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
+      "read_date_utc": "2026-11-11",
+      "method": "fetch_page tool; returned markdown chunks inspected, not a checkout or assay",
+      "chunks_read": [
+        0,
+        4,
+        7
+      ],
+      "verbatim_excerpts": [
+        "Freesia Hidden Halo Diamond Ring in 14K Yellow Gold",
+        "$990(Setting Only)",
+        "BE1D3939-14KY",
+        "Note: This setting is available only with purchase of a diamond.",
+        "AUD",
+        "CAD",
+        "GBP",
+        "USD"
+      ],
+      "finding": "Display differs from historical $1,190. Currency code not explicit in inspected chunks. Complete-ring price cannot be inferred: diamond purchase required and size/center not finalized; no metal grams confirmed. Footer chunk 7 lists four currency options but does not identify the active one; it does not establish USD for the displayed $990.",
+      "current_configured_price_usd": null
+    }
+  ],
+  "reference_observations": [
+    {
+      "id": "WGC",
+      "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+      "read_date_utc": "2026-11-11",
+      "chunks_read": [
+        0
+      ],
+      "verbatim_excerpts": [
+        "USD /oz - 4,059.49",
+        "10 November, 2026",
+        "Data as of 10 November, 2026",
+        "Prices are quoted in currency unit per troy ounce unless otherwise stated."
+      ],
+      "finding": "The panel differs from the October benchmark 3,996.31 USD/troy oz in the b34ae17 snapshot inspected at session start. This is a dated observation, not a live feed or an automatic canonical calculation update by this session. Source data date is Nov 10, not read date Nov 11. No historical arithmetic relabelled as current."
+    },
+    {
+      "id": "FTC",
+      "source_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+      "read_date_utc": "2026-11-11",
+      "chunks_read": [
+        0
+      ],
+      "verbatim_excerpts": [
+        "The total of pure gold and other metal adds up to 24 parts.",
+        "Near the karat quality mark, look for the name or the U.S. registered trademark of the company that will stand behind the mark.",
+        "The phrase “solid gold” means the gold item isn’t hollow."
+      ],
+      "finding": "Official US consumer guidance corroborates nominal karat arithmetic, company mark alongside quality mark, non-hollow meaning, and written refund/reputation checks. Not a Swiss-law or ring-authentication determination."
+    }
+  ],
+  "limitations": [
+    "54 product URLs were not re-opened in this pass.",
+    "A returned chunk may omit other product details; absence in inspected text is not proof the seller never publishes a value.",
+    "No checkout, purchase, seller contact, independent reputation investigation or physical testing performed.",
+    "GitHub Actions manual dispatch denied: HTTP 403 Resource not accessible by integration. Do not claim an inspected fresh full-sweep artifact.",
+    "All current exact configured price cells deliberately blank.",
+    "Completed peer source work was integrated separately: its raw all-URL sweep and 16 hand reads remain attributed to that owner, not to this session. Eight unsupported USD assertions were then quarantined in canonical data; their original claims remain in reviews/currency-a2f26a30.json and peer evidence."
+  ],
+  "recommendation": "After every review, look for hallucinations again: official source, exact variant, currency, gram scope, capture date and testing/return conditions. Automated checks cannot prove absence of hallucinations."
+}

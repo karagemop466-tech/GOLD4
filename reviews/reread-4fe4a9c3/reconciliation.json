@@ -1,0 +1,1617 @@
+{
+ "artifact": "GOLD4 re-read of 2026-11-11 (session 4fe4a9c3) — reconciliation of every row, both read paths",
+ "session": "arena/4fe4a9c3-gold4 (re-read 2026-11-11)",
+ "date_utc": "2026-11-11",
+ "rule": "NO HALLUCINATIONS: every value is copied from the evidence files listed; nothing is inferred.",
+ "evidence": [
+  "reports/live_source_check_20261111T080309Z.json",
+  "reviews/reread-4fe4a9c3/hand_reads.json"
+ ],
+ "runner_summary": {
+  "OK": 74,
+  "EMPTY_OR_JS_SHELL": 2,
+  "REFUSED_403": 11,
+  "REFUSED_429": 3,
+  "HTTP_404": 6
+ },
+ "runner_checked_utc": "2026-11-11T08:03:09Z",
+ "verdict_counts": {
+  "CHANGED": 4,
+  "NOT_REREAD": 1,
+  "SALE": 25,
+  "SOLD_OUT": 2,
+  "SOURCE_DEAD": 5,
+  "UNCHANGED": 27
+ },
+ "rows_with_price_read_today": 56,
+ "rows_hand_read": 16,
+ "rows_weight_reread_today": 15,
+ "gold": {
+  "benchmark": {
+   "id": "wgc-gold-prices",
+   "url": "https://www.gold.org/goldhub/data/gold-prices",
+   "verbatim": [
+    "Gold Spot price",
+    "USD",
+    "/oz",
+    "4,059.49",
+    "Data as of 10 November, 2026"
+   ],
+   "value_usd_per_oz": 4059.49,
+   "source_date_line_verbatim": "Data as of 10 November, 2026",
+   "retrieved_utc": "2026-11-11T08:01Z",
+   "not_read": "The panel's 'Last Updated' time stamp rendered empty in this read."
+  },
+  "cross_checks": [
+   {
+    "source_id": "kitco-gold-spot",
+    "source_url": "https://www.kitco.com/charts/gold",
+    "label": "Kitco 24K value per oz",
+    "value_usd_per_oz": 4057.0,
+    "verbatim": "24K · 24KT · 999.9 · 1000 $4,057.00",
+    "read_path": "GitHub runner page text",
+    "retrieved_utc": "2026-11-11T08:02:26Z"
+   },
+   {
+    "source_id": "bullionvault-spot",
+    "source_url": "https://www.bullionvault.com/gold-price-chart.do",
+    "label": "BullionVault current gold price per oz",
+    "value_usd_per_oz": 4059.81,
+    "verbatim": "Current Gold Price - $4,059.81 per Ounce",
+    "read_path": "GitHub runner page text",
+    "retrieved_utc": "2026-11-11T08:02:23Z"
+   },
+   {
+    "source_id": "jmbullion-gold-spot",
+    "source_url": "https://www.jmbullion.com/charts/gold-price/",
+    "label": "JM Bullion gold ASK (includes a premium)",
+    "value_usd_per_oz": 4071.46,
+    "verbatim": "Gold Ask $ 4,071.46",
+    "read_path": "GitHub runner page text",
+    "retrieved_utc": "2026-11-11T08:02:25Z"
+   }
+  ]
+ },
+ "rows": [
+  {
+   "id": "AL-01",
+   "stored_price_usd": 585.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:33Z",
+   "read_paths": [
+    "runner: structured data",
+    "hand read (browser-rendered), chunk 0"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json",
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "structured offers: 585 USD",
+    "$585",
+    "51% Savings",
+    "$1,194 Everyone Else",
+    "Setting only. Center stone sold separately.",
+    "Metal: 14k Yellow Gold",
+    "Style number NG4426",
+    "Approximate Metal Weight 3.58 grams",
+    "Buy Setting Only | $585"
+   ],
+   "price_today_usd": 585.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": true,
+   "notes": [
+    "runner page text prints the stored weight (3.58 g)"
+   ]
+  },
+  {
+   "id": "AL-02",
+   "stored_price_usd": 724.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:34Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 724 USD"
+   ],
+   "price_today_usd": 724.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": true,
+   "notes": [
+    "runner page text prints the stored weight (3.4 g)"
+   ]
+  },
+  {
+   "id": "AL-03",
+   "stored_price_usd": 848.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:35Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 848 USD"
+   ],
+   "price_today_usd": 848.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": true,
+   "notes": [
+    "runner page text prints the stored weight (4.4 g)"
+   ]
+  },
+  {
+   "id": "AL-04",
+   "stored_price_usd": 1425.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:35Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 1425 USD"
+   ],
+   "price_today_usd": 1425.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": true,
+   "notes": [
+    "runner page text prints the stored weight (5.3 g)"
+   ]
+  },
+  {
+   "id": "AN-01",
+   "stored_price_usd": 870.76,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "EMPTY_OR_JS_SHELL",
+   "runner_checked_utc": "2026-11-11T08:00:36Z",
+   "read_paths": [
+    "hand read (browser-rendered), chunk 2"
+   ],
+   "evidence": [
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "Price:$870.76",
+    "Six Curved Prongs Solitaire Diamond Engagement Ring",
+    "14K White Gold,Carat: 0.50 ct,Diamond Color: FG,Diamond Clarity: VS",
+    "Style No.: MS354-A",
+    "LAB-CREATED DIAMONDS FG / VS",
+    "30-Day Returns",
+    "All customized orders can be returned for full refund within 30 days of receipt."
+   ],
+   "price_today_usd": 870.76,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": [
+    "The page's default selection reads '14K White Gold' with a lab-created 0.50 ct centre. The $870.76 therefore corroborates the default (white gold, lab-created) configuration only.",
+    "not read: The Product Details table that carries 'Approx. Metal Weight: 2.90 Gr.' sits in a later chunk that was not read today; the stored weight keeps its 2026-10-22 read date."
+   ]
+  },
+  {
+   "id": "BE-01",
+   "stored_price_usd": 1190.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "REFUSED_403",
+   "runner_checked_utc": "2026-11-11T08:00:37Z",
+   "read_paths": [
+    "hand read (browser-rendered), chunk 4"
+   ],
+   "evidence": [
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "Atelier Solitaire Ring in 14K Yellow Gold",
+    "$1,190(Setting Only)",
+    "Metal:14K Yellow Gold",
+    "Style: BE1D2444-14KY",
+    "Band Width 2 mm",
+    "Note: This setting is available only with purchase of a diamond.",
+    "Free Shipping & Holiday Returns",
+    "Free 1-Year Resizing"
+   ],
+   "price_today_usd": 1190.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": [
+    "not read: No gram weight is printed in the chunk read; chunks 0-3 and 5-6 were not all read."
+   ]
+  },
+  {
+   "id": "BE-02",
+   "stored_price_usd": 1390.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "REFUSED_403",
+   "runner_checked_utc": "2026-11-11T08:00:37Z",
+   "read_paths": [
+    "hand read (browser-rendered), chunk 4"
+   ],
+   "evidence": [
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "Atelier Solitaire Ring in 18K Yellow Gold",
+    "$1,390(Setting Only)",
+    "Metal:18K Yellow Gold",
+    "Style: BE1D2444-18KY",
+    "Band Width 2 mm",
+    "Note: This setting is available only with purchase of a diamond.",
+    "Free Shipping & Holiday Returns",
+    "Free 1-Year Resizing"
+   ],
+   "price_today_usd": 1390.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": [
+    "not read: No gram weight is printed in the chunk read."
+   ]
+  },
+  {
+   "id": "BN-01",
+   "stored_price_usd": 1000.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:38Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,000 $800 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 800.0,
+   "list_price_usd": 1000.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-02",
+   "stored_price_usd": 1155.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:39Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,155 $924 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 924.0,
+   "list_price_usd": 1155.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-03",
+   "stored_price_usd": 1000.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:40Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,000 $800 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 800.0,
+   "list_price_usd": 1000.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-04",
+   "stored_price_usd": 935.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:41Z",
+   "read_paths": [
+    "runner: JSON-LD offer (sale) vs og:price meta (list); the price text itself was not captured",
+    "hand read (browser-rendered), chunk 0"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json",
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "JSON-LD Offer price 748 USD",
+    "og:price:amount 935 USD",
+    "20% Off* Engagement Ring Settings",
+    "Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)",
+    "$935$748(Setting Price)",
+    "-20%",
+    "*Discount code is applied automatically",
+    "Stock Number 501310y14",
+    "Metal 14K Yellow Gold",
+    "Width 2.50mm",
+    "Free Overnight Shipping Extended Returns",
+    "This one, crafted in 18k yellow gold, features a rounded inside edge for comfort."
+   ],
+   "price_today_usd": 748.0,
+   "list_price_usd": 935.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": [
+    "Blue Nile is running a site-wide '20% Off* Engagement Ring Settings' promotion; the page prints both the list price and the sale price. The product copy still says '18k yellow gold' on a 14K page (already flagged COPY_INCONSISTENT_METAL). The same page's 'You May Also Like' cards print '$2,260 $1,808' (BN-13) and '$1,255 $1,004' (BN-18).",
+    "not read: No gram weight is printed in the chunk read. Chunks 1-6 not read."
+   ]
+  },
+  {
+   "id": "BN-05",
+   "stored_price_usd": 1310.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:42Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,310 $1,048 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 1048.0,
+   "list_price_usd": 1310.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-06",
+   "stored_price_usd": 1295.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:43Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,295 $1,036 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 1036.0,
+   "list_price_usd": 1295.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-07",
+   "stored_price_usd": 870.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:44Z",
+   "read_paths": [
+    "runner: JSON-LD offer (sale) vs og:price meta (list); the price text itself was not captured"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "JSON-LD Offer price 696 USD",
+    "og:price:amount 870 USD"
+   ],
+   "price_today_usd": 696.0,
+   "list_price_usd": 870.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-08",
+   "stored_price_usd": 1500.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:45Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,500 $1,200 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 1200.0,
+   "list_price_usd": 1500.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "MJ-01",
+   "stored_price_usd": 548.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:46Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 548 USD"
+   ],
+   "price_today_usd": 548.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "MJ-02",
+   "stored_price_usd": 648.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:48Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 648 USD"
+   ],
+   "price_today_usd": 648.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "MJ-03",
+   "stored_price_usd": 548.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:49Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 548 USD"
+   ],
+   "price_today_usd": 548.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "MJ-04",
+   "stored_price_usd": 798.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:50Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 798 USD"
+   ],
+   "price_today_usd": 798.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "MJ-05",
+   "stored_price_usd": 598.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:52Z",
+   "read_paths": [
+    "runner: structured data (one of several variant offers)"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 398, 598 USD"
+   ],
+   "price_today_usd": 598.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "VR-01",
+   "stored_price_usd": 1035.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "REFUSED_429",
+   "runner_checked_utc": "2026-11-11T08:00:54Z",
+   "read_paths": [
+    "hand read (browser-rendered), chunk 0-1"
+   ],
+   "evidence": [
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "Classic Round Brilliant Engagement Ring | Plain Band | 18k Yellow Gold",
+    "Metal:18k Yellow Gold",
+    "Band:Plain band",
+    "Ring size:5",
+    "Band depth:1.6mm",
+    "Metal weight:2.86g (Ring size 6)",
+    "Pavé carat weight:0.18ctw",
+    "Returns accepted within 30 days",
+    "Similar Styles — Classic 4 Prong Dome Ring $1,035 Round Brilliant · 18k Yellow Gold"
+   ],
+   "price_today_usd": 1035.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": true,
+   "notes": [
+    "The configuration page prints no setting price next to 'Add to bag'. '$1,035' appears only on the 'Similar Styles' card, which links to a different configuration id (32797281484893). The 2.86 g is the seller's ring-size-6 figure while size 5 is selected. The plain-band page still lists a pavé carat weight.",
+    "not read: Chunks 2-3 not read.",
+    "price is the retailer's listing-card price, not a configured-ring quote"
+   ]
+  },
+  {
+   "id": "VR-02",
+   "stored_price_usd": null,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "REFUSED_429",
+   "runner_checked_utc": "2026-11-11T08:00:54Z",
+   "read_paths": [],
+   "evidence": [],
+   "quotes": [],
+   "price_today_usd": null,
+   "list_price_usd": null,
+   "verdict": "NOT_REREAD",
+   "weight_reread_today": false,
+   "notes": [
+    "runner state REFUSED_429; no hand read of this row today"
+   ]
+  },
+  {
+   "id": "BE-03",
+   "stored_price_usd": 850.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "REFUSED_403",
+   "runner_checked_utc": "2026-11-11T08:00:55Z",
+   "read_paths": [
+    "hand read (browser-rendered), chunk 4"
+   ],
+   "evidence": [
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "Six-Prong Petite Comfort Fit 1.5mm Solitaire Ring in 18K Yellow Gold",
+    "$850(Setting Only)",
+    "Metal:18K Yellow Gold",
+    "Style: BE1199H6-18KY",
+    "Prong metal:14K White Gold",
+    "Width:1.5 mm",
+    "Note: This setting is available only with purchase of a diamond.",
+    "Free Shipping & Holiday Returns",
+    "Free 1-Year Resizing"
+   ],
+   "price_today_usd": 850.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": [
+    "The page states 'Prong metal: 14K White Gold' on a ring sold as 18K Yellow Gold: the head is a different alloy and karat from the band.",
+    "not read: No gram weight is printed in the chunk read."
+   ]
+  },
+  {
+   "id": "SR-01",
+   "stored_price_usd": 352.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:55Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 352 USD"
+   ],
+   "price_today_usd": 352.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": true,
+   "notes": [
+    "runner page text prints the stored weight (4.8 g)"
+   ]
+  },
+  {
+   "id": "SR-02",
+   "stored_price_usd": 1063.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:56Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 1063 USD"
+   ],
+   "price_today_usd": 1063.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": true,
+   "notes": [
+    "runner page text prints the stored weight (9.4 g)"
+   ]
+  },
+  {
+   "id": "SR-03",
+   "stored_price_usd": 871.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:57Z",
+   "read_paths": [
+    "runner: structured data",
+    "hand read (browser-rendered), chunk 0"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json",
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "structured offers: 871 USD",
+    "MSRP: US$3,388.00",
+    "Was: US$1,019.00",
+    "Now: US$871.00",
+    "-15% OFF",
+    "*Discount code is applied automatically",
+    "SKU: 18KY-LPBWB05",
+    "Material: 18K Solid Gold",
+    "Approximate Metal Weight: 6.70 grams",
+    "The weight listed is an approximate weight of a ring in size 10 Made in the USA"
+   ],
+   "price_today_usd": 871.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": true,
+   "notes": [
+    "runner page text prints the stored weight (6.7 g)",
+    "A site-wide banner image named 'extended-holiday-return' links to Sarraf's 30-day returns page. The banner is an image; its wording was not readable as text and the policy page was not re-read this pass."
+   ]
+  },
+  {
+   "id": "SR-04",
+   "stored_price_usd": 1436.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:58Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 1436 USD"
+   ],
+   "price_today_usd": 1436.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": true,
+   "notes": [
+    "runner page text prints the stored weight (11.1 g)"
+   ]
+  },
+  {
+   "id": "SR-05",
+   "stored_price_usd": 2858.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:00:59Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 2858 USD"
+   ],
+   "price_today_usd": 2858.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": true,
+   "notes": [
+    "runner page text prints the stored weight (8 g)"
+   ]
+  },
+  {
+   "id": "SR-06",
+   "stored_price_usd": 4068.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:00Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 4068 USD"
+   ],
+   "price_today_usd": 4068.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": true,
+   "notes": [
+    "runner page text prints the stored weight (6.3 g)"
+   ]
+  },
+  {
+   "id": "SR-07",
+   "stored_price_usd": 2183.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:01Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 2183 USD"
+   ],
+   "price_today_usd": 2183.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "SR-08",
+   "stored_price_usd": 2461.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:02Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 2461 USD"
+   ],
+   "price_today_usd": 2461.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "CB-01",
+   "stored_price_usd": 3900.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:03Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 3900 USD"
+   ],
+   "price_today_usd": 3900.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "CB-02",
+   "stored_price_usd": 313.5,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:39Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$313.50 Regular Price $418.00 25% off - LEAVING SOON"
+   ],
+   "price_today_usd": 313.5,
+   "list_price_usd": 418.0,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "MN-01",
+   "stored_price_usd": 1465.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:41Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,455 USD Price breakdown"
+   ],
+   "price_today_usd": 1455.0,
+   "list_price_usd": null,
+   "verdict": "CHANGED",
+   "weight_reread_today": false,
+   "notes": [
+    "Menē reprices with the gold price, so this figure is a reading at the stated time, not a stable list price; the displayed amount is for the page's default size"
+   ]
+  },
+  {
+   "id": "MN-02",
+   "stored_price_usd": 1730.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:43Z",
+   "read_paths": [
+    "runner: page text"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,719 USD Price breakdown"
+   ],
+   "price_today_usd": 1719.0,
+   "list_price_usd": null,
+   "verdict": "CHANGED",
+   "weight_reread_today": false,
+   "notes": [
+    "the price above is the amount the page DISPLAYS; the page's JSON-LD offers captured by the runner do not list it (they cover other sizes/variants or still carry the pre-discount amount)",
+    "Menē reprices with the gold price, so this figure is a reading at the stated time, not a stable list price; the displayed amount is for the page's default size"
+   ]
+  },
+  {
+   "id": "BN-09",
+   "stored_price_usd": 1125.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "HTTP_404",
+   "runner_checked_utc": "2026-11-11T08:01:43Z",
+   "read_paths": [
+    "runner: HTTP 404"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [],
+   "price_today_usd": null,
+   "list_price_usd": null,
+   "verdict": "SOURCE_DEAD",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-10",
+   "stored_price_usd": 1145.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "HTTP_404",
+   "runner_checked_utc": "2026-11-11T08:01:44Z",
+   "read_paths": [
+    "runner: HTTP 404"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [],
+   "price_today_usd": null,
+   "list_price_usd": null,
+   "verdict": "SOURCE_DEAD",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-11",
+   "stored_price_usd": 1805.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "HTTP_404",
+   "runner_checked_utc": "2026-11-11T08:01:45Z",
+   "read_paths": [
+    "runner: HTTP 404"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [],
+   "price_today_usd": null,
+   "list_price_usd": null,
+   "verdict": "SOURCE_DEAD",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-12",
+   "stored_price_usd": 2515.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "HTTP_404",
+   "runner_checked_utc": "2026-11-11T08:01:46Z",
+   "read_paths": [
+    "runner: HTTP 404"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [],
+   "price_today_usd": null,
+   "list_price_usd": null,
+   "verdict": "SOURCE_DEAD",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-13",
+   "stored_price_usd": 2260.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:47Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$2,260 $1,808 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 1808.0,
+   "list_price_usd": 2260.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-14",
+   "stored_price_usd": 1385.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:48Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,385 $1,108 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 1108.0,
+   "list_price_usd": 1385.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-15",
+   "stored_price_usd": 975.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:49Z",
+   "read_paths": [
+    "runner: JSON-LD offer (sale) vs og:price meta (list); the price text itself was not captured"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "JSON-LD Offer price 780 USD",
+    "og:price:amount 975 USD"
+   ],
+   "price_today_usd": 780.0,
+   "list_price_usd": 975.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-16",
+   "stored_price_usd": 1565.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:50Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,565 $1,252 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 1252.0,
+   "list_price_usd": 1565.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-17",
+   "stored_price_usd": 1555.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:51Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,555 $1,244 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 1244.0,
+   "list_price_usd": 1555.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-18",
+   "stored_price_usd": 1255.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:52Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,255 $1,004 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 1004.0,
+   "list_price_usd": 1255.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-19",
+   "stored_price_usd": 2350.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:53Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$2,350 $1,880 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 1880.0,
+   "list_price_usd": 2350.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-20",
+   "stored_price_usd": 965.0,
+   "stored_price_captured_utc": "2026-10-23",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:54Z",
+   "read_paths": [
+    "runner: JSON-LD offer (sale) vs og:price meta (list); the price text itself was not captured"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "JSON-LD Offer price 772 USD",
+    "og:price:amount 965 USD"
+   ],
+   "price_today_usd": 772.0,
+   "list_price_usd": 965.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-21",
+   "stored_price_usd": 1290.0,
+   "stored_price_captured_utc": "2026-10-23",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:55Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,290 $1,032 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 1032.0,
+   "list_price_usd": 1290.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-22",
+   "stored_price_usd": 2050.0,
+   "stored_price_captured_utc": "2026-10-23",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:55Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$2,050 $1,640 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 1640.0,
+   "list_price_usd": 2050.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-23",
+   "stored_price_usd": 5190.0,
+   "stored_price_captured_utc": "2026-10-23",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:56Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$5,190 $4,152 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 4152.0,
+   "list_price_usd": 5190.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-24",
+   "stored_price_usd": 1145.0,
+   "stored_price_captured_utc": "2026-10-23",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:57Z",
+   "read_paths": [
+    "runner: page text + JSON-LD offer"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "$1,145 $916 (Setting Price) -20% *Discount code is applied automatically"
+   ],
+   "price_today_usd": 916.0,
+   "list_price_usd": 1145.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-25",
+   "stored_price_usd": 2210.0,
+   "stored_price_captured_utc": "2026-10-23",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:58Z",
+   "read_paths": [
+    "runner: page availability signal"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "availability: https://schema.org/SoldOut out of stock"
+   ],
+   "price_today_usd": null,
+   "list_price_usd": null,
+   "verdict": "SOLD_OUT",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BN-26",
+   "stored_price_usd": null,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:01:59Z",
+   "read_paths": [
+    "runner: page availability signal"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "availability: https://schema.org/SoldOut out of stock"
+   ],
+   "price_today_usd": null,
+   "list_price_usd": null,
+   "verdict": "SOLD_OUT",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "BE-04",
+   "stored_price_usd": 1090.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "REFUSED_403",
+   "runner_checked_utc": "2026-11-11T08:02:00Z",
+   "read_paths": [
+    "hand read (browser-rendered), chunk 4"
+   ],
+   "evidence": [
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "This page is a diamond in the rough.",
+    "Looks like the page you were searching for doesn’t exist. Use the links below to keep shopping or contact us for further assistance.",
+    "page title: Sustainable Engagement Rings & Fine Jewelry | Brilliant Earth"
+   ],
+   "price_today_usd": null,
+   "list_price_usd": null,
+   "verdict": "SOURCE_DEAD",
+   "weight_reread_today": false,
+   "notes": [
+    "The stored URL now serves Brilliant Earth's own page-does-not-exist copy. No price can be read; the stored $1,090 keeps its original read date and is not a current price.",
+    "not read: Chunks 0-3 and 5-6 not read; the not-found message and the generic page title are unambiguous."
+   ]
+  },
+  {
+   "id": "BE-05",
+   "stored_price_usd": 1190.0,
+   "stored_price_captured_utc": "2026-10-23",
+   "runner_state": "REFUSED_403",
+   "runner_checked_utc": "2026-11-11T08:02:00Z",
+   "read_paths": [
+    "hand read (browser-rendered), chunk 4"
+   ],
+   "evidence": [
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "Freesia Hidden Halo Diamond Ring in 14K Yellow Gold",
+    "$990(Setting Only)",
+    "Metal:14K Yellow Gold",
+    "Style: BE1D3939-14KY",
+    "Band Width 1.3-2 mm",
+    "Min. carat total weight: 0.05",
+    "Note: This setting is available only with purchase of a diamond.",
+    "Free Shipping & Holiday Returns",
+    "Free 1-Year Resizing"
+   ],
+   "price_today_usd": 990.0,
+   "list_price_usd": null,
+   "verdict": "CHANGED",
+   "weight_reread_today": false,
+   "notes": [
+    "Stored price was $1,190 (read 2026-10-23). The page now prints $990 with no strikethrough or sale label in the chunk read.",
+    "not read: No gram weight is printed in the chunk read."
+   ]
+  },
+  {
+   "id": "BE-06",
+   "stored_price_usd": 1390.0,
+   "stored_price_captured_utc": "2026-10-23",
+   "runner_state": "REFUSED_403",
+   "runner_checked_utc": "2026-11-11T08:02:01Z",
+   "read_paths": [
+    "hand read (browser-rendered), chunk 4"
+   ],
+   "evidence": [
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "Freesia Hidden Halo Diamond Ring in 18K Yellow Gold",
+    "$1,190(Setting Only)",
+    "Metal:18K Yellow Gold",
+    "Style: BE1D3939-18KY",
+    "Band Width 1.3-2 mm",
+    "Min. carat total weight: 0.05",
+    "Note: This setting is available only with purchase of a diamond.",
+    "Free Shipping & Holiday Returns",
+    "Free 1-Year Resizing"
+   ],
+   "price_today_usd": 1190.0,
+   "list_price_usd": null,
+   "verdict": "CHANGED",
+   "weight_reread_today": false,
+   "notes": [
+    "Stored price was $1,390 (read 2026-10-23). The page now prints $1,190 with no strikethrough or sale label in the chunk read.",
+    "not read: No gram weight is printed in the chunk read."
+   ]
+  },
+  {
+   "id": "BE-07",
+   "stored_price_usd": 1350.0,
+   "stored_price_captured_utc": "2026-10-23",
+   "runner_state": "REFUSED_403",
+   "runner_checked_utc": "2026-11-11T08:02:01Z",
+   "read_paths": [
+    "hand read (browser-rendered), chunk 4"
+   ],
+   "evidence": [
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "Fleur Solitaire Ring in 14K Yellow Gold",
+    "$1,350(Setting Only)",
+    "Metal:14K Yellow Gold",
+    "Style: BE1574-14KY",
+    "Band Width 1.8 mm",
+    "Note: This setting is available only with purchase of a diamond.",
+    "Free Shipping & Holiday Returns",
+    "Free 1-Year Resizing"
+   ],
+   "price_today_usd": 1350.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": [
+    "not read: No gram weight is printed in the chunk read."
+   ]
+  },
+  {
+   "id": "RS-01",
+   "stored_price_usd": 400.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:02:02Z",
+   "read_paths": [
+    "hand read (browser-rendered), chunk 0"
+   ],
+   "evidence": [
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "Women's 2mm 14kt Yellow Gold Band",
+    "20% Off",
+    "Original price $400",
+    "Sale price $320",
+    "Size 5 $320.00 In-Stock",
+    "Item 571221",
+    "Metal 14kt Yellow Gold",
+    "Gold Weight 1.7 grams",
+    "All weights and measurements are approximate."
+   ],
+   "price_today_usd": 320.0,
+   "list_price_usd": 400.0,
+   "verdict": "SALE",
+   "weight_reread_today": true,
+   "notes": [],
+   "structured_lags": [
+    400.0
+   ]
+  },
+  {
+   "id": "RS-02",
+   "stored_price_usd": 249.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:02:03Z",
+   "read_paths": [
+    "runner: page text",
+    "hand read (browser-rendered), chunk 0"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json",
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "20% Off $249 $199.20",
+    "2mm 18kt Yellow Gold Polished Ring",
+    "20% Off",
+    "Original price $249",
+    "Sale price $199.20",
+    "Size 5 $199.20 In-Stock",
+    "Item 985230",
+    "Metal 18kt Yellow Gold",
+    "Gold Weight 0.7 grams",
+    "Width 1/16 inch"
+   ],
+   "price_today_usd": 199.2,
+   "list_price_usd": 249.0,
+   "verdict": "SALE",
+   "weight_reread_today": true,
+   "notes": [],
+   "structured_lags": [
+    249.0
+   ]
+  },
+  {
+   "id": "RS-03",
+   "stored_price_usd": 595.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:02:05Z",
+   "read_paths": [
+    "hand read (browser-rendered), chunk 0"
+   ],
+   "evidence": [
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "Italian 14kt Yellow Gold Double Love Knot Ring",
+    "20% Off",
+    "Original price $595",
+    "Sale price $476",
+    "Size 5 $476.00 In-Stock",
+    "Item 820263",
+    "Metal 14kt Yellow Gold",
+    "Gold Weight 2.1 grams",
+    "Width 1/2 inch"
+   ],
+   "price_today_usd": 476.0,
+   "list_price_usd": 595.0,
+   "verdict": "SALE",
+   "weight_reread_today": true,
+   "notes": [],
+   "structured_lags": [
+    595.0
+   ]
+  },
+  {
+   "id": "RS-04",
+   "stored_price_usd": 1195.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:02:06Z",
+   "read_paths": [
+    "runner: page text",
+    "hand read (browser-rendered), chunk 0"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json",
+    "reviews/reread-4fe4a9c3/hand_reads.json"
+   ],
+   "quotes": [
+    "20% Off $1,195 $956",
+    "Italian 14kt Yellow Gold Diamond-Cut Dome Ring",
+    "20% Off",
+    "Original price $1,195",
+    "Sale price $956",
+    "Size 5 $956.00 In-Stock",
+    "Item 823796",
+    "Metal 14kt Yellow Gold",
+    "Gold Weight 4.0 grams",
+    "Width 3/4 inch"
+   ],
+   "price_today_usd": 956.0,
+   "list_price_usd": 1195.0,
+   "verdict": "SALE",
+   "weight_reread_today": true,
+   "notes": [],
+   "structured_lags": [
+    1195.0
+   ]
+  },
+  {
+   "id": "RS-05",
+   "stored_price_usd": 2819.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:02:07Z",
+   "read_paths": [
+    "runner: page text"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "36% Off $3,995 $2,537.10 CLEARANCE EXTRA 10% OFF - PRICED AS MARKED"
+   ],
+   "price_today_usd": 2537.1,
+   "list_price_usd": 3995.0,
+   "verdict": "SALE",
+   "weight_reread_today": false,
+   "notes": [
+    "the price above is the amount the page DISPLAYS; the page's JSON-LD offers captured by the runner do not list it (they cover other sizes/variants or still carry the pre-discount amount)"
+   ],
+   "structured_lags": [
+    2819.0,
+    3199.0
+   ]
+  },
+  {
+   "id": "MJ-06",
+   "stored_price_usd": 1100.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:02:08Z",
+   "read_paths": [
+    "runner: page text ('From' price for the named material)"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "From $1,100 Material & Stone Options Solid Yellow Gold (14k), Natural Diamond"
+   ],
+   "price_today_usd": 1100.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": []
+  },
+  {
+   "id": "MJ-07",
+   "stored_price_usd": 348.0,
+   "stored_price_captured_utc": "2026-10-22",
+   "runner_state": "OK",
+   "runner_checked_utc": "2026-11-11T08:02:10Z",
+   "read_paths": [
+    "runner: structured data"
+   ],
+   "evidence": [
+    "reports/live_source_check_20261111T080309Z.json"
+   ],
+   "quotes": [
+    "structured offers: 348 USD"
+   ],
+   "price_today_usd": 348.0,
+   "list_price_usd": null,
+   "verdict": "UNCHANGED",
+   "weight_reread_today": false,
+   "notes": []
+  }
+ ]
+}

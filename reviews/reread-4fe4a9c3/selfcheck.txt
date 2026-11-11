@@ -1,0 +1,2 @@
+RESULT: PASS — 414 checks, 0 failures
+This check proves each price dated 2026-11-11 was printed in that day's evidence. It cannot prove the evidence matches what a shopper sees now.

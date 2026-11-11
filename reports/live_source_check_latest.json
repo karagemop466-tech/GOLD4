@@ -1,30 +1,31 @@
 {
  "artifact": "GOLD4 live source health check",
  "schema": 1,
- "session": "arena/2189e10f-gold4",
+ "session": "arena/4fe4a9c3-gold4",
  "pass": "auto (recorded in data/verification_log.json by the reviewing pass)",
- "checked_utc": "2026-10-23T20:25:47Z",
+ "checked_utc": "2026-11-11T08:03:09Z",
  "method": "read-only HTTPS GET of each URL, HTML stripped to text, raw price/weight snippets retained with context",
  "network_environment_blocked": false,
- "targets": 95,
+ "targets": 96,
  "allowlist_refused": [],
  "summary": {
-  "OK": 75,
+  "OK": 74,
   "EMPTY_OR_JS_SHELL": 2,
   "REFUSED_403": 11,
-  "HTTP_404": 7
+  "REFUSED_429": 3,
+  "HTTP_404": 6
  },
  "results": [
   {
    "url": "https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold",
-   "checked_utc": "2026-10-23T20:24:08Z",
+   "checked_utc": "2026-11-11T08:00:33Z",
    "http_status": 200,
    "final_url": "https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold",
-   "bytes": 890027,
+   "bytes": 928430,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 531,
+   "elapsed_ms": 404,
    "title": "Engraved Floral Solitaire Engagement Ring Setting 14K Yellow Gold",
-   "text_chars": 22621,
+   "text_chars": 23114,
    "soft_404": false,
    "price_snippets": [
     {
@@ -48,10 +49,10 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "585",
+     "price": "585.0",
      "currency": "USD",
      "name": "",
-     "sku": "",
+     "sku": "NG4426",
      "low": "",
      "high": ""
     }
@@ -63,8 +64,8 @@
     "priceCurrency": [
      "USD"
     ],
-    "priceValidUntil": [
-     "2026-12-31"
+    "itemCondition": [
+     "https://schema.org/NewCondition"
     ]
    },
    "karat_mentions": [
@@ -79,14 +80,14 @@
   },
   {
    "url": "https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold",
-   "checked_utc": "2026-10-23T20:24:09Z",
+   "checked_utc": "2026-11-11T08:00:34Z",
    "http_status": 200,
    "final_url": "https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold",
-   "bytes": 887659,
+   "bytes": 926228,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 452,
+   "elapsed_ms": 343,
    "title": "Milgrain Trellis Solitaire Engagement Ring 14k Yellow Gold",
-   "text_chars": 22514,
+   "text_chars": 23007,
    "soft_404": false,
    "price_snippets": [
     {
@@ -110,10 +111,10 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "724",
+     "price": "724.0",
      "currency": "USD",
      "name": "",
-     "sku": "",
+     "sku": "AZ21211",
      "low": "",
      "high": ""
     }
@@ -125,8 +126,8 @@
     "priceCurrency": [
      "USD"
     ],
-    "priceValidUntil": [
-     "2026-12-31"
+    "itemCondition": [
+     "https://schema.org/NewCondition"
     ]
    },
    "karat_mentions": [
@@ -140,14 +141,14 @@
   },
   {
    "url": "https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold",
-   "checked_utc": "2026-10-23T20:24:09Z",
+   "checked_utc": "2026-11-11T08:00:35Z",
    "http_status": 200,
    "final_url": "https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold",
-   "bytes": 887279,
+   "bytes": 925848,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 408,
+   "elapsed_ms": 339,
    "title": "Split Shank Solitaire Engagement Ring 14k Yellow Gold",
-   "text_chars": 22484,
+   "text_chars": 22977,
    "soft_404": false,
    "price_snippets": [
     {
@@ -171,10 +172,10 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "848",
+     "price": "848.0",
      "currency": "USD",
      "name": "",
-     "sku": "",
+     "sku": "AZ21223",
      "low": "",
      "high": ""
     }
@@ -186,8 +187,8 @@
     "priceCurrency": [
      "USD"
     ],
-    "priceValidUntil": [
-     "2026-12-31"
+    "itemCondition": [
+     "https://schema.org/NewCondition"
     ]
    },
    "karat_mentions": [
@@ -201,14 +202,14 @@
   },
   {
    "url": "https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold",
-   "checked_utc": "2026-10-23T20:24:10Z",
+   "checked_utc": "2026-11-11T08:00:35Z",
    "http_status": 200,
    "final_url": "https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold",
-   "bytes": 886596,
+   "bytes": 925151,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 438,
+   "elapsed_ms": 444,
    "title": "Split Shank Solitaire Engagement Ring 18k Yellow Gold",
-   "text_chars": 22490,
+   "text_chars": 22983,
    "soft_404": false,
    "price_snippets": [
     {
@@ -236,10 +237,10 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1425",
+     "price": "1425.0",
      "currency": "USD",
      "name": "",
-     "sku": "",
+     "sku": "AZ21229",
      "low": "",
      "high": ""
     }
@@ -251,8 +252,8 @@
     "priceCurrency": [
      "USD"
     ],
-    "priceValidUntil": [
-     "2026-12-31"
+    "itemCondition": [
+     "https://schema.org/NewCondition"
     ]
    },
    "karat_mentions": [
@@ -266,12 +267,12 @@
   },
   {
    "url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
-   "checked_utc": "2026-10-23T20:24:11Z",
+   "checked_utc": "2026-11-11T08:00:36Z",
    "http_status": 200,
    "final_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
    "bytes": 33327,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 148,
+   "elapsed_ms": 102,
    "title": "Anjolee",
    "text_chars": 7,
    "soft_404": false,
@@ -289,11 +290,11 @@
   },
   {
    "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
-   "checked_utc": "2026-10-23T20:24:12Z",
+   "checked_utc": "2026-11-11T08:00:37Z",
    "http_status": 403,
    "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
    "bytes": 200000,
-   "elapsed_ms": 209,
+   "elapsed_ms": 104,
    "error": "HTTPError 403",
    "title": "Brilliant Earth - Verifying",
    "text_chars": 199692,
@@ -337,11 +338,11 @@
   },
   {
    "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
-   "checked_utc": "2026-10-23T20:24:12Z",
+   "checked_utc": "2026-11-11T08:00:37Z",
    "http_status": 403,
    "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
    "bytes": 200000,
-   "elapsed_ms": 106,
+   "elapsed_ms": 38,
    "error": "HTTPError 403",
    "title": "Brilliant Earth - Verifying",
    "text_chars": 199692,
@@ -385,27 +386,23 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639",
-   "checked_utc": "2026-10-23T20:24:13Z",
+   "checked_utc": "2026-11-11T08:00:38Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639",
-   "bytes": 680126,
+   "bytes": 687677,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 728,
+   "elapsed_ms": 956,
    "title": "Petite Solitaire Engagement Ring in 14k Yellow Gold",
-   "text_chars": 7808,
+   "text_chars": 8146,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,000",
-     "context": "…0.20 - 8.00 Carat Petite Solitaire Engagement Ring in 14k Yellow Gold $1,000 (Setting Price) Or as low as $170 /mo for 6 months with the Blue Nile…"
-    },
-    {
-     "text": "$1,020",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,020 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
+     "context": "…0.20 - 8.00 Carat Petite Solitaire Engagement Ring in 14k Yellow Gold $1,000 $800 (Setting Price) -20% *Discount code is applied automatically Spe…"
     }
    ],
    "weight_snippets": [],
@@ -415,7 +412,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1000",
+     "price": "800",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -458,27 +455,23 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269",
-   "checked_utc": "2026-10-23T20:24:14Z",
+   "checked_utc": "2026-11-11T08:00:39Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269",
-   "bytes": 683410,
+   "bytes": 689908,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 556,
+   "elapsed_ms": 768,
    "title": "Petite Solitaire Engagement Ring in 18k Yellow Gold",
-   "text_chars": 7946,
+   "text_chars": 8283,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,155",
-     "context": "…0.20 - 8.00 Carat Petite Solitaire Engagement Ring in 18k Yellow Gold $1,155 (Setting Price) Or as low as $196 /mo for 6 months with the Blue Nile…"
-    },
-    {
-     "text": "$1,178",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,178 ** Learn more View other Financing Options Metal Type: 18K Yellow Gol…"
+     "context": "…0.20 - 8.00 Carat Petite Solitaire Engagement Ring in 18k Yellow Gold $1,155 $924 (Setting Price) -20% *Discount code is applied automatically Spe…"
     },
     {
      "text": "$1,000",
@@ -492,7 +485,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1155",
+     "price": "924",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -535,27 +528,23 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
-   "checked_utc": "2026-10-23T20:24:15Z",
+   "checked_utc": "2026-11-11T08:00:40Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
-   "bytes": 649631,
+   "bytes": 654020,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 524,
+   "elapsed_ms": 353,
    "title": "Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
-   "text_chars": 7697,
+   "text_chars": 8035,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,000",
-     "context": "… Carat Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold $1,000 (Setting Price) Or as low as $170 /mo for 6 months with the Blue Nile…"
-    },
-    {
-     "text": "$1,020",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,020 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
+     "context": "… Carat Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold $1,000 $800 (Setting Price) -20% *Discount code is applied automatically Spe…"
     }
    ],
    "weight_snippets": [],
@@ -565,7 +554,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1000",
+     "price": "800",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -608,19 +597,19 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
-   "checked_utc": "2026-10-23T20:24:16Z",
+   "checked_utc": "2026-11-11T08:00:41Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
-   "bytes": 676068,
+   "bytes": 685261,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 598,
+   "elapsed_ms": 399,
    "title": "Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)",
-   "text_chars": 7840,
+   "text_chars": 8231,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,000",
@@ -634,7 +623,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "935",
+     "price": "748",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -677,27 +666,31 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941",
-   "checked_utc": "2026-10-23T20:24:17Z",
+   "checked_utc": "2026-11-11T08:00:42Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941",
-   "bytes": 679927,
+   "bytes": 687708,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 412,
+   "elapsed_ms": 646,
    "title": "Classic Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2.5mm)",
-   "text_chars": 7891,
+   "text_chars": 8270,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,310",
-     "context": "…ssic Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2.5mm) $1,310 (Setting Price) Or as low as $223 /mo for 6 months with the Blue Nile…"
+     "context": "…ssic Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2.5mm) $1,310 $1,048 (Setting Price) -20% *Discount code is applied automatically O…"
     },
     {
-     "text": "$1,336",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,336 ** Learn more View other Financing Options Metal Type: 18K Yellow Gol…"
+     "text": "$1,048",
+     "context": "…mfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2.5mm) $1,310 $1,048 (Setting Price) -20% *Discount code is applied automatically Or as lo…"
+    },
+    {
+     "text": "$1,069",
+     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,069 ** Learn more View other Financing Options Metal Type: 18K Yellow Gol…"
     },
     {
      "text": "$1,000",
@@ -711,7 +704,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1310",
+     "price": "1048",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -754,27 +747,31 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/six-prong-low-dome-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-2mm-item-195379",
-   "checked_utc": "2026-10-23T20:24:18Z",
+   "checked_utc": "2026-11-11T08:00:43Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/six-prong-low-dome-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-2mm-item-195379",
-   "bytes": 646151,
+   "bytes": 651825,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 596,
+   "elapsed_ms": 709,
    "title": "Six -Prong Low Dome Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2mm)",
-   "text_chars": 7639,
+   "text_chars": 8017,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,295",
-     "context": "…w Dome Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2mm) $1,295 (Setting Price) Or as low as $220 /mo for 6 months with the Blue Nile…"
+     "context": "…w Dome Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2mm) $1,295 $1,036 (Setting Price) -20% *Discount code is applied automatically O…"
     },
     {
-     "text": "$1,321",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,321 ** Learn more View other Financing Options Metal Type: 18K Yellow Gol…"
+     "text": "$1,036",
+     "context": "…Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2mm) $1,295 $1,036 (Setting Price) -20% *Discount code is applied automatically Or as lo…"
+    },
+    {
+     "text": "$1,057",
+     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,057 ** Learn more View other Financing Options Metal Type: 18K Yellow Gol…"
     },
     {
      "text": "$1,000",
@@ -788,7 +785,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1295",
+     "price": "1036",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -831,19 +828,19 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257",
-   "checked_utc": "2026-10-23T20:24:19Z",
+   "checked_utc": "2026-11-11T08:00:44Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257",
-   "bytes": 660146,
+   "bytes": 669170,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 351,
+   "elapsed_ms": 405,
    "title": "Classic Four Prong Solitaire Engagement Ring in 14K Yellow Gold",
-   "text_chars": 7865,
+   "text_chars": 8256,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,000",
@@ -857,7 +854,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "870",
+     "price": "696",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -900,27 +897,31 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512",
-   "checked_utc": "2026-10-23T20:24:19Z",
+   "checked_utc": "2026-11-11T08:00:45Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512",
-   "bytes": 689855,
+   "bytes": 694480,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 447,
+   "elapsed_ms": 549,
    "title": "Riviera Pavé Diamond Engagement Ring in 14K Yellow Gold (1/6 ct. tw.)",
-   "text_chars": 8185,
+   "text_chars": 8564,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,500",
-     "context": "…Riviera Pavé Diamond Engagement Ring in 14K Yellow Gold (1/6 ct. tw.) $1,500 (Setting Price) Or as low as $255 /mo for 6 months with the Blue Nile…"
+     "context": "…Riviera Pavé Diamond Engagement Ring in 14K Yellow Gold (1/6 ct. tw.) $1,500 $1,200 (Setting Price) -20% *Discount code is applied automatically O…"
     },
     {
-     "text": "$1,530",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,530 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
+     "text": "$1,200",
+     "context": "… Pavé Diamond Engagement Ring in 14K Yellow Gold (1/6 ct. tw.) $1,500 $1,200 (Setting Price) -20% *Discount code is applied automatically Or as lo…"
+    },
+    {
+     "text": "$1,224",
+     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,224 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
     },
     {
      "text": "$1,000",
@@ -934,7 +935,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1500",
+     "price": "1200",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -977,14 +978,14 @@
   },
   {
    "url": "https://mejuri.com/products/diamonds-team-ring",
-   "checked_utc": "2026-10-23T20:24:20Z",
+   "checked_utc": "2026-11-11T08:00:46Z",
    "http_status": 200,
    "final_url": "https://mejuri.com/products/diamonds-team-ring",
-   "bytes": 1492079,
+   "bytes": 1595946,
    "content_type": "text/html",
-   "elapsed_ms": 1221,
+   "elapsed_ms": 1399,
    "title": "Diamonds Team Ring | Mejuri",
-   "text_chars": 2803,
+   "text_chars": 3709,
    "soft_404": false,
    "price_snippets": [],
    "weight_snippets": [],
@@ -1100,7 +1101,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -1120,14 +1121,14 @@
   },
   {
    "url": "https://mejuri.com/products/diamonds-band",
-   "checked_utc": "2026-10-23T20:24:22Z",
+   "checked_utc": "2026-11-11T08:00:48Z",
    "http_status": 200,
    "final_url": "https://mejuri.com/products/diamonds-band",
-   "bytes": 1286646,
+   "bytes": 1383910,
    "content_type": "text/html",
-   "elapsed_ms": 821,
+   "elapsed_ms": 713,
    "title": "Diamond Band Ring | Mejuri",
-   "text_chars": 3091,
+   "text_chars": 4153,
    "soft_404": false,
    "price_snippets": [],
    "weight_snippets": [],
@@ -1223,7 +1224,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -1243,14 +1244,14 @@
   },
   {
    "url": "https://mejuri.com/products/pave-diamond-slim-signet-ring",
-   "checked_utc": "2026-10-23T20:24:23Z",
+   "checked_utc": "2026-11-11T08:00:49Z",
    "http_status": 200,
    "final_url": "https://mejuri.com/products/pave-diamond-slim-signet-ring",
-   "bytes": 1541532,
+   "bytes": 1642766,
    "content_type": "text/html",
-   "elapsed_ms": 1011,
+   "elapsed_ms": 1151,
    "title": "14k Yellow Gold Handcrafted Pavé Diamond Signet Ring - Jewelry | Mejuri",
-   "text_chars": 2900,
+   "text_chars": 3941,
    "soft_404": false,
    "price_snippets": [],
    "weight_snippets": [],
@@ -1360,14 +1361,13 @@
    ],
    "offer_signals": {
     "availability": [
-     "https://schema.org/BackOrder",
      "https://schema.org/InStock"
     ],
     "priceCurrency": [
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -1387,14 +1387,14 @@
   },
   {
    "url": "https://mejuri.com/products/pave-diamond-thin-dome-ring",
-   "checked_utc": "2026-10-23T20:24:25Z",
+   "checked_utc": "2026-11-11T08:00:50Z",
    "http_status": 200,
    "final_url": "https://mejuri.com/products/pave-diamond-thin-dome-ring",
-   "bytes": 1300435,
+   "bytes": 1397452,
    "content_type": "text/html",
-   "elapsed_ms": 811,
+   "elapsed_ms": 1310,
    "title": "14k Solid Gold Pavé Diamond Thin Dôme Ring - Jewelry | Mejuri",
-   "text_chars": 2943,
+   "text_chars": 3970,
    "soft_404": false,
    "price_snippets": [],
    "weight_snippets": [],
@@ -1490,7 +1490,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -1510,14 +1510,14 @@
   },
   {
    "url": "https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring",
-   "checked_utc": "2026-10-23T20:24:26Z",
+   "checked_utc": "2026-11-11T08:00:52Z",
    "http_status": 200,
    "final_url": "https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring",
-   "bytes": 1502823,
+   "bytes": 1602819,
    "content_type": "text/html",
-   "elapsed_ms": 1255,
+   "elapsed_ms": 1196,
    "title": "Ziggy Ring",
-   "text_chars": 3190,
+   "text_chars": 3882,
    "soft_404": false,
    "price_snippets": [],
    "weight_snippets": [],
@@ -1633,7 +1633,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -1647,145 +1647,57 @@
   },
   {
    "url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
-   "checked_utc": "2026-10-23T20:24:27Z",
-   "http_status": 200,
+   "checked_utc": "2026-11-11T08:00:54Z",
+   "http_status": 429,
    "final_url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
-   "bytes": 1142353,
-   "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 2855,
-   "title": "Classic Round Brilliant Engagement Ring | Plain Band | 18k Yellow Gold",
-   "text_chars": 5275,
+   "bytes": 24749,
+   "elapsed_ms": 83,
+   "error": "HTTPError 429",
+   "title": "Vercel Security Checkpoint",
+   "text_chars": 167,
    "soft_404": false,
-   "price_snippets": [
-    {
-     "text": "$3,000",
-     "context": "…ng | Plain Band | 18k Yellow Gold $250 towards your wedding band with $3,000+ engagement ring purchase. Shown with 1.5ct Shown with 1.5ct Standard…"
-    },
-    {
-     "text": "$2,185",
-     "context": "…th 1.5ct Shown with 1.5ct Standard Plain 18k Yellow Gold Classic Ring $2,185 Round Brilliant · 18k Yellow Gold Shape : Round Brilliant Round Brill…"
-    }
-   ],
-   "weight_snippets": [
-    {
-     "text": "2.86g",
-     "context": "…k Yellow Gold Band width : Standard Band depth : 1.6mm Metal weight : 2.86g (Ring size 6) Pavé carat weight : 0.18ctw Shown with center stone 1.5…"
-    }
-   ],
-   "og_title": "Classic Round Brilliant Engagement Ring | Plain Band | 18k Yellow Gold",
-   "canonical": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-32797281484893",
-   "structured_prices": [
-    {
-     "source": "json-ld",
-     "type": "Offer",
-     "price": "2185.00",
-     "currency": "USD",
-     "name": "",
-     "sku": "",
-     "low": "",
-     "high": ""
-    }
-   ],
-   "offer_signals": {
-    "availability": [
-     "https://schema.org/InStock"
-    ],
-    "priceCurrency": [
-     "USD"
-    ],
-    "priceValidUntil": [
-     "2040-12-31"
-    ],
-    "itemCondition": [
-     "https://schema.org/NewCondition"
-    ]
-   },
-   "karat_mentions": [
-    "14k",
-    "18k"
-   ],
-   "phrase_counts": {
-    "solid gold": 1
-   },
+   "price_snippets": [],
+   "weight_snippets": [],
+   "og_title": "",
+   "canonical": "",
+   "structured_prices": [],
+   "offer_signals": {},
+   "karat_mentions": [],
    "hallmark_word_on_page": false,
    "key": "VR-01",
    "kind": "ring",
-   "classification": "OK"
+   "classification": "REFUSED_429"
   },
   {
    "url": "https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301",
-   "checked_utc": "2026-10-23T20:24:31Z",
-   "http_status": 200,
+   "checked_utc": "2026-11-11T08:00:54Z",
+   "http_status": 429,
    "final_url": "https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301",
-   "bytes": 1116073,
-   "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 2132,
-   "title": "Signature 6 Prong Round Brilliant Engagement Ring in 18k Yellow Gold with Plain Band",
-   "text_chars": 5317,
+   "bytes": 24751,
+   "elapsed_ms": 22,
+   "error": "HTTPError 429",
+   "title": "Vercel Security Checkpoint",
+   "text_chars": 167,
    "soft_404": false,
-   "price_snippets": [
-    {
-     "text": "$3,000",
-     "context": "…n 18k Yellow Gold with Plain Band $250 towards your wedding band with $3,000+ engagement ring purchase. 1. Setting 2. Diamond 3. Review Shown with…"
-    },
-    {
-     "text": "$1,150",
-     "context": "….5ct Shown with 1.5ct Standard 18k Yellow Gold Signature 6 Prong Ring $1,150 Round Brilliant · 18k Yellow Gold Shape : Round Brilliant Round Brill…"
-    }
-   ],
-   "weight_snippets": [
-    {
-     "text": "2.84g",
-     "context": "…k Yellow Gold Band width : Standard Band depth : 1.6mm Metal weight : 2.84g (Ring size 6) Pavé carat weight : 0.18ctw Shown with center stone 1.5…"
-    }
-   ],
-   "og_title": "Signature 6 Prong Round Brilliant Engagement Ring in 18k Yellow Gold with Plain Band",
-   "canonical": "https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301",
-   "structured_prices": [
-    {
-     "source": "json-ld",
-     "type": "Offer",
-     "price": "1150.00",
-     "currency": "USD",
-     "name": "",
-     "sku": "",
-     "low": "",
-     "high": ""
-    }
-   ],
-   "offer_signals": {
-    "availability": [
-     "https://schema.org/InStock"
-    ],
-    "priceCurrency": [
-     "USD"
-    ],
-    "priceValidUntil": [
-     "2040-12-31"
-    ],
-    "itemCondition": [
-     "https://schema.org/NewCondition"
-    ]
-   },
-   "karat_mentions": [
-    "14k",
-    "18k"
-   ],
-   "phrase_counts": {
-    "solid gold": 1
-   },
+   "price_snippets": [],
+   "weight_snippets": [],
+   "og_title": "",
+   "canonical": "",
+   "structured_prices": [],
+   "offer_signals": {},
+   "karat_mentions": [],
    "hallmark_word_on_page": false,
    "key": "VR-02",
    "kind": "ring",
-   "classification": "OK"
+   "classification": "REFUSED_429"
   },
   {
    "url": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/",
-   "checked_utc": "2026-10-23T20:24:33Z",
+   "checked_utc": "2026-11-11T08:00:55Z",
    "http_status": 403,
    "final_url": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/",
    "bytes": 200000,
-   "elapsed_ms": 78,
+   "elapsed_ms": 51,
    "error": "HTTPError 403",
    "title": "Brilliant Earth - Verifying",
    "text_chars": 199692,
@@ -1829,14 +1741,14 @@
   },
   {
    "url": "https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
-   "checked_utc": "2026-10-23T20:24:34Z",
+   "checked_utc": "2026-11-11T08:00:55Z",
    "http_status": 200,
    "final_url": "https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
-   "bytes": 466280,
+   "bytes": 466851,
    "content_type": "text/html; charset=UTF-8",
-   "elapsed_ms": 637,
+   "elapsed_ms": 754,
    "title": "10k White Gold 5mm High Polished Traditional Domed Wedding Band | SARRAF.COM",
-   "text_chars": 41450,
+   "text_chars": 41444,
    "soft_404": false,
    "price_snippets": [
     {
@@ -1861,7 +1773,7 @@
     },
     {
      "text": "$100.00",
-     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of purchase price which ever amount is greater. In the event t…"
+     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of current price whichever amount is greater. In the event tha…"
     },
     {
      "text": "$1,050.00",
@@ -1934,7 +1846,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -1966,14 +1878,14 @@
   },
   {
    "url": "https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html",
-   "checked_utc": "2026-10-23T20:24:35Z",
+   "checked_utc": "2026-11-11T08:00:56Z",
    "http_status": 200,
    "final_url": "https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html",
-   "bytes": 468551,
+   "bytes": 469122,
    "content_type": "text/html; charset=UTF-8",
-   "elapsed_ms": 945,
+   "elapsed_ms": 659,
    "title": "14k Gold 6mm High Polished Comfort Fit Wedding Band | SARRAF.COM",
-   "text_chars": 41830,
+   "text_chars": 41824,
    "soft_404": false,
    "price_snippets": [
     {
@@ -2002,7 +1914,7 @@
     },
     {
      "text": "$100.00",
-     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of purchase price which ever amount is greater. In the event t…"
+     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of current price whichever amount is greater. In the event tha…"
     },
     {
      "text": "$3,605.00",
@@ -2071,7 +1983,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -2103,14 +2015,14 @@
   },
   {
    "url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
-   "checked_utc": "2026-10-23T20:24:36Z",
+   "checked_utc": "2026-11-11T08:00:57Z",
    "http_status": 200,
    "final_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
-   "bytes": 465085,
+   "bytes": 465656,
    "content_type": "text/html; charset=UTF-8",
-   "elapsed_ms": 559,
+   "elapsed_ms": 486,
    "title": "18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band | SARRAF.COM",
-   "text_chars": 41023,
+   "text_chars": 41017,
    "soft_404": false,
    "price_snippets": [
     {
@@ -2135,7 +2047,7 @@
     },
     {
      "text": "$100.00",
-     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of purchase price which ever amount is greater. In the event t…"
+     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of current price whichever amount is greater. In the event tha…"
     },
     {
      "text": "$2,531.00",
@@ -2208,7 +2120,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -2240,14 +2152,14 @@
   },
   {
    "url": "https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html",
-   "checked_utc": "2026-10-23T20:24:37Z",
+   "checked_utc": "2026-11-11T08:00:58Z",
    "http_status": 200,
    "final_url": "https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html",
-   "bytes": 461077,
+   "bytes": 461648,
    "content_type": "text/html; charset=UTF-8",
-   "elapsed_ms": 914,
+   "elapsed_ms": 614,
    "title": "18K Gold 6mm High Polished Flat Comfort Fit Wedding Band | SARRAF.COM",
-   "text_chars": 40451,
+   "text_chars": 40445,
    "soft_404": false,
    "price_snippets": [
     {
@@ -2272,7 +2184,7 @@
     },
     {
      "text": "$100.00",
-     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of purchase price which ever amount is greater. In the event t…"
+     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of current price whichever amount is greater. In the event tha…"
     },
     {
      "text": "$6,776.00",
@@ -2345,7 +2257,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -2377,14 +2289,14 @@
   },
   {
    "url": "https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html",
-   "checked_utc": "2026-10-23T20:24:38Z",
+   "checked_utc": "2026-11-11T08:00:59Z",
    "http_status": 200,
    "final_url": "https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html",
-   "bytes": 437651,
+   "bytes": 438222,
    "content_type": "text/html; charset=UTF-8",
-   "elapsed_ms": 734,
+   "elapsed_ms": 490,
    "title": "14k Yellow gold Mens Solitaire Diamond Ring 1/2 ct. | SARRAF.COM",
-   "text_chars": 39619,
+   "text_chars": 39613,
    "soft_404": false,
    "price_snippets": [
     {
@@ -2409,7 +2321,7 @@
     },
     {
      "text": "$100.00",
-     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of purchase price which ever amount is greater. In the event t…"
+     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of current price whichever amount is greater. In the event tha…"
     },
     {
      "text": "$12,639.00",
@@ -2482,7 +2394,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -2514,14 +2426,14 @@
   },
   {
    "url": "https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html",
-   "checked_utc": "2026-10-23T20:24:40Z",
+   "checked_utc": "2026-11-11T08:01:00Z",
    "http_status": 200,
    "final_url": "https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html",
-   "bytes": 435175,
+   "bytes": 435746,
    "content_type": "text/html; charset=UTF-8",
-   "elapsed_ms": 639,
+   "elapsed_ms": 505,
    "title": "18k Yellow gold Mens Solitaire Diamond Ring 3/4 ct. | SARRAF.COM",
-   "text_chars": 39539,
+   "text_chars": 39533,
    "soft_404": false,
    "price_snippets": [
     {
@@ -2546,7 +2458,7 @@
     },
     {
      "text": "$100.00",
-     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of purchase price which ever amount is greater. In the event t…"
+     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of current price whichever amount is greater. In the event tha…"
     },
     {
      "text": "$107,580.00",
@@ -2619,7 +2531,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -2651,14 +2563,14 @@
   },
   {
    "url": "https://www.sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-engagement-diamond-ring.html",
-   "checked_utc": "2026-10-23T20:24:41Z",
+   "checked_utc": "2026-11-11T08:01:01Z",
    "http_status": 200,
    "final_url": "https://www.sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-engagement-diamond-ring.html",
-   "bytes": 447324,
+   "bytes": 447895,
    "content_type": "text/html; charset=UTF-8",
-   "elapsed_ms": 618,
+   "elapsed_ms": 502,
    "title": "14k Gold 1/2 Ctw Diamond Solitaire Engagement Diamond Ring | SARRAF.COM",
-   "text_chars": 39597,
+   "text_chars": 39591,
    "soft_404": false,
    "price_snippets": [
     {
@@ -2683,7 +2595,7 @@
     },
     {
      "text": "$100.00",
-     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of purchase price which ever amount is greater. In the event t…"
+     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of current price whichever amount is greater. In the event tha…"
     },
     {
      "text": "$8,929.00",
@@ -2752,7 +2664,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -2784,14 +2696,14 @@
   },
   {
    "url": "https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html",
-   "checked_utc": "2026-10-23T20:24:42Z",
+   "checked_utc": "2026-11-11T08:01:02Z",
    "http_status": 200,
    "final_url": "https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html",
-   "bytes": 444225,
+   "bytes": 444796,
    "content_type": "text/html; charset=UTF-8",
-   "elapsed_ms": 570,
+   "elapsed_ms": 561,
    "title": "18k Yellow gold 1/2 Carat Round Diamond Solitaire Engagement Ring | SARRAF.COM",
-   "text_chars": 39760,
+   "text_chars": 39754,
    "soft_404": false,
    "price_snippets": [
     {
@@ -2816,7 +2728,7 @@
     },
     {
      "text": "$100.00",
-     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of purchase price which ever amount is greater. In the event t…"
+     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of current price whichever amount is greater. In the event tha…"
     },
     {
      "text": "$36,369.00",
@@ -2885,7 +2797,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -2917,14 +2829,14 @@
   },
   {
    "url": "https://www.catbirdnyc.com/the-swan-solitaire-2475.html",
-   "checked_utc": "2026-10-23T20:24:43Z",
+   "checked_utc": "2026-11-11T08:01:03Z",
    "http_status": 200,
    "final_url": "https://www.catbirdnyc.com/the-swan-solitaire-2475.html",
    "bytes": 3000000,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 4956,
+   "elapsed_ms": 36013,
    "title": "The Swan Solitaire Brilliant Cut White Diamond Engagement Ring in 14K Gold & Platinum | Catbird",
-   "text_chars": 93873,
+   "text_chars": 99624,
    "soft_404": false,
    "price_snippets": [
     {
@@ -2975,14 +2887,14 @@
   },
   {
    "url": "https://www.catbirdnyc.com/grand-painters-ring.html",
-   "checked_utc": "2026-10-23T20:24:48Z",
+   "checked_utc": "2026-11-11T08:01:39Z",
    "http_status": 200,
    "final_url": "https://www.catbirdnyc.com/grand-painters-ring.html",
-   "bytes": 592662,
+   "bytes": 587033,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 2032,
+   "elapsed_ms": 1556,
    "title": "Grand Painter&#039;s Ring, Solid 14k Yellow Gold | Catbird Jewelry",
-   "text_chars": 7626,
+   "text_chars": 7558,
    "soft_404": false,
    "price_snippets": [
     {
@@ -3046,43 +2958,43 @@
   },
   {
    "url": "https://mene.com/products/knot-ring-gold",
-   "checked_utc": "2026-10-23T20:24:50Z",
+   "checked_utc": "2026-11-11T08:01:41Z",
    "http_status": 200,
    "final_url": "https://mene.com/products/knot-ring-gold",
-   "bytes": 487411,
+   "bytes": 417460,
    "content_type": "text/html",
-   "elapsed_ms": 435,
+   "elapsed_ms": 827,
    "title": "Knot ring - 24k Gold | Menē",
-   "text_chars": 2377,
+   "text_chars": 2354,
    "soft_404": false,
    "price_snippets": [
     {
-     "text": "$1,442",
-     "context": "… on orders over $500. Cart Cart Shop World of Menē About 3D Knot Ring $1,442 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size 5…"
+     "text": "$1,455",
+     "context": "… on orders over $500. Cart Cart Shop World of Menē About 3D Knot Ring $1,455 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size 5…"
     },
     {
-     "text": "$1,370",
-     "context": "…ible Sourcing Certification. Recommended for you Heart Knot Ring From $1,370 Knot Ring From $666 Heart Knot Ring From $634 Trinity Knot Ring From …"
+     "text": "$1,382",
+     "context": "…ible Sourcing Certification. Recommended for you Heart Knot Ring From $1,382 Knot Ring From $655 Heart Knot Ring From $624 Trinity Knot Ring From …"
     },
     {
-     "text": "$1,897",
-     "context": "… Knot Ring From $666 Heart Knot Ring From $634 Trinity Knot Ring From $1,897 Lovers Ring From $1,208 Heart Link Ring From $1,670 Eternity Ring Fro…"
+     "text": "$1,913",
+     "context": "… Knot Ring From $655 Heart Knot Ring From $624 Trinity Knot Ring From $1,913 Lovers Ring From $1,219 Heart Link Ring From $1,685 Eternity Ring Fro…"
     },
     {
-     "text": "$1,208",
-     "context": "…rt Knot Ring From $634 Trinity Knot Ring From $1,897 Lovers Ring From $1,208 Heart Link Ring From $1,670 Eternity Ring From $1,657 Rose Ring From …"
+     "text": "$1,219",
+     "context": "…rt Knot Ring From $624 Trinity Knot Ring From $1,913 Lovers Ring From $1,219 Heart Link Ring From $1,685 Eternity Ring From $1,671 Lovers Ring Fro…"
     },
     {
-     "text": "$1,670",
-     "context": "…ty Knot Ring From $1,897 Lovers Ring From $1,208 Heart Link Ring From $1,670 Eternity Ring From $1,657 Rose Ring From $1,325 Lovers Ring From $633…"
+     "text": "$1,685",
+     "context": "…ty Knot Ring From $1,913 Lovers Ring From $1,219 Heart Link Ring From $1,685 Eternity Ring From $1,671 Lovers Ring From $623 Rose Ring From $1,337…"
     },
     {
-     "text": "$1,657",
-     "context": "…overs Ring From $1,208 Heart Link Ring From $1,670 Eternity Ring From $1,657 Rose Ring From $1,325 Lovers Ring From $633 Menē Narrow Chain From $6…"
+     "text": "$1,671",
+     "context": "…overs Ring From $1,219 Heart Link Ring From $1,685 Eternity Ring From $1,671 Lovers Ring From $623 Rose Ring From $1,337 Menē Narrow Chain From $6…"
     },
     {
-     "text": "$1,325",
-     "context": "… Heart Link Ring From $1,670 Eternity Ring From $1,657 Rose Ring From $1,325 Lovers Ring From $633 Menē Narrow Chain From $646"
+     "text": "$1,337",
+     "context": "…$1,685 Eternity Ring From $1,671 Lovers Ring From $623 Rose Ring From $1,337 Menē Narrow Chain From $652"
     }
    ],
    "weight_snippets": [],
@@ -3092,7 +3004,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2422",
+     "price": "2443",
      "currency": "USD",
      "name": "",
      "sku": "MC24.503.9H",
@@ -3102,7 +3014,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1893",
+     "price": "1909",
      "currency": "USD",
      "name": "",
      "sku": "MC24.503.9",
@@ -3112,7 +3024,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2205",
+     "price": "2224",
      "currency": "USD",
      "name": "",
      "sku": "MC24.503.8H",
@@ -3122,7 +3034,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1785",
+     "price": "1801",
      "currency": "USD",
      "name": "",
      "sku": "MC24.503.8",
@@ -3132,7 +3044,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1873",
+     "price": "1890",
      "currency": "USD",
      "name": "",
      "sku": "MC24.503.7H",
@@ -3142,7 +3054,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1756",
+     "price": "1772",
      "currency": "USD",
      "name": "",
      "sku": "MC24.503.7",
@@ -3152,7 +3064,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1614",
+     "price": "1628",
      "currency": "USD",
      "name": "",
      "sku": "MC24.503.6H",
@@ -3162,7 +3074,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1518",
+     "price": "1532",
      "currency": "USD",
      "name": "",
      "sku": "MC24.503.6",
@@ -3172,7 +3084,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1442",
+     "price": "1455",
      "currency": "USD",
      "name": "",
      "sku": "MC24.503.5H",
@@ -3182,7 +3094,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1442",
+     "price": "1455",
      "currency": "USD",
      "name": "",
      "sku": "MC24.503.5",
@@ -3198,7 +3110,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2026-11-22"
+     "2026-12-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -3215,47 +3127,51 @@
   },
   {
    "url": "https://mene.com/products/etruscan-sun-band-gold",
-   "checked_utc": "2026-10-23T20:24:51Z",
+   "checked_utc": "2026-11-11T08:01:43Z",
    "http_status": 200,
    "final_url": "https://mene.com/products/etruscan-sun-band-gold",
-   "bytes": 649803,
+   "bytes": 527262,
    "content_type": "text/html",
-   "elapsed_ms": 315,
+   "elapsed_ms": 371,
    "title": "Menē Etruscan Sun Band - 24k Gold | Menē",
-   "text_chars": 2453,
+   "text_chars": 2432,
    "soft_404": false,
    "price_snippets": [
     {
-     "text": "$1,704",
-     "context": "…rs over $500. Cart Cart Shop World of Menē About 3D Etruscan Sun Band $1,704 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size 5…"
+     "text": "$1,719",
+     "context": "…rs over $500. Cart Cart Shop World of Menē About 3D Etruscan Sun Band $1,719 USD Price breakdown Metal Gold 24k Gold Platinum Pure Platinum Size 5…"
     },
     {
-     "text": "$18,989",
-     "context": "…Sourcing Certification. Recommended for you Vertebrae Link Chain From $18,989 Engravable Etruscan Sun Band From $766 Mini Cuban Chain From $18,573 …"
+     "text": "$19,156",
+     "context": "…Sourcing Certification. Recommended for you Vertebrae Link Chain From $19,156 Engravable Etruscan Sun Band From $753 Cross Signet Ring From $1,732 …"
     },
     {
-     "text": "$18,573",
-     "context": "… $18,989 Engravable Etruscan Sun Band From $766 Mini Cuban Chain From $18,573 Double Leaf Ring From $2,238 Cross Signet Ring From $1,717 Double Lea…"
+     "text": "$1,732",
+     "context": "…$19,156 Engravable Etruscan Sun Band From $753 Cross Signet Ring From $1,732 Double Leaf Ring From $2,258 Prince Charm $600 Double Leaf Ring From …"
     },
     {
-     "text": "$2,238",
-     "context": "…un Band From $766 Mini Cuban Chain From $18,573 Double Leaf Ring From $2,238 Cross Signet Ring From $1,717 Double Leaf Ring From $1,148 Prince Cha…"
+     "text": "$2,258",
+     "context": "…un Band From $753 Cross Signet Ring From $1,732 Double Leaf Ring From $2,258 Prince Charm $600 Double Leaf Ring From $1,129 Path of Life Ring From…"
     },
     {
-     "text": "$1,717",
-     "context": "…hain From $18,573 Double Leaf Ring From $2,238 Cross Signet Ring From $1,717 Double Leaf Ring From $1,148 Prince Charm $595 Sun Signet Ring From $…"
+     "text": "$1,129",
+     "context": "… Double Leaf Ring From $2,258 Prince Charm $600 Double Leaf Ring From $1,129 Path of Life Ring From $1,152 Sun Signet Ring From $1,776 Athenian Ow…"
     },
     {
-     "text": "$1,148",
-     "context": "… Ring From $2,238 Cross Signet Ring From $1,717 Double Leaf Ring From $1,148 Prince Charm $595 Sun Signet Ring From $1,760 Athenian Owl Pendant $1…"
+     "text": "$1,152",
+     "context": "…Prince Charm $600 Double Leaf Ring From $1,129 Path of Life Ring From $1,152 Sun Signet Ring From $1,776 Athenian Owl Pendant $2,010 New Linear Ri…"
     },
     {
-     "text": "$1,760",
-     "context": "…7 Double Leaf Ring From $1,148 Prince Charm $595 Sun Signet Ring From $1,760 Athenian Owl Pendant $1,992 Sun Signet Ring From $807 5.0 · 152 revie…"
+     "text": "$1,776",
+     "context": "…f Ring From $1,129 Path of Life Ring From $1,152 Sun Signet Ring From $1,776 Athenian Owl Pendant $2,010 New Linear Ring From $2,026"
     },
     {
-     "text": "$1,992",
-     "context": "…48 Prince Charm $595 Sun Signet Ring From $1,760 Athenian Owl Pendant $1,992 Sun Signet Ring From $807 5.0 · 152 reviews Etruscan Sun Band 5 152 r…"
+     "text": "$2,010",
+     "context": "…ife Ring From $1,152 Sun Signet Ring From $1,776 Athenian Owl Pendant $2,010 New Linear Ring From $2,026"
+    },
+    {
+     "text": "$2,026",
+     "context": "…net Ring From $1,776 Athenian Owl Pendant $2,010 New Linear Ring From $2,026"
     }
    ],
    "weight_snippets": [],
@@ -3265,7 +3181,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2545",
+     "price": "2567",
      "currency": "USD",
      "name": "",
      "sku": "MC20.280.12H",
@@ -3275,7 +3191,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2545",
+     "price": "2567",
      "currency": "USD",
      "name": "",
      "sku": "MC20.280.12",
@@ -3285,7 +3201,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2367",
+     "price": "2388",
      "currency": "USD",
      "name": "",
      "sku": "MC20.280.11H",
@@ -3295,7 +3211,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2359",
+     "price": "2380",
      "currency": "USD",
      "name": "",
      "sku": "MC20.280.11",
@@ -3305,7 +3221,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2246",
+     "price": "2266",
      "currency": "USD",
      "name": "",
      "sku": "MC20.280.10H",
@@ -3315,7 +3231,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2172",
+     "price": "2191",
      "currency": "USD",
      "name": "",
      "sku": "MC20.280.10",
@@ -3325,7 +3241,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2184",
+     "price": "2203",
      "currency": "USD",
      "name": "",
      "sku": "MC20.280.9H",
@@ -3335,7 +3251,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2184",
+     "price": "2203",
      "currency": "USD",
      "name": "",
      "sku": "MC20.280.9",
@@ -3345,7 +3261,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1946",
+     "price": "1963",
      "currency": "USD",
      "name": "",
      "sku": "MC20.280.8H",
@@ -3355,7 +3271,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1891",
+     "price": "1908",
      "currency": "USD",
      "name": "",
      "sku": "MC20.280.8",
@@ -3371,7 +3287,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2026-11-22"
+     "2026-12-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -3388,19 +3304,19 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y",
-   "checked_utc": "2026-10-23T20:24:52Z",
+   "checked_utc": "2026-11-11T08:01:43Z",
    "http_status": 404,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y",
    "bytes": 200000,
-   "elapsed_ms": 641,
+   "elapsed_ms": 230,
    "error": "HTTPError 404",
    "title": "",
-   "text_chars": 44812,
+   "text_chars": 46361,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     }
    ],
    "weight_snippets": [],
@@ -3418,19 +3334,19 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14",
-   "checked_utc": "2026-10-23T20:24:53Z",
+   "checked_utc": "2026-11-11T08:01:44Z",
    "http_status": 404,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14",
    "bytes": 200000,
-   "elapsed_ms": 314,
+   "elapsed_ms": 478,
    "error": "HTTPError 404",
    "title": "",
-   "text_chars": 44812,
+   "text_chars": 46361,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     }
    ],
    "weight_snippets": [],
@@ -3448,19 +3364,19 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y",
-   "checked_utc": "2026-10-23T20:24:54Z",
+   "checked_utc": "2026-11-11T08:01:45Z",
    "http_status": 404,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y",
    "bytes": 200000,
-   "elapsed_ms": 444,
+   "elapsed_ms": 298,
    "error": "HTTPError 404",
    "title": "",
-   "text_chars": 44812,
+   "text_chars": 46361,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     }
    ],
    "weight_snippets": [],
@@ -3478,19 +3394,19 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y",
-   "checked_utc": "2026-10-23T20:24:55Z",
+   "checked_utc": "2026-11-11T08:01:46Z",
    "http_status": 404,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y",
    "bytes": 200000,
-   "elapsed_ms": 358,
+   "elapsed_ms": 457,
    "error": "HTTPError 404",
    "title": "",
-   "text_chars": 44812,
+   "text_chars": 46361,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     }
    ],
    "weight_snippets": [],
@@ -3508,27 +3424,31 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-pave-basket-in-14k-yellow-gold-by-james-allen-item-311230",
-   "checked_utc": "2026-10-23T20:24:55Z",
+   "checked_utc": "2026-11-11T08:01:47Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-pave-basket-in-14k-yellow-gold-by-james-allen-item-311230",
-   "bytes": 650982,
+   "bytes": 659999,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 581,
+   "elapsed_ms": 734,
    "title": "Solitaire Engagement Ring With Pavé Basket In 14K Yellow Gold By James Allen",
-   "text_chars": 8245,
+   "text_chars": 8638,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$2,260",
-     "context": "…re Engagement Ring With Pavé Basket In 14K Yellow Gold By James Allen $2,260 (Setting Price) Or as low as $384 /mo for 6 months with the Blue Nile…"
+     "context": "…re Engagement Ring With Pavé Basket In 14K Yellow Gold By James Allen $2,260 $1,808 (Setting Price) -20% *Discount code is applied automatically O…"
     },
     {
-     "text": "$2,305",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $2,305 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
+     "text": "$1,808",
+     "context": "…gement Ring With Pavé Basket In 14K Yellow Gold By James Allen $2,260 $1,808 (Setting Price) -20% *Discount code is applied automatically Or as lo…"
+    },
+    {
+     "text": "$1,844",
+     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,844 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
     },
     {
      "text": "$1,000",
@@ -3542,7 +3462,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2260",
+     "price": "1808",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -3584,27 +3504,31 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-intricate-basket-in-14k-yellow-gold-by-james-allen-item-315036",
-   "checked_utc": "2026-10-23T20:24:56Z",
+   "checked_utc": "2026-11-11T08:01:48Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-intricate-basket-in-14k-yellow-gold-by-james-allen-item-315036",
-   "bytes": 628186,
+   "bytes": 637203,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 356,
+   "elapsed_ms": 662,
    "title": "Solitaire Engagement Ring With Intricate Basket In 14K Yellow Gold By James Allen",
-   "text_chars": 7613,
+   "text_chars": 8006,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,385",
-     "context": "…gagement Ring With Intricate Basket In 14K Yellow Gold By James Allen $1,385 (Setting Price) Or as low as $235 /mo for 6 months with the Blue Nile…"
+     "context": "…gagement Ring With Intricate Basket In 14K Yellow Gold By James Allen $1,385 $1,108 (Setting Price) -20% *Discount code is applied automatically O…"
     },
     {
-     "text": "$1,413",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,413 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
+     "text": "$1,108",
+     "context": "…t Ring With Intricate Basket In 14K Yellow Gold By James Allen $1,385 $1,108 (Setting Price) -20% *Discount code is applied automatically Or as lo…"
+    },
+    {
+     "text": "$1,130",
+     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,130 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
     },
     {
      "text": "$1,000",
@@ -3618,7 +3542,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1385",
+     "price": "1108",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -3660,19 +3584,19 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-knife-edge-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-311246",
-   "checked_utc": "2026-10-23T20:24:57Z",
+   "checked_utc": "2026-11-11T08:01:49Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-knife-edge-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-311246",
-   "bytes": 639106,
+   "bytes": 648113,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 541,
+   "elapsed_ms": 684,
    "title": "East West Knife Edge Cathedral Solitaire Engagement Ring In 14K Yellow Gold By James Allen",
-   "text_chars": 7805,
+   "text_chars": 8196,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,000",
@@ -3686,7 +3610,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "975",
+     "price": "780",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -3728,27 +3652,31 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-oval-by-james-allen-item-311127",
-   "checked_utc": "2026-10-23T20:24:58Z",
+   "checked_utc": "2026-11-11T08:01:50Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-oval-by-james-allen-item-311127",
-   "bytes": 606525,
+   "bytes": 614801,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 816,
+   "elapsed_ms": 490,
    "title": "Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen",
-   "text_chars": 7963,
+   "text_chars": 8356,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,565",
-     "context": "…Diamond Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen $1,565 (Setting Price) Or as low as $266 /mo for 6 months with the Blue Nile…"
+     "context": "…Diamond Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen $1,565 $1,252 (Setting Price) -20% *Discount code is applied automatically O…"
     },
     {
-     "text": "$1,596",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,596 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
+     "text": "$1,252",
+     "context": "… Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen $1,565 $1,252 (Setting Price) -20% *Discount code is applied automatically Or as lo…"
+    },
+    {
+     "text": "$1,277",
+     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,277 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
     },
     {
      "text": "$1,000",
@@ -3762,7 +3690,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1565",
+     "price": "1252",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -3804,27 +3732,31 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-pear-by-james-allen-item-311121",
-   "checked_utc": "2026-10-23T20:24:59Z",
+   "checked_utc": "2026-11-11T08:01:51Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-pear-by-james-allen-item-311121",
-   "bytes": 606525,
+   "bytes": 614801,
    "content_type": "text/html; charset=utf-8",
    "elapsed_ms": 750,
    "title": "Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen",
-   "text_chars": 7963,
+   "text_chars": 8356,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,555",
-     "context": "…Diamond Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen $1,555 (Setting Price) Or as low as $264 /mo for 6 months with the Blue Nile…"
+     "context": "…Diamond Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen $1,555 $1,244 (Setting Price) -20% *Discount code is applied automatically O…"
     },
     {
-     "text": "$1,586",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,586 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
+     "text": "$1,244",
+     "context": "… Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen $1,555 $1,244 (Setting Price) -20% *Discount code is applied automatically Or as lo…"
+    },
+    {
+     "text": "$1,269",
+     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,269 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
     },
     {
      "text": "$1,000",
@@ -3838,7 +3770,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1555",
+     "price": "1244",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -3880,27 +3812,31 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-hidden-halo-solitaire-plus-diamond-engagement-ring-in-14k-yellow-gold-item-192506",
-   "checked_utc": "2026-10-23T20:25:01Z",
+   "checked_utc": "2026-11-11T08:01:52Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-hidden-halo-solitaire-plus-diamond-engagement-ring-in-14k-yellow-gold-item-192506",
-   "bytes": 681059,
+   "bytes": 690075,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 475,
+   "elapsed_ms": 309,
    "title": "Petite Hidden Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold",
-   "text_chars": 8188,
+   "text_chars": 8581,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,255",
-     "context": "…Hidden Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold $1,255 (Setting Price) Or as low as $213 /mo for 6 months with the Blue Nile…"
+     "context": "…Hidden Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold $1,255 $1,004 (Setting Price) -20% *Discount code is applied automatically O…"
     },
     {
-     "text": "$1,280",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,280 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
+     "text": "$1,004",
+     "context": "…Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold $1,255 $1,004 (Setting Price) -20% *Discount code is applied automatically Or as lo…"
+    },
+    {
+     "text": "$1,024",
+     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,024 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
     },
     {
      "text": "$1,000",
@@ -3914,7 +3850,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1255",
+     "price": "1004",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -3957,27 +3893,31 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bow-tie-engagement-ring-with-channel-set-round-diamonds-in-14k-yellow-gold-by-james-allen-item-304294",
-   "checked_utc": "2026-10-23T20:25:01Z",
+   "checked_utc": "2026-11-11T08:01:53Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bow-tie-engagement-ring-with-channel-set-round-diamonds-in-14k-yellow-gold-by-james-allen-item-304294",
-   "bytes": 688638,
+   "bytes": 694317,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 819,
+   "elapsed_ms": 804,
    "title": "Bow-Tie Engagement Ring With Channel Set Round Diamonds In 14K Yellow Gold By James Allen",
-   "text_chars": 8184,
+   "text_chars": 8563,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$2,350",
-     "context": "…ing With Channel Set Round Diamonds In 14K Yellow Gold By James Allen $2,350 (Setting Price) Or as low as $400 /mo for 6 months with the Blue Nile…"
+     "context": "…ing With Channel Set Round Diamonds In 14K Yellow Gold By James Allen $2,350 $1,880 (Setting Price) -20% *Discount code is applied automatically O…"
     },
     {
-     "text": "$2,397",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $2,397 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
+     "text": "$1,880",
+     "context": "…h Channel Set Round Diamonds In 14K Yellow Gold By James Allen $2,350 $1,880 (Setting Price) -20% *Discount code is applied automatically Or as lo…"
+    },
+    {
+     "text": "$1,918",
+     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,918 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
     },
     {
      "text": "$1,000",
@@ -3991,7 +3931,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2350",
+     "price": "1880",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -4033,19 +3973,19 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896",
-   "checked_utc": "2026-10-23T20:25:03Z",
+   "checked_utc": "2026-11-11T08:01:54Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896",
-   "bytes": 664989,
+   "bytes": 672764,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 466,
+   "elapsed_ms": 325,
    "title": "Woven Solitaire Engagement Ring In 14K Yellow Gold By James Allen",
-   "text_chars": 7934,
+   "text_chars": 8310,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,000",
@@ -4059,7 +3999,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "965",
+     "price": "772",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -4101,27 +4041,31 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261",
-   "checked_utc": "2026-10-23T20:25:03Z",
+   "checked_utc": "2026-11-11T08:01:55Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261",
-   "bytes": 637490,
+   "bytes": 645277,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 423,
+   "elapsed_ms": 374,
    "title": "Knife Edge Solitaire Engagement Ring in 14k Yellow Gold",
-   "text_chars": 7641,
+   "text_chars": 8020,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,290",
-     "context": "… - 8.00 Carat Knife Edge Solitaire Engagement Ring in 14k Yellow Gold $1,290 (Setting Price) Or as low as $219 /mo for 6 months with the Blue Nile…"
+     "context": "… - 8.00 Carat Knife Edge Solitaire Engagement Ring in 14k Yellow Gold $1,290 $1,032 (Setting Price) -20% *Discount code is applied automatically O…"
     },
     {
-     "text": "$1,316",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,316 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
+     "text": "$1,032",
+     "context": "… Carat Knife Edge Solitaire Engagement Ring in 14k Yellow Gold $1,290 $1,032 (Setting Price) -20% *Discount code is applied automatically Or as lo…"
+    },
+    {
+     "text": "$1,053",
+     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,053 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
     },
     {
      "text": "$1,000",
@@ -4135,7 +4079,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1290",
+     "price": "1032",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -4178,27 +4122,31 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321",
-   "checked_utc": "2026-10-23T20:25:04Z",
+   "checked_utc": "2026-11-11T08:01:55Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321",
-   "bytes": 682782,
+   "bytes": 687405,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 445,
+   "elapsed_ms": 369,
    "title": "Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm)",
-   "text_chars": 7831,
+   "text_chars": 8210,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$2,050",
-     "context": "…00 Carat Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm) $2,050 (Setting Price) Or as low as $349 /mo for 6 months with the Blue Nile…"
+     "context": "…00 Carat Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm) $2,050 $1,640 (Setting Price) -20% *Discount code is applied automatically O…"
     },
     {
-     "text": "$2,091",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $2,091 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
+     "text": "$1,640",
+     "context": "…t Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm) $2,050 $1,640 (Setting Price) -20% *Discount code is applied automatically Or as lo…"
+    },
+    {
+     "text": "$1,673",
+     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,673 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
     },
     {
      "text": "$1,000",
@@ -4212,7 +4160,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "2050",
+     "price": "1640",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -4254,27 +4202,31 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303",
-   "checked_utc": "2026-10-23T20:25:05Z",
+   "checked_utc": "2026-11-11T08:01:56Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303",
-   "bytes": 689252,
+   "bytes": 693877,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 463,
+   "elapsed_ms": 543,
    "title": "Emerald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.)",
-   "text_chars": 8352,
+   "text_chars": 8731,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$5,190",
-     "context": "…at Emerald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.) $5,190 (Setting Price) Or as low as $441 /mo for 12 months with the Blue Nil…"
+     "context": "…at Emerald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.) $5,190 $4,152 (Setting Price) -20% *Discount code is applied automatically O…"
     },
     {
-     "text": "$5,289",
-     "context": "…o for 12 months with the Blue Nile Credit Card for a total payment of $5,289 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
+     "text": "$4,152",
+     "context": "…ald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.) $5,190 $4,152 (Setting Price) -20% *Discount code is applied automatically Or as lo…"
+    },
+    {
+     "text": "$4,235",
+     "context": "…o for 12 months with the Blue Nile Credit Card for a total payment of $4,235 ** Learn more View other Financing Options Metal Type: 14K Yellow Gol…"
     },
     {
      "text": "$1,000",
@@ -4288,7 +4240,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "5190",
+     "price": "4152",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -4330,27 +4282,23 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730",
-   "checked_utc": "2026-10-23T20:25:06Z",
+   "checked_utc": "2026-11-11T08:01:57Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730",
-   "bytes": 686478,
+   "bytes": 692984,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 418,
+   "elapsed_ms": 338,
    "title": "Classic Simple Solitaire Engagement Ring in 14k White Gold",
-   "text_chars": 7903,
+   "text_chars": 8241,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$1,145",
-     "context": "…8.10 Carat Classic Simple Solitaire Engagement Ring in 14k White Gold $1,145 (Setting Price) Or as low as $195 /mo for 6 months with the Blue Nile…"
-    },
-    {
-     "text": "$1,168",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $1,168 ** Learn more View other Financing Options Metal Type: 14K White Gold…"
+     "context": "…8.10 Carat Classic Simple Solitaire Engagement Ring in 14k White Gold $1,145 $916 (Setting Price) -20% *Discount code is applied automatically Spe…"
     },
     {
      "text": "$1,000",
@@ -4364,7 +4312,7 @@
     {
      "source": "json-ld",
      "type": "Offer",
-     "price": "1145",
+     "price": "916",
      "currency": "USD",
      "name": "",
      "sku": "",
@@ -4407,27 +4355,43 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661",
-   "checked_utc": "2026-10-23T20:25:07Z",
+   "checked_utc": "2026-11-11T08:01:58Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661",
-   "bytes": 633093,
+   "bytes": 630677,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 296,
+   "elapsed_ms": 552,
    "title": "Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen",
-   "text_chars": 8135,
+   "text_chars": 7923,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
-     "text": "$2,210",
-     "context": "…Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen $2,210 (Setting Price) Or as low as $376 /mo for 6 months with the Blue Nile…"
+     "text": "$3,010",
+     "context": "…elow, or discover more extraordinary jewelry in our curated gallery . $3,010 $2,408 $2,530 $2,024 $2,200 $1,760 Shop all settings Consult an exper…"
     },
     {
-     "text": "$2,254",
-     "context": "…mo for 6 months with the Blue Nile Credit Card for a total payment of $2,254 ** Learn more View other Financing Options Metal Type: 14K White Gold…"
+     "text": "$2,408",
+     "context": "…r discover more extraordinary jewelry in our curated gallery . $3,010 $2,408 $2,530 $2,024 $2,200 $1,760 Shop all settings Consult an expert Need …"
+    },
+    {
+     "text": "$2,530",
+     "context": "…ver more extraordinary jewelry in our curated gallery . $3,010 $2,408 $2,530 $2,024 $2,200 $1,760 Shop all settings Consult an expert Need a Blue …"
+    },
+    {
+     "text": "$2,024",
+     "context": "…e extraordinary jewelry in our curated gallery . $3,010 $2,408 $2,530 $2,024 $2,200 $1,760 Shop all settings Consult an expert Need a Blue Nile Ex…"
+    },
+    {
+     "text": "$2,200",
+     "context": "…ordinary jewelry in our curated gallery . $3,010 $2,408 $2,530 $2,024 $2,200 $1,760 Shop all settings Consult an expert Need a Blue Nile Expert? C…"
+    },
+    {
+     "text": "$1,760",
+     "context": "…y jewelry in our curated gallery . $3,010 $2,408 $2,530 $2,024 $2,200 $1,760 Shop all settings Consult an expert Need a Blue Nile Expert? Call +1-…"
     },
     {
      "text": "$1,000",
@@ -4438,16 +4402,6 @@
    "og_title": "Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen",
    "canonical": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661",
    "structured_prices": [
-    {
-     "source": "json-ld",
-     "type": "Offer",
-     "price": "2210",
-     "currency": "USD",
-     "name": "",
-     "sku": "",
-     "low": "",
-     "high": ""
-    },
     {
      "source": "meta:og:price:amount",
      "type": "meta",
@@ -4461,16 +4415,13 @@
    ],
    "offer_signals": {
     "availability": [
-     "https://schema.org/InStock"
-    ],
-    "priceCurrency": [
-     "USD"
+     "https://schema.org/SoldOut"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
     ],
     "og:availability": [
-     "instock"
+     "out of stock"
     ]
    },
    "karat_mentions": [
@@ -4483,31 +4434,43 @@
   },
   {
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515",
-   "checked_utc": "2026-10-23T20:25:08Z",
+   "checked_utc": "2026-11-11T08:01:59Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515",
-   "bytes": 656866,
+   "bytes": 664838,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 611,
+   "elapsed_ms": 401,
    "title": "Comfort Fit Solitaire Engagement Ring In 14K Yellow Gold",
-   "text_chars": 7406,
+   "text_chars": 7766,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     },
     {
      "text": "$2,260",
-     "context": "…elow, or discover more extraordinary jewelry in our curated gallery . $2,260 $1,255 $1,385 Shop all settings Consult an expert Need a Blue Nile Ex…"
+     "context": "…elow, or discover more extraordinary jewelry in our curated gallery . $2,260 $1,808 $1,255 $1,004 $1,385 $1,108 Shop all settings Consult an exper…"
+    },
+    {
+     "text": "$1,808",
+     "context": "…r discover more extraordinary jewelry in our curated gallery . $2,260 $1,808 $1,255 $1,004 $1,385 $1,108 Shop all settings Consult an expert Need …"
     },
     {
      "text": "$1,255",
-     "context": "…r discover more extraordinary jewelry in our curated gallery . $2,260 $1,255 $1,385 Shop all settings Consult an expert Need a Blue Nile Expert? C…"
+     "context": "…ver more extraordinary jewelry in our curated gallery . $2,260 $1,808 $1,255 $1,004 $1,385 $1,108 Shop all settings Consult an expert Need a Blue …"
+    },
+    {
+     "text": "$1,004",
+     "context": "…e extraordinary jewelry in our curated gallery . $2,260 $1,808 $1,255 $1,004 $1,385 $1,108 Shop all settings Consult an expert Need a Blue Nile Ex…"
     },
     {
      "text": "$1,385",
-     "context": "…ver more extraordinary jewelry in our curated gallery . $2,260 $1,255 $1,385 Shop all settings Consult an expert Need a Blue Nile Expert? Call +1-…"
+     "context": "…ordinary jewelry in our curated gallery . $2,260 $1,808 $1,255 $1,004 $1,385 $1,108 Shop all settings Consult an expert Need a Blue Nile Expert? C…"
+    },
+    {
+     "text": "$1,108",
+     "context": "…y jewelry in our curated gallery . $2,260 $1,808 $1,255 $1,004 $1,385 $1,108 Shop all settings Consult an expert Need a Blue Nile Expert? Call +1-…"
     },
     {
      "text": "$1,000",
@@ -4550,11 +4513,11 @@
   },
   {
    "url": "https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/",
-   "checked_utc": "2026-10-23T20:25:09Z",
+   "checked_utc": "2026-11-11T08:02:00Z",
    "http_status": 403,
    "final_url": "https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/",
    "bytes": 200000,
-   "elapsed_ms": 76,
+   "elapsed_ms": 27,
    "error": "HTTPError 403",
    "title": "Brilliant Earth - Verifying",
    "text_chars": 199692,
@@ -4598,11 +4561,11 @@
   },
   {
    "url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
-   "checked_utc": "2026-10-23T20:25:09Z",
+   "checked_utc": "2026-11-11T08:02:00Z",
    "http_status": 403,
    "final_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
    "bytes": 200000,
-   "elapsed_ms": 87,
+   "elapsed_ms": 81,
    "error": "HTTPError 403",
    "title": "Brilliant Earth - Verifying",
    "text_chars": 199692,
@@ -4646,11 +4609,11 @@
   },
   {
    "url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/",
-   "checked_utc": "2026-10-23T20:25:10Z",
+   "checked_utc": "2026-11-11T08:02:01Z",
    "http_status": 403,
    "final_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/",
    "bytes": 200000,
-   "elapsed_ms": 95,
+   "elapsed_ms": 60,
    "error": "HTTPError 403",
    "title": "Brilliant Earth - Verifying",
    "text_chars": 199692,
@@ -4694,11 +4657,11 @@
   },
   {
    "url": "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
-   "checked_utc": "2026-10-23T20:25:10Z",
+   "checked_utc": "2026-11-11T08:02:01Z",
    "http_status": 403,
    "final_url": "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
    "bytes": 200000,
-   "elapsed_ms": 90,
+   "elapsed_ms": 53,
    "error": "HTTPError 403",
    "title": "Brilliant Earth - Verifying",
    "text_chars": 199692,
@@ -4742,16 +4705,28 @@
   },
   {
    "url": "https://www.ross-simons.com/jewelry/rings/571221.html",
-   "checked_utc": "2026-10-23T20:25:11Z",
+   "checked_utc": "2026-11-11T08:02:02Z",
    "http_status": 200,
    "final_url": "https://www.ross-simons.com/products/571221",
-   "bytes": 944203,
+   "bytes": 985695,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 1286,
+   "elapsed_ms": 1175,
    "title": "Women's 2mm 14kt Yellow Gold Band",
-   "text_chars": 21269,
+   "text_chars": 22186,
    "soft_404": false,
    "price_snippets": [
+    {
+     "text": "$1000",
+     "context": "… Price Gifts Under $100 Gifts Under $250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By St…"
+    },
+    {
+     "text": "$2500",
+     "context": "… $100 Gifts Under $250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By Style The Minimalist…"
+    },
+    {
+     "text": "$5000",
+     "context": "…$250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By Style The Minimalist The Maximalist Th…"
+    },
     {
      "text": "$5.95",
      "context": "…\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i…"
@@ -4861,7 +4836,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-01-21"
+     "2027-02-09"
     ],
     "itemCondition": [
      "https:\\/\\/schema.org\\/NewCondition"
@@ -4880,16 +4855,32 @@
   },
   {
    "url": "https://www.ross-simons.com/jewelry/rings/985230.html",
-   "checked_utc": "2026-10-23T20:25:12Z",
+   "checked_utc": "2026-11-11T08:02:03Z",
    "http_status": 200,
    "final_url": "https://www.ross-simons.com/products/985230",
-   "bytes": 925633,
+   "bytes": 967344,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 1510,
+   "elapsed_ms": 948,
    "title": "2mm 18kt Yellow Gold Polished Ring",
-   "text_chars": 21911,
+   "text_chars": 22831,
    "soft_404": false,
    "price_snippets": [
+    {
+     "text": "$1000",
+     "context": "… Price Gifts Under $100 Gifts Under $250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By St…"
+    },
+    {
+     "text": "$2500",
+     "context": "… $100 Gifts Under $250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By Style The Minimalist…"
+    },
+    {
+     "text": "$5000",
+     "context": "…$250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By Style The Minimalist The Maximalist Th…"
+    },
+    {
+     "text": "$199.20",
+     "context": "…on Rings Gold --> 2mm 18kt Yellow Gold Polished Ring (1) 20% Off $249 $199.20 Crafted in rich 18kt yellow gold, this classic ring shows off a smoot…"
+    },
     {
      "text": "$5.95",
      "context": "…\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i…"
@@ -4968,7 +4959,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-01-21"
+     "2027-02-09"
     ],
     "itemCondition": [
      "https:\\/\\/schema.org\\/NewCondition"
@@ -4987,16 +4978,28 @@
   },
   {
    "url": "https://www.ross-simons.com/jewelry/rings/820263.html",
-   "checked_utc": "2026-10-23T20:25:14Z",
+   "checked_utc": "2026-11-11T08:02:05Z",
    "http_status": 200,
    "final_url": "https://www.ross-simons.com/products/820263",
-   "bytes": 971297,
+   "bytes": 1012142,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 1280,
+   "elapsed_ms": 844,
    "title": "Italian 14kt Yellow Gold Double Love Knot Ring",
-   "text_chars": 21895,
+   "text_chars": 22812,
    "soft_404": false,
    "price_snippets": [
+    {
+     "text": "$1000",
+     "context": "… Price Gifts Under $100 Gifts Under $250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By St…"
+    },
+    {
+     "text": "$2500",
+     "context": "… $100 Gifts Under $250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By Style The Minimalist…"
+    },
+    {
+     "text": "$5000",
+     "context": "…$250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By Style The Minimalist The Maximalist Th…"
+    },
     {
      "text": "$5.95",
      "context": "…\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i…"
@@ -5116,7 +5119,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-01-21"
+     "2027-02-09"
     ],
     "itemCondition": [
      "https:\\/\\/schema.org\\/NewCondition"
@@ -5135,19 +5138,31 @@
   },
   {
    "url": "https://www.ross-simons.com/jewelry/rings/823796.html",
-   "checked_utc": "2026-10-23T20:25:16Z",
+   "checked_utc": "2026-11-11T08:02:06Z",
    "http_status": 200,
    "final_url": "https://www.ross-simons.com/products/823796",
-   "bytes": 922028,
+   "bytes": 963568,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 1236,
+   "elapsed_ms": 773,
    "title": "Italian 14kt Yellow Gold Diamond-Cut Dome Ring",
-   "text_chars": 21199,
+   "text_chars": 22079,
    "soft_404": false,
    "price_snippets": [
     {
+     "text": "$1000",
+     "context": "… Price Gifts Under $100 Gifts Under $250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By St…"
+    },
+    {
+     "text": "$2500",
+     "context": "… $100 Gifts Under $250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By Style The Minimalist…"
+    },
+    {
+     "text": "$5000",
+     "context": "…$250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By Style The Minimalist The Maximalist Th…"
+    },
+    {
      "text": "$1,195",
-     "context": "… Gold Diamond-Cut Dome Ring (14) 25% OFF IN CART WITH CODE GOLDENDAYS $1,195 Diamond-cut and polished for a most sophisticated shimmer, this luxe …"
+     "context": "… Gold --> Italian 14kt Yellow Gold Diamond-Cut Dome Ring (14) 20% Off $1,195 $956 Diamond-cut and polished for a most sophisticated shimmer, this …"
     },
     {
      "text": "$5.95",
@@ -5227,7 +5242,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-01-21"
+     "2027-02-09"
     ],
     "itemCondition": [
      "https:\\/\\/schema.org\\/NewCondition"
@@ -5245,41 +5260,133 @@
    "classification": "OK"
   },
   {
-   "url": "https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html",
-   "checked_utc": "2026-10-23T20:25:18Z",
-   "http_status": 404,
-   "final_url": "https://www.ross-simons.com/0.80-carat-gia-ceritified-solitaire-diamond-engagement-ring-in-14kt-white-gold-990022.html",
-   "bytes": 200000,
-   "elapsed_ms": 870,
-   "error": "HTTPError 404",
-   "title": "404 Not Found",
-   "text_chars": 2969,
-   "soft_404": true,
-   "price_snippets": [],
+   "url": "https://www.ross-simons.com/products/990022",
+   "checked_utc": "2026-11-11T08:02:07Z",
+   "http_status": 200,
+   "final_url": "https://www.ross-simons.com/products/990022",
+   "bytes": 932043,
+   "content_type": "text/html; charset=utf-8",
+   "elapsed_ms": 738,
+   "title": ".80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold",
+   "text_chars": 22231,
+   "soft_404": false,
+   "price_snippets": [
+    {
+     "text": "$1000",
+     "context": "… Price Gifts Under $100 Gifts Under $250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By St…"
+    },
+    {
+     "text": "$2500",
+     "context": "… $100 Gifts Under $250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By Style The Minimalist…"
+    },
+    {
+     "text": "$5000",
+     "context": "…$250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By Style The Minimalist The Maximalist Th…"
+    },
+    {
+     "text": "$3,995",
+     "context": "…80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold 36% Off $3,995 $2,537.10 CLEARANCE EXTRA 10% OFF - PRICED AS MARKED Showcasing an ex…"
+    },
+    {
+     "text": "$2,537.10",
+     "context": "…t Ceritified Diamond Solitaire Ring in 14kt White Gold 36% Off $3,995 $2,537.10 CLEARANCE EXTRA 10% OFF - PRICED AS MARKED Showcasing an exquisite .8…"
+    },
+    {
+     "text": "$5.95",
+     "context": "…\"gid44155056423047\" | remove: \"gid\" %} {% assign giftwrap_price = \"gwp$5.95\" | remove: \"gwp\" %} {% assign primary_item_count = 0 %} {% for item i…"
+    }
+   ],
    "weight_snippets": [],
    "og_title": "",
-   "canonical": "https://www.ross-simons.com/404",
-   "structured_prices": [],
-   "offer_signals": {},
-   "karat_mentions": [],
+   "canonical": "https://www.ross-simons.com/products/990022",
+   "structured_prices": [
+    {
+     "source": "json-ld",
+     "type": "Offer",
+     "price": "3199.0",
+     "currency": "USD",
+     "name": ".80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold — Size 9",
+     "sku": "JDS2 990022 090 4W",
+     "low": "",
+     "high": ""
+    },
+    {
+     "source": "json-ld",
+     "type": "Offer",
+     "price": "2819.0",
+     "currency": "USD",
+     "name": ".80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold — Size 8",
+     "sku": "JDS2 990022 080 4W",
+     "low": "",
+     "high": ""
+    },
+    {
+     "source": "json-ld",
+     "type": "Offer",
+     "price": "2819.0",
+     "currency": "USD",
+     "name": ".80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold — Size 7",
+     "sku": "JDS2 990022 070 4W",
+     "low": "",
+     "high": ""
+    },
+    {
+     "source": "json-ld",
+     "type": "Offer",
+     "price": "2819.0",
+     "currency": "USD",
+     "name": ".80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold — Size 6",
+     "sku": "JDS2 990022 060 4W",
+     "low": "",
+     "high": ""
+    },
+    {
+     "source": "json-ld",
+     "type": "Offer",
+     "price": "2819.0",
+     "currency": "USD",
+     "name": ".80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold — Size 5",
+     "sku": "JDS2 990022 050 4W",
+     "low": "",
+     "high": ""
+    }
+   ],
+   "offer_signals": {
+    "availability": [
+     "https://schema.org/InStock",
+     "https://schema.org/OutOfStock"
+    ],
+    "priceCurrency": [
+     "USD"
+    ],
+    "priceValidUntil": [
+     "2027-02-09"
+    ],
+    "itemCondition": [
+     "https:\\/\\/schema.org\\/NewCondition"
+    ]
+   },
+   "karat_mentions": [
+    "14kt"
+   ],
    "phrase_counts": {
-    "gold-plated": 5
+    "gold-plated": 12
    },
    "hallmark_word_on_page": false,
    "key": "RS-05",
    "kind": "ring",
-   "classification": "HTTP_404"
+   "classification": "OK"
   },
   {
    "url": "https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&Stone=Natural+Diamond",
-   "checked_utc": "2026-10-23T20:25:19Z",
+   "checked_utc": "2026-11-11T08:02:08Z",
    "http_status": 200,
    "final_url": "https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&Stone=Natural+Diamond",
-   "bytes": 1710767,
+   "bytes": 1794314,
    "content_type": "text/html",
-   "elapsed_ms": 999,
+   "elapsed_ms": 1162,
    "title": "Diamond Eternity Band | Mejuri",
-   "text_chars": 3053,
+   "text_chars": 3767,
    "soft_404": false,
    "price_snippets": [
     {
@@ -5401,7 +5508,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -5421,14 +5528,14 @@
   },
   {
    "url": "https://mejuri.com/us/en/products/diamonds-line-ring",
-   "checked_utc": "2026-10-23T20:25:20Z",
+   "checked_utc": "2026-11-11T08:02:10Z",
    "http_status": 200,
    "final_url": "https://mejuri.com/us/en/products/diamonds-line-ring",
-   "bytes": 1298741,
+   "bytes": 1403254,
    "content_type": "text/html",
-   "elapsed_ms": 799,
+   "elapsed_ms": 1142,
    "title": "Diamonds Line Ring | Mejuri",
-   "text_chars": 2941,
+   "text_chars": 3578,
    "soft_404": false,
    "price_snippets": [],
    "weight_snippets": [],
@@ -5524,7 +5631,7 @@
      "USD"
     ],
     "priceValidUntil": [
-     "2027-10-23"
+     "2027-11-11"
     ],
     "itemCondition": [
      "https://schema.org/NewCondition"
@@ -5545,12 +5652,12 @@
   },
   {
    "url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
-   "checked_utc": "2026-10-23T20:25:21Z",
+   "checked_utc": "2026-11-11T08:02:11Z",
    "http_status": 200,
    "final_url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/",
-   "bytes": 144848,
+   "bytes": 144832,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 92,
+   "elapsed_ms": 121,
    "title": "How do I dispute a charge on my credit card bill? | Consumer Financial Protection Bureau",
    "text_chars": 4575,
    "soft_404": false,
@@ -5568,14 +5675,14 @@
   },
   {
    "url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1026/subpart-B/section-1026.13",
-   "checked_utc": "2026-10-23T20:25:22Z",
+   "checked_utc": "2026-11-11T08:02:12Z",
    "http_status": 200,
    "final_url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1026/subpart-B/section-1026.13",
-   "bytes": 95164,
+   "bytes": 97347,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 315,
+   "elapsed_ms": 497,
    "title": "eCFR :: 12 CFR 1026.13 -- Billing error resolution.",
-   "text_chars": 15957,
+   "text_chars": 16156,
    "soft_404": false,
    "price_snippets": [],
    "weight_snippets": [],
@@ -5591,12 +5698,12 @@
   },
   {
    "url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
-   "checked_utc": "2026-10-23T20:25:23Z",
+   "checked_utc": "2026-11-11T08:02:13Z",
    "http_status": 200,
    "final_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
    "bytes": 183434,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 605,
+   "elapsed_ms": 249,
    "title": "eCFR :: 16 CFR Part 23 -- Guides for the Jewelry, Precious Metals, and Pewter Industries",
    "text_chars": 63263,
    "soft_404": false,
@@ -5635,11 +5742,11 @@
   },
   {
    "url": "https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges",
-   "checked_utc": "2026-10-23T20:25:24Z",
+   "checked_utc": "2026-11-11T08:02:14Z",
    "http_status": 404,
    "final_url": "https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges",
    "bytes": 1301,
-   "elapsed_ms": 103,
+   "elapsed_ms": 69,
    "error": "HTTPError 404",
    "title": "",
    "text_chars": 85,
@@ -5658,11 +5765,11 @@
   },
   {
    "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
-   "checked_utc": "2026-10-23T20:25:24Z",
+   "checked_utc": "2026-11-11T08:02:14Z",
    "http_status": 404,
    "final_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
    "bytes": 1301,
-   "elapsed_ms": 15,
+   "elapsed_ms": 20,
    "error": "HTTPError 404",
    "title": "",
    "text_chars": 85,
@@ -5681,12 +5788,12 @@
   },
   {
    "url": "https://www.nist.gov/pml/owm/nist-handbook-44-current-edition",
-   "checked_utc": "2026-10-23T20:25:25Z",
+   "checked_utc": "2026-11-11T08:02:14Z",
    "http_status": 200,
    "final_url": "https://www.nist.gov/pml/owm/nist-handbook-44-current-edition",
-   "bytes": 133331,
+   "bytes": 133542,
    "content_type": "text/html; charset=UTF-8",
-   "elapsed_ms": 252,
+   "elapsed_ms": 2331,
    "title": "NIST Handbook 44 - Current Edition | NIST",
    "text_chars": 7164,
    "soft_404": false,
@@ -5704,12 +5811,12 @@
   },
   {
    "url": "https://www.nist.gov/pml/special-publication-811",
-   "checked_utc": "2026-10-23T20:25:25Z",
+   "checked_utc": "2026-11-11T08:02:17Z",
    "http_status": 200,
    "final_url": "https://www.nist.gov/pml/special-publication-811",
-   "bytes": 90487,
+   "bytes": 90696,
    "content_type": "text/html; charset=UTF-8",
-   "elapsed_ms": 222,
+   "elapsed_ms": 1497,
    "title": "Special Publication 811 | NIST",
    "text_chars": 7470,
    "soft_404": false,
@@ -5727,12 +5834,12 @@
   },
   {
    "url": "https://www.law.cornell.edu/uscode/text/15/1666",
-   "checked_utc": "2026-10-23T20:25:26Z",
+   "checked_utc": "2026-11-11T08:02:19Z",
    "http_status": 200,
    "final_url": "https://www.law.cornell.edu/uscode/text/15/1666",
    "bytes": 49676,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 549,
+   "elapsed_ms": 632,
    "title": "15 U.S. Code &sect; 1666 - Correction of billing errors | U.S. Code | US Law | LII / Legal Information Institute",
    "text_chars": 10350,
    "soft_404": false,
@@ -5750,12 +5857,12 @@
   },
   {
    "url": "https://www.law.cornell.edu/uscode/text/15/295",
-   "checked_utc": "2026-10-23T20:25:27Z",
+   "checked_utc": "2026-11-11T08:02:20Z",
    "http_status": 200,
    "final_url": "https://www.law.cornell.edu/uscode/text/15/295",
    "bytes": 31414,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 520,
+   "elapsed_ms": 425,
    "title": "15 U.S. Code &sect; 295 - Standard of fineness of gold articles; deviation | U.S. Code | US Law | LII / Legal Information Institute",
    "text_chars": 4565,
    "soft_404": false,
@@ -5773,12 +5880,12 @@
   },
   {
    "url": "https://www.law.cornell.edu/uscode/text/15/297",
-   "checked_utc": "2026-10-23T20:25:28Z",
+   "checked_utc": "2026-11-11T08:02:21Z",
    "http_status": 200,
    "final_url": "https://www.law.cornell.edu/uscode/text/15/297",
    "bytes": 40672,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 561,
+   "elapsed_ms": 452,
    "title": "15 U.S. Code &sect; 297 - Stamping plated articles | U.S. Code | US Law | LII / Legal Information Institute",
    "text_chars": 7255,
    "soft_404": false,
@@ -5799,12 +5906,12 @@
   },
   {
    "url": "https://www.law.cornell.edu/uscode/text/15/chapter-8",
-   "checked_utc": "2026-10-23T20:25:29Z",
+   "checked_utc": "2026-11-11T08:02:22Z",
    "http_status": 200,
    "final_url": "https://www.law.cornell.edu/uscode/text/15/chapter-8",
    "bytes": 28257,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 492,
+   "elapsed_ms": 431,
    "title": "15 U.S. Code Chapter 8 - FALSELY STAMPED GOLD OR SILVER OR GOODS MANUFACTURED THEREFROM | U.S. Code | US Law | LII / Legal Information Institute",
    "text_chars": 1718,
    "soft_404": false,
@@ -5822,47 +5929,43 @@
   },
   {
    "url": "https://www.bullionvault.com/gold-price-chart.do",
-   "checked_utc": "2026-10-23T20:25:30Z",
+   "checked_utc": "2026-11-11T08:02:23Z",
    "http_status": 200,
    "final_url": "https://www.bullionvault.com/gold-price-chart.do",
-   "bytes": 100439,
+   "bytes": 100465,
    "content_type": "text/html;charset=UTF-8",
-   "elapsed_ms": 104,
+   "elapsed_ms": 955,
    "title": "Live Gold Price Chart USD | BullionVault",
-   "text_chars": 15099,
+   "text_chars": 15116,
    "soft_404": false,
    "price_snippets": [
     {
-     "text": "$3,997.02",
-     "context": "…these quoted gold prices to generate our charts. Current Gold Price - $3,997.02 per Ounce Live Gold Price Gold Spot Price Today Gold Price per Gram $…"
+     "text": "$4,059.81",
+     "context": "…these quoted gold prices to generate our charts. Current Gold Price - $4,059.81 per Ounce Live Gold Price Gold Spot Price Today Gold Price per Gram $…"
     },
     {
-     "text": "$128.49",
-     "context": "…2 per Ounce Live Gold Price Gold Spot Price Today Gold Price per Gram $128.49 £96.09 €114.79 Gold Price per Kilo $128,488 £96,092 €114,787 Gold Pri…"
+     "text": "$130.53",
+     "context": "…1 per Ounce Live Gold Price Gold Spot Price Today Gold Price per Gram $130.53 £97.92 €117.03 Gold Price per Kilo $130,526 £97,918 €117,027 Gold Pri…"
     },
     {
-     "text": "$128,488",
-     "context": "… Today Gold Price per Gram $128.49 £96.09 €114.79 Gold Price per Kilo $128,488 £96,092 €114,787 Gold Price per Ounce $3,996.42 £2,988.80 €3,570.27 2…"
+     "text": "$130,526",
+     "context": "… Today Gold Price per Gram $130.53 £97.92 €117.03 Gold Price per Kilo $130,526 £97,918 €117,027 Gold Price per Ounce $4,059.81 £3,045.59 €3,639.95 1…"
     },
     {
-     "text": "$3,996.42",
-     "context": "…79 Gold Price per Kilo $128,488 £96,092 €114,787 Gold Price per Ounce $3,996.42 £2,988.80 €3,570.27 23 October 2026, 21:09:39 (GMT+01:00) Bullionvaul…"
+     "text": "$130,525.84",
+     "context": "…ration. Open an account today Live Gold Price Last Week Current Price $130,525.84 / kg Week High $133,372.79 / kg Week Low $129,060.97 / kg Week Change…"
     },
     {
-     "text": "$128,507.02",
-     "context": "…ration. Open an account today Live Gold Price Last Week Current Price $128,507.02 / kg Week High $134,696.12 / kg Week Low $127,862.26 / kg Week Change…"
+     "text": "$133,372.79",
+     "context": "…ay Live Gold Price Last Week Current Price $130,525.84 / kg Week High $133,372.79 / kg Week Low $129,060.97 / kg Week Change +$826.92 (0.64%) Gold Pric…"
     },
     {
-     "text": "$134,696.12",
-     "context": "…ay Live Gold Price Last Week Current Price $128,507.02 / kg Week High $134,696.12 / kg Week Low $127,862.26 / kg Week Change -$5,405.58 (4.04%) Gold Pr…"
+     "text": "$129,060.97",
+     "context": "…ek Current Price $130,525.84 / kg Week High $133,372.79 / kg Week Low $129,060.97 / kg Week Change +$826.92 (0.64%) Gold Price Chart FAQs Gold Investme…"
     },
     {
-     "text": "$127,862.26",
-     "context": "…ek Current Price $128,507.02 / kg Week High $134,696.12 / kg Week Low $127,862.26 / kg Week Change -$5,405.58 (4.04%) Gold Price Chart FAQs Gold Invest…"
-    },
-    {
-     "text": "$5,405.58",
-     "context": "… kg Week High $134,696.12 / kg Week Low $127,862.26 / kg Week Change -$5,405.58 (4.04%) Gold Price Chart FAQs Gold Investment FAQs Can I buy gold at …"
+     "text": "$826.92",
+     "context": "… kg Week High $133,372.79 / kg Week Low $129,060.97 / kg Week Change +$826.92 (0.64%) Gold Price Chart FAQs Gold Investment FAQs Can I buy gold at …"
     },
     {
      "text": "$2000",
@@ -5895,12 +5998,12 @@
   },
   {
    "url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
-   "checked_utc": "2026-10-23T20:25:30Z",
+   "checked_utc": "2026-11-11T08:02:24Z",
    "http_status": 200,
    "final_url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet",
-   "bytes": 631643,
+   "bytes": 631028,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 247,
+   "elapsed_ms": 142,
    "title": "Electroformed Gold Bracelet",
    "text_chars": 7439,
    "soft_404": false,
@@ -5932,12 +6035,12 @@
   },
   {
    "url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis",
-   "checked_utc": "2026-10-23T20:25:31Z",
+   "checked_utc": "2026-11-11T08:02:25Z",
    "http_status": 200,
    "final_url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis",
-   "bytes": 1997810,
+   "bytes": 1997803,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 106,
+   "elapsed_ms": 129,
    "title": "Chemical Analysis in the Gemological Laboratory: XRF and LA-ICP-MS",
    "text_chars": 64989,
    "soft_404": false,
@@ -5960,69 +6063,69 @@
   },
   {
    "url": "https://www.jmbullion.com/charts/gold-price/",
-   "checked_utc": "2026-10-23T20:25:31Z",
+   "checked_utc": "2026-11-11T08:02:25Z",
    "http_status": 200,
    "final_url": "https://www.jmbullion.com/charts/gold-price/",
-   "bytes": 398732,
+   "bytes": 397627,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 541,
+   "elapsed_ms": 497,
    "title": "Gold Price Today - Live Gold Spot Price Charts | JM Bullion",
-   "text_chars": 28966,
+   "text_chars": 29002,
    "soft_404": false,
    "price_snippets": [
     {
-     "text": "$ 4,011.02",
-     "context": "…RDERS Monday-Friday 8-6 CST 1-800-276-6508 live spot prices: Gold Ask $ 4,011.02 $ -20.61 Silver Ask $ 54.65 $ -0.36 Platinum Ask $ 1,563.10 $ -11.60 …"
+     "text": "$ 4,071.46",
+     "context": "…RDERS Monday-Friday 8-6 CST 1-800-276-6508 live spot prices: Gold Ask $ 4,071.46 $ 31.69 Silver Ask $ 53.75 $ 1.81 Platinum Ask $ 1,569.90 $ 21.85 Pal…"
     },
     {
-     "text": "$ 54.65",
-     "context": "…00-276-6508 live spot prices: Gold Ask $ 4,011.02 $ -20.61 Silver Ask $ 54.65 $ -0.36 Platinum Ask $ 1,563.10 $ -11.60 Palladium Ask $ 1,068.13 $ -…"
+     "text": "$ 31.69",
+     "context": "…y-Friday 8-6 CST 1-800-276-6508 live spot prices: Gold Ask $ 4,071.46 $ 31.69 Silver Ask $ 53.75 $ 1.81 Platinum Ask $ 1,569.90 $ 21.85 Palladium A…"
     },
     {
-     "text": "$ 1,563.10",
-     "context": "… Gold Ask $ 4,011.02 $ -20.61 Silver Ask $ 54.65 $ -0.36 Platinum Ask $ 1,563.10 $ -11.60 Palladium Ask $ 1,068.13 $ -7.47 Oct 23, 2026 at 16:25 EDT G…"
+     "text": "$ 53.75",
+     "context": "…800-276-6508 live spot prices: Gold Ask $ 4,071.46 $ 31.69 Silver Ask $ 53.75 $ 1.81 Platinum Ask $ 1,569.90 $ 21.85 Palladium Ask $ 1,084.68 $ 35.…"
     },
     {
-     "text": "$ 1,068.13",
-     "context": "…er Ask $ 54.65 $ -0.36 Platinum Ask $ 1,563.10 $ -11.60 Palladium Ask $ 1,068.13 $ -7.47 Oct 23, 2026 at 16:25 EDT Gold Best Selling Gold 2027 New Rel…"
+     "text": "$ 1.81",
+     "context": "…6508 live spot prices: Gold Ask $ 4,071.46 $ 31.69 Silver Ask $ 53.75 $ 1.81 Platinum Ask $ 1,569.90 $ 21.85 Palladium Ask $ 1,084.68 $ 35.23 Nov …"
     },
     {
-     "text": "$20.61",
-     "context": "…oices Follow us Gold Spot Price Home Charts Gold Price $4,011.02 USD -$20.61 0.51 % As of Oct 23, 2026 at 4:25 PM EDT , the live Gold spot price f…"
+     "text": "$ 1,569.90",
+     "context": "…s: Gold Ask $ 4,071.46 $ 31.69 Silver Ask $ 53.75 $ 1.81 Platinum Ask $ 1,569.90 $ 21.85 Palladium Ask $ 1,084.68 $ 35.23 Nov 11, 2026 at 03:02 EST Go…"
     },
     {
-     "text": "$128.96",
-     "context": "… ounce of Gold in U.S. dollars (USD) is $4,011.02 , 1 gram of Gold is $128.96 and 1 kilogram of Gold is $128,957.29 . Gold spot price can fluctuate…"
+     "text": "$ 21.85",
+     "context": "… $ 4,071.46 $ 31.69 Silver Ask $ 53.75 $ 1.81 Platinum Ask $ 1,569.90 $ 21.85 Palladium Ask $ 1,084.68 $ 35.23 Nov 11, 2026 at 03:02 EST Gold Best …"
     },
     {
-     "text": "$128,957.29",
-     "context": "…D) is $4,011.02 , 1 gram of Gold is $128.96 and 1 kilogram of Gold is $128,957.29 . Gold spot price can fluctuate by the second, driven by investment s…"
+     "text": "$ 1,084.68",
+     "context": "…lver Ask $ 53.75 $ 1.81 Platinum Ask $ 1,569.90 $ 21.85 Palladium Ask $ 1,084.68 $ 35.23 Nov 11, 2026 at 03:02 EST Gold Best Selling Gold 2027 New Rel…"
     },
     {
-     "text": "$ 0.66",
-     "context": "…old Price Per Ounce $4,011.02 - $ 20.61 Gold Price Per Gram $128.96 - $ 0.66 Gold Price Per Kilo $128,957.29 - $ 662.63 Live Metal Spot Prices (24…"
+     "text": "$ 35.23",
+     "context": "…53.75 $ 1.81 Platinum Ask $ 1,569.90 $ 21.85 Palladium Ask $ 1,084.68 $ 35.23 Nov 11, 2026 at 03:02 EST Gold Best Selling Gold 2027 New Releases Go…"
     },
     {
-     "text": "$ 662.63",
-     "context": "…old Price Per Gram $128.96 - $ 0.66 Gold Price Per Kilo $128,957.29 - $ 662.63 Live Metal Spot Prices (24 Hours) Last Updated: 10/23/2026 at 4:25 PM…"
+     "text": "$130.90",
+     "context": "… ounce of Gold in U.S. dollars (USD) is $4,071.46 , 1 gram of Gold is $130.90 and 1 kilogram of Gold is $130,900.48 . Gold spot price can fluctuate…"
     },
     {
-     "text": "$4,041",
-     "context": "…+ 941.94 % Gold prices are edging higher Friday morning, trading near $4,041 per ounce, up about $9 on the day. The modest rebound comes after a d…"
+     "text": "$130,900.48",
+     "context": "…D) is $4,071.46 , 1 gram of Gold is $130.90 and 1 kilogram of Gold is $130,900.48 . Gold spot price can fluctuate by the second, driven by investment s…"
     },
     {
-     "text": "$1,000",
-     "context": "…ng on their rarity. As an example of costs, let’s assume you invested $1,000 per year for 20 years (total $20,000), a flat gold price, a 2% premiu…"
+     "text": "$ 1.02",
+     "context": "…old Price Per Ounce $4,071.46 + $ 31.69 Gold Price Per Gram $130.90 + $ 1.02 Gold Price Per Kilo $130,900.48 + $ 1,018.86 Live Metal Spot Prices (…"
     },
     {
-     "text": "$20,000",
-     "context": "… costs, let’s assume you invested $1,000 per year for 20 years (total $20,000), a flat gold price, a 2% premium on physical gold, and a 0.25% annua…"
+     "text": "$ 1,018.86",
+     "context": "…old Price Per Gram $130.90 + $ 1.02 Gold Price Per Kilo $130,900.48 + $ 1,018.86 Live Metal Spot Prices (24 Hours) Last Updated: 11/11/2026 at 3:02 AM…"
     }
    ],
    "weight_snippets": [
     {
      "text": "1 gram",
-     "context": "…d spot price for 1 ounce of Gold in U.S. dollars (USD) is $4,011.02 , 1 gram of Gold is $128.96 and 1 kilogram of Gold is $128,957.29 . Gold spot …"
+     "context": "…d spot price for 1 ounce of Gold in U.S. dollars (USD) is $4,071.46 , 1 gram of Gold is $130.90 and 1 kilogram of Gold is $130,900.48 . Gold spot …"
     },
     {
      "text": "31.1034768 grams",
@@ -6049,73 +6152,73 @@
   },
   {
    "url": "https://www.kitco.com/charts/gold",
-   "checked_utc": "2026-10-23T20:25:32Z",
+   "checked_utc": "2026-11-11T08:02:26Z",
    "http_status": 200,
    "final_url": "https://www.kitco.com/charts/gold",
-   "bytes": 119618,
+   "bytes": 133501,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 383,
+   "elapsed_ms": 353,
    "title": "Gold Price Today | Price of Gold Per Ounce | 24 Hour Spot Chart | KITCO",
-   "text_chars": 13944,
+   "text_chars": 14290,
    "soft_404": false,
    "price_snippets": [
     {
-     "text": "$3,995.50",
-     "context": "…eness VALUE (USD)* 24K Gold 99.99% Gold 999 24K · 24KT · 999.9 · 1000 $3,995.50 22K Gold 91.67% Gold 916 22K · 22KT · 917 $3,662.67 18K Gold 75.00% G…"
+     "text": "$4,057.00",
+     "context": "…eness VALUE (USD)* 24K Gold 99.99% Gold 999 24K · 24KT · 999.9 · 1000 $4,057.00 22K Gold 91.67% Gold 916 22K · 22KT · 917 $3,719.05 18K Gold 75.00% G…"
     },
     {
-     "text": "$3,662.67",
-     "context": "…KT · 999.9 · 1000 $3,995.50 22K Gold 91.67% Gold 916 22K · 22KT · 917 $3,662.67 18K Gold 75.00% Gold 750 18K · 18KT $2,996.63 14K Gold 58.33% Gold 58…"
+     "text": "$3,719.05",
+     "context": "…KT · 999.9 · 1000 $4,057.00 22K Gold 91.67% Gold 916 22K · 22KT · 917 $3,719.05 18K Gold 75.00% Gold 750 18K · 18KT $3,042.75 14K Gold 58.33% Gold 58…"
     },
     {
-     "text": "$2,996.63",
-     "context": "…ld 916 22K · 22KT · 917 $3,662.67 18K Gold 75.00% Gold 750 18K · 18KT $2,996.63 14K Gold 58.33% Gold 585 14K · 14KT · 583 $2,330.58 10K Gold 41.67% G…"
+     "text": "$3,042.75",
+     "context": "…ld 916 22K · 22KT · 917 $3,719.05 18K Gold 75.00% Gold 750 18K · 18KT $3,042.75 14K Gold 58.33% Gold 585 14K · 14KT · 583 $2,366.45 10K Gold 41.67% G…"
     },
     {
-     "text": "$2,330.58",
-     "context": "…ld 750 18K · 18KT $2,996.63 14K Gold 58.33% Gold 585 14K · 14KT · 583 $2,330.58 10K Gold 41.67% Gold 417 10K · 10KT · 416 $1,664.92 % $0.00 Enter cus…"
+     "text": "$2,366.45",
+     "context": "…ld 750 18K · 18KT $3,042.75 14K Gold 58.33% Gold 585 14K · 14KT · 583 $2,366.45 10K Gold 41.67% Gold 417 10K · 10KT · 416 $1,690.55 % $0.00 Enter cus…"
     },
     {
-     "text": "$1,664.92",
-     "context": "… 14K · 14KT · 583 $2,330.58 10K Gold 41.67% Gold 417 10K · 10KT · 416 $1,664.92 % $0.00 Enter custom purity. Need more options? Try our expanded calc…"
+     "text": "$1,690.55",
+     "context": "… 14K · 14KT · 583 $2,366.45 10K Gold 41.67% Gold 417 10K · 10KT · 416 $1,690.55 % $0.00 Enter custom purity. Need more options? Try our expanded calc…"
     },
     {
      "text": "$0.00",
-     "context": "…· 583 $2,330.58 10K Gold 41.67% Gold 417 10K · 10KT · 416 $1,664.92 % $0.00 Enter custom purity. Need more options? Try our expanded calculator .…"
+     "context": "…· 583 $2,366.45 10K Gold 41.67% Gold 417 10K · 10KT · 416 $1,690.55 % $0.00 Enter custom purity. Need more options? Try our expanded calculator .…"
     },
     {
-     "text": "$27.80",
-     "context": "… $3,995.50 per troy ounce as of October 23, 2026, 4:24 p.m. ET , down $27.80 today. Kitco provides the live gold price in U.S. dollars from the gl…"
+     "text": "$25.20",
+     "context": "…s $4,057.00 per troy ounce as of November 11, 2026, 3:01 a.m. ET , up $25.20 today. Kitco provides the live gold price in U.S. dollars from the gl…"
     },
     {
-     "text": "$3,975.10",
-     "context": "…ld Price (USD) Change Low High Gold price per ounce $3,995.50 -$27.80 $3,975.10 $4,040.20 Gold price per gram $128.46 -$0.89 $127.80 $129.90 Gold pri…"
+     "text": "$4,025.80",
+     "context": "…ld Price (USD) Change Low High Gold price per ounce $4,057.00 +$25.20 $4,025.80 $4,067.90 Gold price per gram $130.44 +$0.81 $129.43 $130.79 Gold pri…"
     },
     {
-     "text": "$4,040.20",
-     "context": "…USD) Change Low High Gold price per ounce $3,995.50 -$27.80 $3,975.10 $4,040.20 Gold price per gram $128.46 -$0.89 $127.80 $129.90 Gold price per 10 …"
+     "text": "$4,067.90",
+     "context": "…USD) Change Low High Gold price per ounce $4,057.00 +$25.20 $4,025.80 $4,067.90 Gold price per gram $130.44 +$0.81 $129.43 $130.79 Gold price per 10 …"
     },
     {
-     "text": "$128.46",
-     "context": "…e per ounce $3,995.50 -$27.80 $3,975.10 $4,040.20 Gold price per gram $128.46 -$0.89 $127.80 $129.90 Gold price per 10 grams $1,284.58 -$8.94 $1,27…"
+     "text": "$130.44",
+     "context": "…e per ounce $4,057.00 +$25.20 $4,025.80 $4,067.90 Gold price per gram $130.44 +$0.81 $129.43 $130.79 Gold price per 10 grams $1,304.36 +$8.10 $1,29…"
     },
     {
-     "text": "$0.89",
-     "context": "…ce $3,995.50 -$27.80 $3,975.10 $4,040.20 Gold price per gram $128.46 -$0.89 $127.80 $129.90 Gold price per 10 grams $1,284.58 -$8.94 $1,278.02 $1…"
+     "text": "$0.81",
+     "context": "…ce $4,057.00 +$25.20 $4,025.80 $4,067.90 Gold price per gram $130.44 +$0.81 $129.43 $130.79 Gold price per 10 grams $1,304.36 +$8.10 $1,294.32 $1…"
     },
     {
-     "text": "$127.80",
-     "context": "…995.50 -$27.80 $3,975.10 $4,040.20 Gold price per gram $128.46 -$0.89 $127.80 $129.90 Gold price per 10 grams $1,284.58 -$8.94 $1,278.02 $1,298.95 …"
+     "text": "$129.43",
+     "context": "…057.00 +$25.20 $4,025.80 $4,067.90 Gold price per gram $130.44 +$0.81 $129.43 $130.79 Gold price per 10 grams $1,304.36 +$8.10 $1,294.32 $1,307.86 …"
     }
    ],
    "weight_snippets": [
     {
-     "text": "27.80 gram",
-     "context": "…4 NY Time Bid 3,995.50 -27.80 ( -0.69% ) Ask 3,997.50 ounce 3,995.50 -27.80 gram 128.46 -0.89 Kilo 128,460.28 -893.79 pennyweight 199.78 -1.39 tola 1,…"
+     "text": "25.20 gram",
+     "context": "…Y Time Bid 4,057.00 + 25.20 ( + 0.63% ) Ask 4,059.00 ounce 4,057.00 + 25.20 gram 130.44 + 0.81 Kilo 130,437.58 + 810.20 pennyweight 202.85 + 1.26 tola…"
     },
     {
      "text": "10 grams",
-     "context": "….20 Gold price per gram $128.46 -$0.89 $127.80 $129.90 Gold price per 10 grams $1,284.58 -$8.94 $1,278.02 $1,298.95 Gold price per kilo $128,458.31 …"
+     "context": "….90 Gold price per gram $130.44 +$0.81 $129.43 $130.79 Gold price per 10 grams $1,304.36 +$8.10 $1,294.32 $1,307.86 Gold price per kilo $130,435.58 …"
     },
     {
      "text": "37.799 g",
@@ -6148,14 +6251,14 @@
   },
   {
    "url": "https://www.lbma.org.uk/prices-and-data/precious-metal-prices",
-   "checked_utc": "2026-10-23T20:25:33Z",
+   "checked_utc": "2026-11-11T08:02:27Z",
    "http_status": 200,
    "final_url": "https://www.lbma.org.uk/prices-and-data/lbma-precious-metal-prices",
-   "bytes": 274147,
+   "bytes": 279537,
    "content_type": "text/html",
-   "elapsed_ms": 1853,
+   "elapsed_ms": 885,
    "title": "LBMA Precious Metal Prices | LBMA",
-   "text_chars": 14200,
+   "text_chars": 14881,
    "soft_404": false,
    "price_snippets": [
     {
@@ -6176,14 +6279,14 @@
   },
   {
    "url": "https://www.gold.org/goldhub/data/gold-prices",
-   "checked_utc": "2026-10-23T20:25:35Z",
+   "checked_utc": "2026-11-11T08:02:28Z",
    "http_status": 200,
    "final_url": "https://www.gold.org/goldhub/data/gold-prices",
-   "bytes": 73202,
+   "bytes": 73395,
    "content_type": "text/html; charset=UTF-8",
-   "elapsed_ms": 242,
+   "elapsed_ms": 47,
    "title": "Gold Spot Prices & Market History | World Gold Council",
-   "text_chars": 4038,
+   "text_chars": 4041,
    "soft_404": false,
    "price_snippets": [],
    "weight_snippets": [],
@@ -6199,14 +6302,14 @@
   },
   {
    "url": "https://www.allurez.com/pages/return-policy",
-   "checked_utc": "2026-10-23T20:25:36Z",
+   "checked_utc": "2026-11-11T08:02:29Z",
    "http_status": 200,
    "final_url": "https://www.allurez.com/pages/return-policy",
-   "bytes": 785115,
+   "bytes": 817290,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 460,
+   "elapsed_ms": 327,
    "title": "Return Policy",
-   "text_chars": 21631,
+   "text_chars": 22219,
    "soft_404": false,
    "price_snippets": [
     {
@@ -6230,12 +6333,12 @@
   },
   {
    "url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
-   "checked_utc": "2026-10-23T20:25:37Z",
+   "checked_utc": "2026-11-11T08:02:29Z",
    "http_status": 200,
    "final_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
    "bytes": 33327,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 83,
+   "elapsed_ms": 60,
    "title": "Anjolee",
    "text_chars": 7,
    "soft_404": false,
@@ -6253,19 +6356,19 @@
   },
   {
    "url": "https://www.bluenile.com/policies/returns",
-   "checked_utc": "2026-10-23T20:25:37Z",
+   "checked_utc": "2026-11-11T08:02:30Z",
    "http_status": 200,
    "final_url": "https://www.bluenile.com/policies/returns",
-   "bytes": 311991,
+   "bytes": 318599,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 742,
+   "elapsed_ms": 946,
    "title": "Return Policy | Blue Nile",
-   "text_chars": 15021,
+   "text_chars": 16172,
    "soft_404": false,
    "price_snippets": [
     {
      "text": "$1000",
-     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Clear The Vault OCCASION Fall Edit Wedding Anniver…"
+     "context": "…Gifts for Him Gifts with Meaning Personal Milestones Luxe Gifts Under $1000 SALE Today's Deals Holiday Gift Guide NEW Clear The Vault OCCASION Ho…"
     }
    ],
    "weight_snippets": [],
@@ -6281,11 +6384,11 @@
   },
   {
    "url": "https://www.brilliantearth.com/30-Day-Returns/",
-   "checked_utc": "2026-10-23T20:25:38Z",
+   "checked_utc": "2026-11-11T08:02:31Z",
    "http_status": 403,
    "final_url": "https://www.brilliantearth.com/30-Day-Returns/",
    "bytes": 200000,
-   "elapsed_ms": 82,
+   "elapsed_ms": 34,
    "error": "HTTPError 403",
    "title": "Brilliant Earth - Verifying",
    "text_chars": 199692,
@@ -6329,11 +6432,11 @@
   },
   {
    "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
-   "checked_utc": "2026-10-23T20:25:39Z",
+   "checked_utc": "2026-11-11T08:02:32Z",
    "http_status": 403,
    "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
    "bytes": 200000,
-   "elapsed_ms": 82,
+   "elapsed_ms": 34,
    "error": "HTTPError 403",
    "title": "Brilliant Earth - Verifying",
    "text_chars": 199692,
@@ -6377,11 +6480,11 @@
   },
   {
    "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
-   "checked_utc": "2026-10-23T20:25:39Z",
+   "checked_utc": "2026-11-11T08:02:32Z",
    "http_status": 403,
    "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
    "bytes": 200000,
-   "elapsed_ms": 72,
+   "elapsed_ms": 41,
    "error": "HTTPError 403",
    "title": "Brilliant Earth - Verifying",
    "text_chars": 199692,
@@ -6425,11 +6528,11 @@
   },
   {
    "url": "https://www.brilliantearth.com/30-Day-Returns/",
-   "checked_utc": "2026-10-23T20:25:40Z",
+   "checked_utc": "2026-11-11T08:02:32Z",
    "http_status": 403,
    "final_url": "https://www.brilliantearth.com/30-Day-Returns/",
    "bytes": 200000,
-   "elapsed_ms": 94,
+   "elapsed_ms": 20,
    "error": "HTTPError 403",
    "title": "Brilliant Earth - Verifying",
    "text_chars": 199692,
@@ -6473,14 +6576,14 @@
   },
   {
    "url": "https://www.catbirdnyc.com/returns",
-   "checked_utc": "2026-10-23T20:25:40Z",
+   "checked_utc": "2026-11-11T08:02:33Z",
    "http_status": 200,
    "final_url": "https://www.catbirdnyc.com/returns",
-   "bytes": 489113,
+   "bytes": 483496,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 896,
+   "elapsed_ms": 30904,
    "title": "Returns",
-   "text_chars": 10823,
+   "text_chars": 10755,
    "soft_404": false,
    "price_snippets": [],
    "weight_snippets": [],
@@ -6501,14 +6604,14 @@
   },
   {
    "url": "https://mejuri.com/company/returns-terms",
-   "checked_utc": "2026-10-23T20:25:42Z",
+   "checked_utc": "2026-11-11T08:03:04Z",
    "http_status": 200,
    "final_url": "https://mejuri.com/company/returns-terms",
-   "bytes": 818668,
+   "bytes": 877628,
    "content_type": "text/html",
-   "elapsed_ms": 880,
+   "elapsed_ms": 492,
    "title": "Returns Terms & Conditions | Mejuri | Mejuri",
-   "text_chars": 5381,
+   "text_chars": 5405,
    "soft_404": false,
    "price_snippets": [],
    "weight_snippets": [],
@@ -6524,23 +6627,24 @@
   },
   {
    "url": "https://mene.com/customer-care/en-US/articles/returns-319505",
-   "checked_utc": "2026-10-23T20:25:43Z",
+   "checked_utc": "2026-11-11T08:03:05Z",
    "http_status": 200,
-   "final_url": "https://mene.com/customer-care?hcUrl=en-US%2Farticles%2Freturns-319505",
-   "bytes": 237077,
+   "final_url": "https://mene.com/customer-care/categories/returns-319505",
+   "bytes": 227628,
    "content_type": "text/html",
-   "elapsed_ms": 210,
-   "title": "Customer Care | Menē",
-   "text_chars": 840,
+   "elapsed_ms": 141,
+   "title": "Returns | Menē",
+   "text_chars": 3216,
    "soft_404": false,
    "price_snippets": [],
    "weight_snippets": [],
-   "og_title": "Customer Care | Menē",
-   "canonical": "https://mene.com/customer-care",
+   "og_title": "Returns | Menē",
+   "canonical": "https://mene.com/customer-care/categories/returns-319505",
    "structured_prices": [],
    "offer_signals": {},
    "karat_mentions": [
-    "24K"
+    "24K",
+    "24k"
    ],
    "hallmark_word_on_page": false,
    "key": "mene-returns",
@@ -6549,16 +6653,28 @@
   },
   {
    "url": "https://www.ross-simons.com/pages/returns-exchanges",
-   "checked_utc": "2026-10-23T20:25:44Z",
+   "checked_utc": "2026-11-11T08:03:06Z",
    "http_status": 200,
    "final_url": "https://www.ross-simons.com/pages/returns-exchanges",
-   "bytes": 770430,
+   "bytes": 812347,
    "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 1176,
+   "elapsed_ms": 798,
    "title": "Returns & Exchanges",
-   "text_chars": 21530,
+   "text_chars": 22758,
    "soft_404": false,
    "price_snippets": [
+    {
+     "text": "$1000",
+     "context": "… Price Gifts Under $100 Gifts Under $250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By St…"
+    },
+    {
+     "text": "$2500",
+     "context": "… $100 Gifts Under $250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By Style The Minimalist…"
+    },
+    {
+     "text": "$5000",
+     "context": "…$250 Gifts Under $500 Gifts Under $1000 Gifts Under $2500 Gifts Under $5000 The Vault Gifts $5000+ Shop By Style The Minimalist The Maximalist Th…"
+    },
     {
      "text": "$4.95",
      "context": "…t if required, and confirm. Please note: we may include a flat fee of $4.95 for return shipping and handling. Need Help? Our Customer Care team i…"
@@ -6583,137 +6699,41 @@
    "classification": "OK"
   },
   {
-   "url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
-   "checked_utc": "2026-10-23T20:25:45Z",
+   "url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
+   "checked_utc": "2026-11-11T08:03:07Z",
    "http_status": 200,
-   "final_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
-   "bytes": 465085,
+   "final_url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
+   "bytes": 217946,
    "content_type": "text/html; charset=UTF-8",
-   "elapsed_ms": 636,
-   "title": "18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band | SARRAF.COM",
-   "text_chars": 41023,
+   "elapsed_ms": 464,
+   "title": "Sarraf 30 Day Returns and Exchange Policy | Sarraf.com",
+   "text_chars": 14612,
    "soft_404": false,
    "price_snippets": [
     {
-     "text": "$3,388.00",
-     "context": "…d 5mm High Polished Traditional Domed Wedding Band Sarraf.com MSRP: US$3,388.00 Was: US$1,019.00 Now: US$871.00 -15% OFF *Discount code is applied au…"
-    },
-    {
-     "text": "$1,019.00",
-     "context": "…ed Traditional Domed Wedding Band Sarraf.com MSRP: US$3,388.00 Was: US$1,019.00 Now: US$871.00 -15% OFF *Discount code is applied automatically (You …"
-    },
-    {
-     "text": "$871.00",
-     "context": "…med Wedding Band Sarraf.com MSRP: US$3,388.00 Was: US$1,019.00 Now: US$871.00 -15% OFF *Discount code is applied automatically (You save US$2,517.0…"
-    },
-    {
-     "text": "$2,517.00",
-     "context": "…S$871.00 -15% OFF *Discount code is applied automatically (You save US$2,517.00 ) (8 reviews) Write a Review Write a Review Close &#215; Sarraf.com 1…"
-    },
-    {
      "text": "$25.00",
-     "context": "…type Corsiva Old English Bodonibt Bold Bradley Hand Engraving Inside ($25.00): Optional Engraving Amount Inside: Optional $25 Current Stock: Quant…"
+     "context": "…d where possible (with the exception of special orders); however, the $25.00 engraving fee or $50.00 finsh charges are non-refundable. Returning Y…"
     },
     {
-     "text": "$100.00",
-     "context": "…r repair or replacement are subject to a Shipping and handling fee of $100.00 or 10% of purchase price which ever amount is greater. In the event t…"
-    },
-    {
-     "text": "$2,531.00",
-     "context": "…Gold 5mm High Polished Regular Traditional Domed Wedding Band MSRP: US$2,531.00 Was: US$761.00 Now: US$651.00 -14% OFF *Discount code is applied auto…"
-    },
-    {
-     "text": "$761.00",
-     "context": "…ished Regular Traditional Domed Wedding Band MSRP: US$2,531.00 Was: US$761.00 Now: US$651.00 -14% OFF *Discount code is applied automatically Quick…"
-    },
-    {
-     "text": "$651.00",
-     "context": "…raditional Domed Wedding Band MSRP: US$2,531.00 Was: US$761.00 Now: US$651.00 -14% OFF *Discount code is applied automatically Quick view Choose Op…"
-    },
-    {
-     "text": "$3,245.00",
-     "context": "…k White Gold 5mm High Polished Traditional Domed Wedding Band MSRP: US$3,245.00 Was: US$975.00 Now: US$834.00 -14% OFF *Discount code is applied auto…"
-    },
-    {
-     "text": "$975.00",
-     "context": "…High Polished Traditional Domed Wedding Band MSRP: US$3,245.00 Was: US$975.00 Now: US$834.00 -14% OFF *Discount code is applied automatically Quick…"
-    },
-    {
-     "text": "$834.00",
-     "context": "…raditional Domed Wedding Band MSRP: US$3,245.00 Was: US$975.00 Now: US$834.00 -14% OFF *Discount code is applied automatically Quick view Choose Op…"
+     "text": "$50.00",
+     "context": "…he exception of special orders); however, the $25.00 engraving fee or $50.00 finsh charges are non-refundable. Returning Your Order To return a je…"
     }
    ],
-   "weight_snippets": [
-    {
-     "text": "6.70 grams",
-     "context": "…ptions available Material : 18K Solid Gold Approximate Metal Weight : 6.70 grams Availability: Usually Ships within One Business Day Size: (Required) …"
-    },
-    {
-     "text": "2 G",
-     "context": "… 4 0.554 14.07 1.74 44.2 3 1/4 F 1/2 5 5.25 0.562 14.27 1.77 44.8 3 1/2 G 0.57 14.48 1.79 45.5 3 3/4 G 1/2 6 6.5 0.578 14.68 1.82 46.1 4 H 7 0.…"
-    },
-    {
-     "text": "4 G",
-     "context": "…4 F 1/2 5 5.25 0.562 14.27 1.77 44.8 3 1/2 G 0.57 14.48 1.79 45.5 3 3/4 G 1/2 6 6.5 0.578 14.68 1.82 46.1 4 H 7 0.586 14.88 1.84 46.8 4 1/4 H 1…"
-    }
-   ],
-   "og_title": "18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band",
-   "canonical": "https://www.sarraf.com/products/18k-yellow-gold-5mm-high-polished-traditional-domed-wedding-band.html",
-   "structured_prices": [
-    {
-     "source": "json-ld",
-     "type": "Offer",
-     "price": "871",
-     "currency": "USD",
-     "name": "",
-     "sku": "",
-     "low": "",
-     "high": ""
-    },
-    {
-     "source": "meta:product:price:amount",
-     "type": "meta",
-     "price": "871",
-     "currency": "USD",
-     "name": "18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band",
-     "sku": "",
-     "low": "",
-     "high": ""
-    }
-   ],
-   "offer_signals": {
-    "availability": [
-     "https://schema.org/InStock"
-    ],
-    "priceCurrency": [
-     "USD"
-    ],
-    "priceValidUntil": [
-     "2027-10-23"
-    ],
-    "itemCondition": [
-     "https://schema.org/NewCondition"
-    ],
-    "og:availability": [
-     "instock"
-    ],
-    "product:price:currency": [
-     "USD"
-    ]
-   },
+   "weight_snippets": [],
+   "og_title": "",
+   "canonical": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
+   "structured_prices": [],
+   "offer_signals": {},
    "karat_mentions": [
     "10K",
     "10k",
-    "14 karat",
     "14K",
     "14k",
-    "18 karat",
     "18K",
-    "18k"
+    "18k",
+    "22K",
+    "22k"
    ],
-   "phrase_counts": {
-    "solid gold": 1
-   },
    "hallmark_word_on_page": false,
    "key": "sarraf-returns",
    "kind": "source",
@@ -6721,37 +6741,61 @@
   },
   {
    "url": "https://www.vrai.com/returns-exchanges",
-   "checked_utc": "2026-10-23T20:25:46Z",
-   "http_status": 200,
+   "checked_utc": "2026-11-11T08:03:08Z",
+   "http_status": 429,
    "final_url": "https://www.vrai.com/returns-exchanges",
-   "bytes": 473598,
-   "content_type": "text/html; charset=utf-8",
-   "elapsed_ms": 223,
-   "title": "Returns & Exchanges | VRAI Jewelry & Engagement Rings",
-   "text_chars": 7201,
+   "bytes": 24749,
+   "elapsed_ms": 36,
+   "error": "HTTPError 429",
+   "title": "Vercel Security Checkpoint",
+   "text_chars": 167,
    "soft_404": false,
-   "price_snippets": [
-    {
-     "text": "$3,000",
-     "context": "…gement Rings $250 Towards Your Band With engagement ring purchases of $3,000+. Wedding bands Eternity rings Women's wedding bands Men's wedding ba…"
-    },
-    {
-     "text": "$1000",
-     "context": "…vey to others. Contact a VRAI Diamond Expert GIFTS Most popular Under $1000 Ready-to-ship Gift cards VRAI MOMENTS Anniversary Birthday Bridesmaid…"
-    },
-    {
-     "text": "$15,000",
-     "context": "…RNS Shine and shop with confidence RETURN POLICY Eligible items below $15,000 can be returned within 30 days for full credit to store or refund min…"
-    }
-   ],
+   "price_snippets": [],
    "weight_snippets": [],
-   "og_title": "Returns &amp; Exchanges | VRAI Jewelry &amp; Engagement Rings",
-   "canonical": "https://www.vrai.com/returns-exchanges",
+   "og_title": "",
+   "canonical": "",
    "structured_prices": [],
    "offer_signals": {},
    "karat_mentions": [],
    "hallmark_word_on_page": false,
    "key": "vrai-returns",
+   "kind": "source",
+   "classification": "REFUSED_429"
+  },
+  {
+   "url": "https://www.sarraf.com/lifetime-guarantee/",
+   "checked_utc": "2026-11-11T08:03:08Z",
+   "http_status": 200,
+   "final_url": "https://www.sarraf.com/lifetime-guarantee/",
+   "bytes": 222359,
+   "content_type": "text/html; charset=UTF-8",
+   "elapsed_ms": 494,
+   "title": "Lifetime Guarantee | Sarraf.com",
+   "text_chars": 7672,
+   "soft_404": false,
+   "price_snippets": [
+    {
+     "text": "$100.00",
+     "context": "…or repair or replacement is subject to a Shipping and handling fee of $100.00 or 10% of the current price, whichever amount is greater. In the even…"
+    }
+   ],
+   "weight_snippets": [],
+   "og_title": "",
+   "canonical": "https://www.sarraf.com/lifetime-guarantee/",
+   "structured_prices": [],
+   "offer_signals": {},
+   "karat_mentions": [
+    "10K",
+    "10k",
+    "14K",
+    "14k",
+    "18K",
+    "18k",
+    "22K",
+    "22k"
+   ],
+   "hallmark_word_on_page": false,
+   "key": "sarraf-warranty",
    "kind": "source",
    "classification": "OK"
   }
