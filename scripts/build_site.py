@@ -501,7 +501,7 @@ def main() -> None:
     {badge('source link on every row', 'ok')}
     {badge(f'{flags_total} flags published', 'warn')}
     {badge('spot benchmark dated', 'info')}
-    {badge('full re-verification pass ' + esc(reverif), 'ok')}
+    {badge('all rows re-opened 2026-11-11 · last full hand re-read ' + esc(reverif), 'ok')}
   </div>
 </section>
 {kpis}

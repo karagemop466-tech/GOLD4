@@ -1,6 +1,6 @@
 === Gate 1 — Canonical dataset integrity & derived-math recompute ===
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-11-11T08:16:05+00:00
+run_utc: 2026-11-11T08:18:41+00:00
 dataset rows: 64 | sellers: 10 | sources: 32
 spot benchmark: $4,059.49/oz (10 November, 2026) = $130.5156/g
 
@@ -153,7 +153,7 @@ test_review_has_exactly_all_rows_and_blank_current_prices (__main__.AssuranceTes
 test_unreachable_never_confirms (__main__.AssuranceTests.test_unreachable_never_confirms) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 0.003s
+Ran 8 tests in 0.004s
 
 OK
 exit=0

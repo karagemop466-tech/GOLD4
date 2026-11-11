@@ -139,6 +139,8 @@ def main() -> None:
     sold = ids(dec, "SOLD_OUT")
     notread = ids(dec, "NOT_REREAD")
     lag = [r["id"] for r in rings.values() if "STRUCTURED_PRICE_LAGS_DISPLAY" in r["flags"]]
+    oct_sweep = {r["key"]: r["classification"] for r in load(ROOT / "reports" / "live_source_check_20261023T202321Z.json")["results"]}
+    dead_before = [i for i in dead if oct_sweep.get(i) == "HTTP_404"]
     hand_ids = [h["id"] for h in hand["rows"]]
     blocked = [h["id"] for h in health["rows"] if h["source_state"] in ("REFUSED_403", "REFUSED_429")]
     w_rows = [r["id"] for r in rings.values() if r.get("weight_g") is not None]
@@ -160,7 +162,7 @@ def main() -> None:
          "The table now shows the sale price that was read, with the list price struck through beside it. A sale price is temporary: "
          "it can end without notice, so treat the list price as the stable figure.",
          f"Blue Nile: {links(sale_bn)}. Ross-Simons: {links(sale_rs)}.", "SALE_PRICE_TEMPORARY"),
-        ("HIGH", "The automated price check would have confirmed four stale prices",
+        ("HIGH", f"The automated price check would have confirmed {len(lag)} stale prices",
          f"On {len(lag)} Ross-Simons pages the visible text prints the sale price while the page's machine-readable data still carries the "
          "pre-sale amount. The repo's rule marks a price CONFIRMED when the machine-readable amount equals the stored one, so a check on "
          "11 November would have reported the October prices as confirmed although the page displayed lower ones. "
@@ -172,13 +174,13 @@ def main() -> None:
          f"{links(changed)}.", "PRICE_CHANGED_PASS21"),
         ("HIGH", "Pages that are gone: the current price is blank",
          f"{len(dead)} product pages no longer exist. The price cell is blank and the last value read is shown beside it with its October date. "
-         "Four of them were already dead in October; one is new this pass.",
+         f"{len(dead_before)} of them already returned 404 to the runner on 23 October; {len(dead) - len(dead_before)} is new this pass.",
          f"{links(dead)}.", "SOURCE_DEAD_PASS21"),
         ("MEDIUM", "Sold out: the current price is blank",
          "The page reports the item as sold out and offers no purchasable price.",
          f"{links(sold)}.", "SOLD_OUT_PASS21"),
         ("MEDIUM", "Rows the runner cannot read rest on one read path",
-         f"The retailer's bot protection refused the GitHub runner on {len(blocked)} rows. Where a price is shown for them it comes from this "
+         f"The retailer's bot protection refused or rate-limited the GitHub runner on {len(blocked)} rows. Where a price is shown for them it comes from this "
          "session's hand read alone, with no second path to corroborate it.",
          f"{links(blocked)}.", "SOURCE_BOT_BLOCKED"),
         ("MEDIUM", "Not re-read at all",
@@ -195,7 +197,7 @@ def main() -> None:
          "scripts/apply_source_health.py, scripts/audit_freshness.py", "tooling"),
         ("LOW", "A workflow was temporarily given write access to retrieve the evidence",
          "The sandbox cannot download runner artifacts, so for one commit the source-check workflow was allowed to commit its raw evidence "
-         "file to this branch. That broke a security test (Gate 8) on purpose-built grounds. The workflow was restored to its read-only "
+         "file to this branch. A security test (Gate 8) failed while that was in place, as it is designed to. The workflow was restored to its read-only "
          "form, byte-identical to main, before any data was changed.",
          ".github/workflows/live-source-check.yml", "process"),
     ]

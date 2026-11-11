@@ -390,17 +390,51 @@
    "recommendation": "Re-run the hallucination auditor and every gate after any edit (python3 scripts/audit_hallucinations.py && python3 scripts/audit.py). When a page prints a number that contradicts a stored value, publish both and flag the row — never overwrite. Check availability before recording a price on a sold-out item.",
    "outcome": "Published via PR to main and merged on 2026-10-23; the merged result is recorded in COORDINATION.md",
    "note": "Renumbered from Pass 17 to Pass 18: session arena/0029d936-gold4 published and merged a Pass 17 while this pass was running. Their pass number stands; no other session's entry was renumbered."
+  },
+  {
+   "pass": "Pass 21 — re-verification after 19 days: runner sweep of all rows + hand reads, benchmark refresh, sale prices, dead pages (session arena/4fe4a9c3-gold4)",
+   "when_utc": "2026-11-11T08:00Z–08:50Z",
+   "scope": "The stored prices and benchmark were 19–20 days old. Every ring URL and registered source was re-opened by a GitHub runner, 16 rows and the gold benchmark were hand-read in a browser-rendered reader, and each row was reconciled against both.",
+   "checked": [
+    "64/64 ring URLs + 32/32 registered sources re-opened by a GitHub runner at 2026-11-11T08:03:09Z (evidence: reports/live_source_check_20261111T080309Z.json). Row states: OK 50, REFUSED_403 7, HTTP_404 4, REFUSED_429 2, EMPTY_OR_JS_SHELL 1",
+    "16 rows hand-read with verbatim page strings recorded (reviews/pass21/hand_reads.json): AL-01, SR-03, RS-01, RS-02, RS-03, BE-01, BE-02, AN-01, VR-01, RS-04, BE-05, BE-06, BE-07, BE-03, BE-04, BN-04",
+    "Gold benchmark re-read: World Gold Council panel $4,059.49/oz, 'Data as of 10 November, 2026' (+1.58% against the $3,996.31/oz reading of 23 October). Cross-checks read by the runner: Kitco 24K value per oz $4,057.00; BullionVault current gold price per oz $4,059.81; JM Bullion gold ASK (includes a premium) $4,071.46",
+    "Every derived gold value recomputed at $130.515634/g; all 12 gate commands re-run: 12 pass"
+   ],
+   "found": [
+    "27 prices unchanged; 25 are now temporary sale prices (Blue Nile 20, Ross-Simons 5)",
+    "Prices changed with no sale label: MN-01 $1,465 → $1,455; MN-02 $1,730 → $1,719; BE-05 $1,190 → $990; BE-06 $1,390 → $1,190",
+    "Pages gone (price now blank, last value kept): BN-09, BN-10, BN-11, BN-12, BE-04",
+    "Sold out (price blank): BN-25, BN-26",
+    "On 5 Ross-Simons pages the machine-readable price still carries the pre-sale amount while the page displays the sale price; the structured-data CONFIRMED rule would have confirmed the stale October prices",
+    "Tooling: the pass label 'Pass 15' was hard-coded in scripts/apply_source_health.py and scripts/audit_freshness.py; both fixed"
+   ],
+   "flags_added": [
+    "SALE_PRICE_TEMPORARY",
+    "PRICE_CHANGED_PASS21",
+    "SOURCE_DEAD_PASS21",
+    "SOLD_OUT_PASS21",
+    "PRICE_NOT_REREAD_PASS21",
+    "STRUCTURED_PRICE_LAGS_DISPLAY"
+   ],
+   "not_verified_this_pass": [
+    "48 of 64 rows were not hand-read; their only evidence dated 2026-11-11 is the runner fetch",
+    "Not re-read at all: VR-02",
+    "Gram weights re-seen for 15 of 17 rows; not re-seen: AN-01, VR-02",
+    "Return-policy, warranty, law and guidance text: reachability checked only, wording not re-read",
+    "No XRF or assay result, no hallmark, no independently verified seller reputation for any row"
+   ],
+   "result": "12/12 gate commands pass on the final tree",
+   "recommendation": "Look for hallucinations after every review: open rows at random, compare each number and its date with the official page. Re-read every price before buying; sale prices expire.",
+   "outcome": "29 prices updated with history kept, 7 rows blank, 327 flag instances published.",
+   "note": "Values were copied from the two evidence files by scripts/pass21_apply.py; none was typed by hand."
   }
  ],
  "not_reverified_this_pass": [
-  "Machine-read only: Pass 17's per-row evidence is the pages' own structured data (schema.org / price meta), read by a GitHub runner at 2026-10-23T20:19:32Z. No human re-read of a product page was performed this pass.",
-  "45 of 62 priced rows: the page's structured data printed exactly the stored amount again. That confirms the page still prints the number; it does not re-confirm the ring is in stock or that the weight is unchanged.",
-  "VR-01, MN-01, MN-02, MJ-06: the page prints a different amount (variant/configuration effects). Both numbers are published and the rows stay flagged — not resolved.",
-  "BN-09, BN-10, BN-11, BN-12, RS-05: source URLs return HTTP 404. Their stored values remain the 2026-10-22 readings, flagged SOURCE_URL_DEAD.",
-  "BE-05, BE-06, BE-07 and 4 Brilliant Earth policy pages: refused automated checks with HTTP 403. No statement about those prices is possible.",
-  "AN-01 (Anjolee): answers 200 but is a JavaScript shell with no product text, so its price is not machine-readable.",
-  "BN-26: page states SoldOut, so its price stays deliberately blank even though an 858 USD meta is present.",
-  "Hallmarks and physical purity: not published on any page and not verifiable without the ring in hand.",
-  "Gold benchmark: a dated reading (USD 3,996.31/oz, 2026-10-23T20:23Z), not a live feed. Re-read the source before relying on it."
+  "48 of 64 rows were not hand-read; their only evidence dated 2026-11-11 is the runner fetch",
+  "Not re-read at all: VR-02",
+  "Gram weights re-seen for 15 of 17 rows; not re-seen: AN-01, VR-02",
+  "Return-policy, warranty, law and guidance text: reachability checked only, wording not re-read",
+  "No XRF or assay result, no hallmark, no independently verified seller reputation for any row"
  ]
 }
