@@ -722,6 +722,85 @@ Claims were 1 minute old when read, so **no takeover was performed** under the 6
 
 Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= published on the Flagged for Review page, does not block).
 
+<!-- BEGIN session arena/f0dbdb3e-gold4 (placed inside the Task board section on purpose: every other live 2026-11-11 session edits the top or the end of this file, so this position merges without a conflict) -->
+
+### Session `arena/f0dbdb3e-gold4` — seller due-diligence register: reputation, business identity, payment protection, hallmark / maker's-mark disclosure (claimed 2026-11-11T08:03Z · work finished 2026-11-11T08:40Z)
+
+**Claim written and pushed before any file in this scope was created.** Session ID `f0dbdb3e`; Arena pins this session to branch `arena/f0dbdb3e-gold4` (the documented deviation from `session-<id>/<task>`; no other branch was created or pushed).
+
+**What was read before claiming (2026-11-11T07:59–08:03Z, sandbox clock; the claim commit was pushed at 08:03:47Z — the first draft of this line said 08:08Z, which was ahead of the clock and was corrected in the next commit).** The whole board; `git fetch` of every remote head; `gh pr list`. Live sessions at that moment: `4fe4a9c3` (Pass 21 tasks 53–57, draft PR #59), `a2f26a30` (evidence freshness, fetch security, final integration), `91415e29` (Pass 21 spot-check, PRs #60/#61), `d5947c03` (benchmark refresh), `4dc3210a` (64-row re-verification) and `91e9aba0` (seller **policy** layer, legal sources, derivation audit; PRs #63/#64). Two more claimed afterwards and were re-checked before every push: `f5d3210d` (on-arrival assay and stone-mass audit) and `2fa1c987` (non-canonical surfaces, prose scan, dead links). **None of their tasks was started, duplicated or touched here.**
+
+**The gap this session took — unclaimed by every session above and blank since 22 October.** The buying checklist requires *seller reputation (independent reviews and complaints, real contact information)*, *payment by credit card / no irreversible methods* and *a karat stamp plus a maker's mark*. The repository recorded none of them: `data/sellers.json` carries `"reputation_independently_verified": null`, `"hallmark_published": false` and the flag `REPUTATION_NOT_VERIFIED` on **10 of 10 sellers**, and `reports/readiness-8a2b9dfb.json` counts `INDEPENDENT_REPUTATION_RESEARCH_UNVERIFIED`, `CONFIGURED_CREDIT_CARD_OPTION_UNVERIFIED` and `HALLMARK_PLUS_MAKER_NOT_DOCUMENTED` at **64/64** each.
+
+| # | Task | Status | Owner | Files |
+|---|------|--------|-------|-------|
+| F0-1 | **Seller reputation — independent complaints and reviews.** 12 BBB profiles read for the 10 sellers (two sellers have two profiles): accreditation, grade, 3-year and 12-month complaint counts, how BBB files them, complaint types, review average. 86 cells filled, 10 blank and flagged. | **done** — blanks are **needs review** | `arena/f0dbdb3e` | `reviews/due-diligence-f0dbdb3e/**` |
+| F0-2 | **Business identity and real contact information.** Seller contact/terms pages, SEC EDGAR where a seller or its parent files there, BBB (flagged as third-party) where the seller names no entity. 28 filled, 12 blank and flagged. Seven contact values that are `null` in `data/sellers.json` now have a read value — logged as RQ-F0-3, not written. | **done** — blanks are **needs review** | `arena/f0dbdb3e` | same |
+| F0-3 | **Payment protection.** Each seller's own payment page: cards accepted, methods that cannot be disputed, incentives and clauses. Read for 7 sellers; **not readable for 3** (Mejuri, Sarraf, Catbird). 17 filled, 6 blank and flagged. | **done** — blanks are **needs review** | `arena/f0dbdb3e` | same |
+| F0-4 | **Hallmark and maker's-mark disclosure.** What each seller's own site says about the marks struck in its gold rings. 1 seller names a maker's mark; 5 publish some karat-stamp statement; none publishes both for every ring. 15 filled, 14 blank and flagged. | **done** — blanks are **needs review** | `arena/f0dbdb3e` | same |
+| F0-5 | **Hallucination check of this session's own output + page.** Deterministic builder; 17-check checker; self-test that injects 25 faults one at a time; a later second pass re-reading 7 pages. | **done** | `arena/f0dbdb3e` | `scripts/session_f0dbdb3e/**`, `reviews/due-diligence-f0dbdb3e/index.html`, `report.md` |
+| F0-6 | **Publish this session's evidence only.** Rebase on `main`, every gate on the combined tree, PR → merge → Pages deploy → record here. | **in progress** | `arena/f0dbdb3e` | this section |
+
+**Result in one paragraph.** 73 official pages were read on 2026-11-11 between 08:04Z and 08:15Z (4 further addresses answered “not found” and are listed so nobody cites them). They yield 188 table cells: 146 carry a value **and the words the page printed**, 42 are blank and flagged (10 in Reputation, 12 in Identity and contact, 6 in Payment, 14 in Stamps). 5 sellers are BBB-accredited and 5 are not; on 3 BBB profiles every complaint shown is filed “Unanswered”. 5 sellers offer bank wire, bank transfer or cryptocurrency next to cards, and two of them discount the price for paying by wire. No ring row, price, weight, karat, benchmark or stored policy value was changed.
+
+**Where it is.** Page: `reviews/due-diligence-f0dbdb3e/index.html` (live at `https://karagemop466-tech.github.io/GOLD4/reviews/due-diligence-f0dbdb3e/`) · evidence: `reviews/due-diligence-f0dbdb3e/evidence.json` · text report: `reviews/due-diligence-f0dbdb3e/report.md` · builder and checker: `scripts/session_f0dbdb3e/`.
+
+**Sources (three classes, nothing else).** The seller's own website; the Better Business Bureau's own website; US regulator websites. Hosts read: `allurez.com`, `anjolee.com`, `bbb.org`, `bluenile.com`, `brilliantearth.com`, `catbirdnyc.com`, `consumer.ftc.gov`, `mejuri.com`, `mene.com`, `ross-simons.com`, `sarraf.com`, `sec.gov`, `vrai.com`. Every page, its address, title, read time and the part read is in the read ledger at the foot of the page and in `evidence.json`. Search-engine summaries are **never** a source: 8 things seen only in search results are listed separately as unverified leads (one of them is a look-alike web address using Mejuri's name).
+
+**Verification performed.**
+- *Read path.* Browser-rendered page reader; the shell has no general outbound internet, so no script can re-fetch a page. Each value is stored with the quotation it came from; the read time is the sandbox clock taken immediately before each batch of reads.
+- *Checker* — `python3 scripts/session_f0dbdb3e/check_register.py` → **17 of 17 checks pass**: every figure in a value occurs in its quotation (167 figures); blanks are blank and flagged; seller facts come from that seller's own domain, reputation facts from bbb.org, registry facts from a regulator; 4 calculations re-derive with exact decimals; 6 prose counts recompute from the data; the page shows no figure absent from the evidence file; all 194 table rows carry an official https link; the page loads no script, form, image or remote resource; page and report equal a fresh render.
+- *The checker can fail* — `check_register.py --self-test` injects **25 faults** one at a time (an invented figure, a look-alike host, a blank without a flag, a search lead presented as a read, a script tag, a row stripped of its links …) and requires the named check to trip: **25 of 25 caught**. The first run of this self-test caught a real weakness in the checker itself (a statistic printed twice was only compared once); it was fixed before publishing.
+- *Second pass, looking for hallucinations again* — after the page was built, 7 pages behind the most consequential cells were opened again at 08:37Z and compared with the stored quotations: **7 of 7 identical**.
+- *Repository gates on the combined tree* (rebased on `main`): all **9 gates / 12 commands exit 0**.
+- *Limit, stated plainly.* A pass shows the register is internally sound and sourced. It does not show that a quotation still matches the live page tomorrow, and it does not show that any seller is trustworthy. Reading a BBB record is not vetting a seller; no seller is endorsed.
+
+**Irregularities found (14; all published on the page under “Findings” and “Flagged for review”, none blocks the merge).**
+
+| ID | Severity | Seller | Finding | Sources (read IDs) |
+|---|---|---|---|---|
+| IR-F0-01 | High | Catbird NYC | Catbird: BBB grade D-, and none of the complaints shown was answered | BBB-13, BBB-29, CB-03 |
+| IR-F0-02 | High | VRAI | VRAI: BBB grade F, all three complaints unanswered, and a chargeback clause in the terms | BBB-09, BBB-30, VR-02 |
+| IR-F0-03 | Medium | Mejuri | Mejuri: BBB grade D-, 35 complaints, and no voice telephone or e-mail address printed | BBB-10, BBB-31, BBB-23, MJ-01 |
+| IR-F0-04 | Medium | Mejuri | Mejuri calls hollow-form pieces “solid gold” | MJ-05, FTC-01 |
+| IR-F0-05 | Medium | Blue Nile | Blue Nile and Allurez discount the price for paying by bank wire | BN-02, BN-03, AL-02 |
+| IR-F0-06 | Medium | Menē | Menē offers cryptocurrency and bank-wire payment, and has an unanswered BBB complaint about weight and marking | MN-05, MN-02, BBB-15, BBB-16, BBB-33, MN-06, MN-03 |
+| IR-F0-07 | Medium | Sarraf | Sarraf: the seller itself confirms a shipped weight below the listed approximate weight | BBB-25 |
+| IR-F0-08 | Low | Sarraf | Sarraf's own dates and BBB's do not match | SR-01, BBB-12 |
+| IR-F0-09 | Low | Blue Nile | Blue Nile has two BBB profiles, and the newer one describes a different brand | BBB-01, BBB-02, BBB-03, SEC-02 |
+| IR-F0-10 | Low | Brilliant Earth | BBB prints two different three-year complaint totals for Brilliant Earth on one page | BBB-06 |
+| IR-F0-11 | Low | Anjolee | Anjolee: an A+ BBB claim this pass could not confirm, and no card payment for buyers outside the US and Canada | AN-02, BBB-11, BBB-18, AN-01 |
+| IR-F0-14 | Low | Sarraf | Sarraf pages still display a July closure banner in November | SR-02, SR-03 |
+| IR-F0-12 | Info | all ten | No seller publishes, on the pages read, that every gold ring carries both a karat stamp and a maker's mark | BE-01, MJ-04, RS-03, BN-04, CB-01 |
+| IR-F0-13 | Info | all ten | Contact gaps on the sellers' own contact pages | MJ-01, CB-03, BE-03 |
+
+**Needs review — what a person should still check by hand.** Anjolee's BBB letter grade (the page text printed none; the seller claims A+). Payment methods for Mejuri, Sarraf and Catbird (not readable through the reader). The contracting entity for VRAI's US orders. Menē's exchange listing against a regulator record. The complaints page of Blue Nile's second BBB profile. For every seller: the marks actually struck inside the specific ring — ask in writing, then check with a loupe on arrival.
+
+**Requests to the owners of shared files (logged here instead of editing files this session does not own).**
+
+| # | File (owner) | Request |
+|---|---|---|
+| RQ-F0-1 | `scripts/build_site.py (NAV) and pages/sellers.html` (final-integration owner) | Link reviews/due-diligence-f0dbdb3e/index.html from the Sellers page and from the navigation, and link its 'Flagged for review' section from pages/flagged.html. |
+| RQ-F0-2 | `data/sellers.json — reputation_independently_verified and the REPUTATION_NOT_VERIFIED flag (10 sellers)` (final-integration owner) | Do not flip the field to true. Point it at this register (evidence recorded 2026-11-11) and keep the flag wording honest: BBB records were read; no seller was vetted or endorsed. Re-read before copying any figure. |
+| RQ-F0-3 | `data/sellers.json — contact fields that are null` (final-integration owner) | Fill from the sellers' own pages after re-reading: VRAI phone +1.855.956.4488; Ross-Simons e-mail customerservice@ross-simons.com; Catbird e-mail customerservice@catbirdnyc.com; Menē phone +1 833 636 3245 and e-mail service@mene.com; Anjolee e-mail service@anjolee.com; Mejuri text-only line 1-855-496-1110 (label it text-only); Brilliant Earth text line +1 415.520.6526. Leave Mejuri and Brilliant Earth e-mail blank with the reason 'form only', and Catbird phone blank. |
+| RQ-F0-4 | `data/sellers.json and data/rings.json — hallmark_published` (final-integration owner) | Record the nuance instead of a flat false: Mejuri publishes a karat-stamp statement for every piece; Brilliant Earth publishes its maker's mark (lotus); Ross-Simons publishes a hallmark statement for its Italian gold assortment only; Blue Nile and Catbird publish general statements. No seller publishes karat stamp plus maker's mark for every ring, so the readiness flag HALLMARK_PLUS_MAKER_NOT_DOCUMENTED stays on all 64 rows. |
+| RQ-F0-5 | `data/rings.json — the seven Mejuri rows (MJ-01 to MJ-07)` (final-integration owner) | Add a caution that Mejuri's 'solid gold' wording does not exclude hollow-form construction (Mejuri's own Materials FAQ), against the FTC wording that 'solid gold' means not hollow. Do not change solid_gold_status without re-reading each product page. |
+| RQ-F0-6 | `data/sellers.json — Anjolee solid_gold_stated: false` (final-integration owner) | Anjolee's FAQ publishes a site-wide statement ('When you buy from us, you are buying solid gold jewelry'). Record it as a site-level statement with its source, distinct from listing-level wording on AN-01. |
+| RQ-F0-7 | `data/sellers.json — payment and dispute flags (new information, no field exists yet)` (final-integration owner) | Consider adding per-seller payment notes: wire discount (Blue Nile, Allurez); wire offered (Brilliant Earth); cryptocurrency and wire (Menē); chargeback cost-recovery clause (VRAI); no cards issued outside the US and Canada (Anjolee). Payment methods for Mejuri, Sarraf and Catbird remain unread. |
+| RQ-F0-8 | `data/rings.json — Sarraf rows with a gram weight (SR-01 to SR-06)` (final-integration owner) | Add to the existing WEIGHT_APPROXIMATE caution that the seller has itself reported a shipped item weighing 5.7 g against a listed approximate weight of 6.13 g (a chain; see calculation D-01). No stored weight should change. |
+| RQ-F0-9 | `data/sources.json` (final-integration owner) | If these sources are adopted, register the BBB profile addresses, the EDGAR company page for Brilliant Earth Group, Inc. and the sellers' contact, payment and materials pages listed in this register's read ledger. |
+| RQ-F0-10 | `.github/workflows/pages.yml` (owner of the Pages workflow) | Add the two commands 'python3 scripts/session_f0dbdb3e/check_register.py' and 'python3 scripts/session_f0dbdb3e/check_register.py --self-test' to the gate list so this register is re-checked on every push. |
+
+**Cross-references to other sessions, so nothing is counted twice.** `91e9aba0` findings F-A21-04 (Anjolee e-mail) and F-A21-07 (Menē telephone and e-mail) were read independently here and agree. This register does not re-verify any stored return, resize or warranty value (that is `91e9aba0` task 58) and does not re-read any ring row (that is `4fe4a9c3` / `4dc3210a`); one incidental read of the SR-03 product page printed the stored price and weight unchanged and is passed to those owners as IN-01.
+
+**Merge log.** `git pull --rebase origin main` before every push; no conflict at any point. Because the claim commit was already on the remote, each rebase was followed by `git push --force-with-lease` to this session's own branch only. No other session's file or section was edited.
+
+**Non-overlap declaration (kept).** This session created files only under `reviews/due-diligence-f0dbdb3e/` and `scripts/session_f0dbdb3e/`, and edited only this board section. It did **not** edit `data/**`, `index.html`, `pages/**`, `docs/**`, `categories/**`, `assets/**`, `README.md`, `AUDIT.md`, `VERIFICATION.md`, any existing script, `.github/**`, `reports/**` or any other session's file.
+
+**Standing rule for this scope:** no hallucinations. After every review, look for them again — source link, read time, read path, and whether anything was inferred rather than read.
+
+<!-- END session arena/f0dbdb3e-gold4 -->
+
 ---
 
 ## Claim / event log
