@@ -34,6 +34,7 @@ NAV = [
     ("pages/freshness.html", "Freshness", "freshness"),
     ("pages/current-review.html", "November review", "current-review"),
     ("pages/session-review.html", "October review", "session-review"),
+    ("pages/reread-4fe4a9c3.html", "11 Nov re-read", "reread-4fe4a9c3"),
     ("pages/pass20.html", "Pass 20", "pass20"),
     ("checklist.html", "Checklist", "checklist"),
     ("pages/log.html", "Log", "log"),
@@ -81,6 +82,13 @@ FLAG_HELP = {
     "SOURCE_BOT_BLOCKED": ("info", "retailer blocked the automated check (HTTP 403)"),
     "PRICE_STRUCTURED_DIFFERS": ("bad", "page's structured price differs from the stored price"),
     "SOURCE_PRICE_NOT_MACHINE_READABLE": ("info", "price not published in machine-readable form"),
+    # re-read of 2026-11-11 (session 4fe4a9c3)
+    "SALE_PRICE_TEMPORARY": ("warn", "temporary sale price read 2026-11-11 — the list price is shown beside it"),
+    "PRICE_CHANGED_2026_11_11": ("warn", "price differs from the October capture — the earlier value is kept in the row history"),
+    "PRICE_NOT_REREAD_2026_11_11": ("bad", "not re-read on 2026-11-11 — value keeps its October date"),
+    "SOURCE_DEAD_2026_11_11": ("bad", "page gone on 2026-11-11 — current price blank"),
+    "SOLD_OUT_2026_11_11": ("bad", "sold out on 2026-11-11 — current price blank"),
+    "STRUCTURED_PRICE_LAGS_DISPLAY": ("warn", "page's machine-readable price still shows the pre-sale amount"),
 }
 
 
@@ -140,7 +148,45 @@ def flag_chips(row) -> str:
 def status_badge(row) -> str:
     if row.get("price_usd") is None or row.get("weight_g") is None:
         return badge("needs review", "warn")
+    if (row.get("reread_2026_11_11") or {}).get("verdict") in ("UNCHANGED", "CHANGED", "SALE"):
+        return badge("read " + str(row.get("price_captured_utc")), "info")
     return badge("historical capture", "info")
+
+
+def price_cell(r) -> str:
+    """Price as read, with the list price beside a sale price and the last value beside a blank."""
+    basis = esc(short_basis(r))
+    if r.get("price_usd") is None and r.get("last_known_price_usd") is not None:
+        why = "page gone" if "SOURCE_DEAD_2026_11_11" in r.get("flags", []) else "sold out"
+        return (f'{money(None)}<span class="sub">{why} on 2026-11-11 · last read {money(r["last_known_price_usd"])} '
+                f'on {esc(r.get("last_known_price_captured_utc"))}</span>')
+    if r.get("price_usd") is not None and r.get("list_price_usd") and "SALE_PRICE_TEMPORARY" in r.get("flags", []):
+        return (f'{money(r["price_usd"])}<span class="sub">sale · list <s>{money(r["list_price_usd"])}</s> · {basis}</span>')
+    return f'{money(r["price_usd"])}<span class="sub">{basis}</span>'
+
+
+_REREAD_CACHE: dict = {}
+
+
+def reread_line(root: str = "") -> str:
+    """One data-driven sentence for the banner on every page; empty if the 2026-11-11 re-read evidence is absent."""
+    if "line" not in _REREAD_CACHE:
+        try:
+            rec = json.loads((ROOT / "reviews" / "reread-4fe4a9c3" / "reconciliation.json").read_text(encoding="utf-8"))
+            spot = json.loads((DATA / "gold_spot.json").read_text(encoding="utf-8"))["benchmark"]
+        except FileNotFoundError:
+            _REREAD_CACHE["line"] = ""
+        else:
+            vc = rec["verdict_counts"]
+            blank = vc.get("SOURCE_DEAD", 0) + vc.get("SOLD_OUT", 0)
+            _REREAD_CACHE["line"] = (
+                f"On 11 November 2026 the sources were re-read after 19 days: {rec['rows_with_price_read_today']} of "
+                f"{len(rec['rows'])} prices were read again that day, {vc.get('SALE', 0)} of them are temporary sale prices, "
+                f"{blank} rows now have a blank price because the page is gone or sold out, and the gold benchmark was re-read at "
+                f"${spot['value_usd_per_oz']:,.2f}/oz (World Gold Council, \"{esc(spot['data_as_of_shown_on_source'])}\"). "
+                "See <a href=\"{root}pages/reread-4fe4a9c3.html\">the 11 November re-read: what was and was not read again</a>. None of it is a live quote."
+            )
+    return _REREAD_CACHE["line"].replace("{root}", root)
 
 
 def short_url(url: str) -> str:
@@ -179,7 +225,9 @@ LAYOUT = """<!doctype html>
   <strong>Evidence review ({review_date}):</strong> current configured prices remain unverified and blank in the <a href="{root}pages/current-review.html">latest evidence register / Flagged for Review</a>.
   {review_sampled} product URLs sampled in partial chunks; {review_unopened} not re-opened. Stored records below have not become live configured quotes.
   The <a href="{root}pages/session-review.html">October session review</a> is historical.
-  Pass 20 recorded a World Gold Council panel read ($3,995.47/oz, 23 October 2026) differing from the stored benchmark ($3,996.31/oz); see <a href="{root}pages/pass20.html">that pass's evidence</a>. Neither is a live quote.
+  Pass 20 recorded a World Gold Council panel read ($3,995.47/oz, 23 October 2026) differing from that pass's then-stored benchmark ($3,996.31/oz); see <a href="{root}pages/pass20.html">that pass's evidence</a>. Neither is a live quote.
+  Values that could not be confirmed are blank and listed on <a href="{root}pages/flagged.html">Flagged for Review</a>.
+  {reread_line}
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
   Candidate inclusion is not purchase approval: see the <a href="{root}pages/readiness.html">per-ring readiness gaps and new findings</a>.
   Re-check official sources and request independent professional testing before purchase; one surface XRF reading may not establish solid construction.
@@ -216,7 +264,7 @@ def render(title: str, body: str, active: str, root: str = "", script: bool = Fa
     review_total = len(load("rings.json")["rows"])
     extra = f'<script src="{root}assets/app.js"></script>' if script else ""
     return LAYOUT.format(
-        title=esc(title), nav=nav, body=body, root=root, extra_scripts=extra,
+        title=esc(title), nav=nav, body=body, root=root, extra_scripts=extra, reread_line=reread_line(root),
         captured=C["captured"], spot=C["spot_oz"], spot_date=C["spot_date"],
         review_date=esc(review_doc["review_date_utc"]), review_sampled=review_sampled, review_unopened=review_total-review_sampled,
         spot_g=C["spot_g"], spot_captured=esc(C["spot_captured"]), built=C["built"], n_rows=C["n_rows"], n_sources=C["n_sources"],
@@ -267,7 +315,7 @@ def table(rows, root: str, show_category: bool = False) -> str:
     <td class="prod"><a href="{esc(r['url'])}" target="_blank" rel="noopener">{esc(r['product_name'])}</a>
         <span class="sub">{esc(r['style'])}{' · ' + esc(r['category']) if show_category else ''}</span></td>
     <td>{esc(r['metal_label'])}<span class="sub">{r['karat']}K · {r['gold_pct']}% gold</span></td>
-    <td class="num">{money(r['price_usd'])}<span class="sub">{esc(short_basis(r))}</span></td>
+    <td class="num">{price_cell(r)}</td>
     <td class="num">{num(r['weight_g']) if r['weight_g'] else '<span class="blank" title="retailer publishes no gram weight">—</span>'}
         <span class="sub">{'published' if r['weight_g'] else 'not published'}</span></td>
     <td class="num">{num(r['pure_gold_g'], 3) if r['pure_gold_g'] else '—'}<span class="sub">derived</span></td>
@@ -438,8 +486,9 @@ def main() -> None:
     <div class="kpi"><div class="n">{hk.get('REFUSED_403', 0)}</div><div class="l">bot-blocked checks</div><div class="s">no price claim made</div></div>
     <div class="kpi"><div class="n">{hp.get('DIFFERS', 0)}</div><div class="l">prices that differ</div><div class="s">both numbers published</div></div>
   </div>
-  <p class="small">Nothing on this site was changed by that check. A 404, a 403 or a JavaScript-only page never becomes a
-  guessed price: the stored value keeps its original capture date and is flagged instead.
+  <p class="small">The automated check itself changes nothing. A 404, a 403 or a JavaScript-only page never becomes a
+  guessed price: the row is flagged instead. The same day, <a href="pages/reread-4fe4a9c3.html">the 11 November re-read</a> compared this sweep with
+  hand reads and updated a price only where the page printed the current amount; every superseded value is kept in the row's history.
   <a href="pages/freshness.html">See exactly what each state means →</a></p>
 </section>
 """
@@ -454,13 +503,14 @@ def main() -> None:
   <p class="lede">A dated candidate dataset (not a purchase-approved shortlist): {st['total_rows']} rings from {len(st['by_retailer'])} retailers, {st['rows_with_verified_price']} prices read
   from the retailer's page during {C['captured']}, {st['rows_with_published_weight']} published gram weights, and the gold-value arithmetic that follows from them.
   The latest inspected full-sweep evidence stored in this build is dated {esc((health_doc or {}).get('evidence_checked_utc', reverif))}; later uninspected runs are not substituted into these records.
-  Historical source claims are preserved, not independently re-certified by this session. See Current review for blank unconfirmed current quotes and the Flagged page for known issues.</p>
+  Prices move: several of these are temporary sale prices and each carries the date it was read. Re-open the official page before relying on any number.
+  See <a href="pages/reread-4fe4a9c3.html">the 11 November re-read</a> for what was and was not re-read on 11 November 2026, and the <a href="pages/flagged.html">Flagged page</a> for known issues.</p>
   <div class="pill-row">
     {badge('no hallucinated values', 'bad')}
     {badge('source link on every row', 'ok')}
     {badge(f'{flags_total} flags published', 'warn')}
     {badge('spot benchmark dated', 'info')}
-    {badge('full re-verification pass ' + esc(reverif), 'ok')}
+    {badge('all rows re-opened 2026-11-11 · last full hand re-read ' + esc(reverif), 'ok')}
   </div>
 </section>
 {kpis}
@@ -816,7 +866,9 @@ def main() -> None:
         for r in unverified
     )
 
-    today_rows = sum(1 for r in rows if r.get("reverified_utc") == "2026-10-23")
+    today_rows = 16  # rows whose reverified_utc was 2026-10-23 when that pass was recorded (counted from data/rings.json at main@b34ae17)
+    p21_read = sum(1 for r in rows if (r.get("reread_2026_11_11") or {}).get("verdict") in ("UNCHANGED", "CHANGED", "SALE"))
+    p21_hand = sum(1 for r in rows if any("hand read" in x for x in (r.get("reread_2026_11_11") or {}).get("read_paths", [])))
 
     flagged_body = f"""
 <section class="hero">
@@ -825,6 +877,8 @@ def main() -> None:
   <p class="lede">Everything this project could not confirm from an official source, every contradiction found on a retailer's own page, and every policy clause that can cost you money.
   These items do not block publication — they block a purchase until you check them.</p>
   <p><a href="current-review.html#flagged"><strong>November 11 findings: changed displays, variant/weight conflicts and incomplete fresh verification</strong></a>. All current configured prices remain blank; official excerpts and all 64 row-level sources are in the dated register.</p>
+  <p><a href="reread-4fe4a9c3.html#findings"><strong>New on 11 November 2026: prices that changed, pages that are gone or sold out, and sale prices that will expire</strong></a>.
+  Each one is listed below under its flag with the official link.</p>
   <p><a href="readiness.html#flagged"><strong>New requirement findings: Menē solid-wording / refund conditions, XRF limits and calculator corrections</strong></a>. The <a href="readiness.html">readiness register</a> evaluates every candidate against the full buying checklist, with current exact-price cells left blank.</p>
 </section>
 {no_hallucination_block('../')}
@@ -957,7 +1011,13 @@ def main() -> None:
       conversion factor from NIST" — an overstatement that has been corrected. The constant itself is unchanged.</p>
     </div>
     <div class="card">
-      <h3>Coverage, stated plainly: {today_rows} of {len(rows)} rows were re-read on 2026-10-23</h3>
+      <h3>Coverage on 2026-11-11: {p21_read} of {len(rows)} prices read again, {p21_hand} of them by hand</h3>
+      <p>A GitHub runner re-opened all {len(rows)} URLs and this session hand-read {p21_hand} rows in a browser-rendered reader.
+      The other {len(rows) - p21_read} rows have no price read that day: their page is gone, sold out, or was not reachable.
+      Gram weights were re-read for only some rows; see <a href="reread-4fe4a9c3.html">the 11 November re-read</a> for the row-by-row list.</p>
+    </div>
+    <div class="card">
+      <h3>Historical coverage: {today_rows} of {len(rows)} rows were re-read on 2026-10-23</h3>
       <p>Three sessions re-opened pages on 23 October. This pass re-opened AL-01, SR-01, RS-01 and MJ-01 and every recorded
       value matched (MJ-01 only on a different metal variant). AN-01 loaded but its Product Details table was not reached.
       A parallel session live-re-fetched BE-05, BE-06, BE-07 and re-read SR-01 and SR-02. The other {len(rows) - today_rows}

@@ -1,9 +1,9 @@
 {
  "schema_version": "1.0.0",
  "dataset": "GOLD4 live source health & price reconciliation",
- "generated_utc": "2026-10-23T20:23:43Z",
+ "generated_utc": "2026-11-11T08:25:05Z",
  "evidence_artifact": "reports/live_source_check_latest.json",
- "evidence_checked_utc": "2026-10-23T20:23:21Z",
+ "evidence_checked_utc": "2026-11-11T08:03:09Z",
  "evidence_method": "read-only HTTPS GET of each URL, HTML stripped to text, raw price/weight snippets retained with context",
  "network_environment_blocked": false,
  "rules": [
@@ -13,23 +13,25 @@
   "No value is inferred, converted between currencies, or averaged."
  ],
  "row_states": {
-  "OK": 52,
+  "OK": 50,
   "REFUSED_403": 7,
   "HTTP_404": 4,
+  "REFUSED_429": 2,
   "EMPTY_OR_JS_SHELL": 1
  },
  "price_states": {
-  "CONFIRMED": 46,
-  "SOURCE_NOT_REACHED": 12,
-  "DIFFERS": 4,
+  "CONFIRMED": 41,
+  "SOURCE_NOT_REACHED": 13,
+  "DIFFERS": 7,
   "NO_STORED_PRICE": 2,
-  "NOT_MACHINE_READABLE": 0
+  "NOT_MACHINE_READABLE": 1
  },
  "source_states": {
-  "OK": 52,
-  "REFUSED_403": 7,
-  "HTTP_404": 4,
-  "EMPTY_OR_JS_SHELL": 1
+  "OK": 24,
+  "REFUSED_403": 4,
+  "HTTP_404": 2,
+  "EMPTY_OR_JS_SHELL": 1,
+  "REFUSED_429": 1
  },
  "rows": [
   {
@@ -38,11 +40,11 @@
    "product_name": "Engraved Floral Solitaire Engagement Ring Setting",
    "url": "https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold",
    "stored_price_usd": 585.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:43Z",
+   "checked_utc": "2026-11-11T08:00:33Z",
    "page_title": "Engraved Floral Solitaire Engagement Ring Setting 14K Yellow Gold",
    "final_url": "https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold",
    "soft_404": false,
@@ -64,11 +66,11 @@
    "product_name": "Milgrain Trellis Solitaire Engagement Ring",
    "url": "https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold",
    "stored_price_usd": 724.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:44Z",
+   "checked_utc": "2026-11-11T08:00:34Z",
    "page_title": "Milgrain Trellis Solitaire Engagement Ring 14k Yellow Gold",
    "final_url": "https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold",
    "soft_404": false,
@@ -90,11 +92,11 @@
    "product_name": "Split Shank Solitaire Engagement Ring",
    "url": "https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold",
    "stored_price_usd": 848.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:45Z",
+   "checked_utc": "2026-11-11T08:00:35Z",
    "page_title": "Split Shank Solitaire Engagement Ring 14k Yellow Gold",
    "final_url": "https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold",
    "soft_404": false,
@@ -116,11 +118,11 @@
    "product_name": "Split Shank Solitaire Engagement Ring",
    "url": "https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold",
    "stored_price_usd": 1425.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:46Z",
+   "checked_utc": "2026-11-11T08:00:35Z",
    "page_title": "Split Shank Solitaire Engagement Ring 18k Yellow Gold",
    "final_url": "https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold",
    "soft_404": false,
@@ -142,11 +144,11 @@
    "product_name": "Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)",
    "url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
    "stored_price_usd": 870.76,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "EMPTY_OR_JS_SHELL",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:47Z",
+   "checked_utc": "2026-11-11T08:00:36Z",
    "page_title": "Anjolee",
    "final_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
    "soft_404": false,
@@ -160,11 +162,11 @@
    "product_name": "Atelier Solitaire Ring (2 mm, claw-prong bypass)",
    "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
    "stored_price_usd": 1190.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "REFUSED_403",
    "http_status": 403,
-   "checked_utc": "2026-10-23T20:21:47Z",
+   "checked_utc": "2026-11-11T08:00:37Z",
    "page_title": "Brilliant Earth - Verifying",
    "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
    "soft_404": false,
@@ -178,11 +180,11 @@
    "product_name": "Atelier Solitaire Ring (2 mm, claw-prong bypass)",
    "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
    "stored_price_usd": 1390.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "REFUSED_403",
    "http_status": 403,
-   "checked_utc": "2026-10-23T20:21:48Z",
+   "checked_utc": "2026-11-11T08:00:37Z",
    "page_title": "Brilliant Earth - Verifying",
    "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
    "soft_404": false,
@@ -195,22 +197,29 @@
    "retailer": "Blue Nile",
    "product_name": "Petite Solitaire Engagement Ring",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639",
-   "stored_price_usd": 1000.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 800.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:48Z",
+   "checked_utc": "2026-11-11T08:00:38Z",
    "page_title": "Petite Solitaire Engagement Ring in 14k Yellow Gold",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 1000.0,
+     "value": 800.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 1000.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Petite Solitaire Engagement Ring in 14k Yellow Gold"
     }
    ],
    "price_state": "CONFIRMED",
@@ -221,22 +230,29 @@
    "retailer": "Blue Nile",
    "product_name": "Petite Solitaire Engagement Ring",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269",
-   "stored_price_usd": 1155.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 924.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:49Z",
+   "checked_utc": "2026-11-11T08:00:39Z",
    "page_title": "Petite Solitaire Engagement Ring in 18k Yellow Gold",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 1155.0,
+     "value": 924.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 1155.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Petite Solitaire Engagement Ring in 18k Yellow Gold"
     }
    ],
    "price_state": "CONFIRMED",
@@ -247,22 +263,29 @@
    "retailer": "Blue Nile",
    "product_name": "Classic Six-Prong Solitaire Engagement Ring",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
-   "stored_price_usd": 1000.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 800.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:50Z",
+   "checked_utc": "2026-11-11T08:00:40Z",
    "page_title": "Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 1000.0,
+     "value": 800.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 1000.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Classic Six-Prong Solitaire Engagement Ring in 14K Yellow Gold"
     }
    ],
    "price_state": "CONFIRMED",
@@ -273,22 +296,29 @@
    "retailer": "Blue Nile",
    "product_name": "Classic Comfort Fit Solitaire Engagement Ring (2.5mm)",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
-   "stored_price_usd": 935.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 748.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:51Z",
+   "checked_utc": "2026-11-11T08:00:41Z",
    "page_title": "Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 935.0,
+     "value": 748.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 935.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Classic Comfort Fit Solitaire Engagement Ring in 14K Yellow Gold (2.5mm)"
     }
    ],
    "price_state": "CONFIRMED",
@@ -299,22 +329,29 @@
    "retailer": "Blue Nile",
    "product_name": "Classic Comfort Fit Solitaire Engagement Ring (2.5mm)",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941",
-   "stored_price_usd": 1310.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 1048.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:52Z",
+   "checked_utc": "2026-11-11T08:00:42Z",
    "page_title": "Classic Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2.5mm)",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 1310.0,
+     "value": 1048.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 1310.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Classic Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2.5mm)"
     }
    ],
    "price_state": "CONFIRMED",
@@ -325,22 +362,29 @@
    "retailer": "Blue Nile",
    "product_name": "Six-Prong Low Dome Comfort Fit Solitaire Engagement Ring (2mm)",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/six-prong-low-dome-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-2mm-item-195379",
-   "stored_price_usd": 1295.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 1036.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:52Z",
+   "checked_utc": "2026-11-11T08:00:43Z",
    "page_title": "Six -Prong Low Dome Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2mm)",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/six-prong-low-dome-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-2mm-item-195379",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 1295.0,
+     "value": 1036.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 1295.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Six -Prong Low Dome Comfort Fit Solitaire Engagement Ring in 18k Yellow Gold (2mm)"
     }
    ],
    "price_state": "CONFIRMED",
@@ -351,22 +395,29 @@
    "retailer": "Blue Nile",
    "product_name": "Classic Four Prong Solitaire Engagement Ring",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257",
-   "stored_price_usd": 870.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 696.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:53Z",
+   "checked_utc": "2026-11-11T08:00:44Z",
    "page_title": "Classic Four Prong Solitaire Engagement Ring in 14K Yellow Gold",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 870.0,
+     "value": 696.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 870.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Classic Four Prong Solitaire Engagement Ring in 14K Yellow Gold"
     }
    ],
    "price_state": "CONFIRMED",
@@ -377,22 +428,29 @@
    "retailer": "Blue Nile",
    "product_name": "Riviera Pave Diamond Engagement Ring (1/6 ct. tw.)",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512",
-   "stored_price_usd": 1500.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 1200.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:54Z",
+   "checked_utc": "2026-11-11T08:00:45Z",
    "page_title": "Riviera Pavé Diamond Engagement Ring in 14K Yellow Gold (1/6 ct. tw.)",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 1500.0,
+     "value": 1200.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 1500.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Riviera Pavé Diamond Engagement Ring in 14K Yellow Gold (1/6 ct. tw.)"
     }
    ],
    "price_state": "CONFIRMED",
@@ -404,11 +462,11 @@
    "product_name": "Diamonds Team Ring",
    "url": "https://mejuri.com/products/diamonds-team-ring",
    "stored_price_usd": 548.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:55Z",
+   "checked_utc": "2026-11-11T08:00:46Z",
    "page_title": "Diamonds Team Ring | Mejuri",
    "final_url": "https://mejuri.com/products/diamonds-team-ring",
    "soft_404": false,
@@ -430,11 +488,11 @@
    "product_name": "Diamonds Band",
    "url": "https://mejuri.com/products/diamonds-band",
    "stored_price_usd": 648.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:56Z",
+   "checked_utc": "2026-11-11T08:00:48Z",
    "page_title": "Diamond Band Ring | Mejuri",
    "final_url": "https://mejuri.com/products/diamonds-band",
    "soft_404": false,
@@ -456,11 +514,11 @@
    "product_name": "Pave Diamond Slim Signet",
    "url": "https://mejuri.com/products/pave-diamond-slim-signet-ring",
    "stored_price_usd": 548.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:57Z",
+   "checked_utc": "2026-11-11T08:00:49Z",
    "page_title": "14k Yellow Gold Handcrafted Pavé Diamond Signet Ring - Jewelry | Mejuri",
    "final_url": "https://mejuri.com/products/pave-diamond-slim-signet-ring",
    "soft_404": false,
@@ -482,11 +540,11 @@
    "product_name": "Pave Diamond Thin Dome Ring",
    "url": "https://mejuri.com/products/pave-diamond-thin-dome-ring",
    "stored_price_usd": 798.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:21:59Z",
+   "checked_utc": "2026-11-11T08:00:50Z",
    "page_title": "14k Solid Gold Pavé Diamond Thin Dôme Ring - Jewelry | Mejuri",
    "final_url": "https://mejuri.com/products/pave-diamond-thin-dome-ring",
    "soft_404": false,
@@ -508,11 +566,11 @@
    "product_name": "Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)",
    "url": "https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring",
    "stored_price_usd": 598.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:01Z",
+   "checked_utc": "2026-11-11T08:00:52Z",
    "page_title": "Ziggy Ring",
    "final_url": "https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring",
    "soft_404": false,
@@ -541,25 +599,17 @@
    "product_name": "The Classic Engagement Ring (4-prong dome, plain band)",
    "url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
    "stored_price_usd": 1035.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:03Z",
-   "page_title": "Your Privacy Choices",
+   "source_state": "REFUSED_429",
+   "http_status": 429,
+   "checked_utc": "2026-11-11T08:00:54Z",
+   "page_title": "Vercel Security Checkpoint",
    "final_url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
    "soft_404": false,
-   "found_prices": [
-    {
-     "value": 2185.0,
-     "currency": "USD",
-     "source": "json-ld",
-     "type": "Offer",
-     "name": ""
-    }
-   ],
-   "price_state": "DIFFERS",
-   "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
+   "price_state": "SOURCE_NOT_REACHED",
+   "found_prices": [],
+   "note": "rate-limited (HTTP 429) — no statement about the price is possible"
   },
   {
    "id": "VR-02",
@@ -569,23 +619,15 @@
    "stored_price_usd": null,
    "stored_price_captured_utc": "2026-10-22",
    "stored_price_verification": "U_unverified",
-   "source_state": "OK",
-   "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:04Z",
-   "page_title": "Signature 6 Prong Round Brilliant Engagement Ring in 18k Yellow Gold with Plain Band",
+   "source_state": "REFUSED_429",
+   "http_status": 429,
+   "checked_utc": "2026-11-11T08:00:54Z",
+   "page_title": "Vercel Security Checkpoint",
    "final_url": "https://www.vrai.com/configure/setting-to-diamond/signature-6-prong/round-brilliant-yellow-gold-32891144798301",
    "soft_404": false,
-   "found_prices": [
-    {
-     "value": 1150.0,
-     "currency": "USD",
-     "source": "json-ld",
-     "type": "Offer",
-     "name": ""
-    }
-   ],
-   "price_state": "NO_STORED_PRICE",
-   "note": "the dataset deliberately stores no price for this row; the live page offered 1,150.00 USD"
+   "price_state": "SOURCE_NOT_REACHED",
+   "found_prices": [],
+   "note": "rate-limited (HTTP 429) — no statement about the price is possible"
   },
   {
    "id": "BE-03",
@@ -593,11 +635,11 @@
    "product_name": "Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K Shank + 14K White Gold Prongs)",
    "url": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/",
    "stored_price_usd": 850.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "REFUSED_403",
    "http_status": 403,
-   "checked_utc": "2026-10-23T20:22:05Z",
+   "checked_utc": "2026-11-11T08:00:55Z",
    "page_title": "Brilliant Earth - Verifying",
    "final_url": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/",
    "soft_404": false,
@@ -611,11 +653,11 @@
    "product_name": "10k White Gold 5mm High Polished Traditional Domed Wedding Band",
    "url": "https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
    "stored_price_usd": 352.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:06Z",
+   "checked_utc": "2026-11-11T08:00:55Z",
    "page_title": "10k White Gold 5mm High Polished Traditional Domed Wedding Band | SARRAF.COM",
    "final_url": "https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
    "soft_404": false,
@@ -637,11 +679,11 @@
    "product_name": "14k Yellow Gold 6mm High Polished Comfort Fit Heavy Wedding Band",
    "url": "https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html",
    "stored_price_usd": 1063.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:07Z",
+   "checked_utc": "2026-11-11T08:00:56Z",
    "page_title": "14k Gold 6mm High Polished Comfort Fit Wedding Band | SARRAF.COM",
    "final_url": "https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html",
    "soft_404": false,
@@ -663,11 +705,11 @@
    "product_name": "18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band",
    "url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
    "stored_price_usd": 871.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:08Z",
+   "checked_utc": "2026-11-11T08:00:57Z",
    "page_title": "18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band | SARRAF.COM",
    "final_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
    "soft_404": false,
@@ -689,11 +731,11 @@
    "product_name": "18K Yellow Gold 6mm High Polished Flat Comfort Fit Heavy Band",
    "url": "https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html",
    "stored_price_usd": 1436.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:09Z",
+   "checked_utc": "2026-11-11T08:00:58Z",
    "page_title": "18K Gold 6mm High Polished Flat Comfort Fit Wedding Band | SARRAF.COM",
    "final_url": "https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html",
    "soft_404": false,
@@ -715,11 +757,11 @@
    "product_name": "14k Yellow Gold Men's Solitaire Natural Diamond Ring (0.50 ct H/SI1)",
    "url": "https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html",
    "stored_price_usd": 2858.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:10Z",
+   "checked_utc": "2026-11-11T08:00:59Z",
    "page_title": "14k Yellow gold Mens Solitaire Diamond Ring 1/2 ct. | SARRAF.COM",
    "final_url": "https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html",
    "soft_404": false,
@@ -741,11 +783,11 @@
    "product_name": "18k Yellow Gold Men's Solitaire Natural Diamond Ring (0.74 ct J/SI1)",
    "url": "https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html",
    "stored_price_usd": 4068.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:11Z",
+   "checked_utc": "2026-11-11T08:01:00Z",
    "page_title": "18k Yellow gold Mens Solitaire Diamond Ring 3/4 ct. | SARRAF.COM",
    "final_url": "https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html",
    "soft_404": false,
@@ -767,11 +809,11 @@
    "product_name": "14k Gold 1/2 Ctw Natural Diamond Solitaire Engagement Ring (G/SI1)",
    "url": "https://www.sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-engagement-diamond-ring.html",
    "stored_price_usd": 2183.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:12Z",
+   "checked_utc": "2026-11-11T08:01:01Z",
    "page_title": "14k Gold 1/2 Ctw Diamond Solitaire Engagement Diamond Ring | SARRAF.COM",
    "final_url": "https://www.sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-engagement-diamond-ring.html",
    "soft_404": false,
@@ -793,11 +835,11 @@
    "product_name": "18k Yellow Gold 1/2 Carat Round Diamond Solitaire Engagement Ring",
    "url": "https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html",
    "stored_price_usd": 2461.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:13Z",
+   "checked_utc": "2026-11-11T08:01:02Z",
    "page_title": "18k Yellow gold 1/2 Carat Round Diamond Solitaire Engagement Ring | SARRAF.COM",
    "final_url": "https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html",
    "soft_404": false,
@@ -819,11 +861,11 @@
    "product_name": "The Swan Solitaire Diamond Engagement Ring (1.0mm Recycled 14K Band)",
    "url": "https://www.catbirdnyc.com/the-swan-solitaire-2475.html",
    "stored_price_usd": 3900.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:14Z",
+   "checked_utc": "2026-11-11T08:01:03Z",
    "page_title": "The Swan Solitaire Brilliant Cut White Diamond Engagement Ring in 14K Gold & Platinum | Catbird",
    "final_url": "https://www.catbirdnyc.com/the-swan-solitaire-2475.html",
    "soft_404": false,
@@ -845,11 +887,11 @@
    "product_name": "Grand Painter's Solid 14k Yellow Gold Band",
    "url": "https://www.catbirdnyc.com/grand-painters-ring.html",
    "stored_price_usd": 313.5,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:21Z",
+   "checked_utc": "2026-11-11T08:01:39Z",
    "page_title": "Grand Painter&#039;s Ring, Solid 14k Yellow Gold | Catbird Jewelry",
    "final_url": "https://www.catbirdnyc.com/grand-painters-ring.html",
    "soft_404": false,
@@ -868,151 +910,151 @@
   {
    "id": "MN-01",
    "retailer": "Menē",
-   "product_name": "Menē 24k Pure Solid Gold Knot Ring",
+   "product_name": "Knot Ring",
    "url": "https://mene.com/products/knot-ring-gold",
-   "stored_price_usd": 1465.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 1455.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:23Z",
+   "checked_utc": "2026-11-11T08:01:41Z",
    "page_title": "Knot ring - 24k Gold | Menē",
    "final_url": "https://mene.com/products/knot-ring-gold",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 2422.0,
+     "value": 2443.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 1893.0,
+     "value": 1909.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 2205.0,
+     "value": 2224.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 1785.0,
+     "value": 1801.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 1873.0,
+     "value": 1890.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 1756.0,
+     "value": 1772.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 1614.0,
+     "value": 1628.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 1518.0,
+     "value": 1532.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 1442.0,
+     "value": 1455.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     }
    ],
-   "price_state": "DIFFERS",
-   "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
+   "price_state": "CONFIRMED",
+   "note": "the page's own structured data prints the stored amount"
   },
   {
    "id": "MN-02",
    "retailer": "Menē",
-   "product_name": "Menē 24k Pure Solid Gold Etruscan Sun Band (4.5mm)",
+   "product_name": "Etruscan Sun Band",
    "url": "https://mene.com/products/etruscan-sun-band-gold",
-   "stored_price_usd": 1730.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 1719.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:24Z",
+   "checked_utc": "2026-11-11T08:01:43Z",
    "page_title": "Menē Etruscan Sun Band - 24k Gold | Menē",
    "final_url": "https://mene.com/products/etruscan-sun-band-gold",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 2545.0,
+     "value": 2567.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 2367.0,
+     "value": 2388.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 2359.0,
+     "value": 2380.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 2246.0,
+     "value": 2266.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 2172.0,
+     "value": 2191.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 2184.0,
+     "value": 2203.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 1946.0,
+     "value": 1963.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
     },
     {
-     "value": 1891.0,
+     "value": 1908.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
@@ -1027,12 +1069,12 @@
    "retailer": "Blue Nile",
    "product_name": "Classic Four-Prong Solitaire Engagement Ring (Platinum Prongs)",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y",
-   "stored_price_usd": 1125.0,
+   "stored_price_usd": null,
    "stored_price_captured_utc": "2026-10-22",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "HTTP_404",
    "http_status": 404,
-   "checked_utc": "2026-10-23T20:22:27Z",
+   "checked_utc": "2026-11-11T08:01:43Z",
    "page_title": "",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y",
    "soft_404": false,
@@ -1045,12 +1087,12 @@
    "retailer": "Blue Nile",
    "product_name": "Low Dome Comfort Fit Solitaire Engagement Ring",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14",
-   "stored_price_usd": 1145.0,
+   "stored_price_usd": null,
    "stored_price_captured_utc": "2026-10-22",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "HTTP_404",
    "http_status": 404,
-   "checked_utc": "2026-10-23T20:22:28Z",
+   "checked_utc": "2026-11-11T08:01:44Z",
    "page_title": "",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14",
    "soft_404": false,
@@ -1063,12 +1105,12 @@
    "retailer": "Blue Nile",
    "product_name": "French Pavé Diamond Engagement Ring (1/20 ct. tw.)",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y",
-   "stored_price_usd": 1805.0,
+   "stored_price_usd": null,
    "stored_price_captured_utc": "2026-10-22",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "HTTP_404",
    "http_status": 404,
-   "checked_utc": "2026-10-23T20:22:29Z",
+   "checked_utc": "2026-11-11T08:01:45Z",
    "page_title": "",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y",
    "soft_404": false,
@@ -1081,12 +1123,12 @@
    "retailer": "Blue Nile",
    "product_name": "Tapered Baguette Diamond Engagement Ring (1/6 ct. tw.)",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y",
-   "stored_price_usd": 2515.0,
+   "stored_price_usd": null,
    "stored_price_captured_utc": "2026-10-22",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "HTTP_404",
    "http_status": 404,
-   "checked_utc": "2026-10-23T20:22:30Z",
+   "checked_utc": "2026-11-11T08:01:46Z",
    "page_title": "",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y",
    "soft_404": false,
@@ -1099,22 +1141,29 @@
    "retailer": "Blue Nile",
    "product_name": "Solitaire Engagement Ring With Pavé Basket In 14K Yellow Gold By James Allen",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-pave-basket-in-14k-yellow-gold-by-james-allen-item-311230",
-   "stored_price_usd": 2260.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 1808.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:31Z",
+   "checked_utc": "2026-11-11T08:01:47Z",
    "page_title": "Solitaire Engagement Ring With Pavé Basket In 14K Yellow Gold By James Allen",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-pave-basket-in-14k-yellow-gold-by-james-allen-item-311230",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 2260.0,
+     "value": 1808.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 2260.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Solitaire Engagement Ring With Pavé Basket In 14K Yellow Gold By James Allen"
     }
    ],
    "price_state": "CONFIRMED",
@@ -1125,22 +1174,29 @@
    "retailer": "Blue Nile",
    "product_name": "Solitaire Engagement Ring With Intricate Basket In 14K Yellow Gold By James Allen",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-intricate-basket-in-14k-yellow-gold-by-james-allen-item-315036",
-   "stored_price_usd": 1385.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 1108.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:32Z",
+   "checked_utc": "2026-11-11T08:01:48Z",
    "page_title": "Solitaire Engagement Ring With Intricate Basket In 14K Yellow Gold By James Allen",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-intricate-basket-in-14k-yellow-gold-by-james-allen-item-315036",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 1385.0,
+     "value": 1108.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 1385.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Solitaire Engagement Ring With Intricate Basket In 14K Yellow Gold By James Allen"
     }
    ],
    "price_state": "CONFIRMED",
@@ -1151,22 +1207,29 @@
    "retailer": "Blue Nile",
    "product_name": "East West Knife Edge Cathedral Solitaire Engagement Ring In 14K Yellow Gold By James Allen",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-knife-edge-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-311246",
-   "stored_price_usd": 975.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 780.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:33Z",
+   "checked_utc": "2026-11-11T08:01:49Z",
    "page_title": "East West Knife Edge Cathedral Solitaire Engagement Ring In 14K Yellow Gold By James Allen",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-knife-edge-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-311246",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 975.0,
+     "value": 780.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 975.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "East West Knife Edge Cathedral Solitaire Engagement Ring In 14K Yellow Gold By James Allen"
     }
    ],
    "price_state": "CONFIRMED",
@@ -1177,22 +1240,29 @@
    "retailer": "Blue Nile",
    "product_name": "Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-oval-by-james-allen-item-311127",
-   "stored_price_usd": 1565.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 1252.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:34Z",
+   "checked_utc": "2026-11-11T08:01:50Z",
    "page_title": "Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-oval-by-james-allen-item-311127",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 1565.0,
+     "value": 1252.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 1565.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen"
     }
    ],
    "price_state": "CONFIRMED",
@@ -1203,22 +1273,29 @@
    "retailer": "Blue Nile",
    "product_name": "Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-pear-by-james-allen-item-311121",
-   "stored_price_usd": 1555.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 1244.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:34Z",
+   "checked_utc": "2026-11-11T08:01:51Z",
    "page_title": "Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-pear-by-james-allen-item-311121",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 1555.0,
+     "value": 1244.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 1555.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen"
     }
    ],
    "price_state": "CONFIRMED",
@@ -1229,22 +1306,29 @@
    "retailer": "Blue Nile",
    "product_name": "Petite Hidden Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-hidden-halo-solitaire-plus-diamond-engagement-ring-in-14k-yellow-gold-item-192506",
-   "stored_price_usd": 1255.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 1004.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:35Z",
+   "checked_utc": "2026-11-11T08:01:52Z",
    "page_title": "Petite Hidden Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-hidden-halo-solitaire-plus-diamond-engagement-ring-in-14k-yellow-gold-item-192506",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 1255.0,
+     "value": 1004.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 1255.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Petite Hidden Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold"
     }
    ],
    "price_state": "CONFIRMED",
@@ -1255,22 +1339,29 @@
    "retailer": "Blue Nile",
    "product_name": "Bow-Tie Engagement Ring With Channel Set Round Diamonds In 14K Yellow Gold By James Allen",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bow-tie-engagement-ring-with-channel-set-round-diamonds-in-14k-yellow-gold-by-james-allen-item-304294",
-   "stored_price_usd": 2350.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 1880.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:36Z",
+   "checked_utc": "2026-11-11T08:01:53Z",
    "page_title": "Bow-Tie Engagement Ring With Channel Set Round Diamonds In 14K Yellow Gold By James Allen",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bow-tie-engagement-ring-with-channel-set-round-diamonds-in-14k-yellow-gold-by-james-allen-item-304294",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 2350.0,
+     "value": 1880.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 2350.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Bow-Tie Engagement Ring With Channel Set Round Diamonds In 14K Yellow Gold By James Allen"
     }
    ],
    "price_state": "CONFIRMED",
@@ -1281,22 +1372,29 @@
    "retailer": "Blue Nile",
    "product_name": "Woven Solitaire Engagement Ring In 14K Yellow Gold By James Allen",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896",
-   "stored_price_usd": 965.0,
-   "stored_price_captured_utc": "2026-10-23",
+   "stored_price_usd": 772.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:37Z",
+   "checked_utc": "2026-11-11T08:01:54Z",
    "page_title": "Woven Solitaire Engagement Ring In 14K Yellow Gold By James Allen",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 965.0,
+     "value": 772.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 965.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Woven Solitaire Engagement Ring In 14K Yellow Gold By James Allen"
     }
    ],
    "price_state": "CONFIRMED",
@@ -1307,22 +1405,29 @@
    "retailer": "Blue Nile",
    "product_name": "Knife Edge Solitaire Engagement Ring in 14k Yellow Gold",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261",
-   "stored_price_usd": 1290.0,
-   "stored_price_captured_utc": "2026-10-23",
+   "stored_price_usd": 1032.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:38Z",
+   "checked_utc": "2026-11-11T08:01:55Z",
    "page_title": "Knife Edge Solitaire Engagement Ring in 14k Yellow Gold",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 1290.0,
+     "value": 1032.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 1290.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Knife Edge Solitaire Engagement Ring in 14k Yellow Gold"
     }
    ],
    "price_state": "CONFIRMED",
@@ -1333,22 +1438,29 @@
    "retailer": "Blue Nile",
    "product_name": "Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm)",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321",
-   "stored_price_usd": 2050.0,
-   "stored_price_captured_utc": "2026-10-23",
+   "stored_price_usd": 1640.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:38Z",
+   "checked_utc": "2026-11-11T08:01:55Z",
    "page_title": "Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm)",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 2050.0,
+     "value": 1640.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 2050.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm)"
     }
    ],
    "price_state": "CONFIRMED",
@@ -1359,22 +1471,29 @@
    "retailer": "Blue Nile",
    "product_name": "Emerald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.)",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303",
-   "stored_price_usd": 5190.0,
-   "stored_price_captured_utc": "2026-10-23",
+   "stored_price_usd": 4152.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:39Z",
+   "checked_utc": "2026-11-11T08:01:56Z",
    "page_title": "Emerald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.)",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 5190.0,
+     "value": 4152.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 5190.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Emerald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.)"
     }
    ],
    "price_state": "CONFIRMED",
@@ -1385,22 +1504,29 @@
    "retailer": "Blue Nile",
    "product_name": "Classic Simple Solitaire Engagement Ring in 14k White Gold",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730",
-   "stored_price_usd": 1145.0,
-   "stored_price_captured_utc": "2026-10-23",
+   "stored_price_usd": 916.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:40Z",
+   "checked_utc": "2026-11-11T08:01:57Z",
    "page_title": "Classic Simple Solitaire Engagement Ring in 14k White Gold",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730",
    "soft_404": false,
    "found_prices": [
     {
-     "value": 1145.0,
+     "value": 916.0,
      "currency": "USD",
      "source": "json-ld",
      "type": "Offer",
      "name": ""
+    },
+    {
+     "value": 1145.0,
+     "currency": "USD",
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Classic Simple Solitaire Engagement Ring in 14k White Gold"
     }
    ],
    "price_state": "CONFIRMED",
@@ -1411,12 +1537,12 @@
    "retailer": "Blue Nile",
    "product_name": "Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen",
    "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661",
-   "stored_price_usd": 2210.0,
+   "stored_price_usd": null,
    "stored_price_captured_utc": "2026-10-23",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:41Z",
+   "checked_utc": "2026-11-11T08:01:58Z",
    "page_title": "Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-contour-diamond-engagement-ring-in-14k-white-gold-by-james-allen-item-315661",
    "soft_404": false,
@@ -1424,13 +1550,13 @@
     {
      "value": 2210.0,
      "currency": "USD",
-     "source": "json-ld",
-     "type": "Offer",
-     "name": ""
+     "source": "meta:og:price:amount",
+     "type": "meta",
+     "name": "Pavé Contour Diamond Engagement Ring In 14K White Gold By James Allen"
     }
    ],
-   "price_state": "CONFIRMED",
-   "note": "the page's own structured data prints the stored amount"
+   "price_state": "NO_STORED_PRICE",
+   "note": "the dataset deliberately stores no price for this row; the live page offered 2,210.00 USD"
   },
   {
    "id": "BN-26",
@@ -1442,7 +1568,7 @@
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:42Z",
+   "checked_utc": "2026-11-11T08:01:59Z",
    "page_title": "Comfort Fit Solitaire Engagement Ring In 14K Yellow Gold",
    "final_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/14k-yellow-gold-15mm-comfort-fit-engagement-ring-item-41515",
    "soft_404": false,
@@ -1463,12 +1589,12 @@
    "retailer": "Brilliant Earth",
    "product_name": "Fairmined Hollis Knife Edge Solitaire Engagement Ring",
    "url": "https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/",
-   "stored_price_usd": 1090.0,
+   "stored_price_usd": null,
    "stored_price_captured_utc": "2026-10-22",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "REFUSED_403",
    "http_status": 403,
-   "checked_utc": "2026-10-23T20:22:43Z",
+   "checked_utc": "2026-11-11T08:02:00Z",
    "page_title": "Brilliant Earth - Verifying",
    "final_url": "https://www.brilliantearth.com/Fairmined-Hollis-Knife-Edge-Solitaire-Engagement-Ring-Gold-BE1FM0126/",
    "soft_404": false,
@@ -1481,12 +1607,12 @@
    "retailer": "Brilliant Earth",
    "product_name": "Freesia Hidden Halo Diamond Ring",
    "url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
-   "stored_price_usd": 1190.0,
-   "stored_price_captured_utc": "2026-10-22",
-   "stored_price_verification": "V2_official_page_snapshot_only",
+   "stored_price_usd": 990.0,
+   "stored_price_captured_utc": "2026-11-11",
+   "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "REFUSED_403",
    "http_status": 403,
-   "checked_utc": "2026-10-23T20:22:43Z",
+   "checked_utc": "2026-11-11T08:02:00Z",
    "page_title": "Brilliant Earth - Verifying",
    "final_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
    "soft_404": false,
@@ -1499,12 +1625,12 @@
    "retailer": "Brilliant Earth",
    "product_name": "Freesia Hidden Halo Diamond Ring",
    "url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/",
-   "stored_price_usd": 1390.0,
-   "stored_price_captured_utc": "2026-10-23",
+   "stored_price_usd": 1190.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "REFUSED_403",
    "http_status": 403,
-   "checked_utc": "2026-10-23T20:22:44Z",
+   "checked_utc": "2026-11-11T08:02:01Z",
    "page_title": "Brilliant Earth - Verifying",
    "final_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/",
    "soft_404": false,
@@ -1518,11 +1644,11 @@
    "product_name": "Fleur Solitaire Ring",
    "url": "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
    "stored_price_usd": 1350.0,
-   "stored_price_captured_utc": "2026-10-23",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "REFUSED_403",
    "http_status": 403,
-   "checked_utc": "2026-10-23T20:22:44Z",
+   "checked_utc": "2026-11-11T08:02:01Z",
    "page_title": "Brilliant Earth - Verifying",
    "final_url": "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
    "soft_404": false,
@@ -1535,12 +1661,12 @@
    "retailer": "Ross-Simons",
    "product_name": "14kt Yellow Gold 2mm Wedding Band",
    "url": "https://www.ross-simons.com/jewelry/rings/571221.html",
-   "stored_price_usd": 400.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 320.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:45Z",
+   "checked_utc": "2026-11-11T08:02:02Z",
    "page_title": "Women's 2mm 14kt Yellow Gold Band",
    "final_url": "https://www.ross-simons.com/products/571221",
    "soft_404": false,
@@ -1553,20 +1679,20 @@
      "name": "Women's 2mm 14kt Yellow Gold Band — Size 9"
     }
    ],
-   "price_state": "CONFIRMED",
-   "note": "the page's own structured data prints the stored amount"
+   "price_state": "DIFFERS",
+   "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
   },
   {
    "id": "RS-02",
    "retailer": "Ross-Simons",
    "product_name": "Italian 18kt Yellow Gold 2mm Wedding Band",
    "url": "https://www.ross-simons.com/jewelry/rings/985230.html",
-   "stored_price_usd": 249.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 199.2,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:46Z",
+   "checked_utc": "2026-11-11T08:02:03Z",
    "page_title": "2mm 18kt Yellow Gold Polished Ring",
    "final_url": "https://www.ross-simons.com/products/985230",
    "soft_404": false,
@@ -1579,20 +1705,20 @@
      "name": "2mm 18kt Yellow Gold Polished Ring — Size 10"
     }
    ],
-   "price_state": "CONFIRMED",
-   "note": "the page's own structured data prints the stored amount"
+   "price_state": "DIFFERS",
+   "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
   },
   {
    "id": "RS-03",
    "retailer": "Ross-Simons",
    "product_name": "14kt Yellow Gold 3mm Comfort-Fit Wedding Band",
    "url": "https://www.ross-simons.com/jewelry/rings/820263.html",
-   "stored_price_usd": 595.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 476.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:48Z",
+   "checked_utc": "2026-11-11T08:02:05Z",
    "page_title": "Italian 14kt Yellow Gold Double Love Knot Ring",
    "final_url": "https://www.ross-simons.com/products/820263",
    "soft_404": false,
@@ -1605,20 +1731,20 @@
      "name": "Italian 14kt Yellow Gold Double Love Knot Ring — Size 10"
     }
    ],
-   "price_state": "CONFIRMED",
-   "note": "the page's own structured data prints the stored amount"
+   "price_state": "DIFFERS",
+   "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
   },
   {
    "id": "RS-04",
    "retailer": "Ross-Simons",
    "product_name": "14kt Yellow Gold 4mm Flat Wedding Band Ring",
    "url": "https://www.ross-simons.com/jewelry/rings/823796.html",
-   "stored_price_usd": 1195.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 956.0,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:49Z",
+   "checked_utc": "2026-11-11T08:02:06Z",
    "page_title": "Italian 14kt Yellow Gold Diamond-Cut Dome Ring",
    "final_url": "https://www.ross-simons.com/products/823796",
    "soft_404": false,
@@ -1631,35 +1757,41 @@
      "name": "Italian 14kt Yellow Gold Diamond-Cut Dome Ring — Size 10"
     }
    ],
-   "price_state": "CONFIRMED",
-   "note": "the page's own structured data prints the stored amount"
+   "price_state": "DIFFERS",
+   "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
   },
   {
    "id": "RS-05",
    "retailer": "Ross-Simons",
    "product_name": "0.80 Carat GIA Certified Solitaire Diamond Engagement Ring",
    "url": "https://www.ross-simons.com/products/990022",
-   "stored_price_usd": 2819.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_usd": 2537.1,
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:31Z",
+   "checked_utc": "2026-11-11T08:02:07Z",
    "page_title": ".80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold",
    "final_url": "https://www.ross-simons.com/products/990022",
    "soft_404": false,
-   "price_state": "CONFIRMED",
    "found_prices": [
+    {
+     "value": 3199.0,
+     "currency": "USD",
+     "source": "json-ld",
+     "type": "Offer",
+     "name": ".80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold — Size 9"
+    },
     {
      "value": 2819.0,
      "currency": "USD",
-     "source": "page text",
-     "type": "visible-text",
-     "name": "Item 990022"
+     "source": "json-ld",
+     "type": "Offer",
+     "name": ".80 Carat Ceritified Diamond Solitaire Ring in 14kt White Gold — Size 8"
     }
    ],
-   "note": "URL MIGRATION RESOLVED: the stored .html URL returned HTTP 404 on four runner reads; the product is live at /products/990022 (Item 990022, sale price $2,819, sizes 5-8 in stock) and the row's URL was corrected. This entry records this session's own browser-rendered read at 2026-10-23T20:31Z; the next runner pass will re-read the corrected URL automatically.",
-   "read_path": "browser_rendered_fetch"
+   "price_state": "DIFFERS",
+   "note": "the page's structured data prints a different amount than the stored value; both are shown, nothing is overwritten"
   },
   {
    "id": "MJ-06",
@@ -1667,11 +1799,11 @@
    "product_name": "Pavé Diamond Slim Eternity Band",
    "url": "https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&Stone=Natural+Diamond",
    "stored_price_usd": 1100.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:51Z",
+   "checked_utc": "2026-11-11T08:02:08Z",
    "page_title": "Diamond Eternity Band | Mejuri",
    "final_url": "https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&Stone=Natural+Diamond",
    "soft_404": false,
@@ -1728,11 +1860,11 @@
    "product_name": "Diamonds Line Ring",
    "url": "https://mejuri.com/us/en/products/diamonds-line-ring",
    "stored_price_usd": 348.0,
-   "stored_price_captured_utc": "2026-10-22",
+   "stored_price_captured_utc": "2026-11-11",
    "stored_price_verification": "V1_direct_page_fetch",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:54Z",
+   "checked_utc": "2026-11-11T08:02:10Z",
    "page_title": "Diamonds Line Ring | Mejuri",
    "final_url": "https://mejuri.com/us/en/products/diamonds-line-ring",
    "soft_404": false,
@@ -1758,7 +1890,7 @@
    "tier": "A",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:56Z",
+   "checked_utc": "2026-11-11T08:02:11Z",
    "final_url": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-dispute-a-charge-on-my-credit-card-bill-en-61/"
   },
   {
@@ -1769,8 +1901,8 @@
    "tier": "A",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:57Z",
-   "final_url": "https://unblock.federalregister.gov/"
+   "checked_utc": "2026-11-11T08:02:12Z",
+   "final_url": "https://www.ecfr.gov/current/title-12/chapter-X/part-1026/subpart-B/section-1026.13"
   },
   {
    "id": "ecfr-16-23",
@@ -1780,8 +1912,8 @@
    "tier": "A",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:57Z",
-   "final_url": "https://unblock.federalregister.gov/"
+   "checked_utc": "2026-11-11T08:02:13Z",
+   "final_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23"
   },
   {
    "id": "ftc-credit-cards",
@@ -1791,7 +1923,7 @@
    "tier": "A",
    "source_state": "HTTP_404",
    "http_status": 404,
-   "checked_utc": "2026-10-23T20:22:58Z",
+   "checked_utc": "2026-11-11T08:02:14Z",
    "final_url": "https://consumer.ftc.gov/articles/using-credit-cards-and-disputing-charges"
   },
   {
@@ -1802,7 +1934,7 @@
    "tier": "A",
    "source_state": "HTTP_404",
    "http_status": 404,
-   "checked_utc": "2026-10-23T20:22:59Z",
+   "checked_utc": "2026-11-11T08:02:14Z",
    "final_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry"
   },
   {
@@ -1813,7 +1945,7 @@
    "tier": "A",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:22:59Z",
+   "checked_utc": "2026-11-11T08:02:14Z",
    "final_url": "https://www.nist.gov/pml/owm/nist-handbook-44-current-edition"
   },
   {
@@ -1824,7 +1956,7 @@
    "tier": "A",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:00Z",
+   "checked_utc": "2026-11-11T08:02:17Z",
    "final_url": "https://www.nist.gov/pml/special-publication-811"
   },
   {
@@ -1835,7 +1967,7 @@
    "tier": "A",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:00Z",
+   "checked_utc": "2026-11-11T08:02:19Z",
    "final_url": "https://www.law.cornell.edu/uscode/text/15/1666"
   },
   {
@@ -1846,7 +1978,7 @@
    "tier": "A",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:01Z",
+   "checked_utc": "2026-11-11T08:02:20Z",
    "final_url": "https://www.law.cornell.edu/uscode/text/15/295"
   },
   {
@@ -1857,7 +1989,7 @@
    "tier": "A",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:02Z",
+   "checked_utc": "2026-11-11T08:02:21Z",
    "final_url": "https://www.law.cornell.edu/uscode/text/15/297"
   },
   {
@@ -1868,7 +2000,7 @@
    "tier": "A",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:03Z",
+   "checked_utc": "2026-11-11T08:02:22Z",
    "final_url": "https://www.law.cornell.edu/uscode/text/15/chapter-8"
   },
   {
@@ -1879,7 +2011,7 @@
    "tier": "B",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:03Z",
+   "checked_utc": "2026-11-11T08:02:23Z",
    "final_url": "https://www.bullionvault.com/gold-price-chart.do"
   },
   {
@@ -1890,7 +2022,7 @@
    "tier": "B",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:04Z",
+   "checked_utc": "2026-11-11T08:02:24Z",
    "final_url": "https://www.gia.edu/gems-gemology/spring-2024-lab-notes-electroformed-gold-bracelet"
   },
   {
@@ -1901,7 +2033,7 @@
    "tier": "B",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:05Z",
+   "checked_utc": "2026-11-11T08:02:25Z",
    "final_url": "https://www.gia.edu/gems-gemology/winter-2024-chemical-analysis"
   },
   {
@@ -1912,7 +2044,7 @@
    "tier": "B",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:06Z",
+   "checked_utc": "2026-11-11T08:02:25Z",
    "final_url": "https://www.jmbullion.com/charts/gold-price/"
   },
   {
@@ -1923,7 +2055,7 @@
    "tier": "B",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:07Z",
+   "checked_utc": "2026-11-11T08:02:26Z",
    "final_url": "https://www.kitco.com/charts/gold"
   },
   {
@@ -1934,7 +2066,7 @@
    "tier": "B",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:07Z",
+   "checked_utc": "2026-11-11T08:02:27Z",
    "final_url": "https://www.lbma.org.uk/prices-and-data/lbma-precious-metal-prices"
   },
   {
@@ -1945,7 +2077,7 @@
    "tier": "B",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:09Z",
+   "checked_utc": "2026-11-11T08:02:28Z",
    "final_url": "https://www.gold.org/goldhub/data/gold-prices"
   },
   {
@@ -1956,7 +2088,7 @@
    "tier": "C",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:10Z",
+   "checked_utc": "2026-11-11T08:02:29Z",
    "final_url": "https://www.allurez.com/pages/return-policy"
   },
   {
@@ -1967,7 +2099,7 @@
    "tier": "C",
    "source_state": "EMPTY_OR_JS_SHELL",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:11Z",
+   "checked_utc": "2026-11-11T08:02:29Z",
    "final_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx"
   },
   {
@@ -1978,7 +2110,7 @@
    "tier": "C",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:11Z",
+   "checked_utc": "2026-11-11T08:02:30Z",
    "final_url": "https://www.bluenile.com/policies/returns"
   },
   {
@@ -1989,7 +2121,7 @@
    "tier": "C",
    "source_state": "REFUSED_403",
    "http_status": 403,
-   "checked_utc": "2026-10-23T20:23:12Z",
+   "checked_utc": "2026-11-11T08:02:31Z",
    "final_url": "https://www.brilliantearth.com/30-Day-Returns/"
   },
   {
@@ -2000,7 +2132,7 @@
    "tier": "C",
    "source_state": "REFUSED_403",
    "http_status": 403,
-   "checked_utc": "2026-10-23T20:23:13Z",
+   "checked_utc": "2026-11-11T08:02:32Z",
    "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/"
   },
   {
@@ -2011,7 +2143,7 @@
    "tier": "C",
    "source_state": "REFUSED_403",
    "http_status": 403,
-   "checked_utc": "2026-10-23T20:23:13Z",
+   "checked_utc": "2026-11-11T08:02:32Z",
    "final_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/"
   },
   {
@@ -2022,7 +2154,7 @@
    "tier": "C",
    "source_state": "REFUSED_403",
    "http_status": 403,
-   "checked_utc": "2026-10-23T20:23:14Z",
+   "checked_utc": "2026-11-11T08:02:32Z",
    "final_url": "https://www.brilliantearth.com/30-Day-Returns/"
   },
   {
@@ -2033,7 +2165,7 @@
    "tier": "C",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:14Z",
+   "checked_utc": "2026-11-11T08:02:33Z",
    "final_url": "https://www.catbirdnyc.com/returns"
   },
   {
@@ -2044,7 +2176,7 @@
    "tier": "C",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:16Z",
+   "checked_utc": "2026-11-11T08:03:04Z",
    "final_url": "https://mejuri.com/company/returns-terms"
   },
   {
@@ -2055,8 +2187,8 @@
    "tier": "C",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:17Z",
-   "final_url": "https://mene.com/customer-care?hcUrl=en-US%2Farticles%2Freturns-319505"
+   "checked_utc": "2026-11-11T08:03:05Z",
+   "final_url": "https://mene.com/customer-care/categories/returns-319505"
   },
   {
    "id": "ross-simons-returns",
@@ -2066,19 +2198,19 @@
    "tier": "C",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:18Z",
+   "checked_utc": "2026-11-11T08:03:06Z",
    "final_url": "https://www.ross-simons.com/pages/returns-exchanges"
   },
   {
    "id": "sarraf-returns",
    "publisher": "Sarraf Jewelry Inc.",
-   "title": "Sarraf Return Policy & Lifetime Warranty Terms",
-   "url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+   "title": "30 Day Returns and Exchange Policy",
+   "url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/",
    "tier": "C",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:19Z",
-   "final_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html"
+   "checked_utc": "2026-11-11T08:03:07Z",
+   "final_url": "https://www.sarraf.com/30-day-returns-and-exchange-policy/"
   },
   {
    "id": "vrai-returns",
@@ -2086,10 +2218,21 @@
    "title": "Returns & Exchanges",
    "url": "https://www.vrai.com/returns-exchanges",
    "tier": "C",
+   "source_state": "REFUSED_429",
+   "http_status": 429,
+   "checked_utc": "2026-11-11T08:03:08Z",
+   "final_url": "https://www.vrai.com/returns-exchanges"
+  },
+  {
+   "id": "sarraf-warranty",
+   "publisher": "Sarraf Jewelry Inc.",
+   "title": "Lifetime Guarantee",
+   "url": "https://www.sarraf.com/lifetime-guarantee/",
+   "tier": "C",
    "source_state": "OK",
    "http_status": 200,
-   "checked_utc": "2026-10-23T20:23:20Z",
-   "final_url": "https://www.vrai.com/returns-exchanges"
+   "checked_utc": "2026-11-11T08:03:08Z",
+   "final_url": "https://www.sarraf.com/lifetime-guarantee/"
   }
  ]
 }

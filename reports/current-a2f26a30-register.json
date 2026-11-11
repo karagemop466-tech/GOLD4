@@ -2,10 +2,10 @@
   "schema": 1,
   "review_date_utc": "2026-11-11",
   "input_sha256": {
-    "data/rings.json": "2827dc2566aec872545b31dc64aea9b0157bbe6353a8b654b19495187f74eaec",
-    "data/sources.json": "c5aabcee368b42aaba537a9db700c2687420ce621e558a5bc0facd8d430e7925",
+    "data/rings.json": "d39a153a7de103c690791b4bfa9f7aef0a512e94c5e1a17364f355341faab2f5",
+    "data/sources.json": "d03cededc8fc6a59ed276082ccb0ce665f074c3d5c61bb36a0b716779c0a2f7c",
     "data/sellers.json": "a8a2ec1cfb6f6d50e42dc7a076848aaf22ee36da3b3c632e6f86ef04635d03ec",
-    "data/gold_spot.json": "b608d4142706092a30de4792b66c841df22d7d6c14ea612ad35974cb8e1c9ed2",
+    "data/gold_spot.json": "08e23e6b3c9f0f12f7d09fc1fb7523230a9d74c10dceb177c5979654b1726183",
     "reviews/current-a2f26a30.json": "c00886dee7c6a11f1a2e1f9c86ecae1c78a82f2ecfe5cfb6a6e0b1f4533854e5"
   },
   "stats": {
@@ -28,7 +28,7 @@
       "product_name": "Engraved Floral Solitaire Engagement Ring Setting",
       "category": "solitaire",
       "source_url": "https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": "2026-11-11",
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -48,7 +48,7 @@
       "product_name": "Milgrain Trellis Solitaire Engagement Ring",
       "category": "solitaire",
       "source_url": "https://www.allurez.com/products/milgrain-trellis-solitaire-engagement-ring-14k-yellow-gold",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -68,7 +68,7 @@
       "product_name": "Split Shank Solitaire Engagement Ring",
       "category": "solitaire",
       "source_url": "https://www.allurez.com/products/split-shank-solitaire-engagement-ring-14k-yellow-gold",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -88,7 +88,7 @@
       "product_name": "Split Shank Solitaire Engagement Ring",
       "category": "solitaire",
       "source_url": "https://www.allurez.com/products/split-shank-solitaire-engagement-ring-18k-yellow-gold",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -108,7 +108,7 @@
       "product_name": "Six Curved Prongs Solitaire Diamond Engagement Ring (MS354-A)",
       "category": "solitaire",
       "source_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": "2026-11-11",
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -131,7 +131,7 @@
       "product_name": "Atelier Solitaire Ring (2 mm, claw-prong bypass)",
       "category": "solitaire",
       "source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -153,7 +153,7 @@
       "product_name": "Atelier Solitaire Ring (2 mm, claw-prong bypass)",
       "category": "solitaire",
       "source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -175,7 +175,7 @@
       "product_name": "Petite Solitaire Engagement Ring",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-14k-yellow-gold-item-195639",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -186,7 +186,9 @@
       "inherited_flags": [
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -195,7 +197,7 @@
       "product_name": "Petite Solitaire Engagement Ring",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-solitaire-engagement-ring-in-18k-yellow-gold-item-195269",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -206,7 +208,9 @@
       "inherited_flags": [
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -215,7 +219,7 @@
       "product_name": "Classic Six-Prong Solitaire Engagement Ring",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-six-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203272",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -226,7 +230,9 @@
       "inherited_flags": [
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -235,7 +241,7 @@
       "product_name": "Classic Comfort Fit Solitaire Engagement Ring (2.5mm)",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-25mm-item-203284",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -247,7 +253,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "COPY_INCONSISTENT_METAL"
+        "COPY_INCONSISTENT_METAL",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -256,7 +264,7 @@
       "product_name": "Classic Comfort Fit Solitaire Engagement Ring (2.5mm)",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-25mm-item-194941",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -267,7 +275,9 @@
       "inherited_flags": [
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -276,7 +286,7 @@
       "product_name": "Six-Prong Low Dome Comfort Fit Solitaire Engagement Ring (2mm)",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/six-prong-low-dome-comfort-fit-solitaire-engagement-ring-in-18k-yellow-gold-2mm-item-195379",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -287,7 +297,9 @@
       "inherited_flags": [
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -296,7 +308,7 @@
       "product_name": "Classic Four Prong Solitaire Engagement Ring",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-14k-yellow-gold-item-203257",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -308,7 +320,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "MIXED_METAL_UNCLEAR"
+        "MIXED_METAL_UNCLEAR",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -317,7 +331,7 @@
       "product_name": "Riviera Pave Diamond Engagement Ring (1/6 ct. tw.)",
       "category": "pave",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/riviera-pave-diamond-engagement-ring-in-14k-yellow-gold-1-6-ct-tw-item-203512",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -329,7 +343,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "COPY_INCONSISTENT_METAL"
+        "COPY_INCONSISTENT_METAL",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -338,7 +354,7 @@
       "product_name": "Diamonds Team Ring",
       "category": "band",
       "source_url": "https://mejuri.com/products/diamonds-team-ring",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": "2026-11-11",
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -359,7 +375,7 @@
       "product_name": "Diamonds Band",
       "category": "band",
       "source_url": "https://mejuri.com/products/diamonds-band",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -379,7 +395,7 @@
       "product_name": "Pave Diamond Slim Signet",
       "category": "pave",
       "source_url": "https://mejuri.com/products/pave-diamond-slim-signet-ring",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -401,7 +417,7 @@
       "product_name": "Pave Diamond Thin Dome Ring",
       "category": "pave",
       "source_url": "https://mejuri.com/products/pave-diamond-thin-dome-ring",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -421,7 +437,7 @@
       "product_name": "Ziggy Ring (Bezel Lab Grown Diamond Zig-Zag Ring)",
       "category": "band",
       "source_url": "https://mejuri.com/products/bezel-lab-grown-diamond-zig-zag-ring",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -443,7 +459,7 @@
       "product_name": "The Classic Engagement Ring (4-prong dome, plain band)",
       "category": "solitaire",
       "source_url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": "2026-11-11",
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -457,8 +473,7 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "SPEC_LISTED_PAVE_ON_PLAIN_BAND",
-        "WIDTH_UNVERIFIED",
-        "PRICE_STRUCTURED_DIFFERS"
+        "WIDTH_UNVERIFIED"
       ]
     },
     {
@@ -480,7 +495,8 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "SPEC_LISTED_PAVE_ON_PLAIN_BAND",
-        "WIDTH_UNVERIFIED"
+        "WIDTH_UNVERIFIED",
+        "PRICE_NOT_REREAD_2026_11_11"
       ]
     },
     {
@@ -489,7 +505,7 @@
       "product_name": "Six-Prong Petite Comfort Fit 1.5mm Solitaire Setting (18K Shank + 14K White Gold Prongs)",
       "category": "solitaire",
       "source_url": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -511,7 +527,7 @@
       "product_name": "10k White Gold 5mm High Polished Traditional Domed Wedding Band",
       "category": "band",
       "source_url": "https://www.sarraf.com/products/10k-White-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -532,7 +548,7 @@
       "product_name": "14k Yellow Gold 6mm High Polished Comfort Fit Heavy Wedding Band",
       "category": "band",
       "source_url": "https://www.sarraf.com/products/14k-gold-6mm-high-polished-comfort-fit-wedding-band.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -551,7 +567,7 @@
       "product_name": "18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band",
       "category": "band",
       "source_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": "2026-11-11",
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -570,7 +586,7 @@
       "product_name": "18K Yellow Gold 6mm High Polished Flat Comfort Fit Heavy Band",
       "category": "band",
       "source_url": "https://www.sarraf.com/products/18K-Gold-6mm-High-Polished-Flat-Comfort-Fit-Wedding-Band.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -589,7 +605,7 @@
       "product_name": "14k Yellow Gold Men's Solitaire Natural Diamond Ring (0.50 ct H/SI1)",
       "category": "solitaire",
       "source_url": "https://www.sarraf.com/products/14k-yellow-gold-mens-solitaire-diamond-ring-1-2-ct.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -609,7 +625,7 @@
       "product_name": "18k Yellow Gold Men's Solitaire Natural Diamond Ring (0.74 ct J/SI1)",
       "category": "solitaire",
       "source_url": "https://www.sarraf.com/products/18k-yellow-gold-mens-solitaire-diamond-ring-3-4-ct.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -629,7 +645,7 @@
       "product_name": "14k Gold 1/2 Ctw Natural Diamond Solitaire Engagement Ring (G/SI1)",
       "category": "solitaire",
       "source_url": "https://www.sarraf.com/products/14k-gold-1-2-ctw-diamond-solitaire-engagement-diamond-ring.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -649,7 +665,7 @@
       "product_name": "18k Yellow Gold 1/2 Carat Round Diamond Solitaire Engagement Ring",
       "category": "solitaire",
       "source_url": "https://www.sarraf.com/products/18k-yellow-gold-1-2-carat-round-diamond-solitaire-engagement-ring.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -669,7 +685,7 @@
       "product_name": "The Swan Solitaire Diamond Engagement Ring (1.0mm Recycled 14K Band)",
       "category": "solitaire",
       "source_url": "https://www.catbirdnyc.com/the-swan-solitaire-2475.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": "2026-11-11",
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -690,7 +706,7 @@
       "product_name": "Grand Painter's Solid 14k Yellow Gold Band",
       "category": "band",
       "source_url": "https://www.catbirdnyc.com/grand-painters-ring.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -709,7 +725,7 @@
       "product_name": "Knot Ring",
       "category": "band",
       "source_url": "https://mene.com/products/knot-ring-gold",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": "2026-11-11",
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -720,8 +736,8 @@
       "inherited_flags": [
         "NO_WEIGHT_PUBLISHED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_STRUCTURED_DIFFERS",
-        "SOLID_NOT_STATED"
+        "SOLID_NOT_STATED",
+        "PRICE_CHANGED_2026_11_11"
       ]
     },
     {
@@ -730,7 +746,7 @@
       "product_name": "Etruscan Sun Band",
       "category": "band",
       "source_url": "https://mene.com/products/etruscan-sun-band-gold",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -741,8 +757,9 @@
       "inherited_flags": [
         "NO_WEIGHT_PUBLISHED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_STRUCTURED_DIFFERS",
-        "SOLID_NOT_STATED"
+        "SOLID_NOT_STATED",
+        "PRICE_CHANGED_2026_11_11",
+        "PRICE_STRUCTURED_DIFFERS"
       ]
     },
     {
@@ -764,6 +781,8 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "MIXED_METAL_UNCLEAR",
+        "PRICE_UNVERIFIED",
+        "SOURCE_DEAD_2026_11_11",
         "SOURCE_URL_DEAD"
       ]
     },
@@ -785,6 +804,8 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
+        "PRICE_UNVERIFIED",
+        "SOURCE_DEAD_2026_11_11",
         "SOURCE_URL_DEAD"
       ]
     },
@@ -806,6 +827,8 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
+        "PRICE_UNVERIFIED",
+        "SOURCE_DEAD_2026_11_11",
         "SOURCE_URL_DEAD"
       ]
     },
@@ -829,6 +852,8 @@
         "HALLMARK_NOT_PUBLISHED",
         "COPY_INCONSISTENT_METAL",
         "COPY_CARAT_MISMATCH",
+        "PRICE_UNVERIFIED",
+        "SOURCE_DEAD_2026_11_11",
         "SOURCE_URL_DEAD"
       ]
     },
@@ -838,7 +863,7 @@
       "product_name": "Solitaire Engagement Ring With Pavé Basket In 14K Yellow Gold By James Allen",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-pave-basket-in-14k-yellow-gold-by-james-allen-item-311230",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -850,7 +875,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_FROM_CATEGORY_PAGE"
+        "PRICE_FROM_CATEGORY_PAGE",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -859,7 +886,7 @@
       "product_name": "Solitaire Engagement Ring With Intricate Basket In 14K Yellow Gold By James Allen",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/solitaire-engagement-ring-with-intricate-basket-in-14k-yellow-gold-by-james-allen-item-315036",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -871,7 +898,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_FROM_CATEGORY_PAGE"
+        "PRICE_FROM_CATEGORY_PAGE",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -880,7 +909,7 @@
       "product_name": "East West Knife Edge Cathedral Solitaire Engagement Ring In 14K Yellow Gold By James Allen",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/east-west-knife-edge-cathedral-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-311246",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -892,7 +921,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_FROM_CATEGORY_PAGE"
+        "PRICE_FROM_CATEGORY_PAGE",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -901,7 +932,7 @@
       "product_name": "Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Oval) By James Allen",
       "category": "pave",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-oval-by-james-allen-item-311127",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -913,7 +944,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_FROM_CATEGORY_PAGE"
+        "PRICE_FROM_CATEGORY_PAGE",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -922,7 +955,7 @@
       "product_name": "Pavé Diamond Halo Engagement Ring In 14K Yellow Gold (Pear) By James Allen",
       "category": "pave",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/pave-diamond-halo-engagement-ring-in-14k-yellow-gold-pear-by-james-allen-item-311121",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -934,7 +967,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_FROM_CATEGORY_PAGE"
+        "PRICE_FROM_CATEGORY_PAGE",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -943,7 +978,7 @@
       "product_name": "Petite Hidden Halo Solitaire Plus Diamond Engagement Ring in 14k Yellow Gold",
       "category": "pave",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/petite-hidden-halo-solitaire-plus-diamond-engagement-ring-in-14k-yellow-gold-item-192506",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -955,7 +990,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_FROM_CATEGORY_PAGE"
+        "PRICE_FROM_CATEGORY_PAGE",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -964,7 +1001,7 @@
       "product_name": "Bow-Tie Engagement Ring With Channel Set Round Diamonds In 14K Yellow Gold By James Allen",
       "category": "pave",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/bow-tie-engagement-ring-with-channel-set-round-diamonds-in-14k-yellow-gold-by-james-allen-item-304294",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -976,7 +1013,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "PRICE_FROM_CATEGORY_PAGE"
+        "PRICE_FROM_CATEGORY_PAGE",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -985,7 +1024,7 @@
       "product_name": "Woven Solitaire Engagement Ring In 14K Yellow Gold By James Allen",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/woven-solitaire-engagement-ring-in-14k-yellow-gold-by-james-allen-item-310896",
-      "historical_capture_date": "2026-10-23",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -997,7 +1036,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "SALE_PRICE_VARIES_ACROSS_PAGES"
+        "SALE_PRICE_VARIES_ACROSS_PAGES",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -1006,7 +1047,7 @@
       "product_name": "Knife Edge Solitaire Engagement Ring in 14k Yellow Gold",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/knife-edge-solitaire-engagement-ring-in-14k-yellow-gold-item-192261",
-      "historical_capture_date": "2026-10-23",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -1017,7 +1058,9 @@
       "inherited_flags": [
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -1026,7 +1069,7 @@
       "product_name": "Wide Band Solitaire Engagement Ring in 14K Yellow Gold (5mm)",
       "category": "solitaire",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/wide-band-solitaire-engagement-ring-in-14k-yellow-gold-5mm-item-203321",
-      "historical_capture_date": "2026-10-23",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": "2026-11-11",
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -1038,7 +1081,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "COPY_INCONSISTENT_METAL"
+        "COPY_INCONSISTENT_METAL",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -1047,27 +1092,7 @@
       "product_name": "Emerald Cut Diamond Engagement Ring in 14K Yellow Gold (1 ct. tw.)",
       "category": "pave",
       "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/emerald-cut-diamond-engagement-ring-in-14k-yellow-gold-1-ct-tw-item-203303",
-      "historical_capture_date": "2026-10-23",
-      "official_read_date": null,
-      "current_exact_price_usd": null,
-      "current_exact_metal_weight_g": null,
-      "current_price_status": "UNVERIFIED",
-      "purchase_approved": false,
-      "review_status": "not_reopened_needs_review",
-      "finding": "Not re-opened in this pass. Historical facts have NOT been independently re-verified today.",
-      "inherited_flags": [
-        "NO_WEIGHT_PUBLISHED",
-        "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
-      ]
-    },
-    {
-      "id": "BN-24",
-      "retailer": "Blue Nile",
-      "product_name": "Classic Simple Solitaire Engagement Ring in 14k White Gold",
-      "category": "solitaire",
-      "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730",
-      "historical_capture_date": "2026-10-23",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -1079,7 +1104,31 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "WHITE_GOLD"
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
+      ]
+    },
+    {
+      "id": "BN-24",
+      "retailer": "Blue Nile",
+      "product_name": "Classic Simple Solitaire Engagement Ring in 14k White Gold",
+      "category": "solitaire",
+      "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-simple-solitaire-engagement-ring-in-14k-white-gold-item-195730",
+      "historical_capture_date": "2026-11-11",
+      "official_read_date": null,
+      "current_exact_price_usd": null,
+      "current_exact_metal_weight_g": null,
+      "current_price_status": "UNVERIFIED",
+      "purchase_approved": false,
+      "review_status": "not_reopened_needs_review",
+      "finding": "Not re-opened in this pass. Historical facts have NOT been independently re-verified today.",
+      "inherited_flags": [
+        "NO_WEIGHT_PUBLISHED",
+        "SOLID_NOT_STATED",
+        "HALLMARK_NOT_PUBLISHED",
+        "WHITE_GOLD",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY"
       ]
     },
     {
@@ -1100,7 +1149,9 @@
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "WHITE_GOLD"
+        "WHITE_GOLD",
+        "PRICE_UNVERIFIED",
+        "SOLD_OUT_2026_11_11"
       ]
     },
     {
@@ -1122,7 +1173,8 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_UNVERIFIED",
-        "SOLD_OUT_AT_CHECK"
+        "SOLD_OUT_AT_CHECK",
+        "SOLD_OUT_2026_11_11"
       ]
     },
     {
@@ -1144,6 +1196,8 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "RESIZE_EXCLUDED_ON_PAGE",
+        "PRICE_UNVERIFIED",
+        "SOURCE_DEAD_2026_11_11",
         "SOURCE_BOT_BLOCKED"
       ]
     },
@@ -1153,7 +1207,7 @@
       "product_name": "Freesia Hidden Halo Diamond Ring",
       "category": "pave",
       "source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
-      "historical_capture_date": "2026-10-23",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": "2026-11-11",
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -1166,6 +1220,7 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED",
+        "PRICE_CHANGED_2026_11_11",
         "SOURCE_BOT_BLOCKED"
       ]
     },
@@ -1175,7 +1230,7 @@
       "product_name": "Freesia Hidden Halo Diamond Ring",
       "category": "pave",
       "source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/",
-      "historical_capture_date": "2026-10-23",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -1188,6 +1243,7 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED",
+        "PRICE_CHANGED_2026_11_11",
         "SOURCE_BOT_BLOCKED"
       ]
     },
@@ -1197,7 +1253,7 @@
       "product_name": "Fleur Solitaire Ring",
       "category": "solitaire",
       "source_url": "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
-      "historical_capture_date": "2026-10-23",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -1219,7 +1275,7 @@
       "product_name": "14kt Yellow Gold 2mm Wedding Band",
       "category": "band",
       "source_url": "https://www.ross-simons.com/jewelry/rings/571221.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -1230,7 +1286,11 @@
       "inherited_flags": [
         "WEIGHT_APPROXIMATE",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY",
+        "STRUCTURED_PRICE_LAGS_DISPLAY",
+        "PRICE_STRUCTURED_DIFFERS"
       ]
     },
     {
@@ -1239,7 +1299,7 @@
       "product_name": "Italian 18kt Yellow Gold 2mm Wedding Band",
       "category": "band",
       "source_url": "https://www.ross-simons.com/jewelry/rings/985230.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -1250,7 +1310,11 @@
       "inherited_flags": [
         "WEIGHT_APPROXIMATE",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY",
+        "STRUCTURED_PRICE_LAGS_DISPLAY",
+        "PRICE_STRUCTURED_DIFFERS"
       ]
     },
     {
@@ -1259,7 +1323,7 @@
       "product_name": "14kt Yellow Gold 3mm Comfort-Fit Wedding Band",
       "category": "band",
       "source_url": "https://www.ross-simons.com/jewelry/rings/820263.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -1270,7 +1334,11 @@
       "inherited_flags": [
         "WEIGHT_APPROXIMATE",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY",
+        "STRUCTURED_PRICE_LAGS_DISPLAY",
+        "PRICE_STRUCTURED_DIFFERS"
       ]
     },
     {
@@ -1279,7 +1347,7 @@
       "product_name": "14kt Yellow Gold 4mm Flat Wedding Band Ring",
       "category": "band",
       "source_url": "https://www.ross-simons.com/jewelry/rings/823796.html",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -1290,7 +1358,11 @@
       "inherited_flags": [
         "WEIGHT_APPROXIMATE",
         "SOLID_NOT_STATED",
-        "HALLMARK_NOT_PUBLISHED"
+        "HALLMARK_NOT_PUBLISHED",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY",
+        "STRUCTURED_PRICE_LAGS_DISPLAY",
+        "PRICE_STRUCTURED_DIFFERS"
       ]
     },
     {
@@ -1299,7 +1371,7 @@
       "product_name": "0.80 Carat GIA Certified Solitaire Diamond Engagement Ring",
       "category": "solitaire",
       "source_url": "https://www.ross-simons.com/products/990022",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": "2026-11-11",
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -1313,7 +1385,11 @@
         "WHITE_GOLD",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
-        "CLEARANCE_RETURN_TERMS_UNCLEAR"
+        "CLEARANCE_RETURN_TERMS_UNCLEAR",
+        "PRICE_CHANGED_2026_11_11",
+        "SALE_PRICE_TEMPORARY",
+        "STRUCTURED_PRICE_LAGS_DISPLAY",
+        "PRICE_STRUCTURED_DIFFERS"
       ]
     },
     {
@@ -1322,7 +1398,7 @@
       "product_name": "Pavé Diamond Slim Eternity Band",
       "category": "pave",
       "source_url": "https://mejuri.com/us/en/products/diamond-eternity-band?Material=14k+Yellow+Gold&Stone=Natural+Diamond",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
@@ -1345,7 +1421,7 @@
       "product_name": "Diamonds Line Ring",
       "category": "pave",
       "source_url": "https://mejuri.com/us/en/products/diamonds-line-ring",
-      "historical_capture_date": "2026-10-22",
+      "historical_capture_date": "2026-11-11",
       "official_read_date": null,
       "current_exact_price_usd": null,
       "current_exact_metal_weight_g": null,
