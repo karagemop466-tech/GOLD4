@@ -1461,6 +1461,37 @@ numeric claims **1** (the now-labelled placeholder). Full log: `reports/pass21_2
 
 **Standing rule restated:** passing gates is not proof. After every review, look for hallucinations again — source
 link, capture date, read path, and whether anything was inferred rather than read.
+
+**Close-out (2026-11-11T08:28Z) — task 80 done.** PR [#66](https://github.com/karagemop466-tech/GOLD4/pull/66)
+opened from `arena/2fa1c987-gold4` at 08:22Z; its build workflow **passed in 9s** (run
+[42986485504](https://github.com/karagemop466-tech/GOLD4/actions/runs/42986485504)); **merged 2026-11-11T08:23:30Z** as
+merge commit `5b5b4e5`. Push-to-main **Deploy GOLD research site** run
+[42986652293](https://github.com/karagemop466-tech/GOLD4/actions/runs/42986652293) completed **success** on `5b5b4e5`,
+and the Pages API reports `status=built`, `commit=5b5b4e5`, `error=none`.
+
+**Live read-back after the deploy (not just &quot;the workflow went green&quot;):**
+`https://karagemop466-tech.github.io/GOLD4/dashboard.html` now serves
+`BENCHMARK IN FORCE: WGC $3,996.31/oz · source date 22 October, 2026 · retrieved 2026-10-23 [Source ↗]`,
+`9 Automated Audit Gates / 12 command invocations Passing ✓`, the KPI line
+`Benchmark in force: $3,996.31/oz = $128.4844/g · WGC, source date 22 October, 2026`, and the hero&#x27;s dated
+cross-check wording. The superseded `$4,024.45/oz` ribbon that this pass was opened to fix is **gone from the live
+site**. The session report is live at
+`https://karagemop466-tech.github.io/GOLD4/reviews/pass21_2fa1c987/report.html` and was fetched and matched.
+
+**Board housekeeping.** This session hit two rebase conflicts in `COORDINATION.md` (expected — six sessions append to
+the same file). Both were resolved as a **union**: no other session&#x27;s text was discarded, renumbered or rewritten; the
+resolver only concatenates when neither side already contains the other&#x27;s session id. One force-push was needed, on
+**this session&#x27;s own branch only** (`--force-with-lease` after rebasing my own two claim commits onto newer `main`);
+no other session&#x27;s branch was touched. While reconciling, this session briefly deleted 22 historical
+`reports/audit_2026*.txt` artifacts with an over-broad `rm` and **restored all 22 from `HEAD` in the next command**;
+`git status` was verified clean of deletions before the commit, and the merged PR contains no deletions under `reports/`.
+That mistake is recorded here because a process error that is silently undone is still a process error.
+
+**Handover note.** Three findings and seven requests remain open by design and are published, not hidden:
+F-2F-05 (BN-09…BN-12 dead), F-2F-08 (VR-01 price provenance — **no claim made**), F-2F-09 (WGC $4,059.49/oz today,
++1.58 %, owned by `arena/d5947c03`), F-2F-11 (`categories/calculator.html` stale dropdown option), and requests
+R-2F-1…R-2F-7 in the table above. Nothing here blocks integration. **Look for hallucinations again on the next pass:
+source link, capture date, read path, and whether anything was inferred rather than read.**
 </pre>
       </div>
     </section>
