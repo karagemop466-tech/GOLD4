@@ -1,0 +1,3637 @@
+{
+ "schema_version": 1,
+ "session": "arena/f0dbdb3e-gold4",
+ "title": "Seller due-diligence register — reputation, business identity, payment protection, hallmark and maker's-mark disclosure",
+ "no_hallucination_rule": "Every value in this file was read on 2026-11-11 from the linked page and is stored next to the words the page printed. A value that could not be read is null and carries a flag. Nothing is inferred, estimated or filled in from memory, and no value is taken from a search-engine summary.",
+ "read_window_utc": {
+  "first": "2026-11-11T08:04Z",
+  "last": "2026-11-11T08:15:10Z"
+ },
+ "reader": "Browser-rendered page reader. The sandbox has no general outbound internet from the shell, so a script cannot re-fetch these pages; the stored quotations are the evidence.",
+ "timestamp_rule": "read_utc is the sandbox clock reading taken immediately before the batch of page reads that contained the page.",
+ "quote_rule": "Quotations are the reader's text with line breaks collapsed. Where the reader ran two adjacent page elements together without a space (for example 'complaintsin' or 'Average of26'), the single missing space is restored. An ellipsis (…) marks omitted text between two parts of the same page. No word or digit is added, changed or reordered.",
+ "source_classes": {
+  "seller_site": "the seller's own official website",
+  "bbb": "the Better Business Bureau's own website (bbb.org), an independent complaint registry",
+  "regulator": "a US government regulator's website (ftc.gov, sec.gov)"
+ },
+ "sellers": [
+  {
+   "id": "blue-nile",
+   "name": "Blue Nile",
+   "official_domain": "bluenile.com"
+  },
+  {
+   "id": "allurez",
+   "name": "Allurez",
+   "official_domain": "allurez.com"
+  },
+  {
+   "id": "vrai",
+   "name": "VRAI",
+   "official_domain": "vrai.com"
+  },
+  {
+   "id": "mejuri",
+   "name": "Mejuri",
+   "official_domain": "mejuri.com"
+  },
+  {
+   "id": "brilliant-earth",
+   "name": "Brilliant Earth",
+   "official_domain": "brilliantearth.com"
+  },
+  {
+   "id": "anjolee",
+   "name": "Anjolee",
+   "official_domain": "anjolee.com"
+  },
+  {
+   "id": "sarraf",
+   "name": "Sarraf",
+   "official_domain": "sarraf.com"
+  },
+  {
+   "id": "catbird",
+   "name": "Catbird NYC",
+   "official_domain": "catbirdnyc.com"
+  },
+  {
+   "id": "mene",
+   "name": "Menē",
+   "official_domain": "mene.com"
+  },
+  {
+   "id": "ross-simons",
+   "name": "Ross-Simons",
+   "official_domain": "ross-simons.com"
+  }
+ ],
+ "reads": [
+  {
+   "read_id": "BBB-01",
+   "url": "https://www.bbb.org/us/wa/seattle/profile/jewelry-stores/blue-nile-inc-1296-15026564",
+   "page_title": "Blue Nile Inc | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:04:19Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-02",
+   "url": "https://www.bbb.org/us/pa/king-of-prussia/profile/jewelry-stores/blue-nile-0241-236107867",
+   "page_title": "Blue Nile | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:04:19Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-03",
+   "url": "https://www.bbb.org/us/wa/seattle/profile/jewelry-stores/blue-nile-inc-1296-15026564/complaints",
+   "page_title": "Blue Nile Inc | BBB Complaints | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:04:49Z",
+   "chunks_read": "first of 6 (summary and counts)",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-04",
+   "url": "https://www.bbb.org/us/wa/seattle/profile/jewelry-stores/blue-nile-inc-1296-15026564/customer-reviews",
+   "page_title": "Blue Nile Inc | BBB Reviews | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:04:49Z",
+   "chunks_read": "first of 2 (summary)",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-05",
+   "url": "https://www.bbb.org/us/ca/san-francisco/profile/diamond/brilliant-earth-llc-1116-154721",
+   "page_title": "Brilliant Earth, LLC | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:04:49Z",
+   "chunks_read": "first of 2",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-06",
+   "url": "https://www.bbb.org/us/ca/san-francisco/profile/diamond/brilliant-earth-llc-1116-154721/complaints",
+   "page_title": "Brilliant Earth, LLC | BBB Complaints | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:04:49Z",
+   "chunks_read": "first of 9 (summary and counts)",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-07",
+   "url": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/allurez-0121-120895",
+   "page_title": "Allurez | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:04:49Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-08",
+   "url": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/allurez-0121-120895/complaints",
+   "page_title": "Allurez | BBB Complaints | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:04:49Z",
+   "chunks_read": "first of 5 (summary and counts)",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-09",
+   "url": "https://www.bbb.org/us/ca/los-angeles/profile/jewelry-advisory-service/vrai-1216-652149",
+   "page_title": "Vrai | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:05:30Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-10",
+   "url": "https://www.bbb.org/ca/on/toronto/profile/jewelry-manufacturers/mejuri-0107-1370644",
+   "page_title": "Mejuri | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:05:30Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-11",
+   "url": "https://www.bbb.org/us/ca/chula-vista/profile/jewelry-stores/anjolee-1126-171986380",
+   "page_title": "Anjolee | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:05:30Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-12",
+   "url": "https://www.bbb.org/us/ca/los-angeles/profile/jewelry-stores/sarraf-jewelry-inc-1216-13041977",
+   "page_title": "Sarraf Jewelry Inc. | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:05:30Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-13",
+   "url": "https://www.bbb.org/us/ny/brooklyn/profile/retail-stores/catbird-0121-87171007",
+   "page_title": "Catbird | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:05:30Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-14",
+   "url": "https://www.bbb.org/us/ri/cranston/profile/jewelry-stores/ross-simons-0021-105000",
+   "page_title": "Ross-Simons | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:05:30Z",
+   "chunks_read": "first of 2",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-15",
+   "url": "https://www.bbb.org/ca/on/toronto/profile/jewelry-designers/mene-0107-1378080",
+   "page_title": "Mene | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:06:17Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-16",
+   "url": "https://www.bbb.org/ca/on/ontario-/profile/jewelry-designers/mene-inc-0107-1413670",
+   "page_title": "Mene Inc | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:06:17Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-17",
+   "url": "https://www.bbb.org/us/ca/chula-vista/profile/jewelry-stores/anjolee-1126-171986380/complaints",
+   "page_title": "Anjolee | BBB Complaints | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:06:17Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-18",
+   "url": "https://www.bbb.org/us/ca/chula-vista/profile/jewelry-stores/anjolee-1126-171986380/details",
+   "page_title": "Anjolee | BBB Business Profile",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:06:17Z",
+   "chunks_read": "1 of 1",
+   "status": "read",
+   "served_url": "https://www.bbb.org/us/ca/chula-vista/profile/jewelry-stores/anjolee-1126-171986380",
+   "note": "The /details address served the same profile page as BBB-11 and printed no rating letter either."
+  },
+  {
+   "read_id": "BBB-19",
+   "url": "https://www.bbb.org/us/ca/los-angeles/profile/jewelry-stores/sarraf-jewelry-inc-1216-13041977/complaints",
+   "page_title": "Sarraf Jewelry Inc. | BBB Complaints | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:06:17Z",
+   "chunks_read": "first of 3 (summary, counts and the two most recent complaints)",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-20",
+   "url": "https://www.bbb.org/us/ca/san-francisco/profile/diamond/brilliant-earth-llc-1116-154721/customer-reviews",
+   "page_title": "Brilliant Earth, LLC | BBB Reviews | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:06:43Z",
+   "chunks_read": "first of 2 (summary)",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-21",
+   "url": "https://www.bbb.org/us/ny/new-york/profile/jewelry-stores/allurez-0121-120895/customer-reviews",
+   "page_title": "Allurez | BBB Reviews | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:06:43Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-22",
+   "url": "https://www.bbb.org/us/ca/los-angeles/profile/jewelry-advisory-service/vrai-1216-652149/customer-reviews",
+   "page_title": "Vrai | BBB Reviews | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:06:43Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-23",
+   "url": "https://www.bbb.org/ca/on/toronto/profile/jewelry-manufacturers/mejuri-0107-1370644/customer-reviews",
+   "page_title": "Mejuri | BBB Reviews | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:06:43Z",
+   "chunks_read": "first of 2 (summary and five most recent reviews)",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-24",
+   "url": "https://www.bbb.org/us/ca/chula-vista/profile/jewelry-stores/anjolee-1126-171986380/customer-reviews",
+   "page_title": "Anjolee | BBB Reviews | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:06:43Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-25",
+   "url": "https://www.bbb.org/us/ca/los-angeles/profile/jewelry-stores/sarraf-jewelry-inc-1216-13041977/customer-reviews",
+   "page_title": "Sarraf Jewelry Inc. | BBB Reviews | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:07:46Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-26",
+   "url": "https://www.bbb.org/us/ny/brooklyn/profile/retail-stores/catbird-0121-87171007/customer-reviews",
+   "page_title": "Catbird | BBB Reviews | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:07:46Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-27",
+   "url": "https://www.bbb.org/ca/on/toronto/profile/jewelry-designers/mene-0107-1378080/customer-reviews",
+   "page_title": "Mene | BBB Reviews | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:07:46Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-28",
+   "url": "https://www.bbb.org/us/ri/cranston/profile/jewelry-stores/ross-simons-0021-105000/customer-reviews",
+   "page_title": "Ross-Simons | BBB Reviews | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:07:46Z",
+   "chunks_read": "first of 2 (summary)",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-29",
+   "url": "https://www.bbb.org/us/ny/brooklyn/profile/retail-stores/catbird-0121-87171007/complaints",
+   "page_title": "Catbird | BBB Complaints | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:07:46Z",
+   "chunks_read": "first of 3 (summary and counts)",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-30",
+   "url": "https://www.bbb.org/us/ca/los-angeles/profile/jewelry-advisory-service/vrai-1216-652149/complaints",
+   "page_title": "Vrai | BBB Complaints | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:08:04Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-31",
+   "url": "https://www.bbb.org/ca/on/toronto/profile/jewelry-manufacturers/mejuri-0107-1370644/complaints",
+   "page_title": "Mejuri | BBB Complaints | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:08:04Z",
+   "chunks_read": "first of 2 (summary and counts)",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-32",
+   "url": "https://www.bbb.org/us/ri/cranston/profile/jewelry-stores/ross-simons-0021-105000/complaints",
+   "page_title": "Ross-Simons | BBB Complaints | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:08:04Z",
+   "chunks_read": "first of 5 (summary and counts)",
+   "status": "read"
+  },
+  {
+   "read_id": "BBB-33",
+   "url": "https://www.bbb.org/ca/on/ontario-/profile/jewelry-designers/mene-inc-0107-1413670/complaints",
+   "page_title": "Mene Inc | BBB Complaints | Better Business Bureau",
+   "publisher": "Better Business Bureau (bbb.org)",
+   "source_class": "bbb",
+   "read_utc": "2026-11-11T08:08:04Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "FTC-01",
+   "url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+   "page_title": "Buying Platinum, Gold, and Silver Jewelry | Consumer Advice",
+   "publisher": "U.S. Federal Trade Commission (consumer.ftc.gov)",
+   "source_class": "regulator",
+   "read_utc": "2026-11-11T08:04Z",
+   "chunks_read": "first of 2",
+   "status": "read"
+  },
+  {
+   "read_id": "SEC-01",
+   "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1866757&type=10-K&dateb=&owner=include&count=10",
+   "page_title": "EDGAR Search Results",
+   "publisher": "U.S. Securities and Exchange Commission (sec.gov, EDGAR)",
+   "source_class": "regulator",
+   "read_utc": "2026-11-11T08:14:15Z",
+   "chunks_read": "1 of 1",
+   "status": "read",
+   "note": "EDGAR company page for CIK 0001866757, filtered to form 10-K."
+  },
+  {
+   "read_id": "SEC-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/832988/000083298824000127/signetfy2024annualreport.pdf",
+   "page_title": "Signet Jewelers — Fiscal 2024 Annual Report (PDF hosted in the EDGAR archive)",
+   "publisher": "U.S. Securities and Exchange Commission (sec.gov, EDGAR)",
+   "source_class": "regulator",
+   "read_utc": "2026-11-11T08:13:32Z",
+   "chunks_read": "first of 15",
+   "status": "read",
+   "note": "This is the fiscal-2024 report. It shows Blue Nile among Signet's brands as of that report; no later filing was opened in this pass."
+  },
+  {
+   "read_id": "BN-01",
+   "url": "https://www.bluenile.com/contact-us",
+   "page_title": "Contact Blue Nile | Blue Nile",
+   "publisher": "Blue Nile (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:04Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BN-02",
+   "url": "https://www.bluenile.com/policies/order-and-shipping",
+   "page_title": "U.S. Order & Shipping Policies | Blue Nile",
+   "publisher": "Blue Nile (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:09:28Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "BN-03",
+   "url": "https://www.bluenile.com/contact-us/faq",
+   "page_title": "Blue Nile Customer Support FAQ | Help & Answers",
+   "publisher": "Blue Nile (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:09:28Z",
+   "chunks_read": "first two of 4 (second chunk at 08:09:45Z)",
+   "status": "read"
+  },
+  {
+   "read_id": "BN-04",
+   "url": "https://www.bluenile.com/jewelry/gold-jewelry/gold-rings",
+   "page_title": "Gold Rings | Blue Nile",
+   "publisher": "Blue Nile (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:09:28Z",
+   "chunks_read": "first and last of 3 (last chunk at 08:09:45Z)",
+   "status": "read"
+  },
+  {
+   "read_id": "BN-05",
+   "url": "https://www.bluenile.com/policies/terms-and-conditions",
+   "page_title": "Terms & Conditions | Blue Nile Website Use & Purchase Terms",
+   "publisher": "Blue Nile (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:09:45Z",
+   "chunks_read": "first of 4",
+   "status": "read"
+  },
+  {
+   "read_id": "BE-01",
+   "url": "https://www.brilliantearth.com/en-ca/jewelry/buying-guide/jewelry-stamps-and-markings-identification/",
+   "page_title": "Meaning of Symbols Stamped on Jewelry",
+   "publisher": "Brilliant Earth (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:09:28Z",
+   "chunks_read": "chunks 1, 5 and 6 of 8 (08:09:28Z, 08:09:45Z, 08:11:11Z)",
+   "status": "read",
+   "served_url": "https://www.brilliantearth.com/en-ca/guides/symbols-stamped-on-jewelry-meaning/",
+   "note": "This is the Canadian-English (en-ca) edition of the guide; the page prints 'Updated: October 28, 2026'. The US edition was not opened."
+  },
+  {
+   "read_id": "BE-02",
+   "url": "https://www.brilliantearth.com/flexible-payment-options/",
+   "page_title": "Engagement Ring & Jewelry Financing | Payment Plans & Layaway",
+   "publisher": "Brilliant Earth (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:11:11Z",
+   "chunks_read": "chunk 5 of 8 (the payment section)",
+   "status": "read"
+  },
+  {
+   "read_id": "BE-03",
+   "url": "https://www.brilliantearth.com/contact/",
+   "page_title": "Contact Us - Brilliant Earth",
+   "publisher": "Brilliant Earth (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:11:11Z",
+   "chunks_read": "chunk 5 of 7 (the contact section)",
+   "status": "read"
+  },
+  {
+   "read_id": "BE-04",
+   "url": "https://www.brilliantearth.com/frequently-asked-questions/",
+   "page_title": "Frequently Asked Questions | Brilliant Earth",
+   "publisher": "Brilliant Earth (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:09:28Z",
+   "chunks_read": "chunks 1 and 5 of 9 (08:09:28Z, 08:09:45Z)",
+   "status": "read",
+   "note": "Opened while looking for payment and stamp statements; the chunks read cover navigation and the 'About Our Mission' questions only. No observation is taken from this page."
+  },
+  {
+   "read_id": "AL-01",
+   "url": "https://www.allurez.com/pages/contact",
+   "page_title": "Contact Us",
+   "publisher": "Allurez (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:11:11Z",
+   "chunks_read": "first of 2",
+   "status": "read"
+  },
+  {
+   "read_id": "AL-02",
+   "url": "https://www.allurez.com/pages/faq",
+   "page_title": "Frequently Asked Questions",
+   "publisher": "Allurez (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:11:52Z",
+   "chunks_read": "first two of 3 (second chunk at 08:13:32Z)",
+   "status": "read"
+  },
+  {
+   "read_id": "AN-01",
+   "url": "https://www.anjolee.com/information/CustomerService",
+   "page_title": "Contact Anjolee Customer Service by Phone, Email or Chat",
+   "publisher": "Anjolee (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:12:34Z",
+   "chunks_read": "chunks 2 and 3 of 3 (08:12:55Z, 08:12:34Z)",
+   "status": "read"
+  },
+  {
+   "read_id": "AN-02",
+   "url": "https://www.anjolee.com/information/frequently-Asked-Questions",
+   "page_title": "Frequently Asked Questions",
+   "publisher": "Anjolee (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:13:32Z",
+   "chunks_read": "chunks 2, 3 and 4 of 4 (08:14:38Z, 08:13:32Z, 08:14:15Z)",
+   "status": "read"
+  },
+  {
+   "read_id": "AN-03",
+   "url": "https://www.anjolee.com/",
+   "page_title": "Anjolee: Diamonds & Fine Jewelry Since 1977",
+   "publisher": "Anjolee (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:11:11Z",
+   "chunks_read": "two chunks (08:11:11Z and 08:12:12Z)",
+   "status": "read",
+   "note": "Read for the site's own navigation links (Customer Service, FAQ, Terms of Use). A guessed address /information/ContactUs was served this home page instead, so the guessed address is not cited anywhere."
+  },
+  {
+   "read_id": "VR-01",
+   "url": "https://www.vrai.com/contact-us",
+   "page_title": "Contact Us | VRAI Customer Care",
+   "publisher": "VRAI (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:11:52Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "VR-02",
+   "url": "https://www.vrai.com/terms-conditions",
+   "page_title": "Terms & Conditions | VRAI created diamonds",
+   "publisher": "VRAI (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:11:52Z",
+   "chunks_read": "first three of 8 (08:11:52Z, 08:12:34Z, 08:12:12Z)",
+   "status": "read"
+  },
+  {
+   "read_id": "VR-03",
+   "url": "https://www.vrai.com/payment-options",
+   "page_title": "Payment Options | Fine jewelry and engagement rings | VRAI",
+   "publisher": "VRAI (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:12:12Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "MJ-01",
+   "url": "https://mejuri.com/support/contact-us",
+   "page_title": "Contact Us | Mejuri | Mejuri",
+   "publisher": "Mejuri (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:11:52Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "MJ-02",
+   "url": "https://mejuri.com/faq/top-faqs",
+   "page_title": "FAQ | Mejuri",
+   "publisher": "Mejuri (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:12:55Z",
+   "chunks_read": "1 of 1",
+   "status": "read",
+   "served_url": "https://mejuri.com/faq",
+   "note": "The reader returned only the headings 'FAQ' and 'Topics'; the question list did not render. No payment statement could be read here."
+  },
+  {
+   "read_id": "MJ-03",
+   "url": "https://mejuri.com/faq/materials",
+   "page_title": "Materials | Mejuri",
+   "publisher": "Mejuri (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:14:38Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "MJ-04",
+   "url": "https://mejuri.com/faq/materials/how-do-we-know-our-solid-gold-is-the-proper-assay-has-the-proper-percentage-of",
+   "page_title": "How do we know our solid gold is the proper assay (has the proper percentage of pure gold)? | Mejuri",
+   "publisher": "Mejuri (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:15:10Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "MJ-05",
+   "url": "https://mejuri.com/faq/materials/do-you-ever-use-gold-plated-or-lower-karat-gold-in-pieces-labeled-14k-or-10k",
+   "page_title": "Do you ever use gold-plated or lower karat gold in pieces labeled 14k or 10k? | Mejuri",
+   "publisher": "Mejuri (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:15:10Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "SR-01",
+   "url": "https://www.sarraf.com/",
+   "page_title": "Sarraf Jewelry | Your Premier Discount Jewelry Provider Over 30 Years",
+   "publisher": "Sarraf (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:12:12Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "SR-02",
+   "url": "https://www.sarraf.com/contact-us/",
+   "page_title": "Sarraf Contact Us | Sarraf.com",
+   "publisher": "Sarraf (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:12:34Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "SR-03",
+   "url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+   "page_title": "18k Yellow Gold 5mm High Polished Traditional Domed Wedding Band | SARRAF.COM",
+   "publisher": "Sarraf (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:14:38Z",
+   "chunks_read": "chunks 1 and 3 of 6 (08:14:38Z, 08:15:10Z)",
+   "status": "read",
+   "note": "Opened only to look for stamp wording and payment methods. This is the product page of dataset row SR-03; its price and weight belong to the sessions re-reading ring rows."
+  },
+  {
+   "read_id": "CB-01",
+   "url": "https://www.catbirdnyc.com/jewelry/gold/rings.html",
+   "page_title": "Gold Rings for Women in 10k and 14k Solid Gold | Catbird",
+   "publisher": "Catbird (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:11:52Z",
+   "chunks_read": "chunks 1, 18 and 19 of 19 (08:11:52Z, 08:12:34Z, 08:12:12Z)",
+   "status": "read"
+  },
+  {
+   "read_id": "CB-02",
+   "url": "https://www.catbirdnyc.com/faq",
+   "page_title": "Catbird FAQs - Jewelry Care, Shipping Info & Returns | Catbird",
+   "publisher": "Catbird (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:14:15Z",
+   "chunks_read": "first three of 4 (08:14:15Z, 08:14:38Z, 08:15:10Z)",
+   "status": "read"
+  },
+  {
+   "read_id": "CB-03",
+   "url": "https://www.catbirdnyc.com/contact-us",
+   "page_title": "Contact Us",
+   "publisher": "Catbird (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:14:38Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "MN-01",
+   "url": "https://mene.com/customer-care/en-US",
+   "page_title": "Help Center | Menē",
+   "publisher": "Menē (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:12:34Z",
+   "chunks_read": "1 of 1",
+   "status": "read",
+   "served_url": "https://mene.com/customer-care"
+  },
+  {
+   "read_id": "MN-02",
+   "url": "https://mene.com/customer-care/categories/payment-methods-319499",
+   "page_title": "Payment Methods | Menē",
+   "publisher": "Menē (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:12:55Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "MN-03",
+   "url": "https://mene.com/customer-care/categories/product-information-319495",
+   "page_title": "Product Information | Menē",
+   "publisher": "Menē (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:12:55Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "MN-04",
+   "url": "https://mene.com/customer-care/categories/about-men%C4%93-331404",
+   "page_title": "About Menē | Menē",
+   "publisher": "Menē (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:13:32Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "MN-05",
+   "url": "https://mene.com/customer-care/articles/what-payment-methods-are-accepted-by-men%C4%93-2465522",
+   "page_title": "What payment methods are accepted by Menē? | Menē",
+   "publisher": "Menē (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:13:32Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "MN-06",
+   "url": "https://mene.com/customer-care/articles/what-is-the-purity-of-men%C4%93-jewelry-2751870",
+   "page_title": "What is the purity of Menē jewelry? | Menē",
+   "publisher": "Menē (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:14:15Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "RS-01",
+   "url": "https://www.ross-simons.com/pages/payment-options",
+   "page_title": "Payment Options",
+   "publisher": "Ross-Simons (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:11:52Z",
+   "chunks_read": "1 of 1",
+   "status": "read",
+   "note": "Reached through the older address /customer-care/my-account/faq-payment.html, which the site redirected here."
+  },
+  {
+   "read_id": "RS-02",
+   "url": "https://www.ross-simons.com/pages/contact",
+   "page_title": "Contact",
+   "publisher": "Ross-Simons (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:12:55Z",
+   "chunks_read": "1 of 1",
+   "status": "read"
+  },
+  {
+   "read_id": "RS-03",
+   "url": "https://www.ross-simons.com/blogs/metals-and-materials/italian-gold-jewelry",
+   "page_title": "Italian Gold Jewelry | Over 70 Years of Expertise",
+   "publisher": "Ross-Simons (seller's own site)",
+   "source_class": "seller_site",
+   "read_utc": "2026-11-11T08:14:38Z",
+   "chunks_read": "first two of 3 (second chunk at 08:15:10Z)",
+   "status": "read",
+   "note": "Reached through the older address /education/metals-and-materials/gold-jewelry/italian-gold-jewelry.html, which the site redirected here."
+  }
+ ],
+ "not_found": [
+  {
+   "url": "https://www.sarraf.com/faq/",
+   "read_utc": "2026-11-11T08:12:55Z",
+   "result": "404 Error - Page not found",
+   "seller_id": "sarraf"
+  },
+  {
+   "url": "https://www.ross-simons.com/pages/contact-us",
+   "read_utc": "2026-11-11T08:12:34Z",
+   "result": "404 ERROR — This page has gone missing.",
+   "seller_id": "ross-simons"
+  },
+  {
+   "url": "https://support.mene.com/hc/en-us",
+   "read_utc": "2026-11-11T08:12:12Z",
+   "result": "Oops, that's a 404",
+   "seller_id": "mene"
+  }
+ ],
+ "anchors": [
+  {
+   "id": "A-1",
+   "topic": "Why look up complaints at all",
+   "quote": "Find out what others say about a seller. Type its name and the words “complaint” or “review” into a search engine.",
+   "read_id": "FTC-01"
+  },
+  {
+   "id": "A-2",
+   "topic": "Karat mark plus the maker's name or trademark",
+   "quote": "Near the karat quality mark, look for the name or the U.S. registered trademark of the company that will stand behind the mark. The trademark may be a name, a symbol, or initials. If you’re thinking about buying a piece of gold jewelry but don’t see a trademark along with the karat mark, don’t buy it.",
+   "read_id": "FTC-01"
+  },
+  {
+   "id": "A-3",
+   "topic": "What “solid gold” means",
+   "quote": "The phrase “solid gold” means the gold item isn’t hollow. The item will also have a karat mark like 14K or 18K to tell you how much gold is in the item.",
+   "read_id": "FTC-01"
+  },
+  {
+   "id": "A-4",
+   "topic": "Where to report a problem",
+   "quote": "If you have a problem with a jewelry purchase, try to resolve it with the seller first. If you’re not satisfied, report it to: the FTC at ReportFraud.ftc.gov your state attorney general",
+   "read_id": "FTC-01"
+  },
+  {
+   "id": "A-5",
+   "topic": "Mediation",
+   "quote": "The Jewelers Vigilance Committee (JVC) operates a mediation program that helps people who have disputes with jewelers.",
+   "read_id": "FTC-01"
+  },
+  {
+   "id": "A-6",
+   "topic": "How BBB says its own profiles should be read",
+   "quote": "BBB Business Profiles are provided solely to assist you in exercising your own best judgment. BBB does not verify the accuracy of information provided by third parties, and does not guarantee the accuracy of any information in Business Profiles. As a matter of policy, BBB does not endorse any product, service, or business.",
+   "read_id": "BBB-01"
+  },
+  {
+   "id": "A-7",
+   "topic": "Complaint counts need context",
+   "quote": "When considering complaint information, please consider the company's size and volume of transactions. Note that the nature of complaints and a company’s responses to them are often more important than the number of complaints. BBB Business Profiles generally cover a three-year reporting period.",
+   "read_id": "BBB-01"
+  }
+ ],
+ "observations": [
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "profile",
+   "value": "Blue Nile Inc",
+   "quote": "Business Profile Jewelry Stores Blue Nile Inc",
+   "read_id": "BBB-01",
+   "flags": [],
+   "profile": "Blue Nile Inc",
+   "note": "Category and local office printed on the page: Jewelry Stores; BBB Great West + Pacific.",
+   "obs_id": "F0-1-001"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "accreditation",
+   "value": "Accredited since 3/1/1999",
+   "quote": "BBB Accredited Since: 3/1/1999",
+   "read_id": "BBB-01",
+   "flags": [],
+   "profile": "Blue Nile Inc",
+   "obs_id": "F0-1-002"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "rating",
+   "value": "A+",
+   "quote": "A+ Rated by BBB",
+   "read_id": "BBB-01",
+   "flags": [],
+   "profile": "Blue Nile Inc",
+   "exact": true,
+   "obs_id": "F0-1-003"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "complaints_3y",
+   "value": "124",
+   "quote": "124 complaints in the last 3 years.",
+   "read_id": "BBB-03",
+   "flags": [],
+   "profile": "Blue Nile Inc",
+   "exact": true,
+   "obs_id": "F0-1-004"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "complaints_12m",
+   "value": "26",
+   "quote": "26 complaints in the last 12 months.",
+   "read_id": "BBB-03",
+   "flags": [],
+   "profile": "Blue Nile Inc",
+   "exact": true,
+   "obs_id": "F0-1-005"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "complaint_status",
+   "value": "Answered 84 · Resolved 40",
+   "quote": "All complaint statuses (124) Complaint Answered (84) Complaint Resolved (40)",
+   "read_id": "BBB-03",
+   "flags": [],
+   "profile": "Blue Nile Inc",
+   "obs_id": "F0-1-006"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "complaint_types",
+   "value": "Product Issues 47 · Service or Repair Issues 41 · Delivery Issues 24 · Sales and Advertising Issues 6 · Customer Service Issues 4 · Billing Issues 2",
+   "quote": "Product Issues (47) Service or Repair Issues (41) Delivery Issues (24) Sales and Advertising Issues (6) Customer Service Issues (4) Billing Issues (2)",
+   "read_id": "BBB-03",
+   "flags": [],
+   "profile": "Blue Nile Inc",
+   "obs_id": "F0-1-007"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "customer_reviews",
+   "value": "1/5 stars, average of 26 reviews",
+   "quote": "1/5 stars Average of 26 Customer Reviews",
+   "read_id": "BBB-04",
+   "flags": [
+    "BBB_REVIEW_AVERAGE_LOW_DESPITE_HIGH_GRADE"
+   ],
+   "profile": "Blue Nile Inc",
+   "note": "BBB prints an A+ grade and a 1/5 customer-review average on the same profile; they measure different things.",
+   "obs_id": "F0-1-008"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "profile",
+   "value": "Blue Nile — Alternate Names: Signet Jewelers",
+   "quote": "Alternate Names: Signet Jewelers",
+   "read_id": "BBB-02",
+   "flags": [
+    "SECOND_BBB_PROFILE",
+    "PROFILE_TEXT_DESCRIBES_ANOTHER_BRAND"
+   ],
+   "profile": "Blue Nile (King of Prussia, PA profile)",
+   "note": "The page's 'About This Business' text reads 'Rocksbox is a jewelry membership service transforming the way women discover and buy jewelry.' and its Visit Website link points to www.signetjewelers.com.",
+   "obs_id": "F0-1-009"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "accreditation",
+   "value": "Accredited since 7/22/2026",
+   "quote": "BBB Accredited Since: 7/22/2026",
+   "read_id": "BBB-02",
+   "flags": [],
+   "profile": "Blue Nile (King of Prussia, PA profile)",
+   "note": "The page also prints 'BBB File Opened: 7/22/2026'.",
+   "obs_id": "F0-1-010"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "rating",
+   "value": "A+",
+   "quote": "A+ Rated by BBB",
+   "read_id": "BBB-02",
+   "flags": [],
+   "profile": "Blue Nile (King of Prussia, PA profile)",
+   "exact": true,
+   "obs_id": "F0-1-011"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "complaints_3y",
+   "value": null,
+   "quote": null,
+   "read_id": "BBB-02",
+   "flags": [
+    "NOT_READ_THIS_PASS"
+   ],
+   "profile": "Blue Nile (King of Prussia, PA profile)",
+   "note": "The complaints page of this second profile was not opened.",
+   "obs_id": "F0-1-012"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "complaints_12m",
+   "value": null,
+   "quote": null,
+   "read_id": "BBB-02",
+   "flags": [
+    "NOT_READ_THIS_PASS"
+   ],
+   "profile": "Blue Nile (King of Prussia, PA profile)",
+   "obs_id": "F0-1-013"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "complaint_status",
+   "value": null,
+   "quote": null,
+   "read_id": "BBB-02",
+   "flags": [
+    "NOT_READ_THIS_PASS"
+   ],
+   "profile": "Blue Nile (King of Prussia, PA profile)",
+   "obs_id": "F0-1-014"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "complaint_types",
+   "value": null,
+   "quote": null,
+   "read_id": "BBB-02",
+   "flags": [
+    "NOT_READ_THIS_PASS"
+   ],
+   "profile": "Blue Nile (King of Prussia, PA profile)",
+   "obs_id": "F0-1-015"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "blue-nile",
+   "field": "customer_reviews",
+   "value": null,
+   "quote": null,
+   "read_id": "BBB-02",
+   "flags": [
+    "NOT_READ_THIS_PASS"
+   ],
+   "profile": "Blue Nile (King of Prussia, PA profile)",
+   "obs_id": "F0-1-016"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "brilliant-earth",
+   "field": "profile",
+   "value": "Brilliant Earth, LLC — Headquarters, 300 Grant Ave Fl 3 San Francisco, CA 94108-3629",
+   "quote": "Headquarters Location Brilliant Earth, LLC 300 Grant Ave Fl 3 San Francisco, CA 94108-3629",
+   "read_id": "BBB-06",
+   "flags": [],
+   "profile": "Brilliant Earth, LLC",
+   "note": "BBB: 'This profile includes complaints for Brilliant Earth, LLC's headquarters and its corporate-owned locations.' and 'Brilliant Earth, LLC has 14 locations'.",
+   "obs_id": "F0-1-017"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "brilliant-earth",
+   "field": "accreditation",
+   "value": "Accredited since 2/21/2007",
+   "quote": "BBB Accredited Since: 2/21/2007",
+   "read_id": "BBB-05",
+   "flags": [],
+   "profile": "Brilliant Earth, LLC",
+   "obs_id": "F0-1-018"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "brilliant-earth",
+   "field": "rating",
+   "value": "A+",
+   "quote": "A+ Rated by BBB",
+   "read_id": "BBB-05",
+   "flags": [],
+   "profile": "Brilliant Earth, LLC",
+   "exact": true,
+   "obs_id": "F0-1-019"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "brilliant-earth",
+   "field": "complaints_3y",
+   "value": "281",
+   "quote": "281 complaints in the last 3 years.",
+   "read_id": "BBB-06",
+   "flags": [
+    "BBB_PAGE_PRINTS_TWO_TOTALS"
+   ],
+   "profile": "Brilliant Earth, LLC",
+   "note": "The same page prints 'All complaint statuses (282)'. Both numbers are BBB's; neither is corrected here.",
+   "exact": true,
+   "obs_id": "F0-1-020"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "brilliant-earth",
+   "field": "complaints_12m",
+   "value": "80",
+   "quote": "80 complaints in the last 12 months.",
+   "read_id": "BBB-06",
+   "flags": [],
+   "profile": "Brilliant Earth, LLC",
+   "exact": true,
+   "obs_id": "F0-1-021"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "brilliant-earth",
+   "field": "complaint_status",
+   "value": "Answered 181 · Resolved 101",
+   "quote": "All complaint statuses (282) Complaint Answered (181) Complaint Resolved (101)",
+   "read_id": "BBB-06",
+   "flags": [],
+   "profile": "Brilliant Earth, LLC",
+   "obs_id": "F0-1-022"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "brilliant-earth",
+   "field": "complaint_types",
+   "value": "Service or Repair Issues 138 · Product Issues 94 · Delivery Issues 29 · Sales and Advertising Issues 15 · Customer Service Issues 3 · Order Issues 3",
+   "quote": "Service or Repair Issues (138) Product Issues (94) Delivery Issues (29) Sales and Advertising Issues (15) Customer Service Issues (3) Order Issues (3)",
+   "read_id": "BBB-06",
+   "flags": [],
+   "profile": "Brilliant Earth, LLC",
+   "obs_id": "F0-1-023"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "brilliant-earth",
+   "field": "customer_reviews",
+   "value": "4.49/5 stars, average of 341 reviews",
+   "quote": "4.49/5 stars Average of 341 Customer Reviews",
+   "read_id": "BBB-20",
+   "flags": [],
+   "profile": "Brilliant Earth, LLC",
+   "obs_id": "F0-1-024"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "allurez",
+   "field": "profile",
+   "value": "Allurez — 36 West 47th Street, Suite 209, New York, NY 10036-8601",
+   "quote": "Allurez is located at 36 West 47th Street, Suite 209, New York, NY 10036-8601.",
+   "read_id": "BBB-07",
+   "flags": [],
+   "profile": "Allurez",
+   "obs_id": "F0-1-025"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "allurez",
+   "field": "accreditation",
+   "value": "Accredited since 2/24/2011",
+   "quote": "BBB Accredited Since: 2/24/2011",
+   "read_id": "BBB-07",
+   "flags": [],
+   "profile": "Allurez",
+   "obs_id": "F0-1-026"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "allurez",
+   "field": "rating",
+   "value": "A+",
+   "quote": "Allurez has an A+ BBB rating.",
+   "read_id": "BBB-07",
+   "flags": [],
+   "profile": "Allurez",
+   "exact": true,
+   "obs_id": "F0-1-027"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "allurez",
+   "field": "complaints_3y",
+   "value": "46",
+   "quote": "46 complaints in the last 3 years.",
+   "read_id": "BBB-08",
+   "flags": [],
+   "profile": "Allurez",
+   "exact": true,
+   "obs_id": "F0-1-028"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "allurez",
+   "field": "complaints_12m",
+   "value": "8",
+   "quote": "8 complaints in the last 12 months.",
+   "read_id": "BBB-08",
+   "flags": [],
+   "profile": "Allurez",
+   "exact": true,
+   "obs_id": "F0-1-029"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "allurez",
+   "field": "complaint_status",
+   "value": "Answered 38 · Resolved 8",
+   "quote": "All complaint statuses (46) Complaint Answered (38) Complaint Resolved (8)",
+   "read_id": "BBB-08",
+   "flags": [],
+   "profile": "Allurez",
+   "obs_id": "F0-1-030"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "allurez",
+   "field": "complaint_types",
+   "value": "Product Issues 21 · Service or Repair Issues 12 · Delivery Issues 7 · Order Issues 3 · Sales and Advertising Issues 2 · Customer Service Issues 1",
+   "quote": "Product Issues (21) Service or Repair Issues (12) Delivery Issues (7) Order Issues (3) Sales and Advertising Issues (2) Customer Service Issues (1)",
+   "read_id": "BBB-08",
+   "flags": [],
+   "profile": "Allurez",
+   "obs_id": "F0-1-031"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "allurez",
+   "field": "customer_reviews",
+   "value": "3/5 stars, average of 2 reviews",
+   "quote": "3/5 stars Average of 2 Customer Reviews",
+   "read_id": "BBB-21",
+   "flags": [],
+   "profile": "Allurez",
+   "obs_id": "F0-1-032"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "vrai",
+   "field": "profile",
+   "value": "Vrai — Alternate Names: Vrai & Oro — 8472A Melrose Pl, Los Angeles, CA 90069-5308",
+   "quote": "Alternate Names: Vrai & Oro … Vrai is located at 8472A Melrose Pl, Los Angeles, CA 90069-5308.",
+   "read_id": "BBB-09",
+   "flags": [
+    "IDENTITY_MATCH_BY_NAME_ONLY"
+   ],
+   "profile": "Vrai",
+   "note": "The profile prints no website and no telephone, and BBB files it under 'Jewelry Advisory Service'. The match to vrai.com rests on the name and on the complaint texts, which describe VRAI rings and VRAI customer service.",
+   "obs_id": "F0-1-033"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "vrai",
+   "field": "accreditation",
+   "value": "Not accredited",
+   "quote": "No, Vrai is not BBB Accredited. Businesses are under no obligation to seek accreditation.",
+   "read_id": "BBB-09",
+   "flags": [],
+   "profile": "Vrai",
+   "obs_id": "F0-1-034"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "vrai",
+   "field": "rating",
+   "value": "F",
+   "quote": "Vrai has an F BBB rating.",
+   "read_id": "BBB-09",
+   "flags": [
+    "BBB_LOWEST_GRADE"
+   ],
+   "profile": "Vrai",
+   "exact": true,
+   "obs_id": "F0-1-035"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "vrai",
+   "field": "complaints_3y",
+   "value": "3",
+   "quote": "3 complaints in the last 3 years.",
+   "read_id": "BBB-30",
+   "flags": [],
+   "profile": "Vrai",
+   "exact": true,
+   "obs_id": "F0-1-036"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "vrai",
+   "field": "complaints_12m",
+   "value": "1",
+   "quote": "1 complaint in the last 12 months.",
+   "read_id": "BBB-30",
+   "flags": [],
+   "profile": "Vrai",
+   "exact": true,
+   "obs_id": "F0-1-037"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "vrai",
+   "field": "complaint_status",
+   "value": "Unanswered 3",
+   "quote": "All complaint statuses (3) Complaint Unanswered (3)",
+   "read_id": "BBB-30",
+   "flags": [
+    "ALL_BBB_COMPLAINTS_UNANSWERED"
+   ],
+   "profile": "Vrai",
+   "obs_id": "F0-1-038"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "vrai",
+   "field": "complaint_types",
+   "value": "Service or Repair Issues 2 · Product Issues 1",
+   "quote": "Service or Repair Issues (2) Product Issues (1)",
+   "read_id": "BBB-30",
+   "flags": [],
+   "profile": "Vrai",
+   "obs_id": "F0-1-039"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "vrai",
+   "field": "customer_reviews",
+   "value": "1/5 stars, average of 1 review",
+   "quote": "1/5 stars Average of 1 Customer Review",
+   "read_id": "BBB-22",
+   "flags": [],
+   "profile": "Vrai",
+   "obs_id": "F0-1-040"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mejuri",
+   "field": "profile",
+   "value": "Mejuri — headquartered at 906 Dundas St W, Toronto, ON M6J 1W1",
+   "quote": "Mejuri is headquartered at 906 Dundas St W, Toronto, ON M6J 1W1.",
+   "read_id": "BBB-10",
+   "flags": [],
+   "profile": "Mejuri",
+   "note": "BBB: 'This profile includes complaints for the headquarters and corporate-owned locations of Mejuri.'",
+   "obs_id": "F0-1-041"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mejuri",
+   "field": "accreditation",
+   "value": "Not accredited",
+   "quote": "No, Mejuri is not BBB Accredited. Businesses are under no obligation to seek accreditation.",
+   "read_id": "BBB-10",
+   "flags": [],
+   "profile": "Mejuri",
+   "obs_id": "F0-1-042"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mejuri",
+   "field": "rating",
+   "value": "D-",
+   "quote": "Mejuri has a D- BBB rating.",
+   "read_id": "BBB-10",
+   "flags": [
+    "BBB_LOW_GRADE"
+   ],
+   "profile": "Mejuri",
+   "exact": true,
+   "obs_id": "F0-1-043"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mejuri",
+   "field": "complaints_3y",
+   "value": "35",
+   "quote": "35 complaints in the last 3 years.",
+   "read_id": "BBB-31",
+   "flags": [],
+   "profile": "Mejuri",
+   "exact": true,
+   "obs_id": "F0-1-044"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mejuri",
+   "field": "complaints_12m",
+   "value": "3",
+   "quote": "3 complaints in the last 12 months.",
+   "read_id": "BBB-31",
+   "flags": [],
+   "profile": "Mejuri",
+   "exact": true,
+   "obs_id": "F0-1-045"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mejuri",
+   "field": "complaint_status",
+   "value": "Answered 19 · Resolved 14 · Unresolved 1 · Unanswered 1",
+   "quote": "All complaint statuses (35) Complaint Answered (19) Complaint Resolved (14) Complaint Unresolved (1) Complaint Unanswered (1)",
+   "read_id": "BBB-31",
+   "flags": [],
+   "profile": "Mejuri",
+   "obs_id": "F0-1-046"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mejuri",
+   "field": "complaint_types",
+   "value": "Product Issues 22 · Service or Repair Issues 7 · Delivery Issues 4 · Customer Service Issues 1 · Sales and Advertising Issues 1",
+   "quote": "Product Issues (22) Service or Repair Issues (7) Delivery Issues (4) Customer Service Issues (1) Sales and Advertising Issues (1)",
+   "read_id": "BBB-31",
+   "flags": [],
+   "profile": "Mejuri",
+   "obs_id": "F0-1-047"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mejuri",
+   "field": "customer_reviews",
+   "value": "1/5 stars, average of 6 reviews",
+   "quote": "1/5 stars Average of 6 Customer Reviews",
+   "read_id": "BBB-23",
+   "flags": [],
+   "profile": "Mejuri",
+   "obs_id": "F0-1-048"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "anjolee",
+   "field": "profile",
+   "value": "Anjolee — Alternate Names: Sunrise Jewelry Manufacturing Corporation",
+   "quote": "Alternate Names: Sunrise Jewelry Manufacturing Corporation",
+   "read_id": "BBB-11",
+   "flags": [],
+   "profile": "Anjolee",
+   "note": "The page text returned by the reader prints no street address.",
+   "obs_id": "F0-1-049"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "anjolee",
+   "field": "accreditation",
+   "value": "Not accredited",
+   "quote": "This business is NOT BBB Accredited.",
+   "read_id": "BBB-11",
+   "flags": [],
+   "profile": "Anjolee",
+   "obs_id": "F0-1-050"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "anjolee",
+   "field": "rating",
+   "value": null,
+   "quote": null,
+   "read_id": "BBB-11",
+   "flags": [
+    "RATING_NOT_PRINTED_IN_PAGE_TEXT"
+   ],
+   "profile": "Anjolee",
+   "note": "Neither the profile page nor its /details address printed a rating letter in the text the reader returned. Anjolee's own FAQ claims an A+ rating; that claim is recorded under irregularities, not here.",
+   "obs_id": "F0-1-051"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "anjolee",
+   "field": "complaints_3y",
+   "value": "1",
+   "quote": "1 complaint in the last 3 years.",
+   "read_id": "BBB-17",
+   "flags": [],
+   "profile": "Anjolee",
+   "exact": true,
+   "obs_id": "F0-1-052"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "anjolee",
+   "field": "complaints_12m",
+   "value": "0",
+   "quote": "0 complaints in the last 12 months.",
+   "read_id": "BBB-17",
+   "flags": [],
+   "profile": "Anjolee",
+   "exact": true,
+   "obs_id": "F0-1-053"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "anjolee",
+   "field": "complaint_status",
+   "value": "Answered 1",
+   "quote": "All complaint statuses (1) Complaint Answered (1)",
+   "read_id": "BBB-17",
+   "flags": [],
+   "profile": "Anjolee",
+   "obs_id": "F0-1-054"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "anjolee",
+   "field": "complaint_types",
+   "value": "Service or Repair Issues 1",
+   "quote": "Service or Repair Issues (1)",
+   "read_id": "BBB-17",
+   "flags": [],
+   "profile": "Anjolee",
+   "obs_id": "F0-1-055"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "anjolee",
+   "field": "customer_reviews",
+   "value": "5/5 stars, average of 1 review",
+   "quote": "5/5 stars Average of 1 Customer Review",
+   "read_id": "BBB-24",
+   "flags": [],
+   "profile": "Anjolee",
+   "obs_id": "F0-1-056"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "sarraf",
+   "field": "profile",
+   "value": "Sarraf Jewelry Inc. — Alternate Names: Sarraf Jewelry",
+   "quote": "Business Profile Jewelry Stores Sarraf Jewelry Inc. … Alternate Names: Sarraf Jewelry",
+   "read_id": "BBB-12",
+   "flags": [],
+   "profile": "Sarraf Jewelry Inc.",
+   "note": "The page prints 'Business Started: 11/20/1997' and 'Business Incorporated: 11/20/1997'.",
+   "obs_id": "F0-1-057"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "sarraf",
+   "field": "accreditation",
+   "value": "Accredited since 3/18/1998",
+   "quote": "BBB Accredited Since: 3/18/1998",
+   "read_id": "BBB-12",
+   "flags": [],
+   "profile": "Sarraf Jewelry Inc.",
+   "obs_id": "F0-1-058"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "sarraf",
+   "field": "rating",
+   "value": "A+",
+   "quote": "A+ Rated by BBB",
+   "read_id": "BBB-12",
+   "flags": [],
+   "profile": "Sarraf Jewelry Inc.",
+   "exact": true,
+   "obs_id": "F0-1-059"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "sarraf",
+   "field": "complaints_3y",
+   "value": "6",
+   "quote": "6 complaints in the last 3 years.",
+   "read_id": "BBB-19",
+   "flags": [],
+   "profile": "Sarraf Jewelry Inc.",
+   "exact": true,
+   "obs_id": "F0-1-060"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "sarraf",
+   "field": "complaints_12m",
+   "value": "0",
+   "quote": "0 complaints in the last 12 months.",
+   "read_id": "BBB-19",
+   "flags": [],
+   "profile": "Sarraf Jewelry Inc.",
+   "exact": true,
+   "obs_id": "F0-1-061"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "sarraf",
+   "field": "complaint_status",
+   "value": "Answered 6",
+   "quote": "All complaint statuses (6) Complaint Answered (6)",
+   "read_id": "BBB-19",
+   "flags": [],
+   "profile": "Sarraf Jewelry Inc.",
+   "obs_id": "F0-1-062"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "sarraf",
+   "field": "complaint_types",
+   "value": "Service or Repair Issues 5 · Product Issues 1",
+   "quote": "Service or Repair Issues (5) Product Issues (1)",
+   "read_id": "BBB-19",
+   "flags": [],
+   "profile": "Sarraf Jewelry Inc.",
+   "obs_id": "F0-1-063"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "sarraf",
+   "field": "customer_reviews",
+   "value": "2.33/5 stars, average of 3 reviews",
+   "quote": "2.33/5 stars Average of 3 Customer Reviews",
+   "read_id": "BBB-25",
+   "flags": [],
+   "profile": "Sarraf Jewelry Inc.",
+   "obs_id": "F0-1-064"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "catbird",
+   "field": "profile",
+   "value": "Catbird — Alternate Names: Catbird NYC LLC — headquartered at 108 N 7th St, Brooklyn, NY 11249-3020",
+   "quote": "Alternate Names: Catbird NYC LLC … Catbird is headquartered at 108 N 7th St, Brooklyn, NY 11249-3020.",
+   "read_id": "BBB-13",
+   "flags": [],
+   "profile": "Catbird",
+   "note": "BBB: 'This profile includes complaints for the headquarters and corporate-owned locations of Catbird.'",
+   "obs_id": "F0-1-065"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "catbird",
+   "field": "accreditation",
+   "value": "Not accredited",
+   "quote": "No, Catbird is not BBB Accredited. Businesses are under no obligation to seek accreditation.",
+   "read_id": "BBB-13",
+   "flags": [],
+   "profile": "Catbird",
+   "obs_id": "F0-1-066"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "catbird",
+   "field": "rating",
+   "value": "D-",
+   "quote": "Catbird has a D- BBB rating.",
+   "read_id": "BBB-13",
+   "flags": [
+    "BBB_LOW_GRADE"
+   ],
+   "profile": "Catbird",
+   "exact": true,
+   "obs_id": "F0-1-067"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "catbird",
+   "field": "complaints_3y",
+   "value": "11",
+   "quote": "11 complaints in the last 3 years.",
+   "read_id": "BBB-29",
+   "flags": [],
+   "profile": "Catbird",
+   "exact": true,
+   "obs_id": "F0-1-068"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "catbird",
+   "field": "complaints_12m",
+   "value": "4",
+   "quote": "4 complaints in the last 12 months.",
+   "read_id": "BBB-29",
+   "flags": [],
+   "profile": "Catbird",
+   "exact": true,
+   "obs_id": "F0-1-069"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "catbird",
+   "field": "complaint_status",
+   "value": "Unanswered 11",
+   "quote": "All complaint statuses (11) Complaint Unanswered (11)",
+   "read_id": "BBB-29",
+   "flags": [
+    "ALL_BBB_COMPLAINTS_UNANSWERED"
+   ],
+   "profile": "Catbird",
+   "obs_id": "F0-1-070"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "catbird",
+   "field": "complaint_types",
+   "value": "Product Issues 5 · Service or Repair Issues 4 · Customer Service Issues 1 · Delivery Issues 1",
+   "quote": "Product Issues (5) Service or Repair Issues (4) Customer Service Issues (1) Delivery Issues (1)",
+   "read_id": "BBB-29",
+   "flags": [],
+   "profile": "Catbird",
+   "obs_id": "F0-1-071"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "catbird",
+   "field": "customer_reviews",
+   "value": "1/5 stars, average of 4 reviews",
+   "quote": "1/5 stars Average of 4 Customer Reviews",
+   "read_id": "BBB-26",
+   "flags": [],
+   "profile": "Catbird",
+   "obs_id": "F0-1-072"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "profile",
+   "value": "Mene — 307 - 334 Adelaide St W, Toronto, ON M5V 1R4",
+   "quote": "Mene is located at 307 - 334 Adelaide St W, Toronto, ON M5V 1R4.",
+   "read_id": "BBB-15",
+   "flags": [
+    "TWO_BBB_PROFILES_SAME_ADDRESS"
+   ],
+   "profile": "Mene",
+   "note": "The page prints 'BBB File Opened: 17/10/2019'.",
+   "obs_id": "F0-1-073"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "accreditation",
+   "value": "Not accredited",
+   "quote": "No, Mene is not BBB Accredited. Businesses are under no obligation to seek accreditation.",
+   "read_id": "BBB-15",
+   "flags": [],
+   "profile": "Mene",
+   "obs_id": "F0-1-074"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "rating",
+   "value": "Not rated",
+   "quote": "Mene is not currently rated by BBB. BBB does not have sufficient information to issue a rating on this business.",
+   "read_id": "BBB-15",
+   "flags": [
+    "BBB_NOT_RATED"
+   ],
+   "profile": "Mene",
+   "obs_id": "F0-1-075"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "complaints_3y",
+   "value": "No complaints",
+   "quote": "Mene has no complaints filed with BBB in the last 3 years.",
+   "read_id": "BBB-15",
+   "flags": [],
+   "profile": "Mene",
+   "obs_id": "F0-1-076"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "complaints_12m",
+   "value": null,
+   "quote": null,
+   "read_id": "BBB-15",
+   "flags": [
+    "NOT_PRINTED_SEPARATELY"
+   ],
+   "profile": "Mene",
+   "note": "The page prints only the three-year statement.",
+   "obs_id": "F0-1-077"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "complaint_status",
+   "value": null,
+   "quote": null,
+   "read_id": "BBB-15",
+   "flags": [
+    "NOT_PRINTED_NO_COMPLAINTS_ON_THIS_PROFILE"
+   ],
+   "profile": "Mene",
+   "obs_id": "F0-1-078"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "complaint_types",
+   "value": null,
+   "quote": null,
+   "read_id": "BBB-15",
+   "flags": [
+    "NOT_PRINTED_NO_COMPLAINTS_ON_THIS_PROFILE"
+   ],
+   "profile": "Mene",
+   "obs_id": "F0-1-079"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "customer_reviews",
+   "value": "1/5 stars, average of 2 reviews",
+   "quote": "1/5 stars Average of 2 Customer Reviews",
+   "read_id": "BBB-27",
+   "flags": [],
+   "profile": "Mene",
+   "obs_id": "F0-1-080"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "profile",
+   "value": "Mene Inc — 307 - 334 Adelaide St W, Ontario, ON M5V 1R4",
+   "quote": "Mene Inc is located at 307 - 334 Adelaide St W, Ontario, ON M5V 1R4.",
+   "read_id": "BBB-16",
+   "flags": [
+    "TWO_BBB_PROFILES_SAME_ADDRESS"
+   ],
+   "profile": "Mene Inc",
+   "note": "The page prints 'BBB File Opened: 20/3/2025'.",
+   "obs_id": "F0-1-081"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "accreditation",
+   "value": "Not accredited",
+   "quote": "No, Mene Inc is not BBB Accredited. Businesses are under no obligation to seek accreditation.",
+   "read_id": "BBB-16",
+   "flags": [],
+   "profile": "Mene Inc",
+   "obs_id": "F0-1-082"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "rating",
+   "value": "C",
+   "quote": "Mene Inc has a C BBB rating.",
+   "read_id": "BBB-16",
+   "flags": [],
+   "profile": "Mene Inc",
+   "exact": true,
+   "obs_id": "F0-1-083"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "complaints_3y",
+   "value": "1",
+   "quote": "1 complaint in the last 3 years.",
+   "read_id": "BBB-33",
+   "flags": [],
+   "profile": "Mene Inc",
+   "exact": true,
+   "obs_id": "F0-1-084"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "complaints_12m",
+   "value": "0",
+   "quote": "0 complaints in the last 12 months.",
+   "read_id": "BBB-33",
+   "flags": [],
+   "profile": "Mene Inc",
+   "exact": true,
+   "obs_id": "F0-1-085"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "complaint_status",
+   "value": "Unanswered 1",
+   "quote": "All complaint statuses (1) Complaint Unanswered (1)",
+   "read_id": "BBB-33",
+   "flags": [
+    "ALL_BBB_COMPLAINTS_UNANSWERED"
+   ],
+   "profile": "Mene Inc",
+   "obs_id": "F0-1-086"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "complaint_types",
+   "value": "Product Issues 1",
+   "quote": "Product Issues (1)",
+   "read_id": "BBB-33",
+   "flags": [],
+   "profile": "Mene Inc",
+   "obs_id": "F0-1-087"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "mene",
+   "field": "customer_reviews",
+   "value": null,
+   "quote": null,
+   "read_id": "BBB-16",
+   "flags": [
+    "NOT_PRINTED_ON_THIS_PROFILE"
+   ],
+   "profile": "Mene Inc",
+   "note": "The profile page prints no customer-review statement.",
+   "obs_id": "F0-1-088"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "ross-simons",
+   "field": "profile",
+   "value": "Ross-Simons — Alternate Names: Ross-Simons Jewelers, Luxury Brand Holdings, Inc — headquartered at 9 Ross Simons Dr, Cranston, RI 02920-4475",
+   "quote": "Alternate Names: Ross-Simons Jewelers Luxury Brand Holdings, Inc … Ross-Simons is headquartered at 9 Ross Simons Dr, Cranston, RI 02920-4475.",
+   "read_id": "BBB-14",
+   "flags": [],
+   "profile": "Ross-Simons",
+   "note": "BBB: 'This profile includes complaints for the headquarters and corporate-owned locations of Ross-Simons.'",
+   "obs_id": "F0-1-089"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "ross-simons",
+   "field": "accreditation",
+   "value": "Accredited since 3/15/2017",
+   "quote": "BBB Accredited Since: 3/15/2017",
+   "read_id": "BBB-14",
+   "flags": [],
+   "profile": "Ross-Simons",
+   "obs_id": "F0-1-090"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "ross-simons",
+   "field": "rating",
+   "value": "A+",
+   "quote": "Ross-Simons has an A+ BBB rating.",
+   "read_id": "BBB-14",
+   "flags": [],
+   "profile": "Ross-Simons",
+   "exact": true,
+   "obs_id": "F0-1-091"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "ross-simons",
+   "field": "complaints_3y",
+   "value": "34",
+   "quote": "34 complaints in the last 3 years.",
+   "read_id": "BBB-32",
+   "flags": [],
+   "profile": "Ross-Simons",
+   "exact": true,
+   "obs_id": "F0-1-092"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "ross-simons",
+   "field": "complaints_12m",
+   "value": "7",
+   "quote": "7 complaints in the last 12 months.",
+   "read_id": "BBB-32",
+   "flags": [],
+   "profile": "Ross-Simons",
+   "exact": true,
+   "obs_id": "F0-1-093"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "ross-simons",
+   "field": "complaint_status",
+   "value": "Resolved 17 · Answered 17",
+   "quote": "All complaint statuses (34) Complaint Resolved (17) Complaint Answered (17)",
+   "read_id": "BBB-32",
+   "flags": [],
+   "profile": "Ross-Simons",
+   "obs_id": "F0-1-094"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "ross-simons",
+   "field": "complaint_types",
+   "value": "Service or Repair Issues 12 · Product Issues 11 · Delivery Issues 9 · Customer Service Issues 2",
+   "quote": "Service or Repair Issues (12) Product Issues (11) Delivery Issues (9) Customer Service Issues (2)",
+   "read_id": "BBB-32",
+   "flags": [],
+   "profile": "Ross-Simons",
+   "obs_id": "F0-1-095"
+  },
+  {
+   "task": "F0-1",
+   "seller_id": "ross-simons",
+   "field": "customer_reviews",
+   "value": "4.43/5 stars, average of 532 reviews",
+   "quote": "4.43/5 stars Average of 532 Customer Reviews",
+   "read_id": "BBB-28",
+   "flags": [],
+   "profile": "Ross-Simons",
+   "obs_id": "F0-1-096"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "blue-nile",
+   "field": "entity",
+   "value": "Blue Nile is listed among the brands of Signet Jewelers Limited (NYSE: SIG)",
+   "quote": "Signet operates eCommerce sites and approximately 2,700 stores under the name brands KAY Jewelers, Zales, Jared, Banter by Piercing Pagoda, Diamonds Direct, Blue Nile, James Allen, Rocksbox, Peoples Jewellers, H.Samuel, and Ernest Jones. … Signet’s shares are listed on the New York Stock Exchange (SIG).",
+   "read_id": "SEC-02",
+   "flags": [
+    "FILING_IS_THE_FISCAL_2024_REPORT"
+   ],
+   "note": "Blue Nile's own terms name the contracting party only as 'Blue Nile, its subsidiaries and affiliates' and say 'disputes are handled under Washington State law' (BN-05).",
+   "obs_id": "F0-2-001"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "blue-nile",
+   "field": "phone",
+   "value": "1-800-242-2728",
+   "quote": "Call 1-800-242-2728 Or view phone numbers by country",
+   "read_id": "BN-01",
+   "flags": [],
+   "exact": true,
+   "obs_id": "F0-2-002"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "blue-nile",
+   "field": "email",
+   "value": "service@bluenile.com",
+   "quote": "please do not hesitate to contact one of our diamond and jewelry experts at service@bluenile.com or 1-800-242-2728",
+   "read_id": "BN-02",
+   "flags": [],
+   "exact": true,
+   "obs_id": "F0-2-003"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "blue-nile",
+   "field": "address",
+   "value": null,
+   "quote": null,
+   "read_id": "BN-01",
+   "flags": [
+    "NO_STREET_ADDRESS_ON_CONTACT_PAGE"
+   ],
+   "note": "The contact page lists telephone numbers by country, chat, WhatsApp, e-mail and showrooms, but no corporate street address.",
+   "obs_id": "F0-2-004"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "allurez",
+   "field": "entity",
+   "value": "Type of Entity: Corporation; Business Incorporated: 10/2/2009 (as printed by BBB)",
+   "quote": "Business Started: 11/24/2009 Business Incorporated: 10/2/2009 Type of Entity: Corporation",
+   "read_id": "BBB-07",
+   "flags": [
+    "THIRD_PARTY_RECORD_BBB"
+   ],
+   "note": "Allurez's own contact and FAQ pages do not name a legal entity.",
+   "obs_id": "F0-2-005"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "allurez",
+   "field": "phone",
+   "value": "800.554.3509 (outside USA: 646.627.7353)",
+   "quote": "Call or text us: 800.554.3509 … Outside USA: 646.627.7353",
+   "read_id": "AL-01",
+   "flags": [],
+   "obs_id": "F0-2-006"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "allurez",
+   "field": "email",
+   "value": "service@allurez.com",
+   "quote": "Email or Chat: service@allurez.com",
+   "read_id": "AL-01",
+   "flags": [],
+   "exact": true,
+   "obs_id": "F0-2-007"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "allurez",
+   "field": "address",
+   "value": null,
+   "quote": null,
+   "read_id": "AL-01",
+   "flags": [
+    "NO_STREET_ADDRESS_ON_CONTACT_PAGE"
+   ],
+   "note": "Allurez's FAQ says 'We have a showroom in the Manhattan, New York area … you would have to contact us and set up an appointment' (AL-02). BBB prints 36 West 47th Street, Suite 209, New York (BBB-07).",
+   "obs_id": "F0-2-008"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "vrai",
+   "field": "entity",
+   "value": "For orders within the EU, UK, Norway or Switzerland: VRAI ApS, Nybrogade 12, 1203 Copenhagen, Denmark, VAT ID DK41851279",
+   "quote": "When you order within the European Union, United Kingdom, Norway or Switzerland, your commercial contract is with VRAI ApS, Nybrogade 12, 1203 Copenhagen, Denmark. VAT ID DK41851279.",
+   "read_id": "VR-02",
+   "flags": [
+    "US_CONTRACTING_ENTITY_NOT_NAMED_IN_CHUNKS_READ"
+   ],
+   "note": "Terms chunks 1–3 of 8 were read; the entity for US orders is not named in them.",
+   "obs_id": "F0-2-009"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "vrai",
+   "field": "phone",
+   "value": "+1.855.956.4488",
+   "quote": "CALL US Contact us at +1.855.956.4488 … HOURS OF OPERATION Everyday: 10am-6pm EST",
+   "read_id": "VR-01",
+   "flags": [
+    "FILLS_A_NULL_IN_SELLERS_JSON"
+   ],
+   "exact": true,
+   "obs_id": "F0-2-010"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "vrai",
+   "field": "email",
+   "value": "help@vrai.com",
+   "quote": "please do not hesitate to contact one of our diamond and jewelry experts at help@vrai.com",
+   "read_id": "VR-02",
+   "flags": [],
+   "note": "The contact page adds: 'SEND AN EMAIL — We respond within 4 business days' (VR-01).",
+   "exact": true,
+   "obs_id": "F0-2-011"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "vrai",
+   "field": "address",
+   "value": null,
+   "quote": null,
+   "read_id": "VR-01",
+   "flags": [
+    "NO_STREET_ADDRESS_ON_CONTACT_PAGE"
+   ],
+   "note": "The contact page links to showrooms; it prints no corporate street address for US orders.",
+   "obs_id": "F0-2-012"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "mejuri",
+   "field": "entity",
+   "value": "Type of Entity: Corporation; Business Incorporated: 3/7/2012 (as printed by BBB, whose Canadian profiles print day/month/year)",
+   "quote": "Business Started: 3/7/2012 Business Incorporated: 3/7/2012 Type of Entity: Corporation",
+   "read_id": "BBB-10",
+   "flags": [
+    "THIRD_PARTY_RECORD_BBB"
+   ],
+   "note": "Mejuri's contact page does not name a legal entity.",
+   "obs_id": "F0-2-013"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "mejuri",
+   "field": "phone",
+   "value": "1-855-496-1110 — text messages only",
+   "quote": "TEXT ONLY (charges may apply) … US: 1-855-496-1110 Mon - Fri: 6 am - 8:45 pm EST Sat - Sun: 9 am - 4:45 pm EST",
+   "read_id": "MJ-01",
+   "flags": [
+    "TEXT_ONLY_LINE_NO_VOICE_NUMBER_PRINTED",
+    "FILLS_A_NULL_IN_SELLERS_JSON"
+   ],
+   "obs_id": "F0-2-014"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "mejuri",
+   "field": "email",
+   "value": null,
+   "quote": null,
+   "read_id": "MJ-01",
+   "flags": [
+    "CUSTOMER_EMAIL_IS_A_WEB_FORM"
+   ],
+   "note": "The page's 'Email us' link opens a contact form. The only addresses printed are press@mejuri.com (media) and corporatesales@mejuri.com (bulk orders).",
+   "obs_id": "F0-2-015"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "mejuri",
+   "field": "address",
+   "value": null,
+   "quote": null,
+   "read_id": "MJ-01",
+   "flags": [
+    "NO_STREET_ADDRESS_ON_CONTACT_PAGE"
+   ],
+   "note": "BBB prints a headquarters address at 906 Dundas St W, Toronto (BBB-10).",
+   "obs_id": "F0-2-016"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "brilliant-earth",
+   "field": "entity",
+   "value": "Brilliant Earth Group, Inc. — SEC registrant, CIK 0001866757, State of Inc.: NV",
+   "quote": "Brilliant Earth Group, Inc. CIK#: 0001866757 (see all company filings) … State location: CA | State of Inc.: NV | Fiscal Year End: 1231",
+   "read_id": "SEC-01",
+   "flags": [],
+   "note": "The EDGAR list shows the most recent annual report as form 10-K filed 2026-03-17 (accession 0001628280-26-018794).",
+   "obs_id": "F0-2-017"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "brilliant-earth",
+   "field": "phone",
+   "value": "800.691.0952 (text: +1 415.520.6526)",
+   "quote": "Call us anytime at 800.691.0952. … Our jewelry specialists are here for you 24/7 text us at +1 415.520.6526.",
+   "read_id": "BE-03",
+   "flags": [],
+   "obs_id": "F0-2-018"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "brilliant-earth",
+   "field": "email",
+   "value": null,
+   "quote": null,
+   "read_id": "BE-03",
+   "flags": [
+    "CUSTOMER_EMAIL_IS_A_WEB_FORM"
+   ],
+   "note": "'Email Us — Need assistance? Drop us a line and we'll make sure you're taken care of.' is a form; no address is printed.",
+   "obs_id": "F0-2-019"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "brilliant-earth",
+   "field": "address",
+   "value": "300 GRANT AVENUE 3RD FLOOR SAN FRANCISCO CA 94108 (business address on file with the SEC)",
+   "quote": "Business Address 300 GRANT AVENUE 3RD FLOOR SAN FRANCISCO CA 94108 (415) 918-5551",
+   "read_id": "SEC-01",
+   "flags": [],
+   "note": "Same street address as the headquarters BBB prints (300 Grant Ave Fl 3, BBB-06).",
+   "obs_id": "F0-2-020"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "anjolee",
+   "field": "entity",
+   "value": "Incorporated in the state of California (seller's statement)",
+   "quote": "Anjolee is incorporated in the state of California and is required to collect State tax only on orders shipped to addresses in California.",
+   "read_id": "AN-01",
+   "flags": [],
+   "note": "BBB prints the alternate name 'Sunrise Jewelry Manufacturing Corporation' (BBB-11).",
+   "obs_id": "F0-2-021"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "anjolee",
+   "field": "phone",
+   "value": "877-265-6533",
+   "quote": "Phone: Please call our toll free number 877-ANJOLEE (877-265-6533).",
+   "read_id": "AN-01",
+   "flags": [],
+   "exact": true,
+   "obs_id": "F0-2-022"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "anjolee",
+   "field": "email",
+   "value": "service@anjolee.com",
+   "quote": "Email: Send your message to service@anjolee.com",
+   "read_id": "AN-01",
+   "flags": [
+    "FILLS_A_NULL_IN_SELLERS_JSON"
+   ],
+   "note": "Read independently by session 91e9aba0 as well (its finding F-A21-04).",
+   "exact": true,
+   "obs_id": "F0-2-023"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "anjolee",
+   "field": "address",
+   "value": null,
+   "quote": null,
+   "read_id": "AN-01",
+   "flags": [
+    "NO_STREET_ADDRESS_ON_CONTACT_PAGE"
+   ],
+   "note": "The customer-service page prints e-mail, telephone and chat only.",
+   "obs_id": "F0-2-024"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "sarraf",
+   "field": "entity",
+   "value": "Sarraf Jewelry Inc. — Type of Entity: Corporation; Business Incorporated: 11/20/1997 (as printed by BBB)",
+   "quote": "Sarraf Jewelry Inc. … Business Started: 11/20/1997 Business Incorporated: 11/20/1997 Type of Entity: Corporation",
+   "read_id": "BBB-12",
+   "flags": [
+    "THIRD_PARTY_RECORD_BBB"
+   ],
+   "obs_id": "F0-2-025"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "sarraf",
+   "field": "phone",
+   "value": "888-472-7723 or 213-612-4690",
+   "quote": "You can also reach us by calling 888-472-7723 or 213-612-4690 during the business hours listed below.",
+   "read_id": "SR-02",
+   "flags": [],
+   "note": "Hours printed: 'Normal Business Hours Pacific Standard Time — Monday - Thursday 10:00 AM to 4:00 PM'.",
+   "obs_id": "F0-2-026"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "sarraf",
+   "field": "email",
+   "value": null,
+   "quote": null,
+   "read_id": "SR-02",
+   "flags": [
+    "CONTACT_PAGE_PRINTS_A_FORM_ONLY"
+   ],
+   "note": "data/sellers.json stores info@sarraf.com from an October product-page read; that address is not on the contact page read today and is not re-verified here.",
+   "obs_id": "F0-2-027"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "sarraf",
+   "field": "address",
+   "value": null,
+   "quote": null,
+   "read_id": "SR-02",
+   "flags": [
+    "NO_STREET_ADDRESS_ON_CONTACT_PAGE"
+   ],
+   "note": "The contact page prints a form and two telephone numbers.",
+   "obs_id": "F0-2-028"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "catbird",
+   "field": "entity",
+   "value": "Alternate Names: Catbird NYC LLC; Type of Entity: Limited Liability Company (LLC) (as printed by BBB)",
+   "quote": "Type of Entity: Limited Liability Company (LLC) Alternate Names: Catbird NYC LLC",
+   "read_id": "BBB-13",
+   "flags": [
+    "THIRD_PARTY_RECORD_BBB"
+   ],
+   "obs_id": "F0-2-029"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "catbird",
+   "field": "phone",
+   "value": null,
+   "quote": null,
+   "read_id": "CB-03",
+   "flags": [
+    "NO_CUSTOMER_SERVICE_PHONE_ON_CONTACT_PAGE"
+   ],
+   "note": "Catbird's contact page prints no customer-service telephone number. BBB's profile lists (718) 599-3457 (BBB-13); that is BBB's record, not the seller's page.",
+   "obs_id": "F0-2-030"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "catbird",
+   "field": "email",
+   "value": "customerservice@catbirdnyc.com",
+   "quote": "Order Status, Availability, Product Details or Shipping Questions - customerservice@catbirdnyc.com",
+   "read_id": "CB-03",
+   "flags": [
+    "FILLS_A_NULL_IN_SELLERS_JSON"
+   ],
+   "note": "The page recommends its form: 'We strive to respond to all emails within 24-48 hrs.'",
+   "exact": true,
+   "obs_id": "F0-2-031"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "catbird",
+   "field": "address",
+   "value": "141 Flushing Avenue, Suite 903, Brooklyn, NY 11205",
+   "quote": "Catbird, Attn: Leigh 141 Flushing Avenue, Suite 903 Brooklyn, NY 11205",
+   "read_id": "CB-03",
+   "flags": [
+    "ADDRESS_PRINTED_FOR_SAMPLE_SUBMISSIONS_ONLY"
+   ],
+   "note": "The address appears under 'Submitting your work'; it is not offered as a customer-service or returns address.",
+   "obs_id": "F0-2-032"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "mene",
+   "field": "entity",
+   "value": "Seller's statement: a publicly traded company on the TSX and NASDAQ",
+   "quote": "Menē is a publicly traded company on the TSX and NASDAQ.",
+   "read_id": "MN-04",
+   "flags": [
+    "SELLER_CLAIM_NOT_CHECKED_AGAINST_A_REGULATOR_RECORD"
+   ],
+   "note": "No exchange or securities-regulator page was opened in this pass, so the listing is recorded as the seller's claim only.",
+   "obs_id": "F0-2-033"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "mene",
+   "field": "phone",
+   "value": "+1 833 636 3245",
+   "quote": "+1 833 636 3245 Mon to Fri, 9am to 6pm ET",
+   "read_id": "MN-01",
+   "flags": [
+    "FILLS_A_NULL_IN_SELLERS_JSON"
+   ],
+   "note": "Read independently by session 91e9aba0 as well (its finding F-A21-07).",
+   "exact": true,
+   "obs_id": "F0-2-034"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "mene",
+   "field": "email",
+   "value": "service@mene.com",
+   "quote": "service@mene.com Any time, we reply by email",
+   "read_id": "MN-01",
+   "flags": [
+    "FILLS_A_NULL_IN_SELLERS_JSON"
+   ],
+   "exact": true,
+   "obs_id": "F0-2-035"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "mene",
+   "field": "address",
+   "value": null,
+   "quote": null,
+   "read_id": "MN-01",
+   "flags": [
+    "NO_STREET_ADDRESS_ON_CONTACT_PAGE"
+   ],
+   "note": "BBB prints 307 - 334 Adelaide St W, Toronto (BBB-15).",
+   "obs_id": "F0-2-036"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "ross-simons",
+   "field": "entity",
+   "value": "Alternate Names: Ross-Simons Jewelers, Luxury Brand Holdings, Inc; Type of Entity: Corporation; Business Incorporated: 9/22/1975 (as printed by BBB)",
+   "quote": "Business Started: 1/1/1952 Business Incorporated: 9/22/1975 Type of Entity: Corporation Alternate Names: Ross-Simons Jewelers Luxury Brand Holdings, Inc",
+   "read_id": "BBB-14",
+   "flags": [
+    "THIRD_PARTY_RECORD_BBB"
+   ],
+   "obs_id": "F0-2-037"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "ross-simons",
+   "field": "phone",
+   "value": "800-835-0919",
+   "quote": "Call Us 800-835-0919",
+   "read_id": "RS-02",
+   "flags": [],
+   "note": "'Our Customer Care team is available 7 days a week, between 7am and 11pm Eastern.'",
+   "exact": true,
+   "obs_id": "F0-2-038"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "ross-simons",
+   "field": "email",
+   "value": "customerservice@ross-simons.com",
+   "quote": "Send us an email customerservice@ross-simons.com",
+   "read_id": "RS-02",
+   "flags": [
+    "FILLS_A_NULL_IN_SELLERS_JSON"
+   ],
+   "exact": true,
+   "obs_id": "F0-2-039"
+  },
+  {
+   "task": "F0-2",
+   "seller_id": "ross-simons",
+   "field": "address",
+   "value": null,
+   "quote": null,
+   "read_id": "RS-02",
+   "flags": [
+    "NO_STREET_ADDRESS_ON_CONTACT_PAGE"
+   ],
+   "note": "BBB prints a headquarters address at 9 Ross Simons Dr, Cranston, RI (BBB-14).",
+   "obs_id": "F0-2-040"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "blue-nile",
+   "field": "cards",
+   "value": "Visa, MasterCard, American Express, Discover",
+   "quote": "Credit cards: Visa, MasterCard, American Express, or Discover.",
+   "read_id": "BN-02",
+   "flags": [],
+   "obs_id": "F0-3-001"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "blue-nile",
+   "field": "irreversible_methods",
+   "value": "Bank wire, on orders of $1000 or more",
+   "quote": "Bank wire: Arrange payment through your bank and receive a 1.5% discount. Bank wire payments are accepted on orders of $1000 or more.",
+   "read_id": "BN-02",
+   "flags": [
+    "WIRE_OFFERED",
+    "PAGE_PRINTS_TWO_WIRE_MINIMUMS"
+   ],
+   "note": "A tooltip on the same page says 'A bank wire can be used to pay for Blue Nile purchases of $750 or more.' Blue Nile's FAQ says 'Wire transfers of $1,000 or more receive a 1.5% discount.' (BN-03)",
+   "obs_id": "F0-3-002"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "blue-nile",
+   "field": "incentive_or_clause",
+   "value": "1.5% discount for paying by bank wire",
+   "quote": "Arrange payment through your bank and receive a 1.5% discount.",
+   "read_id": "BN-02",
+   "flags": [
+    "DISCOUNT_FOR_IRREVERSIBLE_PAYMENT"
+   ],
+   "obs_id": "F0-3-003"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "allurez",
+   "field": "cards",
+   "value": "Visa, Master Card, Discover, American Express",
+   "quote": "We accept Visa, Master Card, Discover, American Express, PayPal, Amazon Checkout, Affirm, wire transfers, checks, Apple Pay, Klarna, and money orders.",
+   "read_id": "AL-02",
+   "flags": [],
+   "obs_id": "F0-3-004"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "allurez",
+   "field": "irreversible_methods",
+   "value": "Wire transfers, checks, money orders",
+   "quote": "We accept Visa, Master Card, Discover, American Express, PayPal, Amazon Checkout, Affirm, wire transfers, checks, Apple Pay, Klarna, and money orders.",
+   "read_id": "AL-02",
+   "flags": [
+    "WIRE_OFFERED",
+    "CHECKS_AND_MONEY_ORDERS_OFFERED"
+   ],
+   "note": "'We prefer wire transfers for international customers, since it is an easy process and does not require any delays in shipments.'",
+   "obs_id": "F0-3-005"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "allurez",
+   "field": "incentive_or_clause",
+   "value": "1.5% discount for paying by wire transfer",
+   "quote": "We offer a 1.5% discount to customers who pay with a wire transfer.",
+   "read_id": "AL-02",
+   "flags": [
+    "DISCOUNT_FOR_IRREVERSIBLE_PAYMENT"
+   ],
+   "obs_id": "F0-3-006"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "vrai",
+   "field": "cards",
+   "value": "PayPal and credit card payments",
+   "quote": "We accept PayPal and credit card payments. In some countries we offer invoice payments, direct debit and direct bank transfer options through our payment provider Klarna.",
+   "read_id": "VR-02",
+   "flags": [],
+   "obs_id": "F0-3-007"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "vrai",
+   "field": "irreversible_methods",
+   "value": "In some countries: direct bank transfer through Klarna",
+   "quote": "In some countries we offer invoice payments, direct debit and direct bank transfer options through our payment provider Klarna.",
+   "read_id": "VR-02",
+   "flags": [
+    "BANK_TRANSFER_OFFERED_IN_SOME_COUNTRIES"
+   ],
+   "obs_id": "F0-3-008"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "vrai",
+   "field": "incentive_or_clause",
+   "value": "Chargeback clause: VRAI reserves a right to recover its costs when a customer files a chargeback",
+   "quote": "In the case where a customer files a chargeback, VRAI has the right to recover its direct and indirect costs, and cancel any promotional items, free shipping, or other benefits, as determined in VRAI's sole and absolute discretion.",
+   "read_id": "VR-02",
+   "flags": [
+    "CHARGEBACK_COST_RECOVERY_CLAUSE"
+   ],
+   "obs_id": "F0-3-009"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "mejuri",
+   "field": "cards",
+   "value": null,
+   "quote": null,
+   "read_id": "MJ-02",
+   "flags": [
+    "PAYMENT_METHODS_NOT_READABLE"
+   ],
+   "note": "The FAQ index did not render through the reader and the contact page lists no payment methods.",
+   "obs_id": "F0-3-010"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "mejuri",
+   "field": "irreversible_methods",
+   "value": null,
+   "quote": null,
+   "read_id": "MJ-02",
+   "flags": [
+    "PAYMENT_METHODS_NOT_READABLE"
+   ],
+   "obs_id": "F0-3-011"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "brilliant-earth",
+   "field": "cards",
+   "value": "All major credit cards, including Visa, MasterCard and American Express",
+   "quote": "We accept all major credit cards, including Visa, MasterCard and American Express.",
+   "read_id": "BE-02",
+   "flags": [],
+   "obs_id": "F0-3-012"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "brilliant-earth",
+   "field": "irreversible_methods",
+   "value": "Bank wire, for orders over $500 USD placed from the US or Canada",
+   "quote": "Bank wires are available for all orders over $500 USD placed from the US or Canada.",
+   "read_id": "BE-02",
+   "flags": [
+    "WIRE_OFFERED"
+   ],
+   "note": "No wire discount is printed in the payment section that was read; the rest of the page was not read.",
+   "obs_id": "F0-3-013"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "anjolee",
+   "field": "cards",
+   "value": "American Express, Visa, MasterCard, Discover",
+   "quote": "Cards : Anjolee accepts American Express, Visa, MasterCard, and Discover cards.",
+   "read_id": "AN-01",
+   "flags": [
+    "CARDS_ISSUED_OUTSIDE_US_AND_CANADA_NOT_ACCEPTED"
+   ],
+   "note": "'We only accept PayPal for international orders, outside of Canada and the United States. Please note that Anjolee does not accept foreign credit cards (issued outside of the United States and Canada).'",
+   "obs_id": "F0-3-014"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "anjolee",
+   "field": "irreversible_methods",
+   "value": "None listed (the page lists cards, PayPal, PayPal Credit and Apple Pay)",
+   "quote": "For your convenience, we accept the following payment methods: Cards : Anjolee accepts American Express, Visa, MasterCard, and Discover cards. … PayPal : You may use your PayPal account to pay for your order. … You can easily make a purchase on Anjolee using Apple Pay",
+   "read_id": "AN-01",
+   "flags": [
+    "BBB_LISTS_WIRE_TRANSFER_BUT_SELLER_PAGE_DOES_NOT"
+   ],
+   "note": "BBB's profile prints 'American Express, Visa, MasterCard, Discover, PayPal, Wire Transfer.' (BBB-11)",
+   "obs_id": "F0-3-015"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "sarraf",
+   "field": "cards",
+   "value": null,
+   "quote": null,
+   "read_id": "SR-02",
+   "flags": [
+    "PAYMENT_PAGE_NOT_FOUND"
+   ],
+   "note": "Home, contact and one product page were read; the guessed address /faq/ answered 'page not found'. The product page prints a pay-in-four instalment line without naming accepted cards.",
+   "obs_id": "F0-3-016"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "sarraf",
+   "field": "irreversible_methods",
+   "value": null,
+   "quote": null,
+   "read_id": "SR-02",
+   "flags": [
+    "PAYMENT_PAGE_NOT_FOUND"
+   ],
+   "obs_id": "F0-3-017"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "catbird",
+   "field": "cards",
+   "value": null,
+   "quote": null,
+   "read_id": "CB-02",
+   "flags": [
+    "CARD_TYPES_NOT_PRINTED_IN_CHUNKS_READ"
+   ],
+   "note": "FAQ chunks 1–3 of 4 and the contact page were read. The FAQ says 'We partner with Klarna to offer Pay in 4 interest-free payments and long term financing.'",
+   "obs_id": "F0-3-018"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "catbird",
+   "field": "irreversible_methods",
+   "value": null,
+   "quote": null,
+   "read_id": "CB-02",
+   "flags": [
+    "CARD_TYPES_NOT_PRINTED_IN_CHUNKS_READ"
+   ],
+   "obs_id": "F0-3-019"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "mene",
+   "field": "cards",
+   "value": "American Express, Discover, Mastercard, Visa, JCB",
+   "quote": "Credit card (American Express, Discover, Mastercard, Visa, and JCB)",
+   "read_id": "MN-05",
+   "flags": [],
+   "obs_id": "F0-3-020"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "mene",
+   "field": "irreversible_methods",
+   "value": "BitPay cryptocurrency, Solana Pay, Bank Deposit (wire transfer)",
+   "quote": "We currently accept the following methods of payment: Credit card (American Express, Discover, Mastercard, Visa, and JCB) PayPal BitPay cryptocurrency Solana Pay Menē Credit Bank Deposit",
+   "read_id": "MN-05",
+   "flags": [
+    "CRYPTOCURRENCY_OFFERED",
+    "WIRE_OFFERED"
+   ],
+   "note": "Help-centre category page: 'When you select Bank Deposit as your payment method, you are provided with Menē's banking information in the order confirmation email. Provide this information to your bank along with your order to your bank so they can initiate a wire transfer' and 'BitPay and Solana Pay are secure bitcoin wallet applications that you can use to pay for your Menē order.' (MN-02)",
+   "obs_id": "F0-3-021"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "ross-simons",
+   "field": "cards",
+   "value": "MasterCard, Visa, American Express, Discover",
+   "quote": "We accept MasterCard, Visa, American Express, Discover, Apple Pay, Venmo, Shopify Payments, and Affirm. You can also use gift certificates and merchandise credits, as well as PayPal from US-based accounts for orders shipped within the United States.",
+   "read_id": "RS-01",
+   "flags": [],
+   "obs_id": "F0-3-022"
+  },
+  {
+   "task": "F0-3",
+   "seller_id": "ross-simons",
+   "field": "irreversible_methods",
+   "value": "None listed (no wire, cheque or cryptocurrency on the page; Venmo is listed)",
+   "quote": "We accept MasterCard, Visa, American Express, Discover, Apple Pay, Venmo, Shopify Payments, and Affirm. You can also use gift certificates and merchandise credits, as well as PayPal from US-based accounts for orders shipped within the United States.",
+   "read_id": "RS-01",
+   "flags": [],
+   "note": "PayPal is offered only 'from US-based accounts for orders shipped within the United States'.",
+   "obs_id": "F0-3-023"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "blue-nile",
+   "field": "karat_stamp_statement",
+   "value": "General statement on the gold-rings page: real gold rings carry a karat stamp on the inside band",
+   "quote": "Real gold rings will have a stamp on the inside band indicating the ring’s gold karat value. Typically, the stamp will be 10k, 14k or 18k gold.",
+   "read_id": "BN-04",
+   "flags": [
+    "GENERAL_STATEMENT_NOT_A_PER_RING_PROMISE"
+   ],
+   "obs_id": "F0-4-001"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "blue-nile",
+   "field": "makers_mark_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "BN-04",
+   "flags": [
+    "MAKERS_MARK_STATEMENT_NOT_FOUND"
+   ],
+   "note": "Pages read: the gold-rings category FAQ, customer FAQ chunks 1–2 of 4, terms chunk 1 of 4.",
+   "obs_id": "F0-4-002"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "allurez",
+   "field": "karat_stamp_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "AL-02",
+   "flags": [
+    "KARAT_STAMP_STATEMENT_NOT_FOUND"
+   ],
+   "note": "FAQ chunks 1–2 of 3 were read.",
+   "obs_id": "F0-4-003"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "allurez",
+   "field": "makers_mark_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "AL-02",
+   "flags": [
+    "MAKERS_MARK_STATEMENT_NOT_FOUND"
+   ],
+   "obs_id": "F0-4-004"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "vrai",
+   "field": "karat_stamp_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "VR-02",
+   "flags": [
+    "KARAT_STAMP_STATEMENT_NOT_FOUND"
+   ],
+   "note": "Pages read: contact, payment options, terms chunks 1–3 of 8. VRAI's help centre was not opened.",
+   "obs_id": "F0-4-005"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "vrai",
+   "field": "makers_mark_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "VR-02",
+   "flags": [
+    "MAKERS_MARK_STATEMENT_NOT_FOUND"
+   ],
+   "obs_id": "F0-4-006"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "mejuri",
+   "field": "karat_stamp_statement",
+   "value": "Every piece is stamped according to its karatage",
+   "quote": "Every piece we sell is stamped according to its karatage (e.g., 10k or 14k).",
+   "read_id": "MJ-04",
+   "flags": [
+    "SELLER_STATEMENT_NOT_PROOF"
+   ],
+   "obs_id": "F0-4-007"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "mejuri",
+   "field": "makers_mark_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "MJ-04",
+   "flags": [
+    "MAKERS_MARK_STATEMENT_NOT_FOUND"
+   ],
+   "note": "The Materials FAQ (index and two articles) speaks of karat stamps and, 'Where required by law, such as in the UK', independent hallmarking; it names no maker's mark.",
+   "obs_id": "F0-4-008"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "mejuri",
+   "field": "other_purity_statement",
+   "value": "Seller says each style is XRF-tested on arrival at its facilities",
+   "quote": "Once jewelry arrives at Mejuri’s facilities, it is carefully inspected by our Quality Assurance team. As part of this process, each style undergoes X-Ray Fluorescence (XRF) testing, a highly reliable and precise method used to test the metal composition of the piece.",
+   "read_id": "MJ-04",
+   "flags": [
+    "SELLER_STATEMENT_NOT_PROOF",
+    "TESTING_IS_PER_STYLE_NOT_PER_PIECE"
+   ],
+   "obs_id": "F0-4-009"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "mejuri",
+   "field": "other_purity_statement",
+   "value": "Seller describes hollow-form pieces as solid gold",
+   "quote": "When an item is hallmarked 14k or 10k, it is solid gold through and through. Even our hollow-form pieces are crafted entirely from solid gold to meet these strict purity standards.",
+   "read_id": "MJ-05",
+   "flags": [
+    "SOLID_WORDING_DOES_NOT_EXCLUDE_HOLLOW_FORM"
+   ],
+   "obs_id": "F0-4-010"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "brilliant-earth",
+   "field": "karat_stamp_statement",
+   "value": "Shown in an image caption only: a ring ‘stamped with Brilliant Earth lotus and 18K’",
+   "quote": "Gold Sol ring stamped with Brilliant Earth lotus and 18K",
+   "read_id": "BE-01",
+   "flags": [
+    "CAPTION_ONLY_NO_POLICY_SENTENCE",
+    "CANADIAN_EDITION_OF_THE_GUIDE"
+   ],
+   "note": "A second caption on the page reads 'Gold Sol bangle stamped with \"BRILLIANT EARTH 14K\"'.",
+   "obs_id": "F0-4-011"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "brilliant-earth",
+   "field": "makers_mark_statement",
+   "value": "Brilliant Earth states that its lotus symbol is its maker's mark",
+   "quote": "Brilliant Earth uses its lotus symbol as its maker's mark. The lotus identifies Brilliant Earth as the brand associated with the jewelry. Maker's marks are distinct from numerical stamps that indicate metal purity.",
+   "read_id": "BE-01",
+   "flags": [
+    "SELLER_STATEMENT_NOT_PROOF",
+    "CANADIAN_EDITION_OF_THE_GUIDE"
+   ],
+   "obs_id": "F0-4-012"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "brilliant-earth",
+   "field": "other_purity_statement",
+   "value": "The guide says the United States does not generally require official hallmarking",
+   "quote": "Jewelry stamping requirements vary by country. The United States does not generally require official hallmarking, although purity and manufacturer's marks are common.",
+   "read_id": "BE-01",
+   "flags": [],
+   "obs_id": "F0-4-013"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "anjolee",
+   "field": "karat_stamp_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "AN-02",
+   "flags": [
+    "KARAT_STAMP_STATEMENT_NOT_FOUND"
+   ],
+   "note": "FAQ chunks 2–4 of 4 and the customer-service page were read.",
+   "obs_id": "F0-4-014"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "anjolee",
+   "field": "makers_mark_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "AN-02",
+   "flags": [
+    "MAKERS_MARK_STATEMENT_NOT_FOUND"
+   ],
+   "obs_id": "F0-4-015"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "anjolee",
+   "field": "other_purity_statement",
+   "value": "Site-wide statement: nothing is plated; the jewelry is solid gold; an approximate metal weight in grams is published",
+   "quote": "Anjolee does not plate any of our jewelry items. When you buy from us, you are buying solid gold jewelry. In addition, we publish the approximate gold or platinum weight for every item sold on the website.",
+   "read_id": "AN-02",
+   "flags": [
+    "SITE_LEVEL_SOLID_GOLD_STATEMENT_NOT_RECORDED_IN_SELLERS_JSON"
+   ],
+   "obs_id": "F0-4-016"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "anjolee",
+   "field": "other_purity_statement",
+   "value": "A certificate of authenticity is provided with each diamond jewelry order",
+   "quote": "Anjolee provides a certificate of authenticity for each diamond jewelry order. If you require a third party certificate, we recommend either the - GIA or IGI.",
+   "read_id": "AN-02",
+   "flags": [
+    "SELLER_STATEMENT_NOT_PROOF"
+   ],
+   "obs_id": "F0-4-017"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "sarraf",
+   "field": "karat_stamp_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "SR-03",
+   "flags": [
+    "KARAT_STAMP_STATEMENT_NOT_FOUND"
+   ],
+   "note": "Product-page chunks 1 and 3 of 6, the home page and the contact page were read; the product page prints 'Material: 18K Solid Gold' and no stamp wording in those chunks.",
+   "obs_id": "F0-4-018"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "sarraf",
+   "field": "makers_mark_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "SR-03",
+   "flags": [
+    "MAKERS_MARK_STATEMENT_NOT_FOUND"
+   ],
+   "obs_id": "F0-4-019"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "sarraf",
+   "field": "other_purity_statement",
+   "value": "Seller's reply printed on BBB: certificates of authenticity are available on request",
+   "quote": "Certificates of authenticity are available upon request, and we encourage customers to reach out before or during purchase if they require additional paperwork.",
+   "read_id": "BBB-19",
+   "flags": [
+    "SELLER_STATEMENT_PRINTED_ON_BBB"
+   ],
+   "note": "Business response dated 12/16/2024 on Sarraf's BBB complaints page.",
+   "obs_id": "F0-4-020"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "catbird",
+   "field": "karat_stamp_statement",
+   "value": "General statement: real gold rings are ‘usually’ stamped with a hallmark such as 10k or 14k",
+   "quote": "Real gold rings are usually stamped with a hallmark, such as 10k or 14k, indicating their gold content. While hallmarks are the best indicator, they aren't the only way to verify authenticity.",
+   "read_id": "CB-01",
+   "flags": [
+    "GENERAL_STATEMENT_NOT_A_PER_RING_PROMISE"
+   ],
+   "obs_id": "F0-4-021"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "catbird",
+   "field": "makers_mark_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "CB-01",
+   "flags": [
+    "MAKERS_MARK_STATEMENT_NOT_FOUND"
+   ],
+   "note": "Pages read: the gold-rings category FAQ, FAQ chunks 1–3 of 4, contact page.",
+   "obs_id": "F0-4-022"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "catbird",
+   "field": "other_purity_statement",
+   "value": "Solid gold, never plated",
+   "quote": "Each ring is waterproof, crafted in solid gold—never plated, and made to wear always.",
+   "read_id": "CB-01",
+   "flags": [
+    "SELLER_STATEMENT_NOT_PROOF"
+   ],
+   "obs_id": "F0-4-023"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "mene",
+   "field": "karat_stamp_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "MN-04",
+   "flags": [
+    "KARAT_STAMP_STATEMENT_NOT_FOUND"
+   ],
+   "note": "The help-centre categories About Menē, Product Information and Payment Methods were read; none lists an article about stamps or hallmarks.",
+   "obs_id": "F0-4-024"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "mene",
+   "field": "makers_mark_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "MN-04",
+   "flags": [
+    "MAKERS_MARK_STATEMENT_NOT_FOUND"
+   ],
+   "obs_id": "F0-4-025"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "mene",
+   "field": "other_purity_statement",
+   "value": "Seller says some small components and solder are 18-karat, so a tester can read below 24k there",
+   "quote": "It is not possible to produce the following items in 24k gold and 999 silver to have sufficient strength and durability: lobster clasps, earring posts, earring backings, and solder. If these tiny 18-karat gold pieces come in contact with a metal tester, the result will be less than 24k gold purity.",
+   "read_id": "MN-06",
+   "flags": [
+    "TESTER_MAY_READ_BELOW_24K_AT_SOLDER_OR_FINDINGS"
+   ],
+   "obs_id": "F0-4-026"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "mene",
+   "field": "other_purity_statement",
+   "value": "Seller says the physical weight may differ slightly from the advertised weight, which is an inventory average",
+   "quote": "The physical weight of some 24k gold and pure platinum pieces may differ slightly from their advertised weight, which is the average weight of the inventory for the…",
+   "read_id": "MN-03",
+   "flags": [
+    "ADVERTISED_WEIGHT_IS_AN_INVENTORY_AVERAGE",
+    "QUOTE_ENDS_WHERE_THE_CATEGORY_PAGE_CUT_IT"
+   ],
+   "obs_id": "F0-4-027"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "ross-simons",
+   "field": "karat_stamp_statement",
+   "value": "For the Italian gold assortment: each piece bears a hallmark certifying its gold purity",
+   "quote": "Each piece from our Italian gold assortment bears a hallmark that certifies the purity of its gold content. A piece that is 41.7% pure gold will be stamped 10K or 417, a piece that is 58.5% pure gold will be stamped 14K or 585, and a piece that is 75% pure gold will be stamped 18K or 750.",
+   "read_id": "RS-03",
+   "flags": [
+    "STATEMENT_LIMITED_TO_THE_ITALIAN_GOLD_ASSORTMENT",
+    "SELLER_STATEMENT_NOT_PROOF"
+   ],
+   "obs_id": "F0-4-028"
+  },
+  {
+   "task": "F0-4",
+   "seller_id": "ross-simons",
+   "field": "makers_mark_statement",
+   "value": null,
+   "quote": null,
+   "read_id": "RS-03",
+   "flags": [
+    "MAKERS_MARK_STATEMENT_NOT_FOUND"
+   ],
+   "note": "Pages read: payment options, contact, and chunks 1–2 of 3 of the Italian-gold article.",
+   "obs_id": "F0-4-029"
+  }
+ ],
+ "irregularities": [
+  {
+   "id": "IR-F0-01",
+   "severity": "High",
+   "seller_id": "catbird",
+   "title": "Catbird: BBB grade D-, and none of the complaints shown was answered",
+   "detail": "BBB prints a D- rating, 11 complaints in three years (4 in the last twelve months) and files all 11 under 'Complaint Unanswered'. BBB defines Unanswered as 'The business failed to respond to the dispute.' Catbird's own contact page prints no customer-service telephone number.",
+   "basis": [
+    "BBB-13",
+    "BBB-29",
+    "CB-03"
+   ],
+   "action": "Before buying, test the seller's e-mail channel with the hallmark and return questions and keep the reply. Do not count on BBB as an escalation route for this seller."
+  },
+  {
+   "id": "IR-F0-02",
+   "severity": "High",
+   "seller_id": "vrai",
+   "title": "VRAI: BBB grade F, all three complaints unanswered, and a chargeback clause in the terms",
+   "detail": "The BBB profile named 'Vrai' (alternate name 'Vrai & Oro') prints an F rating and files all 3 complaints under 'Complaint Unanswered'. The profile prints no website or telephone, so its match to vrai.com rests on the name and on complaint texts that describe VRAI rings. Separately, VRAI's terms say that when a customer files a chargeback VRAI 'has the right to recover its direct and indirect costs'.",
+   "basis": [
+    "BBB-09",
+    "BBB-30",
+    "VR-02"
+   ],
+   "action": "Read the chargeback clause before paying by card, and ask VRAI in writing how it applies when a ring fails an independent purity test."
+  },
+  {
+   "id": "IR-F0-03",
+   "severity": "Medium",
+   "seller_id": "mejuri",
+   "title": "Mejuri: BBB grade D-, 35 complaints, and no voice telephone or e-mail address printed",
+   "detail": "BBB prints a D- rating and 35 complaints in three years, 22 of them filed as 'Product Issues'; the customer-review average is 1/5 over 6 reviews. Mejuri's contact page prints a text-only number and a contact form; the only e-mail addresses printed are for press and corporate sales.",
+   "basis": [
+    "BBB-10",
+    "BBB-31",
+    "BBB-23",
+    "MJ-01"
+   ],
+   "action": "Use the form or the text line to get the hallmark, hollow-form and return answers in writing before ordering."
+  },
+  {
+   "id": "IR-F0-04",
+   "severity": "Medium",
+   "seller_id": "mejuri",
+   "title": "Mejuri calls hollow-form pieces “solid gold”",
+   "detail": "Mejuri's Materials FAQ says 'Even our hollow-form pieces are crafted entirely from solid gold'. The FTC consumer page read today says 'The phrase “solid gold” means the gold item isn’t hollow.' The dataset counts Mejuri's seven rows as carrying explicit solid-gold wording; that wording therefore does not by itself say a given Mejuri ring is not hollow.",
+   "basis": [
+    "MJ-05",
+    "FTC-01"
+   ],
+   "action": "Ask Mejuri in writing whether the specific ring is hollow-form, and ask for its gram weight (no Mejuri row has one)."
+  },
+  {
+   "id": "IR-F0-05",
+   "severity": "Medium",
+   "seller_id": "blue-nile",
+   "title": "Blue Nile and Allurez discount the price for paying by bank wire",
+   "detail": "Blue Nile: 'Arrange payment through your bank and receive a 1.5% discount.' Allurez: 'We offer a 1.5% discount to customers who pay with a wire transfer.' A wire cannot be disputed the way a card charge can, so the discount is an incentive to give up the protection the buying checklist asks for. Blue Nile's page also prints two different wire minimums ($1000 in the text, $750 in a tooltip).",
+   "basis": [
+    "BN-02",
+    "BN-03",
+    "AL-02"
+   ],
+   "action": "Pay by credit card and treat the wire discount as the price of losing dispute rights."
+  },
+  {
+   "id": "IR-F0-06",
+   "severity": "Medium",
+   "seller_id": "mene",
+   "title": "Menē offers cryptocurrency and bank-wire payment, and has an unanswered BBB complaint about weight and marking",
+   "detail": "Menē's help centre lists 'BitPay cryptocurrency', 'Solana Pay' and 'Bank Deposit' (a wire) next to credit cards. BBB holds two profiles at the same address: 'Mene' (not rated, no complaints in three years, two 1-star reviews) and 'Mene Inc' (rated C, 1 complaint, unanswered). Menē's own help centre says small components and solder are 18-karat and that a metal tester touching them 'will be less than 24k gold purity', and that physical weight 'may differ slightly' from the advertised weight.",
+   "basis": [
+    "MN-05",
+    "MN-02",
+    "BBB-15",
+    "BBB-16",
+    "BBB-33",
+    "MN-06",
+    "MN-03"
+   ],
+   "action": "Pay by card only. On arrival weigh the piece against the certificate, and have a jeweler test away from any solder seam."
+  },
+  {
+   "id": "IR-F0-07",
+   "severity": "Medium",
+   "seller_id": "sarraf",
+   "title": "Sarraf: the seller itself confirms a shipped weight below the listed approximate weight",
+   "detail": "In a reply printed on BBB (09/24/2025) Sarraf writes: 'The chain was listed on our website with an approximate weight of 6.13 grams, not 6.61 grams. The chain that was shipped weighed 5.7 grams.' That is one item, a chain rather than a ring, but it shows how far Sarraf's 'approximate' weights can sit from the delivered piece; six dataset rows use Sarraf gram weights in their gold-value arithmetic.",
+   "basis": [
+    "BBB-25"
+   ],
+   "action": "Weigh on arrival and compare with the listing; redo the gold-value calculation with the measured weight."
+  },
+  {
+   "id": "IR-F0-08",
+   "severity": "Low",
+   "seller_id": "sarraf",
+   "title": "Sarraf's own dates and BBB's do not match",
+   "detail": "Sarraf's home page says 'In business since 1986' and its page title says 'Over 30 Years'; BBB prints 'Business Started: 11/20/1997' and 'Business Incorporated: 11/20/1997'. The two can both be true if the business predates its incorporation; neither page says so. Sarraf's claim of an A+ BBB rating is confirmed by the BBB page read today.",
+   "basis": [
+    "SR-01",
+    "BBB-12"
+   ],
+   "action": "No action needed beyond knowing which entity BBB's record covers."
+  },
+  {
+   "id": "IR-F0-09",
+   "severity": "Low",
+   "seller_id": "blue-nile",
+   "title": "Blue Nile has two BBB profiles, and the newer one describes a different brand",
+   "detail": "The Seattle profile 'Blue Nile Inc' carries the complaint history (124 in three years). A second profile, 'Blue Nile' in King of Prussia, was opened on 7/22/2026, lists the alternate name 'Signet Jewelers', links to www.signetjewelers.com, and its description reads 'Rocksbox is a jewelry membership service…'. Signet's fiscal-2024 annual report lists Blue Nile among Signet's brands.",
+   "basis": [
+    "BBB-01",
+    "BBB-02",
+    "BBB-03",
+    "SEC-02"
+   ],
+   "action": "Use the Seattle profile to read or file complaints."
+  },
+  {
+   "id": "IR-F0-10",
+   "severity": "Low",
+   "seller_id": "brilliant-earth",
+   "title": "BBB prints two different three-year complaint totals for Brilliant Earth on one page",
+   "detail": "The summary line says '281 complaints in the last 3 years'; the filter on the same page says 'All complaint statuses (282)', and Answered (181) plus Resolved (101) add to 282.",
+   "basis": [
+    "BBB-06"
+   ],
+   "action": "None; both figures are recorded as printed."
+  },
+  {
+   "id": "IR-F0-11",
+   "severity": "Low",
+   "seller_id": "anjolee",
+   "title": "Anjolee: an A+ BBB claim this pass could not confirm, and no card payment for buyers outside the US and Canada",
+   "detail": "Anjolee's FAQ says 'Anjolee has an A+ rating from the Better Business Bureau'. The BBB profile read today says 'This business is NOT BBB Accredited' and the page text returned printed no rating letter, so the claim is neither confirmed nor contradicted here. Anjolee's customer-service page says it 'does not accept foreign credit cards (issued outside of the United States and Canada)' and takes only PayPal for international orders. BBB lists 'Wire Transfer' among Anjolee's payment methods; Anjolee's own page does not.",
+   "basis": [
+    "AN-02",
+    "BBB-11",
+    "BBB-18",
+    "AN-01"
+   ],
+   "action": "Open the BBB profile in a browser to read the letter grade. A buyer with a card issued outside the US or Canada cannot use card payment here."
+  },
+  {
+   "id": "IR-F0-12",
+   "severity": "Info",
+   "seller_id": "all",
+   "title": "No seller publishes, on the pages read, that every gold ring carries both a karat stamp and a maker's mark",
+   "detail": "Maker's mark: only Brilliant Earth names one (its lotus symbol). Karat stamp: Mejuri says every piece is stamped; Ross-Simons says so for its Italian gold assortment; Blue Nile and Catbird make general statements about real gold rings; Brilliant Earth shows a stamped ring in an image caption. Allurez, VRAI, Anjolee, Sarraf and Menē print no stamp statement on the pages read. A statement on a web page is a seller's claim and not evidence of a stamp inside any particular ring.",
+   "basis": [
+    "BE-01",
+    "MJ-04",
+    "RS-03",
+    "BN-04",
+    "CB-01"
+   ],
+   "action": "Ask each seller in writing which marks are struck inside the specific ring, and check them with a loupe on arrival."
+  },
+  {
+   "id": "IR-F0-13",
+   "severity": "Info",
+   "seller_id": "all",
+   "title": "Contact gaps on the sellers' own contact pages",
+   "detail": "No voice telephone number: Mejuri (text only) and Catbird. No customer e-mail address, a form only: Mejuri and Brilliant Earth, and Sarraf on its contact page (the dataset holds a Sarraf address from an earlier product-page read). Eight of the ten contact pages print no corporate street address.",
+   "basis": [
+    "MJ-01",
+    "CB-03",
+    "BE-03"
+   ],
+   "action": "Keep a written record of every exchange; a form submission leaves you no copy unless you save one."
+  },
+  {
+   "id": "IR-F0-14",
+   "severity": "Low",
+   "seller_id": "sarraf",
+   "title": "Sarraf pages still display a July closure banner in November",
+   "detail": "The contact page and the product page both carry an image whose alternative text reads 'Sarraf Closed for 4th of July 2026', read on 11 November 2026.",
+   "basis": [
+    "SR-02",
+    "SR-03"
+   ],
+   "action": "None; noted as a sign that site notices are not kept current."
+  }
+ ],
+ "customer_statements": [
+  {
+   "id": "CS-01",
+   "seller_id": "catbird",
+   "kind": "Customer review printed by BBB",
+   "printed_date": "11/20/2024",
+   "quote": "Selling really bad quality jewlery and lying about the gold purity. Many pieces have broken, turned colors, and are magnetic.",
+   "read_id": "BBB-26",
+   "why": "An allegation about gold purity. It is one customer's statement; BBB shows no business reply to it."
+  },
+  {
+   "id": "CS-02",
+   "seller_id": "mene",
+   "kind": "Customer review printed by BBB",
+   "printed_date": "23/08/2024",
+   "quote": "merchandise not 24kt. letter of authenticity missing.",
+   "read_id": "BBB-27",
+   "why": "An allegation about purity and missing documentation. BBB's text carries redaction marks around this sentence."
+  },
+  {
+   "id": "CS-03",
+   "seller_id": "mene",
+   "kind": "Customer complaint printed by BBB (status: Unanswered)",
+   "printed_date": "20/03/2025",
+   "quote": "they were supposed to be total weight of 19.79 grams but what I received was 19.36 and that is less than what I paid for by 0.43 grams",
+   "read_id": "BBB-33",
+   "why": "An allegation of short weight on a by-the-gram purchase. The same complaint says one item carried no 24k mark."
+  },
+  {
+   "id": "CS-04",
+   "seller_id": "sarraf",
+   "kind": "Business response printed by BBB",
+   "printed_date": "09/24/2025",
+   "quote": "The chain was listed on our website with an approximate weight of 6.13 grams, not 6.61 grams. The chain that was shipped weighed 5.7 grams.",
+   "read_id": "BBB-25",
+   "why": "The seller's own figures for one shipped item against its listed approximate weight."
+  },
+  {
+   "id": "CS-05",
+   "seller_id": "mejuri",
+   "kind": "Customer review printed by BBB",
+   "printed_date": "15/12/2024",
+   "quote": "It's rust. RUST, on a 14k solid gold earring?!",
+   "read_id": "BBB-23",
+   "why": "An allegation about metal quality on a piece sold as solid gold. The reviewer describes a photograph the seller sent, not a laboratory test."
+  },
+  {
+   "id": "CS-06",
+   "seller_id": "allurez",
+   "kind": "Customer review printed by BBB",
+   "printed_date": "07/07/2026",
+   "quote": "After writing this review they told me if I wanted my ring back I would need to remove the review.",
+   "read_id": "BBB-21",
+   "why": "An allegation that goes to how far review counts for this seller can be relied on."
+  },
+  {
+   "id": "CS-07",
+   "seller_id": "sarraf",
+   "kind": "Customer complaint printed by BBB (status: Answered)",
+   "printed_date": "12/16/2024",
+   "quote": "The bracelet did not come with any type of certificate of authenticity",
+   "read_id": "BBB-19",
+   "why": "Documentation was not supplied by default; the seller's reply says certificates are 'available upon request'."
+  }
+ ],
+ "leads_unverified": [
+  {
+   "id": "L-01",
+   "verify_read_id": "MJ-01",
+   "seller_id": "mejuri",
+   "topic": "Look-alike web address using Mejuri's name",
+   "lead": "A search result titled 'FAQs - Mejuri Official Shop - US.COM' sits on the host mejurs[.]us[.]com and lists the e-mail support@mejurs[.]us[.]com together with Mejuri's text number. The official host in this project is mejuri.com.",
+   "why": "A buyer who lands there is not on the seller's site. Type the official address by hand and check the host before paying."
+  },
+  {
+   "id": "L-02",
+   "verify_read_id": "BBB-11",
+   "seller_id": "anjolee",
+   "topic": "BBB letter grade for Anjolee",
+   "lead": "A search-engine summary of Anjolee's BBB profile showed the grade 'A+'. The profile page itself printed no letter in the text the reader returned.",
+   "why": "Would settle the Anjolee rating cell; needs a browser read of the BBB page."
+  },
+  {
+   "id": "L-03",
+   "verify_read_id": "BBB-03",
+   "seller_id": "blue-nile",
+   "topic": "Stale search-engine numbers",
+   "lead": "A search-engine summary of Blue Nile's BBB profile showed 121 complaints and 25 reviews; the page read minutes later printed 124 and 26.",
+   "why": "Shows why this register takes no number from a search summary."
+  },
+  {
+   "id": "L-04",
+   "verify_read_id": "BBB-09",
+   "seller_id": "vrai",
+   "topic": "BBB's reasons for VRAI's F grade",
+   "lead": "A search-engine summary of the VRAI profile mentioned 'Failure to respond to 5 complaint(s) filed against business'; the page read printed 3 complaints in the last three years.",
+   "why": "The 'reasons for rating' block did not come through the reader; a browser read would show it."
+  },
+  {
+   "id": "L-05",
+   "verify_read_id": "CB-03",
+   "seller_id": "catbird",
+   "topic": "Whether very thin Catbird rings carry a karat stamp",
+   "lead": "A forum thread reports that Catbird does not strike a karat mark on its thinnest rings while still striking 'CB'.",
+   "why": "Bears directly on the two Catbird rows; ask the seller in writing."
+  },
+  {
+   "id": "L-06",
+   "verify_read_id": "AL-02",
+   "seller_id": "allurez",
+   "topic": "Cryptocurrency at Allurez",
+   "lead": "An older Allurez page and a 2017 press release mention payment by Bitcoin; the FAQ read today does not list it.",
+   "why": "If the checkout still offers it, it is another irreversible method."
+  },
+  {
+   "id": "L-07",
+   "verify_read_id": "AN-01",
+   "seller_id": "anjolee",
+   "topic": "Anjolee's street address",
+   "lead": "Two third-party listings give two different Chula Vista street addresses for Anjolee; Anjolee's customer-service page prints none.",
+   "why": "A real street address is on the checklist; ask the seller or read its Terms of Use page."
+  },
+  {
+   "id": "L-08",
+   "verify_read_id": "BN-01",
+   "seller_id": "blue-nile",
+   "topic": "A maker's mark on Blue Nile rings",
+   "lead": "Forum and blog posts describe a small 'BN' or Blue Nile logo stamp beside the karat mark on some rings.",
+   "why": "Blue Nile's own pages read today make no such statement; ask the seller in writing."
+  }
+ ],
+ "requests": [
+  {
+   "id": "RQ-F0-1",
+   "target": "scripts/build_site.py (NAV) and pages/sellers.html",
+   "owner": "final-integration owner",
+   "request": "Link reviews/due-diligence-f0dbdb3e/index.html from the Sellers page and from the navigation, and link its 'Flagged for review' section from pages/flagged.html."
+  },
+  {
+   "id": "RQ-F0-2",
+   "target": "data/sellers.json — reputation_independently_verified and the REPUTATION_NOT_VERIFIED flag (10 sellers)",
+   "owner": "final-integration owner",
+   "request": "Do not flip the field to true. Point it at this register (evidence recorded 2026-11-11) and keep the flag wording honest: BBB records were read; no seller was vetted or endorsed. Re-read before copying any figure."
+  },
+  {
+   "id": "RQ-F0-3",
+   "target": "data/sellers.json — contact fields that are null",
+   "owner": "final-integration owner",
+   "request": "Fill from the sellers' own pages after re-reading: VRAI phone +1.855.956.4488; Ross-Simons e-mail customerservice@ross-simons.com; Catbird e-mail customerservice@catbirdnyc.com; Menē phone +1 833 636 3245 and e-mail service@mene.com; Anjolee e-mail service@anjolee.com; Mejuri text-only line 1-855-496-1110 (label it text-only); Brilliant Earth text line +1 415.520.6526. Leave Mejuri and Brilliant Earth e-mail blank with the reason 'form only', and Catbird phone blank."
+  },
+  {
+   "id": "RQ-F0-4",
+   "target": "data/sellers.json and data/rings.json — hallmark_published",
+   "owner": "final-integration owner",
+   "request": "Record the nuance instead of a flat false: Mejuri publishes a karat-stamp statement for every piece; Brilliant Earth publishes its maker's mark (lotus); Ross-Simons publishes a hallmark statement for its Italian gold assortment only; Blue Nile and Catbird publish general statements. No seller publishes karat stamp plus maker's mark for every ring, so the readiness flag HALLMARK_PLUS_MAKER_NOT_DOCUMENTED stays on all 64 rows."
+  },
+  {
+   "id": "RQ-F0-5",
+   "target": "data/rings.json — the seven Mejuri rows (MJ-01 to MJ-07)",
+   "owner": "final-integration owner",
+   "request": "Add a caution that Mejuri's 'solid gold' wording does not exclude hollow-form construction (Mejuri's own Materials FAQ), against the FTC wording that 'solid gold' means not hollow. Do not change solid_gold_status without re-reading each product page."
+  },
+  {
+   "id": "RQ-F0-6",
+   "target": "data/sellers.json — Anjolee solid_gold_stated: false",
+   "owner": "final-integration owner",
+   "request": "Anjolee's FAQ publishes a site-wide statement ('When you buy from us, you are buying solid gold jewelry'). Record it as a site-level statement with its source, distinct from listing-level wording on AN-01."
+  },
+  {
+   "id": "RQ-F0-7",
+   "target": "data/sellers.json — payment and dispute flags (new information, no field exists yet)",
+   "owner": "final-integration owner",
+   "request": "Consider adding per-seller payment notes: wire discount (Blue Nile, Allurez); wire offered (Brilliant Earth); cryptocurrency and wire (Menē); chargeback cost-recovery clause (VRAI); no cards issued outside the US and Canada (Anjolee). Payment methods for Mejuri, Sarraf and Catbird remain unread."
+  },
+  {
+   "id": "RQ-F0-8",
+   "target": "data/rings.json — Sarraf rows with a gram weight (SR-01 to SR-06)",
+   "owner": "final-integration owner",
+   "request": "Add to the existing WEIGHT_APPROXIMATE caution that the seller has itself reported a shipped item weighing 5.7 g against a listed approximate weight of 6.13 g (a chain; see calculation D-01). No stored weight should change."
+  },
+  {
+   "id": "RQ-F0-9",
+   "target": "data/sources.json",
+   "owner": "final-integration owner",
+   "request": "If these sources are adopted, register the BBB profile addresses, the EDGAR company page for Brilliant Earth Group, Inc. and the sellers' contact, payment and materials pages listed in this register's read ledger."
+  }
+ ],
+ "incidental": [
+  {
+   "id": "IN-01",
+   "row": "SR-03",
+   "what": "While looking for stamp wording, the product page of row SR-03 printed the same price and weight the dataset stores.",
+   "quote": "Now: US$871.00 … Approximate Metal Weight: 6.70 grams … The weight listed is an approximate weight of a ring in size 10",
+   "read_id": "SR-03",
+   "stored": "data/rings.json stores price_usd 871.0 and weight_g 6.7 for SR-03.",
+   "status": "Not a row re-verification by this session; passed to the sessions that own the 64-row re-read."
+  }
+ ],
+ "derived": [
+  {
+   "id": "D-01",
+   "what": "Sarraf's shipped weight below its listed approximate weight, in grams",
+   "expr": "6.13 - 5.7",
+   "result": "0.43",
+   "unit": "g",
+   "inputs_from": "CS-04"
+  },
+  {
+   "id": "D-02",
+   "what": "The same shortfall as a share of the listed weight",
+   "expr": "(6.13 - 5.7) / 6.13 * 100",
+   "result": "7.0",
+   "unit": "%",
+   "inputs_from": "CS-04"
+  },
+  {
+   "id": "D-03",
+   "what": "Brilliant Earth: BBB's Answered plus Resolved complaints",
+   "expr": "181 + 101",
+   "result": "282",
+   "unit": "complaints",
+   "inputs_from": "F0-1 complaint_status (BBB-06)"
+  },
+  {
+   "id": "D-04",
+   "what": "Menē complaint: ordered weight minus received weight, as the customer states them",
+   "expr": "19.79 - 19.36",
+   "result": "0.43",
+   "unit": "g",
+   "inputs_from": "CS-03"
+  }
+ ],
+ "count_claims": [
+  {
+   "id": "K-01",
+   "claim": "sellers covered",
+   "expected": 10,
+   "from": "evidence",
+   "query": "sellers"
+  },
+  {
+   "id": "K-02",
+   "claim": "contact pages that print no corporate street address",
+   "expected": 8,
+   "from": "evidence",
+   "query": "F0-2 address blank"
+  },
+  {
+   "id": "K-03",
+   "claim": "Mejuri rows in data/rings.json",
+   "expected": 7,
+   "from": "data/rings.json",
+   "query": "retailer_id == mejuri"
+  },
+  {
+   "id": "K-04",
+   "claim": "Sarraf rows in data/rings.json that carry a gram weight",
+   "expected": 6,
+   "from": "data/rings.json",
+   "query": "retailer_id == sarraf and weight_g is not null"
+  },
+  {
+   "id": "K-05",
+   "claim": "rows in data/rings.json",
+   "expected": 64,
+   "from": "data/rings.json",
+   "query": "rows"
+  },
+  {
+   "id": "K-06",
+   "claim": "Mejuri rows in data/rings.json that carry a gram weight",
+   "expected": 0,
+   "from": "data/rings.json",
+   "query": "retailer_id == mejuri and weight_g is not null"
+  }
+ ],
+ "limits": [
+  "A BBB grade is BBB's opinion and covers about three years; it is not a finding about any ring, and BBB says it does not verify what third parties tell it.",
+  "Complaint counts are not adjusted for company size. A large retailer will have more complaints than a small one selling the same quality.",
+  "Only the first part of the longer BBB complaint and review lists was read: the summary counts and the most recent entries. Older entries were not read.",
+  "Seller pages were read through a browser-rendered reader at the times shown. A page can change the next day.",
+  "Where a page would not render or a statement was not found, the cell is blank and flagged. Nothing was filled in from memory, from a search summary or by inference.",
+  "No Trustpilot, Reddit, state attorney-general or court record was used as a source of values. No US state business registry was opened.",
+  "Nothing here establishes that any ring is solid gold, correctly stamped or worth its price. That still takes a scale, a loupe and a jeweler's test on arrival."
+ ]
+}
