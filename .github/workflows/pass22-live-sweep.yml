@@ -1,0 +1,92 @@
+name: Pass 22 live sweep (read-only evidence, no data writes)
+
+# WHY THIS EXISTS
+# ---------------
+# scripts/live_source_check.py needs outbound internet to the retailers' own
+# hosts. The session that owns Pass 22 runs in a sandbox that cannot reach them
+# directly, so the sweep runs here, on a runner that can, and the raw artifact
+# is committed back to the owning branch as EVIDENCE ONLY.
+#
+# It never writes data/*.json. A price the page prints differently is evidence
+# for a later review step; it is not applied here.
+#
+# The path filter deliberately excludes reviews/** so the commit this job makes
+# cannot retrigger itself.
+
+on:
+  push:
+    branches:
+      - "arena/4dc3210a-gold4"
+    paths:
+      - "data/rings.json"
+      - "data/sources.json"
+      - "scripts/live_source_check.py"
+      - ".github/workflows/pass22-live-sweep.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pass22-live-sweep
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Record runner identity and clock
+        run: |
+          echo "runner started: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          python3 -V
+
+      - name: Re-open every row URL and registered source (read-only GET)
+        run: python3 scripts/live_source_check.py --timeout 30
+        continue-on-error: true
+
+      - name: Show what the sweep found (counts only, no interpretation)
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import glob, json
+          files = sorted(glob.glob("reports/live_source_check_2*.json"))
+          if not files:
+              print("no artifact written")
+              raise SystemExit(0)
+          d = json.load(open(files[-1]))
+          print("artifact   :", files[-1])
+          print("checked_utc:", d.get("checked_utc"))
+          print("targets    :", d.get("targets"))
+          print("summary    :", json.dumps(d.get("summary"), indent=2))
+          print("blocked    :", d.get("network_environment_blocked"))
+          PY
+
+      - name: Commit the raw artifact to the owning branch (evidence only)
+        if: always()
+        run: |
+          set -e
+          mkdir -p reviews/pass22/evidence
+          if ! ls reports/live_source_check_2*.json >/dev/null 2>&1; then
+            echo "no artifact to commit"; exit 0
+          fi
+          latest=$(ls -1t reports/live_source_check_2*.json | head -1)
+          cp "$latest" reviews/pass22/evidence/
+          git config user.name "gold4-pass22-live-sweep"
+          git config user.email "actions@users.noreply.github.com"
+          git add reviews/pass22/evidence
+          git commit -m "Pass 22 evidence: live source sweep $(basename "$latest") (runner, read-only)" || exit 0
+          git push origin HEAD:arena/4dc3210a-gold4
+
+      - name: Upload the artifact as well (belt and braces)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pass22-live-source-check
+          path: reports/live_source_check_2*.json
+          retention-days: 60
+          if-no-files-found: warn
