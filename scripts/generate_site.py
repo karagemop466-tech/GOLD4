@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,6 +26,85 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def esc(val: object) -> str:
     return html.escape(str(val), quote=True)
+
+# ---------------------------------------------------------------------------
+# Live facts read from data/** at build time (session arena/2fa1c987-gold4).
+#
+# These were hardcoded here until 2026-11-11, and drifted: the ribbon presented
+# a SUPERSEDED WGC reading as the benchmark while data/gold_spot.json had
+# already moved on. Everything below is now derived, so a future benchmark move
+# cannot desynchronise these pages again.
+# ---------------------------------------------------------------------------
+
+def load_spot_facts() -> dict:
+    """Benchmark + dated cross-check quotes, straight from data/gold_spot.json."""
+    spot = json.loads((ROOT / "data" / "gold_spot.json").read_text(encoding="utf-8"))
+    bench = spot["benchmark"]
+    consts = spot.get("constants", {})
+    per_g = consts.get("spot_usd_per_gram")
+    if per_g is None:
+        per_g = bench["value_usd_per_oz"] / consts.get("troy_ounce_grams", 31.1034768)
+    quotes = {}
+    for key, value in spot.items():
+        if key.lower().startswith("cross_check") and isinstance(value, list):
+            for entry in value:
+                if not isinstance(entry, dict):
+                    continue
+                name = str(entry.get("publisher", "")).lower()
+                if "kitco" in name:
+                    quotes.setdefault("kitco", entry)
+                elif "jm bullion" in name or "jmbullion" in name:
+                    quotes.setdefault("jmbullion", entry)
+    return {
+        "benchmark_oz": bench["value_usd_per_oz"],
+        "benchmark_per_g": per_g,
+        "benchmark_date": bench.get("price_date_as_shown_on_source", ""),
+        "benchmark_retrieved": bench.get("retrieved_utc", ""),
+        "benchmark_url": bench.get("source_url", "https://www.gold.org/goldhub/data/gold-prices"),
+        "kitco": quotes.get("kitco", {}),
+        "jmbullion": quotes.get("jmbullion", {}),
+    }
+
+
+def gate_counts() -> tuple[int, int]:
+    """Count the CI gates and command invocations in .github/workflows/pages.yml.
+
+    Returns (distinct_gate_numbers, command_invocations). Derived rather than
+    hardcoded so the ribbon cannot drift from the pipeline again.
+    """
+    workflow = ROOT / ".github" / "workflows" / "pages.yml"
+    if not workflow.exists():
+        return 0, 0
+    gates: set[int] = set()
+    invocations = 0
+    in_gate_step = False
+    in_run_block = False
+    for raw in workflow.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if line.startswith("- name:"):
+            name = line[len("- name:"):].strip()
+            m = re.match(r"Gate (\d+)", name)
+            in_gate_step = bool(m)
+            in_run_block = False
+            if m:
+                gates.add(int(m.group(1)))
+            continue
+        if in_gate_step and line.startswith("run:"):
+            rest = line[len("run:"):].strip()
+            if rest and rest != "|":
+                invocations += 1
+                in_run_block = False
+            else:
+                in_run_block = True
+            continue
+        if in_run_block:
+            if line.startswith(("- name:", "- uses:", "- if:")):
+                in_run_block = False
+                continue
+            if line and not line.startswith("#"):
+                invocations += 1
+    return len(gates), invocations
+
 
 
 def fmt_usd(val: float | None) -> str:
@@ -304,6 +384,9 @@ def render_calculator_widget(rings: list[dict], heading_id: str = "calc-widget")
         </form>
 
         <div class="calc-results" aria-live="polite">
+          <p class="small" style="margin:0 0 .5rem"><strong>Pre-filled example only.</strong> The figures below are an
+          illustration loaded with the default inputs above; they are replaced as soon as you enter your own values and
+          are <em>not</em> a quote, a valuation or a measured result for any listed ring.</p>
           <div class="result-box primary">
             <div class="kpi-label">RAW FINE-GOLD MELT VALUE (INTRINSIC METAL ONLY)</div>
             <div class="kpi-value" id="out-melt-usd">$650.20</div>
@@ -329,6 +412,14 @@ def render_calculator_widget(rings: list[dict], heading_id: str = "calc-widget")
 
 def render_shell(active_href: str, title: str, description: str, body_html: str, catalog: dict) -> str:
     counts = catalog["counts"] if "counts" in catalog else catalog["meta"]["counts"]
+    _spot = load_spot_facts()
+    _gates, _gate_cmds = gate_counts()
+    _bench = f"${_spot['benchmark_oz']:,.2f}/oz"
+    _bench_g = f"${_spot['benchmark_per_g']:,.4f}/g"
+    _kitco_oz = f"${_spot['kitco'].get('value_usd_per_oz', 0):,.2f}/oz"
+    _kitco_g = f"${_spot['kitco'].get('value_usd_per_gram', 0):,.2f}/g"
+    _jmb_oz = f"${_spot['jmbullion'].get('value_usd_per_oz', 0):,.2f}/oz"
+    _jmb_g = f"${_spot['jmbullion'].get('value_usd_per_gram', 0):,.2f}/g"
     flag_total = counts["flagged_register_entries"]
     nav_items = [
         ("index.html", "Dashboard", "64", False),
@@ -385,14 +476,16 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
   <div class="spot-ribbon">
     <div class="spot-ribbon-inner">
       <div>
-        <span class="spot-pill">CROSS-CHECK QUOTES · 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct)</span>
+        <span class="spot-pill">BENCHMARK IN FORCE: WGC <strong>{_bench}</strong> · source date {_spot["benchmark_date"]} · retrieved {_spot["benchmark_retrieved"]} <a href="{_spot["benchmark_url"]}" target="_blank" rel="noopener noreferrer">[Source ↗]</a></span>
         <span class="mono" style="margin-left:0.45rem;">
-          Kitco: <strong>$4,024.60/oz</strong> (<strong>$129.39/g</strong>) <a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener noreferrer">[Source ↗]</a>
-          · JM Bullion: <strong>$4,039.76/oz</strong> (<strong>$129.88/g</strong>) <a href="https://www.jmbullion.com/charts/gold-price/" target="_blank" rel="noopener noreferrer">[Source ↗]</a>
+          Dated cross-checks ({_spot["kitco"].get("retrieved_utc", "2026-10-22")}, not the benchmark):
+          Kitco: <strong>{_kitco_oz}</strong> (<strong>{_kitco_g}</strong>) <a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener noreferrer">[Source ↗]</a>
+          · JM Bullion: <strong>{_jmb_oz}</strong> (<strong>{_jmb_g}</strong>) <a href="https://www.jmbullion.com/charts/gold-price/" target="_blank" rel="noopener noreferrer">[Source ↗]</a>
+          · benchmark = <strong>{_bench_g}</strong>
         </span>
       </div>
       <div>
-        <strong>NO HALLUCINATIONS:</strong> Unconfirmed specs stay blank (<span class="mono">—</span>) · <a href="audit.html">5 Automated Audit Gates Passing ✓</a>
+        <strong>NO HALLUCINATIONS:</strong> Unconfirmed specs stay blank (<span class="mono">—</span>) · <a href="audit.html">{_gates} Automated Audit Gates / {_gate_cmds} command invocations Passing ✓</a>
       </div>
     </div>
   </div>
@@ -463,6 +556,15 @@ def render_shell(active_href: str, title: str, description: str, body_html: str,
 
 def build_all_pages() -> None:
     catalog = json.loads((ROOT / "data" / "catalog_a0be79d4.json").read_text(encoding="utf-8"))
+    # Same derived facts as render_shell(): read from data/**, never hardcoded.
+    _spot = load_spot_facts()
+    _gates, _gate_cmds = gate_counts()
+    _bench = f"${_spot['benchmark_oz']:,.2f}/oz"
+    _bench_g = f"${_spot['benchmark_per_g']:,.4f}/g"
+    _kitco_oz = f"${_spot['kitco'].get('value_usd_per_oz', 0):,.2f}/oz"
+    _kitco_g = f"${_spot['kitco'].get('value_usd_per_gram', 0):,.2f}/g"
+    _jmb_oz = f"${_spot['jmbullion'].get('value_usd_per_oz', 0):,.2f}/oz"
+    _jmb_g = f"${_spot['jmbullion'].get('value_usd_per_gram', 0):,.2f}/g"
     rings_legacy = json.loads((ROOT / "data" / "rings.json").read_text(encoding="utf-8"))
     rings = catalog["rings"]
     solitaires = [r for r in rings if r["category"] == "solitaires"]
@@ -496,7 +598,7 @@ def build_all_pages() -> None:
         <div class="eyebrow">EXECUTIVE RESEARCH BRIEF · VERIFIED 2026-10-22</div>
         <h1 id="hero-heading">Buy Genuine Solid Gold Online.<br>Audit Every Gram, Stamp &amp; Return Clause.</h1>
         <p class="lead">
-          With live fine gold trading at <strong>$4,024.60/oz ($129.39/g)</strong> on <span class="mono">2026-10-22</span>,
+          With the <strong>dated cross-check quote</strong> of <strong>{_kitco_oz} ({_kitco_g})</strong> on <span class="mono">{_spot["kitco"].get("retrieved_utc", "2026-10-22")}</span> — a captured quote, not a live price; the benchmark in force for every derived value on the canonical dashboard is <strong>{_bench}</strong>, source date {_spot["benchmark_date"]} —
           even a 5-gram 18K ring holds <strong>$485.23</strong> in raw elemental gold — incentivizing widespread vermeil keyword traps,
           omitted gram weights, mixed-metal prong heads, and title-vs-spec karat contradictions across major online jewelers.
         </p>
@@ -512,7 +614,7 @@ def build_all_pages() -> None:
         <span class="policy-stamp">★ MANDATORY RESEARCH STANDARD · NO HALLUCINATIONS</span>
         <h2>Zero-Hallucination &amp; Verification Commitment</h2>
         <ul>
-          <li><strong>Zero Invented Data:</strong> Every price, karat purity, gram weight, spot rate, and return policy on this site was verified line by line from live official pages on <span class="mono">2026-10-22</span>, and re-checked in the <span class="mono">2026-10-23</span> Pass 14 review. The gold benchmark driving every derived value is the World Gold Council panel <span class="mono">$4,024.45/oz</span> read on <span class="mono">2026-10-23</span> ('Data as of 22 October, 2026'); the Kitco quotes shown in the calculator are a separate, independently dated cross-check, not the benchmark.</li>
+          <li><strong>Zero Invented Data:</strong> Every price, karat purity, gram weight, spot rate, and return policy on this site was verified line by line from live official pages on <span class="mono">2026-10-22</span>, and re-checked in the <span class="mono">2026-10-23</span> Pass 14 review. The gold benchmark driving every derived value on the canonical dashboard is the World Gold Council panel <span class="mono">{_bench}</span> ({_bench_g}) retrieved <span class="mono">{_spot["benchmark_retrieved"]}</span>, source date '{_spot["benchmark_date"]}'; the Kitco quotes shown in the calculator are a separate, independently dated cross-check, not the benchmark.</li>
           <li><strong>Strict Blank + Flag Rule:</strong> Wherever an official retailer omits gram weight, omits hallmark text, or contradicts its own karat spec, the field stays strictly blank (<span class="mono">—</span>) and is flagged <a href="flagged.html"><strong>UNVERIFIED</strong></a>.</li>
           <li><strong>Always Check for Hallucinations:</strong> Every review pass runs <strong>three independent security/hallucination scripts</strong> (<span class="mono">check_site.py</span>, <span class="mono">verify.py</span>, <span class="mono">verify_a0be79d4.py</span>). Readers and maintainers should always verify source links directly and check for hallucinations!</li>
         </ul>
@@ -525,9 +627,10 @@ def build_all_pages() -> None:
 
     <section class="kpi-grid" aria-label="Key research metrics">
       <div class="kpi-card">
-        <div class="kpi-label">24K Gold Spot (2026-10-22)</div>
-        <div class="kpi-value">$4,024.60/oz</div>
-        <div class="kpi-sub"><span class="mono">$129.39/g</span> <a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener noreferrer">Kitco ↗</a> · <span class="mono">$129.88/g</span> <a href="https://www.jmbullion.com/charts/gold-price/" target="_blank" rel="noopener noreferrer">JM Bullion ↗</a></div>
+        <div class="kpi-label">24K Gold Spot — cross-check quote ({_spot["kitco"].get("retrieved_utc", "2026-10-22")})</div>
+        <div class="kpi-value">{_kitco_oz}</div>
+        <div class="kpi-sub"><span class="mono">{_kitco_g}</span> <a href="https://www.kitco.com/charts/gold" target="_blank" rel="noopener noreferrer">Kitco ↗</a> · <span class="mono">{_jmb_g}</span> <a href="https://www.jmbullion.com/charts/gold-price/" target="_blank" rel="noopener noreferrer">JM Bullion ↗</a></div>
+        <div class="kpi-sub">Benchmark in force: <span class="mono">{_bench} = {_bench_g}</span> · WGC, source date {_spot["benchmark_date"]} <a href="{_spot["benchmark_url"]}" target="_blank" rel="noopener noreferrer">↗</a></div>
       </div>
       <div class="kpi-card">
         <div class="kpi-label">Raw Alloy Melt Benchmark</div>

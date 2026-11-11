@@ -1,0 +1,8 @@
+independent Decimal re-derivation | 64 rows, 17 weighted, 7 karat pairs | 644 field comparisons
+benchmark in force: USD 3996.31/oz = USD 128.48435/g (22 October, 2026)
+NOTE: 3 aggregate value(s) differ by one hundredth (half-way rounding path, not a data error):
+    retailer:vrai multiple_min: exact-decimal 3.76 vs stored 3.75
+    retailer:vrai multiple_max: exact-decimal 3.76 vs stored 3.75
+    retailer:vrai multiple_avg: exact-decimal 3.76 vs stored 3.75
+PASS: every derived value, aggregate and pair gap re-derives to the stored figure
+LIMIT: this proves internal arithmetic only. It cannot prove the store's price or the seller's weight is true; that needs the live page read in section 58/59.

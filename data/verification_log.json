@@ -392,12 +392,12 @@
    "note": "Renumbered from Pass 17 to Pass 18: session arena/0029d936-gold4 published and merged a Pass 17 while this pass was running. Their pass number stands; no other session's entry was renumbered."
   },
   {
-   "pass": "Pass 21 — re-verification after 19 days: runner sweep of all rows + hand reads, benchmark refresh, sale prices, dead pages (session arena/4fe4a9c3-gold4)",
+   "pass": "Re-read of 2026-11-11 (session 4fe4a9c3) — re-verification after 19 days: runner sweep of all rows + hand reads, benchmark refresh, sale prices, dead pages (session arena/4fe4a9c3-gold4)",
    "when_utc": "2026-11-11T08:00Z–08:50Z",
    "scope": "The stored prices and benchmark were 19–20 days old. Every ring URL and registered source was re-opened by a GitHub runner, 16 rows and the gold benchmark were hand-read in a browser-rendered reader, and each row was reconciled against both.",
    "checked": [
     "64/64 ring URLs + 32/32 registered sources re-opened by a GitHub runner at 2026-11-11T08:03:09Z (evidence: reports/live_source_check_20261111T080309Z.json). Row states: OK 50, REFUSED_403 7, HTTP_404 4, REFUSED_429 2, EMPTY_OR_JS_SHELL 1",
-    "16 rows hand-read with verbatim page strings recorded (reviews/pass21/hand_reads.json): AL-01, SR-03, RS-01, RS-02, RS-03, BE-01, BE-02, AN-01, VR-01, RS-04, BE-05, BE-06, BE-07, BE-03, BE-04, BN-04",
+    "16 rows hand-read with verbatim page strings recorded (reviews/reread-4fe4a9c3/hand_reads.json): AL-01, SR-03, RS-01, RS-02, RS-03, BE-01, BE-02, AN-01, VR-01, RS-04, BE-05, BE-06, BE-07, BE-03, BE-04, BN-04",
     "Gold benchmark re-read: World Gold Council panel $4,059.49/oz, 'Data as of 10 November, 2026' (+1.58% against the $3,996.31/oz reading of 23 October). Cross-checks read by the runner: Kitco 24K value per oz $4,057.00; BullionVault current gold price per oz $4,059.81; JM Bullion gold ASK (includes a premium) $4,071.46",
     "Every derived gold value recomputed at $130.515634/g; all 12 gate commands re-run: 12 pass"
    ],
@@ -411,10 +411,10 @@
    ],
    "flags_added": [
     "SALE_PRICE_TEMPORARY",
-    "PRICE_CHANGED_PASS21",
-    "SOURCE_DEAD_PASS21",
-    "SOLD_OUT_PASS21",
-    "PRICE_NOT_REREAD_PASS21",
+    "PRICE_CHANGED_2026_11_11",
+    "SOURCE_DEAD_2026_11_11",
+    "SOLD_OUT_2026_11_11",
+    "PRICE_NOT_REREAD_2026_11_11",
     "STRUCTURED_PRICE_LAGS_DISPLAY"
    ],
    "not_verified_this_pass": [
@@ -427,7 +427,7 @@
    "result": "12/12 gate commands pass on the final tree",
    "recommendation": "Look for hallucinations after every review: open rows at random, compare each number and its date with the official page. Re-read every price before buying; sale prices expire.",
    "outcome": "29 prices updated with history kept, 7 rows blank, 327 flag instances published.",
-   "note": "Values were copied from the two evidence files by scripts/pass21_apply.py; none was typed by hand."
+   "note": "Values were copied from the two evidence files by scripts/session_4fe4a9c3/apply_reread.py; none was typed by hand."
   }
  ],
  "not_reverified_this_pass": [

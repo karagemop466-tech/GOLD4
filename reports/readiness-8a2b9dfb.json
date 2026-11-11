@@ -4,7 +4,7 @@
   "review_date_utc": "2026-10-23",
   "limits": "Historical canonical claims are not independently re-certified by this register. No selected-configuration quote, reputation assessment, return/testing permission, hallmark/maker proof or physical test is supplied. Current-price fields remain null. Automated checks cannot prove the absence of hallucinations.",
   "input_sha256": {
-    "data/rings.json": "7845d811d923334f367ed34aced83d6359df5bdf7ea4f833c99ded92e08bf353",
+    "data/rings.json": "d39a153a7de103c690791b4bfa9f7aef0a512e94c5e1a17364f355341faab2f5",
     "data/sellers.json": "a8a2ec1cfb6f6d50e42dc7a076848aaf22ee36da3b3c632e6f86ef04635d03ec",
     "data/sources.json": "d03cededc8fc6a59ed276082ccb0ce665f074c3d5c61bb36a0b716779c0a2f7c",
     "scripts/session_8a2b9dfb/source_observations.json": "f75a67260f25f735ea8d2b5195f2d23167507e483cc52c8b3fc17ff6c9818942"

@@ -1,11 +1,11 @@
 {
- "artifact": "GOLD4 Pass 21 reconciliation — every row, both read paths",
- "session": "arena/4fe4a9c3-gold4 (Pass 21)",
+ "artifact": "GOLD4 re-read of 2026-11-11 (session 4fe4a9c3) — reconciliation of every row, both read paths",
+ "session": "arena/4fe4a9c3-gold4 (re-read 2026-11-11)",
  "date_utc": "2026-11-11",
  "rule": "NO HALLUCINATIONS: every value is copied from the evidence files listed; nothing is inferred.",
  "evidence": [
   "reports/live_source_check_20261111T080309Z.json",
-  "reviews/pass21/hand_reads.json"
+  "reviews/reread-4fe4a9c3/hand_reads.json"
  ],
  "runner_summary": {
   "OK": 74,
@@ -85,7 +85,7 @@
    ],
    "evidence": [
     "reports/live_source_check_20261111T080309Z.json",
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "structured offers: 585 USD",
@@ -185,7 +185,7 @@
     "hand read (browser-rendered), chunk 2"
    ],
    "evidence": [
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "Price:$870.76",
@@ -215,7 +215,7 @@
     "hand read (browser-rendered), chunk 4"
    ],
    "evidence": [
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "Atelier Solitaire Ring in 14K Yellow Gold",
@@ -245,7 +245,7 @@
     "hand read (browser-rendered), chunk 4"
    ],
    "evidence": [
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "Atelier Solitaire Ring in 18K Yellow Gold",
@@ -340,7 +340,7 @@
    ],
    "evidence": [
     "reports/live_source_check_20261111T080309Z.json",
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "JSON-LD Offer price 748 USD",
@@ -565,7 +565,7 @@
     "hand read (browser-rendered), chunk 0-1"
    ],
    "evidence": [
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "Classic Round Brilliant Engagement Ring | Plain Band | 18k Yellow Gold",
@@ -615,7 +615,7 @@
     "hand read (browser-rendered), chunk 4"
    ],
    "evidence": [
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "Six-Prong Petite Comfort Fit 1.5mm Solitaire Ring in 18K Yellow Gold",
@@ -695,7 +695,7 @@
    ],
    "evidence": [
     "reports/live_source_check_20261111T080309Z.json",
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "structured offers: 871 USD",
@@ -1300,7 +1300,7 @@
     "hand read (browser-rendered), chunk 4"
    ],
    "evidence": [
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "This page is a diamond in the rough.",
@@ -1326,7 +1326,7 @@
     "hand read (browser-rendered), chunk 4"
    ],
    "evidence": [
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "Freesia Hidden Halo Diamond Ring in 14K Yellow Gold",
@@ -1358,7 +1358,7 @@
     "hand read (browser-rendered), chunk 4"
    ],
    "evidence": [
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "Freesia Hidden Halo Diamond Ring in 18K Yellow Gold",
@@ -1390,7 +1390,7 @@
     "hand read (browser-rendered), chunk 4"
    ],
    "evidence": [
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "Fleur Solitaire Ring in 14K Yellow Gold",
@@ -1420,7 +1420,7 @@
     "hand read (browser-rendered), chunk 0"
    ],
    "evidence": [
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "Women's 2mm 14kt Yellow Gold Band",
@@ -1454,7 +1454,7 @@
    ],
    "evidence": [
     "reports/live_source_check_20261111T080309Z.json",
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "20% Off $249 $199.20",
@@ -1487,7 +1487,7 @@
     "hand read (browser-rendered), chunk 0"
    ],
    "evidence": [
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "Italian 14kt Yellow Gold Double Love Knot Ring",
@@ -1521,7 +1521,7 @@
    ],
    "evidence": [
     "reports/live_source_check_20261111T080309Z.json",
-    "reviews/pass21/hand_reads.json"
+    "reviews/reread-4fe4a9c3/hand_reads.json"
    ],
    "quotes": [
     "20% Off $1,195 $956",

@@ -326,6 +326,8 @@ def main() -> None:
         <li>No seller's reputation was checked against an independent source.</li>
         <li>Return-policy wording was not re-read. Several sellers advertise extended holiday returns on their pages; the terms were not opened.</li>
         <li>{n - len(hand_ids)} of {n} rows were not hand-read. For those, the only evidence dated 11 November is the runner's fetch.</li>
+        <li>Seller-policy findings from a parallel session (return fees, store-credit refunds, holiday return windows, a self-contradictory date on one seller's page)
+        are published in <a href="../reviews/assurance-91e9aba0/index.html">that session's assurance report</a> and are <strong>not yet applied</strong> to the Sellers table.</li>
       </ul></div>
     <div class="card"><h3>Before buying</h3>
       <p>Open the official page and read the price for the exact size, metal and stone you want. Ask the seller in writing for the gram weight,

@@ -1,0 +1,123 @@
+{
+  "session": "arena/2fa1c987-gold4",
+  "task": "Pass 21 companion — non-canonical surface audit, prose hallucination scan, dead-link re-read",
+  "claimed_utc": "2026-11-11T08:05Z",
+  "read_window_utc": "2026-11-11T08:05Z to 2026-11-11T08:26Z",
+  "session_clock_check": "sandbox `date -u` returned Wed Nov 11 08:01:11 UTC 2026 at session start; all reads below fall after it",
+  "read_path": "browser-rendered page reader available to this session. This sandbox has no general outbound internet from bash. Every value below was read from the page during the window above; nothing is quoted from memory and nothing is inferred.",
+  "per_read_timestamps": "not captured individually — the reader does not return a clock. The window above is the honest bound; each entry records the date, not a second-level time.",
+  "no_data_written": "This session wrote no value into data/**. Live readings are published here and, where a stored value is affected, logged as a request for the data owner.",
+  "readings": [
+    {
+      "id": "F-2F-09",
+      "target": "gold benchmark",
+      "url": "https://www.gold.org/goldhub/data/gold-prices",
+      "read_utc_date": "2026-11-11",
+      "page_title": "Gold Spot Prices & Market History | World Gold Council",
+      "page_prints": "USD /oz 4,059.49",
+      "page_date_line": "10 November, 2026",
+      "chart_footer": "Data as of 10 November, 2026",
+      "market_data_credit": "Market Data: Provided by ICE Data Services",
+      "stored_benchmark_usd_per_oz": 3996.31,
+      "stored_benchmark_source_date": "22 October, 2026",
+      "delta_vs_stored_pct": 1.58,
+      "action": "recorded only — the benchmark file is owned by session arena/d5947c03-gold4 (task 67) and was NOT edited by this session",
+      "note": "This is an independent second read of the same panel that PR #60 (session arena/91415e29-gold4) reported. Both readings agree: 4,059.49 USD/oz, data as of 10 November 2026."
+    },
+    {
+      "id": "F-2F-05",
+      "target": "BN-09",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y",
+      "read_utc_date": "2026-11-11",
+      "result": "DEAD — soft 404",
+      "evidence": "page body serves Blue Nile's own copy: \"We're sorry, the page you're looking for cannot be found.\" with the 404 artwork media_404.8d215.jpg",
+      "stored_flag": "SOURCE_URL_DEAD",
+      "status": "confirmed unchanged 19 days after the stored finding"
+    },
+    {
+      "id": "F-2F-05",
+      "target": "BN-10",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/low-dome-comfort-fit-solitaire-engagement-ring-in-14k-yellow-gold-item-502120y14",
+      "read_utc_date": "2026-11-11",
+      "result": "DEAD — soft 404",
+      "evidence": "same Blue Nile 404 copy",
+      "stored_flag": "SOURCE_URL_DEAD",
+      "status": "confirmed unchanged"
+    },
+    {
+      "id": "F-2F-05",
+      "target": "BN-11",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/french-pave-diamond-engagement-ring-in-18k-yellow-gold-1-20-ct-tw-item-502520y",
+      "read_utc_date": "2026-11-11",
+      "result": "DEAD — soft 404",
+      "evidence": "same Blue Nile 404 copy",
+      "stored_flag": "SOURCE_URL_DEAD",
+      "status": "confirmed unchanged"
+    },
+    {
+      "id": "F-2F-05",
+      "target": "BN-12",
+      "url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/tapered-baguette-diamond-engagement-ring-in-18k-yellow-gold-1-6-ct-tw-item-501670y",
+      "read_utc_date": "2026-11-11",
+      "result": "DEAD — soft 404",
+      "evidence": "same Blue Nile 404 copy",
+      "stored_flag": "SOURCE_URL_DEAD",
+      "status": "confirmed unchanged"
+    },
+    {
+      "id": "F-2F-06",
+      "target": "AN-01",
+      "url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
+      "read_utc_date": "2026-11-11",
+      "result": "PRICE CORROBORATED — exact match",
+      "page_prints": "Price:$870.76",
+      "page_configuration": "14K White Gold, Carat: 0.50 ct, Diamond Color: FG, Diamond Clarity: VS, Style No. MS354-A, ring size 6.5 selected",
+      "stored_price_usd": 870.76,
+      "stored_price_captured_utc": "2026-10-22",
+      "match": true,
+      "note": "Earlier passes recorded this page as a JavaScript shell with the price not machine-readable (flag SOURCE_PRICE_NOT_MACHINE_READABLE). This reader returned the price. The stored value is now independently corroborated on a second read path, 20 days later. Weight 2.90 g was not printed in the chunks read this session, so no weight claim is made."
+    },
+    {
+      "id": "F-2F-07",
+      "target": "BE-07",
+      "url": "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
+      "read_utc_date": "2026-11-11",
+      "result": "PRICE CORROBORATED — exact match, currency USD",
+      "page_title": "Fleur Solitaire Ring in 14K Yellow Gold | Brilliant Earth",
+      "page_prints": "fleur solitaire-$1,350 (Design Your Ring → 1 Setting)",
+      "currency_evidence": "header currency selector shows USD in the same rendered page",
+      "stored_price_usd": 1350.0,
+      "stored_price_captured_utc": "2026-10-23",
+      "stored_flags": ["SOURCE_BOT_BLOCKED", "PRICE_CURRENCY_LOCALIZED"],
+      "match": true,
+      "note": "The stored row carries SOURCE_BOT_BLOCKED and PRICE_CURRENCY_LOCALIZED because earlier automated sweeps were refused. This session's reader was not refused and returned USD 1,350, matching the stored amount exactly. No weight is published on the page in the chunks read, so no weight claim is made."
+    },
+    {
+      "id": "F-2F-08",
+      "target": "VR-01",
+      "url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
+      "read_utc_date": "2026-11-11",
+      "result": "PAGE RENDERS — price NOT returned by this read path",
+      "page_title": "Classic Round Brilliant Engagement Ring | Plain Band | 18k Yellow Gold",
+      "page_prints": "Metal: 18k Yellow Gold; Carat weight: 1.0 ct, I-J, VS+; band: Plain",
+      "stored_metal_label": "18k Yellow Gold",
+      "stored_karat": "18",
+      "stored_price_usd": 1035.0,
+      "stored_weight_g": 2.86,
+      "metal_matches": true,
+      "price_read": null,
+      "irregularity_for_review": "The stored price $1,035 (captured 2026-10-22 from https://www.vrai.com/engagement-rings, a DIFFERENT url from the product page — flag PRICE_AND_WEIGHT_DIFFERENT_URLS) is identical to a figure this page prints today for a DIFFERENT product in its recommendations strip: 'Half Pave Band ... $1,035'. This session makes no claim about whether that is a coincidence. It is recorded because the stored price's provenance is already flagged and a reviewer should know the same number appears on the product page attached to another item.",
+      "weight_note": "2.86 g is the seller's ring-size-6 figure while the page opened with a different configuration; the stored weight_scope already says so. Not re-confirmed this session."
+    },
+    {
+      "id": "F-2F-01-live",
+      "target": "published legacy page (pre-fix state)",
+      "url": "https://karagemop466-tech.github.io/GOLD4/dashboard.html",
+      "read_utc_date": "2026-11-11",
+      "result": "superseded benchmark confirmed live on the public site",
+      "page_prints": "CROSS-CHECK QUOTES · 2026-10-22 (benchmark: WGC $4,024.45/oz, 22 Oct)",
+      "also_prints": "5 Automated Audit Gates Passing ✓",
+      "contradicted_by": "data/gold_spot.json benchmark.value_usd_per_oz = 3996.31; prior_captures[2] value 4024.45 status=superseded"
+    }
+  ]
+}

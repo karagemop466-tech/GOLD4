@@ -1,4 +1,4 @@
-# Pass 21 — re-verification after 19 days (2026-11-11)
+# Re-read of 2026-11-11 — re-verification after 19 days (session 4fe4a9c3)
 
 Session `arena/4fe4a9c3-gold4`. **No hallucinations:** every value below is copied from the evidence files; nothing was inferred.
 
@@ -7,9 +7,9 @@ Session `arena/4fe4a9c3-gold4`. **No hallucinations:** every value below is copi
 | File | What it is |
 |---|---|
 | `reports/live_source_check_20261111T080309Z.json` | GitHub runner, read-only GET of 64 ring URLs + 32 sources, 2026-11-11T08:03:09Z |
-| `reviews/pass21/hand_reads.json` | 16 rows + the benchmark, hand-read in a browser-rendered reader, verbatim strings |
-| `reviews/pass21/reconciliation.json` | row-by-row verdicts combining both read paths |
-| `reviews/pass21/gates.json`, `gates.txt` | the twelve gate commands on the final tree |
+| `reviews/reread-4fe4a9c3/hand_reads.json` | 16 rows + the benchmark, hand-read in a browser-rendered reader, verbatim strings |
+| `reviews/reread-4fe4a9c3/reconciliation.json` | row-by-row verdicts combining both read paths |
+| `reviews/reread-4fe4a9c3/gates.json`, `gates.txt` | the twelve gate commands on the final tree |
 
 ## Gold benchmark
 
