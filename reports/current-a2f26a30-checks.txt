@@ -1,9 +1,9 @@
-Started 2026-11-11T08:08:00.258204+00:00
+Started 2026-11-11T08:08:27.682779+00:00
 Automated software checks only; not external factual verification or an assay.
 
 $ python3 scripts/audit.py
 GOLD4 integrity audit (hallucination / security check)
-run_utc: 2026-11-11T08:08:00+00:00
+run_utc: 2026-11-11T08:08:27+00:00
 dataset rows: 64 | sellers: 10 | sources: 32
 spot benchmark: $3,996.31/oz (22 October, 2026) = $128.4844/g
 
@@ -186,7 +186,7 @@ test_weight_needs_provenance_source_and_scope (__main__.ReadinessTests.test_weig
 test_window_and_source_match_do_not_establish_configuration_rights (__main__.ReadinessTests.test_window_and_source_match_do_not_establish_configuration_rights) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 0.169s
+Ran 22 tests in 0.168s
 
 OK
 
@@ -219,11 +219,11 @@ GOLD4 LIVE SOURCE HEALTH CHECK — read-only evidence collection
 ========================================================================
 targets        : 1 (1 row URLs, 0 registered sources)
 allow-listed   : 21 hostnames from data/sources.json
-checked_utc    : 2026-11-11T08:08:01Z
+checked_utc    : 2026-11-11T08:08:29Z
   AL-01                      NO_RESPONSE        None          B  
 ------------------------------------------------------------------------
   NO_RESPONSE            1
-artifact: tmpxrl6335l/live_source_check_20261111T080801Z.json
+artifact: tmp4j3h7lxz/live_source_check_20261111T080829Z.json
 RESULT: evidence collected (this is not a pass/fail verdict; review the artifact).
 SYNTHETIC negative CLI fixture: FAIL below is the expected rejection of an unknown ID.
 FAIL: no targets matched (unknown --only ID or empty dataset)
@@ -250,10 +250,10 @@ PASS November review freshness
 
 exit=0
 
-$ python3 scripts/session_a2f26a30/stage_pages.py /tmp/tmpz9u36s20/site
-Staged 153 public files (no Git metadata, workflows or Python tooling)
+$ python3 scripts/session_a2f26a30/stage_pages.py /tmp/tmpphz17ojg/site
+Staged 158 public files (no Git metadata, workflows or Python tooling)
 
 exit=0
 
 16/16 command invocations passed
-Completed 2026-11-11T08:08:02.295015+00:00
+Completed 2026-11-11T08:08:29.714825+00:00
