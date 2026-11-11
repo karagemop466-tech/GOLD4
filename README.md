@@ -14,6 +14,13 @@ An auditable dataset of **gold engagement-ring candidates**, with historical ret
 
 Evidence, scope and remaining limits: [`reviews/readiness-8a2b9dfb.md`](reviews/readiness-8a2b9dfb.md). **Continue hallucination review after every change.**
 
+**Pass 21 — freshness spot-check (11 November 2026, session `arena/91415e29-gold4`): 18-day-old evidence re-checked, benchmark retained.** This session re-ran all nine gates (twelve invocations, all green) and re-opened 5 official pages with its own browser-rendered reader — a freshness spot-check, **not** a full sweep (59 of 64 rows not re-read, stated on the pass page):
+
+- **Gold benchmark differs materially (+1.58%):** the World Gold Council panel prints **$4,059.49/oz** ("Data as of 10 November, 2026") against the stored **$3,996.31/oz** ("Data as of 22 October, 2026"). The benchmark was **retained**; the reading is recorded as a dated cross-check in `data/gold_spot.json` (`pass21_live_crosscheck_2026_11_11`). No derived value changed. At the live tick, gold = $130.5156/g vs $128.48435/g at the benchmark.
+- **One row corroborated exactly:** AL-01 (Allurez) prints **$585 / 3.58 g / NG4426 / "Setting only"** — the fourth independent corroboration. No value changed.
+- **Consumer rules confirmed:** the FTC gold-jewelry guidance (karat + trademark, solid vs plated/filled/vermeil) and 15 U.S.C. § 295 (0.003 + 0.007 concurrent tests) were re-read live and match the site's wording. The live dashboard was read back and matches the repo (64 rings / 62 prices / 17 weights / 251 flags).
+- **No drift found:** every headline number (64 / 62 / 17 / 251 / $3,996.31 / $128.48435 / 32 sources / nine gates) matches `data/*.json`. Full record: [`reviews/pass21/report.md`](reviews/pass21/report.md) · [`reviews/pass21/observations.json`](reviews/pass21/observations.json).
+
 **Earlier independent review — Pass 20 (23 October 2026, 23:43–23:45Z): independent hand re-verification, and an honest coverage statement.** This session re-opened **11 of the 64 product rows plus the gold benchmark** with its own browser-rendered reader — a different read path from the runner sweeps of Passes 15–18 — and published every result, including the ones that did not go its way:
 
 - **Five rows corroborated exactly** (price *and*, where published, weight): AL-01 `$585` / `3.58 g`, SR-03 `$871` / `6.70 g` ("18K Solid Gold"), SR-05 `$2,858` / `8.00 g` ("14K Solid Gold"), RS-02 `$249` / `0.7 g` (18kt), RS-05 `$2,819` (Item 990022, still live at the URL corrected in Pass 18).
