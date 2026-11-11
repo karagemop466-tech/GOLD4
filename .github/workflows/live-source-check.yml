@@ -3,17 +3,7 @@ name: Live source health check (read-only, evidence only)
 # This workflow does NOT gate the site. It re-opens every official URL in the
 # dataset from a runner that has unrestricted outbound internet, and uploads the
 # raw evidence (HTTP status, soft-404 detection, page title, price snippets)
-# as an Actions artifact.
-#
-# Pass 21 (2026-11-11, session arena/4fe4a9c3-gold4): the artifact host
-# (results-receiver / blob storage) is not reachable from the agent sandboxes, so
-# two earlier sweeps were uploaded but never read. To make the evidence readable,
-# the run MAY commit the raw evidence file back to the pull-request branch — but
-# only when ALL of these hold:
-#   * the PR comes from this repository (never a fork),
-#   * the PR head commit subject contains the opt-in marker [commit-evidence],
-#   * the only paths staged are reports/live_source_check_*.json.
-# Without the marker it behaves exactly as before: artifact only, no write.
+# as an Actions artifact only. It never writes to a branch.
 #
 # The offline gates in pages.yml cannot see link rot; this one can. It is the
 # online half of the anti-hallucination posture: a stored price is only as good
@@ -33,7 +23,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write   # used only by the opt-in evidence commit step below
+  contents: read
 
 concurrency:
   group: live-source-check-${{ github.head_ref || github.ref }}
@@ -48,15 +38,6 @@ jobs:
         with:
           ref: ${{ github.head_ref || github.ref_name }}
           fetch-depth: 0
-      - name: Decide whether this run may commit evidence (opt-in marker on the head commit)
-        id: optin
-        run: |
-          subject="$(git log -1 --format=%s)"
-          echo "head commit: $subject"
-          case "$subject" in
-            *"[commit-evidence]"*) echo "commit=yes" >> "$GITHUB_OUTPUT" ;;
-            *) echo "commit=no" >> "$GITHUB_OUTPUT" ;;
-          esac
       - name: Re-open every official source URL (read-only GET)
         run: python3 scripts/live_source_check.py --timeout 30
         continue-on-error: true
@@ -68,18 +49,3 @@ jobs:
           path: reports/live_source_check_*.json
           retention-days: 30
           if-no-files-found: warn
-      - name: Commit raw evidence back to the PR branch (opt-in, same-repo PRs only, reports/ only)
-        if: >-
-          always() && steps.optin.outputs.commit == 'yes' &&
-          github.event_name == 'pull_request' &&
-          github.event.pull_request.head.repo.full_name == github.repository
-        env:
-          HEAD_REF: ${{ github.head_ref }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add reports/live_source_check_*.json
-          if git diff --cached --quiet; then echo "no evidence file to commit"; exit 0; fi
-          git commit -m "evidence: runner live source check (raw, unreconciled) for ${HEAD_REF}"
-          git pull --rebase origin "$HEAD_REF"
-          git push origin "HEAD:${HEAD_REF}"
