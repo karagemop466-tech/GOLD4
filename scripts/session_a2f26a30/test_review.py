@@ -146,6 +146,10 @@ class ReviewTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 stage_pages.stage(Path(tmp) / 'site', root)
 
+    def test_future_review_date_rejected(self):
+        with self.assertRaises(ValueError):
+            self.mutate(review.INPUTS[-1], lambda d: d.update(review_date_utc='2099-01-01'))
+
     def test_deterministic(self):
         self.assertEqual(review.outputs(), review.outputs())
 

@@ -2,7 +2,7 @@
 """Deterministic November review: no data enrichment or current-price inference."""
 import argparse
 from collections import Counter
-from datetime import date
+from datetime import date, datetime, timezone
 from hashlib import sha256
 from html import escape
 import json
@@ -42,6 +42,8 @@ def outputs(root=ROOT):
     allowed |= {h.removeprefix('www.') for h in allowed if h}
     allowed |= {'www.' + h for h in list(allowed) if h and not h.startswith('www.')}
     review_date = date.fromisoformat(evidence['review_date_utc'])
+    if review_date > datetime.now(timezone.utc).date():
+        raise ValueError('Dated review is in the future relative to the UTC build clock')
     for observation in evidence['product_observations'] + evidence['reference_observations']:
         read_date = date.fromisoformat(observation['read_date_utc'])
         if read_date > review_date:

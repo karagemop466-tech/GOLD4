@@ -1312,3 +1312,5 @@ owning session can apply it with its own provenance rather than inheriting an un
 path, and whether anything was inferred rather than read.
 
 **Companion close-out integration:** retained #64's appended publication record in full when it conflicted with this session's append; no source/evidence deletion. Latest combined tree passes all 16 commands again, including staged HTML links. Product/policy factual gaps remain needs review; no purchase approval or source-currentness inferred from a green build.
+
+**Date-provenance follow-up:** the new review builder now also rejects a review date later than the actual UTC build clock, in addition to invalid/future-within-review observation dates and invalid chunk lists. New review/staging tests now total **15** (plus 10 source-security tests). Preview was restarted against the same public-only staged artifact as production: dashboard/review/calculator return 200; `/.git/config` and `/scripts/live_source_check.py` return 404. No repository metadata or Python tooling is served by the preview.
