@@ -1,0 +1,124 @@
+{
+ "session": "arena/d5947c03-gold4 (Pass 21)",
+ "pass": 21,
+ "read_window_utc": "2026-11-11T07:59Z-2026-11-11T08:20Z",
+ "read_path": "this session's own browser-rendered page reader (same class of read path as Passes 17-20); the GitHub live-source-check runner remains the other path and its artifact for this pass was not read or applied",
+ "date_note": "2026-11-11 08:0x UTC. All fetches dated 2026-11-11. Earlier passes' observations are not relabelled as 2026-11-11 reads.",
+ "benchmark": {
+  "id": "wgc-gold-spot-usd",
+  "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+  "publisher": "World Gold Council (Goldhub)",
+  "read": {
+   "value_usd_per_oz": 4059.49,
+   "page_heading_date": "10 November, 2026",
+   "data_as_of_verbatim": "Data as of 10 November, 2026",
+   "market_data_credit": "Market Data: Provided by ICE Data Services",
+   "what_the_source_page_shows": "Gold spot price panel: 'USD /oz 4,059.49' with a 'Last Updated' caption, on a page headed '10 November, 2026', with the chart footer 'Data as of 10 November, 2026' and 'Market Data: Provided by ICE Data Services'. The page also restates that historical LBMA Gold Price data was removed at the request of ICE Benchmark Administration.",
+   "retrieved_utc": "2026-11-11",
+   "verification": "V1_direct_page_fetch"
+  },
+  "decision": "Benchmark MOVED from USD 3,996.31/oz ('Data as of 22 October, 2026', Pass 18 reading) to USD 4,059.49/oz ('Data as of 10 November, 2026'). Same criterion as Pass 12: the panel's own data date advanced (22 October -> 10 November) and the move is material (+1.58%). The superseded benchmark is preserved verbatim in prior_captures; every derived gold value is recomputed by scripts/compute.py and re-checked by scripts/audit.py at USD 130.515634/g.",
+  "delta_pct_vs_prior_benchmark": 1.58,
+  "usd_per_gram_exact": 130.51563418787958
+ },
+ "cross_check_quotes_2026_11_11": [
+  {
+   "publisher": "BullionVault",
+   "source_url": "https://www.bullionvault.com/gold-price-chart.do",
+   "value_usd_per_oz": 4058.82,
+   "value_usd_per_gram_printed_on_page": 130.49,
+   "timestamp_shown": "11 November 2026, 03:02:20 (GMT-05:00)",
+   "retrieved_utc": "2026-11-11",
+   "spread_vs_new_benchmark_pct": -0.017,
+   "role": "cross-check only — not used in any derived number"
+  }
+ ],
+ "cross_check_note": "Kitco and JM Bullion were NOT re-read this pass and are therefore absent from this file. No number is carried over from memory.",
+ "official_reference_pages_2026_11_11": [
+  {
+   "id": "ecfr-16-23",
+   "source_url": "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-23",
+   "read": "Title 16 up to date as of 11/09/2026; Title 16 last amended 10/30/2026; Part 23 'Guides for the Jewelry, Precious Metals, and Pewter Industries' lists § 23.0 through § 23.28 plus the assay-exemptions appendix; § 23.3 'Misrepresentation as to gold content' and § 23.4 'Misuse of the word vermeil' present as cited in the registry.",
+   "verdict": "MATCH — registry entry current"
+  },
+  {
+   "id": "usc-15-295",
+   "source_url": "https://www.law.cornell.edu/uscode/text/15/295",
+   "read": "Section 295 (Standard of fineness of gold articles; deviation) prints: actual fineness shall not be less by more than three one-thousandth parts than the stamped fineness, with the solder-free test part taken for assay; and in addition, the actual fineness of the entire quantity including all solder shall not be less by three one-thousandth parts (watchcase or flatware) or seven one-thousandth parts (any other article). The section states these standards 'shall be concurrent and not alternative.'",
+   "verdict": "MATCH — statutory tolerances in data/methodology.json and the calculator wording remain accurate"
+  },
+  {
+   "id": "ftc-gold-jewelry",
+   "source_url": "https://consumer.ftc.gov/articles/buying-platinum-gold-and-silver-jewelry",
+   "read": "Guide prints: near the karat quality mark look for the U.S. registered trademark standing behind the mark; an item sold without that trademark should not be bought; 'solid gold' means the gold item isn't hollow; 14K = 14 parts gold of 24; gold-filled/overlay/RGP = at least 10K mechanical layer; 1/20 of weight threshold for overlay, 1/40 example; electroplate at least .175 microns; vermeil = sterling silver plated with gold.",
+   "verdict": "MATCH — buyer checklist wording remains accurate"
+  }
+ ],
+ "retailer_sample_2026_11_11": [
+  {
+   "id": "AL-01",
+   "source_url": "https://www.allurez.com/products/floral-solitaire-engagement-ring-14k-yellow-gold",
+   "stored": { "price_usd": 585.0, "weight_g": 3.58, "capture_date": "2026-10-22" },
+   "read": {
+    "price_printed": "$585 (\"Buy Setting Only | $585\")",
+    "weight_printed": "\"Approximate Metal Weight 3.58 grams\"",
+    "metal": "14k Yellow Gold",
+    "style_number": "NG4426",
+    "selling_condition": "Setting only; center stone sold separately"
+   },
+   "verdict": "MATCH — price and published weight both reproduce; nothing overwritten"
+  },
+  {
+   "id": "SR-03",
+   "source_url": "https://www.sarraf.com/products/18k-Yellow-Gold-5mm-High-Polished-Traditional-Domed-Wedding-Band.html",
+   "stored": { "price_usd": 871.0, "weight_g": 6.7, "capture_date": "2026-10-22" },
+   "read": {
+    "price_printed": "Now: US$871.00 (MSRP US$3,388.00; Was US$1,019.00; −15% OFF, discount code applied automatically)",
+    "weight_printed": "\"Approximate Metal Weight 6.70 grams\"; weight is for a size-10 ring",
+    "solid_wording": "Material: 18K Solid Gold",
+    "sku": "18KY-LPBWB05 (Stock Number 140139)"
+   },
+   "verdict": "MATCH — price, published weight and explicit '18K Solid Gold' wording all reproduce; nothing overwritten"
+  },
+  {
+   "id": "MN-01",
+   "source_url": "https://mene.com/products/knot-ring-gold",
+   "stored": { "price_usd": 1465.0, "weight_g": null, "capture_date": "2026-10-22" },
+   "read": {
+    "price_printed": "$1,455 USD (\"Knot Ring\", 24k Gold, crafted-on-demand, sold by weight not size)"
+   },
+   "verdict": "DIFFERS — page prints $1,455 vs stored $1,465 (−0.68%). Independent reads of this row: $1,442 (Pass 17), $1,442 (Pass 19), $1,442 (Pass 20), $1,455 (this pass). Menē sells by daily metal value, so the figure floats by design. NOTHING OVERWRITTEN; row remains flagged for floating price; current exact quote stays blank per the register."
+  },
+  {
+   "id": "RS-02",
+   "source_url": "https://www.ross-simons.com/jewelry/rings/985230.html",
+   "stored": { "price_usd": 249.0, "weight_g": 0.7, "capture_date": "2026-10-22" },
+   "read": {
+    "price_printed": "20% Off — 'Original price $249', 'Sale price $199.20' (all sizes 5-10 in-stock at $199.20); Item 985230; redirects to /products/985230",
+    "weight_printed": "Gold Weight 0.7 grams; 1/16 inch wide; 18kt yellow gold"
+   },
+   "verdict": "DIFFERS_CONDITIONAL — stored $249 is the original price; the page currently sells at $199.20 (20% off). Weight 0.7 g and karat 18kt reproduce exactly. NOTHING OVERWRITTEN; price is sale-state dependent."
+  },
+  {
+   "id": "BN-09",
+   "source_url": "https://www.bluenile.com/engagement-rings/design-your-own-ring/classic-four-prong-solitaire-engagement-ring-in-18k-yellow-gold-item-500000y",
+   "stored": { "price_usd": 1125.0, "weight_g": null, "capture_date": "2026-10-22" },
+   "read": {
+    "page": "Blue Nile serves its own 'We're sorry, the page you're looking for cannot be found.' copy"
+   },
+   "verdict": "DEAD — confirmed dead again on 2026-11-11. Row remains flagged; stored price is historical, not a quote."
+  }
+ ],
+ "calculator_rederivation_2026_11_11": {
+  "basis": "benchmark $4,059.49/oz ÷ 31.1034768 g = $130.515634/g; fineness 14K = 14/24 = 0.5833333, 18K = 18/24 = 0.75",
+  "AL-01": { "pure_gold_g": 2.0883, "gold_value_usd": 272.56, "price_to_gold_multiple_at_585": 2.146 },
+  "SR-03": { "pure_gold_g": 5.025, "gold_value_usd": 655.84, "price_to_gold_multiple_at_871": 1.328 },
+  "note": "Re-derived by hand this pass from published inputs; matches what scripts/compute.py regenerates in data/derived.json and what scripts/audit.py re-checks on every run."
+ },
+ "rows_not_re_read": "All 64 rows were NOT re-read live this pass. Five rows (AL-01, SR-03, MN-01, RS-02, BN-09) plus the benchmark and two law/regulator pages and one consumer-advice page were re-read. The other 59 rows keep their stored 2026-10-22/23 capture dates and their existing verification levels.",
+ "limitations": [
+  "This sandbox has no open outbound internet for scripts (curl to a retailer failed at TLS); re-reads used the browser-rendered page reader instead, which cannot run the runner's structured-data price comparison.",
+  "The GitHub live-source-check workflow uploads its evidence artifact to a host this session cannot read (same platform limitation recorded in Passes 17-20); no artifact contents were read or applied.",
+  "A page reading match is not proof of purity, weight, or authenticity; XRF or equivalent professional testing remains required before purchase."
+ ]
+}

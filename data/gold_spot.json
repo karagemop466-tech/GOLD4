@@ -1,29 +1,27 @@
 {
  "schema_version": "1.0.0",
- "captured_utc": "2026-10-23T20:23Z",
+ "captured_utc": "2026-11-11T08:00Z",
  "benchmark": {
   "id": "wgc-gold-spot-usd",
   "name": "Gold spot price, USD per troy ounce",
-  "value_usd_per_oz": 3996.31,
+  "value_usd_per_oz": 4059.49,
   "quote_currency": "USD",
   "quote_unit": "troy ounce",
-  "price_date_as_shown_on_source": "22 October, 2026",
-  "data_as_of_shown_on_source": "Data as of 22 October, 2026",
-  "retrieved_utc": "2026-10-23",
+  "price_date_as_shown_on_source": "10 November, 2026",
+  "data_as_of_shown_on_source": "Data as of 10 November, 2026",
+  "retrieved_utc": "2026-11-11",
   "publisher": "World Gold Council (Goldhub)",
   "publisher_type": "industry benchmark body (market data supplied by ICE Data Services)",
   "source_url": "https://www.gold.org/goldhub/data/gold-prices",
-  "what_the_source_page_shows": "Gold spot price panel: 'USD /oz 3,996.31' with a 'Last Updated' caption, on a page dated '22 October, 2026', with the chart footer 'Data as of 22 October, 2026' and 'Market Data: Provided by ICE Data Services'.",
+  "what_the_source_page_shows": "Gold spot price panel: 'USD /oz 4,059.49' with a 'Last Updated' caption, on a page headed '10 November, 2026', with the chart footer 'Data as of 10 November, 2026' and 'Market Data: Provided by ICE Data Services'.",
   "verification": "V1_direct_page_fetch",
   "notes": [
-   "Pass 18 (2026-10-23, 20:23Z): the live World Gold Council panel was re-read in a browser-rendered fetch and displayed USD 3,996.31/oz. This reading replaces the 10:02Z reading of USD 4,024.45/oz as the benchmark, so every derived gold value on the site is recomputed at USD 128.48435/g. The earlier reading is preserved verbatim in prior_captures.",
-   "Difference from the previous benchmark (USD 4,024.45/oz): -0.70%. Unlike the Pass 12 change (which came from the data date advancing by one day), this change is an intraday market move: the panel's own 'Data as of' line still reads 22 October, 2026 at both readings.",
-   "Independently corroborated within four minutes by three other official market pages read by the same GitHub runner at 20:19Z: Kitco USD 3,996.30/oz (24K row), BullionVault USD 3,996.62/oz, JM Bullion gold ASK USD 4,010.61/oz (an ask, so it includes a premium). These are recorded in cross_check_quotes_2026_10_23 and are informational only; the single calculation basis remains the World Gold Council panel.",
+   "Pass 21 (2026-11-11): the live World Gold Council panel was re-read from this session's browser-rendered reader and displayed USD 4,059.49/oz on a page headed '10 November, 2026' with footer 'Data as of 10 November, 2026'. Unlike Passes 17/19/20 (intraday ticks on an unchanged source date, retained), this source date has ADVANCED vs the stored benchmark ('Data as of 22 October, 2026'), so the benchmark moves to USD 4,059.49/oz (+1.58%) and every derived gold value is recomputed at USD 130.51563/g. The superseded 22-October reading is preserved verbatim in prior_captures.",
+   "Independently corroborated on 2026-11-11 by BullionVault's printed 'Current Gold Price' line: USD 4,058.82/oz and $130.49/g at 11 November 2026, 03:02:20 (GMT-05:00) — 0.017% below the new benchmark. Recorded in cross_check_quotes_2026_11_11 as informational only; the World Gold Council panel remains the single calculation basis. Kitco and JM Bullion were NOT re-read this pass.",
    "Spot is a live market quote; the figure recorded here is a dated reading, not a claim about today's price. Re-read the source before relying on it.",
-   "The World Gold Council page states that the LBMA Gold Price is the key benchmark used throughout the gold market and that historical LBMA auction data was removed from the WGC site at the request of ICE Benchmark Administration (licensing).",
-   "Independently corroborated by another session: arena/0029d936-gold4 read the same panel at ~20:19Z during its own Pass 17 and reported the same USD 3,996.31/oz before seeing this reading. Two read paths, one number."
+   "The World Gold Council page states that the LBMA Gold Price is the key benchmark used throughout the gold market and that historical LBMA auction data was removed from the WGC site at the request of ICE Benchmark Administration (licensing)."
   ],
-  "captured_utc": "2026-10-23T20:23Z"
+  "captured_utc": "2026-11-11T08:00Z"
  },
  "secondary_reference": {
   "id": "lbma-benchmark",
@@ -39,10 +37,36 @@
  "constants": {
   "troy_ounce_grams": 31.1034768,
   "troy_ounce_grams_note": "Defined exact conversion (troy ounce = 480 grains = 31.1034768 g). This is a definition, not a sourced market claim. Note (2026-10-23): NIST SP 811 Appendix B.8 prints 3.110 348 E+01 g for the troy ounce in non-bold type, i.e. rounded and not exact; the 31.1034768 g figure is exact only as the 480-grain definition.",
-  "spot_usd_per_gram": 128.48435,
-  "spot_usd_per_gram_note": "value_usd_per_oz / 31.1034768 = 3996.31 / 31.1034768 = 128.48435 USD/g (recomputed by scripts/compute.py and re-checked by scripts/audit.py)."
+  "spot_usd_per_gram": 130.515634,
+  "spot_usd_per_gram_note": "value_usd_per_oz / 31.1034768 = 4059.49 / 31.1034768 = 130.515634 USD/g (recomputed by scripts/compute.py and re-checked by scripts/audit.py)."
  },
  "prior_captures": [
+  {
+   "id": "wgc-gold-spot-usd",
+   "name": "Gold spot price, USD per troy ounce",
+   "value_usd_per_oz": 3996.31,
+   "quote_currency": "USD",
+   "quote_unit": "troy ounce",
+   "price_date_as_shown_on_source": "22 October, 2026",
+   "data_as_of_shown_on_source": "Data as of 22 October, 2026",
+   "retrieved_utc": "2026-10-23",
+   "publisher": "World Gold Council (Goldhub)",
+   "publisher_type": "industry benchmark body (market data supplied by ICE Data Services)",
+   "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+   "what_the_source_page_shows": "Gold spot price panel: 'USD /oz 3,996.31' with a 'Last Updated' caption, on a page dated '22 October, 2026', with the chart footer 'Data as of 22 October, 2026' and 'Market Data: Provided by ICE Data Services'.",
+   "verification": "V1_direct_page_fetch",
+   "notes": [
+    "Pass 18 (2026-10-23, 20:23Z): the live World Gold Council panel was re-read in a browser-rendered fetch and displayed USD 3,996.31/oz. This reading replaces the 10:02Z reading of USD 4,024.45/oz as the benchmark, so every derived gold value on the site is recomputed at USD 128.48435/g. The earlier reading is preserved verbatim in prior_captures.",
+    "Difference from the previous benchmark (USD 4,024.45/oz): -0.70%. Unlike the Pass 12 change (which came from the data date advancing by one day), this change is an intraday market move: the panel's own 'Data as of' line still reads 22 October, 2026 at both readings.",
+    "Independently corroborated within four minutes by three other official market pages read by the same GitHub runner at 20:19Z: Kitco USD 3,996.30/oz (24K row), BullionVault USD 3,996.62/oz, JM Bullion gold ASK USD 4,010.61/oz (an ask, so it includes a premium). These are recorded in cross_check_quotes_2026_10_23 and are informational only; the single calculation basis remains the World Gold Council panel.",
+    "Spot is a live market quote; the figure recorded here is a dated reading, not a claim about today's price. Re-read the source before relying on it.",
+    "The World Gold Council page states that the LBMA Gold Price is the key benchmark used throughout the gold market and that historical LBMA auction data was removed from the WGC site at the request of ICE Benchmark Administration (licensing).",
+    "Independently corroborated by another session: arena/0029d936-gold4 read the same panel at ~20:19Z during its own Pass 17 and reported the same USD 3,996.31/oz before seeing this reading. Two read paths, one number."
+   ],
+   "captured_utc": "2026-10-23T20:23Z",
+   "status": "superseded",
+   "note": "Benchmark used from Pass 18 (2026-10-23 20:23Z read) until Pass 21 on 2026-11-11: USD 3,996.31/oz with the panel's 'Data as of 22 October, 2026' date line. Superseded in Pass 21 when the WGC panel showed a newer data date ('Data as of 10 November, 2026') at USD 4,059.49/oz. Kept for audit; no current calculation uses it."
+  },
   {
    "value_usd_per_oz": 4024.36,
    "price_date_as_shown_on_source": "21 October, 2026",
@@ -83,7 +107,7 @@
    "note": "Benchmark used from Pass 12 until Pass 18 on 2026-10-23: the WGC panel read USD 4,024.45/oz at 10:02Z and again during the 20:19Z runner pass the panel itself printed no number to a plain GET. Superseded in Pass 18 by the 20:23Z browser-rendered read of USD 3,996.31/oz. Kept for audit; no current calculation uses it."
   }
  ],
- "recheck_note": "Re-read in Pass 17 at 2026-10-23T20:23Z (browser-rendered fetch of the WGC panel) and corroborated by three market pages read by the runner at 20:19Z. Any derived value in this repository can be recomputed in one line from value_usd_per_oz and 31.1034768 g/oz; scripts/audit.py re-derives all of them on every run.",
+ "recheck_note": "Re-read in Pass 21 at 2026-11-11 (browser-rendered fetch of the WGC panel): page headed '10 November, 2026', footer 'Data as of 10 November, 2026', USD 4,059.49/oz — corroborated by BullionVault (USD 4,058.82/oz, $130.49/g) at 03:02:20 GMT-05:00. Any derived value in this repository can be recomputed in one line from value_usd_per_oz and 31.1034768 g/oz; scripts/audit.py re-derives all of them on every run.",
  "cross_check_quotes_2026_10_22": [
   {
    "publisher": "Kitco Metals Inc.",
@@ -234,5 +258,29 @@
   "delta_pct_vs_active_benchmark": -0.021,
   "decision": "Benchmark RETAINED at the stored value. The tick is 0.84 USD/oz lower (-0.021%) on the same source data date, i.e. an intraday move well inside the noise this project has always tolerated; the previous pass acted only on a -0.70% move. The reading is recorded here as a dated cross-check. No derived gold value was recomputed and no stored value was replaced.",
   "usd_per_gram_if_used": 128.4576
+ },
+ "cross_check_quotes_2026_11_11": [
+  {
+   "publisher": "BullionVault",
+   "source_url": "https://www.bullionvault.com/gold-price-chart.do",
+   "value_usd_per_oz": 4058.82,
+   "value_usd_per_gram_printed_on_page": 130.49,
+   "timestamp_shown": "11 November 2026, 03:02:20 (GMT-05:00)",
+   "retrieved_utc": "2026-11-11",
+   "spread_vs_active_benchmark_pct": -0.017
+  }
+ ],
+ "pass21_live_read_2026_11_11": {
+  "session": "arena/d5947c03-gold4 (Pass 21)",
+  "source_url": "https://www.gold.org/goldhub/data/gold-prices",
+  "read_path": "browser-rendered page reader",
+  "window_utc": "2026-11-11T07:59Z-2026-11-11T08:10Z",
+  "value_usd_per_oz": 4059.49,
+  "page_heading_date_verbatim": "10 November, 2026",
+  "source_data_as_of_verbatim": "Data as of 10 November, 2026",
+  "active_benchmark_usd_per_oz": 4059.49,
+  "delta_pct_vs_prior_benchmark": 1.58,
+  "decision": "Benchmark MOVED to this reading: the source's own data date advanced (22 October -> 10 November 2026) and the move is material (+1.58%), the same criterion used in Pass 12. The intraday-retain precedent of Passes 17/19/20 does not apply because the date line moved. Prior benchmark preserved verbatim in prior_captures. Derived values recomputed by scripts/compute.py at $130.51563/g.",
+  "usd_per_gram_exact_computed": 130.51563418787958
  }
 }

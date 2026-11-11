@@ -34,6 +34,7 @@ NAV = [
     ("pages/freshness.html", "Freshness", "freshness"),
     ("pages/session-review.html", "Current review", "session-review"),
     ("pages/pass20.html", "Pass 20", "pass20"),
+    ("pages/pass21.html", "Pass 21", "pass21"),
     ("checklist.html", "Checklist", "checklist"),
     ("pages/log.html", "Log", "log"),
     ("dashboard.html", "Assay Lab+", "assay"),
