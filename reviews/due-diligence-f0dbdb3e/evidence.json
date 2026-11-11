@@ -831,6 +831,12 @@
    "read_utc": "2026-11-11T08:12:12Z",
    "result": "Oops, that's a 404",
    "seller_id": "mene"
+  },
+  {
+   "url": "https://www.bbb.org/us/ca/chula-vista/profile/jewelry-stores/anjolee-1126-171986380/more-info",
+   "read_utc": "2026-11-11T08:37Z",
+   "result": "Whoops! Page not found! (tried as another route to Anjolee's rating letter)",
+   "seller_id": "anjolee"
   }
  ],
  "anchors": [
@@ -3251,7 +3257,7 @@
    "severity": "Medium",
    "seller_id": "sarraf",
    "title": "Sarraf: the seller itself confirms a shipped weight below the listed approximate weight",
-   "detail": "In a reply printed on BBB (09/24/2025) Sarraf writes: 'The chain was listed on our website with an approximate weight of 6.13 grams, not 6.61 grams. The chain that was shipped weighed 5.7 grams.' That is one item, a chain rather than a ring, but it shows how far Sarraf's 'approximate' weights can sit from the delivered piece; six dataset rows use Sarraf gram weights in their gold-value arithmetic.",
+   "detail": "In a reply printed on BBB (09/24/2025) Sarraf writes: 'The chain was listed on our website with an approximate weight of 6.13 grams, not 6.61 grams. The chain that was shipped weighed 5.7 grams.' In the same reply Sarraf adds that in this customer's past orders 'there are several cases where the actual weight of the chain received was slightly above the advertised weight.' That is one item, a chain rather than a ring, but it shows that Sarraf's 'approximate' weights can sit either side of the delivered piece; six dataset rows use Sarraf gram weights in their gold-value arithmetic.",
    "basis": [
     "BBB-25"
    ],
@@ -3587,6 +3593,53 @@
    "inputs_from": "CS-03"
   }
  ],
+ "second_pass": {
+  "purpose": "After the register was built, seven of the pages behind its most consequential cells were opened again to look for transcription errors. The stored quotation was compared with the new text.",
+  "rereads": [
+   {
+    "read_id": "BBB-29",
+    "reread_utc": "2026-11-11T08:37Z",
+    "result": "same",
+    "checked": "Catbird: complaint counts, the status filter and the complaint types"
+   },
+   {
+    "read_id": "MJ-05",
+    "reread_utc": "2026-11-11T08:37Z",
+    "result": "same",
+    "checked": "Mejuri: the hollow-form sentence"
+   },
+   {
+    "read_id": "MN-05",
+    "reread_utc": "2026-11-11T08:37Z",
+    "result": "same",
+    "checked": "Menē: the list of payment methods"
+   },
+   {
+    "read_id": "BBB-09",
+    "reread_utc": "2026-11-11T08:37:08Z",
+    "result": "same",
+    "checked": "VRAI: accreditation, grade, complaint counts and address"
+   },
+   {
+    "read_id": "BBB-25",
+    "reread_utc": "2026-11-11T08:37:08Z",
+    "result": "same",
+    "checked": "Sarraf: review average and count, and the seller's weight statement"
+   },
+   {
+    "read_id": "MJ-04",
+    "reread_utc": "2026-11-11T08:37:08Z",
+    "result": "same",
+    "checked": "Mejuri: the stamp, XRF and UK-hallmark sentences"
+   },
+   {
+    "read_id": "BBB-11",
+    "reread_utc": "2026-11-11T08:37:08Z",
+    "result": "same",
+    "checked": "Anjolee: the page still prints no rating letter, so the cell stays blank; the payment-method line is unchanged"
+   }
+  ]
+ },
  "count_claims": [
   {
    "id": "K-01",

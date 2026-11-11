@@ -20,7 +20,8 @@ can prove, each of which closes one way a made-up value could get in:
   * every count the prose relies on is recomputed from the data;
   * the published page shows no figure that is absent from the evidence file, every table row
     carries an official https link, and the page loads no script and no remote resource;
-  * the page and the Markdown report are byte-for-byte what the builder renders from the evidence.
+  * the page and the Markdown report are byte-for-byte what the builder renders from the evidence;
+  * a later second pass re-read the pages behind the most consequential cells and found the same text.
 
 Exit status 0 = every check passed.  A pass is not proof that any seller is trustworthy.
 """
@@ -190,7 +191,7 @@ def run(ev: dict, page: str | None, report: str | None) -> list[tuple[bool, str,
     # ---- 1. schema --------------------------------------------------------------------------
     need = ["schema_version", "session", "no_hallucination_rule", "read_window_utc", "sellers", "reads",
             "not_found", "anchors", "observations", "irregularities", "customer_statements",
-            "leads_unverified", "requests", "incidental", "derived", "count_claims", "limits"]
+            "leads_unverified", "requests", "incidental", "derived", "count_claims", "second_pass", "limits"]
     missing = [k for k in need if k not in ev]
     check(not missing, "1. evidence file has every required section", ", ".join(missing))
     if missing:
@@ -440,7 +441,24 @@ def run(ev: dict, page: str | None, report: str | None) -> list[tuple[bool, str,
     check(not bad, f"11. data/sellers.json untouched and consistent: {agree} stored contact values agree with today's reads, "
                    f"{fills} stored nulls now have a read value (logged as a request, not written)", "; ".join(bad))
 
-    # ---- 12-15. the published page ------------------------------------------------------------
+    # ---- 17. the second pass (look for hallucinations again) -----------------------------------
+    bad = []
+    rr = ev["second_pass"]["rereads"]
+    for x in rr:
+        r = reads.get(x["read_id"])
+        if r is None:
+            bad.append(f"re-read of an unknown page {x['read_id']}")
+            continue
+        if not re.fullmatch(r"2026-11-11T\d\d:\d\d(:\d\d)?Z", x["reread_utc"]):
+            bad.append(f"{x['read_id']}: bad re-read time")
+        elif x["reread_utc"][:16] <= r["read_utc"][:16]:
+            bad.append(f"{x['read_id']}: the re-read is not later than the first read")
+        if x["result"] != "same":
+            bad.append(f"{x['read_id']}: re-read result is {x['result']!r}; a difference must be resolved and logged before publishing")
+    second = (len(rr) >= 5 and not bad, f"17. second pass: {len(rr)} pages behind the most consequential cells were re-read later and matched",
+              "; ".join(bad) if bad else ("fewer than five re-reads" if len(rr) < 5 else ""))
+
+    # ---- 12-16. the published page ------------------------------------------------------------
     if page is None:
         check(False, "12. published page exists", str(PAGE))
     else:
@@ -545,6 +563,7 @@ def run(ev: dict, page: str | None, report: str | None) -> list[tuple[bool, str,
         check(not bad, "16. index.html and report.md are byte-for-byte the builder's output for this evidence file",
               "; ".join(bad))
 
+    check(*second)
     return results
 
 
@@ -646,6 +665,14 @@ def self_test(ev: dict, page: str, report: str) -> int:
     def m_stat(e, p, r):
         return e, re.sub(r'data-stat="blank">\d+<', 'data-stat="blank">3<', p, count=1), r
 
+    def m_reread_differs(e, p, r):
+        e["second_pass"]["rereads"][0]["result"] = "differs"
+        return e, p, r
+
+    def m_reread_early(e, p, r):
+        e["second_pass"]["rereads"][0]["reread_utc"] = "2026-11-11T08:01:00Z"
+        return e, p, r
+
     def m_stale_report(e, p, r):
         return e, p, r + "\nhand edit\n"
 
@@ -673,6 +700,8 @@ def self_test(ev: dict, page: str, report: str) -> int:
         ("an invented figure typed into the page", m_invented_number, 15),
         ("a statistic on the page that the evidence does not support", m_stat, 15),
         ("a hand-edited report", m_stale_report, 16),
+        ("a second-pass re-read that found a difference", m_reread_differs, 17),
+        ("a 'second pass' dated before the first read", m_reread_early, 17),
     ]
     base = run(ev, page, report)
     if not all(ok for ok, _, _ in base):

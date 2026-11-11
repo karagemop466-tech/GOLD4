@@ -489,6 +489,14 @@ def render_html(ev: dict) -> str:
              "sound and sourced. It cannot show that a quotation still matches the live page — open the links. "
              "After every review, look for hallucinations again.</p></div>")
     P.append("</div>")
+    P.append('<h3 id="second-pass">Second pass — looking for hallucinations again</h3>')
+    P.append(f'<p>{e(ev["second_pass"]["purpose"])}</p>')
+    rows = []
+    for x in ev["second_pass"]["rereads"]:
+        rows.append(f'<tr><td><code>{e(x["read_id"])}</code></td><td>{e(x["checked"])}</td>'
+                    f'<td>{e(reads[x["read_id"]]["read_utc"])}</td><td>{e(x["reread_utc"])}</td>'
+                    f'<td><strong>{e(x["result"])}</strong></td><td class="src">{src([x["read_id"]])}</td></tr>')
+    P.append(table("t-second", ["Page", "What was compared", "First read (UTC)", "Re-read (UTC)", "Result", "Source"], rows))
     P.append(f'<p class="small">Machine-readable evidence: <a href="evidence.json">evidence.json</a> · text report: '
              f'<a href="report.md">report.md</a> · repository: {ext(REPO_URL, "karagemop466-tech/GOLD4")}</p>')
 
@@ -659,6 +667,16 @@ def render_md(ev: dict) -> str:
     L.append("")
     for q in ev["requests"]:
         L.append(f"- **{q['id']}** — `{q['target']}` — {q['request']}")
+    L.append("")
+    L.append("## Second pass — looking for hallucinations again")
+    L.append("")
+    L.append(ev["second_pass"]["purpose"])
+    L.append("")
+    L.append("| Page | What was compared | First read (UTC) | Re-read (UTC) | Result |")
+    L.append("|---|---|---|---|---|")
+    for x in ev["second_pass"]["rereads"]:
+        r = reads[x["read_id"]]
+        L.append(f"| [{x['read_id']}]({r['url']}) | {md(x['checked'])} | {r['read_utc']} | {x['reread_utc']} | **{x['result']}** |")
     L.append("")
     L.append("## What this register does not establish")
     L.append("")
