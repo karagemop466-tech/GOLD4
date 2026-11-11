@@ -1,0 +1,80 @@
+{
+  "review_date_utc": "2026-11-11",
+  "rule": "Never infer USD from a dollar symbol or an unselected currency menu. Never adopt a related-product price as the target.",
+  "source_evidence": "reports/live_source_check_20261111T080309Z.json",
+  "quarantined_rows": [
+    {
+      "id": "AN-01",
+      "source_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
+      "claimed_price_usd_before_quarantine": 870.76,
+      "claimed_capture_date": "2026-11-11",
+      "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+      "status": "UNVERIFIED_CURRENCY",
+      "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact."
+    },
+    {
+      "id": "BE-01",
+      "source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
+      "claimed_price_usd_before_quarantine": 1190.0,
+      "claimed_capture_date": "2026-11-11",
+      "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+      "status": "UNVERIFIED_CURRENCY",
+      "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact."
+    },
+    {
+      "id": "BE-02",
+      "source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
+      "claimed_price_usd_before_quarantine": 1390.0,
+      "claimed_capture_date": "2026-11-11",
+      "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+      "status": "UNVERIFIED_CURRENCY",
+      "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact."
+    },
+    {
+      "id": "VR-01",
+      "source_url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
+      "claimed_price_usd_before_quarantine": 1035.0,
+      "claimed_capture_date": "2026-11-11",
+      "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+      "status": "UNVERIFIED_CURRENCY",
+      "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact. The amount is also from Similar Styles, not a confirmed quote for the target product/configuration."
+    },
+    {
+      "id": "BE-03",
+      "source_url": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/",
+      "claimed_price_usd_before_quarantine": 850.0,
+      "claimed_capture_date": "2026-11-11",
+      "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+      "status": "UNVERIFIED_CURRENCY",
+      "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact."
+    },
+    {
+      "id": "BE-05",
+      "source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
+      "claimed_price_usd_before_quarantine": 990.0,
+      "claimed_capture_date": "2026-11-11",
+      "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+      "status": "UNVERIFIED_CURRENCY",
+      "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact."
+    },
+    {
+      "id": "BE-06",
+      "source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/",
+      "claimed_price_usd_before_quarantine": 1190.0,
+      "claimed_capture_date": "2026-11-11",
+      "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+      "status": "UNVERIFIED_CURRENCY",
+      "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact."
+    },
+    {
+      "id": "BE-07",
+      "source_url": "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
+      "claimed_price_usd_before_quarantine": 1350.0,
+      "claimed_capture_date": "2026-11-11",
+      "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+      "status": "UNVERIFIED_CURRENCY",
+      "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact."
+    }
+  ],
+  "limitations": "This corrects currency/target evidence gaps; it does not certify remaining prices, exact variants, seller claims or physical purity."
+}

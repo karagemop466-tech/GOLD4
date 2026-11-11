@@ -23,6 +23,8 @@ COMMANDS = [
     ['python3', 'scripts/session_a2f26a30/test_source_security.py'],
     ['python3', 'scripts/session_a2f26a30/test_review.py'],
     ['python3', 'scripts/session_a2f26a30/build_review.py', '--check'],
+    ['python3', 'scripts/session_a2f26a30/check_currency.py', '--self-test'],
+    ['python3', 'scripts/session_a2f26a30/check_currency.py'],
 ]
 
 

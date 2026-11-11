@@ -164,15 +164,20 @@
       "method": "fetch_page tool; returned markdown chunks inspected, not a checkout or assay",
       "chunks_read": [
         0,
-        4
+        4,
+        7
       ],
       "verbatim_excerpts": [
         "Freesia Hidden Halo Diamond Ring in 14K Yellow Gold",
         "$990(Setting Only)",
         "BE1D3939-14KY",
-        "Note: This setting is available only with purchase of a diamond."
+        "Note: This setting is available only with purchase of a diamond.",
+        "AUD",
+        "CAD",
+        "GBP",
+        "USD"
       ],
-      "finding": "Display differs from historical $1,190. Currency code not explicit in inspected chunks. Complete-ring price cannot be inferred: diamond purchase required and size/center not finalized; no metal grams confirmed.",
+      "finding": "Display differs from historical $1,190. Currency code not explicit in inspected chunks. Complete-ring price cannot be inferred: diamond purchase required and size/center not finalized; no metal grams confirmed. Footer chunk 7 lists four currency options but does not identify the active one; it does not establish USD for the displayed $990.",
       "current_configured_price_usd": null
     }
   ],
@@ -212,7 +217,8 @@
     "A returned chunk may omit other product details; absence in inspected text is not proof the seller never publishes a value.",
     "No checkout, purchase, seller contact, independent reputation investigation or physical testing performed.",
     "GitHub Actions manual dispatch denied: HTTP 403 Resource not accessible by integration. Do not claim an inspected fresh full-sweep artifact.",
-    "All current exact configured price cells deliberately blank."
+    "All current exact configured price cells deliberately blank.",
+    "Completed peer source work was integrated separately: its raw all-URL sweep and 16 hand reads remain attributed to that owner, not to this session. Eight unsupported USD assertions were then quarantined in canonical data; their original claims remain in reviews/currency-a2f26a30.json and peer evidence."
   ],
   "recommendation": "After every review, look for hallucinations again: official source, exact variant, currency, gram scope, capture date and testing/return conditions. Automated checks cannot prove absence of hallucinations."
 }

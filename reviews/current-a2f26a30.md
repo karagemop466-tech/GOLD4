@@ -10,6 +10,10 @@ Ten partial product reads are not full re-verification. Displays differ for MN-0
 
 ## Repository review / irregularities
 
+- **Final currency/target quarantine:** eight November 11 canonical USD assertions are blanked and flagged (AN-01, VR-01, BE-01/02/03/05/06/07). The runner metadata and stored hand excerpts lack explicit USD; BE-05 footer chunk 7 lists AUD/CAD/GBP/USD choices without an active selection. VR-01 also used a related-product amount. [Original attributed claims and official links](currency-a2f26a30.json) are preserved. No other amount is inferred. A new currency gate rejects bare-dollar and menu-based promotion.
+- Completed #59 source work is integrated with attribution, including raw all-URL sweep, 16 hand reads, original reconciliation/self-check and superseded-price history. Those original reports are the **pre-quarantine snapshot**, not a current canonical test. Its future-ended 08:50Z read window is flagged, not silently accepted.
+- Concurrent #65 modifies existing Pass 21 evidence paths with different content; unique names were requested. This integration preserves the already-published originals rather than overwriting them.
+
 - Flagged a prior published coverage arithmetic error with its immutable project evidence: [Pass 21 observations](https://github.com/karagemop466-tech/GOLD4/blob/3c271ce/reviews/pass21/observations.json) list one product read, but claim 59 unread of 64. The supported unread count is 63; the other four reads are not product rows. Original evidence remains unchanged.
 - Companion [seller-policy assurance](assurance-91e9aba0/index.html) is retained and linked. Its read window extends to 08:40Z, later than this session’s ~08:08Z integration clock; timestamp provenance is flagged, not silently accepted. No companion claims are promoted to new firsthand evidence.
 - Reviewed canonical ring rows structurally: IDs, official-domain product links, existing capture dates/flags and current-value nonpromotion. New deterministic register hashes its canonical inputs and sampled observations.

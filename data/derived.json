@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-11T08:25:05Z",
+  "generated_utc": "2026-11-11T08:36:52Z",
   "spot": {
     "value_usd_per_oz": 4059.49,
     "usd_per_gram": 130.515634,
@@ -390,8 +390,8 @@
       "solid_gold_statement": null,
       "solid_gold_status": "not_stated",
       "hallmark_published": false,
-      "price_usd": 870.76,
-      "price_basis": "Configured ring INCLUDING a 0.50 ct centre diamond that the page describes as 'Lab Created FG' colour and 'Lab Created VS' clarity (14K white gold, not yellow gold). Not comparable with setting-only rows or with rings priced with a natural centre stone. || Re-read 2026-11-11: Price read 2026-11-11: $870.76 (hand read (browser-rendered), chunk 2). Verbatim: 'Price:$870.76'; 'Six Curved Prongs Solitaire Diamond Engagement Ring'; '14K White Gold,Carat: 0.50 ct,Diamond Color: FG,Diamond Clarity: VS'; 'Style No.: MS354-A'.",
+      "price_usd": null,
+      "price_basis": "Configured ring INCLUDING a 0.50 ct centre diamond that the page describes as 'Lab Created FG' colour and 'Lab Created VS' clarity (14K white gold, not yellow gold). Not comparable with setting-only rows or with rings priced with a natural centre stone. || Re-read 2026-11-11: Price read 2026-11-11: $870.76 (hand read (browser-rendered), chunk 2). Verbatim: 'Price:$870.76'; 'Six Curved Prongs Solitaire Diamond Engagement Ring'; '14K White Gold,Carat: 0.50 ct,Diamond Color: FG,Diamond Clarity: VS'; 'Style No.: MS354-A'. || Final integration 2026-11-11 (a2f26a30): unsupported USD amount quarantined; canonical price intentionally blank. Original re-read claim above is retained for review, not a confirmed current USD quote.",
       "price_captured_utc": "2026-11-11",
       "price_source_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
       "price_verification": "V1_direct_page_fetch",
@@ -406,7 +406,9 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "WHITE_GOLD",
-        "SOURCE_PRICE_NOT_MACHINE_READABLE"
+        "SOURCE_PRICE_NOT_MACHINE_READABLE",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ],
       "flag_detail": "The published configuration is 14K white gold with a 0.50 ct LAB-CREATED centre diamond, so this price must not be compared with setting-only prices, nor with natural-diamond prices: a large part of the total is the stone, not the gold. The metal weight (2.90 g, ring size 6.5) is the seller's own 'approx.' figure and includes only the mounting. | Re-read 2026-11-11 (4fe4a9c3) source check 2026-11-11 08:03Z: the page answered HTTP 200 but serves a JavaScript shell with no product text, so the price could not be read without a browser render. The source check itself changed no value.",
       "reverified_utc": "2026-11-11",
@@ -452,13 +454,23 @@
           "not read: The Product Details table that carries 'Approx. Metal Weight: 2.90 Gr.' sits in a later chunk that was not read today; the stored weight keeps its 2026-10-22 read date."
         ]
       },
+      "integration_review_a2f26a30": {
+        "id": "AN-01",
+        "source_url": "https://www.anjolee.com/rings/diamond-solitaire-engagement-rings/Six-Curved-Prongs-Solitaire-Diamond-Engagement-Ring.aspx",
+        "claimed_price_usd_before_quarantine": 870.76,
+        "claimed_capture_date": "2026-11-11",
+        "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+        "status": "UNVERIFIED_CURRENCY",
+        "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact.",
+        "review_date_utc": "2026-11-11"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": 1.6917,
       "gold_value_usd": 220.79,
       "legal_min_gold_value_usd": 218.14,
-      "price_to_gold_multiple": 3.944,
-      "price_per_gold_gram_usd": 514.74,
+      "price_to_gold_multiple": null,
+      "price_per_gold_gram_usd": null,
       "multiple_basis": "includes_centre_stone"
     },
     {
@@ -471,7 +483,7 @@
       "solid_gold_status": "not_stated",
       "solid_gold_statement": null,
       "hallmark_published": false,
-      "price_basis": "Setting only (centre diamond sold separately) || Re-read 2026-11-11: Price read 2026-11-11: $1,190.00 (hand read (browser-rendered), chunk 4). Verbatim: '$1,190(Setting Only)'; 'Atelier Solitaire Ring in 14K Yellow Gold'; 'Metal:14K Yellow Gold'; 'Style: BE1D2444-14KY'.",
+      "price_basis": "Setting only (centre diamond sold separately) || Re-read 2026-11-11: Price read 2026-11-11: $1,190.00 (hand read (browser-rendered), chunk 4). Verbatim: '$1,190(Setting Only)'; 'Atelier Solitaire Ring in 14K Yellow Gold'; 'Metal:14K Yellow Gold'; 'Style: BE1D2444-14KY'. || Final integration 2026-11-11 (a2f26a30): unsupported USD amount quarantined; canonical price intentionally blank. Original re-read claim above is retained for review, not a confirmed current USD quote.",
       "price_captured_utc": "2026-11-11",
       "price_verification": "V1_direct_page_fetch",
       "weight_g": null,
@@ -486,7 +498,9 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED",
-        "SOURCE_BOT_BLOCKED"
+        "SOURCE_BOT_BLOCKED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ],
       "pair_id": "PAIR-BE-ATELIER",
       "id": "BE-01",
@@ -494,7 +508,7 @@
       "karat": 14,
       "sku": "BE1D2444-14KY",
       "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
-      "price_usd": 1190.0,
+      "price_usd": null,
       "price_source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
       "flag_detail": "Price \"$1,190 (Setting Only)\" read from the 14K yellow gold page on 2026-10-22. The page publishes no gram weight, no hallmark and no \"solid gold\" wording. Its badge reads \"Free 1-Year Resizing\", while the earlier capture of the same page described one complimentary resize within 60 days — recorded as inconsistent rather than silently overwritten. Pass 7 (arena/1372cb32-gold4, 2026-10-22): this page is currency-localized - the re-check fetches served a EUR rendering ('1,350.00 EUR (Setting Only)') with a Global-e checkout, so the recorded USD figure could not be reproduced in this pass and is retained only from the earlier same-day USD capture. Metal (14K Yellow Gold), style (BE1D2444-14KY) and 2mm width did re-confirm. Open the page with United States / USD selected to see the recorded figure. Cross-session corroboration (arena/22b5b06c-gold4, 2026-10-22T23:39Z): an independent dated snapshot of the same product page (2026-08-27) and schema.org JSON-LD on three official Brilliant Earth category pages (2026-08-25, 2026-09-14, 2026-09-23) all show $1,190 (Setting Only), style BE1D2444-14KY, 2 mm, claw prong — consistent with this record. | Re-read 2026-11-11 (4fe4a9c3) source check 2026-11-11 08:03Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. The source check itself changed no value.",
       "source_check": {
@@ -537,6 +551,16 @@
           "not read: No gram weight is printed in the chunk read; chunks 0-3 and 5-6 were not all read."
         ]
       },
+      "integration_review_a2f26a30": {
+        "id": "BE-01",
+        "source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-14K-Gold-BE1D2444-76788321/",
+        "claimed_price_usd_before_quarantine": 1190.0,
+        "claimed_capture_date": "2026-11-11",
+        "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+        "status": "UNVERIFIED_CURRENCY",
+        "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact.",
+        "review_date_utc": "2026-11-11"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -556,7 +580,7 @@
       "solid_gold_status": "not_stated",
       "solid_gold_statement": null,
       "hallmark_published": false,
-      "price_basis": "Setting only (centre diamond sold separately) || Re-read 2026-11-11: Price read 2026-11-11: $1,390.00 (hand read (browser-rendered), chunk 4). Verbatim: '$1,390(Setting Only)'; 'Atelier Solitaire Ring in 18K Yellow Gold'; 'Metal:18K Yellow Gold'; 'Style: BE1D2444-18KY'.",
+      "price_basis": "Setting only (centre diamond sold separately) || Re-read 2026-11-11: Price read 2026-11-11: $1,390.00 (hand read (browser-rendered), chunk 4). Verbatim: '$1,390(Setting Only)'; 'Atelier Solitaire Ring in 18K Yellow Gold'; 'Metal:18K Yellow Gold'; 'Style: BE1D2444-18KY'. || Final integration 2026-11-11 (a2f26a30): unsupported USD amount quarantined; canonical price intentionally blank. Original re-read claim above is retained for review, not a confirmed current USD quote.",
       "price_captured_utc": "2026-11-11",
       "price_verification": "V1_direct_page_fetch",
       "weight_g": null,
@@ -571,7 +595,9 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED",
-        "SOURCE_BOT_BLOCKED"
+        "SOURCE_BOT_BLOCKED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ],
       "pair_id": "PAIR-BE-ATELIER",
       "id": "BE-02",
@@ -579,7 +605,7 @@
       "karat": 18,
       "sku": "BE1D2444-18KY",
       "url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
-      "price_usd": 1390.0,
+      "price_usd": null,
       "price_source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
       "pair_note": "Same design, width and prong style as BE-01; the only published difference is the karat.",
       "flag_detail": "Price \"$1,390 (Setting Only)\" read from the 18K yellow gold page on 2026-10-22. No gram weight, hallmark or \"solid gold\" wording is published on the page. Pass 7 (arena/1372cb32-gold4, 2026-10-22): the USD 1,390 price, 18K metal and BE1D2444-18KY style re-confirmed on the live page. The same currency-localization behaviour seen on the 14K sibling page (BE-01) can serve a non-USD rendering depending on the visitor, so confirm the page is showing USD before relying on the figure. | Re-read 2026-11-11 (4fe4a9c3) source check 2026-11-11 08:03Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. The source check itself changed no value.",
@@ -622,6 +648,16 @@
         "notes": [
           "not read: No gram weight is printed in the chunk read."
         ]
+      },
+      "integration_review_a2f26a30": {
+        "id": "BE-02",
+        "source_url": "https://www.brilliantearth.com/Atelier-Solitaire-Ring-Gold-BE1D2444-42024993/",
+        "claimed_price_usd_before_quarantine": 1390.0,
+        "claimed_capture_date": "2026-11-11",
+        "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+        "status": "UNVERIFIED_CURRENCY",
+        "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact.",
+        "review_date_utc": "2026-11-11"
       },
       "fineness": 0.75,
       "gold_pct": 75.0,
@@ -1899,8 +1935,8 @@
       "solid_gold_statement": null,
       "solid_gold_status": "not_stated",
       "hallmark_published": false,
-      "price_usd": 1035.0,
-      "price_basis": "Setting only, taken from the retailer's own listing card 'From $1,035' (centre diamond selected separately) || Re-read 2026-11-11: Price read 2026-11-11: $1,035.00 (hand read (browser-rendered), chunk 0-1). Verbatim: 'Similar Styles — Classic 4 Prong Dome Ring $1,035 Round Brilliant · 18k Yellow Gold'; 'Classic Round Brilliant Engagement Ring | Plain Band | 18k Yellow Gold'; 'Metal:18k Yellow Gold'; 'Band:Plain band'.",
+      "price_usd": null,
+      "price_basis": "Setting only, taken from the retailer's own listing card 'From $1,035' (centre diamond selected separately) || Re-read 2026-11-11: Price read 2026-11-11: $1,035.00 (hand read (browser-rendered), chunk 0-1). Verbatim: 'Similar Styles — Classic 4 Prong Dome Ring $1,035 Round Brilliant · 18k Yellow Gold'; 'Classic Round Brilliant Engagement Ring | Plain Band | 18k Yellow Gold'; 'Metal:18k Yellow Gold'; 'Band:Plain band'. || Final integration 2026-11-11 (a2f26a30): unsupported USD amount quarantined; canonical price intentionally blank. Original re-read claim above is retained for review, not a confirmed current USD quote.",
       "price_captured_utc": "2026-11-11",
       "price_source_url": "https://www.vrai.com/engagement-rings",
       "price_verification": "V1_direct_page_fetch",
@@ -1915,7 +1951,10 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "SPEC_LISTED_PAVE_ON_PLAIN_BAND",
-        "WIDTH_UNVERIFIED"
+        "WIDTH_UNVERIFIED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11",
+        "RELATED_PRODUCT_PRICE_NOT_TARGET"
       ],
       "flag_detail": "The 'From $1,035' figure comes from the VRAI engagement-rings listing page for this design; the 2.86 g metal weight comes from the design's own configuration page. Both are VRAI pages for the same design, but they are not the same URL, so confirm the exact price for your ring size and carat in the cart before relying on it. SPEC_LISTED_PAVE_ON_PLAIN_BAND: on the re-fetched design page the selected band is a PLAIN band ('Band: Plain band'), yet the Setting Details block still lists 'Pave carat weight:0.18ctw'. The weight figure quoted in this row is the 'Metal weight' line, which is unambiguous, but the pavé line suggests the spec block is shared across band variants. Confirm which band you are buying before relying on any diamond-weight figure. Also re-checked 2026-10-22: the listing card that shows \"From $1,035\" links to configuration id ...-32797281484893, not to the configuration id in this row (...-40635875360861) from which the metal weight was read. Same design and metal, different configuration identifier — confirm the setting price for your exact ring size in the cart. WIDTH_UNVERIFIED: no numeric band width is published on the design page — its specs say only 'Band width: Standard' (the one millimetre figure shown is 'Band depth: 1.6mm', a different dimension). The 1.7 mm value carried by this row since the first capture could not be re-read from any official page, so the width is blanked (independent re-verification, arena/b2c018a8-gold4, 2026-10-22). | Re-read 2026-11-11 (4fe4a9c3) source check 2026-11-11 08:03Z: source state REFUSED_429, price state SOURCE_NOT_REACHED.",
       "reverified_utc": "2026-11-11",
@@ -1965,13 +2004,23 @@
           "price is the retailer's listing-card price, not a configured-ring quote"
         ]
       },
+      "integration_review_a2f26a30": {
+        "id": "VR-01",
+        "source_url": "https://www.vrai.com/configure/setting-to-diamond/classic-4-prong-dome/round-brilliant-yellow-gold-40635875360861",
+        "claimed_price_usd_before_quarantine": 1035.0,
+        "claimed_capture_date": "2026-11-11",
+        "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+        "status": "UNVERIFIED_CURRENCY",
+        "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact. The amount is also from Similar Styles, not a confirmed quote for the target product/configuration.",
+        "review_date_utc": "2026-11-11"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": 2.145,
       "gold_value_usd": 279.96,
       "legal_min_gold_value_usd": 277.34,
-      "price_to_gold_multiple": 3.697,
-      "price_per_gold_gram_usd": 482.52,
+      "price_to_gold_multiple": null,
+      "price_per_gold_gram_usd": null,
       "multiple_basis": "setting_metal_only"
     },
     {
@@ -2062,8 +2111,8 @@
       "solid_gold_statement": null,
       "solid_gold_status": "not_stated",
       "hallmark_published": false,
-      "price_usd": 850.0,
-      "price_basis": "Setting only — live page verified $850 on 2026-10-22 (stale search snippet cache still showed $650) || Re-read 2026-11-11: Price read 2026-11-11: $850.00 (hand read (browser-rendered), chunk 4). Verbatim: '$850(Setting Only)'; 'Six-Prong Petite Comfort Fit 1.5mm Solitaire Ring in 18K Yellow Gold'; 'Metal:18K Yellow Gold'; 'Style: BE1199H6-18KY'.",
+      "price_usd": null,
+      "price_basis": "Setting only — live page verified $850 on 2026-10-22 (stale search snippet cache still showed $650) || Re-read 2026-11-11: Price read 2026-11-11: $850.00 (hand read (browser-rendered), chunk 4). Verbatim: '$850(Setting Only)'; 'Six-Prong Petite Comfort Fit 1.5mm Solitaire Ring in 18K Yellow Gold'; 'Metal:18K Yellow Gold'; 'Style: BE1199H6-18KY'. || Final integration 2026-11-11 (a2f26a30): unsupported USD amount quarantined; canonical price intentionally blank. Original re-read claim above is retained for review, not a confirmed current USD quote.",
       "price_captured_utc": "2026-11-11",
       "price_source_url": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/",
       "price_verification": "V1_direct_page_fetch",
@@ -2077,7 +2126,9 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "MIXED_METAL_UNCLEAR",
-        "SOURCE_BOT_BLOCKED"
+        "SOURCE_BOT_BLOCKED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ],
       "flag_detail": "Title states 18K Yellow Gold while Ring Information specifies Prong metal: 14K White Gold (expect 14K XRF reading on head vs 18K on shank). Stale search cache showed $650 vs $850 live (+30.8%). | Re-read 2026-11-11 (4fe4a9c3) source check 2026-11-11 08:03Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. The source check itself changed no value.",
       "reverified_utc": "2026-11-11",
@@ -2123,6 +2174,16 @@
           "The page states 'Prong metal: 14K White Gold' on a ring sold as 18K Yellow Gold: the head is a different alloy and karat from the band.",
           "not read: No gram weight is printed in the chunk read."
         ]
+      },
+      "integration_review_a2f26a30": {
+        "id": "BE-03",
+        "source_url": "https://www.brilliantearth.com/Six-Prong-Petite-Comfort-Fit-1.5mm-Solitaire-Ring-Gold-BE1199H6-1912137/",
+        "claimed_price_usd_before_quarantine": 850.0,
+        "claimed_capture_date": "2026-11-11",
+        "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+        "status": "UNVERIFIED_CURRENCY",
+        "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact.",
+        "review_date_utc": "2026-11-11"
       },
       "fineness": 0.75,
       "gold_pct": 75.0,
@@ -5111,8 +5172,8 @@
       "solid_gold_statement": null,
       "solid_gold_status": "not_stated",
       "hallmark_published": false,
-      "price_usd": 990.0,
-      "price_basis": "USD $1,190 (Setting Only), first-hand official-page read 2026-10-23; ring size/centre diamond unselected. Not a final configured-ring or checkout quote. || Re-read 2026-11-11: Price read 2026-11-11: $990.00 (hand read (browser-rendered), chunk 4). Verbatim: '$990(Setting Only)'; 'Freesia Hidden Halo Diamond Ring in 14K Yellow Gold'; 'Metal:14K Yellow Gold'; 'Style: BE1D3939-14KY'.",
+      "price_usd": null,
+      "price_basis": "USD $1,190 (Setting Only), first-hand official-page read 2026-10-23; ring size/centre diamond unselected. Not a final configured-ring or checkout quote. || Re-read 2026-11-11: Price read 2026-11-11: $990.00 (hand read (browser-rendered), chunk 4). Verbatim: '$990(Setting Only)'; 'Freesia Hidden Halo Diamond Ring in 14K Yellow Gold'; 'Metal:14K Yellow Gold'; 'Style: BE1D3939-14KY'. || Final integration 2026-11-11 (a2f26a30): unsupported USD amount quarantined; canonical price intentionally blank. Original re-read claim above is retained for review, not a confirmed current USD quote.",
       "price_captured_utc": "2026-11-11",
       "price_source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
       "price_verification": "V1_direct_page_fetch",
@@ -5127,7 +5188,9 @@
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED",
         "PRICE_CHANGED_2026_11_11",
-        "SOURCE_BOT_BLOCKED"
+        "SOURCE_BOT_BLOCKED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ],
       "flag_detail": "Snapshot of the official product page (dated 2026-06-18) showed: $1,190 (Setting Only), Style BE1D3939-14KY, Metal 14K Yellow Gold, 'Width: 2-1.3 mm' (tapered — recorded verbatim here; width_mm left blank rather than reduced to one number), Setting Claw Prong. Price independently corroborated by schema.org JSON-LD on two official category pages: /engagement-rings/hidden-halo/ (2026-09-15) and /jewelry/collections/signature/ (2026-09-24), both 1190. Returns anchored to the Brilliant Earth product-page source used by BE-01/BE-02; the generic BE returns-policy URL was not re-fetched by this session. PASS 14 (2026-10-23): live re-fetch served 'EUR 1,350.00 (Setting Only)' on this page while BE-06 and BE-07 served USD in the same minute; the USD figure ($1,190) therefore remains snapshot-sourced and stays flagged. The EUR figure is not converted to USD here — a conversion would be a number this project computed, not a price the retailer published. | Re-read 2026-11-11 (4fe4a9c3) source check 2026-11-11 08:03Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. The source check itself changed no value.",
       "reverified_utc": "2026-11-11",
@@ -5212,6 +5275,16 @@
           "not read: No gram weight is printed in the chunk read."
         ]
       },
+      "integration_review_a2f26a30": {
+        "id": "BE-05",
+        "source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-14K-Gold-BE1D3939-76789075/",
+        "claimed_price_usd_before_quarantine": 990.0,
+        "claimed_capture_date": "2026-11-11",
+        "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+        "status": "UNVERIFIED_CURRENCY",
+        "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact.",
+        "review_date_utc": "2026-11-11"
+      },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
       "pure_gold_g": null,
@@ -5236,8 +5309,8 @@
       "solid_gold_statement": null,
       "solid_gold_status": "not_stated",
       "hallmark_published": false,
-      "price_usd": 1190.0,
-      "price_basis": "Setting only — page shows '$1,390 (Setting Only)' || Re-read 2026-11-11: Price read 2026-11-11: $1,190.00 (hand read (browser-rendered), chunk 4). Verbatim: '$1,190(Setting Only)'; 'Freesia Hidden Halo Diamond Ring in 18K Yellow Gold'; 'Metal:18K Yellow Gold'; 'Style: BE1D3939-18KY'.",
+      "price_usd": null,
+      "price_basis": "Setting only — page shows '$1,390 (Setting Only)' || Re-read 2026-11-11: Price read 2026-11-11: $1,190.00 (hand read (browser-rendered), chunk 4). Verbatim: '$1,190(Setting Only)'; 'Freesia Hidden Halo Diamond Ring in 18K Yellow Gold'; 'Metal:18K Yellow Gold'; 'Style: BE1D3939-18KY'. || Final integration 2026-11-11 (a2f26a30): unsupported USD amount quarantined; canonical price intentionally blank. Original re-read claim above is retained for review, not a confirmed current USD quote.",
       "price_captured_utc": "2026-11-11",
       "price_source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/",
       "price_verification": "V1_direct_page_fetch",
@@ -5252,7 +5325,9 @@
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED",
         "PRICE_CHANGED_2026_11_11",
-        "SOURCE_BOT_BLOCKED"
+        "SOURCE_BOT_BLOCKED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ],
       "flag_detail": "Snapshot of the official product page (dated 2026-09-28) showed: $1,390 (Setting Only), Metal 18K Yellow Gold. The 18K style code was not visible in the captured text, so sku stays blank rather than inferred from the 14K variant. PASS 14 (2026-10-23): live re-fetch confirmed '$1,390 (Setting Only)' in USD and style BE1D3939-18KY; the stored price is current, not only a snapshot. Currency can still flip to EUR depending on the session — check the selector before comparing against other rows on this site. | Re-read 2026-11-11 (4fe4a9c3) source check 2026-11-11 08:03Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. The source check itself changed no value.",
       "reverified_utc": "2026-11-11",
@@ -5310,6 +5385,16 @@
           "not read: No gram weight is printed in the chunk read."
         ]
       },
+      "integration_review_a2f26a30": {
+        "id": "BE-06",
+        "source_url": "https://www.brilliantearth.com/Freesia-Hidden-Halo-Diamond-Ring-Gold-BE1D3939-19424930/",
+        "claimed_price_usd_before_quarantine": 1190.0,
+        "claimed_capture_date": "2026-11-11",
+        "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+        "status": "UNVERIFIED_CURRENCY",
+        "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact.",
+        "review_date_utc": "2026-11-11"
+      },
       "fineness": 0.75,
       "gold_pct": 75.0,
       "pure_gold_g": null,
@@ -5334,8 +5419,8 @@
       "solid_gold_statement": null,
       "solid_gold_status": "not_stated",
       "hallmark_published": false,
-      "price_usd": 1350.0,
-      "price_basis": "Setting only — page shows '$1,350 (Setting Only)' || Re-read 2026-11-11: Price read 2026-11-11: $1,350.00 (hand read (browser-rendered), chunk 4). Verbatim: '$1,350(Setting Only)'; 'Fleur Solitaire Ring in 14K Yellow Gold'; 'Metal:14K Yellow Gold'; 'Style: BE1574-14KY'.",
+      "price_usd": null,
+      "price_basis": "Setting only — page shows '$1,350 (Setting Only)' || Re-read 2026-11-11: Price read 2026-11-11: $1,350.00 (hand read (browser-rendered), chunk 4). Verbatim: '$1,350(Setting Only)'; 'Fleur Solitaire Ring in 14K Yellow Gold'; 'Metal:14K Yellow Gold'; 'Style: BE1574-14KY'. || Final integration 2026-11-11 (a2f26a30): unsupported USD amount quarantined; canonical price intentionally blank. Original re-read claim above is retained for review, not a confirmed current USD quote.",
       "price_captured_utc": "2026-11-11",
       "price_source_url": "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
       "price_verification": "V1_direct_page_fetch",
@@ -5349,7 +5434,9 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED",
-        "SOURCE_BOT_BLOCKED"
+        "SOURCE_BOT_BLOCKED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ],
       "flag_detail": "Snapshot of the official product page (dated 2026-08-07) showed: $1,350 (Setting Only), Style BE1574-14KY, Metal 14K Yellow Gold, Width 1.8 mm, Setting Four-Prong. | Re-read 2026-11-11 (4fe4a9c3) source check 2026-11-11 08:03Z: the retailer's bot protection refused the automated check (HTTP 403), so this pass makes no claim about the current price; the stored value keeps its original provenance. The source check itself changed no value.",
       "reverified_utc": "2026-11-11",
@@ -5394,6 +5481,16 @@
         "notes": [
           "not read: No gram weight is printed in the chunk read."
         ]
+      },
+      "integration_review_a2f26a30": {
+        "id": "BE-07",
+        "source_url": "https://www.brilliantearth.com/Fleur-Solitaire-Ring-14K-Gold-BE1574-76785943/",
+        "claimed_price_usd_before_quarantine": 1350.0,
+        "claimed_capture_date": "2026-11-11",
+        "original_observation_file": "reviews/reread-4fe4a9c3/hand_reads.json",
+        "status": "UNVERIFIED_CURRENCY",
+        "reason": "The stored runner structured-price evidence and hand excerpts do not explicitly establish USD for this displayed amount. A bare dollar symbol is insufficient. Original claim retained as attributed evidence, not a verified USD fact.",
+        "review_date_utc": "2026-11-11"
       },
       "fineness": 0.5833333,
       "gold_pct": 58.3333,
@@ -6174,12 +6271,12 @@
       "high_id": "BE-02",
       "low_karat": 14,
       "high_karat": 18,
-      "low_price": 1190.0,
-      "high_price": 1390.0,
+      "low_price": null,
+      "high_price": null,
       "low_weight_g": null,
       "high_weight_g": null,
-      "price_gap_usd": 200.0,
-      "price_gap_pct": 16.81,
+      "price_gap_usd": null,
+      "price_gap_pct": null,
       "gold_gap_pct": null,
       "gold_value_gap_pct": null,
       "low_multiple": null,
@@ -6271,12 +6368,12 @@
       "high_id": "BE-06",
       "low_karat": 14,
       "high_karat": 18,
-      "low_price": 990.0,
-      "high_price": 1190.0,
+      "low_price": null,
+      "high_price": null,
       "low_weight_g": null,
       "high_weight_g": null,
-      "price_gap_usd": 200.0,
-      "price_gap_pct": 20.2,
+      "price_gap_usd": null,
+      "price_gap_pct": null,
       "gold_gap_pct": null,
       "gold_value_gap_pct": null,
       "low_multiple": null,
@@ -6285,7 +6382,7 @@
   ],
   "stats": {
     "total_rows": 64,
-    "rows_with_verified_price": 56,
+    "rows_with_verified_price": 48,
     "rows_with_published_weight": 17,
     "rows_with_solid_gold_statement": 17,
     "rows_with_hallmark_published": 0,
@@ -6301,19 +6398,19 @@
       },
       "14": {
         "rows": 42,
-        "prices_verified": 39,
+        "prices_verified": 35,
         "weights_published": 9,
         "multiple_min": 1.49,
         "multiple_max": 4.69,
-        "multiple_avg": 2.91
+        "multiple_avg": 2.78
       },
       "18": {
         "rows": 18,
-        "prices_verified": 13,
+        "prices_verified": 9,
         "weights_published": 7,
         "multiple_min": 1.32,
         "multiple_max": 6.6,
-        "multiple_avg": 3.1
+        "multiple_avg": 2.98
       },
       "24": {
         "rows": 2,
@@ -6335,7 +6432,7 @@
       },
       "pave": {
         "rows": 15,
-        "prices_verified": 12,
+        "prices_verified": 10,
         "weights_published": 0,
         "multiple_min": null,
         "multiple_max": null,
@@ -6343,11 +6440,11 @@
       },
       "solitaire": {
         "rows": 35,
-        "prices_verified": 30,
+        "prices_verified": 24,
         "weights_published": 9,
         "multiple_min": 2.15,
         "multiple_max": 6.6,
-        "multiple_avg": 3.64
+        "multiple_avg": 3.59
       }
     },
     "by_retailer": {
@@ -6361,11 +6458,11 @@
       },
       "anjolee": {
         "rows": 1,
-        "prices_verified": 1,
+        "prices_verified": 0,
         "weights_published": 1,
-        "multiple_min": 3.94,
-        "multiple_max": 3.94,
-        "multiple_avg": 3.94
+        "multiple_min": null,
+        "multiple_max": null,
+        "multiple_avg": null
       },
       "blue-nile": {
         "rows": 26,
@@ -6377,7 +6474,7 @@
       },
       "brilliant-earth": {
         "rows": 7,
-        "prices_verified": 6,
+        "prices_verified": 0,
         "weights_published": 0,
         "multiple_min": null,
         "multiple_max": null,
@@ -6425,11 +6522,11 @@
       },
       "vrai": {
         "rows": 2,
-        "prices_verified": 1,
+        "prices_verified": 0,
         "weights_published": 2,
-        "multiple_min": 3.7,
-        "multiple_max": 3.7,
-        "multiple_avg": 3.7
+        "multiple_min": null,
+        "multiple_max": null,
+        "multiple_avg": null
       }
     }
   }

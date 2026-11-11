@@ -42,6 +42,8 @@ NAV = [
 ]
 
 FLAG_HELP = {
+    "CURRENCY_NOT_CONFIRMED_2026_11_11": ("bad", "USD not confirmed in November 11 evidence — price blank"),
+    "RELATED_PRODUCT_PRICE_NOT_TARGET": ("bad", "related-product amount is not a target-ring quote"),
     "NO_WEIGHT_PUBLISHED": ("warn", "seller publishes no gram weight"),
     "WEIGHT_UNVERIFIED": ("bad", "weight not verified"),
     "WEIGHT_APPROXIMATE": ("warn", "weight is the seller's approximation"),
@@ -228,6 +230,7 @@ LAYOUT = """<!doctype html>
   Pass 20 recorded a World Gold Council panel read ($3,995.47/oz, 23 October 2026) differing from that pass's then-stored benchmark ($3,996.31/oz); see <a href="{root}pages/pass20.html">that pass's evidence</a>. Neither is a live quote.
   Values that could not be confirmed are blank and listed on <a href="{root}pages/flagged.html">Flagged for Review</a>.
   {reread_line}
+  <strong>Final integration correction:</strong> {currency_review_count} unsupported USD assertions are blank and flagged; see the <a href="{root}pages/current-review.html#flagged">currency and target-product evidence review</a>. The original re-read report is historical where this correction supersedes it.
   Automated checks detect specific inconsistencies; they cannot prove the absence of hallucinations.
   Candidate inclusion is not purchase approval: see the <a href="{root}pages/readiness.html">per-ring readiness gaps and new findings</a>.
   Re-check official sources and request independent professional testing before purchase; one surface XRF reading may not establish solid construction.
@@ -265,6 +268,7 @@ def render(title: str, body: str, active: str, root: str = "", script: bool = Fa
     extra = f'<script src="{root}assets/app.js"></script>' if script else ""
     return LAYOUT.format(
         title=esc(title), nav=nav, body=body, root=root, extra_scripts=extra, reread_line=reread_line(root),
+        currency_review_count=len(json.loads((ROOT / "reviews/currency-a2f26a30.json").read_text())["quarantined_rows"]),
         captured=C["captured"], spot=C["spot_oz"], spot_date=C["spot_date"],
         review_date=esc(review_doc["review_date_utc"]), review_sampled=review_sampled, review_unopened=review_total-review_sampled,
         spot_g=C["spot_g"], spot_captured=esc(C["spot_captured"]), built=C["built"], n_rows=C["n_rows"], n_sources=C["n_sources"],

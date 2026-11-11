@@ -3,8 +3,11 @@ Date: 2026-10-22
 
 HARD FAILURES: 0
 
-FLAGGED (blank/unverified, by design): 55
+FLAGGED (blank/unverified, by design): 63
+- AN-01.price: blank/UNVERIFIED (correct per policy)
+- BE-01.price: blank/UNVERIFIED (correct per policy)
 - BE-01.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-02.price: blank/UNVERIFIED (correct per policy)
 - BE-02.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-01.weight_g: blank/UNVERIFIED (correct per policy)
 - BN-02.weight_g: blank/UNVERIFIED (correct per policy)
@@ -19,7 +22,9 @@ FLAGGED (blank/unverified, by design): 55
 - MJ-03.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-04.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-05.weight_g: blank/UNVERIFIED (correct per policy)
+- VR-01.price: blank/UNVERIFIED (correct per policy)
 - VR-02.price: blank/UNVERIFIED (correct per policy)
+- BE-03.price: blank/UNVERIFIED (correct per policy)
 - BE-03.weight_g: blank/UNVERIFIED (correct per policy)
 - SR-07.weight_g: blank/UNVERIFIED (correct per policy)
 - SR-08.weight_g: blank/UNVERIFIED (correct per policy)
@@ -53,8 +58,11 @@ FLAGGED (blank/unverified, by design): 55
 - BN-26.weight_g: blank/UNVERIFIED (correct per policy)
 - BE-04.price: blank/UNVERIFIED (correct per policy)
 - BE-04.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-05.price: blank/UNVERIFIED (correct per policy)
 - BE-05.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-06.price: blank/UNVERIFIED (correct per policy)
 - BE-06.weight_g: blank/UNVERIFIED (correct per policy)
+- BE-07.price: blank/UNVERIFIED (correct per policy)
 - BE-07.weight_g: blank/UNVERIFIED (correct per policy)
 - RS-05.weight_g: blank/UNVERIFIED (correct per policy)
 - MJ-06.weight_g: blank/UNVERIFIED (correct per policy)

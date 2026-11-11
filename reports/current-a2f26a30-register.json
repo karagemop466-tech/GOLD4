@@ -2,11 +2,12 @@
   "schema": 1,
   "review_date_utc": "2026-11-11",
   "input_sha256": {
-    "data/rings.json": "d39a153a7de103c690791b4bfa9f7aef0a512e94c5e1a17364f355341faab2f5",
+    "data/rings.json": "53ccc4c4bbe358027aea50a31704795bbee8953d22061f371f51dc6d3e3949a0",
     "data/sources.json": "d03cededc8fc6a59ed276082ccb0ce665f074c3d5c61bb36a0b716779c0a2f7c",
     "data/sellers.json": "a8a2ec1cfb6f6d50e42dc7a076848aaf22ee36da3b3c632e6f86ef04635d03ec",
     "data/gold_spot.json": "08e23e6b3c9f0f12f7d09fc1fb7523230a9d74c10dceb177c5979654b1726183",
-    "reviews/current-a2f26a30.json": "c00886dee7c6a11f1a2e1f9c86ecae1c78a82f2ecfe5cfb6a6e0b1f4533854e5"
+    "reviews/currency-a2f26a30.json": "cab1a5c5619b4a86f728f17ddeb87b3e24fc43dab8f610e7fbe62278d52232ff",
+    "reviews/current-a2f26a30.json": "ae6438316776587ab4c3040fb2fa7a626df6c6f47293e9d41b5469427467218f"
   },
   "stats": {
     "total_rows": 64,
@@ -15,6 +16,8 @@
     "retailers": 10,
     "confirmed_current_configured_prices": 0,
     "purchase_approvals": 0,
+    "populated_dated_usd_amounts": 48,
+    "quarantined_currency_rows": 8,
     "categories": {
       "solitaire": 35,
       "pave": 15,
@@ -122,7 +125,9 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "WHITE_GOLD",
-        "SOURCE_PRICE_NOT_MACHINE_READABLE"
+        "SOURCE_PRICE_NOT_MACHINE_READABLE",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ]
     },
     {
@@ -144,7 +149,9 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED",
-        "SOURCE_BOT_BLOCKED"
+        "SOURCE_BOT_BLOCKED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ]
     },
     {
@@ -166,7 +173,9 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED",
-        "SOURCE_BOT_BLOCKED"
+        "SOURCE_BOT_BLOCKED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ]
     },
     {
@@ -473,7 +482,10 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "SPEC_LISTED_PAVE_ON_PLAIN_BAND",
-        "WIDTH_UNVERIFIED"
+        "WIDTH_UNVERIFIED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11",
+        "RELATED_PRODUCT_PRICE_NOT_TARGET"
       ]
     },
     {
@@ -518,7 +530,9 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "MIXED_METAL_UNCLEAR",
-        "SOURCE_BOT_BLOCKED"
+        "SOURCE_BOT_BLOCKED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ]
     },
     {
@@ -1214,14 +1228,16 @@
       "current_price_status": "UNVERIFIED",
       "purchase_approved": false,
       "review_status": "partial_official_read_needs_review",
-      "finding": "Display differs from historical $1,190. Currency code not explicit in inspected chunks. Complete-ring price cannot be inferred: diamond purchase required and size/center not finalized; no metal grams confirmed.",
+      "finding": "Display differs from historical $1,190. Currency code not explicit in inspected chunks. Complete-ring price cannot be inferred: diamond purchase required and size/center not finalized; no metal grams confirmed. Footer chunk 7 lists four currency options but does not identify the active one; it does not establish USD for the displayed $990.",
       "inherited_flags": [
         "NO_WEIGHT_PUBLISHED",
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED",
         "PRICE_CHANGED_2026_11_11",
-        "SOURCE_BOT_BLOCKED"
+        "SOURCE_BOT_BLOCKED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ]
     },
     {
@@ -1244,7 +1260,9 @@
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED",
         "PRICE_CHANGED_2026_11_11",
-        "SOURCE_BOT_BLOCKED"
+        "SOURCE_BOT_BLOCKED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ]
     },
     {
@@ -1266,7 +1284,9 @@
         "SOLID_NOT_STATED",
         "HALLMARK_NOT_PUBLISHED",
         "PRICE_CURRENCY_LOCALIZED",
-        "SOURCE_BOT_BLOCKED"
+        "SOURCE_BOT_BLOCKED",
+        "PRICE_UNVERIFIED",
+        "CURRENCY_NOT_CONFIRMED_2026_11_11"
       ]
     },
     {
