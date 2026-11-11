@@ -722,6 +722,38 @@ Claims were 1 minute old when read, so **no takeover was performed** under the 6
 
 Status vocabulary: `unclaimed` · `in progress` · `done` · `needs review` (= published on the Flagged for Review page, does not block).
 
+<!-- BEGIN session arena/f0dbdb3e-gold4 (placed inside the Task board section on purpose: every other live 2026-11-11 session edits the top or the end of this file, so this position merges without a conflict) -->
+
+### Session `arena/f0dbdb3e-gold4` — seller due-diligence register: reputation, business identity, payment protection, hallmark / maker's-mark disclosure (claimed 2026-11-11T08:08Z)
+
+**Claim written and pushed before any file in this scope is created.** Session ID `f0dbdb3e`; Arena pins this session to branch `arena/f0dbdb3e-gold4` (the documented deviation from `session-<id>/<task>`; no other branch is created or pushed).
+
+**What was read before claiming (2026-11-11T07:59–08:07Z).** The whole board; `git fetch` of every remote head; `gh pr list`. Six other sessions are live right now, all claimed within the last ten minutes: `4fe4a9c3` (Pass 21 tasks 53–57: ring URLs, benchmark, scan, integration; draft PR #59), `a2f26a30` (evidence freshness, fetch security, final integration), `91415e29` (Pass 21 spot-check, already merged as PR #60 → `main@2644f09`), `d5947c03` (benchmark refresh to the WGC 10 Nov reading, `pages/pass21.html`), `4dc3210a` (64-row re-verification, benchmark, site) and `91e9aba0` (seller **policy** layer = return window / exclusions / resize / warranty / contact as stored in `data/sellers.json`; legal sources; derivation audit). **None of those tasks is started, duplicated or touched here.**
+
+**The gap this session takes — unclaimed by every session above and left blank by every pass since 22 October.** The buying checklist requires *seller reputation (independent reviews and complaints, real contact information)*, *payment by credit card / no irreversible methods* and *a karat stamp plus a maker's mark*. The repository records none of them: `data/sellers.json` carries `"reputation_independently_verified": null` and the flag `REPUTATION_NOT_VERIFIED` on **10 of 10 sellers**, and `reports/readiness-8a2b9dfb.json` counts `INDEPENDENT_REPUTATION_RESEARCH_UNVERIFIED` **64/64**, `CONFIGURED_CREDIT_CARD_OPTION_UNVERIFIED` **64/64** and `HALLMARK_PLUS_MAKER_NOT_DOCUMENTED` **64/64**.
+
+| # | Task | Status | Owner | Files in scope |
+|---|------|--------|-------|----------------|
+| F0-1 | **Seller reputation — independent reviews and complaints.** For each of the 10 sellers, open the independent complaint/review record (BBB business profile) and any regulator / public-company record (FTC, SEC EDGAR) and record only what the page prints: rating, accreditation, complaint counts, address — with URL and UTC read time. Unreachable or absent = blank + flag. No score is invented and no seller is "approved". | in progress | `arena/f0dbdb3e` | NEW `reviews/due-diligence-f0dbdb3e/**` |
+| F0-2 | **Business identity and real contact information.** Legal entity, street address, phone and e-mail as printed on the seller's own contact / terms pages (and SEC filings where the seller or its parent is listed). Scope is the *identity* fields and the fields that are `null` in `data/sellers.json`; the stored return / resize / warranty / contact values are **not** re-verified here — that is `91e9aba0` task 58. | in progress | `arena/f0dbdb3e` | NEW `reviews/due-diligence-f0dbdb3e/**` |
+| F0-3 | **Payment protection.** Each seller's own published payment methods: is a credit card accepted, and does the seller offer or discount an irreversible method (bank wire, crypto)? Read from the seller's official payment / FAQ page only. The legal basis (FCBA / Reg Z) is cited from the already-registered source and is re-read by `91e9aba0` task 59, not here. | in progress | `arena/f0dbdb3e` | NEW `reviews/due-diligence-f0dbdb3e/**` |
+| F0-4 | **Hallmark and maker's-mark disclosure.** Does the seller publish, on its own site, that its gold rings are stamped with a karat mark and with a maker's / trademark stamp? Quote the wording or leave blank + flag. A published statement is a seller claim, not proof of a stamp on any ring. | in progress | `arena/f0dbdb3e` | NEW `reviews/due-diligence-f0dbdb3e/**` |
+| F0-5 | **Hallucination check of this session's own output + page.** A deterministic builder renders one page from the evidence file; a checker fails if any table row lacks a source link or read time, if a blank lacks a flag, or if the page prints a figure that is not in the evidence file. All repository gates re-run after every edit. | in progress | `arena/f0dbdb3e` | NEW `scripts/session_f0dbdb3e/**`, NEW `reviews/due-diligence-f0dbdb3e/index.html` |
+| F0-6 | **Publish this session's evidence only.** Merge `main` in (keeping every other session's work), re-run every gate on the combined tree, PR → merge → confirm the Pages deploy → record PR, merge commit and deploy run here. | in progress | `arena/f0dbdb3e` | this section |
+
+**Non-overlap declaration.** This session creates files only under `reviews/due-diligence-f0dbdb3e/` and `scripts/session_f0dbdb3e/`, and edits only this board section. It does **not** edit `data/**`, `index.html`, `pages/**`, `docs/**`, `categories/**`, `assets/**`, `README.md`, `AUDIT.md`, `VERIFICATION.md`, any existing script, `.github/**`, `reviews/pass21/**`, `reviews/assurance-91e9aba0/**` or any other session's file. No ring price, weight, karat, URL, benchmark or stored seller-policy value is changed.
+
+**Requests to the final-integration owner (logged here instead of editing files this session does not own):**
+
+| # | File (owner) | Request |
+|---|---|---|
+| RQ-F0-1 | `scripts/build_site.py` NAV + `pages/sellers.html` (integration owner) | Link `reviews/due-diligence-f0dbdb3e/index.html` from the Sellers page and the navigation once it is merged. |
+| RQ-F0-2 | `data/sellers.json` (integration owner) | Do **not** copy this register's observations into `data/sellers.json` without re-reading them; the `REPUTATION_NOT_VERIFIED` flags should point at this register rather than be silently removed. |
+
+**Standing rule for this scope:** no hallucinations. A rating, complaint count, address, phone number or payment method appears only if it was read today from the linked page; everything else is blank and flagged. Automated checks find defined errors; they do not prove a seller is trustworthy.
+
+<!-- END session arena/f0dbdb3e-gold4 -->
+
 ---
 
 ## Claim / event log
